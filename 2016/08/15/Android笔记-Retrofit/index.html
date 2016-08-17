@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<title>
+  
+    Android笔记-Retrofit
+  
+</title>
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android笔记-Retrofit">
+<meta property="og:url" content="http://yoursite.com/2016/08/15/Android笔记-Retrofit/index.html">
+<meta property="og:site_name" content="Be Level5 Coder">
+<meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/faf2b2119313b07eb36f89b10dd7912396dd8cbd.jpg">
+<meta property="og:updated_time" content="2016-08-15T14:51:46.251Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android笔记-Retrofit">
+<meta name="twitter:image" content="http://ob5qdb9lc.bkt.clouddn.com/faf2b2119313b07eb36f89b10dd7912396dd8cbd.jpg">
+
+
+  <link rel="alternative" href="/atom.xml" title="Be Level5 Coder" type="application/atom+xml">
+
+
+
+  <link rel="icon" href="/favicon.png">
+
+
+<link rel="stylesheet" href="/perfect-scrollbar/css/perfect-scrollbar.min.css">
+<link rel="stylesheet" href="/styles/main.css">
+
+
+
+
+
+
+</head>
+<body
+  
+  >
+  <div class="mobile-header">
+  <button class="sidebar-toggle" type="button">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a class="title" href="/">Be Level5 Coder</a>
+</div>
+
+  <div class="main-container">
+    <div class="sidebar">
+  <div class="header">
+    <h1 class="title"><a href="/">Be Level5 Coder</a></h1>
+    
+    <div class="info">
+      <div class="content">
+        
+        
+          <div class="author">Sion</div>
+        
+      </div>
+      
+        <div class="avatar">
+          
+            <img src="http://ob5qdb9lc.bkt.clouddn.com/my_avatar.jpg">
+          
+        </div>
+      
+    </div>
+  </div>
+  <div class="body">
+    
+      
+        <ul class="nav">
+          
+            
+              <li class="category-list-container">
+                <a href="javascript:;">分类</a>
+                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android笔记/">Android笔记</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java笔记/">Java笔记</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TCP-IP笔记/">TCP/IP笔记</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统笔记/">操作系统笔记</a><span class="category-list-count">1</span></li></ul>
+              </li>
+            
+          
+            
+              <li class="tag-list-container">
+                <a href="javascript:;">标签</a>
+                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Other/">Other</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP-IP/">TCP/IP</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a><span class="tag-list-count">1</span></li></ul>
+              </li>
+            
+          
+            
+              <li class="archive-list-container">
+                <a href="javascript:;">归档</a>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a><span class="archive-list-count">32</span></li></ul>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="/" title="Homepage">Homepage</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/archives" title="By Year">By Year</a>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="https://github.com/liaosiyang" title="Github" target="_blank" rel="external">Github</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/atom.xml" title="RSS">RSS</a>
+              </li>
+            
+          
+        </ul>
+      
+    
+  </div>
+</div>
+
+    <div class="main-content">
+      
+        <div style="max-width: 1000px">
+      
+          <article id="post-Android笔记-Retrofit" class="article article-type-post">
+  
+    <h1 class="article-header">
+      Android笔记-Retrofit
+    </h1>
+  
+  
+
+  <div class="article-info">
+    <span class="article-date">
+  2016-08-15
+</span>
+
+    
+	<span class="article-category tagcloud">
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Android笔记/">Android笔记</a></li></ul>
+	</span>
+
+
+    
+	<span class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+	</span>
+
+
+  </div>
+  <div class="article-entry">
+    <p><img src="http://ob5qdb9lc.bkt.clouddn.com/faf2b2119313b07eb36f89b10dd7912396dd8cbd.jpg" alt="Image"></p>
+<a id="more"></a>
+<h1 id="Retrofit"><a href="#Retrofit" class="headerlink" title="Retrofit"></a>Retrofit</h1><p>Retrofit 是一个 RESTful 的 HTTP 网络请求框架的封装。注意这里并没有说它是网络请求框架，主要原因在于网络请求的工作并不是 Retrofit 来完成的。 Retrofit 2.0 开始内置 OkHttp ，前者专注于接口的封装，后者专注于网络请求的高效，二者分工协作。</p>
+<p>REST 指的是一组架构约束条件和原则。满足这些约束条件和原则的应用程序或设计就是 RESTful。<br><a href="http://blog.igevin.info/posts/restful-architecture-in-general/" target="_blank" rel="external">RESTful 架构风格概述</a></p>
+<p>我们的应用程序通过 Retrofit 请求网络，实际上是使用 Retrofit 接口层封装请求参数、Header、Url 等信息，之后由 OkHttp 完成后续的请求操作，在服务端返回数据之后， OkHttp 将原始的结果交给 Retrofit ，后者根据用户的需求对结果进行解析的过程。</p>
+<h1 id="Retrofit-的基本用法"><a href="#Retrofit-的基本用法" class="headerlink" title="Retrofit 的基本用法"></a>Retrofit 的基本用法</h1><p>访问 GitHub 的 api，就定义一个接口：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">GitHubService</span> </span>&#123;  <span class="meta">@GET</span>(<span class="string">"users/&#123;user&#125;/repos"</span>)</div><div class="line">    Call&lt;List&lt;Repo&gt;&gt; listRepos(<span class="meta">@Path</span>(<span class="string">"user"</span>) String user);</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>其中，在发起请求时， {user} 会被替换为方法的第一个参数 user 。</p>
+<p>构造 Retrofit：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Retrofit retrofit = <span class="keyword">new</span> Retrofit.Builder()</div><div class="line">.baseUrl(<span class="string">"https://api.github.com/"</span>)</div><div class="line">.build();</div><div class="line">GitHubService service = retrofit.create(GitHubService.class);</div></pre></td></tr></table></figure><br>发送请求：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Call&lt;List&lt;Repo&gt;&gt; repos = service.listRepos(<span class="string">"octocat"</span>);</div></pre></td></tr></table></figure><br>repos 其实并不是真正的数据结果，它更像一条指令，你可以在合适的时机去执行它：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//同步调用</span></div><div class="line">List&lt;Repo&gt; data=repos.execute();</div><div class="line"></div><div class="line"><span class="comment">//异步调用</span></div><div class="line">repos.enquene(<span class="keyword">new</span> Callback&lt;List&lt;Repo&gt;&gt;()&#123;</div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onResponse</span><span class="params">(Call&lt;List&lt;Repo&gt;&gt; call, Response&lt;List&lt;Reps&gt;&gt; response)</span></span>&#123;</div><div class="line">               List&lt;Reps&gt; data=response.body();</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onFailure</span><span class="params">(Call&lt;List&lt;Repo&gt;&gt; call,Throwable t)</span></span>&#123;</div><div class="line">               t.printStackTrace();</div><div class="line">        &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>  </p>
+<h2 id="Url-配置"><a href="#Url-配置" class="headerlink" title="Url 配置"></a>Url 配置</h2><p>Retrofit 支持的协议包括 GET / POST / PUT / DELETE / HEAD / PATCH ，当然你也可以直接用 HTTP 来自定义请求。这些协议均以注解的形式进行配置。</p>
+<h2 id="参数类型"><a href="#参数类型" class="headerlink" title="参数类型"></a>参数类型</h2><p>发请求时，需要传入参数， Retrofit 通过注解的形式令 Http 请求的参数变得更加直接，而且类型安全。</p>
+<h2 id="Converter"><a href="#Converter" class="headerlink" title="Converter"></a>Converter</h2><p>Retrofit 允许我们自己定义入参和返回的类型，不过，如果这些类型比较特别，我们还需要准备相应的 Converter，也正是因为 Converter 的存在， Retrofit 在入参和返回类型上表现得非常灵活。</p>
+<h1 id="Retrofit-原理"><a href="#Retrofit-原理" class="headerlink" title="Retrofit 原理"></a>Retrofit 原理</h1><h2 id="接口请求的处理"><a href="#接口请求的处理" class="headerlink" title="接口请求的处理"></a>接口请求的处理</h2><p>Retrofit 创建的一个代理对象<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> &lt;T&gt; <span class="function">T <span class="title">create</span><span class="params">(<span class="keyword">final</span> Class&lt;T&gt; service)</span> </span>&#123;</div><div class="line">    Utils.validateServiceInterface(service);</div><div class="line">    <span class="keyword">if</span> (validateEagerly) &#123;</div><div class="line">        eagerlyValidateMethods(service);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> (T) Proxy.newProxyInstance(service.getClassLoader(), <span class="keyword">new</span> Class&lt;?&gt;[] &#123; service &#125;,</div><div class="line">        <span class="keyword">new</span> InvocationHandler() &#123;</div><div class="line">            <span class="keyword">private</span> <span class="keyword">final</span> Platform platform = Platform.get();</div><div class="line"></div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> Object <span class="title">invoke</span><span class="params">(Object proxy, Method method, Object... args)</span></span></div><div class="line">        <span class="keyword">throws</span> Throwable &#123;</div><div class="line">            <span class="comment">// If the method is a method from Object then defer to normal invocation.</span></div><div class="line">                <span class="keyword">if</span> (method.getDeclaringClass() == Object.class) &#123;</div><div class="line">                    <span class="keyword">return</span> method.invoke(<span class="keyword">this</span>, args);</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">if</span> (platform.isDefaultMethod(method)) &#123;</div><div class="line">                    <span class="keyword">return</span> platform.invokeDefaultMethod(method, service, proxy, args);</div><div class="line">                &#125;</div><div class="line">                ServiceMethod serviceMethod = loadServiceMethod(method);</div><div class="line">                OkHttpCall okHttpCall = <span class="keyword">new</span> OkHttpCall&lt;&gt;(serviceMethod, args);</div><div class="line">                <span class="keyword">return</span> serviceMethod.callAdapter.adapt(okHttpCall);</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>在我们调用 GitHubService.listRepos 时，实际上调用的是这里的 InvocationHandler.invoke 方法。</p>
+<h2 id="请求处理流程"><a href="#请求处理流程" class="headerlink" title="请求处理流程"></a>请求处理流程</h2><p>Retrofit 为我们构造了一个 OkHttpCall ，实际上每一个 OkHttpCall 都对应于一个请求，它主要完成最基础的网络请求，而我们在接口的返回中看到的 Call 默认情况下就是 OkHttpCall 了，如果我们添加了自定义的 callAdapter ，那么它就会将 OkHttp 适配成我们需要的返回值，并返回给我们。</p>
+<p>Call 的接口：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Call</span>&lt;<span class="title">T</span>&gt; <span class="keyword">extends</span> <span class="title">Cloneable</span> </span>&#123;  </div><div class="line">    <span class="comment">//同步发起请求</span></div><div class="line">    <span class="function">Response&lt;T&gt; <span class="title">execute</span><span class="params">()</span> <span class="keyword">throws</span> IOException</span>;  </div><div class="line">    <span class="comment">//异步发起请求，结果通过回调返回</span></div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">enqueue</span><span class="params">(Callback&lt;T&gt; callback)</span></span>;  </div><div class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">isExecuted</span><span class="params">()</span></span>;  </div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">cancel</span><span class="params">()</span></span>;  </div><div class="line">     <span class="function"><span class="keyword">boolean</span> <span class="title">isCanceled</span><span class="params">()</span></span>;  </div><div class="line">    <span class="function">Call&lt;T&gt; <span class="title">clone</span><span class="params">()</span></span>;  </div><div class="line">    <span class="comment">//返回原始请求</span></div><div class="line">    <span class="function">Request <span class="title">request</span><span class="params">()</span></span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>前面repos 其实就是一个 OkHttpCall 实例， execute 就是要发起网络请求。</p>
+<p>OkHttpCall.execute：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">  <span class="meta">@Override</span> <span class="function"><span class="keyword">public</span> Response&lt;T&gt; <span class="title">execute</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;</div><div class="line">okhttp3.Call call;</div><div class="line"></div><div class="line"><span class="keyword">synchronized</span> (<span class="keyword">this</span>) &#123;</div><div class="line">  <span class="keyword">if</span> (executed) <span class="keyword">throw</span> <span class="keyword">new</span> IllegalStateException(<span class="string">"Already executed."</span>);</div><div class="line">  executed = <span class="keyword">true</span>;</div><div class="line"></div><div class="line">  <span class="keyword">if</span> (creationFailure != <span class="keyword">null</span>) &#123;</div><div class="line">    <span class="keyword">if</span> (creationFailure <span class="keyword">instanceof</span> IOException) &#123;</div><div class="line">      <span class="keyword">throw</span> (IOException) creationFailure;</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">      <span class="keyword">throw</span> (RuntimeException) creationFailure;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  call = rawCall;</div><div class="line">  <span class="keyword">if</span> (call == <span class="keyword">null</span>) &#123;</div><div class="line">    <span class="keyword">try</span> &#123;</div><div class="line">      call = rawCall = createRawCall();</div><div class="line">    &#125; <span class="keyword">catch</span> (IOException | RuntimeException e) &#123;</div><div class="line">      creationFailure = e;</div><div class="line">      <span class="keyword">throw</span> e;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">if</span> (canceled) &#123;</div><div class="line">  call.cancel();</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">return</span> parseResponse(call.execute());</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>OkHttpCall 其实也是封装了 okhttp3.Call。<br>parseResponse 主要完成了由 okhttp3.Response 向 retrofit.Response 的转换，同时也处理了对原始返回的解析：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">    <span class="function">Response&lt;T&gt; <span class="title">parseResponse</span><span class="params">(okhttp3.Response rawResponse)</span> <span class="keyword">throws</span> IOException </span>&#123;</div><div class="line">    ResponseBody rawBody = rawResponse.body();    </div><div class="line"></div><div class="line">    <span class="comment">//略掉一些代码</span></div><div class="line">    <span class="keyword">try</span> &#123;      </div><div class="line">    <span class="comment">//在这里完成了原始 Response 的解析，T 就是我们想要的结果，比如 GitHubService.listRepos 的 List&lt;Repo&gt;</span></div><div class="line">        T body = serviceMethod.toResponse(catchingBody);      </div><div class="line">        <span class="keyword">return</span> Response.success(body, rawResponse);</div><div class="line">    &#125; <span class="keyword">catch</span> (RuntimeException e) &#123;      </div><div class="line">        <span class="comment">// If the underlying source threw an exception, propagate that rather than indicating it was</span></div><div class="line">        <span class="comment">// a runtime exception.</span></div><div class="line">        catchingBody.throwIfCaught();      </div><div class="line">        <span class="keyword">throw</span> e;</div><div class="line">    &#125;   </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="适配RxJava"><a href="#适配RxJava" class="headerlink" title="适配RxJava"></a>适配RxJava</h2><p>只需要提供一个 Adapter，将 OkHttpCall 转换为 Observable 即可。 Retrofit 的开发者们早就想到了这个问题，并且为我们提供了相应的 Adapter：RxJavaCallAdapterFactory<br>我们只需要在构造 Retrofit 时，添加它：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">addCallAdapterFactory(RxJavaCallAdapterFactory.create())</div></pre></td></tr></table></figure><br>这样我们的接口就可以以 RxJava 的方式工作了。</p>
+<p>同样，还可以添加Gson,将网络传输回的数据直接转化成Java类的形式。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">addConverterFactory(GsonConverterFactory.create())</div></pre></td></tr></table></figure></p>
+<p>参考资料：<br><a href="http://www.tuicool.com/articles/bIFvIfY" target="_blank" rel="external">深入浅出 Retrofit，这么牛逼的框架你们还不来看看？</a></p>
+
+  </div>
+  <footer class="article-footer">
+    
+
+    
+
+  </footer>
+</article>
+
+
+  <link rel="stylesheet" href="http://static.duoshuo.com/styles/embed.default.css?349d9313.css">
+  <!-- 多说评论框 start -->
+  <div class="ds-thread" data-thread-key="2016/08/15/Android笔记-Retrofit/" data-title="Android笔记-Retrofit" data-url="/2016/08/15/Android笔记-Retrofit/"></div>
+  <!-- 多说评论框 end -->
+  <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+  <script type="text/javascript">
+    var duoshuoQuery = {
+      short_name: "SION"
+    };
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';
+      ds.async = true;
+      ds.src = (document.location.protocol == 'https:'
+        ? 'https:'
+        : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+  <!-- 多说公共JS代码 end -->
+
+
+
+
+
+
+          <div class="main-footer">
+  
+    © 2016 Be Level5 Coder - Powered by <a href="http://hexo.io" target="_blank">Hexo</a> - Theme <a href="https://github.com/denjones/hexo-theme-chan" target="_blank">Chan</a>
+  
+</div>
+
+      
+        </div>
+      
+    </div>
+  </div>
+  <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="/PhotoSwipe/photoswipe.css">
+  <link rel="stylesheet" href="/PhotoSwipe/default-skin/default-skin.css">
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+             It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+      <!-- Container that holds slides.
+                PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                Don't modify these 3 pswp__item elements, data is added later on. -->
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+
+      <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+      <div class="pswp__ui pswp__ui--hidden">
+
+        <div class="pswp__top-bar">
+
+          <!--  Controls are self-explanatory. Order can be changed. -->
+
+          <div class="pswp__counter"></div>
+
+          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+          <button class="pswp__button pswp__button--share" title="Share"></button>
+
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+          <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+          <!-- element will get class pswp__preloader--active when preloader is running -->
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div>
+
+        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/PhotoSwipe/photoswipe.js"></script>
+  <script src="/PhotoSwipe/photoswipe-ui-default.js"></script>
+
+
+<script src="/perfect-scrollbar/js/min/perfect-scrollbar.min.js"></script>
+<script src="/scripts/main.js"></script>
+
+</body>
+</html>

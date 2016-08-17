@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<title>
+  
+    Android笔记-Android多线程
+  
+</title>
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android笔记-Android多线程">
+<meta property="og:url" content="http://yoursite.com/2016/08/12/Android笔记-Android多线程/index.html">
+<meta property="og:site_name" content="Be Level5 Coder">
+<meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/a8b3c133c895d14338e284af73f082025baf07be.jpg">
+<meta property="og:updated_time" content="2016-08-12T11:52:56.365Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android笔记-Android多线程">
+<meta name="twitter:image" content="http://ob5qdb9lc.bkt.clouddn.com/a8b3c133c895d14338e284af73f082025baf07be.jpg">
+
+
+  <link rel="alternative" href="/atom.xml" title="Be Level5 Coder" type="application/atom+xml">
+
+
+
+  <link rel="icon" href="/favicon.png">
+
+
+<link rel="stylesheet" href="/perfect-scrollbar/css/perfect-scrollbar.min.css">
+<link rel="stylesheet" href="/styles/main.css">
+
+
+
+
+
+
+</head>
+<body
+  
+  >
+  <div class="mobile-header">
+  <button class="sidebar-toggle" type="button">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a class="title" href="/">Be Level5 Coder</a>
+</div>
+
+  <div class="main-container">
+    <div class="sidebar">
+  <div class="header">
+    <h1 class="title"><a href="/">Be Level5 Coder</a></h1>
+    
+    <div class="info">
+      <div class="content">
+        
+        
+          <div class="author">Sion</div>
+        
+      </div>
+      
+        <div class="avatar">
+          
+            <img src="http://ob5qdb9lc.bkt.clouddn.com/my_avatar.jpg">
+          
+        </div>
+      
+    </div>
+  </div>
+  <div class="body">
+    
+      
+        <ul class="nav">
+          
+            
+              <li class="category-list-container">
+                <a href="javascript:;">分类</a>
+                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android笔记/">Android笔记</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java笔记/">Java笔记</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TCP-IP笔记/">TCP/IP笔记</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统笔记/">操作系统笔记</a><span class="category-list-count">1</span></li></ul>
+              </li>
+            
+          
+            
+              <li class="tag-list-container">
+                <a href="javascript:;">标签</a>
+                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Other/">Other</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP-IP/">TCP/IP</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a><span class="tag-list-count">1</span></li></ul>
+              </li>
+            
+          
+            
+              <li class="archive-list-container">
+                <a href="javascript:;">归档</a>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a><span class="archive-list-count">32</span></li></ul>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="/" title="Homepage">Homepage</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/archives" title="By Year">By Year</a>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="https://github.com/liaosiyang" title="Github" target="_blank" rel="external">Github</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/atom.xml" title="RSS">RSS</a>
+              </li>
+            
+          
+        </ul>
+      
+    
+  </div>
+</div>
+
+    <div class="main-content">
+      
+        <div style="max-width: 1000px">
+      
+          <article id="post-Android笔记-Android多线程" class="article article-type-post">
+  
+    <h1 class="article-header">
+      Android笔记-Android多线程
+    </h1>
+  
+  
+
+  <div class="article-info">
+    <span class="article-date">
+  2016-08-12
+</span>
+
+    
+	<span class="article-category tagcloud">
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Android笔记/">Android笔记</a></li></ul>
+	</span>
+
+
+    
+	<span class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+	</span>
+
+
+  </div>
+  <div class="article-entry">
+    <p><img src="http://ob5qdb9lc.bkt.clouddn.com/a8b3c133c895d14338e284af73f082025baf07be.jpg" alt="Image"></p>
+<a id="more"></a>
+<h1 id="Android多线程"><a href="#Android多线程" class="headerlink" title="Android多线程"></a>Android多线程</h1><p>众所周知，Android 程序的大多数代码操作都必须执行在主线程，例如系统事件(例如设备屏幕发生旋转)，输入事件(例如用户点击滑动等)，程序回调服务，UI绘制以及闹钟事件等等。那么我们在上述事件或者方法中插入的代码也将执行在主线程。</p>
+<p>一旦我们在主线程里面添加了操作复杂的代码，这些代码就很可能阻碍主线程去响应点击/滑动事件，阻碍主线程的 UI 绘制等等。我们知道，为了让屏幕的刷新帧率达到 60fps，我们需要确保 16ms 内完成单次刷新的操作。</p>
+<p>一旦我们在主线程里面执行的任务过于繁重就可能导致接收到刷新信号的时候因为资源被占用而无法完成这次刷新操作，这样就会产生掉帧的现象，刷新帧率自然也就跟着下降了。</p>
+<p>为了避免上面提到的掉帧问题，我们需要使用多线程的技术方案，把那些操作复杂的任务移动到其他线程当中执行，这样就不容易阻塞主线程的操作，也就减小了出现掉帧的可能性。</p>
+<p>Android 系统为我们提供了若干组工具类来帮助解决这个问题。</p>
+<ul>
+<li>AsyncTask: 为 UI 线程与工作线程之间进行快速的切换提供一种简单便捷的机制。适用于当下立即需要启动，但是异步执行的生命周期短暂的使用场景。</li>
+<li>HandlerThread: 为某些回调方法或者等待某些任务的执行设置一个专属的线程，并提供线程任务的调度机制。</li>
+<li>ThreadPool: 把任务分解成不同的单元，分发到各个不同的线程上，进行同时并发处理。</li>
+<li>IntentService: 适合于执行由 UI 触发的后台 Service任务，并可以把后台任务执行的情况通过一定的机制反馈给 UI。</li>
+</ul>
+<p>通常来说，一个线程需要经历三个生命阶段：开始，执行，结束。线程会在任务执行完毕之后结束，那么为了确保线程的存活，我们会在执行阶段给线程赋予不同的任务，然后在里面添加退出的条件从而确保任务能够执行完毕后退出。</p>
+<p>在很多时候，线程不仅仅是线性执行一系列的任务就结束那么简单的，我们会需要增加一个任务队列，让线程不断的从任务队列中获取任务去进行执行，另外我们还可能在线程执行的任务过程中与其他的线程进行协作。如果这些细节都交给我们自己来处理，这将会是件极其繁琐又容易出错的事情。</p>
+<p>Android 系统为我们提供了 Looper，Handler，MessageQueue 来帮助实现上面的线程任务模型(Handler机制)。</p>
+<p><br></p>
+<h1 id="多线程与内存"><a href="#多线程与内存" class="headerlink" title="多线程与内存"></a>多线程与内存</h1><p>增加并发的线程数会导致内存消耗的增加，平衡好这两者的关系是非常重要的。我们知道，多线程并发访问同一块内存区域有可能带来很多问题，例如读写的权限争夺问题，ABA问题等等。为了解决这些问题，我们会需要引入锁的概念。</p>
+<p>在 Android 系统中也无法避免因为多线程的引入而导致出现诸如上文提到的种种问题。Android UI 对象的创建，更新，销毁等等操作都默认是执行在主线程，但是如果我们在非主线程对UI对象进行操作，程序将可能出现异常甚至是崩溃。</p>
+<p>另外，在非 UI 线程中直接持有 UI 对象的引用也很可能出现问题。例如Work线程中持有某个 UI 对象的引用，在 Work 线程执行完毕之前，UI 对象在主线程中被从 ViewHierarchy 中移除了，这个时候 UI 对象的任何属性都已经不再可用了，另外对这个 UI 对象的更新操作也都没有任何意义了，因为它已经从 ViewHierarchy 中被移除，不再绘制到画面上了。</p>
+<p>不仅如此，View 对象本身对所属的 Activity 是有引用关系的，如果工作线程持续保有 View 的引用，这就可能导致 Activity无法完全释放。除了直接显式的引用关系可能导致内存泄露之外，我们还需要特别留意隐式的引用关系也可能导致泄露。</p>
+<p>为了解决上面的问题，我们需要谨记的原则就是：不要在任何非 UI 线程里面去持有 UI 对象的引用。系统为了确保所有的 UI 对象都只会被 UI 线程所进行创建，更新，销毁的操作，特地设计了对应的工作机制(当 Activity 被销毁的时候，由该 Activity 所触发的非 UI 线程都将无法对UI对象进行操作，否者就会抛出程序执行异常的错误)来防止 UI 对象被错误的使用。</p>
+<p><br></p>
+<h1 id="线程调度"><a href="#线程调度" class="headerlink" title="线程调度"></a>线程调度</h1><ul>
+<li>Android系统基于精简过后的linux内核，其线程的调度受时间片轮转和优先级控制等诸多因素影响。</li>
+<li>Linux系统的调度器在分配time slice的时候，采用的CFS（completely fair scheduler）策略。这种策略不但会参考单个线程的优先级，还会追踪每个线程已经获取到的time slice数量，如果高优先级的线程已经执行了很长时间，但低优先级的线程一直在等待，后续系统会保证低优先级的线程也能获取更多的CPU时间。显然使用这种调度策略的话，优先级高的线程并不一定能在争取time slice上有绝对的优势，所以Android系统在线程调度上使用了cgroups的概念，cgroups能更好的凸显某些线程的重要性，使得优先级更高的线程明确的获取到更多的time slice。</li>
+<li>Android将线程分为多个group，其中两类group尤其重要。一类是default group，UI线程属于这一类。另一类是background group，工作线程应该归属到这一类。background group当中所有的线程加起来总共也只能分配到5～10%的time slice，剩下的全部分配给default group，这样设计显然能保证UI线程绘制UI的流畅性。</li>
+</ul>
+<p><br></p>
+<h1 id="AsyncTask"><a href="#AsyncTask" class="headerlink" title="AsyncTask"></a>AsyncTask</h1><p>一个典型的AsyncTask实现如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyAsyncTask</span> <span class="keyword">extends</span> <span class="title">AsyncTask</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> Object <span class="title">doInBackground</span><span class="params">(Object[] params)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onPreExecute</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onPreExecute();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onPostExecute</span><span class="params">(Object o)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onPostExecute(o);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>和使用Thread()不同的是，多了几处API回调来严格规范工作线程与UI线程之间的交互。我们大部分的业务场景几乎都符合这种规范，比如去磁盘读取图片，缩放处理需要在工作线程执行，最后绘制到ImageView控件需要切换到UI线程。</p>
+<p>举个例子，常遇到的一个典型的使用场景：用户切换到某个界面，触发了界面上的图片的加载操作，因为图片的加载相对来说耗时比较长，我们需要在子线程中处理图片的加载，当图片在子线程中处理完成之后，再把处理好的图片返回给主线程，交给 UI 更新到画面上。</p>
+<p>AsyncTask 的出现就是为了快速的实现上面的使用场景，AsyncTask 把在主线程里面的准备工作放到 onPreExecute()方法里面进行执行，doInBackground()方法执行在工作线程中，用来处理那些繁重的任务，一旦任务执行完毕，就会调用 onPostExecute()方法返回到主线程。</p>
+<p>AsyncTask 的内部实现主要就是封装了一个可以串行执行任务的 Executor 以及处理线程间消息传递的 Handler，极大的简化了异步任务的处理。</p>
+<p>使用 AsyncTask 需要注意的问题有哪些呢?请关注以下几点：</p>
+<ul>
+<li><p>首先，默认情况下，所有的 AsyncTask 任务都是被线性调度执行的，他们处在同一个任务队列当中，按顺序逐个执行。假设你按照顺序启动20个 AsyncTask，一旦其中的某个 AsyncTask 执行时间过长，队列中的其他剩余 AsyncTask 都处于阻塞状态，必须等到该任务执行完毕之后才能够有机会执行下一个任务。</p>
+<p>为了解决上面提到的线性队列等待的问题，我们可以使用 AsyncTask.executeOnExecutor()强制指定 AsyncTask 使用线程池并发调度任务。</p>
+</li>
+</ul>
+<ul>
+<li><p>其次，如何才能够真正的取消一个 AsyncTask 的执行呢?我们知道 AsyncTaks 有提供 cancel()的方法，但是这个方法实际上做了什么事情呢?线程本身并不具备中止正在执行的代码的能力，为了能够让一个线程更早的被销毁，我们需要在 doInBackground()的代码中不断的添加程序是否被中止的判断逻辑。<br>一旦任务被成功中止，AsyncTask 就不会继续调用 onPostExecute()，而是通过调用 onCancelled()的回调方法反馈任务执行取消的结果。</p>
+</li>
+<li><p>最后，使用 AsyncTask 很容易导致内存泄漏，一旦把 AsyncTask 写成 Activity 的内部类的形式就很容易因为 AsyncTask 生命周期的不确定而导致 Activity 发生泄漏。</p>
+</li>
+</ul>
+<p><br></p>
+<h1 id="HandlerThread"><a href="#HandlerThread" class="headerlink" title="HandlerThread"></a>HandlerThread</h1><p>在需要对多任务做更精细控制，线程切换更频繁的场景之下，Thread()和AsyncTask都会显得力不从心。HandlerThread却能胜任这些需求甚至更多。</p>
+<p>HandlerThread将Handler，Thread，Looper，MessageQueue几个概念相结合。Handler是线程对外的接口，所有新的message或者runnable都通过handler post到工作线程。Looper在MessageQueue取到新的任务就切换到工作线程去执行。不同的post方法可以让我们对任务做精细的控制，什么时候执行，执行的顺序都可以控制。HandlerThread最大的优势在于引入MessageQueue概念，可以进行多任务队列管理。</p>
+<p>HandlerThread背后只有一个线程，所以任务是串行执行的。串行相对于并行来说更安全，各任务之间不会存在多线程安全问题。</p>
+<p>HandlerThread所产生的线程会一直存活，Looper会在该线程中持续的检查MessageQueue。这一点和Thread()，AsyncTask都不同，thread实例的重用可以避免线程相关的对象的频繁重建和销毁。</p>
+<p>另外很重要的一点是，一旦我们使用了 HandlerThread，需要特别注意给 HandlerThread 设置不同的线程优先级，CPU 会根据设置的不同线程优先级对所有的线程进行调度优化。</p>
+<p><br></p>
+<h1 id="ThreadPoolExecutor"><a href="#ThreadPoolExecutor" class="headerlink" title="ThreadPoolExecutor"></a>ThreadPoolExecutor</h1><p>Thread(),AsyncTask适合处理单个任务的场景，HandlerThread适合串行处理多任务的场景。当需要并行的处理多任务之时，ThreadPoolExecutor是更好的选择。</p>
+<p>使用线程池需要特别注意同时并发线程数量的控制，理论上来说，我们可以设置任意你想要的并发数量，但是这样做非常的不好。因为 CPU 只能同时执行固定数量的线程数，一旦同时并发的线程数量超过 CPU 能够同时执行的阈值，CPU 就需要花费精力来判断到底哪些线程的优先级比较高，需要在不同的线程之间进行调度切换。</p>
+<p>一旦同时并发的线程数量达到一定的量级，这个时候 CPU 在不同线程之间进行调度的时间就可能过长，反而导致性能严重下降。另外需要关注的一点是，每开一个新的线程，都会耗费至少 64K+ 的内存。为了能够方便的对线程数量进行控制，ThreadPoolExecutor 为我们提供了初始化的并发线程数量，以及最大的并发数量进行设置。</p>
+<p>另外需要关注的一个问题是：Runtime.getRuntime().availableProcesser()方法并不可靠，他返回的值并不是真实的 CPU 核心数，因为 CPU 会在某些情况下选择对部分核心进行睡眠处理，在这种情况下，返回的数量就只能是激活的 CPU 核心数。</p>
+<p><br></p>
+<h1 id="IntentService"><a href="#IntentService" class="headerlink" title="IntentService"></a>IntentService</h1><p>IntentService 继承自普通 Service 同时又在内部创建了一个 HandlerThread，在 onHandlerIntent()的回调里面处理扔到 IntentService 的任务。所以 IntentService 就不仅仅具备了异步线程的特性，还同时保留了 Service 不受主页面生命周期影响的特点。</p>
+<p>我们可以在 IntentService 里面通过设置闹钟间隔性的触发异步任务，例如刷新数据，更新缓存的图片或者是分析用户操作行为等等，当然处理这些任务需要小心谨慎。</p>
+<p>使用 IntentService 需要特别留意以下几点：</p>
+<ul>
+<li>首先，因为 IntentService 内置的是 HandlerThread 作为异步线程，所以每一个交给 IntentService 的任务都将以队列的方式逐个被执行到，一旦队列中有某个任务执行时间过长，那么就会导致后续的任务都会被延迟处理。</li>
+<li>其次，通常使用到 IntentService 的时候，我们会结合使用 BroadcastReceiver 把工作线程的任务执行结果返回给主 UI 线程。使用广播容易引起性能问题，我们可以使用 LocalBroadcastManager 来发送只在程序内部传递的广播，从而提升广播的性能。我们也可以使用 runOnUiThread() 快速回调到主 UI 线程。</li>
+<li>最后，包含正在运行的 IntentService 的程序相比起纯粹的后台程序更不容易被系统杀死，该程序的优先级是介于前台程序与纯后台程序之间的。</li>
+</ul>
+<p><br></p>
+<h1 id="Loader"><a href="#Loader" class="headerlink" title="Loader"></a>Loader</h1><p>Activity 有可能因为用户的主动切换而频繁的被创建与销毁，也有可能是因为类似屏幕发生旋转等被动原因而销毁再重建。在 Activity 不停的创建与销毁的过程当中，很有可能因为工作线程持有 Activity 的 View 而导致内存泄漏(因为工作线程很可能持有 View 的强引用，另外工作线程的生命周期还无法保证和 Activity 的生命周期一致，这样就容易发生内存泄漏了)。</p>
+<p>Loader 的出现就是为了确保工作线程能够和 Activity 的生命周期保持一致，同时避免出现前面提到的问题。</p>
+<p>LoaderManager 会对查询的操作进行缓存，只要对应 Cursor 上的数据源没有发生变化，在配置信息发生改变的时候(例如屏幕的旋转)，Loader 可以直接把缓存的数据回调到 onLoadFinished()，从而避免重新查询数据。另外系统会在 Loader 不再需要使用到的时候(例如使用 Back 按钮退出当前页面)回调 onLoaderReset()方法，我们可以在这里做数据的清除等等操作。</p>
+<ul>
+<li>LoaderManager 来管理我们的laoder实例，获取，初始化，重启一个loader。</li>
+<li>Loader 来执行我们的异步操作，有开始，完成，后台加载中等接口实现。</li>
+<li>LoaderCallbacks 来执行我们的loader回调，主要是绑定分发Loader，完成加载，重置数据等。</li>
+</ul>
+<p>参考资料：<br><a href="http://www.androidchina.net/5238.html?sukey=3997c0719f1515202fb25b1b408e219206e39e105e1e1203c8dee51645ecddb38f3cf762488f5fdb111f656e0f2997c9" target="_blank" rel="external">Android 线程的正确使用姿势</a><br><a href="http://www.2cto.com/kf/201605/511009.html" target="_blank" rel="external">Android性能优化典范之多线程篇</a></p>
+
+  </div>
+  <footer class="article-footer">
+    
+
+    
+
+  </footer>
+</article>
+
+
+  <link rel="stylesheet" href="http://static.duoshuo.com/styles/embed.default.css?349d9313.css">
+  <!-- 多说评论框 start -->
+  <div class="ds-thread" data-thread-key="2016/08/12/Android笔记-Android多线程/" data-title="Android笔记-Android多线程" data-url="/2016/08/12/Android笔记-Android多线程/"></div>
+  <!-- 多说评论框 end -->
+  <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+  <script type="text/javascript">
+    var duoshuoQuery = {
+      short_name: "SION"
+    };
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';
+      ds.async = true;
+      ds.src = (document.location.protocol == 'https:'
+        ? 'https:'
+        : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+  <!-- 多说公共JS代码 end -->
+
+
+
+
+
+
+          <div class="main-footer">
+  
+    © 2016 Be Level5 Coder - Powered by <a href="http://hexo.io" target="_blank">Hexo</a> - Theme <a href="https://github.com/denjones/hexo-theme-chan" target="_blank">Chan</a>
+  
+</div>
+
+      
+        </div>
+      
+    </div>
+  </div>
+  <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="/PhotoSwipe/photoswipe.css">
+  <link rel="stylesheet" href="/PhotoSwipe/default-skin/default-skin.css">
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+             It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+      <!-- Container that holds slides.
+                PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                Don't modify these 3 pswp__item elements, data is added later on. -->
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+
+      <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+      <div class="pswp__ui pswp__ui--hidden">
+
+        <div class="pswp__top-bar">
+
+          <!--  Controls are self-explanatory. Order can be changed. -->
+
+          <div class="pswp__counter"></div>
+
+          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+          <button class="pswp__button pswp__button--share" title="Share"></button>
+
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+          <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+          <!-- element will get class pswp__preloader--active when preloader is running -->
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div>
+
+        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/PhotoSwipe/photoswipe.js"></script>
+  <script src="/PhotoSwipe/photoswipe-ui-default.js"></script>
+
+
+<script src="/perfect-scrollbar/js/min/perfect-scrollbar.min.js"></script>
+<script src="/scripts/main.js"></script>
+
+</body>
+</html>

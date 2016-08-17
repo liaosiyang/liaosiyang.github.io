@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<title>
+  
+    Java笔记-动态代理、Javac编译器、Java语法糖、运行期优化
+  
+</title>
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java笔记-动态代理、Javac编译器、Java语法糖、运行期优化">
+<meta property="og:url" content="http://yoursite.com/2016/08/05/Java笔记-动态代理、Javac编译器、Java语法糖、运行期优化/index.html">
+<meta property="og:site_name" content="Be Level5 Coder">
+<meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/ping_ze_wei_6.jpg">
+<meta property="og:updated_time" content="2016-08-12T14:26:22.254Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java笔记-动态代理、Javac编译器、Java语法糖、运行期优化">
+<meta name="twitter:image" content="http://ob5qdb9lc.bkt.clouddn.com/ping_ze_wei_6.jpg">
+
+
+  <link rel="alternative" href="/atom.xml" title="Be Level5 Coder" type="application/atom+xml">
+
+
+
+  <link rel="icon" href="/favicon.png">
+
+
+<link rel="stylesheet" href="/perfect-scrollbar/css/perfect-scrollbar.min.css">
+<link rel="stylesheet" href="/styles/main.css">
+
+
+
+
+
+
+</head>
+<body
+  
+  >
+  <div class="mobile-header">
+  <button class="sidebar-toggle" type="button">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a class="title" href="/">Be Level5 Coder</a>
+</div>
+
+  <div class="main-container">
+    <div class="sidebar">
+  <div class="header">
+    <h1 class="title"><a href="/">Be Level5 Coder</a></h1>
+    
+    <div class="info">
+      <div class="content">
+        
+        
+          <div class="author">Sion</div>
+        
+      </div>
+      
+        <div class="avatar">
+          
+            <img src="http://ob5qdb9lc.bkt.clouddn.com/my_avatar.jpg">
+          
+        </div>
+      
+    </div>
+  </div>
+  <div class="body">
+    
+      
+        <ul class="nav">
+          
+            
+              <li class="category-list-container">
+                <a href="javascript:;">分类</a>
+                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android笔记/">Android笔记</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java笔记/">Java笔记</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TCP-IP笔记/">TCP/IP笔记</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统笔记/">操作系统笔记</a><span class="category-list-count">1</span></li></ul>
+              </li>
+            
+          
+            
+              <li class="tag-list-container">
+                <a href="javascript:;">标签</a>
+                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Other/">Other</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP-IP/">TCP/IP</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a><span class="tag-list-count">1</span></li></ul>
+              </li>
+            
+          
+            
+              <li class="archive-list-container">
+                <a href="javascript:;">归档</a>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a><span class="archive-list-count">32</span></li></ul>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="/" title="Homepage">Homepage</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/archives" title="By Year">By Year</a>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="https://github.com/liaosiyang" title="Github" target="_blank" rel="external">Github</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/atom.xml" title="RSS">RSS</a>
+              </li>
+            
+          
+        </ul>
+      
+    
+  </div>
+</div>
+
+    <div class="main-content">
+      
+        <div style="max-width: 1000px">
+      
+          <article id="post-Java笔记-动态代理、Javac编译器、Java语法糖、运行期优化" class="article article-type-post">
+  
+    <h1 class="article-header">
+      Java笔记-动态代理、Javac编译器、Java语法糖、运行期优化
+    </h1>
+  
+  
+
+  <div class="article-info">
+    <span class="article-date">
+  2016-08-05
+</span>
+
+    
+	<span class="article-category tagcloud">
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Java笔记/">Java笔记</a></li></ul>
+	</span>
+
+
+    
+	<span class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+	</span>
+
+
+  </div>
+  <div class="article-entry">
+    <p><img src="http://ob5qdb9lc.bkt.clouddn.com/ping_ze_wei_6.jpg" alt="image1"></p>
+<a id="more"></a>
+<h1 id="动态代理"><a href="#动态代理" class="headerlink" title="动态代理"></a>动态代理</h1><p>动态代理所谓“动态”，是针对使用Java代码实际编写了代理类的“静态”代理而言的，它的优势不在于省去了编写代理类那一点工作量，而是实现了在原始类和接口还未知的时候，就确定代理类的代理行为，为代理类与原始类脱离直接联系后，就可以很灵活地重用于不同的应用场景之中。eg：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DynamicProxyTest</span> </span>&#123;</div><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">IHello</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">sayHello</span><span class="params">()</span></span>;</div><div class="line">&#125;</div><div class="line"><span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Hello</span> <span class="keyword">implements</span> <span class="title">IHello</span> </span>&#123;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sayHello</span><span class="params">()</span> </span>&#123;</div><div class="line">        System.out.println(<span class="string">"hello world"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">DynamicProxy</span> <span class="keyword">implements</span> <span class="title">InvocationHandler</span> </span>&#123;</div><div class="line">    Object originalObj;</div><div class="line">    <span class="function">Object <span class="title">bind</span><span class="params">(Object originalObj)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.originalObj = originalObj;</div><div class="line">        <span class="keyword">return</span> Proxy.newProxyInstance(originalObj.getClass().getClassLoader(), originalObj.getClass().getInterfaces(), <span class="keyword">this</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> Object <span class="title">invoke</span><span class="params">(Object proxy, Method method, Object[] args)</span> <span class="keyword">throws</span> Throwable </span>&#123;</div><div class="line">        System.out.println(<span class="string">"welcome"</span>);</div><div class="line">        <span class="keyword">return</span> method.invoke(originalObj, args);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">    IHello hello = (IHello) <span class="keyword">new</span> DynamicProxy().bind(<span class="keyword">new</span> Hello());</div><div class="line">    hello.sayHello();</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>运行结果：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">welcome</div><div class="line">hello world</div></pre></td></tr></table></figure></p>
+<ul>
+<li>上述代码唯一的“黑匣子”就是Proxy.newProxyInstance()方法。这个方法返回实现了IHello的接口，并且代理了new Hello()实例行为的对象。跟踪这个方法的源码，可以看到程序进行了验证。优化、缓存、同步、生成字节码、显式类加载等操作，而最后它调用了ProxyGenerator.generateProxyClass()方法来完成字节码的生成动作，这个动作可以在运行时产生一个描述代理类的字节码byte[]数组。</li>
+<li>这个代理类的实现代码也很简单，它为传入接口的每一个方法，以及从java.lang.Object中继承来的equals()、hashCode()、toString()方法都生成了对应的实现，并且统一调用了InvocationHandler对象的invoke()方法来实现这些方法的内容，各个方法的区别不过是传入的参数和Method对象有所不同而已，所以无论调用动态代理的哪一个方法，实际上都是在执行InvocationHandler.invoke()中的代码逻辑。</li>
+<li>generateProxyClass()方法具体是如何产生代理类“$Proxy0.class”的字节码的，大致的生成过程其实就是根据class文件的格式去拼装字节码，但在实际开发中，以byte为单位直接拼装出字节码的应用场合很少见，这种生成方式也只能产生高度模版化的代码。</li>
+</ul>
+<h1 id="Javac编译器"><a href="#Javac编译器" class="headerlink" title="Javac编译器"></a>Javac编译器</h1><p>虚拟机规范严格定义了class文件的格式，但是并没有对如何把Java源码转变为class文件的编译过程进行十分严格的定义，这导致class文件编译在某种程度上是与具体JDK实现相关的。从Sun Javac的代码来看，编译过程大致分为3个过程：</p>
+<ol>
+<li>解析和填充符号表的过程。</li>
+<li>插入式注解处理器的注解处理过程。</li>
+<li>分析与字节码生成过程。</li>
+</ol>
+<h3 id="解析和填充符号表"><a href="#解析和填充符号表" class="headerlink" title="解析和填充符号表"></a>解析和填充符号表</h3><p>解析步骤包括了经典程序编译原理中的词法分析和语法分析两个过程。</p>
+<ul>
+<li><p>词法分析是将源代码的字符流转变为标记(Token)集合，单个字符是程序编写过程的最小元素，而标记则是编译过程的最小元素，关键字、变量名、字面量、运算符都可以称为标记，如“int a=b+2”这句代码包含了6个标记，分别是int 、a、=、b、+、2，虽然关键字int由3个字符构成，但是它只是一个Token，不可再拆分。</p>
+</li>
+<li><p>语法分析是根据Token序列构造抽象语法树的过程，抽象语法树是一种用来描述程序代码语法结构的树形表示方式，语法树的每一个节点都代表这程序代码中的一个语法结构，例如包、类型、修饰符、运算符、接口、返回值甚至代码注释等都可以是一个语法结构。</p>
+</li>
+</ul>
+<ul>
+<li>完成了语法分析和词法分析之后，下一步就是填充符号表的过程。符号表是由一组符号地址和符号信息构成的表格，可以想象成K-V值对的形式。符号表中所登记的信息在编译的不同阶段都要用的。在语义分析中，符号表所登记的内容将用于语义检查和产生中间代码。在目标代码生成阶段，当对符号名进行地址分配时，符号表是地址分配的依据。填充符号表的过程的出口是一个待处理列表，它包含了每一个编译单元的抽象语法树的顶级节点。</li>
+</ul>
+<h3 id="注解处理器"><a href="#注解处理器" class="headerlink" title="注解处理器"></a>注解处理器</h3><ul>
+<li><p>在JDK1.5之后，Java语言提供了对注解的支持，这些注解与普通的Java代码一样，是在运行期间发挥作用的。在JDK1.6中提供了一组插入式注解处理器的标准API在编译期间对注解进行处理，我们可以把它看做是一组编译器的插件，在这些插件里面，可以读取、修改、添加抽象语法树中的任意元素。</p>
+</li>
+<li><p>如果这些插件在处理注解期间对语法树进行修改，编译器将回到解析及填充符号表的过程重新处理，直到所有插入式注解处理器都没有再对语法树进行修改为止。</p>
+</li>
+</ul>
+<h3 id="语义分析与字节码生成"><a href="#语义分析与字节码生成" class="headerlink" title="语义分析与字节码生成"></a>语义分析与字节码生成</h3><ul>
+<li><p>语法分析之后，编译器获得了程序代码的抽象语法树表示，语法树能表示一个结构正确源程序的抽象，但无法保证源代码是符合逻辑的。而语义分析的主要任务是对结构上正确的源程序进行上下文有关性质的审查，如进行类型审查。</p>
+</li>
+<li><p>Javac的编译过程，语义分析过程分为标注检查以及数据及控制流分析两个步骤。</p>
+</li>
+<li><p>标注检查的内容包括诸如变量使用前是否已被声明、变量与赋值之间的数据类型是否能够匹配等，还有一个重要动作称为常量折叠，在代码里面定义“a=1+2”比直接定义”a=3”并不会增加程序运行期哪怕一个CPU指令的运算量。</p>
+</li>
+<li><p>数据及控制流分析是对程序上下文逻辑更进一步的验证，它可以检查出诸如程序局部变量在使用前是否有赋值、方法的每条路径是否都有返回值、是否所有的已检查异常都被正确处理了等问题。编译时期的数据流及控制流分析与类加载时数据及控制流分析的目的基本上是移植的，但校验范围有所区别，有一些校验只有在编译器或运行期才能进行。</p>
+</li>
+<li><p>解语法糖，语法糖是指在计算机语言中添加某种语法，这种语法对语言的功能并没有影响，但是更方便程序员使用。通常来说，使用语法糖能够增加程序的可读性，从而减少程序代码出错的机会。</p>
+</li>
+<li><p>字节码生成是Javac编译过程的最后一个阶段。字节码生成阶段不仅仅是把前面各个步骤所生成的信息转化为字节码写到磁盘中，编译器还进行了少量代码添加和转换工作。例如，实例构造器<init>()方法和类构造器&lt; clinit &gt;()方法就是在这个阶段添加到语法树当中的。</init></p>
+</li>
+</ul>
+<h1 id="Java语法糖"><a href="#Java语法糖" class="headerlink" title="Java语法糖"></a>Java语法糖</h1><p>几乎各种语言或多或少都提供过一些语法糖来方便程序员的代码开发，这些语法糖虽然不会提供实质性的功能改进，但是它们或能提高效率，或能提升语法的严谨性，或能减少编码出错的机会。</p>
+<h3 id="泛型与类型擦除"><a href="#泛型与类型擦除" class="headerlink" title="泛型与类型擦除"></a>泛型与类型擦除</h3><p>泛型是JDK1.5的一项新增特性，它的本质是参数化类型的应用，也就是说所操纵的数据类型被指定为一个参数。这种参数类型可以用在类、接口和方法的创建中，分别称为泛型类、泛型接口、泛型方法。</p>
+<p>Java语言的泛型只在程序源码中存在，在编译后的字节码文件中，就已经替换为原来的原生类型，并且在相应的地方插入了强制转型代码，所以泛型技术实现就是Java语言的一颗语法糖，Java语言中的泛型实现方法称为类型擦除，基于这种方法实现的泛型称为伪泛型。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GenericTypes</span> </span>&#123;</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">(List&lt;String&gt; list)</span> </span>&#123;</div><div class="line">    System.out.println(<span class="string">"invoke method(List&lt;String&gt; list)"</span>);</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">(List&lt;Integer&gt; list)</span> </span>&#123;</div><div class="line">    System.out.println(<span class="string">"invoke method(List&lt;Integer&gt; list)"</span>);</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>这段代码是不能被编译的，因为参数List<integer>和List<string>编译之后都被擦除了，变成了一样的原生类型List<e>，擦除的动作导致这两种方法的特征签名变得一模一样。</e></string></integer></p>
+<p>Signature、LocalVariableTypeTable等新的属性用于解决伴随泛型而来参数类型识别问题。擦擦法所谓的擦除，仅仅是对方法的Code属性中的字节码进行擦除，实际上元数据还是保留了泛型信息，这也是我们能通过反射手段取得参数化类型的根本依据。</p>
+<h3 id="自动装箱、拆箱和遍历循环"><a href="#自动装箱、拆箱和遍历循环" class="headerlink" title="自动装箱、拆箱和遍历循环"></a>自动装箱、拆箱和遍历循环</h3><p>自动装箱、拆箱和遍历循环是Java语言中使用得最多的语法糖。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">	List&lt;Integer&gt; list = Arrays.asList(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>);</div><div class="line">	<span class="comment">// 如果在JDK 1.7中，还有另外一颗语法糖 ，</span></div><div class="line">	<span class="comment">// 能让上面这句代码进一步简写成List&lt;Integer&gt; list = [1, 2, 3, 4];</span></div><div class="line">	<span class="keyword">int</span> sum = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i : list) &#123;</div><div class="line">		sum += i;</div><div class="line">	&#125;</div><div class="line">	System.out.println(sum);</div><div class="line">&#125;</div></pre></td></tr></table></figure><br> 编译之后：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">	List list = Arrays.asList( <span class="keyword">new</span> Integer[] &#123;</div><div class="line">		 Integer.valueOf(<span class="number">1</span>),</div><div class="line">		 Integer.valueOf(<span class="number">2</span>),</div><div class="line">		 Integer.valueOf(<span class="number">3</span>),</div><div class="line">		 Integer.valueOf(<span class="number">4</span>) &#125;);</div><div class="line">	<span class="keyword">int</span> sum = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span> (Iterator localIterator = list.iterator(); localIterator.hasNext(); ) &#123;</div><div class="line">		<span class="keyword">int</span> i = ((Integer)localIterator.next()).intValue();</div><div class="line">		sum += i;</div><div class="line">	&#125;</div><div class="line">	System.out.println(sum);</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>包装类的“==”运算在不遇的算术运算的情况下不会自动拆箱，以及它们的equals()方法不处理数据转型的关系。</p>
+<h3 id="条件编译"><a href="#条件编译" class="headerlink" title="条件编译"></a>条件编译</h3><p>许多程序设计语言都提供了条件编译的途径，C++中使用预处理器指示符(#ifdef)来完成条件编译，C++预处理器最初的任务是解决编译时的代码依赖关系(如#include预处理命令)，而Java语言之中没有使用预处理器，因为Java语言天然的编译方式(编译器并非一个个地编译Java文件，而是将所有编译单元的语法树顶级阶段输入到待处理列表之后在进行编译，因此各个文件之间能够互相提供符号信息)无须使用预处理器。</p>
+<p>Java语言也可以进行条件编译，方法就是使用条件为常量的if语句。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">	<span class="keyword">if</span> (<span class="keyword">true</span>) &#123;</div><div class="line">		System.out.println(<span class="string">"block 1"</span>);</div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line">		System.out.println(<span class="string">"block 2"</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>class的反编译结果：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		System.out.println(<span class="string">"block 1"</span>);</div><div class="line">		System.out.println(<span class="string">"block 2"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>只能使用条件为常量的if语句才能达到上述效果，如果使用常量与其他带有条件判断能力的语句搭配，则可能在控制流分析中提示错误，被拒绝编译。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">	<span class="comment">// 编译器将会提示“Unreachable code”</span></div><div class="line">	<span class="keyword">while</span> (<span class="keyword">false</span>) &#123;</div><div class="line">		System.out.println(<span class="string">""</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>Java语言中条件编译的实现，也是Java语言的一颗语法糖，根据布尔常量值的真假，编译器将会把分支中不成立的代码块取消掉，这以工作将在编译器解除语法糖阶段完成。</p>
+<p>Java语言中还有不少其他语法糖，如内部类、枚举类、断言语句、对枚举和字符串的switch支持，try语句中定义和关闭资源等。</p>
+<h1 id="运行期优化"><a href="#运行期优化" class="headerlink" title="运行期优化"></a>运行期优化</h1><ul>
+<li><p>在部分的商业虚拟机中，Java程序最初是通过解释器进行解释执行的，当虚拟机发现某个方法或代码块的运行特别频繁时，就会把这些代码认定为“热点代码”。为了提高热点代码的执行效率，在运行时，虚拟机将会把这些热点代码编译成与本地平台相关的机器码，并进行各种层次的优化，完成这个任务的编译器称为即时编译器(Just in Time Compiler)，简称JIT编译器。</p>
+</li>
+<li><p>即时编译器并不是虚拟机必须的部分，Java虚拟机规范并没有规定Java虚拟机内必须要有即时编译器存在，更没有限定或指导即时编译器应该如何去实现。但是，即时编译器编译性能的好坏、代码优化程度的高低却是衡量一款商用虚拟机优秀与否的最关键的指标之一，它也是虚拟机中最核心且最能体现虚拟机技术水平的部分。</p>
+</li>
+</ul>
+<h2 id="解释器与编译器"><a href="#解释器与编译器" class="headerlink" title="解释器与编译器"></a>解释器与编译器</h2><ul>
+<li><p>并不是所有Java虚拟机都采用解释器与编译器并存的架构，但许多主流的商用虚拟机都同时包含解释器和编译器。解释器与编译器两者各有优势：当程序需要迅速启动和执行的时候，解释器可以首先发挥作用，省去编译的时间，立即执行。在程序运行后，随着时间的推移，编译器逐渐发挥作用，把越来越多的代码编译成本地代码之后，可以获得更高的执行效率。</p>
+</li>
+<li><p>当程序运行环境中内存资源限制较大，可以使用解释执行节约内存，反之可以使用编译执行来提升效率。同时，解释器还可以作为编译器激进优化时的一个“逃生门”，让编译器根据概率选择一些大多数时候都能提升运行速度的优化手段，当激进优化的假设不成立，如加载了新类后类型继承结构出现变化、出现“罕见陷阱”时可以通过逆优化退回到解释状态继续执行。</p>
+</li>
+<li><p>HotSpot虚拟机中内置了两个即时编译器，分别称为Client Compiler和Server Compiler或者简称C1编译器和C2编译器。默认采用解释器与其中一个编译器直接配合的方式工作。无论采用的编译器是Client Compiler还是Server Compiler，解释器与编译器搭配使用的方式在虚拟机中称为“混合模式”。</p>
+</li>
+<li><p>由于即时编译器编译本地代码需要占用程序运行时间，要编译出优化程度更高的代码，所花费的时间可能更长。为了在程序启动响应速度与运行效率之间达到最佳平衡，HotSpot虚拟机启用分层编译的策略。分层编译根据编译器编译、优化的规模和耗时，划分出不同的编译层次：<br>1.第0层，程序解释执行，解释器不开启性能监控功能，可触发第1层编译。<br>2.第1层，也称C1编译，将字节码编译成本地代码，进行简单、可靠的优化，如有必要将加入性能监控的逻辑。<br>3.第2层(或2层以上)，也称C2编译，也是将字节码编译成本地代码，但是会启用一些编译耗时较长的优化，甚至会根据性能监控信息进行一些不可靠的激进优化。</p>
+</li>
+<li><p>实施分层编译后，Client Compiler和Server Compiler将会同时工作，许多代码都可能被多次编译，用Client Compiler获取更高的编译速度，用Server Compiler获取更高的编译质量，在解释执行的时候也无须再承担收集性能监控的任务。</p>
+</li>
+</ul>
+<h2 id="编译对象与触发条件"><a href="#编译对象与触发条件" class="headerlink" title="编译对象与触发条件"></a>编译对象与触发条件</h2><p>在运行过程中会被即时编译器编译的“热点代码”有两类：</p>
+<ul>
+<li>被多次调用的方法。</li>
+<li>被多次执行的循环体(解决一个方法只被调用一次或少量几次，但方法体内部存在循环次数较多的循环体的问题)。<br>对于第一种情况，由于是由方法调用触发的编译，因此编译器理所当然地会以整个方法作为编译对象，这种编译也是虚拟机中标准的JIT编译方式。而后一种情况，尽管编译动作是由循环体所触发的，但编译器依然会以整个方法(而不是单独的循环体)作为编译对象。</li>
+</ul>
+<p>判断一段代码是不是热点代码，是不是需要触发即时编译，这样的行为称为热点探测，目前主要的热点探测判定方式有两种：</p>
+<ul>
+<li>基于采样的热点探测：采用这种方法的虚拟机会周期性地检查各个线程的栈顶，如果发现某个方法经常出现在栈顶，那这个方法就是“热点方法”。基于采样的热点探测好处是实现简单、高效，还可以很容易获得方法调用关系，确定是很难精确的确认一个方法的热度，容易因为受到线程阻塞或别的外界因素的影响而扰乱热点探测。</li>
+<li>基于计数器的热点探测：采用这种方法的虚拟机会为每个方法(甚至代码块)建立计数器，统计方法的执行次数，如果执行次数超过一定的阈值就认为它是“热点方法”。这种统计方法实现起来麻烦一些，需要为每个方法建立并维护计数器，而且不能直接获取方法的调用关系，但是它的统计结果相对更加精确和严禁。</li>
+</ul>
+<p>在HotSpot虚拟机中使用的是第二种——基于计数器的热点探测方法，因此它为每个方法准备了两类计数器：方法调用计数器和回边计数器。</p>
+<ul>
+<li><p>方法调用计数器用于统计方法被调用的次数。当一个方法调用时，会先检查该方法是否存在被JIT编译过的版本，如果存在，则有限使用编译后的本地代码来执行。如果不存在已被编译的版本，这将此方法的调用计数器值加1，然后判断方法调用计数器与回边计数器值之和是否超过方法调用计数器的阈值。如果超过阈值，那么就会向即时编译器提交一个该方法的代码编译请求。</p>
+</li>
+<li><p>如果不做任何设置，执行引擎不会同步等待编译请求完成，而是继续进入解释器按照解释方式执行字节码，直到提交的请求被编译器编译完成。当编译工作完成之后，这个方法的调用入口地址就会被系统自动改写成新的，下一次调用该方法时就会使用已编译的版本。</p>
+</li>
+<li><p>如果不做任何设置，方法调用计数器统计的并不是方法被调用的绝对次数，而是一个相对的执行频率，即一段时间之内方法被调用的次数，当超过一定的时间限度，如果方法的调用此时仍然不足以让它提交给即时编译器编译，那这个方法的调用计数器就会被减少一半，这个过程称为方法调用计数器热度的衰减，而这段时间就称为此方法统计的半衰周期。进行热度衰减的动作是在虚拟机进行垃圾收集时顺便进行的。</p>
+</li>
+<li><p>回边计数器用于统计一个方法中循环体代码执行的次数，在字节码中遇到控制流向后跳转的指令称为“回边”。当解释器遇到一条回边指令时，会先查找将要执行的代码片段是否有以及编译好的版本，如果有，它将会有优先执行已编译的代码，否则就把回边计数器的值加1，然后判断方法调用计数器与回边计数器值之和是否超过回边计数器的阈值。当超过阈值的时候，将会提交一个OSR编译(因为编译方式发生在执行过程中，因此形象地称之为栈上替换，简称OSR编译)请求，并且把回边计数器的值降低一些，以便继续在解释器中执行循环，等待编译器输出编译结果。</p>
+</li>
+<li><p>与方法计数器不同，回边计数器没有热度衰减的过程，因此这个计数器统计的就是该方法循环执行的绝对次数。当计数器溢出的时候，它还会把方法计数器的值也调整到溢出状态，这样下一次再进入该方法的时候就会执行标准的编译过程。</p>
+</li>
+</ul>
+<h2 id="编译过程"><a href="#编译过程" class="headerlink" title="编译过程"></a>编译过程</h2><ul>
+<li><p>在默认设置下，无论是方法调用产生的编译请求还是OSR编译请求，虚拟机在代码编译器还未完成之前，都仍然将按照解释方式继续执行，而编译动作则在后台的编译线程中执行。</p>
+</li>
+<li><p>对于Client Compiler来说，它是一个简单快速的三段式编译器，主要关注的在于局部性的优化，而放弃了许多耗时较长的全局优化手段。</p>
+</li>
+<li><p>而Server Compiler则是专门面向服务端的典型应用并为服务端的性能配置特别调整过的编译器，也是一个充分优化过的编译器，会执行所有经典的优化动作。</p>
+</li>
+</ul>
+<h2 id="编译优化技术"><a href="#编译优化技术" class="headerlink" title="编译优化技术"></a>编译优化技术</h2><p>Java程序员有一个共识，以编译方式执行本地代码比解释执行更快，之所以有这样的共识，除去虚拟机解释执行字节码时额外消耗时间的原因外，还有一个很重要的原因就是虚拟机设计团队几乎把代码的所有优化措施都集中在了即时编译器，因此一般来说，即时编译器产生的本地代码比Javac产生的字节码更加优秀(准确来说应当是：由编译器优化得到的本地代码与由解释器解释字节码后实际执行的本地代码之间的对比)。</p>
+<ul>
+<li>语言无关的经典优化技术之一：公共子表达式消除。</li>
+<li>语言相关的经典优化技术之一：数组范围检查消除。</li>
+<li>最重要的优化技术之一：方法内联。</li>
+<li>最前沿的优化技术之一：逃逸分析。</li>
+</ul>
+<h3 id="公共子表达式消除"><a href="#公共子表达式消除" class="headerlink" title="公共子表达式消除"></a>公共子表达式消除</h3><p>公共子表达式消除是一个普遍应用于各种编译器的经典优化技术，它的含义是：如果一个表达式E已经计算过了，并且从先前的计算到现在E中所有变量的值都没有发生变化，那么E的这次出现就称为了公共子表达式。对于这种表达式，没有必要花时间再对它进行计算，只需要用前面计算过的表达式结果代替E就可以了。如果这种优化仅限于程序的基本块内，便称为局部公共子表达式消除。如果这种优化的范围涵盖了多个基本块，那就称为全局公共子表达式消除。eg：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> d=(c*b)*<span class="number">12</span>+a+(a+b*c)</div></pre></td></tr></table></figure>  </p>
+<p>编译器检测到“c<em>b”和”b</em>c”是一样的表达式，而且在计算期间b与v的值是不变的。因此，这条表达式就可能被视为：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> d=E*<span class="number">12</span>+a+(a+E)</div></pre></td></tr></table></figure>  
+<p>编译器还可能进行另外一种优化：代数化简，把表达式变为：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> d=E*<span class="number">13</span>+a*<span class="number">2</span></div></pre></td></tr></table></figure>  
+<h3 id="数组边界检查消除"><a href="#数组边界检查消除" class="headerlink" title="数组边界检查消除"></a>数组边界检查消除</h3><p>数组边界检查消除是即时编译器中一项语言相关的经典优化技术。Java语言是一门动态安全的语言，对数组的读写访问也不像C++那样在本质上是裸指针操作。如果有一个数组foo[]，在Java语言中访问数组元素foo[i]的时候系统会自动进行上下界的范围检查，即检查i必须满足i&gt;=0&amp;&amp;i &lt; foo.length这个条件，否则会抛出一个运行时异常：java.lang.ArrayIndexOutOfBoundsException。这对虚拟机的执行子系统来说，每次数组元素的读写都带有一次隐含的条件判断操作，对于拥有大量数组访问的程序代码，这无疑也是一种性能负担。</p>
+<ul>
+<li><p>为了安全，数组边界检查肯定是必须做的，但数组边界检查不是必须在运行期间一次不漏地检查。如数组访问发生在循环之中，并且使用循环变量来进行数组访问，如果编译器只要通过数据流分析就可以判断循环变量的取值范围永远在区间[0,foo.length)之内，那在整个循环中就可以把数组的上下界检查消除。</p>
+</li>
+<li><p>除了数组边界检查这种尽可能把运行期检查提到编译器完成的思路之外，另外还有一种避免思路，Java中空指针检查和算术运算中除数为零的检查都采用了这种思路。eg：</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(foo!=<span class="keyword">null</span>)&#123;</div><div class="line"><span class="keyword">return</span> foo.value;</div><div class="line">&#125;<span class="keyword">else</span>&#123;</div><div class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> NullPointException();</div><div class="line">&#125;</div></pre></td></tr></table></figure>  
+<p> 在使用隐式异常优化之后，虚拟机会把上面伪代码所表示的访问过程变为如下伪代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">try</span>&#123;</div><div class="line"> <span class="keyword">return</span> foo.value;</div><div class="line">&#125;<span class="keyword">catch</span>(segment_fault)&#123;</div><div class="line"> uncommon_trap();</div><div class="line">&#125;</div></pre></td></tr></table></figure><br> 虚拟机会注册一个Segment Fault信号的异常处理器(uncommon_trap())，这样当foo不为空的时候，对value的访问是不会额外消耗一次对foo判空的开销的。</p>
+<h3 id="方法内联"><a href="#方法内联" class="headerlink" title="方法内联"></a>方法内联</h3><p> 方法内联是编译器最重要的优化手段之一，除了消除方法调用的成本之外，它更重要的意义是为其他优化手段建立良好的基础。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">foo</span><span class="params">(Object obj)</span></span>&#123;</div><div class="line"><span class="keyword">if</span>(obj!=<span class="keyword">null</span>)&#123;</div><div class="line">    System.out.println(<span class="string">"do something"</span>);</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">testInline</span><span class="params">(String[] args)</span></span>&#123;</div><div class="line">    Object obj=<span class="keyword">null</span>;</div><div class="line">    foo(obj);</div><div class="line">&#125;</div></pre></td></tr></table></figure><br> 事实上testInline()方法内部全部都是无用的代码，如果不做内联，后续即使进行了无用代码消除的优化，也无法发现任何“Dead Code”，因为如果分来来看，foo()和testInline()两个方法里面的操作都可能是有意义的。</p>
+<ul>
+<li><p>方法内联的优化行为看起来很简单，不过是把目标方法的代码“复制”到发起调用的方法之中，避免发生真实的方法调用而已。但实际上Java虚拟机中的内联过程远远没有那么简单，因为如果不是即时编译器做了一些特别的努力，按照经典编译原理的优化理论，大多数Java方法都无法进行内联。</p>
+</li>
+<li><p>只有使用invokespecial指令调用的私有方法、实例构造器、父类方法以及使用invokestatic指令进行调用的静态方法才是在编译期进行编译的，除了上述4种方法之外，其他的Java方法调用都需要在运行时进行方法接收者的多态选择，并且都有可能存在多于一个版本的方法接收者(最多再除去被final修饰的方法这种特殊情况，尽管它使用invokevirtual指令调用，但也是非虚方法)。简而言之，Java语言中默认的实例方法是虚方法。</p>
+</li>
+<li><p>对于一个虚方法，编译期做内联的时候根本无法确定应该使用哪个方法版本。为了解决虚方法的内联问题，Java虚拟机设计团队想了很多办法，首先是引入一种名为”类型继承关系分析”(Class Hierarchy Analysis,CHA)的技术，这是一种基于整个应用程序的类型分析技术，用于确定在目前一加载的类中，某个接口是否有多于一种的实现，某个类是否存在子类、子类是否为抽象类等信息。</p>
+</li>
+<li><p>编译器在进行内联时，如果是非虚方法，那么直接进行内联就可以了，这时候内联是有稳定前提保障的。如果遇到虚方法，则会向CHA查询此方法在当前程序下是否有多个目标版本可供选择，如果查询只有一个版本，那也可以进行内联，不过这种内联就属于激进优化，需要预留一个“逃生门”，称为守护内联。如果程序在后续执行过程中，虚拟机一直没有加载到会令这个方法的接收者的继承关系发生变化的类，那这个内联优化的代码就可以一直使用下去。但如果加载了导致继承关系发生变化的新类，那就需要抛弃已经编译的代码，退回到解释状态执行，或者重新进行编译。</p>
+</li>
+<li><p>如果向CHA查询出来的结果是有多个版本的目标方法可供选择，则编译器还将会进行最后一次努力，使用内联缓存来完成方法内联，这是一个建立在目标方法正常入口之前的缓存，它的工作原理大致是：在未发生方法调用之前，内存缓存状态为空，当第一次调用发生后，缓存记录下方法接收者的版本信息，并且每次进行方法调用时都比较接收者版本，如果以后进来的每次调用的方法接受者版本，如果以后进来的每次调用的方法接收者版本都是一样的，那这个内联还可以一直用下去。如果发生了方法接受者不一致的情况，就说明程序真正使用了虚方法的多态特性，这时才会取消内联，查找虚方法表进行方法分派。</p>
+</li>
+</ul>
+<h3 id="逃逸分析"><a href="#逃逸分析" class="headerlink" title="逃逸分析"></a>逃逸分析</h3><p> 逃逸分析是目前Java虚拟机中比较前沿的优化技术，它与类型继承分析一样，并不是直接优化代码的手段，而是为其他优化手段提供依据的分析技术。</p>
+<p> 逃逸分析的基本行为就是分析对象动态作用域：当一个对象在方法中被定义后，它可能被外部方法所引用，例如作为调用参数传递到其他方法中，称为方法逃逸。甚至还有可能被外部线程访问到，譬如赋值给类变量或可以在其他线程中访问的实例变量，称为线程逃逸。</p>
+<p> 如果能证明一个对象不会逃逸到方法或线程之外，也就是别的方法或线程无法通过任何途径访问到这个对象，则可以为这个变量进行一些高效的优化。eg：</p>
+<ol>
+<li><p>栈上分配：Java虚拟机中，在Java堆上分配创建对象的内存空间几乎是Java程序员都清除的常识了，Java堆中的对象对于各个线程都是共享和可见的，只要持有这个对象的引用，就可以访问堆中存储的对象数据。虚拟机的垃圾收集系统可以回收堆中不再使用的对象，但回收动作无论是筛选可回收的对象，还是回收和整理内存都需要耗费时间。如果确定一个对象不会逃逸出方法之外，那让这个对象在栈上分配内存将是一个很不错的主意，对象所占的内存空间就可以随栈帧出栈而销毁。在一般应用中，不会逃逸的局部变量所占的比例很大，如果能使用栈上分配，那大量的对象就会随着方法的结束而自动销毁了，垃圾收集系统的压力也会小很多。</p>
+</li>
+<li><p>同步消除：线程同步本身是一个相对耗时的过程，如果逃逸分析能够确定一个变量不会逃逸出线程，无法被其他线程访问，那这个变量的读写肯定就不会有竞争，对这个对象实施的同步措施也就可以消除掉。</p>
+</li>
+<li><p>标量替换：标量是指一个数据已经无法再分解成更小的数据来表示了，Java虚拟机中的原始数据类型(int、long等数值类型以及reference类型)都不能再进一步分解，它们就可以称为标量。相对的，如果一个数据可以继续分解，那它就称作聚合量，Java中的对象就是最典型的聚合量。如果把一个Java对象拆散，根据程序的访问情况，将其使用到的成员变量恢复到原始类型来访问就叫做标量替换。如果逃逸分析证明一个对象不会被外部访问，并且这个对象可以被拆散的话，那程序真正执行的时候就可能不创建对象，而改为直接创建它的若干个被这个方法使用到的成员变量来代替。将对象拆分后，除了可以让对象的成员变量在栈上(栈上存储的数据，有很大的概率会被虚拟机分配至物理机器的高速寄存器中存储)分配和读写之外，还可以为后续进一步优化手段创造条件。</p>
+</li>
+</ol>
+<p>直到现在这项优化尚未足够成熟，仍有很大的改进余地。不成熟的原因主要是不能保证逃逸分析的性能收益必定高于它的消耗。还有一点是，基于逃逸分析的一些优化手段，由于HotSpot虚拟机目前的实现方式导致栈上分配实现比较复杂，因此在HotSpot虚拟机中暂时没有做这项优化。</p>
+
+  </div>
+  <footer class="article-footer">
+    
+
+    
+
+  </footer>
+</article>
+
+
+  <link rel="stylesheet" href="http://static.duoshuo.com/styles/embed.default.css?349d9313.css">
+  <!-- 多说评论框 start -->
+  <div class="ds-thread" data-thread-key="2016/08/05/Java笔记-动态代理、Javac编译器、Java语法糖、运行期优化/" data-title="Java笔记-动态代理、Javac编译器、Java语法糖、运行期优化" data-url="/2016/08/05/Java笔记-动态代理、Javac编译器、Java语法糖、运行期优化/"></div>
+  <!-- 多说评论框 end -->
+  <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+  <script type="text/javascript">
+    var duoshuoQuery = {
+      short_name: "SION"
+    };
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';
+      ds.async = true;
+      ds.src = (document.location.protocol == 'https:'
+        ? 'https:'
+        : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+  <!-- 多说公共JS代码 end -->
+
+
+
+
+
+
+          <div class="main-footer">
+  
+    © 2016 Be Level5 Coder - Powered by <a href="http://hexo.io" target="_blank">Hexo</a> - Theme <a href="https://github.com/denjones/hexo-theme-chan" target="_blank">Chan</a>
+  
+</div>
+
+      
+        </div>
+      
+    </div>
+  </div>
+  <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="/PhotoSwipe/photoswipe.css">
+  <link rel="stylesheet" href="/PhotoSwipe/default-skin/default-skin.css">
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+             It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+      <!-- Container that holds slides.
+                PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                Don't modify these 3 pswp__item elements, data is added later on. -->
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+
+      <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+      <div class="pswp__ui pswp__ui--hidden">
+
+        <div class="pswp__top-bar">
+
+          <!--  Controls are self-explanatory. Order can be changed. -->
+
+          <div class="pswp__counter"></div>
+
+          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+          <button class="pswp__button pswp__button--share" title="Share"></button>
+
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+          <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+          <!-- element will get class pswp__preloader--active when preloader is running -->
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div>
+
+        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/PhotoSwipe/photoswipe.js"></script>
+  <script src="/PhotoSwipe/photoswipe-ui-default.js"></script>
+
+
+<script src="/perfect-scrollbar/js/min/perfect-scrollbar.min.js"></script>
+<script src="/scripts/main.js"></script>
+
+</body>
+</html>

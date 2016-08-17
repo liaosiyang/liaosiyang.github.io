@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<title>
+  
+    TCP/IP笔记-Cookie与Session、Socket、访问网页
+  
+</title>
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="TCP/IP笔记-Cookie与Session、Socket、访问网页">
+<meta property="og:url" content="http://yoursite.com/2016/08/08/TCP-IP笔记-Cookie与Session、Socket、访问网页/index.html">
+<meta property="og:site_name" content="Be Level5 Coder">
+<meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/d554b4c564c5acac_1322227437_2062812989.jpg">
+<meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/image6.png">
+<meta property="og:updated_time" content="2016-08-08T12:10:59.861Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="TCP/IP笔记-Cookie与Session、Socket、访问网页">
+<meta name="twitter:image" content="http://ob5qdb9lc.bkt.clouddn.com/d554b4c564c5acac_1322227437_2062812989.jpg">
+
+
+  <link rel="alternative" href="/atom.xml" title="Be Level5 Coder" type="application/atom+xml">
+
+
+
+  <link rel="icon" href="/favicon.png">
+
+
+<link rel="stylesheet" href="/perfect-scrollbar/css/perfect-scrollbar.min.css">
+<link rel="stylesheet" href="/styles/main.css">
+
+
+
+
+
+
+</head>
+<body
+  
+  >
+  <div class="mobile-header">
+  <button class="sidebar-toggle" type="button">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a class="title" href="/">Be Level5 Coder</a>
+</div>
+
+  <div class="main-container">
+    <div class="sidebar">
+  <div class="header">
+    <h1 class="title"><a href="/">Be Level5 Coder</a></h1>
+    
+    <div class="info">
+      <div class="content">
+        
+        
+          <div class="author">Sion</div>
+        
+      </div>
+      
+        <div class="avatar">
+          
+            <img src="http://ob5qdb9lc.bkt.clouddn.com/my_avatar.jpg">
+          
+        </div>
+      
+    </div>
+  </div>
+  <div class="body">
+    
+      
+        <ul class="nav">
+          
+            
+              <li class="category-list-container">
+                <a href="javascript:;">分类</a>
+                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android笔记/">Android笔记</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java笔记/">Java笔记</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TCP-IP笔记/">TCP/IP笔记</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统笔记/">操作系统笔记</a><span class="category-list-count">1</span></li></ul>
+              </li>
+            
+          
+            
+              <li class="tag-list-container">
+                <a href="javascript:;">标签</a>
+                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Other/">Other</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP-IP/">TCP/IP</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a><span class="tag-list-count">1</span></li></ul>
+              </li>
+            
+          
+            
+              <li class="archive-list-container">
+                <a href="javascript:;">归档</a>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a><span class="archive-list-count">32</span></li></ul>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="/" title="Homepage">Homepage</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/archives" title="By Year">By Year</a>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="https://github.com/liaosiyang" title="Github" target="_blank" rel="external">Github</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/atom.xml" title="RSS">RSS</a>
+              </li>
+            
+          
+        </ul>
+      
+    
+  </div>
+</div>
+
+    <div class="main-content">
+      
+        <div style="max-width: 1000px">
+      
+          <article id="post-TCP-IP笔记-Cookie与Session、Socket、访问网页" class="article article-type-post">
+  
+    <h1 class="article-header">
+      TCP/IP笔记-Cookie与Session、Socket、访问网页
+    </h1>
+  
+  
+
+  <div class="article-info">
+    <span class="article-date">
+  2016-08-08
+</span>
+
+    
+	<span class="article-category tagcloud">
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/TCP-IP笔记/">TCP/IP笔记</a></li></ul>
+	</span>
+
+
+    
+	<span class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TCP-IP/">TCP/IP</a></li></ul>
+	</span>
+
+
+  </div>
+  <div class="article-entry">
+    <p><img src="http://ob5qdb9lc.bkt.clouddn.com/d554b4c564c5acac_1322227437_2062812989.jpg" alt="Image"></p>
+<a id="more"></a>
+<h1 id="Cookie与Session"><a href="#Cookie与Session" class="headerlink" title="Cookie与Session"></a>Cookie与Session</h1><h2 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h2><p>Cookie 是当你浏览某网站时，网站存储在你机器上的一个小文本文件，它可以记录你的用户ID，密码、浏览过的网页、停留的时间等信息，当你再次来到该网站时，网站通过读取Cookie，得知你的相关信息，就可以做出相应的动作，例如在页面显示欢迎你的标语，或者让你不用输入ID、密码就直接登录等。</p>
+<h2 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h2><p>Session 存储在服务器端，一般放在服务器的内存中。Session 对象存储特定用户会话所需的信息。这样，当用户在应用程序的 Web 页之间跳转时，存储在 Session 对象中的变量将不会丢失，而是在整个用户会话中一直存在下去。当用户请求来自应用程序的 Web 页时，如果该用户还没有会话，则 Web 服务器将自动创建一个 Session 对象。当会话过期或被放弃后，服务器将终止该会话。</p>
+<h2 id="Cookie的设置与发送过程"><a href="#Cookie的设置与发送过程" class="headerlink" title="Cookie的设置与发送过程"></a>Cookie的设置与发送过程</h2><p>一个cookie的设置以及发送过程分为以下四步：</p>
+<ol>
+<li>客户端发送一个http请求到服务器端;</li>
+<li>服务器端发送一个http响应到客户端，其中包含Set-Cookie头部;</li>
+<li>客户端发送一个http请求到服务器端，其中包含Cookie头部;</li>
+<li>服务器端发送一个http响应到客户端。</li>
+</ol>
+<h2 id="如何防止session超时？"><a href="#如何防止session超时？" class="headerlink" title="如何防止session超时？"></a>如何防止session超时？</h2><p>导致这个问题的关键词有两个：一个是「长时间」，一个是「未操作」。　</p>
+<p>如果用户未操作的「长时间」超过了服务器配置的session超时时间，并导致session失效，那么我们延长session的超时时间，让用户原来的「长时间」与超时时间相比，变得不「长」，不就可以解决了吗？　　</p>
+<p>如果用户是长时间「未操作」导致session失效，那么我们想办法产生「操作」，让用户每隔一小段时间就「操作」一次，与服务器产生交互，那么session自然也不会失效。</p>
+<h2 id="Cookie-和Session-的区别与应用"><a href="#Cookie-和Session-的区别与应用" class="headerlink" title="Cookie 和Session 的区别与应用"></a>Cookie 和Session 的区别与应用</h2><p>Cookie和session由于实现手段不同，因此也各有优缺点和各自的应用场景：</p>
+<h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><p>Cookie的典型应用场景是Remember Me服务，即用户的账户信息通过cookie的形式保存在客户端，当用户再次请求匹配的URL的时候，账户信息会被传送到服务端，交由相应的程序完成自动登录等功能。当然也可以保存一些客户端信息，比如页面布局以及搜索历史等等。</p>
+<p>Session的典型应用场景是用户登录某网站之后，将其登录信息放入session，在以后的每次请求中查询相应的登录信息以确保该用户合法。当然还是有购物车等等经典场景；</p>
+<h3 id="安全性"><a href="#安全性" class="headerlink" title="安全性"></a>安全性</h3><p>Cookie将信息保存在客户端，如果不进行加密的话，无疑会暴露一些隐私信息，安全性很差，一般情况下敏感信息是经过加密后存储在cookie中，但很容易就会被窃取。而session只会将信息存储在服务端，如果存储在文件或数据库中，也有被窃取的可能，只是可能性比cookie小了太多。</p>
+<p>Session安全性方面比较突出的是存在会话劫持的问题，这是一种安全威胁。总体来讲，session的安全性要高于cookie。</p>
+<h3 id="性能"><a href="#性能" class="headerlink" title="性能"></a>性能</h3><p>Cookie存储在客户端，消耗的是客户端的I/O和内存，而session存储在服务端，消耗的是服务端的资源。但是session对服务器造成的压力比较集中，而cookie很好地分散了资源消耗，就这点来说，cookie是要优于session的；<br>但是Cookie会增加网络流量。</p>
+<h3 id="时效性"><a href="#时效性" class="headerlink" title="时效性"></a>时效性</h3><p>Cookie可以通过设置有效期使其较长时间内存在于客户端，而session一般只有比较短的有效期（也可以通过用户主动销毁session或关闭浏览器后引发超时）；</p>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>Cookie的处理在开发中没有session方便。而且cookie在客户端是有数量和大小的限制的，而session的大小却只以硬件为限制，能存储的数据无疑大了很多。</p>
+<h1 id="Socket"><a href="#Socket" class="headerlink" title="Socket"></a>Socket</h1><h2 id="什么是Socket"><a href="#什么是Socket" class="headerlink" title="什么是Socket"></a>什么是Socket</h2><p>我们知道两个进程如果需要进行通讯最基本的一个前提能能够唯一的标示一个进程，在本地进程通讯中我们可以使用PID来唯一标示一个进程，但PID只在本地唯一，网络中的两个进程PID冲突几率很大，这时候我们需要另辟它径了，我们知道IP层的ip地址可以唯一标示主机，而TCP层协议和端口号可以唯一标示主机的一个进程，这样我们可以利用ip地址＋协议＋端口号唯一标示网络中的一个进程。</p>
+<p>能够唯一标示网络中的进程后，它们就可以利用socket进行通信了，什么是socket呢？我们经常把socket翻译为套接字，socket是在应用层和传输层之间的一个抽象层，它把TCP/IP层复杂的操作抽象为几个简单的接口供应用层调用已实现进程在网络中通信。</p>
+<h2 id="使用TCP"><a href="#使用TCP" class="headerlink" title="使用TCP"></a>使用TCP</h2><h3 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">Socket socket = <span class="keyword">new</span> Socket(<span class="string">"ip"</span>, 端口);</div><div class="line"></div><div class="line">InputStream is = socket.getInputStream();</div><div class="line">DataInputStream dis = <span class="keyword">new</span> DataInputStream(is);</div><div class="line"></div><div class="line">OutputStream os = socket.getOutputStream();</div><div class="line">DataInputStream dos = <span class="keyword">new</span> DataOutputStream(os);</div></pre></td></tr></table></figure>    
+<h3 id="服务器端"><a href="#服务器端" class="headerlink" title="服务器端"></a>服务器端</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ServerSocket serverSocket = <span class="keyword">new</span> ServerSocket(端口);</div><div class="line">Socket socket = serverSocket.accept();</div><div class="line"><span class="comment">//获取流的方式与客户端一样</span></div></pre></td></tr></table></figure>      
+<h3 id="读取输入流"><a href="#读取输入流" class="headerlink" title="读取输入流"></a>读取输入流</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">byte</span>[] buffer = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span>];</div><div class="line">do&#123;</div><div class="line">    <span class="keyword">int</span> count = is.read(buffer);</div><div class="line">    <span class="keyword">if</span>(count &lt;= <span class="number">0</span>)&#123; <span class="keyword">break</span>; &#125;</div><div class="line">    <span class="keyword">else</span>&#123;</div><div class="line">    <span class="comment">// 对buffer保存或者做些其他操作</span></div><div class="line">    &#125;</div><div class="line">&#125;<span class="keyword">while</span>(<span class="keyword">true</span>);</div></pre></td></tr></table></figure>     
+<h2 id="使用UDP"><a href="#使用UDP" class="headerlink" title="使用UDP"></a>使用UDP</h2><p>客户端和服务器端一样的<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">DatagramSocket socket = <span class="keyword">new</span> DatagramSocket(端口);</div><div class="line">InetAddress serverAddress = InetAddress.getbyName(<span class="string">"ip"</span>);</div><div class="line"><span class="comment">//发送</span></div><div class="line">DatagramPackage packet = <span class="keyword">new</span> DatagramPacket(buffer, length, host, port);</div><div class="line">socket.send(packet);</div><div class="line"><span class="comment">//接收</span></div><div class="line"><span class="keyword">byte</span>[] buf = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span>];</div><div class="line">DatagramPacket packet = <span class="keyword">new</span> DatagramPacket(buf, <span class="number">1024</span>);</div><div class="line">Socket.receive(packet);</div></pre></td></tr></table></figure></p>
+<h1 id="访问网页的过程"><a href="#访问网页的过程" class="headerlink" title="访问网页的过程"></a>访问网页的过程</h1><h2 id="1-在浏览器里输入网址"><a href="#1-在浏览器里输入网址" class="headerlink" title="1.在浏览器里输入网址"></a>1.在浏览器里输入网址</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">facebook.com</div></pre></td></tr></table></figure>
+<h2 id="2-浏览器查找域名的IP地址"><a href="#2-浏览器查找域名的IP地址" class="headerlink" title="2.浏览器查找域名的IP地址"></a>2.浏览器查找域名的IP地址</h2><p>DNS查找过程如下：</p>
+<ul>
+<li>浏览器缓存 – 浏览器会缓存DNS记录一段时间。操作系统没有告诉浏览器储存DNS记录的时间，这样不同浏览器会储存个自固定的一个时间（2分钟到30分钟不等）。</li>
+<li>系统缓存 – 如果在浏览器缓存里没有找到需要的记录，浏览器会做一个系统调用（windows里是gethostbyname）。这样便可获得系统缓存中的记录。</li>
+<li>路由器缓存 – 接着，前面的查询请求发向路由器，它一般会有自己的DNS缓存。</li>
+<li>ISP DNS 缓存 – 接下来要check的就是ISP缓存DNS的服务器。在这一般都能找到相应的缓存记录。</li>
+<li>递归搜索 – 你的ISP的DNS服务器从跟域名服务器开始进行递归搜索，从.com顶级域名服务器到Facebook的域名服务器。一般DNS服务器的缓存中会 有.com域名服务器中的域名，所以到顶级服务器的匹配过程不是那么必要了。  <h2 id="3-浏览器给web服务器发送一个HTTP请求"><a href="#3-浏览器给web服务器发送一个HTTP请求" class="headerlink" title="3. 浏览器给web服务器发送一个HTTP请求"></a>3. 浏览器给web服务器发送一个HTTP请求</h2></li>
+</ul>
+<p>因为像Facebook主页这样的动态页面，打开后在浏览器缓存中很快甚至马上就会过期，毫无疑问他们不能从中读取。所以，浏览器将把一下请求发送到Facebook所在的服务器。</p>
+<h2 id="4-服务的永久重定向响应"><a href="#4-服务的永久重定向响应" class="headerlink" title="4. 服务的永久重定向响应"></a>4. 服务的永久重定向响应</h2><p>服务器给浏览器响应一个301永久重定向响应，这样浏览器就会访问“HTTP://www.facebook.com/” 而非“HTTP://facebook.com/”。</p>
+<p>为什么服务器一定要重定向而不是直接发会用户想看的网页内容呢？其中一个原因跟搜索引擎排名有关。如果一个页面有两个地址，就像HTTP://www.igoro.com/和HTTP://igoro.com/，搜索引擎会认为它们是两个网站，结果造成每一个的搜索链接都减少从而降低排名。而搜索引擎知道301永久重定向是什么意思，这样就会把访问带www的和不带www的地址归到同一个网站排名下。还有一个是用不同的地址会造成缓存友好性变差。当一个页面有好几个名字时，它可能会在缓存里出现好几次。</p>
+<h2 id="5-浏览器跟踪重定向地址"><a href="#5-浏览器跟踪重定向地址" class="headerlink" title="5. 浏览器跟踪重定向地址"></a>5. 浏览器跟踪重定向地址</h2><p>现在，浏览器知道了 “HTTP://www.facebook.com/”才是要访问的正确地址，所以它会发送另一个获取请求</p>
+<h2 id="6-服务器“处理”请求"><a href="#6-服务器“处理”请求" class="headerlink" title="6. 服务器“处理”请求"></a>6. 服务器“处理”请求</h2><p>服务器接收到获取请求，然后处理并返回一个响应。</p>
+<h2 id="7-服务器发回一个HTML响应"><a href="#7-服务器发回一个HTML响应" class="headerlink" title="7. 服务器发回一个HTML响应"></a>7. 服务器发回一个HTML响应</h2><h2 id="8-浏览器开始显示HTML"><a href="#8-浏览器开始显示HTML" class="headerlink" title="8. 浏览器开始显示HTML"></a>8. 浏览器开始显示HTML</h2><p>在浏览器没有完整接受全部HTML文档时，它就已经开始显示这个页面了：</p>
+<p><img src="http://ob5qdb9lc.bkt.clouddn.com/image6.png" alt="Image"></p>
+<h2 id="9-浏览器发送请求获取嵌入在HTML中的对象"><a href="#9-浏览器发送请求获取嵌入在HTML中的对象" class="headerlink" title="9. 浏览器发送请求获取嵌入在HTML中的对象"></a>9. 浏览器发送请求获取嵌入在HTML中的对象</h2><p>在浏览器显示HTML时，它会注意到需要获取其他地址内容的标签。这时，浏览器会发送一个获取请求来重新获得这些文件。<br>下面是几个我们访问facebook.com时需要重获取的几个URL：</p>
+<ul>
+<li>图片<br>HTTP://static.ak.fbcdn.net/rsrc.php/z12E0/hash/8q2anwu7.gif<br>HTTP://static.ak.fbcdn.net/rsrc.php/zBS5C/hash/7hwy7at6.gif</li>
+<li>CSS 式样表<br>HTTP://static.ak.fbcdn.net/rsrc.php/z448Z/hash/2plh8s4n.css<br>HTTP://static.ak.fbcdn.net/rsrc.php/zANE1/hash/cvtutcee.css</li>
+<li>JavaScript 文件<br>HTTP://static.ak.fbcdn.net/rsrc.php/zEMOA/hash/c8yzb6ub.js<br>HTTP://static.ak.fbcdn.net/rsrc.php/z6R9L/hash/cq2lgbs8.js<br>…</li>
+</ul>
+<p>这些地址都要经历一个和HTML读取类似的过程。所以浏览器会在DNS中查找这些域名，发送请求，重定向等等…</p>
+<p>但不像动态页面那样，静态文件会允许浏览器对其进行缓存。有的文件可能会不需要与服务器通讯，而从缓存中直接读取。服务器的响应中包含了静态文件保存的期限信息，所以浏览器知道要把它们缓存多长时间。还有，每个响应都可能包含像版本号一样工作的ETag头（被请求变量的实体值），如果浏览器观察到文件的版本 ETag信息已经存在，就马上停止这个文件的传输。</p>
+<p>“fbcdn.net”在地址中代表什么？答案是”Facebook内容分发网络”。Facebook利用内容分发网络 （CDN）分发像图片，CSS表和JavaScript文件这些静态文件。所以，这些文件会在全球很多CDN的数据中心中留下备份。</p>
+<p>静态内容往往代表站点的带宽大小，也能通过CDN轻松的复制。通常网站会使用第三方的CDN。例如，Facebook的静态文件由最大的 CDN提供商Akamai来托管。举例来讲，当你试着ping static.ak.fbcdn.net的时候，可能会从某个akamai.net服务器上获得响应。有意思的是，当你同样再ping一次的时候，响应的服务器可能就不一样，这说明幕后的负载平衡开始起作用了。</p>
+<h2 id="10-浏览器发送异步（AJAX）请求"><a href="#10-浏览器发送异步（AJAX）请求" class="headerlink" title="10. 浏览器发送异步（AJAX）请求"></a>10. 浏览器发送异步（AJAX）请求</h2><p>在Web 2.0伟大精神的指引下，页面显示完成后客户端仍与服务器端保持着联系。</p>
+<p>以 Facebook聊天功能为例，它会持续与服务器保持联系来及时更新你那些亮亮灰灰的好友状态。为了更新这些头像亮着的好友状态，在浏览器中执行的 JavaScript代码会给服务器发送异步请求。这个异步请求发送给特定的地址，它是一个按照程式构造的获取或发送请求。还是在Facebook这个例子中，客户端发送给HTTP://www.facebook.com/ajax/chat/buddy_list.php一个发布请求来获取你好友里哪个 在线的状态信息。</p>
+<p>Facebook聊天功能提供了关于AJAX一个有意思的问题案例：把数据从服务器端推送到客户端。因为HTTP是一个请求-响应协议，所 以聊天服务器不能把新消息发给客户。取而代之的是客户端不得不隔几秒就轮询下服务器端看自己有没有新消息。</p>
+<p>这些情况发生时,长轮询是个减轻服务器负载挺有趣的技术。如果当被轮询时服务器没有新消息，它就不理这个客户端。而当尚未超时的情况下收到了该客户的新消息，服务器就会找到未完成的请求，把新消息做为响应返回给客户端。</p>
+
+  </div>
+  <footer class="article-footer">
+    
+
+    
+
+  </footer>
+</article>
+
+
+  <link rel="stylesheet" href="http://static.duoshuo.com/styles/embed.default.css?349d9313.css">
+  <!-- 多说评论框 start -->
+  <div class="ds-thread" data-thread-key="2016/08/08/TCP-IP笔记-Cookie与Session、Socket、访问网页/" data-title="TCP/IP笔记-Cookie与Session、Socket、访问网页" data-url="/2016/08/08/TCP-IP笔记-Cookie与Session、Socket、访问网页/"></div>
+  <!-- 多说评论框 end -->
+  <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+  <script type="text/javascript">
+    var duoshuoQuery = {
+      short_name: "SION"
+    };
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';
+      ds.async = true;
+      ds.src = (document.location.protocol == 'https:'
+        ? 'https:'
+        : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+  <!-- 多说公共JS代码 end -->
+
+
+
+
+
+
+          <div class="main-footer">
+  
+    © 2016 Be Level5 Coder - Powered by <a href="http://hexo.io" target="_blank">Hexo</a> - Theme <a href="https://github.com/denjones/hexo-theme-chan" target="_blank">Chan</a>
+  
+</div>
+
+      
+        </div>
+      
+    </div>
+  </div>
+  <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="/PhotoSwipe/photoswipe.css">
+  <link rel="stylesheet" href="/PhotoSwipe/default-skin/default-skin.css">
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+             It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+      <!-- Container that holds slides.
+                PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                Don't modify these 3 pswp__item elements, data is added later on. -->
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+
+      <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+      <div class="pswp__ui pswp__ui--hidden">
+
+        <div class="pswp__top-bar">
+
+          <!--  Controls are self-explanatory. Order can be changed. -->
+
+          <div class="pswp__counter"></div>
+
+          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+          <button class="pswp__button pswp__button--share" title="Share"></button>
+
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+          <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+          <!-- element will get class pswp__preloader--active when preloader is running -->
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div>
+
+        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/PhotoSwipe/photoswipe.js"></script>
+  <script src="/PhotoSwipe/photoswipe-ui-default.js"></script>
+
+
+<script src="/perfect-scrollbar/js/min/perfect-scrollbar.min.js"></script>
+<script src="/scripts/main.js"></script>
+
+</body>
+</html>

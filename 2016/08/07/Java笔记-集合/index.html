@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<title>
+  
+    Java笔记-集合
+  
+</title>
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java笔记-集合">
+<meta property="og:url" content="http://yoursite.com/2016/08/07/Java笔记-集合/index.html">
+<meta property="og:site_name" content="Be Level5 Coder">
+<meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/94cad1c8a786c91700b85e64ca3d70cf3bc75737.jpg">
+<meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/5781777496614730124.jpg">
+<meta property="og:updated_time" content="2016-08-07T12:02:56.902Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java笔记-集合">
+<meta name="twitter:image" content="http://ob5qdb9lc.bkt.clouddn.com/94cad1c8a786c91700b85e64ca3d70cf3bc75737.jpg">
+
+
+  <link rel="alternative" href="/atom.xml" title="Be Level5 Coder" type="application/atom+xml">
+
+
+
+  <link rel="icon" href="/favicon.png">
+
+
+<link rel="stylesheet" href="/perfect-scrollbar/css/perfect-scrollbar.min.css">
+<link rel="stylesheet" href="/styles/main.css">
+
+
+
+
+
+
+</head>
+<body
+  
+  >
+  <div class="mobile-header">
+  <button class="sidebar-toggle" type="button">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a class="title" href="/">Be Level5 Coder</a>
+</div>
+
+  <div class="main-container">
+    <div class="sidebar">
+  <div class="header">
+    <h1 class="title"><a href="/">Be Level5 Coder</a></h1>
+    
+    <div class="info">
+      <div class="content">
+        
+        
+          <div class="author">Sion</div>
+        
+      </div>
+      
+        <div class="avatar">
+          
+            <img src="http://ob5qdb9lc.bkt.clouddn.com/my_avatar.jpg">
+          
+        </div>
+      
+    </div>
+  </div>
+  <div class="body">
+    
+      
+        <ul class="nav">
+          
+            
+              <li class="category-list-container">
+                <a href="javascript:;">分类</a>
+                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android笔记/">Android笔记</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java笔记/">Java笔记</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TCP-IP笔记/">TCP/IP笔记</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统笔记/">操作系统笔记</a><span class="category-list-count">1</span></li></ul>
+              </li>
+            
+          
+            
+              <li class="tag-list-container">
+                <a href="javascript:;">标签</a>
+                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Other/">Other</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP-IP/">TCP/IP</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a><span class="tag-list-count">1</span></li></ul>
+              </li>
+            
+          
+            
+              <li class="archive-list-container">
+                <a href="javascript:;">归档</a>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a><span class="archive-list-count">32</span></li></ul>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="/" title="Homepage">Homepage</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/archives" title="By Year">By Year</a>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="https://github.com/liaosiyang" title="Github" target="_blank" rel="external">Github</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/atom.xml" title="RSS">RSS</a>
+              </li>
+            
+          
+        </ul>
+      
+    
+  </div>
+</div>
+
+    <div class="main-content">
+      
+        <div style="max-width: 1000px">
+      
+          <article id="post-Java笔记-集合" class="article article-type-post">
+  
+    <h1 class="article-header">
+      Java笔记-集合
+    </h1>
+  
+  
+
+  <div class="article-info">
+    <span class="article-date">
+  2016-08-07
+</span>
+
+    
+	<span class="article-category tagcloud">
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Java笔记/">Java笔记</a></li></ul>
+	</span>
+
+
+    
+	<span class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+	</span>
+
+
+  </div>
+  <div class="article-entry">
+    <p><img src="http://ob5qdb9lc.bkt.clouddn.com/94cad1c8a786c91700b85e64ca3d70cf3bc75737.jpg" alt="Image"></p>
+<a id="more"></a>
+<h1 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h1><p>随着Java SE 1.2的问世，设计人员感到是推出一组功能完善的数据结构的时机了。面对一大堆相互矛盾的设计策略，他们希望让类库小且易于学习，而不像C++的STL那样复杂，但却又希望能够得到STL率先推出的”泛型算法”所具有的优点。</p>
+<h2 id="Java类库中的集合接口和迭代器接口"><a href="#Java类库中的集合接口和迭代器接口" class="headerlink" title="Java类库中的集合接口和迭代器接口"></a>Java类库中的集合接口和迭代器接口</h2><p>在Java类库中，集合类的基本接口是Collection接口。这个接口有2个基本方法：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Collection</span>&lt;<span class="title">E</span>&gt;</span>&#123;</div><div class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">add</span><span class="params">(E element)</span></span>;</div><div class="line">    <span class="function">Iterator&lt;E&gt; <span class="title">iterator</span><span class="params">()</span></span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>add方法用于向集合中添加元素。如果添加元素确实改变了集合就返回true，如果集合没有发生改变就返回false。例如，如果试图向集合中添加一个对象，而这个对象在集中已经存在，这个添加请求就没有实效，因为集中不允许有重复的对象。<br>iterator方法用于返回一个实现了Iterator接口的对象。可以使用这个迭代器对象依次访问集合中的元素。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Inerator</span>&lt;<span class="title">E</span>&gt;</span>&#123;</div><div class="line">    <span class="function">E <span class="title">next</span><span class="params">()</span></span>;</div><div class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">hasNext</span><span class="params">()</span></span>;</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">remove</span><span class="params">()</span></span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>通过反复调用next方法，可以逐个访问集合中的每个元素。Collection接口扩展了Iterable接口。因此对于标准类库中的任何集合都可以使用“for each”循环。</p>
+<p>元素被访问的顺序取决于集合类型。如果对ArrayList进行迭代，迭代器将从索引0开始，每迭代一次，索引值加1。然而，如果访问HashSet中的元素，每个元素将会按照某种随机的次序出现。虽然可以确定在迭代过程中能遍历到集合中的所有元素，但却无法预知元素被访问的次序。</p>
+<p>C++的标准模板库，迭代器是根据数组索引建模的。如果给定一个迭代器，就可以查看指定位置上的元素，但是，Java迭代器并不是这样操作的。查找操作与位置变更是紧密相连的。查找一个元素的唯一方法是调用next，而在执行查找操作的同时，迭代器的位置随之向前移动。</p>
+<p>因此，应该将Java迭代器认为是位于两个元素之间，当调用next时，迭代器就越过下一个元素，并返回刚刚越过的那个元素的引用。</p>
+<p>Iterator接口的remove方法将会删除上次调用next方法时返回的元素。对next方法和remove方法的调用具有相互依赖性。如果调用remove之前没有调用next将是不合法的。也不能连续使用2个remove方法。</p>
+<p>由于Collection与Iterator都是泛型接口，可以编写操作任何集合类型的实用方法。Java类库的设计者认为：这些实用方法中的某些方法非常有用，应该将它们提供给用户使用。contains就是一个实用方法。</p>
+<p>当然，如果实现Collection接口的每一个类都要提供如此多的例行方法将是一件很烦人的事情。为了能让实现者更容易实现这个接口，Java类库提供了一个类AbstractCollection，它将基础方法size和iterator抽象化了，但是在此提供了例行方法。</p>
+<h2 id="具体的集合"><a href="#具体的集合" class="headerlink" title="具体的集合"></a>具体的集合</h2><h3 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h3><ul>
+<li>数组和数组列表都有一个重大的缺陷，这就是从数组的中间位置删除一个元素要付出很大的代价，其原因是数组中处于被删除元素之后的所有元素都要向数组的前端移动。在数组中间的位置插入一个元素也是如此。</li>
+<li>数组在连续的存储位置上存放对象引用，但链表却将每个对象存放在独立的结点中。每个结点还存放着序列中下一个结点的引用。在Java程序设计语言中，所有的链表实际上都是双向链接的——即每个结点还存放指向前驱结点的引用。</li>
+<li>链表与泛型集合之间有一个重要的区别。链表是一个有序集合，每个元素的位置十分重要。LinkedList.add方法将对象添加到链表的尾部。但是，常常需要将元素添加到链表的中间。这种依赖于位置的add方法将由迭代器负责。只有对自然有序的集合使用迭代器添加元素才有实际意义。Set类型，其中的元素完全无序。因此在Iterator接口中就没有add方法。相反的，集合类库提供了子接口ListIterator，其中包含了add方法。另外，ListIterator接口有两个方法，可以用来反向遍历链表。</li>
+<li>不要用for()循环来遍历链表。因为每次查找一个元素都要从链表的头部从新开始搜索。</li>
+<li>使用链表的唯一理由是尽可能地减少在列表中插入或删除元素所付出的代价。如果列表中只有少数几个元素，就完全可以使用ArrayList。</li>
+<li>List接口用于描述一个有序集合，并且集合中每个元素的位置十分重要。有两种访问元素的协议：一种是用迭代器，另一种是用get/set方法随机地访问每个元素。后者不适合链表，但对数组却很有用。ArrayList类实现了List接口，封装了一个动态再分配的对象数组。</li>
+<li>在需要动态数组时，可能会使用Vector类。Vector类的所有方法都是同步的，而ArrayList方法不是同步的。</li>
+<li>ArrayList扩容为原来的1.5倍，Vertor默认为原来的2倍（可以设置）。ArrayList删除元素却不会进行缩容, 遍历ArrayList时，使用随机访问(即，通过索引序号访问)效率最高，而使用迭代器的效率最低！</li>
+<li>CopyOnWriteArrayList的核心思想是利用高并发往往是读多写少的特性，对读操作不加锁，对写操作，先复制一份新的集合，在新的集合上面修改，然后将新集合赋值给旧的引用，并通过volatile保证其可见性，当然写操作的锁是必不可少的了。</li>
+</ul>
+<h3 id="散列集"><a href="#散列集" class="headerlink" title="散列集"></a>散列集</h3><ul>
+<li>有一种数据结构可以快速地查找所需要的对象，这就是散列表。散列表为每个对象计算一个整数，称为散列码(hash code)。散列码是由对象的实例域产生的一个整数。具有不同数据域的对象将产生不同的散列码。</li>
+<li>在Java中，散列表用链表数组(底层是数组结构，数组的中的每一项又是一个链表)实现。每个列表被称为桶。想要查找表中对象的位置，就要先计算它的散列码，然后与桶的总数取余，所得到的结果就是这个元素的桶的索引。有时候会遇到桶被沾满的情况，这也是不可避免的。这种现象被称为散列冲突。</li>
+<li>通常将桶数设置为预计元素个数的75%~150%。研究人员认为最好将桶数设置为一个素数，以防键的集聚。标准类库使用的桶数是2的幂。默认值为16。</li>
+<li>如果散列表太满，就需要再散列。如果要对散列表再散列，就要创建一个桶数更多的表，并将所有元素插入到这个新表中，然后丢弃原来的表。装填因子决定何时对散列表进行再散列。如果装填因子为0.75(默认值)，而表中超过75%的位置已经填入元素，这个表就会用双倍的桶数自动地进行再散列。</li>
+<li>散列表可以用于实现几个重要的数据结构，set是没有重复元素的元素集合。set的add方法首先在集中查找要添加的对象，如果不存在，就将这个对象添加进去。Java集合类库提供了一个HashSet类，它实现了基于散列表的集。可以用add方法添加元素。contains方法已经被重新定义，用来快速地查看某个元素已经出现在集中。它只在某个桶中查找元素，而不必查看集合中的所有元素。</li>
+<li>散列集迭代器将依次访问所有的桶。由于散列将元素分散在表的各个位置上，所以访问它们的顺序几乎是随机的。只有不关心集合中元素的顺序时才应该使用HashSet。</li>
+<li>LruCache内部使用LinkedHashMap来保存缓存的值。初始化的时候传入缓存的最大值或者缓存的最大个数（如果sizeOf方法返回1的话）。如果重写来create方法，在使用get方法的时候，如果缓存不存在，就将新创建的value加入到缓存中，这样就不用再次使用put来加入缓存了（因为create不是线程安全的，所以，创建成功之后是否应该加入缓存还需要再判断一下）</li>
+</ul>
+<h3 id="树集"><a href="#树集" class="headerlink" title="树集"></a>树集</h3><ul>
+<li>TreeSet类与散列集十分类似，不过它比散列集有所改进。树集是一个有序集合。可以以任意顺序将元素插入到集合中。在对集合进行遍历时，每个值将自动地按照排序后的顺序呈现。比如插入字符串，访问添加的所有元素时会按首字母先后顺序打印。</li>
+<li>排序是用树结构完成的(当前实现使用的是红黑树)。每次将一个元素添加到树中时，都被放置在正确的排序位置上。因此，迭代器总是以排好序的顺序访问每一个元素。</li>
+<li>将一个元素添加到树中要比添加到散列表中慢，但是与将元素添加到数组或链表的正确位置上相比还是快很多的。</li>
+</ul>
+<h3 id="对象的比较"><a href="#对象的比较" class="headerlink" title="对象的比较"></a>对象的比较</h3><ul>
+<li>TreeSet如何知道希望元素怎样排列？在默认情况时，树集假定插入的元素实现了Comparable接口。这个接口定义了一个方法：<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Comparable</span>&lt;<span class="title">T</span>&gt;</span>&#123;</div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">comparaTo</span><span class="params">(T other)</span></span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></li>
+<li>有些标准的Java平台类实现了Comparable接口自定义排列顺序。如String类，这个类的comparaTo方法依据字典序对字符串进行比较。</li>
+<li>使用Comparable接口定义排列排序显然有其局限性。对于一个给定的类，只能够实现这个接口一次。如果在一个集合中需要按照部件编号进行排序，另一个集合中却要按照描述信息进行排序，该怎么办？另外，如果需要对一个类的对象进行排序，而这个类的创建者又没有费心实现Comparable接口，又怎么办？</li>
+<li><p>在这种情况下，可以将Comparator对象传递给TreeSet构造器来告诉树集使用不同的比较方法。Comparator接口声明了一个带有两个显式参数的compara方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Comparator</span>&lt;<span class="title">T</span>&gt;</span>&#123;</div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">compara</span><span class="params">(T a,T b)</span></span></div><div class="line">&#125;</div></pre></td></tr></table></figure>   
+<p>与comparaTo方法一样，如果a位于b之前compara方法返回负值。a和b相等则返回0，否则返回正值。</p>
+</li>
+<li><p>这个比较器没有任何数据。它只是比较方法的持有器。有时将这种对象称为函数对象。函数对象通常“动态”定义，即定义为匿名内部类的实例。</p>
+</li>
+</ul>
+<h3 id="队列和双端队列"><a href="#队列和双端队列" class="headerlink" title="队列和双端队列"></a>队列和双端队列</h3><ul>
+<li>队列可以有效地在尾部添加一个元素，在头部删除一个元素。有两个端头的队列，即双端队列。可以有效地在头部和尾部同时添加或删除元素，不支持在队列中添加元素。</li>
+<li>在Java SE6中引入了Deque接口，并由ArrayDeque和LinkedList类实现。这两个类都提供了双端队列，而且在必要时可以增加队列的长度。</li>
+</ul>
+<h3 id="优先级队列"><a href="#优先级队列" class="headerlink" title="优先级队列"></a>优先级队列</h3><ul>
+<li>优先级队列中元素可以按照任意的顺序插入，却总是按照排序的顺序进行检索。也就是说，无论何时调用remove方法，总是会获得当前优先级队列中最小的元素。然而优先级队列并没有对所有的元素进行排序。如果用迭代的方式处理这些元素，并不需要对它们进行排序。优先级队列使用了堆的数据结构。堆是一个可自我调整的二叉树，对数执行添加(add)和删除(remove)操作，可以让最小的元素移动到根，而不必花费时间对元素进行排序。</li>
+<li>与TreeSet一样，一个优先级队列既可以保存实现了Comparable接口的类对象，也可以保存在构造器中提供比较器的对象。</li>
+<li>使用优先级队列的典型示例是任务调度。每一个任务有一个优先级，任务以随机顺序添加到队列中。每当启动一个新的任务时，都将优先级最高的任务从队列中删除。</li>
+<li>与TreeSet中迭代不同，这里的迭代并不是按照元素的排列顺序访问的，而删除却总是删除掉剩余元素中优先级最小的元素。</li>
+</ul>
+<h3 id="映射表"><a href="#映射表" class="headerlink" title="映射表"></a>映射表</h3><ul>
+<li>集是一个集合，它可以快速地查找现有的元素。但是要查看一个元素，需要有查找元素的精确副本。这不是一种非常通用的查找方式。通常，我们知道某些键的信息，并且想要查找与之对应的元素。映射表数据结构就是为此设计的。映射表用来存放键/值对。如果提供了键，就能够查找到值。</li>
+<li>Java类库为映射提供了两个通用的实现：HashMap和TreeMap。这两个类都实现了Map接口。</li>
+<li>散列映射表对键进行散列，数映射表用键的整体顺序对元素进行排序，并将其组织成搜索树。散列或比较函数只能作用于键。</li>
+<li>键必须是唯一的。不能对同一个键存放两个值。如果对同一个键两次调用put方法，第二个值就会取代第一个值。实际上，put将返回用这个键参数存储的上一个值。</li>
+<li>集合框架并没有将映射表本身视为一个集合。映射表的视图是一组实现Collection接口的对象。它们分别是：键集、值集合和键/值对集键与键/值对形成了一个集。<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function">Set&lt;K&gt; <span class="title">keySet</span><span class="params">()</span></span></div><div class="line">Collection&lt;V&gt; <span class="title">values</span><span class="params">()</span></div><div class="line">Set&lt;Map.Entry&lt;K,V&gt;&gt; <span class="title">entrySet</span><span class="params">()</span></div></pre></td></tr></table></figure>    
+Hashmap 是一个 最常用的Map,它根据键的HashCode值存储数据,根据键可以直接获取它的值，具有很快的访问速度。</li>
+</ul>
+<p>HashMap最多只允许一条记录的键为Null;允许多条记录的值为Null;HashMap不支持线程的同步，即任一时刻可以有多个线程同时写HashMap;可能会导致数据的不一致。如果需要同步，可以用Collections的synchronizedMap方法使HashMap具有同步的能力.用synchronized修饰操作HashMap的语句块或方法。</p>
+<p>Hashtable 与 HashMap类似,不同的是:它不允许记录的键或者值为空;它支持线程的同步，即任一时刻只有一个线程能写Hashtable,因此也导致了Hashtale在写入时会比较慢。</p>
+<p>TreeMap能够把它保存的记录根据键排序,默认是按升序排序，也可以指定排序的比较器，当用Iterator 遍历TreeMap时，得到的记录是排过序的，它不允许记录的键或者值为空。</p>
+<p>LinkedHashMap，键和值可以为null，可以使插入的顺序，在用Iterator遍历LinkedHashMap时，先得到的记录肯定是先插入的.在遍历的时候会比HashMap慢。也可以是基于访问顺序。</p>
+<h3 id="专用集与映射表类"><a href="#专用集与映射表类" class="headerlink" title="专用集与映射表类"></a>专用集与映射表类</h3><h4 id="弱散列映射表"><a href="#弱散列映射表" class="headerlink" title="弱散列映射表"></a>弱散列映射表</h4><p>设计WeakHashMap类是为了解决一个有趣的问题。如果有一个值，对应的键已经不再使用了。假设对有一个键的最后一次引用已经消亡，不再有任何途径引用这个值的对象了。但是，由于在程序中的任何部分没有再出现这个键，所以，这个键/值对无法从映射表中删除。因为垃圾回收器跟踪活动的对象。只要映射表对象是活动的，其中的桶也是活动的，它们就不能被回收。</p>
+<p>因此需要由程序负责从长期存活的映射表中删除那些无用的值。或者使用WeakHashMap完成这件事情。当对键的唯一引用来自散列表条目时，这一数据结构将与垃圾回收器协同工作一起删除键值对。</p>
+<p>WeakHashMap使用弱引用保存键。WeakReference对象将引用保存到另外一个对象中，在这里就是散列表键。</p>
+<p>对于这种类型的对象，垃圾回收器用一种特有的方式进行处理。通常，如果垃圾回收器发现某特特定对象已经没有他人引用了，就将其回收。然而，如果某个对象只能由WeakReference引用，垃圾回收器仍然回收它，但要将引用这个对象的弱引用放入队列中。</p>
+<p>WeakHashMap将周期性地检查队列，以便找出新添加的弱引用。一个弱引用进入队列意味着这个键不再被他人使用，并且已经被收集起来。于是，WeakHashMap将删除对应的条目。</p>
+<h4 id="链接散列集和链接散列表"><a href="#链接散列集和链接散列表" class="headerlink" title="链接散列集和链接散列表"></a>链接散列集和链接散列表</h4><p>LinkedHashSet和LinedHashMap，用来记住插入元素项的顺序，这样就可以避免在散列表中项从表面上看是随机排列的。当条目插入到表中时，就会并入到双向链表中。链接散列表将用访问顺序，而不是插入顺序，对映射表条目进行迭代。</p>
+<p>每次调用get或put，受到影响的条目将从当前位置删除，并放到条目链表的尾部(只有条目在链表中的位置会受到影响，而散列表中桶不会受影响。一个条目总位于与键散列码对应的桶中)。</p>
+<p>访问顺序对于实现高速缓存的“最近最少使用”原则十分重要。例如，可能希望将访问频率高的元素放在内存中，而访问频率低的元素则从数据库中读取。当在表中找不到元素而表又已经满时，可以将迭代器放入表中，并将枚举的前几个元素删除掉。</p>
+<h4 id="枚举集与映射表"><a href="#枚举集与映射表" class="headerlink" title="枚举集与映射表"></a>枚举集与映射表</h4><p>EnumSet是一个枚举类型元素集的高效实现。由于枚举类型只有有限个实例，所以EnumSet内部用位序列实现。如果对应的值在集中，则对应的位被置为1。EnumMap是一个键类型为枚举类型的映射表。它可以高效地用一个值数组实现。</p>
+<h4 id="标识散列映射表"><a href="#标识散列映射表" class="headerlink" title="标识散列映射表"></a>标识散列映射表</h4><p>dentityHashMap，键的散列值不是用hashCode函数计算的，而是用System.identityHashCode方法计算的。这是Object.hashCode方法根据对象的内存地址来计算散列码时所使用的方式。在两个对象进行比较时，IdentityHashMap类使用==，而不是equals。也就是说不同的键对象，即使内容相同，也被视为是不同的对象。在实现对象遍历算法(如对象序列化)时这个类非常有用，可以用来跟踪每个对象的遍历状况。</p>
+<h2 id="集合框架"><a href="#集合框架" class="headerlink" title="集合框架"></a>集合框架</h2><p>框架是一个类的集，它奠定了创造高级功能的基础。Java集合类库构成集合类的框架。它为集合的实现者定义了大量的抽象类和接口，并且对其中的类的某些机制给予描述。例如，迭代协议。<br>集合有两个基本的接口：Collection和Map。<br><img src="http://ob5qdb9lc.bkt.clouddn.com/5781777496614730124.jpg" alt="Image"></p>
+<h3 id="视图包装器"><a href="#视图包装器" class="headerlink" title="视图包装器"></a>视图包装器</h3><p>用如此多的接口和抽象类来实现数量并不多的具体集合类似乎没有太大必要。通过使用视图可以获得其他的实现了集合接口和映射表接口的对象。</p>
+<p>映射表类的keySet方法就是一个这样的示例。keySet返回一个实现Set接口类的对象，这个类的方法对原映射表进行操作。这种集合称为视图。视图技术在集合框架中有许多非常有用的应用。</p>
+<h4 id="轻量级集包装器"><a href="#轻量级集包装器" class="headerlink" title="轻量级集包装器"></a>轻量级集包装器</h4><p>Arrays类的静态方法asList将返回一个包装了普通Java数组的List包装器。这个方法可以将数组传递给一个期望的到列表或集合变元的方法。eg：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Card[] cardDeck=<span class="keyword">new</span> Card[<span class="number">52</span>];</div><div class="line">...</div><div class="line">List&lt;Card&gt; cardList=Arrays.asList(cardDeck);</div></pre></td></tr></table></figure><br>返回的对象不是ArrayList。它是一个视图对象。带有底层访问数组的get和set方法。改变数组大小的所有方法都会抛出一个异常。</p>
+<h4 id="子范围"><a href="#子范围" class="headerlink" title="子范围"></a>子范围</h4><p>可以为很多集合建立子范围，eg：想从staff列表中取出第10个~第19个元素，可以使用subList方法来获得子范围视图。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">List group2=staff.subList(<span class="number">10</span>,<span class="number">20</span>);</div></pre></td></tr></table></figure><br>对于有序表和映射表，可以使用排序顺序而不是元素位置建立子范围<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function">SortedSet&lt;E&gt; <span class="title">subSet</span><span class="params">(E from,E to)</span></span></div><div class="line">SortedSet&lt;E&gt; <span class="title">headSet</span><span class="params">(E to)</span></div><div class="line">SortedSet&lt;E&gt; <span class="title">tailSet</span><span class="params">(E from)</span></div></pre></td></tr></table></figure>   </p>
+<h4 id="不可修改的视图"><a href="#不可修改的视图" class="headerlink" title="不可修改的视图"></a>不可修改的视图</h4><p>Collections还有几个方法，用于产生集合的不可修改视图。eg：假设想要查看某部分代码，但又不触及某个集合的内容：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">List&lt;String&gt; staff=<span class="keyword">new</span> LinedList&lt;&gt;();</div><div class="line">...</div><div class="line">lookAt(Coolections.unmodifiableList(staff))</div></pre></td></tr></table></figure>    </p>
+<h4 id="同步视图"><a href="#同步视图" class="headerlink" title="同步视图"></a>同步视图</h4><p>如果由多个线程访问集合，就必须确保集不会被意外破坏。类库设计者使用视图机制来确保常规集合的线程安全，而不是实现线程安全的集合类。eg：Collections类的静态synchronizedMap方法可以将任何一个映射表转换成具有同步访问方法的Map：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Map&lt;String,Employee&gt; map=Collections.synchronizedMap(<span class="keyword">new</span> HashMap&lt;String,Employee&gt;())</div></pre></td></tr></table></figure>        </p>
+<h4 id="检查视图"><a href="#检查视图" class="headerlink" title="检查视图"></a>检查视图</h4><p>Java SE5.0增加了一组“检查”视图，用来对泛型类型发生问题时提供调试支持。eg：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ArrayList&lt;String&gt; strings=<span class="keyword">new</span> ArrayList&lt;&gt;();</div><div class="line">ArrayList rawList=strings;<span class="comment">//get warning only,not an error</span></div><div class="line">rawList.add(<span class="keyword">new</span> Date());<span class="comment">//now Strings contains a Date Object</span></div></pre></td></tr></table></figure><br>这个错误的add命令在运行时检测不到。只有在稍后的另外一部分代码中调用get()方法，并将结果转化为String时，这个类才会抛出异常。检查视图可以探测这类问题：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">List&lt;String&gt; safeStrings=Collenctions.checkedList(Strings,String.class);</div></pre></td></tr></table></figure><br>视图的add方法将检测插入的对象是否属于给定的类。如果不属于给定的类，就立即抛出一个异常。</p>
+<h4 id="可选操作的说明"><a href="#可选操作的说明" class="headerlink" title="可选操作的说明"></a>可选操作的说明</h4><p>通常，视图有一些局限性，即可能只可以读、无法改变大小、只支持删除而不支持插入，这些与映射表的键视图情况相同。如果试图进行不恰当的操作，受限制的视图就会抛出异常。</p>
+<p>在集合和迭代器接口的API文档中，许多方法描述为“可选操作”。一这看起来与接口的概念有所抵触。一个更好的解决方案是为每个只读视图和不能改变集合大小的视图建立各自独立的两个接口。不过，这将会使接口的数量成倍增长。</p>
+<h3 id="批处理"><a href="#批处理" class="headerlink" title="批处理"></a>批处理</h3><p>可以使用类库中的批处理避免频繁地使用迭代器。假设希望找出两个集的交，首先建立一个新集，接着调用rerainAll方法：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Set&lt;String&gt; result=<span class="keyword">new</span> HashSet&lt;&gt;(a);</div><div class="line">result.retainAll(b);</div></pre></td></tr></table></figure><br>result中保存了既在a中出现，也在b中出现的元素。同理还有removeAll方法。</p>
+<h3 id="集合与数组之间的转换"><a href="#集合与数组之间的转换" class="headerlink" title="集合与数组之间的转换"></a>集合与数组之间的转换</h3><p>由于Java平台API中大部分内容都是在集合框架创建之前设计的，所以，有时候需要在传统数组与现代的集合之间进行转换。</p>
+<p>如果一个数组要转换为集合。Arrays.asList的包装器就可以实现这个目的：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">String[] values=...;</div><div class="line">HashSet&lt;String&gt; staff=<span class="keyword">new</span> HashSet&lt;&gt;(Arrays.asList(values));</div></pre></td></tr></table></figure><br>反过来，将集合转换为数组就有点难了。可以使用toArray方法：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Object[] values=staff.toArray();</div></pre></td></tr></table></figure><br>但是，这样做的结果是产生一个对象数组。即使知道集合中包含一个特定类型的对象，也不能使用类型转换：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">String[] values=(String[])satff.toArray();<span class="comment">//error</span></div></pre></td></tr></table></figure><br>有toArray方法返回的数组是一个Object[]数组，无法改变其类型。必须使用另外一种toArray方法，并将其设计为所希望的元素类型且长度为0的数组。也可以构造一个直到大小的数组：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">String[] values=staff.toArray(<span class="keyword">new</span> String[<span class="number">0</span>]);</div><div class="line">staff.toArray(<span class="keyword">new</span> String[staff.size()])</div></pre></td></tr></table></figure>   </p>
+<h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>泛型集合接口有一个很大的优点，即算法只需要实现一次。</p>
+<h3 id="排序和混排"><a href="#排序和混排" class="headerlink" title="排序和混排"></a>排序和混排</h3><p>Collections类中的sort方法可以对实现了List接口的集合进行排序。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">List&lt;String&gt; staff=<span class="keyword">new</span> LinkedList&lt;&gt;();</div><div class="line">Collections.sort(staff);</div></pre></td></tr></table></figure><br>如果想按照降序对列表进行排序，可以使用一种非常方便的静态方法。这个方法将返回一个比较器。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Collections.sort(staff，Collections.reverseOrder());</div></pre></td></tr></table></figure><br>在算法书籍中的排序算法，都是有关数组的排序算法，而且都是随机访问的方式。但是，对列表进行随机访问的效率很低。实际上，可以使用归并排序对列表进行高效的排序。然而，Java程序设计语言并不是这样实现的。它直接将所有元素转入一个数组，并使用一种归并排序的变体对数组进行排序，然后再将排序后的序列复制回列表。</p>
+<p>集合类库中使用的归并排序算法比快速排序要慢一些，快速排序是通用排序算法传统选择。但是，归并排序有一个突出的优点：稳定，即不需要交换相同的元素。</p>
+<p>Collections类有一个算法shuffle，功能是随机地混排列表中的元素顺序。</p>
+<h3 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h3><p>Collections类的binarySearch方法实现了二分查找算法。注意集合必须是排好序的，否则算法将返回错误的结果。如果集合没有采用Comparable接口的compareTo方法进行排序。就还要提供一个比较器对象。</p>
+<p>只有采用随机访问，二分查找才有意义。如果必须利用迭代方式一次次遍历链表的一半元素来查找中间位置的元素，而分查找就完全失去了优势。因此，如果为binarySearch算法提供一个链表，它将自动地变为线性查找。</p>
+<h3 id="简单算法"><a href="#简单算法" class="headerlink" title="简单算法"></a>简单算法</h3><p>在Collections类中还包含了几种简单有用的算法。</p>
+<ul>
+<li>将一个列表的元素复制到另外一个表中；</li>
+<li>用一个常量填充容器；</li>
+<li>逆置一个列表的元素顺序；</li>
+<li>……</li>
+</ul>
+<h3 id="编写自己的算法"><a href="#编写自己的算法" class="headerlink" title="编写自己的算法"></a>编写自己的算法</h3><p>如果编写自己的算法(实际上，是以集合作为参数的任何方法)，应该尽可能地使用接口，而不要使用具体的实现。</p>
+<h2 id="遗留的集合"><a href="#遗留的集合" class="headerlink" title="遗留的集合"></a>遗留的集合</h2><h3 id="Hashtable"><a href="#Hashtable" class="headerlink" title="Hashtable"></a>Hashtable</h3><p>Hashtable类与HashMap类的作用一样，实际上，它们拥有相同的接口。Hashtable的方法也是同步的。</p>
+<h3 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h3><p>遗留集合使用Enumeration接口对元素序列进行遍历。</p>
+<h3 id="属性映射表"><a href="#属性映射表" class="headerlink" title="属性映射表"></a>属性映射表</h3><p>属性映射表是一个类型非常特殊的映射表结构：</p>
+<ul>
+<li>键与值都是字符串</li>
+<li>表可以保存到一个文件中，也可以从文件中加载</li>
+<li>使用一个默认的辅助表<br>实现属性映射表的Java平台类称为Properties。<br>属性映射表通常用于程序的特殊配置选项。</li>
+</ul>
+<h3 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h3><p>从1.0开始，标准类库就包含了Stack类，有push和pop方法。但是，Stack类扩展为Vector类，它可以使栈使用不属于栈操作的insert和remove方法，即可以在任何地方进行插入或删除操作，而不仅仅是在栈顶。</p>
+<h3 id="位集"><a href="#位集" class="headerlink" title="位集"></a>位集</h3><p>Java平台的BitSet类用于存放一个位序列。如果需要高效存储位序列(例如，标志)就可以使用位集。由于位集将位包装在字节里，所以，使用位集要比使用Boolean对象的ArrayList更加高效。</p>
+<p>BitSet类提供了便于读取，设置或清除各个位的接口。</p>
+
+  </div>
+  <footer class="article-footer">
+    
+
+    
+
+  </footer>
+</article>
+
+
+  <link rel="stylesheet" href="http://static.duoshuo.com/styles/embed.default.css?349d9313.css">
+  <!-- 多说评论框 start -->
+  <div class="ds-thread" data-thread-key="2016/08/07/Java笔记-集合/" data-title="Java笔记-集合" data-url="/2016/08/07/Java笔记-集合/"></div>
+  <!-- 多说评论框 end -->
+  <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+  <script type="text/javascript">
+    var duoshuoQuery = {
+      short_name: "SION"
+    };
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';
+      ds.async = true;
+      ds.src = (document.location.protocol == 'https:'
+        ? 'https:'
+        : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+  <!-- 多说公共JS代码 end -->
+
+
+
+
+
+
+          <div class="main-footer">
+  
+    © 2016 Be Level5 Coder - Powered by <a href="http://hexo.io" target="_blank">Hexo</a> - Theme <a href="https://github.com/denjones/hexo-theme-chan" target="_blank">Chan</a>
+  
+</div>
+
+      
+        </div>
+      
+    </div>
+  </div>
+  <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="/PhotoSwipe/photoswipe.css">
+  <link rel="stylesheet" href="/PhotoSwipe/default-skin/default-skin.css">
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+             It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+      <!-- Container that holds slides.
+                PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                Don't modify these 3 pswp__item elements, data is added later on. -->
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+
+      <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+      <div class="pswp__ui pswp__ui--hidden">
+
+        <div class="pswp__top-bar">
+
+          <!--  Controls are self-explanatory. Order can be changed. -->
+
+          <div class="pswp__counter"></div>
+
+          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+          <button class="pswp__button pswp__button--share" title="Share"></button>
+
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+          <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+          <!-- element will get class pswp__preloader--active when preloader is running -->
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div>
+
+        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/PhotoSwipe/photoswipe.js"></script>
+  <script src="/PhotoSwipe/photoswipe-ui-default.js"></script>
+
+
+<script src="/perfect-scrollbar/js/min/perfect-scrollbar.min.js"></script>
+<script src="/scripts/main.js"></script>
+
+</body>
+</html>

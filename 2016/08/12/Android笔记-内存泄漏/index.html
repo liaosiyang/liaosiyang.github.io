@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<title>
+  
+    Android笔记-内存泄漏
+  
+</title>
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android笔记-内存泄漏">
+<meta property="og:url" content="http://yoursite.com/2016/08/12/Android笔记-内存泄漏/index.html">
+<meta property="og:site_name" content="Be Level5 Coder">
+<meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/55729117201103111238192208337427592_012.jpg">
+<meta property="og:updated_time" content="2016-08-12T12:46:04.474Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android笔记-内存泄漏">
+<meta name="twitter:image" content="http://ob5qdb9lc.bkt.clouddn.com/55729117201103111238192208337427592_012.jpg">
+
+
+  <link rel="alternative" href="/atom.xml" title="Be Level5 Coder" type="application/atom+xml">
+
+
+
+  <link rel="icon" href="/favicon.png">
+
+
+<link rel="stylesheet" href="/perfect-scrollbar/css/perfect-scrollbar.min.css">
+<link rel="stylesheet" href="/styles/main.css">
+
+
+
+
+
+
+</head>
+<body
+  
+  >
+  <div class="mobile-header">
+  <button class="sidebar-toggle" type="button">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a class="title" href="/">Be Level5 Coder</a>
+</div>
+
+  <div class="main-container">
+    <div class="sidebar">
+  <div class="header">
+    <h1 class="title"><a href="/">Be Level5 Coder</a></h1>
+    
+    <div class="info">
+      <div class="content">
+        
+        
+          <div class="author">Sion</div>
+        
+      </div>
+      
+        <div class="avatar">
+          
+            <img src="http://ob5qdb9lc.bkt.clouddn.com/my_avatar.jpg">
+          
+        </div>
+      
+    </div>
+  </div>
+  <div class="body">
+    
+      
+        <ul class="nav">
+          
+            
+              <li class="category-list-container">
+                <a href="javascript:;">分类</a>
+                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android笔记/">Android笔记</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java笔记/">Java笔记</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TCP-IP笔记/">TCP/IP笔记</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统笔记/">操作系统笔记</a><span class="category-list-count">1</span></li></ul>
+              </li>
+            
+          
+            
+              <li class="tag-list-container">
+                <a href="javascript:;">标签</a>
+                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Other/">Other</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP-IP/">TCP/IP</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a><span class="tag-list-count">1</span></li></ul>
+              </li>
+            
+          
+            
+              <li class="archive-list-container">
+                <a href="javascript:;">归档</a>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a><span class="archive-list-count">32</span></li></ul>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="/" title="Homepage">Homepage</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/archives" title="By Year">By Year</a>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="https://github.com/liaosiyang" title="Github" target="_blank" rel="external">Github</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/atom.xml" title="RSS">RSS</a>
+              </li>
+            
+          
+        </ul>
+      
+    
+  </div>
+</div>
+
+    <div class="main-content">
+      
+        <div style="max-width: 1000px">
+      
+          <article id="post-Android笔记-内存泄漏" class="article article-type-post">
+  
+    <h1 class="article-header">
+      Android笔记-内存泄漏
+    </h1>
+  
+  
+
+  <div class="article-info">
+    <span class="article-date">
+  2016-08-12
+</span>
+
+    
+	<span class="article-category tagcloud">
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Android笔记/">Android笔记</a></li></ul>
+	</span>
+
+
+    
+	<span class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+	</span>
+
+
+  </div>
+  <div class="article-entry">
+    <p><img src="http://ob5qdb9lc.bkt.clouddn.com/55729117201103111238192208337427592_012.jpg" alt="Image"></p>
+<a id="more"></a>
+<h1 id="内存泄漏"><a href="#内存泄漏" class="headerlink" title="内存泄漏"></a>内存泄漏</h1><p>Java是垃圾回收语言的一种，其优点是开发者无需特意管理内存分配，降低了应用由于局部故障(segmentation fault)导致崩溃，同时防止未释放的内存把堆栈(heap)挤爆的可能，所以写出来的代码更为安全。</p>
+<p>不幸的是，在Java中仍存在很多容易导致内存泄漏的逻辑可能(logical leak)。如果不小心，你的Android应用很容易浪费掉未释放的内存，最终导致内存用光的错误抛出(out-of-memory，OOM)。</p>
+<p>一般内存泄漏(traditional memory leak)的原因是：当该对象的所有引用都已经释放了，对象仍未被释放。</p>
+<p>逻辑内存泄漏(logical memory leak)的原因是：当应用不再需要这个对象，当仍未释放该对象的所有引用。</p>
+<p>如果持有对象的强引用，垃圾回收器是无法在内存中回收这个对象。</p>
+<h1 id="Android内存泄漏"><a href="#Android内存泄漏" class="headerlink" title="Android内存泄漏"></a>Android内存泄漏</h1><p>在Android开发中，最容易引发的内存泄漏问题的是Context。比如Activity的Context，就包含大量的内存引用，例如View Hierarchies和其他资源。一旦泄漏了Context，也意味泄漏它指向的所有对象。Android机器内存有限，太多的内存泄漏容易导致OOM。</p>
+<p>检测逻辑内存泄漏需要主观判断，特别是对象的生命周期并不清晰。幸运的是，Activity有着明确的生命周期，很容易发现泄漏的原因。Activity.onDestroy()被视为Activity生命的结束，程序上来看，它应该被销毁了，或者Android系统需要回收这些内存。</p>
+<p>如果这个方法执行完，在堆栈中仍存在持有该Activity的强引用，垃圾回收器就无法把它标记成已回收的内存，而我们本来目的就是要回收它！</p>
+<p>结果就是Activity存活在它的生命周期之外。</p>
+<p>Activity是重量级对象，应该让Android系统来处理它。然而，逻辑内存泄漏总是在不经意间发生。在Android中，导致潜在内存泄漏的陷阱不外乎两种：</p>
+<ul>
+<li>全局进程(process-global)的static变量。这个无视应用的状态，持有Activity的强引用的怪物。</li>
+<li>活在Activity生命周期之外的线程。没有清空对Activity的强引用。</li>
+</ul>
+<h2 id="Static-Activities"><a href="#Static-Activities" class="headerlink" title="Static Activities"></a>Static Activities</h2><p>在类中定义了静态Activity变量，把当前运行的Activity实例赋值于这个静态变量。</p>
+<p>如果这个静态变量在Activity生命周期结束后没有清空，就导致内存泄漏。因为static变量是贯穿这个应用的生命周期的，所以被泄漏的Activity就会一直存在于应用的进程中，不会被垃圾回收器回收。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">static</span> Activity activity;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setStaticActivity</span><span class="params">()</span> </span>&#123;</div><div class="line">    activity = <span class="keyword">this</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">View saButton = findViewById(R.id.sa_button);</div><div class="line">saButton.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">        setStaticActivity();</div><div class="line">        nextActivity();</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<h2 id="Static-Views"><a href="#Static-Views" class="headerlink" title="Static Views"></a>Static Views</h2><p>类似的情况会发生在单例模式中，如果Activity经常被用到，那么在内存中保存一个实例是很实用的。正如之前所述，强制延长Activity的生命周期是相当危险而且不必要的，无论如何都不能这样做。</p>
+<p>特殊情况：如果一个View初始化耗费大量资源，而且在一个Activity生命周期内保持不变，那可以把它变成static，加载到视图树上(View Hierachy)，像这样，当Activity被销毁时，应当释放资源。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">static</span> view;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setStaticView</span><span class="params">()</span> </span>&#123;</div><div class="line">    view = findViewById(R.id.sv_button);</div><div class="line">&#125;</div><div class="line"></div><div class="line">View svButton = findViewById(R.id.sv_button);</div><div class="line">svButton.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">      setStaticView();</div><div class="line">      nextActivity();</div><div class="line"> &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>  </p>
+<h2 id="Inner-Classes"><a href="#Inner-Classes" class="headerlink" title="Inner Classes"></a>Inner Classes</h2><p>假设Activity中有个内部类，这样做可以提高可读性和封装性。将如我们创建一个内部类，而且持有一个静态变量的引用，那内存泄漏就离你不远了。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> <span class="keyword">static</span> Object inner;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">createInnerClass</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="class"><span class="keyword">class</span> <span class="title">InnerClass</span> </span>&#123;</div><div class="line">    &#125;</div><div class="line">    inner = <span class="keyword">new</span> InnerClass();</div><div class="line">&#125;</div><div class="line"></div><div class="line">View icButton = findViewById(R.id.ic_button);</div><div class="line">icButton.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line"> <span class="meta">@Override</span></div><div class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">     createInnerClass();</div><div class="line">     nextActivity();</div><div class="line"> &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure><br>内部类的优势之一就是可以访问外部类，不幸的是，导致内存泄漏的原因，就是内部类持有外部类实例的强引用。</p>
+<h2 id="Anonymous-Classes"><a href="#Anonymous-Classes" class="headerlink" title="Anonymous Classes"></a>Anonymous Classes</h2><p>相似地，匿名类也维护了外部类的引用。所以内存泄漏很容易发生，当你在Activity中定义了匿名的AsyncTsk。当异步任务在后台执行耗时任务期间，Activity不幸被销毁了，这个被AsyncTask持有的Activity实例就不会被垃圾回收器回收，直到异步任务结束。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">startAsyncTask</span><span class="params">()</span> </span>&#123;</div><div class="line"> <span class="keyword">new</span> AsyncTask&lt;Void, Void, Void&gt;() &#123;</div><div class="line">      <span class="meta">@Override</span> <span class="function"><span class="keyword">protected</span> Void <span class="title">doInBackground</span><span class="params">(Void... params)</span> </span>&#123;</div><div class="line">            <span class="keyword">while</span>(<span class="keyword">true</span>);</div><div class="line">      &#125;</div><div class="line"> &#125;.execute();</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">setContentView(R.layout.activity_main);</div><div class="line">View aicButton = findViewById(R.id.at_button);</div><div class="line">aicButton.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line"> <span class="meta">@Override</span></div><div class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">      startAsyncTask();</div><div class="line">      nextActivity();</div><div class="line"> &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>  </p>
+<h2 id="Handler"><a href="#Handler" class="headerlink" title="Handler"></a>Handler</h2><p>同样道理，定义匿名的Runnable，用匿名类Handler执行。Runnable内部类会持有外部类的隐式引用，被传递到Handler的消息队列MessageQueue中，在Message消息没有被处理之前，Activity实例不会被销毁了，于是导致内存泄漏。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">createHandler</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">new</span> Handler() &#123;</div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">handleMessage</span><span class="params">(Message message)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.handleMessage(message);</div><div class="line">    &#125;</div><div class="line">&#125;.postDelayed(<span class="keyword">new</span> Runnable() &#123;</div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">while</span>(<span class="keyword">true</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;, Long.MAX_VALUE &gt;&gt; <span class="number">1</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line">View hButton = findViewById(R.id.h_button);</div><div class="line">hButton.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">       createHandler();</div><div class="line">       nextActivity();</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>  </p>
+<h2 id="Threads"><a href="#Threads" class="headerlink" title="Threads"></a>Threads</h2><p>我们再次通过Thread和TimerTask来展现内存泄漏。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">spawnThread</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">new</span> Thread() &#123;</div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">while</span>(<span class="keyword">true</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;.start();</div><div class="line">&#125;</div><div class="line"></div><div class="line">View tButton = findViewById(R.id.t_button);</div><div class="line">tButton.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">      spawnThread();</div><div class="line">      nextActivity();</div><div class="line"> &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>   </p>
+<h2 id="TimerTask"><a href="#TimerTask" class="headerlink" title="TimerTask"></a>TimerTask</h2><p>只要是匿名类的实例，不管是不是在工作线程，都会持有Activity的引用，导致内存泄漏。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">scheduleTimer</span><span class="params">()</span> </span>&#123;</div><div class="line"><span class="keyword">new</span> Timer().schedule(<span class="keyword">new</span> TimerTask() &#123;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">while</span>(<span class="keyword">true</span>);</div><div class="line">    &#125;</div><div class="line">&#125;, Long.MAX_VALUE &gt;&gt; <span class="number">1</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line">View ttButton = findViewById(R.id.tt_button);</div><div class="line">ttButton.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">        scheduleTimer();</div><div class="line">        nextActivity();</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<h2 id="Sensor-Manager"><a href="#Sensor-Manager" class="headerlink" title="Sensor Manager"></a>Sensor Manager</h2><p>通过Context.getSystemService(int name)可以获取系统服务。这些服务工作在各自的进程中，帮助应用处理后台任务，处理硬件交互。如果需要使用这些服务，可以注册监听器，这会导致服务持有了Context的引用，如果在Activity销毁的时候没有注销这些监听器，会导致内存泄漏。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">registerListener</span><span class="params">()</span> </span>&#123;</div><div class="line">   SensorManager sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);</div><div class="line">   Sensor sensor = sensorManager.getDefaultSensor(Sensor.TYPE_ALL);</div><div class="line">   sensorManager.registerListener(<span class="keyword">this</span>, sensor, SensorManager.SENSOR_DELAY_FASTEST);</div><div class="line">&#125;</div><div class="line"></div><div class="line">View smButton = findViewById(R.id.sm_button);</div><div class="line">smButton.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">        registerListener();</div><div class="line">        nextActivity();</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure> </p>
+<h1 id="内存泄漏检测工具"><a href="#内存泄漏检测工具" class="headerlink" title="内存泄漏检测工具"></a>内存泄漏检测工具</h1><h2 id="LeakCanary"><a href="#LeakCanary" class="headerlink" title="LeakCanary"></a>LeakCanary</h2><p>LeakCanary 是square团队开源的检测内存泄露的开源类库。你可以在 debug 包种轻松检测内存泄露。</p>
+<p>工作机制：</p>
+<ul>
+<li>RefWatcher.watch() 创建一个 KeyedWeakReference 到要被监控的对象。</li>
+<li>然后在后台线程检查引用是否被清除，如果没有，调用GC。</li>
+<li>如果引用还是未被清除，把 heap 内存 dump 到 APP 对应的文件系统中的一个 .hprof 文件中。</li>
+<li>在另外一个进程中的 HeapAnalyzerService 有一个 HeapAnalyzer 使用<a href="https://github.com/square/haha" target="_blank" rel="external">HAHA</a> 解析这个文件。</li>
+<li>得益于唯一的 reference key, HeapAnalyzer 找到 KeyedWeakReference，定位内存泄露。</li>
+<li>HeapAnalyzer 计算 到 GC roots 的最短强引用路径，并确定是否是泄露。如果是的话，建立导致泄露的引用链。</li>
+<li>引用链传递到 APP 进程中的 DisplayLeakService， 并以通知的形式展示出来。</li>
+</ul>
+<p>参考资料：<br><a href="http://blog.nimbledroid.com/2016/05/23/memory-leaks.html" target="_blank" rel="external">Eight Ways Your Android App Can Leak Memory</a><br><a href="http://www.liaohuqiu.net/cn/posts/leak-canary-read-me/" target="_blank" rel="external">LeakCanary 中文使用说明</a></p>
+
+  </div>
+  <footer class="article-footer">
+    
+
+    
+
+  </footer>
+</article>
+
+
+  <link rel="stylesheet" href="http://static.duoshuo.com/styles/embed.default.css?349d9313.css">
+  <!-- 多说评论框 start -->
+  <div class="ds-thread" data-thread-key="2016/08/12/Android笔记-内存泄漏/" data-title="Android笔记-内存泄漏" data-url="/2016/08/12/Android笔记-内存泄漏/"></div>
+  <!-- 多说评论框 end -->
+  <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+  <script type="text/javascript">
+    var duoshuoQuery = {
+      short_name: "SION"
+    };
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';
+      ds.async = true;
+      ds.src = (document.location.protocol == 'https:'
+        ? 'https:'
+        : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+  <!-- 多说公共JS代码 end -->
+
+
+
+
+
+
+          <div class="main-footer">
+  
+    © 2016 Be Level5 Coder - Powered by <a href="http://hexo.io" target="_blank">Hexo</a> - Theme <a href="https://github.com/denjones/hexo-theme-chan" target="_blank">Chan</a>
+  
+</div>
+
+      
+        </div>
+      
+    </div>
+  </div>
+  <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="/PhotoSwipe/photoswipe.css">
+  <link rel="stylesheet" href="/PhotoSwipe/default-skin/default-skin.css">
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+             It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+      <!-- Container that holds slides.
+                PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                Don't modify these 3 pswp__item elements, data is added later on. -->
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+
+      <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+      <div class="pswp__ui pswp__ui--hidden">
+
+        <div class="pswp__top-bar">
+
+          <!--  Controls are self-explanatory. Order can be changed. -->
+
+          <div class="pswp__counter"></div>
+
+          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+          <button class="pswp__button pswp__button--share" title="Share"></button>
+
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+          <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+          <!-- element will get class pswp__preloader--active when preloader is running -->
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div>
+
+        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/PhotoSwipe/photoswipe.js"></script>
+  <script src="/PhotoSwipe/photoswipe-ui-default.js"></script>
+
+
+<script src="/perfect-scrollbar/js/min/perfect-scrollbar.min.js"></script>
+<script src="/scripts/main.js"></script>
+
+</body>
+</html>

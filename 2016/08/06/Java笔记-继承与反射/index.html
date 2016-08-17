@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<title>
+  
+    Java笔记-继承与反射
+  
+</title>
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java笔记-继承与反射">
+<meta property="og:url" content="http://yoursite.com/2016/08/06/Java笔记-继承与反射/index.html">
+<meta property="og:site_name" content="Be Level5 Coder">
+<meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/05175dc5d562853566dab29990ef76c6a7ef631a.jpg">
+<meta property="og:updated_time" content="2016-08-07T06:46:36.823Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java笔记-继承与反射">
+<meta name="twitter:image" content="http://ob5qdb9lc.bkt.clouddn.com/05175dc5d562853566dab29990ef76c6a7ef631a.jpg">
+
+
+  <link rel="alternative" href="/atom.xml" title="Be Level5 Coder" type="application/atom+xml">
+
+
+
+  <link rel="icon" href="/favicon.png">
+
+
+<link rel="stylesheet" href="/perfect-scrollbar/css/perfect-scrollbar.min.css">
+<link rel="stylesheet" href="/styles/main.css">
+
+
+
+
+
+
+</head>
+<body
+  
+  >
+  <div class="mobile-header">
+  <button class="sidebar-toggle" type="button">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a class="title" href="/">Be Level5 Coder</a>
+</div>
+
+  <div class="main-container">
+    <div class="sidebar">
+  <div class="header">
+    <h1 class="title"><a href="/">Be Level5 Coder</a></h1>
+    
+    <div class="info">
+      <div class="content">
+        
+        
+          <div class="author">Sion</div>
+        
+      </div>
+      
+        <div class="avatar">
+          
+            <img src="http://ob5qdb9lc.bkt.clouddn.com/my_avatar.jpg">
+          
+        </div>
+      
+    </div>
+  </div>
+  <div class="body">
+    
+      
+        <ul class="nav">
+          
+            
+              <li class="category-list-container">
+                <a href="javascript:;">分类</a>
+                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android笔记/">Android笔记</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java笔记/">Java笔记</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TCP-IP笔记/">TCP/IP笔记</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统笔记/">操作系统笔记</a><span class="category-list-count">1</span></li></ul>
+              </li>
+            
+          
+            
+              <li class="tag-list-container">
+                <a href="javascript:;">标签</a>
+                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Other/">Other</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP-IP/">TCP/IP</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a><span class="tag-list-count">1</span></li></ul>
+              </li>
+            
+          
+            
+              <li class="archive-list-container">
+                <a href="javascript:;">归档</a>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a><span class="archive-list-count">32</span></li></ul>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="/" title="Homepage">Homepage</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/archives" title="By Year">By Year</a>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="https://github.com/liaosiyang" title="Github" target="_blank" rel="external">Github</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/atom.xml" title="RSS">RSS</a>
+              </li>
+            
+          
+        </ul>
+      
+    
+  </div>
+</div>
+
+    <div class="main-content">
+      
+        <div style="max-width: 1000px">
+      
+          <article id="post-Java笔记-继承与反射" class="article article-type-post">
+  
+    <h1 class="article-header">
+      Java笔记-继承与反射
+    </h1>
+  
+  
+
+  <div class="article-info">
+    <span class="article-date">
+  2016-08-06
+</span>
+
+    
+	<span class="article-category tagcloud">
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Java笔记/">Java笔记</a></li></ul>
+	</span>
+
+
+    
+	<span class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+	</span>
+
+
+  </div>
+  <div class="article-entry">
+    <p><img src="http://ob5qdb9lc.bkt.clouddn.com/05175dc5d562853566dab29990ef76c6a7ef631a.jpg" alt="image"></p>
+<a id="more"></a>
+<h1 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h1><h3 id="this和super"><a href="#this和super" class="headerlink" title="this和super"></a>this和super</h3><ul>
+<li>this有两个用途：一是引用隐式参数，二是调用该类的其他构造器；</li>
+<li>super也有两个用途：一是调用父类的方法，二是调用父类的构造器 ；</li>
+<li>调用构造器的语句只能作为另一个构造器的第一条语句出现。构造参数既可以传递给本类(this)的其他构造器，也可以传递给父类(super)的构造器。</li>
+</ul>
+<h3 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h3><ul>
+<li>在Java程序设计语言中，对象变量是多态的。一个Employee变量既可以引用Employee对象，也可以引用一个Employee类的任何一个子类对象(如Manager、Executive、Secretary等，其中Executive继承Manager)；</li>
+<li>不能将一个超类的引用赋给子类变量，如<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Manager m=staff[i];   <span class="comment">//error</span></div></pre></td></tr></table></figure>  
+<h3 id="动态绑定"><a href="#动态绑定" class="headerlink" title="动态绑定"></a>动态绑定</h3></li>
+</ul>
+<p>对象调用方法执行过程</p>
+<ul>
+<li>编译器查看对象的声明类型和方法名。假设：<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">x.f(param)</div></pre></td></tr></table></figure>          
+x声明为C类的对象，编译器会一一列举C类中名为f的方法和其父类中访问属性为public且名为f的方法；至此，编译器已获得所以可能被调用的候选方法；</li>
+</ul>
+<ul>
+<li><p>接下来，编译器将查看调用方法时提供的参数类型。如果在所以名为f的方法中存在一个与提供的参数类型完全匹配，就选择这个方法。这个过程被称为(重载解析)；至此，编译器已获得需要调用的方法名字和参数类型；</p>
+<p>方法的名字个参数列表称为方法的签名，如果子类中定义了一个与超类签名相同的方法，那么子类中的这个方法就覆盖了超类中的这个相同签名的方法。</p>
+<p>不过，返回类型不是签名的一部分，因此，在覆盖方法时，一定要保证返回类型的兼容性。允许子类将覆盖方法的返回类型定义为原返回类型的子类型。</p>
+<p>如果是private方法、static方法、final方法或者构造器，那么编译器将可以准确地知道调用哪个方法，我们将这种调用称为静态绑定。与此对应的是，调用的方法依赖于隐式参数的实际类型，并且在运行时实现动态绑定。</p>
+<p>当程序运行，并且采用动态绑定调用方法时，虚拟机一定调用与x所应用对象的实际类型最何时的那个类的方法。假设x的实际类型是D，它是C类的子类。如果D类定义了方法f(String)，就直接调用它；否则在D类的超类中寻找f(String)，以此类推。每次调用方法都需要进行搜索，时间开销相当大。因此，虚拟机预先为每个类创建了一个方法表，其中列出了所以方法的签名和实际调用的方法。</p>
+<p>在覆盖一个方法的时候，子类方法不能低于超类方法的可见性。</p>
+</li>
+</ul>
+<h3 id="阻止继承-final类和方法"><a href="#阻止继承-final类和方法" class="headerlink" title="阻止继承:final类和方法"></a>阻止继承:final类和方法</h3><ul>
+<li><p>不允许扩展的类被称为final类。类中的方法也可以被声明为final，如果这样做，子类就不能覆盖这个方法。</p>
+</li>
+<li><p>将方法或类声明为final的主要目的是：确保它们不会在子类中改变语义。</p>
+</li>
+<li><p>如果一个方法没有被覆盖并且很短，编译器就能够对它进行优化处理，这个过程成为内联。eg：内联调用e.getName()将被替换为访问e.name域。</p>
+</li>
+</ul>
+<h3 id="强制类型转换"><a href="#强制类型转换" class="headerlink" title="强制类型转换"></a>强制类型转换</h3><ul>
+<li>进行强制类型转换的唯一原因是：在暂时忽视对象的实际类型之后，使用对象的全部功能。</li>
+</ul>
+<h3 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h3><ul>
+<li>除了抽象方法之外，抽象类还可以包含具体数据和具体方法。</li>
+<li>抽象方法充当着占位的角色，它们的具体实现在子类中。扩展抽象类可以有两种选择。一种在抽象类中定义部分抽象类方法或不定义抽象类方法，这样就必须将子类也标记为抽象类；另一种是定义全部的抽象方法，这样子类就不是抽象的了。</li>
+<li>类即使不含抽象方法，也可以将类声明为抽象类。</li>
+<li>抽象类不能实例化。但可以定义一个抽象类的对象变量，但是它只能引用非抽象子类的对象，eg：<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Person p=<span class="keyword">new</span> Student(<span class="string">"Vince Vu"</span>,<span class="string">"Economics"</span>);<span class="comment">//Person是抽象类</span></div></pre></td></tr></table></figure>
+<h3 id="访问修饰符"><a href="#访问修饰符" class="headerlink" title="访问修饰符"></a>访问修饰符</h3></li>
+</ul>
+<ol>
+<li>仅对本类可见—private</li>
+<li>对所有类可见—public</li>
+<li>对本包和所有子类可见—protected</li>
+<li>对本包可见(子类不可见)—默认</li>
+</ol>
+<h3 id="对象包装器与自动装箱"><a href="#对象包装器与自动装箱" class="headerlink" title="对象包装器与自动装箱"></a>对象包装器与自动装箱</h3><ul>
+<li>所有基本类型都有一个与之对应的类。比如Integer类，这些类称为包装器。</li>
+<li>对象包装器类是不可变的，即一旦构造了包装器，就不允许更改包装在其中的值。同时，对象包装器类还是final，不能定义它们的子类。</li>
+<li>相反地，当将一个Integer对象赋给int值时，将会自动地拆箱。</li>
+<li>装箱和拆箱是编译器认可的，而不是虚拟机。编译器在生成类的字节码时，插入必要的方法调用(装箱和拆箱方法)。</li>
+<li>使用数值对象包装器还有另外一个好处，可以将某些方法放置在包装器中，例如将一个数字字符串转换成数值。</li>
+</ul>
+<h3 id="参数数量可变的方法"><a href="#参数数量可变的方法" class="headerlink" title="参数数量可变的方法"></a>参数数量可变的方法</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> PrintStream <span class="title">printf</span><span class="params">(String format, Object ... args)</span> </span>&#123;</div><div class="line">    <span class="keyword">return</span> format(format, args);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>省略号…是Java代码的一部分，表示这个方法可以接收任何数量的参数。</li>
+<li>实际上printf方法接收两个参数，一个格式字符串，另一个是Object[]数组，其中保存所有的参数(如果调用者提供的是整型数组或者其他基本格式类型的值，自动装箱功能将把他们转换成对象)。现在将扫描fmt字符串，并将第i个格式说明符与args[i]的值匹配起来。</li>
+</ul>
+<h3 id="枚举类"><a href="#枚举类" class="headerlink" title="枚举类"></a>枚举类</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">enum</span> Size&#123;SMALL,MEDIUM,LARGE,EXTRA_LARGE&#125;;</div></pre></td></tr></table></figure>
+<ul>
+<li>实际上，这个声明定义的类型是一个类，它刚好有4个实例，在此尽量不要构造新对象。</li>
+<li>在比较两个枚举类型的值，永远不要调用equals，而直接使用”==”。</li>
+</ul>
+<h1 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h1><p>反射库提供了一个非常丰富且精心设计的工具集，以便编写能够动态操纵Java代码的程序。<br>反射机制用来：</p>
+<ol>
+<li>在运行中分析类的能力</li>
+<li>在运行中查看对象，例如，编写一个toString方法供所有类使用</li>
+<li>实现通用的数组操作代码</li>
+<li>利用Method对象，这个对象很像C++中的函数指针</li>
+</ol>
+<h3 id="Class类"><a href="#Class类" class="headerlink" title="Class类"></a>Class类</h3><p>在程序运行期间，Java运行时系统始终为所以对象维护一个被称为运行时的类型标识。这个信息跟踪着每个对象所属的类。虚拟机利用运行时类型信息选择相应的方法执行。<br>然而，可以通过专门的Java类访问这些信息。保存这些信息的类被称为Class。Object类中的getClass()方法将会返回一个Class类型的实例。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Empoyee e;</div><div class="line">...</div><div class="line">Class c1=e.getClass();</div></pre></td></tr></table></figure><br>最常用的Class方法是getName。这个方法返回类的名字。如果类在一个包里，包的名字也作为类名的一部分。<br>还可以调用静态方法forName获得类名对应的Class对象。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">String className=<span class="string">"java.util.Date"</span>;</div><div class="line">Class c1=Class.forName(className);</div></pre></td></tr></table></figure><br>获得Class类对象的第三种方法，如果T是任意Java类型，T.class将代表匹配的类对象。eg:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Class cl1=Date.class;</div><div class="line">Class cl2=<span class="keyword">int</span>.class;</div><div class="line">Class cl3=Double[].class;</div></pre></td></tr></table></figure><br>一个Class对象实际上表示的是一个类型，而这个类未必是一种类。int不是类，但int.class是一个Class类型的对象。<br>虚拟机为每个类型管理一个Class对象。因此，可以利用==运算符实现两个类对象比较的操作。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(e.getClass()==Employee.class)...</div></pre></td></tr></table></figure><br>还有一个很有用的方法newInstance()，可以用来快速创建一个类的实例。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">e.getClass().newInstance();</div></pre></td></tr></table></figure><br>创建了一个与e具有相关类类型的实例。newInstance方法调用默认的构造器(没有参数的构造器)初始化新创建的对象。如果这个类没有默认的构造器，就会抛出一个异常。</p>
+<h3 id="利用反射分析类的能力"><a href="#利用反射分析类的能力" class="headerlink" title="利用反射分析类的能力"></a>利用反射分析类的能力</h3><p>在java.lang.reflect包中有三个类Field，Method，Constructor分别用于描述类的域，方法和构造器。这三个类都有getName方法，用来返回项目的名称。</p>
+<ul>
+<li>Field类有能够报告参数类型的方法，用来返回描述域所属的Class对象。</li>
+<li>Method和Constructor有能够报告参数类型的方法，Method类还有一个可以报告返回类型的方法。</li>
+<li>这三个类getModifiers方法返回一个整型数值，用不同的位开关描述public和static这样的修饰符使用状况。</li>
+<li>还可以利用Modifier类中的isPublic,isPrivate,isFinal判断方法或构造器是否是public,private或final。</li>
+<li>Class类中的getFields,getMethods,getConstructors方法将分别返回public域，方法和构造器，其中包括超类的公有成员。</li>
+<li>Class类的getDeclareFields,getDeclareMethods,getDeclareConstructors方法将分别返回类中声明的全部域，方法和构造器，其中包括私有和受保护成员，但不包括超类的成员。<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ReflectionTest</span></span></div><div class="line">&#123;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></div><div class="line">   &#123;</div><div class="line">      <span class="comment">// read class name from command line args or user input</span></div><div class="line">      String name;</div><div class="line">      <span class="keyword">if</span> (args.length &gt; <span class="number">0</span>) name = args[<span class="number">0</span>];</div><div class="line">      <span class="keyword">else</span></div><div class="line">      &#123;</div><div class="line">         Scanner in = <span class="keyword">new</span> Scanner(System.in);</div><div class="line">         System.out.println(<span class="string">"Enter class name (e.g. java.util.Date): "</span>);</div><div class="line">         name = in.next();</div><div class="line">      &#125;</div><div class="line">      <span class="keyword">try</span></div><div class="line">      &#123;</div><div class="line">         <span class="comment">// print class name and superclass name (if != Object)</span></div><div class="line">         Class cl = Class.forName(name);</div><div class="line">         Class supercl = cl.getSuperclass();</div><div class="line">         String modifiers = Modifier.toString(cl.getModifiers());</div><div class="line">         <span class="keyword">if</span> (modifiers.length() &gt; <span class="number">0</span>) System.out.print(modifiers + <span class="string">" "</span>);</div><div class="line">         System.out.print(<span class="string">"class "</span> + name);</div><div class="line">         <span class="keyword">if</span> (supercl != <span class="keyword">null</span> &amp;&amp; supercl != Object.class) System.out.print(<span class="string">" extends "</span></div><div class="line">               + supercl.getName());</div><div class="line">         System.out.print(<span class="string">"\n&#123;\n"</span>);</div><div class="line">         printConstructors(cl);</div><div class="line">         System.out.println();</div><div class="line">         printMethods(cl);</div><div class="line">         System.out.println();</div><div class="line">         printFields(cl);</div><div class="line">         System.out.println(<span class="string">"&#125;"</span>);</div><div class="line">      &#125;</div><div class="line">      <span class="keyword">catch</span> (ClassNotFoundException e)</div><div class="line">      &#123;</div><div class="line">         e.printStackTrace();</div><div class="line">      &#125;</div><div class="line">      System.exit(<span class="number">0</span>);</div><div class="line">   &#125;</div><div class="line">   <span class="comment">/**</span></div><div class="line">    * Prints all constructors of a class</div><div class="line">    * <span class="doctag">@param</span> cl a class</div><div class="line">    */</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">printConstructors</span><span class="params">(Class cl)</span></span></div><div class="line">   &#123;</div><div class="line">      Constructor[] constructors = cl.getDeclaredConstructors();</div><div class="line">      <span class="keyword">for</span> (Constructor c : constructors)</div><div class="line">      &#123;</div><div class="line">         String name = c.getName();</div><div class="line">         System.out.print(<span class="string">"   "</span>);</div><div class="line">         String modifiers = Modifier.toString(c.getModifiers());</div><div class="line">         <span class="keyword">if</span> (modifiers.length() &gt; <span class="number">0</span>) System.out.print(modifiers + <span class="string">" "</span>);         </div><div class="line">         System.out.print(name + <span class="string">"("</span>);</div><div class="line">         <span class="comment">// print parameter types</span></div><div class="line">         Class[] paramTypes = c.getParameterTypes();</div><div class="line">         <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; paramTypes.length; j++)</div><div class="line">         &#123;</div><div class="line">            <span class="keyword">if</span> (j &gt; <span class="number">0</span>) System.out.print(<span class="string">", "</span>);</div><div class="line">            System.out.print(paramTypes[j].getName());</div><div class="line">         &#125;</div><div class="line">         System.out.println(<span class="string">");"</span>);</div><div class="line">      &#125;</div><div class="line">   &#125;</div><div class="line">   <span class="comment">/**</span></div><div class="line">    * Prints all methods of a class</div><div class="line">    * <span class="doctag">@param</span> cl a class</div><div class="line">    */</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">printMethods</span><span class="params">(Class cl)</span></span></div><div class="line">   &#123;</div><div class="line">      Method[] methods = cl.getDeclaredMethods();</div><div class="line">      <span class="keyword">for</span> (Method m : methods)</div><div class="line">      &#123;</div><div class="line">         Class retType = m.getReturnType();</div><div class="line">         String name = m.getName();</div><div class="line">         System.out.print(<span class="string">"   "</span>);</div><div class="line">         <span class="comment">// print modifiers, return type and method name</span></div><div class="line">         String modifiers = Modifier.toString(m.getModifiers());</div><div class="line">         <span class="keyword">if</span> (modifiers.length() &gt; <span class="number">0</span>) System.out.print(modifiers + <span class="string">" "</span>);         </div><div class="line">         System.out.print(retType.getName() + <span class="string">" "</span> + name + <span class="string">"("</span>);</div><div class="line">         <span class="comment">// print parameter types</span></div><div class="line">         Class[] paramTypes = m.getParameterTypes();</div><div class="line">         <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; paramTypes.length; j++)</div><div class="line">         &#123;</div><div class="line">            <span class="keyword">if</span> (j &gt; <span class="number">0</span>) System.out.print(<span class="string">", "</span>);</div><div class="line">            System.out.print(paramTypes[j].getName());</div><div class="line">         &#125;</div><div class="line">         System.out.println(<span class="string">");"</span>);</div><div class="line">      &#125;</div><div class="line">   &#125;</div><div class="line">   <span class="comment">/**</span></div><div class="line">    * Prints all fields of a class</div><div class="line">    * <span class="doctag">@param</span> cl a class</div><div class="line">    */</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">printFields</span><span class="params">(Class cl)</span></span></div><div class="line">   &#123;</div><div class="line">      Field[] fields = cl.getDeclaredFields();</div><div class="line">      <span class="keyword">for</span> (Field f : fields)</div><div class="line">      &#123;</div><div class="line">         Class type = f.getType();</div><div class="line">         String name = f.getName();</div><div class="line">         System.out.print(<span class="string">"   "</span>);</div><div class="line">         String modifiers = Modifier.toString(f.getModifiers());</div><div class="line">         <span class="keyword">if</span> (modifiers.length() &gt; <span class="number">0</span>) System.out.print(modifiers + <span class="string">" "</span>);         </div><div class="line">         System.out.println(type.getName() + <span class="string">" "</span> + name + <span class="string">";"</span>);</div><div class="line">      &#125;</div><div class="line">   &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+当输入：java.lang.Double 将会输出：<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">java</span>.<span class="title">lang</span>.<span class="title">Double</span> <span class="keyword">extends</span> <span class="title">java</span>.<span class="title">lang</span>.<span class="title">Number</span></span></div><div class="line">&#123;</div><div class="line">   <span class="keyword">public</span> java.lang.Double(<span class="keyword">double</span>);</div><div class="line">   <span class="keyword">public</span> java.lang.Double(java.lang.String);</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(java.lang.Object)</span></span>;</div><div class="line">   <span class="keyword">public</span> <span class="keyword">static</span> java.lang.<span class="function">String <span class="title">toString</span><span class="params">(<span class="keyword">double</span>)</span></span>;</div><div class="line">   <span class="keyword">public</span> java.lang.<span class="function">String <span class="title">toString</span><span class="params">()</span></span>;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">hashCode</span><span class="params">()</span></span>;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">hashCode</span><span class="params">(<span class="keyword">double</span>)</span></span>;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">double</span> <span class="title">min</span><span class="params">(<span class="keyword">double</span>, <span class="keyword">double</span>)</span></span>;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">double</span> <span class="title">max</span><span class="params">(<span class="keyword">double</span>, <span class="keyword">double</span>)</span></span>;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">native</span> <span class="keyword">long</span> <span class="title">doubleToRawLongBits</span><span class="params">(<span class="keyword">double</span>)</span></span>;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">long</span> <span class="title">doubleToLongBits</span><span class="params">(<span class="keyword">double</span>)</span></span>;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">native</span> <span class="keyword">double</span> <span class="title">longBitsToDouble</span><span class="params">(<span class="keyword">long</span>)</span></span>;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">volatile</span> <span class="keyword">int</span> <span class="title">compareTo</span><span class="params">(java.lang.Object)</span></span>;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compareTo</span><span class="params">(java.lang.Double)</span></span>;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">byte</span> <span class="title">byteValue</span><span class="params">()</span></span>;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">short</span> <span class="title">shortValue</span><span class="params">()</span></span>;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">intValue</span><span class="params">()</span></span>;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">long</span> <span class="title">longValue</span><span class="params">()</span></span>;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">float</span> <span class="title">floatValue</span><span class="params">()</span></span>;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">doubleValue</span><span class="params">()</span></span>;</div><div class="line">   <span class="keyword">public</span> <span class="keyword">static</span> java.lang.<span class="function">Double <span class="title">valueOf</span><span class="params">(java.lang.String)</span></span>;</div><div class="line">   <span class="keyword">public</span> <span class="keyword">static</span> java.lang.<span class="function">Double <span class="title">valueOf</span><span class="params">(<span class="keyword">double</span>)</span></span>;</div><div class="line">   <span class="keyword">public</span> <span class="keyword">static</span> java.lang.<span class="function">String <span class="title">toHexString</span><span class="params">(<span class="keyword">double</span>)</span></span>;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(<span class="keyword">double</span>, <span class="keyword">double</span>)</span></span>;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isNaN</span><span class="params">(<span class="keyword">double</span>)</span></span>;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isNaN</span><span class="params">()</span></span>;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isFinite</span><span class="params">(<span class="keyword">double</span>)</span></span>;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isInfinite</span><span class="params">(<span class="keyword">double</span>)</span></span>;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isInfinite</span><span class="params">()</span></span>;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">double</span> <span class="title">sum</span><span class="params">(<span class="keyword">double</span>, <span class="keyword">double</span>)</span></span>;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">double</span> <span class="title">parseDouble</span><span class="params">(java.lang.String)</span></span>;</div><div class="line">   <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">double</span> POSITIVE_INFINITY;</div><div class="line">   <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">double</span> NEGATIVE_INFINITY;</div><div class="line">   <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">double</span> NaN;</div><div class="line">   <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">double</span> MAX_VALUE;</div><div class="line">   <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">double</span> MIN_NORMAL;</div><div class="line">   <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">double</span> MIN_VALUE;</div><div class="line">   <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> MAX_EXPONENT;</div><div class="line">   <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> MIN_EXPONENT;</div><div class="line">   <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> SIZE;</div><div class="line">   <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> BYTES;</div><div class="line">   <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> java.lang.Class TYPE;</div><div class="line">   <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">double</span> value;</div><div class="line">   <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> serialVersionUID;</div><div class="line">&#125;</div></pre></td></tr></table></figure>       
+这个程序可以分析Java解释器能加载的任何类，而不仅仅是编译程序时可以使用的类。</li>
+</ul>
+<h3 id="在运行时使用反射分析对象"><a href="#在运行时使用反射分析对象" class="headerlink" title="在运行时使用反射分析对象"></a>在运行时使用反射分析对象</h3><p>查看对象域的关键方法是Field类中的get方法。如果f是一个Field类型的对象，obj是某个包含f域的对象，f.get(obj)将返回一个对象，其值为obj域的当前值。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Employee harry=<span class="keyword">new</span> Employee(<span class="string">"Harry Hacker"</span>,<span class="number">35000</span>,<span class="number">10</span>,<span class="number">1</span>,<span class="number">1989</span>);</div><div class="line">Class c1=harry.getClass();</div><div class="line">Field f=c1.getDeclareField(<span class="string">"name"</span>);</div><div class="line">Object v=f.get(harry);</div></pre></td></tr></table></figure><br>实际上由于name是一个私有域，get方法会抛出一个IllegalAccessException。只有利用get方法才能得到可访问域的值。除非拥有访问权限，否则Java安全机制只允许查看任意对象有哪些域，而不允许读取它们的值。</p>
+<p>然而，如果一个Java程序没有受到安全管理器的控制，就可以覆盖访问控制，为达到这个目的，需要调用Field，Method，Constructor对象的setAccessible方法。setAccessible是AccessibleObject类中的一个方法，它是Field，Method，Constructor的公共超类。这个特性是为调试、持久存储和相似机制提供的。</p>
+<p>还有一个问题，name是一个String,因此作为Object返回没有问题。但是如果想查看salary域，是double类型。此时反射机制将会自动将这个值打包到相应的对象包装器中。</p>
+<p>为了获得就可以设置，调用f.set(obj,value)可以将obj对象的f域设置成新值。</p>
+<h3 id="使用反射编写泛型数组"><a href="#使用反射编写泛型数组" class="headerlink" title="使用反射编写泛型数组"></a>使用反射编写泛型数组</h3><p>java.lang,reflect包中的Arrays类运行动态地创建数组。例如将这个特性应用到Array类中的copyOf方法实现中可以扩展已经填满的数组<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Employee[] a=<span class="keyword">new</span> Employee[<span class="number">100</span>];</div><div class="line">...</div><div class="line"><span class="comment">//array is full</span></div><div class="line">a=Arrays.copyOf(a,<span class="number">2</span>*a.length);</div></pre></td></tr></table></figure><br>两个扩展数组的方法，badCopyOf的返回值进行类型转换会抛出一个异常。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> Object[] badCopyOf(Object[] a,<span class="keyword">int</span> newLength)&#123;</div><div class="line">		Object[] newArray=<span class="keyword">new</span> Object[newLength];</div><div class="line">		System.arraycopy(a, <span class="number">0</span>, newArray, <span class="number">0</span>, Math.min(a.length, newLength));</div><div class="line">		<span class="keyword">return</span> newArray;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Object <span class="title">goodCopyOf</span><span class="params">(Object a,<span class="keyword">int</span> newLength)</span></span>&#123;</div><div class="line">		Class c1=a.getClass();</div><div class="line">		<span class="keyword">if</span>(!c1.isArray()) <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">		Class componentType=c1.getComponentType();</div><div class="line">		<span class="keyword">int</span> length=Array.getLength(a);</div><div class="line">		Object newArray=Array.newInstance(componentType, newLength);</div><div class="line">		System.arraycopy(a, <span class="number">0</span>, newArray, newLength, Math.min(length, newLength));</div><div class="line">		<span class="keyword">return</span> newArray;</div><div class="line">	&#125;</div></pre></td></tr></table></figure><br>因为Java数组会记住每个元素的类型，即创建数组时new表达式中使用的元素类型。将一个Employee[]临时转换成Object[]数组，然后再把它转换回来是可以的，但一开始就是Object[]的数组却永远不能转换成Employee[]数组。</p>
+<h3 id="调用任意方法"><a href="#调用任意方法" class="headerlink" title="调用任意方法"></a>调用任意方法</h3><p>c和c++可以从函数指针执行任意函数，Java没有提供方法指针，即将一个方法的存储地址传给另外一个方法，以便第二个方法能够随后调用它。然而，反射机制允许调用任意方法。</p>
+<p>在Method类中有一个invoke方法，允许调用包装在当前Method对象中的方法。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function">Object <span class="title">invoke</span><span class="params">(Object obj,Object...args)</span></span></div></pre></td></tr></table></figure><br>第一个参数是隐式参数，其余对象提供了显式参数。<br>对于静态方法，第一个参数可以被忽略。<br>假如m1代表Employee类的getName方法，如何调用：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">String n=(String)m1.invoke(harry);</div></pre></td></tr></table></figure><br>如果返回类型是基本类型,invoke方法会返回其包装器类型。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MethodPointerTest</span></span></div><div class="line">&#123;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception</span></div><div class="line">   &#123;</div><div class="line">      <span class="comment">// get method pointers to the square and sqrt methods</span></div><div class="line">      Method square = MethodPointerTest.class.getMethod(<span class="string">"square"</span>, <span class="keyword">double</span>.class);</div><div class="line">      Method sqrt = Math.class.getMethod(<span class="string">"sqrt"</span>, <span class="keyword">double</span>.class);</div><div class="line">      <span class="comment">// print tables of x- and y-values</span></div><div class="line">      printTable(<span class="number">1</span>, <span class="number">10</span>, <span class="number">10</span>, square);</div><div class="line">      printTable(<span class="number">1</span>, <span class="number">10</span>, <span class="number">10</span>, sqrt);</div><div class="line">   &#125;</div><div class="line">   <span class="comment">/**</span></div><div class="line">    * Returns the square of a number</div><div class="line">    * <span class="doctag">@param</span> x a number</div><div class="line">    * <span class="doctag">@return</span> x squared</div><div class="line">    */</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">double</span> <span class="title">square</span><span class="params">(<span class="keyword">double</span> x)</span></span></div><div class="line">   &#123;</div><div class="line">      <span class="keyword">return</span> x * x;</div><div class="line">   &#125;</div><div class="line">   <span class="comment">/**</span></div><div class="line">    * Prints a table with x- and y-values for a method</div><div class="line">    * <span class="doctag">@param</span> from the lower bound for the x-values</div><div class="line">    * <span class="doctag">@param</span> to the upper bound for the x-values</div><div class="line">    * <span class="doctag">@param</span> n the number of rows in the table</div><div class="line">    * <span class="doctag">@param</span> f a method with a double parameter and double return value</div><div class="line">    */</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">printTable</span><span class="params">(<span class="keyword">double</span> from, <span class="keyword">double</span> to, <span class="keyword">int</span> n, Method f)</span></span></div><div class="line">   &#123;</div><div class="line">      <span class="comment">// print out the method as table header</span></div><div class="line">      System.out.println(f);</div><div class="line">      <span class="keyword">double</span> dx = (to - from) / (n - <span class="number">1</span>);</div><div class="line">      <span class="keyword">for</span> (<span class="keyword">double</span> x = from; x &lt;= to; x += dx)</div><div class="line">      &#123;</div><div class="line">         <span class="keyword">try</span></div><div class="line">         &#123;</div><div class="line">            <span class="keyword">double</span> y = (Double) f.invoke(<span class="keyword">null</span>, x);</div><div class="line">            System.out.printf(<span class="string">"%10.4f | %10.4f%n"</span>, x, y);</div><div class="line">         &#125;</div><div class="line">         <span class="keyword">catch</span> (Exception e)</div><div class="line">         &#123;</div><div class="line">            e.printStackTrace();</div><div class="line">         &#125;</div><div class="line">      &#125;</div><div class="line">   &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>invoke的参数和返回值必须是Object类型。意味着必须进行多次类型转换。这样会使编译器错过检查代码的机会。因此等到测试阶段才会发现这些错误，找到并改正它们将会更加困难。不仅如此，使用反射获得方法指针的代码要比仅仅直接调用方法明显。<br>反射机制使得人们可以通过在运行时查看域和方法,让人们编写出更具有通用性的程序。这种功能对于编写系统的来说极其实用，但是通常不适用于编写应用程序。反射是脆弱的，即编译器很难帮助人们发现程序中的错误，因此只有运行时才发现错误并导致异常。</p>
+
+  </div>
+  <footer class="article-footer">
+    
+
+    
+
+  </footer>
+</article>
+
+
+  <link rel="stylesheet" href="http://static.duoshuo.com/styles/embed.default.css?349d9313.css">
+  <!-- 多说评论框 start -->
+  <div class="ds-thread" data-thread-key="2016/08/06/Java笔记-继承与反射/" data-title="Java笔记-继承与反射" data-url="/2016/08/06/Java笔记-继承与反射/"></div>
+  <!-- 多说评论框 end -->
+  <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+  <script type="text/javascript">
+    var duoshuoQuery = {
+      short_name: "SION"
+    };
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';
+      ds.async = true;
+      ds.src = (document.location.protocol == 'https:'
+        ? 'https:'
+        : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+  <!-- 多说公共JS代码 end -->
+
+
+
+
+
+
+          <div class="main-footer">
+  
+    © 2016 Be Level5 Coder - Powered by <a href="http://hexo.io" target="_blank">Hexo</a> - Theme <a href="https://github.com/denjones/hexo-theme-chan" target="_blank">Chan</a>
+  
+</div>
+
+      
+        </div>
+      
+    </div>
+  </div>
+  <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="/PhotoSwipe/photoswipe.css">
+  <link rel="stylesheet" href="/PhotoSwipe/default-skin/default-skin.css">
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+             It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+      <!-- Container that holds slides.
+                PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                Don't modify these 3 pswp__item elements, data is added later on. -->
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+
+      <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+      <div class="pswp__ui pswp__ui--hidden">
+
+        <div class="pswp__top-bar">
+
+          <!--  Controls are self-explanatory. Order can be changed. -->
+
+          <div class="pswp__counter"></div>
+
+          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+          <button class="pswp__button pswp__button--share" title="Share"></button>
+
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+          <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+          <!-- element will get class pswp__preloader--active when preloader is running -->
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div>
+
+        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/PhotoSwipe/photoswipe.js"></script>
+  <script src="/PhotoSwipe/photoswipe-ui-default.js"></script>
+
+
+<script src="/perfect-scrollbar/js/min/perfect-scrollbar.min.js"></script>
+<script src="/scripts/main.js"></script>
+
+</body>
+</html>

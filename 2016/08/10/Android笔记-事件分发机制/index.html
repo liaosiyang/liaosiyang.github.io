@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<title>
+  
+    Android笔记-事件分发机制
+  
+</title>
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android笔记-事件分发机制">
+<meta property="og:url" content="http://yoursite.com/2016/08/10/Android笔记-事件分发机制/index.html">
+<meta property="og:site_name" content="Be Level5 Coder">
+<meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/5-16031Q44431.jpg">
+<meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/966283-d01a5845f742609712.png">
+<meta property="og:updated_time" content="2016-08-11T13:02:05.636Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android笔记-事件分发机制">
+<meta name="twitter:image" content="http://ob5qdb9lc.bkt.clouddn.com/5-16031Q44431.jpg">
+
+
+  <link rel="alternative" href="/atom.xml" title="Be Level5 Coder" type="application/atom+xml">
+
+
+
+  <link rel="icon" href="/favicon.png">
+
+
+<link rel="stylesheet" href="/perfect-scrollbar/css/perfect-scrollbar.min.css">
+<link rel="stylesheet" href="/styles/main.css">
+
+
+
+
+
+
+</head>
+<body
+  
+  >
+  <div class="mobile-header">
+  <button class="sidebar-toggle" type="button">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a class="title" href="/">Be Level5 Coder</a>
+</div>
+
+  <div class="main-container">
+    <div class="sidebar">
+  <div class="header">
+    <h1 class="title"><a href="/">Be Level5 Coder</a></h1>
+    
+    <div class="info">
+      <div class="content">
+        
+        
+          <div class="author">Sion</div>
+        
+      </div>
+      
+        <div class="avatar">
+          
+            <img src="http://ob5qdb9lc.bkt.clouddn.com/my_avatar.jpg">
+          
+        </div>
+      
+    </div>
+  </div>
+  <div class="body">
+    
+      
+        <ul class="nav">
+          
+            
+              <li class="category-list-container">
+                <a href="javascript:;">分类</a>
+                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android笔记/">Android笔记</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java笔记/">Java笔记</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TCP-IP笔记/">TCP/IP笔记</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统笔记/">操作系统笔记</a><span class="category-list-count">1</span></li></ul>
+              </li>
+            
+          
+            
+              <li class="tag-list-container">
+                <a href="javascript:;">标签</a>
+                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Other/">Other</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP-IP/">TCP/IP</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a><span class="tag-list-count">1</span></li></ul>
+              </li>
+            
+          
+            
+              <li class="archive-list-container">
+                <a href="javascript:;">归档</a>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a><span class="archive-list-count">32</span></li></ul>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="/" title="Homepage">Homepage</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/archives" title="By Year">By Year</a>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="https://github.com/liaosiyang" title="Github" target="_blank" rel="external">Github</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/atom.xml" title="RSS">RSS</a>
+              </li>
+            
+          
+        </ul>
+      
+    
+  </div>
+</div>
+
+    <div class="main-content">
+      
+        <div style="max-width: 1000px">
+      
+          <article id="post-Android笔记-事件分发机制" class="article article-type-post">
+  
+    <h1 class="article-header">
+      Android笔记-事件分发机制
+    </h1>
+  
+  
+
+  <div class="article-info">
+    <span class="article-date">
+  2016-08-10
+</span>
+
+    
+	<span class="article-category tagcloud">
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Android笔记/">Android笔记</a></li></ul>
+	</span>
+
+
+    
+	<span class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+	</span>
+
+
+  </div>
+  <div class="article-entry">
+    <p><img src="http://ob5qdb9lc.bkt.clouddn.com/5-16031Q44431.jpg" alt="Image"></p>
+<a id="more"></a>
+<h1 id="事件分发"><a href="#事件分发" class="headerlink" title="事件分发"></a>事件分发</h1><h2 id="涉及到事件响应的常用方法构成"><a href="#涉及到事件响应的常用方法构成" class="headerlink" title="涉及到事件响应的常用方法构成"></a>涉及到事件响应的常用方法构成</h2><ul>
+<li>MotionEvent.ACTION_DOWN　：手指按下屏幕的瞬间（一切事件的开始）</li>
+<li>MotionEvent.ACTION_MOVE　：手指在屏幕上移动</li>
+<li>MotionEvent.ACTION_UP　：手指离开屏幕瞬间</li>
+<li>MotionEvent.ACTION_CANCEL 　：取消手势，一般由程序产生，不会由用户产生</li>
+</ul>
+<p>Android中的事件onClick, onLongClick，onScroll, onFling等等，都是由许多个Touch事件构成的（一个ACTION_DOWN， n个ACTION_MOVE，1个ACTION_UP）。</p>
+<p>android 事件响应机制是先 分发（先由外部的View接收，然后依次传递给其内层的最小View）再处理 （从最小View单元（事件源）开始依次向外层传递。）的形式实现的。</p>
+<h2 id="涉及到的三个重要函数"><a href="#涉及到的三个重要函数" class="headerlink" title="涉及到的三个重要函数"></a>涉及到的三个重要函数</h2><ul>
+<li>事件分发：public boolean dispatchTouchEvent(MotionEvent ev)　　　</li>
+<li>事件拦截：public boolean onInterceptTouchEvent(MotionEvent ev)<br>　　　　　该方法为ViewGroup独有。</li>
+<li>事件响应：public boolean onTouchEvent(MotionEvent ev)<br>　　　　　ViewGroup未实现，而是调用父类view的该方法。</li>
+</ul>
+<h2 id="View分析-源码很长，只写结论"><a href="#View分析-源码很长，只写结论" class="headerlink" title="View分析(源码很长，只写结论)"></a>View分析(源码很长，只写结论)</h2><ul>
+<li>触摸控件（View）首先执行dispatchTouchEvent方法。</li>
+<li>在dispatchTouchEvent方法中先执行onTouch方法，后执行onClick方法（onClick方法在onTouchEvent中执行）。</li>
+<li>如果控件（View）的onTouch返回false或者mOnTouchListener为null（控件没有设置setOnTouchListener方法）或者控件不是enable的情况下会调用onTouchEvent，dispatchTouchEvent返回值与onTouchEvent返回一样。</li>
+<li>如果控件不是enable的设置了onTouch方法也不会执行，只能通过重写控件的onTouchEvent方法处理，dispatchTouchEvent返回值与onTouchEvent返回一样。</li>
+<li>如果控件（View）是enable且onTouch返回true情况下，dispatchTouchEvent直接返回true，不会调用onTouchEvent方法。</li>
+<li>当dispatchTouchEvent在进行事件分发的时候，只有前一个action返回true，才会触发下一个action（也就是说dispatchTouchEvent返回true才会进行下一次action派发）。</li>
+<li>onTouchEvent方法中会在ACTION_UP分支中触发onClick的监听。</li>
+</ul>
+<h2 id="ViewGroup分析"><a href="#ViewGroup分析" class="headerlink" title="ViewGroup分析"></a>ViewGroup分析</h2><ul>
+<li>Android事件派发是先传递到最顶级的ViewGroup，再由ViewGroup递归传递到View的。</li>
+<li>在ViewGroup中可以通过onInterceptTouchEvent方法对事件传递进行拦截，onInterceptTouchEvent方法返回true代表不允许事件继续向子View传递，返回false代表不对事件进行拦截，默认返回false。</li>
+<li>子View中如果将传递的事件消费掉，ViewGroup中将无法接收到任何事件。</li>
+<li>ViewGroup没有重写View的onTouchEvent(MotionEvent event) 方法。</li>
+</ul>
+<h2 id="Activity分析"><a href="#Activity分析" class="headerlink" title="Activity分析"></a>Activity分析</h2><ul>
+<li>首先会触发Activity的dispatchTouchEvent方法。</li>
+<li>dispatchTouchEvent方法中如果是ACTION_DOWN的情况下会接着触发onUserInteraction方法。</li>
+<li>接着在dispatchTouchEvent方法中会通过Activity的rootView（id为content的FrameLayout），实质是ViewGroup，通过super.dispatchTouchEvent把touchevent派发给各个activity的子view，也就是我们再Activity.onCreat方法中setContentView时设置的view。</li>
+<li>若Activity下面的子view拦截了touchEvent事件(返回true)则Activity.onTouchEvent方法就不会执行。</li>
+<li>onUserInteraction方法是一个空方法,此方法是activity的方法，当此activity在栈顶时，触屏点击按home，back，menu键等都会触发此方法。下拉statubar、旋转屏幕、锁屏不会触发此方法。所以它会用在屏保应用上，因为当你触屏机器就会立马触发一个事件，而这个事件又不太明确是什么，正好屏保满足此需求；或者对于一个Activity，控制多长时间没有用户点响应的时候，自己消失等。</li>
+</ul>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><ul>
+<li>如果我们没有对控件里面的方法进行重写或更改返回值，而直接用super调用父类的默认实现，那么整个事件流向应该是从Activity—-&gt;ViewGroup—&gt;View从上往下调用dispatchTouchEvent方法，一直到叶子节点（View）的时候，再由View—&gt;ViewGroup—&gt;Activity从下往上调用onTouchEvent方法。<br><img src="http://ob5qdb9lc.bkt.clouddn.com/966283-d01a5845f742609712.png" alt="Image"></li>
+<li>dispatchTouchEvent 和 onTouchEvent 一旦return true,事件就停止传递了，对于return true我们经常说事件被消费了，消费了的意思就是事件走到这里就是终点，不会往下传，没有谁能再收到这个事件了。</li>
+<li>dispatchTouchEvent 和 onTouchEvent return false的时候事件都回传给父控件的onTouchEvent处理。事件停止往子View传递和分发同时开始往父控件回溯（父控件的onTouchEvent开始从下往上回传直到某个onTouchEvent return true），事件分发机制就像递归，return false 的意义就是递归停止然后开始回溯。</li>
+<li>对于onTouchEvent return false 就比较简单了，它就是不消费事件，并让事件继续往父控件的方向从下往上流动。</li>
+<li>dispatchTouchEvent、onTouchEvent、onInterceptTouchEvent<br>ViewGroup 和View的这些方法的默认实现就是会让整个事件安装U型完整走完，所以 return super.xxxxxx() 就会让事件依照U型的方向的完整走完整个事件流动路径），中间不做任何改动，不回溯、不终止，每个环节都走到。</li>
+</ul>
+<h2 id="onInterceptTouchEvent"><a href="#onInterceptTouchEvent" class="headerlink" title="onInterceptTouchEvent"></a>onInterceptTouchEvent</h2><ul>
+<li>Intercept 的意思就是拦截，每个ViewGroup每次在做分发的时候，问一问拦截器要不要拦截（也就是问问自己这个事件要不要自己来处理）如果要自己处理那就在onInterceptTouchEvent方法中 return true就会交给自己的onTouchEvent的处理，如果不拦截就是继续往子控件往下传。</li>
+<li>默认是不会去拦截的，因为子View也需要这个事件，所以onInterceptTouchEvent拦截器return super.onInterceptTouchEvent()和return false是一样的，是不会拦截的，事件会继续往子View的dispatchTouchEvent传递。</li>
+</ul>
+<h2 id="ViewGroup的dispatchTouchEvent"><a href="#ViewGroup的dispatchTouchEvent" class="headerlink" title="ViewGroup的dispatchTouchEvent"></a>ViewGroup的dispatchTouchEvent</h2><ul>
+<li>return true是终结传递。return false 是回溯到父View的onTouchEvent。</li>
+<li>通过Interceptor把事件拦截下来给自己的onTouchEvent</li>
+<li>ViewGroup dispatchTouchEvent方法的super默认实现就是去调用onInterceptTouchEvent。</li>
+</ul>
+<h2 id="View的dispatchTouchEvent"><a href="#View的dispatchTouchEvent" class="headerlink" title="View的dispatchTouchEvent"></a>View的dispatchTouchEvent</h2><ul>
+<li>View类的dispatchTouchEvent（）方法默认实现就是能帮你调用View自己的onTouchEvent方法的。</li>
+</ul>
+<h2 id="ViewGroup和View的onTouchEvent"><a href="#ViewGroup和View的onTouchEvent" class="headerlink" title="ViewGroup和View的onTouchEvent"></a>ViewGroup和View的onTouchEvent</h2><ul>
+<li>自己消费掉，事件终结，不再传给谁—–&gt;return true;</li>
+<li>继续从下往上传，不消费事件，让父View也能收到到这个事件—–&gt;return false;View的默认实现是不消费的。所以super==false。</li>
+</ul>
+<h2 id="ACTION-MOVE-和-ACTION-UP"><a href="#ACTION-MOVE-和-ACTION-UP" class="headerlink" title="ACTION_MOVE 和 ACTION_UP"></a>ACTION_MOVE 和 ACTION_UP</h2><ul>
+<li>ACTION_DOWN事件在哪个控件消费了（return true）， 那么ACTION_MOVE和ACTION_UP就会从上往下（通过dispatchTouchEvent）做事件分发往下传，就只会传到这个控件，不会继续往下传</li>
+<li>如果ACTION_DOWN事件是在dispatchTouchEvent消费，那么事件到此为止停止传递，如果ACTION_DOWN事件是在onTouchEvent消费的，那么会把ACTION_MOVE或ACTION_UP事件传给该控件的onTouchEvent处理并结束传递。</li>
+</ul>
+<p>参考资料：<br><a href="http://www.jianshu.com/p/e99b5e8bd67b" target="_blank" rel="external">图解 Android 事件分发机制</a></p>
+
+  </div>
+  <footer class="article-footer">
+    
+
+    
+
+  </footer>
+</article>
+
+
+  <link rel="stylesheet" href="http://static.duoshuo.com/styles/embed.default.css?349d9313.css">
+  <!-- 多说评论框 start -->
+  <div class="ds-thread" data-thread-key="2016/08/10/Android笔记-事件分发机制/" data-title="Android笔记-事件分发机制" data-url="/2016/08/10/Android笔记-事件分发机制/"></div>
+  <!-- 多说评论框 end -->
+  <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+  <script type="text/javascript">
+    var duoshuoQuery = {
+      short_name: "SION"
+    };
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';
+      ds.async = true;
+      ds.src = (document.location.protocol == 'https:'
+        ? 'https:'
+        : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+  <!-- 多说公共JS代码 end -->
+
+
+
+
+
+
+          <div class="main-footer">
+  
+    © 2016 Be Level5 Coder - Powered by <a href="http://hexo.io" target="_blank">Hexo</a> - Theme <a href="https://github.com/denjones/hexo-theme-chan" target="_blank">Chan</a>
+  
+</div>
+
+      
+        </div>
+      
+    </div>
+  </div>
+  <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="/PhotoSwipe/photoswipe.css">
+  <link rel="stylesheet" href="/PhotoSwipe/default-skin/default-skin.css">
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+             It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+      <!-- Container that holds slides.
+                PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                Don't modify these 3 pswp__item elements, data is added later on. -->
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+
+      <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+      <div class="pswp__ui pswp__ui--hidden">
+
+        <div class="pswp__top-bar">
+
+          <!--  Controls are self-explanatory. Order can be changed. -->
+
+          <div class="pswp__counter"></div>
+
+          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+          <button class="pswp__button pswp__button--share" title="Share"></button>
+
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+          <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+          <!-- element will get class pswp__preloader--active when preloader is running -->
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div>
+
+        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/PhotoSwipe/photoswipe.js"></script>
+  <script src="/PhotoSwipe/photoswipe-ui-default.js"></script>
+
+
+<script src="/perfect-scrollbar/js/min/perfect-scrollbar.min.js"></script>
+<script src="/scripts/main.js"></script>
+
+</body>
+</html>

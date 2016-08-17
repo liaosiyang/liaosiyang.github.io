@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<title>
+  
+    Android笔记-进程保活
+  
+</title>
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android笔记-进程保活">
+<meta property="og:url" content="http://yoursite.com/2016/08/12/Android笔记-进程保活/index.html">
+<meta property="og:site_name" content="Be Level5 Coder">
+<meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/b03533fa828ba61e2cd4d63f4334970a304e59e3.jpg">
+<meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/2.jpg">
+<meta property="og:updated_time" content="2016-08-12T14:21:55.194Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android笔记-进程保活">
+<meta name="twitter:image" content="http://ob5qdb9lc.bkt.clouddn.com/b03533fa828ba61e2cd4d63f4334970a304e59e3.jpg">
+
+
+  <link rel="alternative" href="/atom.xml" title="Be Level5 Coder" type="application/atom+xml">
+
+
+
+  <link rel="icon" href="/favicon.png">
+
+
+<link rel="stylesheet" href="/perfect-scrollbar/css/perfect-scrollbar.min.css">
+<link rel="stylesheet" href="/styles/main.css">
+
+
+
+
+
+
+</head>
+<body
+  
+  >
+  <div class="mobile-header">
+  <button class="sidebar-toggle" type="button">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a class="title" href="/">Be Level5 Coder</a>
+</div>
+
+  <div class="main-container">
+    <div class="sidebar">
+  <div class="header">
+    <h1 class="title"><a href="/">Be Level5 Coder</a></h1>
+    
+    <div class="info">
+      <div class="content">
+        
+        
+          <div class="author">Sion</div>
+        
+      </div>
+      
+        <div class="avatar">
+          
+            <img src="http://ob5qdb9lc.bkt.clouddn.com/my_avatar.jpg">
+          
+        </div>
+      
+    </div>
+  </div>
+  <div class="body">
+    
+      
+        <ul class="nav">
+          
+            
+              <li class="category-list-container">
+                <a href="javascript:;">分类</a>
+                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android笔记/">Android笔记</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java笔记/">Java笔记</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TCP-IP笔记/">TCP/IP笔记</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统笔记/">操作系统笔记</a><span class="category-list-count">1</span></li></ul>
+              </li>
+            
+          
+            
+              <li class="tag-list-container">
+                <a href="javascript:;">标签</a>
+                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Other/">Other</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP-IP/">TCP/IP</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a><span class="tag-list-count">1</span></li></ul>
+              </li>
+            
+          
+            
+              <li class="archive-list-container">
+                <a href="javascript:;">归档</a>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a><span class="archive-list-count">32</span></li></ul>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="/" title="Homepage">Homepage</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/archives" title="By Year">By Year</a>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="https://github.com/liaosiyang" title="Github" target="_blank" rel="external">Github</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/atom.xml" title="RSS">RSS</a>
+              </li>
+            
+          
+        </ul>
+      
+    
+  </div>
+</div>
+
+    <div class="main-content">
+      
+        <div style="max-width: 1000px">
+      
+          <article id="post-Android笔记-进程保活" class="article article-type-post">
+  
+    <h1 class="article-header">
+      Android笔记-进程保活
+    </h1>
+  
+  
+
+  <div class="article-info">
+    <span class="article-date">
+  2016-08-12
+</span>
+
+    
+	<span class="article-category tagcloud">
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Android笔记/">Android笔记</a></li></ul>
+	</span>
+
+
+    
+	<span class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+	</span>
+
+
+  </div>
+  <div class="article-entry">
+    <p><img src="http://ob5qdb9lc.bkt.clouddn.com/b03533fa828ba61e2cd4d63f4334970a304e59e3.jpg" alt="Image"></p>
+<a id="more"></a>
+<h1 id="进程的优先级"><a href="#进程的优先级" class="headerlink" title="进程的优先级"></a>进程的优先级</h1><h2 id="前台进程-——-Foreground-process"><a href="#前台进程-——-Foreground-process" class="headerlink" title="前台进程 —— Foreground process"></a>前台进程 —— Foreground process</h2><p>用户当前操作所必需的进程。通常在任意给定时间前台进程都为数不多。只有在内存不足以支持它们同时继续运行这一万不得已的情况下，系统才会终止它们。</p>
+<ul>
+<li>拥有用户正在交互的 Activity（已调用 onResume()）</li>
+<li>拥有某个 Service，后者绑定到用户正在交互的 Activity</li>
+<li>拥有正在“前台”运行的 Service（服务已调用 startForeground()）</li>
+<li>拥有正执行一个生命周期回调的 Service（onCreate()、onStart() 或 onDestroy()）</li>
+<li>拥有正执行其 onReceive() 方法的 BroadcastReceiver</li>
+</ul>
+<h2 id="可见进程-——-Visible-process"><a href="#可见进程-——-Visible-process" class="headerlink" title="可见进程 —— Visible process"></a>可见进程 —— Visible process</h2><p>没有任何前台组件、但仍会影响用户在屏幕上所见内容的进程。可见进程被视为是极其重要的进程，除非为了维持所有前台进程同时运行而必须终止，否则系统不会终止这些进程。</p>
+<ul>
+<li>拥有不在前台、但仍对用户可见的 Activity（已调用 onPause()）</li>
+<li>拥有绑定到可见（或前台）Activity 的 Service</li>
+</ul>
+<h2 id="服务进程-——-Service-process"><a href="#服务进程-——-Service-process" class="headerlink" title="服务进程 —— Service process"></a>服务进程 —— Service process</h2><p>尽管服务进程与用户所见内容没有直接关联，但是它们通常在执行一些用户关心的操作（例如，在后台播放音乐或从网络下载数据）。因此，除非内存不足以维持所有前台进程和可见进程同时运行，否则系统会让服务进程保持运行状态。</p>
+<ul>
+<li>正在运行 startService() 方法启动的服务，且不属于上述两个更高类别进程的进程。</li>
+</ul>
+<h2 id="后台进程-——-Background-process"><a href="#后台进程-——-Background-process" class="headerlink" title="后台进程 —— Background process"></a>后台进程 —— Background process</h2><p>后台进程对用户体验没有直接影响，系统可能随时终止它们，以回收内存供前台进程、可见进程或服务进程使用。 通常会有很多后台进程在运行，因此它们会保存在 LRU 列表中，以确保包含用户最近查看的 Activity 的进程最后一个被终止。如果某个 Activity 正确实现了生命周期方法，并保存了其当前状态，则终止其进程不会对用户体验产生明显影响，因为当用户导航回该 Activity 时，Activity 会恢复其所有可见状态。</p>
+<ul>
+<li>对用户不可见的 Activity 的进程（已调用 Activity的onStop() 方法）</li>
+</ul>
+<h2 id="空进程-——-Empty-process"><a href="#空进程-——-Empty-process" class="headerlink" title="空进程 —— Empty process"></a>空进程 —— Empty process</h2><p>保留这种进程的的唯一目的是用作缓存，以缩短下次在其中运行组件所需的启动时间。 为使总体系统资源在进程缓存和底层内核缓存之间保持平衡，系统往往会终止这些进程。</p>
+<ul>
+<li>不含任何活动应用组件的进程</li>
+</ul>
+<h1 id="Android-进程回收策略"><a href="#Android-进程回收策略" class="headerlink" title="Android 进程回收策略"></a>Android 进程回收策略</h1><p>系统出于体验和性能上的考虑，app在退到后台时系统并不会真正的kill掉这个进程，而是将其缓存起来。打开的应用越多，后台缓存的进程也越多。在系统内存不足的情况下，系统开始依据自身的一套进程回收机制来判断要kill掉哪些进程，以腾出内存来供给需要的app。</p>
+<p>这套杀进程回收内存的机制就叫 Low Memory Killer ，它是基于Linux内核的 OOM Killer（Out-Of-Memory killer）机制诞生。</p>
+<p>oom_adj是linux内核分配给每个系统进程的一个值，代表进程的优先级，进程回收机制就是根据这个优先级来决定是否进行回收。</p>
+<ul>
+<li>进程的oom_adj越大，表示此进程优先级越低，越容易被杀回收；越小，表示进程优先级越高，越不容易被杀回收</li>
+<li>普通app进程的oom_adj&gt;=0,系统进程的oom_adj才可能&lt;0</li>
+</ul>
+<p><img src="http://ob5qdb9lc.bkt.clouddn.com/2.jpg" alt="Image"><br>其中红色部分代表比较容易被杀死的 Android 进程（OOM_ADJ&gt;=4）,绿色部分表示不容易被杀死的 Android 进程，其他表示非 Android 进程（纯 Linux 进程）。在 Lowmemorykiller 回收内存时会根据进程的级别优先杀死 OOM_ADJ 比较大的进程，对于优先级相同的进程则进一步受到进程所占内存和进程存活时间的影响。</p>
+<p>减少进程被杀死概率无非就是想办法提高进程优先级，减少进程在内存不足等情况下被杀死的概率。</p>
+<h1 id="提升进程优先级的方案"><a href="#提升进程优先级的方案" class="headerlink" title="提升进程优先级的方案"></a>提升进程优先级的方案</h1><h2 id="利用-Activity-提升权限"><a href="#利用-Activity-提升权限" class="headerlink" title="利用 Activity 提升权限"></a>利用 Activity 提升权限</h2><p>监控手机锁屏解锁事件，在屏幕锁屏时启动1个像素的 Activity，在用户解锁时将 Activity 销毁掉。注意该 Activity 需设计成用户无感知。</p>
+<p>通过该方案，可以使进程的优先级在屏幕锁屏时间由4提升为最高优先级1。</p>
+<h2 id="利用-Service-提升权限"><a href="#利用-Service-提升权限" class="headerlink" title="利用 Service 提升权限"></a>利用 Service 提升权限</h2><p>Android 中 Service 的优先级为4，通过 setForeground 接口可以将后台 Service 设置为前台 Service，使进程的优先级由4提升为2，从而使进程的优先级仅仅低于用户当前正在交互的进程，与可见进程优先级一致，使进程被杀死的概率大大降低。</p>
+<p>从 Android2.3 开始调用 setForeground 将后台 Service 设置为前台 Service 时，必须在系统的通知栏发送一条通知，也就是前台 Service 与一条可见的通知时绑定在一起的。</p>
+<p>通过实现一个内部 Service，在 LiveService 和其内部 Service 中同时发送具有相同 ID 的 Notification，然后将内部 Service 结束掉。随着内部 Service 的结束，Notification 将会消失，但系统优先级依然保持为2。</p>
+<h2 id="进程死后拉活的方案"><a href="#进程死后拉活的方案" class="headerlink" title="进程死后拉活的方案"></a>进程死后拉活的方案</h2><h3 id="利用系统广播拉活"><a href="#利用系统广播拉活" class="headerlink" title="利用系统广播拉活"></a>利用系统广播拉活</h3><p>在发生特定系统事件时，系统会发出响应的广播，通过在 AndroidManifest 中“静态”注册对应的广播监听器，即可在发生响应事件时拉活。</p>
+<p>缺点：</p>
+<ol>
+<li>广播接收器被管理软件、系统软件通过“自启管理”等功能禁用的场景无法接收到广播，从而无法自启。</li>
+<li>系统广播事件不可控，只能保证发生事件时拉活进程，但无法保证进程挂掉后立即拉活。</li>
+</ol>
+<h3 id="利用第三方应用广播拉活"><a href="#利用第三方应用广播拉活" class="headerlink" title="利用第三方应用广播拉活"></a>利用第三方应用广播拉活</h3><p>该方案总的设计思想与接收系统广播类似，不同的是该方案为接收第三方 Top 应用广播。</p>
+<p>通过反编译第三方 Top 应用，如：手机QQ、微信、支付宝、UC浏览器等，以及友盟、信鸽、个推等 SDK，找出它们外发的广播，在应用中进行监听，这样当这些应用发出广播时，就会将我们的应用拉活。</p>
+<p>限制：</p>
+<ol>
+<li>反编译分析过的第三方应用的多少</li>
+<li>第三方应用的广播属于应用私有，当前版本中有效的广播，在后续版本随时就可能被移除或被改为不外发。</li>
+</ol>
+<h3 id="利用系统Service机制拉活"><a href="#利用系统Service机制拉活" class="headerlink" title="利用系统Service机制拉活"></a>利用系统Service机制拉活</h3><p>将 Service 设置为 START_STICKY，利用系统机制在 Service 挂掉后自动拉活。</p>
+<p>如下两种情况无法拉活：</p>
+<ol>
+<li>Service 第一次被异常杀死后会在5秒内重启，第二次被杀死会在10秒内重启，第三次会在20秒内重启，一旦在短时间内 Service 被杀死达到5次，则系统不再拉起。</li>
+<li>进程被取得 Root 权限的管理工具或系统工具通过 forestop 停止掉，无法重启。</li>
+</ol>
+<h1 id="保活手段"><a href="#保活手段" class="headerlink" title="保活手段"></a>保活手段</h1><p>当前业界的Android进程保活手段主要分为 黑、白、灰 三种，其大致的实现思路如下：</p>
+<ul>
+<li>黑色保活：不同的app进程，用广播相互唤醒（包括利用系统提供的广播进行唤醒）</li>
+<li>白色保活：启动前台Service</li>
+<li>灰色保活：利用系统的漏洞启动前台Service</li>
+</ul>
+<h1 id="黑色保活"><a href="#黑色保活" class="headerlink" title="黑色保活"></a>黑色保活</h1><p>所谓黑色保活，就是利用不同的app进程使用广播来进行相互唤醒。举个3个比较常见的场景：</p>
+<ul>
+<li>场景1：开机，网络切换、拍照、拍视频时候，利用系统产生的广播唤醒app</li>
+<li>场景2：接入第三方SDK也会唤醒相应的app进程，如微信sdk会唤醒微信，支付宝sdk会唤醒支付宝。由此发散开去，就会直接触发了下面的 场景3</li>
+<li>假如你手机里装了支付宝、淘宝、天猫、UC等阿里系的app，那么你打开任意一个阿里系的app后，有可能就顺便把其他阿里系的app给唤醒了。</li>
+</ul>
+<h1 id="白色保活"><a href="#白色保活" class="headerlink" title="白色保活"></a>白色保活</h1><p>白色保活手段非常简单，就是调用系统api启动一个前台的Service进程，这样会在系统的通知栏生成一个Notification，用来让用户知道有这样一个app在运行着，哪怕当前的app退到了后台。如：酷狗音乐。</p>
+<h1 id="灰色保活"><a href="#灰色保活" class="headerlink" title="灰色保活"></a>灰色保活</h1><p>灰色保活，这种保活手段是应用范围最广泛。它是利用系统的漏洞来启动一个前台的Service进程，与普通的启动方式区别在于，它不会在系统通知栏处出现一个Notification，看起来就如同运行着一个后台Service进程一样。这样做带来的好处就是，用户无法察觉到你运行着一个前台进程（因为看不到Notification）,但你的进程优先级又是高于普通后台进程的。那么如何利用系统的漏洞呢，大致的实现思路和代码如下：</p>
+<ul>
+<li>思路一：API &lt; 18，启动前台Service时直接传入new Notification()；</li>
+<li>思路二：API &gt;= 18，同时启动两个id相同的前台Service，然后再将后启动的Service做stop处理；</li>
+</ul>
+<p>参考资料：<br><a href="http://dev.qq.com/topic/57ac4a0ea374c75371c08ce8" target="_blank" rel="external">Android进程保活招式大全</a><br><a href="http://www.jianshu.com/p/63aafe3c12af" target="_blank" rel="external">关于 Android 进程保活，你所需要知道的一切</a></p>
+
+  </div>
+  <footer class="article-footer">
+    
+
+    
+
+  </footer>
+</article>
+
+
+  <link rel="stylesheet" href="http://static.duoshuo.com/styles/embed.default.css?349d9313.css">
+  <!-- 多说评论框 start -->
+  <div class="ds-thread" data-thread-key="2016/08/12/Android笔记-进程保活/" data-title="Android笔记-进程保活" data-url="/2016/08/12/Android笔记-进程保活/"></div>
+  <!-- 多说评论框 end -->
+  <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+  <script type="text/javascript">
+    var duoshuoQuery = {
+      short_name: "SION"
+    };
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';
+      ds.async = true;
+      ds.src = (document.location.protocol == 'https:'
+        ? 'https:'
+        : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+  <!-- 多说公共JS代码 end -->
+
+
+
+
+
+
+          <div class="main-footer">
+  
+    © 2016 Be Level5 Coder - Powered by <a href="http://hexo.io" target="_blank">Hexo</a> - Theme <a href="https://github.com/denjones/hexo-theme-chan" target="_blank">Chan</a>
+  
+</div>
+
+      
+        </div>
+      
+    </div>
+  </div>
+  <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="/PhotoSwipe/photoswipe.css">
+  <link rel="stylesheet" href="/PhotoSwipe/default-skin/default-skin.css">
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+             It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+      <!-- Container that holds slides.
+                PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                Don't modify these 3 pswp__item elements, data is added later on. -->
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+
+      <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+      <div class="pswp__ui pswp__ui--hidden">
+
+        <div class="pswp__top-bar">
+
+          <!--  Controls are self-explanatory. Order can be changed. -->
+
+          <div class="pswp__counter"></div>
+
+          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+          <button class="pswp__button pswp__button--share" title="Share"></button>
+
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+          <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+          <!-- element will get class pswp__preloader--active when preloader is running -->
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div>
+
+        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/PhotoSwipe/photoswipe.js"></script>
+  <script src="/PhotoSwipe/photoswipe-ui-default.js"></script>
+
+
+<script src="/perfect-scrollbar/js/min/perfect-scrollbar.min.js"></script>
+<script src="/scripts/main.js"></script>
+
+</body>
+</html>

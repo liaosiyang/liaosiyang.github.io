@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<title>
+  
+    Android笔记-RxJava
+  
+</title>
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android笔记-RxJava">
+<meta property="og:url" content="http://yoursite.com/2016/08/15/Android笔记-RxJava/index.html">
+<meta property="og:site_name" content="Be Level5 Coder">
+<meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/1920x1080_4be7f3a22d45ffe.jpg">
+<meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/2046763-6c0e1adc83123ed6.png">
+<meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/2046763-38826a6ab94d1cd9.png">
+<meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/map.png">
+<meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/flatmap_2.png">
+<meta property="og:updated_time" content="2016-08-15T13:44:17.063Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android笔记-RxJava">
+<meta name="twitter:image" content="http://ob5qdb9lc.bkt.clouddn.com/1920x1080_4be7f3a22d45ffe.jpg">
+
+
+  <link rel="alternative" href="/atom.xml" title="Be Level5 Coder" type="application/atom+xml">
+
+
+
+  <link rel="icon" href="/favicon.png">
+
+
+<link rel="stylesheet" href="/perfect-scrollbar/css/perfect-scrollbar.min.css">
+<link rel="stylesheet" href="/styles/main.css">
+
+
+
+
+
+
+</head>
+<body
+  
+  >
+  <div class="mobile-header">
+  <button class="sidebar-toggle" type="button">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a class="title" href="/">Be Level5 Coder</a>
+</div>
+
+  <div class="main-container">
+    <div class="sidebar">
+  <div class="header">
+    <h1 class="title"><a href="/">Be Level5 Coder</a></h1>
+    
+    <div class="info">
+      <div class="content">
+        
+        
+          <div class="author">Sion</div>
+        
+      </div>
+      
+        <div class="avatar">
+          
+            <img src="http://ob5qdb9lc.bkt.clouddn.com/my_avatar.jpg">
+          
+        </div>
+      
+    </div>
+  </div>
+  <div class="body">
+    
+      
+        <ul class="nav">
+          
+            
+              <li class="category-list-container">
+                <a href="javascript:;">分类</a>
+                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android笔记/">Android笔记</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java笔记/">Java笔记</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TCP-IP笔记/">TCP/IP笔记</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统笔记/">操作系统笔记</a><span class="category-list-count">1</span></li></ul>
+              </li>
+            
+          
+            
+              <li class="tag-list-container">
+                <a href="javascript:;">标签</a>
+                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Other/">Other</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP-IP/">TCP/IP</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a><span class="tag-list-count">1</span></li></ul>
+              </li>
+            
+          
+            
+              <li class="archive-list-container">
+                <a href="javascript:;">归档</a>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a><span class="archive-list-count">32</span></li></ul>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="/" title="Homepage">Homepage</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/archives" title="By Year">By Year</a>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="https://github.com/liaosiyang" title="Github" target="_blank" rel="external">Github</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/atom.xml" title="RSS">RSS</a>
+              </li>
+            
+          
+        </ul>
+      
+    
+  </div>
+</div>
+
+    <div class="main-content">
+      
+        <div style="max-width: 1000px">
+      
+          <article id="post-Android笔记-RxJava" class="article article-type-post">
+  
+    <h1 class="article-header">
+      Android笔记-RxJava
+    </h1>
+  
+  
+
+  <div class="article-info">
+    <span class="article-date">
+  2016-08-15
+</span>
+
+    
+	<span class="article-category tagcloud">
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Android笔记/">Android笔记</a></li></ul>
+	</span>
+
+
+    
+	<span class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+	</span>
+
+
+  </div>
+  <div class="article-entry">
+    <p><img src="http://ob5qdb9lc.bkt.clouddn.com/1920x1080_4be7f3a22d45ffe.jpg" alt="Image"></p>
+<a id="more"></a>
+<h1 id="RxJAVA"><a href="#RxJAVA" class="headerlink" title="RxJAVA"></a>RxJAVA</h1><p>RxJava算得上是我最喜欢的开源库了。以前在项目中使用异步是个很头疼的问题，来回回调，互相嵌套，往往让代码可读性变的很差。RxJava的出现算是解决了这个问题，一开始使用的时候还不觉得什么，用多了就发现这个开源库真心牛逼。它不仅仅是取代了AsyncTask,Handler等，而且还有一些实用的衍生产品。<br><br></p>
+<h1 id="什么是Rx"><a href="#什么是Rx" class="headerlink" title="什么是Rx"></a>什么是Rx</h1><p>Rx就是一种响应式编程，来创建基于事件的异步程序。<br><br></p>
+<h1 id="RxJava是什么"><a href="#RxJava是什么" class="headerlink" title="RxJava是什么"></a>RxJava是什么</h1><p>RxJava就是一种用Java语言实现的响应式编程，来创建基于事件的异步程序。<br><br></p>
+<h1 id="扩展的观察者模式"><a href="#扩展的观察者模式" class="headerlink" title="扩展的观察者模式"></a>扩展的观察者模式</h1><p>RxJava 的异步实现，是通过一种扩展的观察者模式来实现的。</p>
+<p>观察者（Observer）需要在被观察者(Observable)变化的一瞬间做出反应。<br>而两者通过注册（Register）或者订阅(Subscribe)的方式进行绑定。<br><br></p>
+<h2 id="RxJava-的观察者模式"><a href="#RxJava-的观察者模式" class="headerlink" title="RxJava 的观察者模式"></a>RxJava 的观察者模式</h2><p>RxJava 有四个基本概念：Observable (可观察者，即被观察者)、 Observer (观察者)、 subscribe (订阅)、事件。Observable 和 Observer 通过 subscribe() 方法实现订阅关系，从而 Observable 可以在需要的时候发出事件来通知 Observer。</p>
+<p>与传统观察者模式不同， RxJava 的事件回调方法除了普通事件 onNext() （相当于 onClick() / onEvent()）之外，还定义了两个特殊的事件：onCompleted() 和 onError()。<br><br></p>
+<h1 id="如何实现RxJava"><a href="#如何实现RxJava" class="headerlink" title="如何实现RxJava"></a>如何实现RxJava</h1><p><br></p>
+<h2 id="创建Observer"><a href="#创建Observer" class="headerlink" title="创建Observer"></a>创建Observer</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//创建Observer</span></div><div class="line">Observer&lt;String&gt; observer = <span class="keyword">new</span> Observer&lt;String&gt;() &#123;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onNext</span><span class="params">(String s)</span> </span>&#123;</div><div class="line">        Log.i(<span class="string">"onNext ---&gt; "</span>, <span class="string">"Item: "</span> + s);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCompleted</span><span class="params">()</span> </span>&#123;</div><div class="line">        Log.i(<span class="string">"onCompleted ---&gt; "</span>, <span class="string">"完成"</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onError</span><span class="params">(Throwable e)</span> </span>&#123;</div><div class="line">        Log.i(<span class="string">"onError ---&gt; "</span>, e.toString());</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>  
+<p>在 RxJava 的 subscribe 过程中，Observer 也总是会先被转换成一个 Subscriber 再使用。</p>
+<p>Subscriber跟Observer接口几乎完全一样，只是多了两个方法：</p>
+<ul>
+<li>onStart(): 它会在 subscribe 刚开始，而事件还未发送之前被调用，可以用于做一些准备工作，例如数据的清零或重置。这是一个可选方法，默认情况下它的实现为空。需要注意的是，如果对准备工作的线程有要求（例如弹出一个显示进度的对话框，这必须在主线程执行）， onStart() 就不适用了，因为它总是在 subscribe 所发生的线程被调用，而不能指定线程。</li>
+<li>unsubscribe(): 用于取消订阅。在这个方法被调用后，Subscriber 将不再接收事件。一般在这个方法调用前，可以使用 isUnsubscribed() 先判断一下状态。 要在不再使用的时候尽快在合适的地方（例如 onPause() onStop() 等方法中）调用 unsubscribe() 来解除引用关系，以避免内存泄露的发生。</li>
+</ul>
+<p><br></p>
+<h2 id="创建Observable"><a href="#创建Observable" class="headerlink" title="创建Observable"></a>创建Observable</h2><p>Observable是通过 create() 方法来创建的。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//创建Observable</span></div><div class="line">Observable observable = Observable.create(<span class="keyword">new</span> Observable.OnSubscribe&lt;String&gt;() &#123;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">call</span><span class="params">(Subscriber&lt;? <span class="keyword">super</span> String&gt; subscriber)</span> </span>&#123;</div><div class="line">        subscriber.onNext(<span class="string">"Hello"</span>);</div><div class="line">        subscriber.onNext(<span class="string">"World"</span>);</div><div class="line">        subscriber.onCompleted();</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>  
+<p><br></p>
+<h2 id="订阅（Subscribe）"><a href="#订阅（Subscribe）" class="headerlink" title="订阅（Subscribe）"></a>订阅（Subscribe）</h2><p>在之前，我们创建了 Observable 和 Observer ，现在就需要用 subscribe() 方法来将它们连接起来，形成一种订阅关系：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//订阅</span></div><div class="line">observable.subscribe(observer);</div></pre></td></tr></table></figure>  
+<p><br></p>
+<h1 id="线程控制——Scheduler"><a href="#线程控制——Scheduler" class="headerlink" title="线程控制——Scheduler"></a>线程控制——Scheduler</h1><p>在RxJava中，Scheduler相当于线程控制器，可以通过它来指定每一段代码运行的线程。</p>
+<ul>
+<li>Schedulers.immediate(): 直接在当前线程运行，相当于不指定线程。这是默认的Scheduler。</li>
+<li>Schedulers.newThread(): 总是启用新线程，并在新线程执行操作。</li>
+<li>Schedulers.io(): I/O 操作（读写文件、读写数据库、网络信息交互等）所使用的Scheduler。行为模式和newThread()差不多，区别在于io()的内部实现是是用一个无数量上限的线程池，可以重用空闲的线程，因此多数情况下io()比newThread()更有效率。不要把计算工作放在io()中，可以避免创建不必要的线程。</li>
+<li>Schedulers.computation(): 计算所使用的Scheduler。这个计算指的是 CPU 密集型计算，即不会被 I/O 等操作限制性能的操作，例如图形的计算。这个Scheduler使用的固定的线程池，大小为 CPU 核数。不要把 I/O 操作放在computation()中，否则 I/O 操作的等待时间会浪费 CPU。</li>
+<li>AndroidSchedulers.mainThread()，Android专用线程，指定操作在主线程运行。</li>
+</ul>
+<p>RxJava中提供了两个方法：subscribeOn() 和 observeOn() 切换线程，两者的不同点在于：</p>
+<ul>
+<li>subscribeOn(): 指定subscribe()订阅所发生的线程，即 call() 执行的线程。或者叫做事件产生的线程。</li>
+<li>observeOn(): 指定Observer所运行在的线程，即onNext()执行的线程。或者叫做事件消费的线程。</li>
+</ul>
+<p><br></p>
+<h1 id="操作符"><a href="#操作符" class="headerlink" title="操作符"></a>操作符</h1><p>RxJava中有大量的操作符，比如创建操作符、变换操作符、过滤操作符等等。</p>
+<p><br></p>
+<h2 id="Observable-just"><a href="#Observable-just" class="headerlink" title="Observable.just()"></a>Observable.just()</h2><p>Just操作符是创建一个将参数依次发送出来的Observable。</p>
+<p><img src="http://ob5qdb9lc.bkt.clouddn.com/2046763-6c0e1adc83123ed6.png" alt="Image"><br><br></p>
+<h2 id="Observable-from"><a href="#Observable-from" class="headerlink" title="Observable.from()"></a>Observable.from()</h2><p>将传入的数组或 Iterable 拆分成具体对象后，依次发送出来。</p>
+<p><img src="http://ob5qdb9lc.bkt.clouddn.com/2046763-38826a6ab94d1cd9.png" alt="Image"><br><br></p>
+<h2 id="Observable-create"><a href="#Observable-create" class="headerlink" title="Observable.create()"></a>Observable.create()</h2><p>create()方法创建了一个Observable，且在这个Observable中有个OnSubscribe。</p>
+<p><br></p>
+<h2 id="subscribe"><a href="#subscribe" class="headerlink" title="subscribe()"></a>subscribe()</h2><p>这个是将观察者（Observer）与被观察者(Observable)联系到一起的操作，也就是产生一种订阅(Subcribe)关系。</p>
+<ul>
+<li>首先创建过程也就是create()方法中创建了一个Observable，并有一个onSubscribe属性；</li>
+<li>其次在订阅过程也就是subscribe()方法中，调用了create()方法中创建的Observable的onSubscribe属性的call方法；</li>
+<li>最后这个call回调的就是代码中创建的Subscriber的onNext/onCompleted/onError方法。</li>
+</ul>
+<p><br></p>
+<h2 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h2><p>Map操作符对原始Observable发射的每一项数据应用一个你选择的函数，然后返回一个发射这些结果的Observable。</p>
+<p><img src="http://ob5qdb9lc.bkt.clouddn.com/map.png" alt="Image"><br>这是一对一的转换，就是一个单独的数据转成另一个单独的数据。<br><br></p>
+<h2 id="FlatMap"><a href="#FlatMap" class="headerlink" title="FlatMap"></a>FlatMap</h2><p>FlatMap操作符使用一个指定的函数对原始Observable发射的每一项数据执行变换操作，这个函数返回一个本身也发射数据的Observable，然后FlatMap合并这些Observables发射的数据，最后将合并后的结果当做它自己的数据序列发射。<br><img src="http://ob5qdb9lc.bkt.clouddn.com/flatmap_2.png" alt="Image"><br>与Map相比较，FlatMap是能进行一对多的转换。</p>
+<p><br></p>
+<h1 id="FuncX与ActionX"><a href="#FuncX与ActionX" class="headerlink" title="FuncX与ActionX"></a>FuncX与ActionX</h1><p><br></p>
+<h2 id="ActionX"><a href="#ActionX" class="headerlink" title="ActionX"></a>ActionX</h2><p>RxJava 是提供了多个 ActionX 形式的接口 (例如 Action2, Action3) 的，它们可以被用以包装不同的无返回值的方法。</p>
+<ul>
+<li>Action0 就是把 onCompleted() 作为参数传入 subscribe() 。</li>
+<li>Action1 就是把 onNext() 与 onError() 作为参数传入 subscribe() 。</li>
+</ul>
+<p><br></p>
+<h2 id="FuncX"><a href="#FuncX" class="headerlink" title="FuncX"></a>FuncX</h2><p>FuncX 和 ActionX 的区别在 FuncX 包装的是有返回值的方法。</p>
+<p><br></p>
+<h1 id="doOnSubscribe"><a href="#doOnSubscribe" class="headerlink" title="doOnSubscribe"></a>doOnSubscribe</h1><p>RxJava中给我们提供了另外一种操作符： doOnSubscribe ，这个操作符跟onStart方法一样，都是在 subscribe() 方法调用后且事件发送之前 执行，所以我们一样可以在这里面进行初始化的操作。而区别在于它可以指定线程。</p>
+<p>默认情况下， doOnSubscribe() 执行在 subscribe() 发生的线程；而如果在 doOnSubscribe() 之后有 subscribeOn() 的话，它将执行在离它最近的 subscribeOn() 所指定的线程。</p>
+<p>如果在doOnSubscribe()之后指定了subscribeOn()，它决定了doOnSubscribe()在哪种线程中执行。</p>
+<ul>
+<li>doOnSubscribe()之前的subscribeOn()不会影响它。</li>
+<li>doOnSubscribe()之后的subscribeOn()，且是最近的才会影响它。</li>
+</ul>
+<p><br></p>
+<h1 id="doOnNext"><a href="#doOnNext" class="headerlink" title="doOnNext"></a>doOnNext</h1><p>RxJava中给我们提供了一个操作符： doOnNext() ，这个操作符允许我们在每次输出一个元素之前做一些其他的事情，比如提示啊保存啊之类的操作。</p>
+<p><br></p>
+<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>以上这些只是RxJava最最基本的用法，在我目前的项目中差不多就使用到了这些。其实RxJava包含了很多内容，有这数目众多的操作符和扩展类，官方给出了详细的文档<a href="http://rxjava.yuxingxin.com/" target="_blank" rel="external">RxJava Essentials 中文翻译版</a></p>
+<p>参考资料：<br><a href="http://gank.io/post/560e15be2dca930e00da1083" target="_blank" rel="external">给 Android 开发者的 RxJava 详解</a><br><a href="http://www.jianshu.com/p/856297523728" target="_blank" rel="external">大话RxJava</a></p>
+
+  </div>
+  <footer class="article-footer">
+    
+
+    
+
+  </footer>
+</article>
+
+
+  <link rel="stylesheet" href="http://static.duoshuo.com/styles/embed.default.css?349d9313.css">
+  <!-- 多说评论框 start -->
+  <div class="ds-thread" data-thread-key="2016/08/15/Android笔记-RxJava/" data-title="Android笔记-RxJava" data-url="/2016/08/15/Android笔记-RxJava/"></div>
+  <!-- 多说评论框 end -->
+  <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+  <script type="text/javascript">
+    var duoshuoQuery = {
+      short_name: "SION"
+    };
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';
+      ds.async = true;
+      ds.src = (document.location.protocol == 'https:'
+        ? 'https:'
+        : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+  <!-- 多说公共JS代码 end -->
+
+
+
+
+
+
+          <div class="main-footer">
+  
+    © 2016 Be Level5 Coder - Powered by <a href="http://hexo.io" target="_blank">Hexo</a> - Theme <a href="https://github.com/denjones/hexo-theme-chan" target="_blank">Chan</a>
+  
+</div>
+
+      
+        </div>
+      
+    </div>
+  </div>
+  <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="/PhotoSwipe/photoswipe.css">
+  <link rel="stylesheet" href="/PhotoSwipe/default-skin/default-skin.css">
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+             It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+      <!-- Container that holds slides.
+                PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                Don't modify these 3 pswp__item elements, data is added later on. -->
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+
+      <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+      <div class="pswp__ui pswp__ui--hidden">
+
+        <div class="pswp__top-bar">
+
+          <!--  Controls are self-explanatory. Order can be changed. -->
+
+          <div class="pswp__counter"></div>
+
+          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+          <button class="pswp__button pswp__button--share" title="Share"></button>
+
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+          <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+          <!-- element will get class pswp__preloader--active when preloader is running -->
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div>
+
+        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/PhotoSwipe/photoswipe.js"></script>
+  <script src="/PhotoSwipe/photoswipe-ui-default.js"></script>
+
+
+<script src="/perfect-scrollbar/js/min/perfect-scrollbar.min.js"></script>
+<script src="/scripts/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<title>
+  
+    Android笔记-四大组件
+  
+</title>
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android笔记-四大组件">
+<meta property="og:url" content="http://yoursite.com/2016/08/09/Android笔记-四大组件/index.html">
+<meta property="og:site_name" content="Be Level5 Coder">
+<meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/c995d143ad4bd1135967435e58afa40f4bfb0537.jpg">
+<meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/1685558-d3176065dcf72d21.png">
+<meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/1685558-8eaf71b2bbf765b9.png">
+<meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/74d2f7b1-47ae-4637-85a7-4fe0e464daa1.png">
+<meta property="og:updated_time" content="2016-08-09T13:18:18.497Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android笔记-四大组件">
+<meta name="twitter:image" content="http://ob5qdb9lc.bkt.clouddn.com/c995d143ad4bd1135967435e58afa40f4bfb0537.jpg">
+
+
+  <link rel="alternative" href="/atom.xml" title="Be Level5 Coder" type="application/atom+xml">
+
+
+
+  <link rel="icon" href="/favicon.png">
+
+
+<link rel="stylesheet" href="/perfect-scrollbar/css/perfect-scrollbar.min.css">
+<link rel="stylesheet" href="/styles/main.css">
+
+
+
+
+
+
+</head>
+<body
+  
+  >
+  <div class="mobile-header">
+  <button class="sidebar-toggle" type="button">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a class="title" href="/">Be Level5 Coder</a>
+</div>
+
+  <div class="main-container">
+    <div class="sidebar">
+  <div class="header">
+    <h1 class="title"><a href="/">Be Level5 Coder</a></h1>
+    
+    <div class="info">
+      <div class="content">
+        
+        
+          <div class="author">Sion</div>
+        
+      </div>
+      
+        <div class="avatar">
+          
+            <img src="http://ob5qdb9lc.bkt.clouddn.com/my_avatar.jpg">
+          
+        </div>
+      
+    </div>
+  </div>
+  <div class="body">
+    
+      
+        <ul class="nav">
+          
+            
+              <li class="category-list-container">
+                <a href="javascript:;">分类</a>
+                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android笔记/">Android笔记</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java笔记/">Java笔记</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TCP-IP笔记/">TCP/IP笔记</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统笔记/">操作系统笔记</a><span class="category-list-count">1</span></li></ul>
+              </li>
+            
+          
+            
+              <li class="tag-list-container">
+                <a href="javascript:;">标签</a>
+                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Other/">Other</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP-IP/">TCP/IP</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a><span class="tag-list-count">1</span></li></ul>
+              </li>
+            
+          
+            
+              <li class="archive-list-container">
+                <a href="javascript:;">归档</a>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a><span class="archive-list-count">32</span></li></ul>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="/" title="Homepage">Homepage</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/archives" title="By Year">By Year</a>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="https://github.com/liaosiyang" title="Github" target="_blank" rel="external">Github</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/atom.xml" title="RSS">RSS</a>
+              </li>
+            
+          
+        </ul>
+      
+    
+  </div>
+</div>
+
+    <div class="main-content">
+      
+        <div style="max-width: 1000px">
+      
+          <article id="post-Android笔记-四大组件" class="article article-type-post">
+  
+    <h1 class="article-header">
+      Android笔记-四大组件
+    </h1>
+  
+  
+
+  <div class="article-info">
+    <span class="article-date">
+  2016-08-09
+</span>
+
+    
+	<span class="article-category tagcloud">
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Android笔记/">Android笔记</a></li></ul>
+	</span>
+
+
+    
+	<span class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+	</span>
+
+
+  </div>
+  <div class="article-entry">
+    <p><img src="http://ob5qdb9lc.bkt.clouddn.com/c995d143ad4bd1135967435e58afa40f4bfb0537.jpg" alt="Image"></p>
+<a id="more"></a>
+<h1 id="四大组件"><a href="#四大组件" class="headerlink" title="四大组件"></a>四大组件</h1><p>所谓的四大组件，只是让你的APP告诉操作系统，自己要怎样运行而已，跟怎样设计自己的APP，压根没有关系。</p>
+<p>传统的应用通过一个main方法，告诉操作系统：“嘿哥们，main方法就是我的入口，请从这个方法开始运行我。”而Android却给了你四个选择，每一个组件都是让操作系统运行你的APP的一种入口。</p>
+<p>好了，操作系统要运行你的APP了，于是它调用你的main方法，然后你的应用就开始运行了，你可以做任何你想做的事情，直到你认为自己完成任务为止。请注意，这里要求你定义main方法，并不是要求你去做什么事，或是完成一个叫做main的功能，main方法所有的作用仅仅是提供一个APP运行入口而已。</p>
+<p>但是在Android的世界，我们决定，我们不要一个明确的main方法作为APP的入口。因为我们需要让系统对APP怎样运行有更多的控制权。尤其是，我们希望构建一个这样的系统，在该系统中，用户永远不需要考虑开启和停止一个APP，而把这些事交给系统去管理。所以，系统需要知道更多的每个APP的内部运行情况，以便能够在需要的时候，以定义好的方式启动APP，即使该APP当时并不在运行。</p>
+<p>这个系统所需要了解的每个APP的内部运行情况，其实就是Manifest.xml文件中的内容。</p>
+<p>为了达到这一点，我们将一个APP的main方法分解成几种系统可以与之交互的形式。这几种形式就是Activity,BroadcastReceiver,Service和ContentProvider APIs，广大的Android开发者都很熟悉它们。</p>
+<p>这些类好像在告诉你，你的APP内部应当怎样工作，但这是一种误解！事实上，这些类只是定义你的APP需要怎样与系统交互（以及系统怎样协调你的APP与其他APP进行交互）。这种与系统的交互一旦开始，系统就不再关心你的APP内部是怎样运行了。</p>
+<h1 id="Activity"><a href="#Activity" class="headerlink" title="Activity"></a>Activity</h1><p>这是一个APP与用户交互的入口。</p>
+<h2 id="Activity的启动模式"><a href="#Activity的启动模式" class="headerlink" title="Activity的启动模式"></a>Activity的启动模式</h2><h3 id="任务栈是什么"><a href="#任务栈是什么" class="headerlink" title="任务栈是什么"></a>任务栈是什么</h3><p>任务栈Task，是一种用来放置Activity实例的容器，他是以栈的形式进行盛放，也就是所谓的先进后出，主要有2个基本操作：压栈和出栈，其所存放的Activity是不支持重新排序的，只能根据压栈和出栈操作更改Activity的顺序。</p>
+<p>启动一个Application的时候，系统会为它默认创建一个对应的Task，用来放置根Activity。默认启动Activity会放在同一个Task中，新启动的Activity会被压入启动它的那个Activity的栈中，并且显示它。当用户按下回退键时，这个Activity就会被弹出栈，按下Home键回到桌面，再启动另一个应用，这时候之前那个Task就被移到后台，成为后台任务栈，而刚启动的那个Task就被调到前台，成为前台任务栈，Android系统显示的就是前台任务栈中的Top实例Activity。</p>
+<h3 id="任务栈的作用"><a href="#任务栈的作用" class="headerlink" title="任务栈的作用"></a>任务栈的作用</h3><p>以往基于应用（application）的程序开发中，程序具有明确的边界，一个程序就是一个应用，一个应用为了实现功能可以采用开辟新线程甚至新进程来辅助，但是应用与应用之间不能复用资源和功能。而Android引入了基于组件开发的软件架构，虽然我们开发android程序，仍然使用一个apk工程一个Application的开发形式，但是对于Aplication的开发就用到了Activity、service等四大组件，其中的每一个组件，都是可以被跨应用复用的，这就是android的神奇之处。</p>
+<p>虽然组件可以跨应用被调用，但是一个组件所在的进程必须是在组件所在的Aplication进程中。由于android强化了组件概念，弱化了Aplication的概念，所以在android程序开发中，A应用的A组件想要使用拍照或录像的功能就可以不用去针对Camera类进行开发，直接调用系统自带的摄像头应用（称其B应用）中的组件（称其B组件）就可以了，但是这就引发了一个新问题，A组件运行在A应用中，B组件运行在B应用中，自然都不在同一个进程中，那么从B组件中返回的时候，如何实现正确返回到A组件呢？</p>
+<p>Task就是来负责实现这个功能的，它是从用户角度来理解应用而建立的一个抽象概念。因为用户所能看到的组件就是Activity，所以Task可以理解为实现一个功能而负责管理所有用到的Activity实例的栈。</p>
+<h3 id="启动模式"><a href="#启动模式" class="headerlink" title="启动模式"></a>启动模式</h3><h4 id="standard"><a href="#standard" class="headerlink" title="standard"></a>standard</h4><ul>
+<li>默认模式，可以不用写配置。在这个模式下，都会默认创建一个新的实例。因此，在这种模式下，可以有多个相同的实例，也允许多个相同Activity叠加。应用场景：绝大多数Activity。</li>
+</ul>
+<h4 id="singleTop"><a href="#singleTop" class="headerlink" title="singleTop"></a>singleTop</h4><ul>
+<li><p>栈顶复用模式，如果要开启的activity在任务栈的顶部已经存在，就不会创建新的实例，而是调用 onNewIntent() 方法。避免栈顶的activity被重复的创建。</p>
+</li>
+<li><p>应用场景：在通知栏点击收到的通知，然后需要启动一个Activity，这个Activity就可以用singleTop，否则每次点击都会新建一个Activity。</p>
+</li>
+</ul>
+<h4 id="singleTask"><a href="#singleTask" class="headerlink" title="singleTask"></a>singleTask</h4><ul>
+<li><p>栈内复用模式， activity只会在任务栈里面存在一个实例。如果要激活的activity，在任务栈里面已经存在，就不会创建新的activity，而是复用这个已经存在的activity，调用 onNewIntent() 方法，并且清空这个activity任务栈上面所有的activity。</p>
+</li>
+<li><p>应用场景：大多数App的主页。对于大部分应用，当我们在主界面点击回退按钮的时候都是退出应用，那么当我们第一次进入主界面之后，主界面位于栈底，以后不管我们打开了多少个Activity，只要我们再次回到主界面，都应该使用将主界面Activity上所有的Activity移除的方式来让主界面Activity处于栈顶，而不是往栈顶新加一个主界面Activity的实例，通过这种方式能够保证退出应用时所有的Activity都能报销毁。</p>
+</li>
+<li><p>在跨应用Intent传递时，如果系统中不存在singleTask Activity的实例，那么将创建一个新的Task，然后创建SingleTask Activity的实例，将其放入新的Task中。</p>
+</li>
+</ul>
+<h4 id="singleInstance"><a href="#singleInstance" class="headerlink" title="singleInstance"></a>singleInstance</h4><ul>
+<li><p>单一实例模式，整个手机操作系统里面只有一个实例存在。不同的应用去打开这个activity 共享公用的同一个activity。他会运行在自己单独，独立的任务栈里面，并且任务栈里面只有他一个实例存在。</p>
+</li>
+<li><p>应用场景：呼叫来电界面。这种模式的使用情况比较罕见，在Launcher中可能使用。或者你确定你需要使Activity只有一个实例。建议谨慎使用。</p>
+</li>
+</ul>
+<h3 id="设置Intent的Flag"><a href="#设置Intent的Flag" class="headerlink" title="设置Intent的Flag"></a>设置Intent的Flag</h3><p>系统提供了两种方式来设置一个Activity的启动模式，除了在AndroidManifest文件中设置以外，还可以通过Intent的Flag来设置一个Activity的启动模式，下面我们在简单介绍下一些Flag。</p>
+<h4 id="FLAG-ACTIVITY-NEW-TASK"><a href="#FLAG-ACTIVITY-NEW-TASK" class="headerlink" title="FLAG_ACTIVITY_NEW_TASK"></a>FLAG_ACTIVITY_NEW_TASK</h4><ul>
+<li>使用一个新的Task来启动一个Activity，但启动的每个Activity都将在一个新的Task中。该Flag通常使用在从Service中启动Activity的场景，由于Service中并不存在Activity栈，所以使用该Flag来创建一个新的Activity栈，并创建新的Activity实例。</li>
+</ul>
+<h4 id="FLAG-ACTIVITY-SINGLE-TOP"><a href="#FLAG-ACTIVITY-SINGLE-TOP" class="headerlink" title="FLAG_ACTIVITY_SINGLE_TOP"></a>FLAG_ACTIVITY_SINGLE_TOP</h4><ul>
+<li>使用singletop模式启动一个Activity，与指定android：launchMode=“singleTop”效果相同。</li>
+</ul>
+<h4 id="FLAG-ACTIVITY-CLEAR-TOP"><a href="#FLAG-ACTIVITY-CLEAR-TOP" class="headerlink" title="FLAG_ACTIVITY_CLEAR_TOP"></a>FLAG_ACTIVITY_CLEAR_TOP</h4><ul>
+<li>使用SingleTask模式来启动一个Activity，与指定android：launchMode=“singleTask”效果相同。</li>
+</ul>
+<h4 id="FLAG-ACTIVITY-NO-HISTORY"><a href="#FLAG-ACTIVITY-NO-HISTORY" class="headerlink" title="FLAG_ACTIVITY_NO_HISTORY"></a>FLAG_ACTIVITY_NO_HISTORY</h4><ul>
+<li>Activity使用这种模式启动Activity，当该Activity启动其他Activity后，该Activity就消失了，不会保留在Activity栈中。</li>
+</ul>
+<h3 id="LaunchMode与StartActivityForResult"><a href="#LaunchMode与StartActivityForResult" class="headerlink" title="LaunchMode与StartActivityForResult"></a>LaunchMode与StartActivityForResult</h3><ul>
+<li>在5.0之前，当启动一个Activity时，系统将首先检查Activity的launchMode，如果为A页面设置为SingleInstance或者B页面设置为singleTask或者singleInstance,则会在LaunchFlags中加入FLAG_ACTIVITY_NEW_TASK标志，而如果含有FLAG_ACTIVITY_NEW_TASK标志的话，onActivityResult将会立即接收到一个cancle的信息</li>
+<li>而5.0之后这个方法做了修改，修改之后即便启动的页面设置launchMode为singleTask或singleInstance，onActivityResult依旧可以正常工作，也就是说无论设置哪种启动方式，StartActivityForResult和onActivityResult()这一组合都是有效的。所以如果你目前正好基于5.0做相关开发，不要忘了向下兼容。</li>
+</ul>
+<h2 id="Activity生命周期"><a href="#Activity生命周期" class="headerlink" title="Activity生命周期"></a>Activity生命周期</h2><p><img src="http://ob5qdb9lc.bkt.clouddn.com/1685558-d3176065dcf72d21.png" alt="Image"></p>
+<ul>
+<li>启动Activity: onCreate()—&gt;onStart()—&gt;onResume()，Activity进入运行状态。</li>
+<li>Activity退居后台: 当前Activity转到新的Activity界面或按Home键回到主屏： onPause()—&gt;onStop()，进入停滞状态。</li>
+<li>Activity返回前台: onRestart()—&gt;onStart()—&gt;onResume()，再次回到运行状态。</li>
+<li>Activity退居后台，且系统内存不足， 系统会杀死这个后台状态的Activity（此时这个Activity引用仍然处在任务栈中，只是这个时候引用指向的对象已经为null），若再次回到这个Activity,则会走onCreate()–&gt;onStart()—&gt;onResume()(将重新走一次Activity的初始化生命周期)</li>
+<li>锁屏：onPause()-&gt;onStop()</li>
+<li>解锁：onStart()-&gt;onResume()</li>
+</ul>
+<p>如果一个Activity在用户可见时才处理某个广播，不可见时注销掉，那么应该在哪两个生命周期的回调方法去注册和注销BroadcastReceiver呢？</p>
+<ul>
+<li>Activity 的可见生命周期发生在 onStart调用与 onStop调用之间。在这段时间，用户可以在屏幕上看到 Activity 并与其交互。我们可以在 onStart中注册一个 BroadcastReceiver以监控影响 UI 的变化，并在用户无法再看到您显示的内容时在 onStop中将其取消注册。</li>
+</ul>
+<p>如果有一些数据在Activity跳转时（或者离开时）要保存到数据库，那么你认为是在onPause好还是在onStop执行这个操作好呢？</p>
+<ul>
+<li>onPause较容易被触发，所以我们在做BroadcastReceiver注销时放在onStop要好些。onPause时Activity界面仍然是可见的，如弹出一个Dialog时。但在保存数据时，放在onPause去做可以保证数据存储的有效性，如果放在onStop去做，在某些情况下Activity走完onPause后有可能还没顺利走到onStop就被系统回收了。</li>
+<li>但要注意在onPause中要非常迅速地执行完所需操作，不然会影响到下一个Activity的生命周期函数的调用。</li>
+</ul>
+<p>Activity A启动Activity B时，两个Activity生命周期的变化。</p>
+<ul>
+<li>当一个 Activity 启动另一个 Activity 时，它们都会发生生命周期转变。第一个 Activity 暂停然后停止（但如果它在后台仍然可见，则不会停止，比如B是半透明的），系统会创建另一个 Activity。 如果这两个Activity 共用保存数据到文件或者数据库，必须要注意，在创建第二个 Activity 前，第一个 Activity 不会完全停止。更确切地说，启动第二个 Activity 的过程与停止第一个 Activity 的过程存在重叠。</li>
+</ul>
+<p>以下是当 Activity A 启动 Activity B 时一系列操作的发生顺序：</p>
+<ol>
+<li>Activity A 的 onPause方法执行。</li>
+<li>Activity B 的 onCreate、onStart和 onResume方法依次执行。</li>
+<li>然后，如果 Activity A 在屏幕上不再可见，则其 onStop方法执行。</li>
+</ol>
+<h2 id="自定义View的状态是如何保存的？"><a href="#自定义View的状态是如何保存的？" class="headerlink" title="自定义View的状态是如何保存的？"></a>自定义View的状态是如何保存的？</h2><p>先看一下Activity的状态如何保存的：</p>
+<p><img src="http://ob5qdb9lc.bkt.clouddn.com/1685558-8eaf71b2bbf765b9.png" alt="Image"></p>
+<p>注：无法保证系统会在销毁Activity前一定调用onSaveInstanceState，例如用户使用“返回” 按退出 Activity 时，因为用户的行为是在显式关闭 Activity，所以不会调用onSaveInstanceState。</p>
+<p>Activity类的onSaveInstanceState默认实现会恢复Activity的状态，默认实现会为布局中的每个View调用相应的 onSaveInstanceState方法，让每个View都能保存自身的信息。</p>
+<p>这里需要注意一个细节：想要保存View的状态，需要在XML布局文件中提供一个唯一的ID（android:id），如果没有设置这个ID的话，View控件的onSaveInstanceState是不会被调用的。</p>
+<h2 id="两个Activity之间如何传递参数？"><a href="#两个Activity之间如何传递参数？" class="headerlink" title="两个Activity之间如何传递参数？"></a>两个Activity之间如何传递参数？</h2><p>大多数时候，我们也就传递一些简单的int，String类型的数据，实际中也有看到传递List和Bitmap的。</p>
+<p>自定义对象可以实现Parcelable接口或继承Serializable来传递。</p>
+<p>Serializalbe会使用反射，序列化和反序列化过程需要大量I/O操作，Parcelable自已实现封送和解封（marshalled &amp;unmarshalled）操作不需要用反射，数据也存放在Native内存中，效率要快很多。</p>
+<p>Intent中的Bundle是在使用Binder机制进行数据传递的，能使用的Binder的缓冲区是有大小限制的（有些手机是2M），而一个进程默认有16个binder线程，所以一个线程能占用的缓冲区就更小了（以前做过测试，大约一个线程可以占用128KB）</p>
+<h2 id="Context"><a href="#Context" class="headerlink" title="Context"></a>Context</h2><p>Context提供了一个应用的运行环境，通过这个上下文应用才可以访问资源，才能完成和其他组件、服务的交互。它就是一个调用者和具体实现的桥接。</p>
+<p><img src="http://ob5qdb9lc.bkt.clouddn.com/74d2f7b1-47ae-4637-85a7-4fe0e464daa1.png" alt="Image"></p>
+<p>Activity和Service以及Application的Context是不一样的,Activity继承自ContextThemeWraper.其他的继承自ContextWrapper。</p>
+<p>Activity在创建的时候会new一个ContextImpl对象并在attach方法中关联它，Application和Service也差不多。ContextWrapper的方法内部都是转调ContextImpl的方法。</p>
+<p>Application（或者Service）和Activity都可以调用Context的startActivity方法，那么在这两个地方调用startActivity有区别吗？</p>
+<ul>
+<li>在Application（或者Service）需要给Intent设置Intent.FLAG_ACTIVITY_NEW_TASK才能正常启动Activity</li>
+</ul>
+<h1 id="Service"><a href="#Service" class="headerlink" title="Service"></a>Service</h1><p>当由于各种各样的原因需要APP在后台运行时，Service就是一个这样的入口。</p>
+<p>Service是一个专门在后台处理长时间任务的Android组件，它没有UI。它有两种启动方式，startService和bindService。</p>
+<h2 id="启动式服务（Started-Service）"><a href="#启动式服务（Started-Service）" class="headerlink" title="启动式服务（Started Service）"></a>启动式服务（Started Service）</h2><ul>
+<li>应用组件通过 startService()方法来启动服务，一旦启动，服务会在后台运行，即使启动该服务的组件被销毁；</li>
+<li>启动式服务不会向启动它的组件返回任何结果，也就是说，启动式服务不能与组件进行交互；</li>
+<li>启动式服务一旦被启动，就会一直运行，直到它使用 stopSelf() 方法停止服务或在其他应用组件中使用 stopService() 方法停止服务。</li>
+</ul>
+<h3 id="启动式服务的生命周期"><a href="#启动式服务的生命周期" class="headerlink" title="启动式服务的生命周期"></a>启动式服务的生命周期</h3><p> onCreate() –&gt; onStartCommand() –&gt; onDestroy()</p>
+<ol>
+<li>onCreate()：第一次启动服务时调用，此后不再调用；</li>
+<li>onStartCommand()：每次启动服务时调用；</li>
+<li>onDestroy()：停止服务时调用。</li>
+</ol>
+<h2 id="绑定式服务（Bound-Service）"><a href="#绑定式服务（Bound-Service）" class="headerlink" title="绑定式服务（Bound Service）"></a>绑定式服务（Bound Service）</h2><ul>
+<li>应用组将通过 bindService() 方法来绑定服务，服务只有在应用组件绑定它的时间内运行；</li>
+<li>绑定式服务可以和绑定它的组件进行交互，甚至是执行进程间通信（IPC）；</li>
+<li>多个应用组件可以绑定同一个服务，服务只在组件绑定它的时候运行，当所有的这些应用组件都使用 unbindService() 方法解绑服务（即没有组件跟服务绑定）时，服务会被销毁。</li>
+</ul>
+<h3 id="绑定式服务的生命周期"><a href="#绑定式服务的生命周期" class="headerlink" title="绑定式服务的生命周期"></a>绑定式服务的生命周期</h3><p>onCreate() –&gt; onBind() –&gt; onUnbind() –&gt; onDestroy()</p>
+<ol>
+<li>onCreate()：第一次启动服务时调用，此后不再调用；</li>
+<li>onBind()：第一次绑定服务时调用，此后不再调用；</li>
+<li>onUnbind()：解绑服务时调用</li>
+<li>onDestroy()：解绑服务时调用。</li>
+</ol>
+<h2 id="IntentService"><a href="#IntentService" class="headerlink" title="IntentService"></a>IntentService</h2><ul>
+<li>IntentService 继承自 Service，它使用一个 WorkerThread 来处理异步请求，每次处理一个请求；</li>
+<li>IntentService 内部开启了一个子线程，专门用于执行耗时操作；</li>
+<li>当所有请求处理完毕时，IntentService 会自己停止服务；</li>
+<li>要使用 IntentService，必须自定义一个类，继承自 IntentService，实现 onHandleIntent() 方法，并需要有一个无参的构造方法且调用 super(String name)；</li>
+<li>onHandleIntent() 方法运行在子线程当中，如果多次启动服务（即开启多个子线程），则各个子线程会依次排队执行，当所有的子线程执行完毕，IntentService 会自动停止服务，因此 IntentService 适合用来执行单线程操作。</li>
+</ul>
+<h1 id="BroadcastReceiver"><a href="#BroadcastReceiver" class="headerlink" title="BroadcastReceiver"></a>BroadcastReceiver</h1><p>这是一种让系统在正常的用户流（userflow）之外，传递事件给APP的机制。最重要的是，因为这是另一个被精心定义的APP的入口，即使APP当前并不在运行，系统也可以将broadcasts传递给APP。</p>
+<h2 id="普通广播-Normal-Broadcast"><a href="#普通广播-Normal-Broadcast" class="headerlink" title="普通广播 (Normal Broadcast)"></a>普通广播 (Normal Broadcast)</h2><p>普通广播对于接收者来说是异步的，每个接收者都可以接收到广播，接收者不会相互干扰，也因此，接收者无法终止广播。</p>
+<h2 id="有序广播-Ordered-Broadcast"><a href="#有序广播-Ordered-Broadcast" class="headerlink" title="有序广播 (Ordered Broadcast)"></a>有序广播 (Ordered Broadcast)</h2><p>有序广播每次只将广播发送给优先级较高的接收者，优先级高的接收者可以决定是将广播发送给优先级低的接收者，还是终止这个广播。</p>
+<h2 id="粘性广播-Sticky-Broadcast"><a href="#粘性广播-Sticky-Broadcast" class="headerlink" title="粘性广播 (Sticky Broadcast)"></a>粘性广播 (Sticky Broadcast)</h2><p>Sticky简单说就是，在发送广播时Reciever还没有被注册，但它注册后还是可以收到在它之前发送的那条广播。</p>
+<h2 id="静态注册和动态注册的区别"><a href="#静态注册和动态注册的区别" class="headerlink" title="静态注册和动态注册的区别"></a>静态注册和动态注册的区别</h2><ol>
+<li>静态注册是在 AndroidManifest.xml 中注册，动态注册是在代码中注册；</li>
+<li>静态注册是常驻型的，即使应用没有启动时也能接收广播；而动态注册的广播的生命周期受到其用来注册的 Activity 或 Service 的影响，当其用来注册的 Activity 或 Service 关闭时其广播也就失效了；</li>
+<li>动态注册的广播在 Activity 或 Service 被销毁时必须解除注册，而静态注册的关闭则不用；</li>
+<li>动态注册的优先级要比静态注册的优先级高。</li>
+</ol>
+<h2 id="BroadcastReceiver的生命周期"><a href="#BroadcastReceiver的生命周期" class="headerlink" title="BroadcastReceiver的生命周期"></a>BroadcastReceiver的生命周期</h2><p>Receiver也是有生命周期的，而且很短，当它的onReceive方法执行完成后，它的生命周期就结束了。</p>
+<p>这时BroadcastReceiver已经不处于active状态，被系统杀掉的概率极高，也就是说如果你在onReceive去开线程进行异步操作或者打开Dialog都有可能在没达到你要的结果时进程就被系统杀掉。</p>
+<p>因为这个进程可能只有这个Receiver这个组件在运行，当Receiver也执行完后就是一个empty进程，是最容易被系统杀掉的。</p>
+<h1 id="ContentProvider"><a href="#ContentProvider" class="headerlink" title="ContentProvider"></a>ContentProvider</h1><p>最后，ContentProvider是一个专用的办法，用来将你的APP的数据公开到其他地方。人们通常会将它们当作对数据库的抽象，因为有许多的API和支持库就是这样使用ContentProvider的。但是从系统设计的角度，这并不是ContentProvider的初衷。</p>
+<p>对于系统来说，ContentProvider实际上是一个入口，用于获取一个APP内部的公开的被命名的数据项（data items），每个数据项都被一个URI scheme所标识。这样，APP就可以决定怎样将自己的数据项映射到一个URI scheme，怎样将这个URI scheme公开给其他APP或者系统，好让APP或者系统使用这个URI scheme来获取自己内部的数据。</p>
+<h2 id="ContentProvider接口方法运行在哪个线程中呢？"><a href="#ContentProvider接口方法运行在哪个线程中呢？" class="headerlink" title="ContentProvider接口方法运行在哪个线程中呢？"></a>ContentProvider接口方法运行在哪个线程中呢？</h2><ol>
+<li>ContentProvider和调用者在同一个进程，ContentProvider的方法（query/insert/update/delete等）和调用者在同一线程中；</li>
+<li>ContentProvider和调用者在不同的进程，ContentProvider的方法会运行在它自身所在进程的一个Binder线程中。</li>
+</ol>
+<p>一个应用进程有16个Binder线程去和远程服务进行交互，而每个线程可占用的缓存空间是128KB这样，超过会报异常。ContentResolver虽然是通过Binder进程间通信机制打通了应用程序之间共享数据的通道，但Content Provider组件在不同应用程序之间传输数据是基于匿名共享内存机制来实现的。</p>
+<p>参考资料：<br><a href="http://www.jianshu.com/p/07b87084337f" target="_blank" rel="external">关于Android四大组件最权威最深刻最准确的解读</a><br><a href="http://www.jianshu.com/p/2a9fcf3c11e4" target="_blank" rel="external">我打赌你一定没搞明白的Activity启动模式</a></p>
+
+  </div>
+  <footer class="article-footer">
+    
+
+    
+
+  </footer>
+</article>
+
+
+  <link rel="stylesheet" href="http://static.duoshuo.com/styles/embed.default.css?349d9313.css">
+  <!-- 多说评论框 start -->
+  <div class="ds-thread" data-thread-key="2016/08/09/Android笔记-四大组件/" data-title="Android笔记-四大组件" data-url="/2016/08/09/Android笔记-四大组件/"></div>
+  <!-- 多说评论框 end -->
+  <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+  <script type="text/javascript">
+    var duoshuoQuery = {
+      short_name: "SION"
+    };
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';
+      ds.async = true;
+      ds.src = (document.location.protocol == 'https:'
+        ? 'https:'
+        : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+  <!-- 多说公共JS代码 end -->
+
+
+
+
+
+
+          <div class="main-footer">
+  
+    © 2016 Be Level5 Coder - Powered by <a href="http://hexo.io" target="_blank">Hexo</a> - Theme <a href="https://github.com/denjones/hexo-theme-chan" target="_blank">Chan</a>
+  
+</div>
+
+      
+        </div>
+      
+    </div>
+  </div>
+  <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="/PhotoSwipe/photoswipe.css">
+  <link rel="stylesheet" href="/PhotoSwipe/default-skin/default-skin.css">
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+             It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+      <!-- Container that holds slides.
+                PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                Don't modify these 3 pswp__item elements, data is added later on. -->
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+
+      <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+      <div class="pswp__ui pswp__ui--hidden">
+
+        <div class="pswp__top-bar">
+
+          <!--  Controls are self-explanatory. Order can be changed. -->
+
+          <div class="pswp__counter"></div>
+
+          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+          <button class="pswp__button pswp__button--share" title="Share"></button>
+
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+          <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+          <!-- element will get class pswp__preloader--active when preloader is running -->
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div>
+
+        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/PhotoSwipe/photoswipe.js"></script>
+  <script src="/PhotoSwipe/photoswipe-ui-default.js"></script>
+
+
+<script src="/perfect-scrollbar/js/min/perfect-scrollbar.min.js"></script>
+<script src="/scripts/main.js"></script>
+
+</body>
+</html>

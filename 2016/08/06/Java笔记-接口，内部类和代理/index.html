@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<title>
+  
+    Java笔记-接口，内部类和代理
+  
+</title>
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java笔记-接口，内部类和代理">
+<meta property="og:url" content="http://yoursite.com/2016/08/06/Java笔记-接口，内部类和代理/index.html">
+<meta property="og:site_name" content="Be Level5 Coder">
+<meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/55f7dd81e3bb49ee6a399e460d2d797aa24a9c3a.jpg">
+<meta property="og:updated_time" content="2016-08-07T06:54:51.560Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java笔记-接口，内部类和代理">
+<meta name="twitter:image" content="http://ob5qdb9lc.bkt.clouddn.com/55f7dd81e3bb49ee6a399e460d2d797aa24a9c3a.jpg">
+
+
+  <link rel="alternative" href="/atom.xml" title="Be Level5 Coder" type="application/atom+xml">
+
+
+
+  <link rel="icon" href="/favicon.png">
+
+
+<link rel="stylesheet" href="/perfect-scrollbar/css/perfect-scrollbar.min.css">
+<link rel="stylesheet" href="/styles/main.css">
+
+
+
+
+
+
+</head>
+<body
+  
+  >
+  <div class="mobile-header">
+  <button class="sidebar-toggle" type="button">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a class="title" href="/">Be Level5 Coder</a>
+</div>
+
+  <div class="main-container">
+    <div class="sidebar">
+  <div class="header">
+    <h1 class="title"><a href="/">Be Level5 Coder</a></h1>
+    
+    <div class="info">
+      <div class="content">
+        
+        
+          <div class="author">Sion</div>
+        
+      </div>
+      
+        <div class="avatar">
+          
+            <img src="http://ob5qdb9lc.bkt.clouddn.com/my_avatar.jpg">
+          
+        </div>
+      
+    </div>
+  </div>
+  <div class="body">
+    
+      
+        <ul class="nav">
+          
+            
+              <li class="category-list-container">
+                <a href="javascript:;">分类</a>
+                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android笔记/">Android笔记</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java笔记/">Java笔记</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TCP-IP笔记/">TCP/IP笔记</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统笔记/">操作系统笔记</a><span class="category-list-count">1</span></li></ul>
+              </li>
+            
+          
+            
+              <li class="tag-list-container">
+                <a href="javascript:;">标签</a>
+                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Other/">Other</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP-IP/">TCP/IP</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a><span class="tag-list-count">1</span></li></ul>
+              </li>
+            
+          
+            
+              <li class="archive-list-container">
+                <a href="javascript:;">归档</a>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a><span class="archive-list-count">32</span></li></ul>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="/" title="Homepage">Homepage</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/archives" title="By Year">By Year</a>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="https://github.com/liaosiyang" title="Github" target="_blank" rel="external">Github</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/atom.xml" title="RSS">RSS</a>
+              </li>
+            
+          
+        </ul>
+      
+    
+  </div>
+</div>
+
+    <div class="main-content">
+      
+        <div style="max-width: 1000px">
+      
+          <article id="post-Java笔记-接口，内部类和代理" class="article article-type-post">
+  
+    <h1 class="article-header">
+      Java笔记-接口，内部类和代理
+    </h1>
+  
+  
+
+  <div class="article-info">
+    <span class="article-date">
+  2016-08-06
+</span>
+
+    
+	<span class="article-category tagcloud">
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Java笔记/">Java笔记</a></li></ul>
+	</span>
+
+
+    
+	<span class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+	</span>
+
+
+  </div>
+  <div class="article-entry">
+    <p><img src="http://ob5qdb9lc.bkt.clouddn.com/55f7dd81e3bb49ee6a399e460d2d797aa24a9c3a.jpg" alt="Image"></p>
+<a id="more"></a>
+<h1 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h1><p>接口不是类，而是对类的一组需求描述。</p>
+<p>比如Arrays类中sort方法承若可以对对象数组进行排序，但要满足前提：对象所属的类必须实现Comparable接口。</p>
+<ul>
+<li>接口中的所有方法自动属于public</li>
+<li>接口中可以定义常量</li>
+<li>接口绝不能含有实例域，也不能在接口中实现方法。接口中的域将被自动设为public static final。可以将接口看成没有实例域的抽象类</li>
+<li>申明接口时，compareTo自动是public,实现接口时，必须把方法声明为public</li>
+</ul>
+<h3 id="接口的特性"><a href="#接口的特性" class="headerlink" title="接口的特性"></a>接口的特性</h3><ul>
+<li>接口不是类，不能用new实例化，然而尽管不能构造接口的对象，却能声明接口的变量：</li>
+<li>接口变量必须引用实现接口的类对象。</li>
+<li>与类的继承关系一样，接口也可以被扩展，允许存在多条从具有较高通用性的接口到较高专用性接口的链。</li>
+<li>C++允许一个类有多个超类，称之为多继承，Java不支持多继承，主要原因是多继承会让语言本身变得非常复杂，效率也会降低，接口可以提供多重继承的大多数好处，同时还能避免多重继承的复杂性和低效性。</li>
+</ul>
+<h3 id="对象克隆"><a href="#对象克隆" class="headerlink" title="对象克隆"></a>对象克隆</h3><p>当拷贝一个变量时，原始变量和拷贝变量引用同一个对象，也就是说改变一个变量所引用的对象将会对另一个变量产生影响。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Employee original=<span class="keyword">new</span> Employee(<span class="string">"John Public"</span>,<span class="number">50000</span>);</div><div class="line">Employee copy=original;</div><div class="line">copy.raiseSalary(<span class="number">10</span>); <span class="comment">//oops--also changed original</span></div></pre></td></tr></table></figure><br>如果创建一个新的copy ，它的最初状态和original一样，但以后可以各自改变各自的状态，那就需要使用clone方法。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Employee copy=original.clone();</div><div class="line">copy.raiseSalaty(<span class="number">10</span>);   <span class="comment">//original unchanged</span></div></pre></td></tr></table></figure>  </p>
+<ul>
+<li>clone是Object类的一个protected方法，只有Employee类才能克隆Employee对象。</li>
+<li>如果在对象中包含了子对象的引用，拷贝的结果会使的两个域引用同一个子对象，因此原始对象与克隆对象共享这部分信息。</li>
+<li>默认克隆操作是浅拷贝，如果原始对象与浅克隆对象的共享子对象是不可变的，将不会产生任何问题。</li>
+<li>子对象可变，则必须重新定义clone()方法，以便实现对象的深拷贝。</li>
+</ul>
+<p>在Object类中，clone方法被声明为protected，因此无法直接调用anObject.clone(),子类只能调用受保护的clone方法克隆自己（只能在Class A中调用a.clone）<br>所以，必须重新定义clone方法，并声明为public。</p>
+<p>Cloneable接口并没有指定clone方法，只是作为一个标记，表明类设计者知道要进行克隆处理。</p>
+<p>一个对象要克隆而没有实现Cloneable接口，就会产生一个已检验异常。</p>
+<p>Cloneable接口是JAVA提供的几个标记接口（tagging interface）之一，目的是确保类实现某个特定的方法或一组特定的方法。</p>
+<ul>
+<li>即使默认浅拷贝能够满足需求，也应该实现Cloneable接口,将clone重定义为public，并调用super.clone()；</li>
+<li>为了实现深拷贝，必须克隆所有可变的实例域</li>
+<li>所有数组类型均包含一个clone方法，这个方法被设为public而不是protected，可以利用这个方法创建一个包含所有数据元素拷贝的一个新数组<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span>[] lucyNumbers=&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">8</span>&#125;;</div><div class="line"><span class="keyword">int</span>[] cloned=lucyNumbers.clone();</div><div class="line">cloned[<span class="number">5</span>]=<span class="number">12</span>;   <span class="comment">//doesn't change luckyNumbers</span></div></pre></td></tr></table></figure>    
+</li>
+</ul>
+<h3 id="接口与回调"><a href="#接口与回调" class="headerlink" title="接口与回调"></a>接口与回调</h3><p>回调是一种常见的程序设计模式，在这种模式中，可以指出某个特定事件发生时应该采取的动作。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TimerTest</span></span></div><div class="line">&#123;  </div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></div><div class="line">   &#123;  </div><div class="line">      ActionListener listener = <span class="keyword">new</span> TimePrinter();</div><div class="line">      <span class="comment">// construct a timer that calls the listener</span></div><div class="line">      <span class="comment">// once every 10 seconds</span></div><div class="line">      Timer t = <span class="keyword">new</span> Timer(<span class="number">10000</span>, listener);</div><div class="line">      t.start();</div><div class="line">      JOptionPane.showMessageDialog(<span class="keyword">null</span>, <span class="string">"Quit program?"</span>);</div><div class="line">      System.exit(<span class="number">0</span>);</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">TimePrinter</span> <span class="keyword">implements</span> <span class="title">ActionListener</span></span></div><div class="line">&#123;  </div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">actionPerformed</span><span class="params">(ActionEvent event)</span></span></div><div class="line">   &#123;  </div><div class="line">      Date now = <span class="keyword">new</span> Date();</div><div class="line">      System.out.println(<span class="string">"At the tone, the time is "</span> + now);</div><div class="line">      Toolkit.getDefaultToolkit().beep();</div><div class="line">   &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>TimePrinter类是一个监听器类，操作是打印消息然后响一声(采取的动作)。它实现了ActionListener接口，将需要执行的语句放在actionPerformed方法中。</p>
+<h1 id="内部类"><a href="#内部类" class="headerlink" title="内部类"></a>内部类</h1><p>内部类是定义在另一个类中的类。为什么使用内部类？</p>
+<ul>
+<li>内部类方法可以访问该类定义所在的作用域中的数据，包括私有数据</li>
+<li>内部类可以对同一个包中的其他类隐藏起来</li>
+<li>当想要定义一个回调函数而不想编写大量代码时，使用匿名内部(anonymous)类比较便捷</li>
+</ul>
+<h3 id="使用内部类访问对象状态"><a href="#使用内部类访问对象状态" class="headerlink" title="使用内部类访问对象状态"></a>使用内部类访问对象状态</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InnerClassTest</span></span></div><div class="line">&#123;</div><div class="line">       <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></div><div class="line">       &#123;</div><div class="line">          TalkingClock clock = <span class="keyword">new</span> TalkingClock(<span class="number">1000</span>, <span class="keyword">true</span>);</div><div class="line">          clock.start();</div><div class="line">          <span class="comment">// keep program running until user selects "Ok"</span></div><div class="line">          JOptionPane.showMessageDialog(<span class="keyword">null</span>, <span class="string">"Quit program?"</span>);</div><div class="line">          System.exit(<span class="number">0</span>);</div><div class="line">       &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">/**</span></div><div class="line">     * A clock that prints the time in regular intervals.</div><div class="line">     */</div><div class="line">    <span class="class"><span class="keyword">class</span> <span class="title">TalkingClock</span></span></div><div class="line">    &#123;</div><div class="line">       <span class="comment">/**</span></div><div class="line">        * Constructs a talking clock</div><div class="line">        * <span class="doctag">@param</span> interval the interval between messages (in milliseconds)</div><div class="line">        * <span class="doctag">@param</span> beep true if the clock should beep</div><div class="line">        */</div><div class="line">       <span class="function"><span class="keyword">public</span> <span class="title">TalkingClock</span><span class="params">(<span class="keyword">int</span> interval, <span class="keyword">boolean</span> beep)</span></span></div><div class="line">       &#123;</div><div class="line">          <span class="keyword">this</span>.interval = interval;</div><div class="line">          <span class="keyword">this</span>.beep = beep;</div><div class="line">       &#125;</div><div class="line">       <span class="comment">/**</span></div><div class="line">        * Starts the clock.</div><div class="line">        */</div><div class="line">       <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">start</span><span class="params">()</span></span></div><div class="line">       &#123;</div><div class="line">          ActionListener listener = <span class="keyword">new</span> TimePrinter();</div><div class="line">          Timer t = <span class="keyword">new</span> Timer(interval, listener);</div><div class="line">          t.start();</div><div class="line">       &#125;</div><div class="line">       <span class="keyword">private</span> <span class="keyword">int</span> interval;</div><div class="line">       <span class="keyword">private</span> <span class="keyword">boolean</span> beep;</div><div class="line">       <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TimePrinter</span> <span class="keyword">implements</span> <span class="title">ActionListener</span></span></div><div class="line">       &#123;</div><div class="line">          <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">actionPerformed</span><span class="params">(ActionEvent event)</span></span></div><div class="line">          &#123;</div><div class="line">             Date now = <span class="keyword">new</span> Date();</div><div class="line">             System.out.println(<span class="string">"At the tone, the time is "</span> + now);</div><div class="line">             <span class="keyword">if</span> (beep) Toolkit.getDefaultToolkit().beep();</div><div class="line">          &#125;</div><div class="line">       &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>        
+<p>内部类TimePrinter访问了外围类的beep对象；<br>内部类的对象总有一个隐式引用，指向创建它的外围类对象；<br>外部类的引用在构造器中设置，编译器修改了所有内部类的构造器，添加一个外围类的引用参数；<br>TimePrinter类没有构造器，编译器为这个类生成了一个默认的构造器。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="title">TimePrinter</span><span class="params">(TalkingClock talkingClock)</span></span>&#123;</div><div class="line">    	outer=clock;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>创建TimePrinter对象后，编译器就会将this引用传递给当前的构造器。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ActionListener listener = <span class="keyword">new</span> TimePrinter(<span class="keyword">this</span>);</div></pre></td></tr></table></figure><br>内部类是一种编译器现象，与虚拟机无关。<br>编译器会把内部类翻译成用$分隔外部类名与内部类名的常规类文件。<br>eg:在TaliingClock类内部的TimePrinter类将被翻译成类文件TalkingClock$TimePrinter.class</p>
+<h3 id="局部内部类"><a href="#局部内部类" class="headerlink" title="局部内部类"></a>局部内部类</h3><p>TimePrinter这个类就只在start方法创建这个类的对象时使用了一次，可以在一个方法中定义局部类。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">start</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    	<span class="class"><span class="keyword">class</span> <span class="title">TimePrinter</span> <span class="keyword">implements</span> <span class="title">ActionListener</span></span></div><div class="line">    	&#123;</div><div class="line">    	  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">actionPerformed</span><span class="params">(ActionEvent event)</span></span></div><div class="line">    	  &#123;</div><div class="line">    	      Date now = <span class="keyword">new</span> Date();</div><div class="line">    	      System.out.println(<span class="string">"At the tone, the time is "</span> + now);</div><div class="line">    	      <span class="keyword">if</span> (beep) Toolkit.getDefaultToolkit().beep();</div><div class="line">    	&#125;</div><div class="line">    	&#125;</div><div class="line">      ActionListener listener = <span class="keyword">new</span> TimePrinter();</div><div class="line">      Timer t = <span class="keyword">new</span> Timer(interval, listener);</div><div class="line">      t.start();</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>局部类不能用public或private访问说明符进行声明，它的作用域被限定在声明这个局部类的块中。<br>局部类有一个优势，即对外部世界完全隐藏，即使TalkingClock类中的其他代码也不能访问。</p>
+<h3 id="由外部方法访问final变量"><a href="#由外部方法访问final变量" class="headerlink" title="由外部方法访问final变量"></a>由外部方法访问final变量</h3><p>与内部类相比，局部类还有一个优点：它们不仅能够访问包含它们的外部类，还能访问局部变量，不过局部变量必须被声明为final。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">start</span><span class="params">(<span class="keyword">int</span> interval,<span class="keyword">final</span> <span class="keyword">boolean</span> beep)</span></span></div><div class="line">&#123;</div><div class="line">    	   <span class="class"><span class="keyword">class</span> <span class="title">TimePrinter</span> <span class="keyword">implements</span> <span class="title">ActionListener</span></span></div><div class="line">    	   &#123;</div><div class="line">    	      <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">actionPerformed</span><span class="params">(ActionEvent event)</span></span></div><div class="line">    	      &#123;</div><div class="line">    	         Date now = <span class="keyword">new</span> Date();</div><div class="line">    	         System.out.println(<span class="string">"At the tone, the time is "</span> + now);</div><div class="line">    	         <span class="keyword">if</span> (beep) Toolkit.getDefaultToolkit().beep();</div><div class="line">    	      &#125;</div><div class="line">    	   &#125;</div><div class="line">          ActionListener listener = <span class="keyword">new</span> TimePrinter();</div><div class="line">          Timer t = <span class="keyword">new</span> Timer(interval, listener);</div><div class="line">          t.start();</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>局部类的方法只可以引用定义为final的局部变量，使得局部变量与在局部类内建立的拷贝保持一致。</p>
+<h3 id="匿名内部类"><a href="#匿名内部类" class="headerlink" title="匿名内部类"></a>匿名内部类</h3><p>将局部内部类的使用更深入一步，假如只创建这个类的一个对象，就不必命名了。这种类被称为匿名内部类(anonymous inner class)<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AnonymousInnerClassTest</span></span></div><div class="line">&#123;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></div><div class="line">   &#123;</div><div class="line">      TalkingClock clock = <span class="keyword">new</span> TalkingClock();</div><div class="line">      clock.start(<span class="number">1000</span>, <span class="keyword">true</span>);</div><div class="line">      <span class="comment">// keep program running until user selects "Ok"</span></div><div class="line">      JOptionPane.showMessageDialog(<span class="keyword">null</span>, <span class="string">"Quit program?"</span>);</div><div class="line">      System.exit(<span class="number">0</span>);</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">/**</span></div><div class="line"> * A clock that prints the time in regular intervals.</div><div class="line"> */</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">TalkingClock</span></span></div><div class="line">&#123;</div><div class="line">   <span class="comment">/**</span></div><div class="line">    * Starts the clock.</div><div class="line">    * <span class="doctag">@param</span> interval the interval between messages (in milliseconds)</div><div class="line">    * <span class="doctag">@param</span> beep true if the clock should beep</div><div class="line">    */</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">start</span><span class="params">(<span class="keyword">int</span> interval, <span class="keyword">final</span> <span class="keyword">boolean</span> beep)</span></span></div><div class="line">   &#123;</div><div class="line">      ActionListener listener = <span class="keyword">new</span> ActionListener()    </div><div class="line">         &#123;</div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">actionPerformed</span><span class="params">(ActionEvent event)</span></span></div><div class="line">            &#123;</div><div class="line">               Date now = <span class="keyword">new</span> Date();</div><div class="line">               System.out.println(<span class="string">"At the tone, the time is "</span> + now);</div><div class="line">               <span class="keyword">if</span> (beep) Toolkit.getDefaultToolkit().beep();</div><div class="line">            &#125;</div><div class="line">         &#125;;</div><div class="line">      Timer t = <span class="keyword">new</span> Timer(interval, listener);</div><div class="line">      t.start();</div><div class="line">   &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>由于构造器的名字必须与类名相同，而匿名类没有类名，所以匿名类不能有构造器，取而代之的是，将构造器参数传递给超类构造器。</p>
+<h3 id="静态内部类"><a href="#静态内部类" class="headerlink" title="静态内部类"></a>静态内部类</h3><p>有时候使用内部类只是为了把一个类隐藏在另外一个类的内部，并不需要内部类的引用外围对象。为此可以将内部类声明为static，以便取消产生的引用。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StaticInnerClassTest</span></span></div><div class="line">&#123;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></div><div class="line">   &#123;</div><div class="line">      <span class="keyword">double</span>[] d = <span class="keyword">new</span> <span class="keyword">double</span>[<span class="number">20</span>];</div><div class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; d.length; i++)</div><div class="line">         d[i] = <span class="number">100</span> * Math.random();</div><div class="line">      ArrayAlg.Pair p = ArrayAlg.minmax(d);</div><div class="line">      System.out.println(<span class="string">"min = "</span> + p.getFirst());</div><div class="line">      System.out.println(<span class="string">"max = "</span> + p.getSecond());</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ArrayAlg</span></span></div><div class="line">&#123;</div><div class="line">   <span class="comment">/**</span></div><div class="line">    * A pair of floating-point numbers</div><div class="line">    */</div><div class="line">   <span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Pair</span></span></div><div class="line">   &#123;</div><div class="line">      <span class="comment">/**</span></div><div class="line">       * Constructs a pair from two floating-point numbers</div><div class="line">       * <span class="doctag">@param</span> f the first number</div><div class="line">       * <span class="doctag">@param</span> s the second number</div><div class="line">       */</div><div class="line">      <span class="function"><span class="keyword">public</span> <span class="title">Pair</span><span class="params">(<span class="keyword">double</span> f, <span class="keyword">double</span> s)</span></span></div><div class="line">      &#123;</div><div class="line">         first = f;</div><div class="line">         second = s;</div><div class="line">      &#125;</div><div class="line">      <span class="comment">/**</span></div><div class="line">       * Returns the first number of the pair</div><div class="line">       * <span class="doctag">@return</span> the first number</div><div class="line">       */</div><div class="line">      <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">getFirst</span><span class="params">()</span></span></div><div class="line">      &#123;</div><div class="line">         <span class="keyword">return</span> first;</div><div class="line">      &#125;</div><div class="line">      <span class="comment">/**</span></div><div class="line">       * Returns the second number of the pair</div><div class="line">       * <span class="doctag">@return</span> the second number</div><div class="line">       */</div><div class="line">      <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">getSecond</span><span class="params">()</span></span></div><div class="line">      &#123;</div><div class="line">         <span class="keyword">return</span> second;</div><div class="line">      &#125;</div><div class="line">      <span class="keyword">private</span> <span class="keyword">double</span> first;</div><div class="line">      <span class="keyword">private</span> <span class="keyword">double</span> second;</div><div class="line">   &#125;</div><div class="line">   <span class="comment">/**</span></div><div class="line">    * Computes both the minimum and the maximum of an array</div><div class="line">    * <span class="doctag">@param</span> values an array of floating-point numbers</div><div class="line">    * <span class="doctag">@return</span> a pair whose first element is the minimum and whose second element</div><div class="line">    * is the maximum</div><div class="line">    */</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Pair <span class="title">minmax</span><span class="params">(<span class="keyword">double</span>[] values)</span></span></div><div class="line">   &#123;</div><div class="line">      <span class="keyword">double</span> min = Double.MAX_VALUE;</div><div class="line">      <span class="keyword">double</span> max = Double.MIN_VALUE;</div><div class="line">      <span class="keyword">for</span> (<span class="keyword">double</span> v : values)</div><div class="line">      &#123;</div><div class="line">         <span class="keyword">if</span> (min &gt; v) min = v;</div><div class="line">         <span class="keyword">if</span> (max &lt; v) max = v;</div><div class="line">      &#125;</div><div class="line">      <span class="keyword">return</span> <span class="keyword">new</span> Pair(min, max);</div><div class="line">   &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>当内部类不需要访问外围类对象的时候，应该使用静态内部类。有些程序员用嵌套类表示静态内部类。</p>
+<h1 id="代理"><a href="#代理" class="headerlink" title="代理"></a>代理</h1><p>代理可以在运行时创建一个实现一组给定接口的新类，这种功能只有在编译时无法确定需要实现哪个接口时才有必要使用。</p>
+<p>假设有一个表示接口的Class对象，它的确切类型在编译时无法知道。要想构造一个实现这些接口的类，就需要使用newInstance方法或反射找到这个类的构造器。为了解决这个问题，有些程序将会生成代码并放置在一个文件中，调用编译器然后再加载结果类文件。这样做的速度会比较慢，并且需要将编译器与程序放在一起。</p>
+<p>代理机制则是一种更好的解决方案。代理类可以在运行时创建全新的类。这样的代理类能够实现指定的接口。</p>
+<p>它具有下列方法：</p>
+<ul>
+<li>指定接口所需要的全部方法</li>
+<li>Object类中的全部方法</li>
+</ul>
+<p>不能在运行时定义这些方法的新代码，而是要提供一个调用处理器(invocation handler)。调用处理器是实现了InvacationHandler接口的类对象。</p>
+<p>InvacationHandler接口中只有一个方法：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">InvocationHandlerClass</span> <span class="keyword">implements</span> <span class="title">InvocationHandler</span></span>&#123;</div><div class="line">    	<span class="meta">@Override</span></div><div class="line">    	<span class="function"><span class="keyword">public</span> Object <span class="title">invoke</span><span class="params">(Object proxy, Method method, Object[] args)</span> <span class="keyword">throws</span> Throwable </span>&#123;</div><div class="line">    		<span class="comment">// TODO Auto-generated method stub</span></div><div class="line">    		<span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">    	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>无论何时调用代理对象的方法，调用处理器的invoke方法都会被调用，并向其传递Method对象和原始的调用参数。调用处理器必须给出处理调用的方式。</p>
+<p>要想创建一个代理对象，需要使用Proxy类的newProxyInstance方法。<br>这个方法有三个参数：</p>
+<ol>
+<li>一个类加载器(class loader)。作为Java安全模型的一部分，对于系统类和从因特网上下载下来的类，可以使用不同的类加载器。用null表示使用默认的类加载器。</li>
+<li>一个class对象数组，每个元素都是需要实现的接口。</li>
+<li>一个调用处理器。</li>
+</ol>
+<p>使用代理可能出于很多原因：</p>
+<ul>
+<li>路由对远程服务器的方法调用。</li>
+<li>在程序运行期间，将用户接口事件与动作关联起来。</li>
+<li>为调试，跟踪方法调用</li>
+</ul>
+<h3 id="代理类的特性"><a href="#代理类的特性" class="headerlink" title="代理类的特性"></a>代理类的特性</h3><ol>
+<li>代理类是在程序运行过程中创建的。然而一旦被创建就变成了常规类，与虚拟机中的任何其他类没有什么区别。</li>
+<li>所有的代理类都扩展于Proxy类。一个代理类只有一个实例域——调用处理器。为了履行代理对象的职责，所需要的任何附加数据都必须存储在调用处理器中。</li>
+<li>所有的代理类类都覆盖了Object类中的方法toString,equals和hashCode，这些方法仅仅调用了调用处理器的invoke。Object类中的其他方法(如clone和getClass方法)没有被重新定义。</li>
+<li>没有定义代理类的名字，Sun虚拟机中的Proxy类将生成一个以字符＄Proxy开头的类名。</li>
+<li>对于特定的类加载器和预设的一组接口，只能有一个代理类。如果使用同一个类加载器接口和接口数组调用两次newProxyInstance方法的话，那么只能得到同一个类的两个对象，也可以利用getProxyClass方法获得这个类.</li>
+<li>代理类一定是public和final。如果代理类实现的所有接口都是public，代理类就不属于某个特定的包；否则，所有非公有的接口都必须属于同一个包，同时，代理类也属于这个包。</li>
+</ol>
+
+  </div>
+  <footer class="article-footer">
+    
+
+    
+
+  </footer>
+</article>
+
+
+  <link rel="stylesheet" href="http://static.duoshuo.com/styles/embed.default.css?349d9313.css">
+  <!-- 多说评论框 start -->
+  <div class="ds-thread" data-thread-key="2016/08/06/Java笔记-接口，内部类和代理/" data-title="Java笔记-接口，内部类和代理" data-url="/2016/08/06/Java笔记-接口，内部类和代理/"></div>
+  <!-- 多说评论框 end -->
+  <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+  <script type="text/javascript">
+    var duoshuoQuery = {
+      short_name: "SION"
+    };
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';
+      ds.async = true;
+      ds.src = (document.location.protocol == 'https:'
+        ? 'https:'
+        : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+  <!-- 多说公共JS代码 end -->
+
+
+
+
+
+
+          <div class="main-footer">
+  
+    © 2016 Be Level5 Coder - Powered by <a href="http://hexo.io" target="_blank">Hexo</a> - Theme <a href="https://github.com/denjones/hexo-theme-chan" target="_blank">Chan</a>
+  
+</div>
+
+      
+        </div>
+      
+    </div>
+  </div>
+  <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="/PhotoSwipe/photoswipe.css">
+  <link rel="stylesheet" href="/PhotoSwipe/default-skin/default-skin.css">
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+             It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+      <!-- Container that holds slides.
+                PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                Don't modify these 3 pswp__item elements, data is added later on. -->
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+
+      <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+      <div class="pswp__ui pswp__ui--hidden">
+
+        <div class="pswp__top-bar">
+
+          <!--  Controls are self-explanatory. Order can be changed. -->
+
+          <div class="pswp__counter"></div>
+
+          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+          <button class="pswp__button pswp__button--share" title="Share"></button>
+
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+          <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+          <!-- element will get class pswp__preloader--active when preloader is running -->
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div>
+
+        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/PhotoSwipe/photoswipe.js"></script>
+  <script src="/PhotoSwipe/photoswipe-ui-default.js"></script>
+
+
+<script src="/perfect-scrollbar/js/min/perfect-scrollbar.min.js"></script>
+<script src="/scripts/main.js"></script>
+
+</body>
+</html>
