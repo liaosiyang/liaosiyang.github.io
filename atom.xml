@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-08-18T09:50:17.264Z</updated>
+  <updated>2016-08-19T04:08:50.614Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,73 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Android笔记-DataBinding</title>
+    <link href="http://yoursite.com/2016/08/19/Android%E7%AC%94%E8%AE%B0-DataBinding/"/>
+    <id>http://yoursite.com/2016/08/19/Android笔记-DataBinding/</id>
+    <published>2016-08-19T01:24:20.000Z</published>
+    <updated>2016-08-19T04:08:50.614Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://ob5qdb9lc.bkt.clouddn.com/20141104070106_KTTPd.jpeg" alt="Image"></p>
+<a id="more"></a>
+<h1 id="DataBinding"><a href="#DataBinding" class="headerlink" title="DataBinding"></a>DataBinding</h1><p>最近在项目中试用了一下DataBinding技术，觉得还蛮好用的。这项技术是Google对于MVVM在Android上的一种实现，已经装载进Android SDK里面了，足可见Google对它的重视。当前还只是测试版本，使用的人不多，但未来这种技术应该会成为Android主流开发技术之一。</p>
+<p>Data Binding，数据绑定，是Google对MVVM在Android上的一种实现，可以直接绑定数据到xml中，并实现自动刷新。</p>
+<h1 id="为什么要使用-Data-Binding"><a href="#为什么要使用-Data-Binding" class="headerlink" title="为什么要使用 Data Binding"></a>为什么要使用 Data Binding</h1><p>在最初学习Android的时候，我们在XML文件上定义的控件往往会给它取一个ID，然后在Activity或Fragment中使用findViewById找到它，如果要使用点击事件，那么还要setOnClickListener。这使我们的代码中有一大段都是这样的排列。</p>
+<p>后来我们使用了ButterKnife，这让我们轻松多了，不必再写大段的findViewById和setOnClickListener，但是基本思想没有变，还是要在Java文件中找到XML文件中对应的控件，引用它然后使用它。</p>
+<p>ButterKnife使用了注解处理器，在编译时生成了辅助代码来达到注入的目的，比如在MainActivity使用ButterKnife就会生成这样的代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span>$$<span class="title">ViewBinder</span>&lt;<span class="title">T</span> <span class="keyword">extends</span> <span class="title">MainActivity</span>&gt; <span class="keyword">implements</span> <span class="title">ViewBinder</span>&lt;<span class="title">T</span>&gt; </span>&#123;</div><div class="line">  <span class="meta">@Override</span></div><div class="line">  <span class="function"><span class="keyword">public</span> Unbinder <span class="title">bind</span><span class="params">(<span class="keyword">final</span> Finder finder, <span class="keyword">final</span> T target, Object source)</span> </span>&#123;</div><div class="line">    InnerUnbinder unbinder = createUnbinder(target);</div><div class="line">    ...</div><div class="line">    <span class="keyword">return</span> unbinder;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">protected</span> InnerUnbinder&lt;T&gt; <span class="title">createUnbinder</span><span class="params">(T target)</span> </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> InnerUnbinder(target);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="keyword">protected</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">InnerUnbinder</span>&lt;<span class="title">T</span> <span class="keyword">extends</span> <span class="title">MainActivity</span>&gt; <span class="keyword">implements</span> <span class="title">Unbinder</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> T target;</div><div class="line">    ...</div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="title">InnerUnbinder</span><span class="params">(T target)</span> </span>&#123;</div><div class="line">      <span class="keyword">this</span>.target = target;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title">unbind</span><span class="params">()</span> </span>&#123;</div><div class="line">      ...</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">unbind</span><span class="params">(T target)</span> </span>&#123;</div><div class="line">      ...</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>target就是MainActivity实例，ButterKnife会帮我们找到使用@BindView(R.id.xxx)标注的控件然后绑定。</p>
+<p>ButterKnife帮我们省了很多的工作，但是我们想走得更远。</p>
+<p>如果有一个布局文件，并有它们的 IDs，可以使用 Holdr，它可以替你可以处理布局文件，然后为他们创建 View 组件。你通过 Holder，转换 View 的 ID 到组件变量。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> Holdr_ActivityMain holder;</div><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">  setContentView(R.layout.activity_main);</div><div class="line">  holder = <span class="keyword">new</span> Holdr_ActivityMain(findViewById(content));</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">updateUI</span><span class="params">(User user)</span> </span>&#123;</div><div class="line">  <span class="keyword">if</span> (user == <span class="keyword">null</span>) &#123;</div><div class="line">    holder.name.setText(<span class="keyword">null</span>);</div><div class="line">    holder.lastName.setText(<span class="keyword">null</span>);</div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">    holder.name.setText(user.getName());</div><div class="line">    holder.lastName.setText(user.getLastName());</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>这里还有一个可能我们没有想到的麻烦、一个我们无论如何无法减少代码量的地方，它也是很简单的代码：我有一个 User 对象，我只是想把数据内容从这个 User 对象转移到 View 当中，但我们往往改了一个地方，忘了另一个地方，最终导致了产品运行崩溃。</p>
+<p>使用 Data Binding，它很像 Holder 模式，而且你只要做一点点事情，其余的内容 Data Binding 会帮你完成。</p>
+<h2 id="使用DataBinding"><a href="#使用DataBinding" class="headerlink" title="使用DataBinding"></a>使用DataBinding</h2><ul>
+<li>首先在xml的最外层套上layout标签；</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">    &lt;layout&gt;</div><div class="line">    &lt;data&gt;</div><div class="line">        &lt;variable name="user"</div><div class="line">                  type="com.android.example.User"/&gt;</div><div class="line"></div><div class="line">        &lt;variable name="presenter"</div><div class="line">                  type="com.android.example.Presenter"/&gt;          </div><div class="line">    &lt;/data&gt;</div><div class="line">    &lt;LinearLayout …&gt;</div><div class="line">        &lt;TextView android:text="@&#123;user.name&#125;"/&gt;</div><div class="line">        &lt;TextView android:text="@&#123;user.lastName&#125;"/&gt;</div><div class="line">        &lt;TextView android:onClick="@&#123;presenter.onBindService&#125;"/&gt;</div><div class="line">    &lt;/LinearLayout&gt;</div><div class="line">&lt;/layout&gt;</div></pre></td></tr></table></figure>    
+<ul>
+<li>声明控件绑定的变量或事件；<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(@Nullable Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">    <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">    binding= DataBindingUtil.setContentView(<span class="keyword">this</span>,R.layout.activity_test);</div><div class="line">    binding.setEmployee(employee);</div><div class="line">    binding.setPresenter(<span class="keyword">new</span> Presenter());</div><div class="line">&#125;</div></pre></td></tr></table></figure>  </li>
+<li>在Java代码声明绑定的变量：<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Employee</span> <span class="keyword">extends</span> <span class="title">BaseObservable</span></span>&#123;</div><div class="line">    <span class="keyword">private</span> String lastName;</div><div class="line">    <span class="keyword">private</span> String firstName;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Employee</span><span class="params">(String lastName, String firstName)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.lastName = lastName;</div><div class="line">        <span class="keyword">this</span>.firstName = firstName;</div><div class="line">    &#125;</div><div class="line">    <span class="meta">@Bindable</span></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getLastName</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> lastName;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setLastName</span><span class="params">(String lastName)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.lastName = lastName;</div><div class="line">        notifyPropertyChanged(BR.lastName);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Bindable</span></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getFirstName</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> firstName;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setFirstName</span><span class="params">(String firstName)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.firstName = firstName;</div><div class="line">        notifyPropertyChanged(BR.firstName);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></li>
+<li><p>Employee类如要想实现数据变化时更新View，那就要继承了BaseObservable或实现Observable接口。</p>
+</li>
+<li><p>DataBinding使用 notifyPropertyChanged来进行数据改变完成通知，但我们怎么通知一个数据即将改变？我们不得不写一个 @Bindable 注解。这将会自动产生一个 BR.firstName，这个 BR 很像我们经常使用的 R 类文件，我们通过这些注解会自动生成它。</p>
+</li>
+<li>在Java代码声明绑定的事件处理者：<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Presenter</span></span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View view)</span></span>&#123;</div><div class="line">        Snackbar.make(view,<span class="string">"点到了"</span>,Snackbar.LENGTH_SHORT).show();</div><div class="line">    &#125;</div><div class="line">｝</div></pre></td></tr></table></figure>  
+这样就完成了数据绑定，当employee对象的name变量发生改变时，绑定employee对象的TextView能够感知到这种变化，从而让自己的text文本发生改变。当绑定Presenter实例TextView接收到点击事件时，Presenter里的方法处理这个点击事件。</li>
+</ul>
+<h1 id="DataBinding工作原理"><a href="#DataBinding工作原理" class="headerlink" title="DataBinding工作原理"></a>DataBinding工作原理</h1><h3 id="1-进入并处理布局文件"><a href="#1-进入并处理布局文件" class="headerlink" title="1.进入并处理布局文件"></a>1.进入并处理布局文件</h3><p>其中的“进入”指的是，在你的程序代码正在被编译的过程中，它会找出布局文件中所有关于它的内容，获取到它所需要的信息，然后删掉它们，删掉它们的原因是如果继续存着视图系统并不认得它们。</p>
+<h3 id="2-通过语法来解析这些表达式"><a href="#2-通过语法来解析这些表达式" class="headerlink" title="2.通过语法来解析这些表达式"></a>2.通过语法来解析这些表达式</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;TextView android:visibility=<span class="string">"@user.isAdmin ? View.VISIBLE : View.GONE&#125;"</span>/&gt;</div></pre></td></tr></table></figure>  
+<p>这个 user 是一个索引，之后的 View 也是个索引，另一个 View 也是个索引。它们都是索引或称标识，像是真正的对象，在这边我们真的不知道它们是什么。同样的对于 VISIBLE 和 GONE 也是如此。这里面有对象数据访问，是一个三目运算表达式，这就是目前为止我们所理解到的。而对于DataBinding库，它的工作就是从这些文件中把东西解析出来，了解里面有什么。</p>
+<h3 id="在代码编译过程中解决相关依赖问题"><a href="#在代码编译过程中解决相关依赖问题" class="headerlink" title="在代码编译过程中解决相关依赖问题"></a>在代码编译过程中解决相关依赖问题</h3><p>在这一步中，例如，我们看一下 user.isAdmin，想：“这是在运行时获取到 User 类对象中的一个布尔值。”</p>
+<h3 id="Data-Binding-会自动生成一些类文件"><a href="#Data-Binding-会自动生成一些类文件" class="headerlink" title="Data Binding 会自动生成一些类文件"></a>Data Binding 会自动生成一些类文件</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ActivityTestBinding</span> <span class="keyword">extends</span> <span class="title">android</span>.<span class="title">databinding</span>.<span class="title">ViewDataBinding</span>  </span>&#123;</div><div class="line">       ...</div><div class="line">       <span class="comment">//很长的一个类在build/generated/source/apt中编译时生成</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>  
+<h2 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h2><ul>
+<li>不用自己在Java文件中引用View对象，减少耦合。也不必给使用的每一个View取一个ID。</li>
+<li>数据更新时，View的内容也会更新，而不必自己操控。</li>
+<li><p>性能提升<br>当你在Android系统上使用代码findById，它实际上是对它对所有子内容说：“孩子，你能通过ID找到这个 view 吗？”那个孩子（子内容）问自己的孩子，然后找不到就去问下一个孩子，直到你找到了这个 view。然后，你的代码findViewById对于其他 View 会再重新做一次，重复的没必要的同样事情再次发生。</p>
+<p>当你初始化数据绑定时，我们实际上知道在编译时我们对应的 View，所以我们有一个方法来找到我们想要的所有 View。我们只需遍历布局层次一次，就可以收集到所有的 View。这个计算只对于一个布局只发生一次。当第二次我们需要另一个其中的子 View 的时候，不需要再次遍历所有子 View，因为我们已经找到了所有的 View。</p>
+</li>
+<li><p>保证执行在主线程<br>这里的一个方便的是，你不必在UI线程进行通知：你可以在任何你想要的线程上进行更新。然而，我们仍然是在将在UI线程进行响应，所以你必须小心。此外，对于列表请不要这样做的！对于列表，你仍然应该在UI线程上通知，因为我们将在UI线程读取到，并且我们将需要在UI线程读取到它的长度，我们不做任何类型的同步。你可能已经知道这样对于 RecyclerView 和ListView会造成很多问题。这是因为列表本身的问题，而不是因为这些类的问题。</p>
+</li>
+</ul>
+<h2 id="劣势"><a href="#劣势" class="headerlink" title="劣势"></a>劣势</h2><ul>
+<li>IDE支持还不那么完善（提示、表达式）</li>
+<li>报错信息不那么直接</li>
+<li>重构支持不好（xml中进行重构，java代码不会自动修改）</li>
+</ul>
+<h2 id="简单总结"><a href="#简单总结" class="headerlink" title="简单总结"></a>简单总结</h2><p>DataBinding没使用到的地方还有很多，我仅仅只使用了比较基础的功能。对于这个库，特别明显的感受就是Android Stuio支持还不完善，老是报莫名奇妙的错误，而错误信息都不是那么直接明了，常常需要ReBuild或Sync项目。<br>Google既然把它放在了Android SDK中，那肯定意味这MVVM是Google所提倡的开发模式。所以DataBinding技术有着广阔的发展前景，值得学习。</p>
+<p>参考资料：<br><a href="https://realm.io/cn/news/data-binding-android-boyar-mount/" target="_blank" rel="external">棉花糖给 Android 带来的 Data Bindings（数据绑定库）</a><br><a href="https://developer.android.com/topic/libraries/data-binding/index.html" target="_blank" rel="external">Data Binding Library</a><br><a href="http://blog.zhaiyifan.cn/2016/06/16/android-new-project-from-0-p7/#more" target="_blank" rel="external">从零开始的Android新项目7 - Data Binding</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://ob5qdb9lc.bkt.clouddn.com/20141104070106_KTTPd.jpeg&quot; alt=&quot;Image&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Android笔记" scheme="http://yoursite.com/categories/Android%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+    
+  </entry>
   
   <entry>
     <title>Android笔记-MVP模式</title>
@@ -1624,153 +1691,6 @@
     <summary type="html">
     
       &lt;p&gt;&lt;img src=&quot;http://ob5qdb9lc.bkt.clouddn.com/14593.jpg&quot; alt=&quot;Image&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="TCP/IP笔记" scheme="http://yoursite.com/categories/TCP-IP%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="TCP/IP" scheme="http://yoursite.com/tags/TCP-IP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>TCP/IP笔记-TCP/IP网络模型</title>
-    <link href="http://yoursite.com/2016/08/07/TCP-IP%E7%AC%94%E8%AE%B0-TCP-IP%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/"/>
-    <id>http://yoursite.com/2016/08/07/TCP-IP笔记-TCP-IP网络模型/</id>
-    <published>2016-08-07T13:33:24.000Z</published>
-    <updated>2016-08-07T14:54:38.625Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://ob5qdb9lc.bkt.clouddn.com/maxresdefault%20%281%29.jpg" alt="Image"></p>
-<a id="more"></a>
-<h1 id="OSI七层与TCP-IP五层网络架构"><a href="#OSI七层与TCP-IP五层网络架构" class="headerlink" title="OSI七层与TCP/IP五层网络架构"></a>OSI七层与TCP/IP五层网络架构</h1><p>OSI七层模型称为开放式系统互联参考模型，是一个逻辑上的定义，一个规范，解释了协议相互之间应该如何相互作用。<br>TCP/IP协议是美国国防部发明的，是让互联网称为目前这个样子的标准之一。</p>
-<p><img src="http://ob5qdb9lc.bkt.clouddn.com/28171557-35956e615787467ca35cc61f3d97da1f.jpg" alt="Image"></p>
-<h2 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h2><h3 id="TFTP"><a href="#TFTP" class="headerlink" title="TFTP"></a>TFTP</h3><p>TFTP（Trivial File TransferProtocol,简单文件传输协议）是TCP/IP协议族中的一个用来在客户机与服务器之间进行简单文件传输的协议，提供不复杂、开销不大的文件传输服务。TFTP是一个传输文件的简单协议，它基于UDP协议而实现，但是我们也不能确定有些TFTP协议是基于其它传输协议完成的。</p>
-<p>此协议设计的时候是进行小文件传输的。因此它不具备通常的FTP的许多功能，它只能从文件服务器上获得或写入文件，不能列出目录，不进行认证，它传输8位数据。传输中有三种模式：netascii，这是8位的ASCII码形式，另一种是octet，这是8位源数据类型；最后一种mail已经不再支持，它将返回的数据直接返回给用户而不是保存为文件。</p>
-<h3 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h3><p>超文本传输协议（HTTP，HyperText Transfer Protocol)是互联网上应用最为广泛的一种网络协议。所有的WWW文件都必须遵守这个标准。设计HTTP最初的目的是为了提供一种发布和接收HTML页面的方法。1960年美国人Ted Nelson构思了一种通过计算机处理文本信息的方法，并称之为超文本（hypertext）,这成为了HTTP超文本传输协议标准架构的发展根基。</p>
-<p>HTTP是一个客户端和服务器端请求和应答的标准（TCP）。客户端是终端用户，服务器端是网站。通过使用Web浏览器、网络爬虫或者其它的工具，客户端发起一个到服务器上指定端口（默认端口为80）的HTTP请求。（我们称这个客户端）叫用户代理（user agent）。应答的服务器上存储着（一些）资源，比如HTML文件和图像。（我们称）这个应答服务器为源服务器（origin server）。在用户代理和源服务器中间可能存在多个中间层，比如代理，网关，或者隧道（tunnels）。</p>
-<p>尽管TCP/IP协议是互联网上最流行的应用，HTTP协议并没有规定必须使用它和（基于）它支持的层。 事实上，HTTP可以在任何其他互联网协议上，或者在其他网络上实现。HTTP只假定（其下层协议提供）可靠的传输，任何能够提供这种保证的协议都可以被其使用。</p>
-<h3 id="SNMP"><a href="#SNMP" class="headerlink" title="SNMP"></a>SNMP</h3><p>简单网络管理协议（SNMP），由一组网络管理的标准组成，包含一个应用层协议（application layer protocol）、数据库模型（database schema）和一组资源对象。该协议能够支持网络管理系统，用以监测连接到网络上的设备是否有任何引起管理上关注的情况。</p>
-<p>该协议是互联网工程工作小组（IETF，Internet Engineering Task Force）定义的internet协议簇的一部分。SNMP的目标是管理互联网Internet上众多厂家生产的软硬件平台，因此SNMP受Internet标准网络管理框架的影响也很大。SNMP已经出到第三个版本的协议，其功能较以前已经大大地加强和改进了。</p>
-<h3 id="FTP"><a href="#FTP" class="headerlink" title="FTP"></a>FTP</h3><p>FTP 是File Transfer Protocol（文件传输协议）的英文简称，而中文简称为“文传协议”。用于Internet上的控制文件的双向传输。同时，它也是一个应用程序（Application）。基于不同的操作系统有不同的FTP应用程序，而所有这些应用程序都遵守同一种协议以传输文件。</p>
-<p>在FTP的使用当中，用户经常遇到两个概念：”下载”（Download）和”上传”（Upload）。”下载”文件就是从远程主机拷贝文件至自己的计算机上；”上传”文件就是将文件从自己的计算机中拷贝至远程主机上。用Internet语言来说，用户可通过客户机程序向（从）远程主机上传（下载）文件。</p>
-<h3 id="SMTP"><a href="#SMTP" class="headerlink" title="SMTP"></a>SMTP</h3><p>SMTP（Simple Mail Transfer Protocol）即简单邮件传输协议,它是一组用于由源地址到目的地址传送邮件的规则，由它来控制信件的中转方式。</p>
-<p>SMTP协议属于TCP/IP协议簇，它帮助每台计算机在发送或中转信件时找到下一个目的地。通过SMTP协议所指定的服务器,就可以把E-mail寄到收信人的服务器上了，整个过程只要几分钟。SMTP服务器则是遵循SMTP协议的发送邮件服务器，用来发送或中转发出的电子邮件。</p>
-<h3 id="DNS"><a href="#DNS" class="headerlink" title="DNS"></a>DNS</h3><p>DNS（Domain Name System，域名系统），因特网上作为域名和IP地址相互映射的一个分布式数据库，能够使用户更方便的访问互联网，而不用去记住能够被机器直接读取的IP数串。通过主机名，最终得到该主机名对应的IP地址的过程叫做域名解析（或主机名解析）。</p>
-<p>DNS协议运行在UDP协议之上，使用端口号53。在RFC文档中RFC 2181对DNS有规范说明，RFC 2136对DNS的动态更新进行说明，RFC 2308对DNS查询的反向缓存进行说明。</p>
-<h3 id="Telnet"><a href="#Telnet" class="headerlink" title="Telnet"></a>Telnet</h3><p>Telnet协议是TCP/IP协议族中的一员，是Internet远程登陆服务的标准协议和主要方式。它为用户提供了在本地计算机上完成远程主机工作的能力。</p>
-<p>在终端使用者的电脑上使用telnet程序，用它连接到服务器。终端使用者可以在telnet程序中输入命令，这些命令会在服务器上运行，就像直接在服务器的控制台上输入一样。可以在本地就能控制服务器。要开始一个telnet会话，必须输入用户名和密码来登录服务器。Telnet是常用的远程控制Web服务器的方法。</p>
-<h2 id="传输层"><a href="#传输层" class="headerlink" title="传输层"></a>传输层</h2><h3 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h3><p>TCP（Transmission Control Protocol 传输控制协议）是一种面向连接的、可靠的、基于字节流的传输层通信协议，由IETF的RFC 793定义。在简化的计算机网络OSI模型中，它完成第四层传输层所指定的功能，用户数据报协议（UDP）是同一层内另一个重要的传输协议。</p>
-<p>在因特网协议族（Internet protocol suite）中，TCP层是位于IP层之上，应用层之下的中间层。不同主机的应用层之间经常需要可靠的、像管道一样的连接，但是IP层不提供这样的流机制，而是提供不可靠的包交换。</p>
-<p>应用层向TCP层发送用于网间传输的、用8位字节表示的数据流，然后TCP把数据流分区成适当长度的报文段（通常受该计算机连接的网络的数据链路层的最大传输单元（MTU）的限制）。之后TCP把结果包传给IP层，由它来通过网络将包传送给接收端实体的TCP层。</p>
-<p>TCP为了保证不发生丢包，就给每个包一个序号，同时序号也保证了传送到接收端实体的包的按序接收。然后接收端实体对已成功收到的包发回一个相应的确认（ACK）；如果发送端实体在合理的往返时延（RTT）内未收到确认，那么对应的数据包就被假设为已丢失将会被进行重传。TCP用一个校验和函数来检验数据是否有错误；在发送和接收时都要计算校验和。</p>
-<h3 id="UDP"><a href="#UDP" class="headerlink" title="UDP"></a>UDP</h3><p>UDP 是User Datagram Protocol的简称， 中文名是用户数据报协议，是OSI（Open System Interconnection，开放式系统互联） 参考模型中一种无连接的传输层协议，提供面向事务的简单不可靠信息传送服务。</p>
-<p>UDP协议全称是用户数据报协议 ，在网络中它与TCP协议一样用于处理数据包，是一种无连接的协议。在OSI模型中，在第四层——传输层，处于IP协议的上一层。UDP有不提供数据包分组、组装和不能对数据包进行排序的缺点，也就是说，当报文发送之后，是无法得知其是否安全完整到达的。</p>
-<p>UDP用来支持那些需要在计算机之间传输数据的网络应用。包括网络视频会议系统在内的众多的客户/服务器模式的网络应用都需要使用UDP协议。UDP协议从问世至今已经被使用了很多年，虽然其最初的光彩已经被一些类似协议所掩盖，但是即使是在今天UDP仍然不失为一项非常实用和可行的网络传输层协议。</p>
-<h2 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h2><h3 id="IP"><a href="#IP" class="headerlink" title="IP"></a>IP</h3><p>网络之间互连的协议（IP）是Internet Protocol的外语缩写，网络之间互连的协议也就是为计算机网络相互连接进行通信而设计的协议。在因特网中，它是能使连接到网上的所有计算机网络实现相互通信的一套规则，规定了计算机在因特网上进行通信时应当遵守的规则。任何厂家生产的计算机系统，只要遵守IP协议就可以与因特网互连互通。IP地址具有唯一性，根据用户性质的不同，可以分为5类。</p>
-<p><img src="http://ob5qdb9lc.bkt.clouddn.com/97427414-0717-461c-9291-597b75dd743e.jpg" alt="Image"></p>
-<ol>
-<li>A类IP地址<br>一个A类IP地址由1字节的网络地址和3字节主机地址组成，网络地址的最高位必须是“0”， 地址范围1.0.0.1-126.255.255.254,可用的A类网络有126个，每个网络能容纳1677214个主机。</li>
-<li>B类IP地址<br>一个B类IP地址由2个字节的网络地址和2个字节的主机地址组成，网络地址的最高位必须是“10”，地址范围128.1.0.1-191.255.255.254,可用的B类网络有16384个，每个网络能容纳65534主机 。</li>
-<li>C类IP地址<br>一个C类IP地址由3字节的网络地址和1字节的主机地址组成，网络地址的最高位必须是“110”。范围192.0.1.1-223.255.255.254,C类网络可达2097152个，每个网络能容纳254个主机。</li>
-<li>D类地址用于多点广播（Multicast）。<br>D类IP地址第一个字节以“1110”开始，它是一个专门保留的地址。它并不指向特定的网络，目前这一类地址被用在多点广播（Multicast）中。多点广播地址用来一次寻址一组计算机，它标识共享同一协议的一组计算机。<br>地址范围224.0.0.1-239.255.255.254</li>
-<li>E类IP地址<br>以“1111”开始，为将来使用保留。<br>E类地址保留，仅作实验和开发用。</li>
-</ol>
-<h3 id="ICMP"><a href="#ICMP" class="headerlink" title="ICMP"></a>ICMP</h3><p>ICMP是（Internet Control Message Protocol）Internet控制报文协议。它是TCP/IP协议族的一个子协议，用于在IP主机、路由器之间传递控制消息。控制消息是指网络通不通、主机是否可达、路由是否可用等网络本身的消息。</p>
-<p>这些控制消息虽然并不传输用户数据，但是对于用户数据的传递起着重要的作用。ICMP协议是一种面向无连接的协议，用于传输出错报告控制信息。它是一个非常重要的协议，它对于网络安全具有极其重要的意义。</p>
-<p>它是TCP/IP协议族的一个子协议，属于网络层协议，主要用于在主机与路由器之间传递控制信息，包括报告错误、交换受限控制和状态信息等。当遇到IP数据无法访问目标、IP路由器无法按当前的传输速率转发数据包等情况时，会自动发送ICMP消息。</p>
-<p>ICMP报文在IP帧结构的首部协议类型字段（Protocol 8bit)的值=1。我们在网络中经常会使用到ICMP协议，比如我们经常使用的用于检查网络通不通的Ping命令（Linux和Windows中均有），这个“Ping”的过程实际上就是ICMP协议工作的过程。还有其他的网络命令如跟踪路由的Tracert命令也是基于ICMP协议的。</p>
-<h3 id="RIP"><a href="#RIP" class="headerlink" title="RIP"></a>RIP</h3><p>RIP（Routing Information Protocol，路由信息协议）是一种基于距离矢量的路由协议，以路由条数作为计数单位的路由协议。适合用于比较小型的网络环境。RIP协议主要用于一个AS（自治系统）内的路由信息的传递，每30秒发送一次路由信息更新，RIP协议提供跳跃计数（hop count）作为尺度来衡量路由距离，跳跃计数是一个包到达目标所必须经过的路由器的数目，RIP最多支持的跳跃数为15。  </p>
-<h3 id="OSPF"><a href="#OSPF" class="headerlink" title="OSPF"></a>OSPF</h3><p>OSPF(Open Shortest Path First开放式最短路径优先）是一个内部网关协议(Interior Gateway Protocol，简称IGP），用于在单一自治系统（autonomous system,AS）内决策路由。是对链路状态路由协议的一种实现，隶属内部网关协议（IGP），故运作于自治系统内部。<br>著名的迪克斯加算法(Dijkstra)被用来计算最短路径树。OSPF分为OSPFv2和OSPFv3两个版本,其中OSPFv2用在IPv4网络，OSPFv3用在IPv6网络。OSPFv2是由RFC 2328定义的，OSPFv3是由RFC 5340定义的。与RIP相比，OSPF是链路状态协议，而RIP是距离矢量协议。IETF为了满足建造越来越大基于IP网络的需要，形成了一个工作组，专门用于开发开放式的链路状态路由协议，以便用在大型、异构的I P网络中。</p>
-<h3 id="BGP"><a href="#BGP" class="headerlink" title="BGP"></a>BGP</h3><p>边界网关协议（BGP）是运行于 TCP 上的一种自治系统的路由协议。 BGP 是唯一一个用来处理像因特网大小的网络的协议，也是唯一能够妥善处理好不相关路由域间的多路连接的协议。 BGP 构建在 EGP 的经验之上。 BGP 系统的主要功能是和其他的 BGP 系统交换网络可达信息。网络可达信息包括列出的自治系统（AS）的信息。这些信息有效地构造了 AS 互联的拓朴图并由此清除了路由环路，同时在 AS 级别上可实施策略决策。</p>
-<h3 id="IGMP"><a href="#IGMP" class="headerlink" title="IGMP"></a>IGMP</h3><p>Internet 组管理协议称为IGMP协议（Internet Group Management Protocol），是因特网协议家族中的一个组播协议。该协议运行在主机和组播路由器之间。</p>
-<h2 id="数据链路层"><a href="#数据链路层" class="headerlink" title="数据链路层"></a>数据链路层</h2><h3 id="ARP"><a href="#ARP" class="headerlink" title="ARP"></a>ARP</h3><p>地址解析协议，即ARP（Address Resolution Protocol），是根据IP地址获取物理地址的一个TCP/IP协议。主机发送信息时将包含目标IP地址的ARP请求广播到网络上的所有主机，并接收返回消息，以此确定目标的物理地址；收到返回消息后将该IP地址和物理地址存入本机ARP缓存中并保留一定时间，下次请求时直接查询ARP缓存以节约资源。</p>
-<h3 id="RARP"><a href="#RARP" class="headerlink" title="RARP"></a>RARP</h3><p>反向地址转换协议（RARP：Reverse Address Resolution Protocol） 反向地址转换协议（RARP）允许局域网的物理机器从网关服务器的 ARP 表或者缓存上请求其 IP 地址。网络管理员在局域网网关路由器里创建一个表以映射物理地址（MAC）和与其对应的 IP 地址。当设置一台新的机器时，其 RARP 客户机程序需要向路由器上的 RARP 服务器请求相应的 IP 地址。假设在路由表中已经设置了一个记录，RARP 服务器将会返回 IP 地址给机器，此机器就会存储起来以便日后使用。</p>
-<h1 id="TCP-IP模型"><a href="#TCP-IP模型" class="headerlink" title="TCP/IP模型"></a>TCP/IP模型</h1><p>TCP/IP模型，最基本的internet协议，由网络层的IP和传输层的TCP构成，指TCP/IP协议簇。</p>
-<h2 id="TCP与UDP的区别"><a href="#TCP与UDP的区别" class="headerlink" title="TCP与UDP的区别"></a>TCP与UDP的区别</h2><p>TCP:传输控制协议，提供IP环境下的数据可靠传输，它提供的服务包括数据流传送、可靠性、有效流控，全双工操作和多路复用。是一个全双工、面向连接、可靠的并且是精确控制的协议。<br>主要是用在那些实时性不强，但要求不能出错的应用，比如网页浏览，文件的下载，邮件的收发等场合。</p>
-<p>UDP:用户数据报协议，是面向非连接的协议，是一个不可靠的传输协议，不排序所要发送的数据段，不关心这些数据到达目的方的顺序，所以网络开销比TCP小得多。<br>主要用在实时性强，允许出错的场合，比如即时通信，视频，语音等方面。   </p>
-<h2 id="TCP报文格式（基于字节流）"><a href="#TCP报文格式（基于字节流）" class="headerlink" title="TCP报文格式（基于字节流）"></a>TCP报文格式（基于字节流）</h2><p>源端口号（2字节）    目的端口号（2字节）<br>TCP报文中的源端口号同目的端口号同IP数据报中的源IP与目的IP确定一条TCP连接。</p>
-<p>数据序号（4字节） sequence number<br>用来标识TCP发端向TCP收端发送的数据字节流</p>
-<p>确认序号（4字节）acknowledgement number<br>期望收到对方的下一个报文段的数据的第一个字节的序号</p>
-<p>首部长度（4位）<br>指出报文数据距TCP报文的起始处有多远</p>
-<p>标志位（12位）<br>reserved(6位)  保留今后使用，目前置0处理</p>
-<p>URG(紧急标志)  URG=1时，表明紧急指针字段有效。它告诉系统此报文有紧急数据，应尽快传送。</p>
-<p>ACK(确认标志) ACK=1时，确认号序号字段才有效，ACK=0，确认序号无效。</p>
-<p>PSH(推送标志)PSH=1，接收方就尽快地交付给接收方应用进程，而不再等待整个缓存都填满了后再向上交付。</p>
-<p>RST(复位标志)RST=1，表明TCP连接中出现了严重差错，必须释放连接，然后再重新建立运输连接。</p>
-<p>SYN(同步标志)SYN=1，就表明这是一个连接请求或者连接接收报文。</p>
-<p>FIN(终止标志)FIN=1，表明此报文段的发送端的数据已发送完毕，要求释放连接。</p>
-<p>窗口大小(2字节) 控制对方发送的数据量。</p>
-<p>检验和(2字节) 包括首部和数据两部分，由发送端计算存储，接收端验证。</p>
-<p>紧急指针(2字节) 紧急指针指出本报文段中紧急数据的最后一个字节的序号。</p>
-<p>选项字段(0~40字节)把附加信息传递给终点。</p>
-<h2 id="TCP三次握手，四次挥手"><a href="#TCP三次握手，四次挥手" class="headerlink" title="TCP三次握手，四次挥手"></a>TCP三次握手，四次挥手</h2><p><img src="http://ob5qdb9lc.bkt.clouddn.com/jellythinkTCP4111.png" alt="Image"></p>
-<h3 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h3><ol>
-<li>客户端发送SYN=1，随机（当开启TCP会话时，初始序列号是随机的）产生sequence number的数据包到服务器，服务器由SYN=1知道，客户端要建立连接。</li>
-<li>服务端收到请求后确认联机信息，向A发送acknowledge number=sequence number+1，SYN=1，ACK=1，随机产生sequence number的数据包。</li>
-<li>客户端收到检查acknowledge number是否正确，若正确，则发送acknowledge number=sequence number+1，ACK=1的数据包。服务端收到后确认sequence number=sequence number+1，ACK=1则连接建立成功。</li>
-</ol>
-<h3 id="四次挥手"><a href="#四次挥手" class="headerlink" title="四次挥手"></a>四次挥手</h3><ol>
-<li>客户端发送一个FIN=1，ACK=1，sequence number，acknowledge number的数据包到服务端。</li>
-<li>服务端收到这个FIN，发回一个ACK，acknowledge number=sequence number+1。</li>
-<li>.服务端关闭与客户端的连接，发送一个FIN，sequence number给客户端。</li>
-<li>客户端发回ACK确认，acknowledge number=sequecne number+1。</li>
-</ol>
-<h3 id="为什么挥手多一次"><a href="#为什么挥手多一次" class="headerlink" title="为什么挥手多一次"></a>为什么挥手多一次</h3><p>由于TCP连接是全双工的，因此每个方向都必须单独关闭。当一方完成它的数据发送任务后就能发送一个FIN来终止这个方向的连接。收到一个FIN只意味着这一方向上没有数据流动，一个TCP连接在收到一个FIN后仍能发送数据。首先进行关闭的一方将执行主动关闭，而另一方被动关闭。</p>
-<h3 id="TCP连接状态"><a href="#TCP连接状态" class="headerlink" title="TCP连接状态"></a>TCP连接状态</h3><ul>
-<li>CLOSED：初始状态，表示TCP连接是“关闭着的”或“未打开的”。</li>
-<li>LISTEN ：表示服务器端的某个SOCKET处于监听状态，可以接受客户端的连接。</li>
-<li>SYN_RCVD ：表示接收到了SYN报文。在正常情况下，这个状态是服务器端的SOCKET在建立TCP连接时的三次握手会话过程中的一个中间状态，很短暂，基本上用netstat很难看到这种状态，除非故意写一个监测程序，将三次TCP握手过程中最后一个ACK报文不予发送。当TCP连接处于此状态时，再收到客户端的ACK报文，它就会进入到ESTABLISHED 状态。</li>
-<li>SYN_SENT ：这个状态与SYN_RCVD 状态相呼应，当客户端SOCKET执行connect()进行连接时，它首先发送SYN报文，然后随即进入到SYN_SENT 状态，并等待服务端的发送三次握手中的第2个报文。SYN_SENT 状态表示客户端已发送SYN报文。</li>
-<li>ESTABLISHED ：表示TCP连接已经成功建立。</li>
-<li>FIN_WAIT_1 ：这个状态得好好解释一下，其实FIN_WAIT_1 和FIN_WAIT_2 两种状态的真正含义都是表示等待对方的FIN报文。而这两种状态的区别是：FIN_WAIT_1状态实际上是当SOCKET在ESTABLISHED状态时，它想主动关闭连接，向对方发送了FIN报文，此时该SOCKET进入到FIN_WAIT_1状态。而当对方回应ACK报文后，则进入到FIN_WAIT_2状态。当然在实际的正常情况下，无论对方处于任何种情况下，都应该马上回应ACK报文，所以FIN_WAIT_1 状态一般是比较难见到的，而FIN_WAIT_2 状态有时仍可以用netstat看到。</li>
-<li>FIN_WAIT_2 ：上面已经解释了这种状态的由来，实际上FIN_WAIT_2状态下的SOCKET表示半连接，即有一方调用close()主动要求关闭连接。注意：FIN_WAIT_2是没有超时的（不像TIME_WAIT状态），这种状态下如果对方不关闭（不配合完成4次挥手过程），那这个FIN_WAIT_2状态将一直保持到系统重启，越来越多的FIN_WAIT_2状态会导致内核crash。</li>
-<li>TIME_WAIT ：表示收到了对方的FIN报文，并发送出了ACK报文。 TIME_WAIT状态下的TCP连接会等待2*MSL（Max Segment Lifetime，最大分段生存期，指一个TCP报文在Internet上的最长生存时间。每个具体的TCP协议实现都必须选择一个确定的MSL值，RFC 1122建议是2分钟，但BSD传统实现采用了30秒，Linux可以cat /proc/sys/net/ipv4/tcp_fin_timeout看到本机的这个值），然后即可回到CLOSED 可用状态了。如果FIN_WAIT_1状态下，收到了对方同时带FIN标志和ACK标志的报文时，可以直接进入到TIME_WAIT状态，而无须经过FIN_WAIT_2状态。</li>
-<li>CLOSING ：这种状态在实际情况中应该很少见，属于一种比较罕见的例外状态。正常情况下，当一方发送FIN报文后，按理来说是应该先收到（或同时收到）对方的ACK报文，再收到对方的FIN报文。但是CLOSING 状态表示一方发送FIN报文后，并没有收到对方的ACK报文，反而却也收到了对方的FIN报文。什么情况下会出现此种情况呢？那就是当双方几乎在同时close()一个SOCKET的话，就出现了双方同时发送FIN报文的情况，这是就会出现CLOSING 状态，表示双方都正在关闭SOCKET连接。</li>
-<li>CLOSE_WAIT ：表示正在等待关闭。怎么理解呢？当对方close()一个SOCKET后发送FIN报文给自己，你的系统毫无疑问地将会回应一个ACK报文给对方，此时TCP连接则进入到CLOSE_WAIT状态。接下来呢，你需要检查自己是否还有数据要发送给对方，如果没有的话，那你也就可以close()这个SOCKET并发送FIN报文给对方，即关闭自己到对方这个方向的连接。有数据的话则看程序的策略，继续发送或丢弃。简单地说，当你处于CLOSE_WAIT 状态下，需要完成的事情是等待你去关闭连接。</li>
-<li>LAST_ACK ：当被动关闭的一方在发送FIN报文后，等待对方的ACK报文的时候，就处于LAST_ACK 状态。当收到对方的ACK报文后，也就可以进入到CLOSED 可用状态了。</li>
-</ul>
-<h2 id="TCP流量控制"><a href="#TCP流量控制" class="headerlink" title="TCP流量控制"></a>TCP流量控制</h2><h3 id="TCP的滑动窗口"><a href="#TCP的滑动窗口" class="headerlink" title="TCP的滑动窗口"></a>TCP的滑动窗口</h3><p>为了提高信道的利用率TCP协议不使用停止等待协议，而是使用连续ARQ协议，意思就是可以连续发出若干个分组然后等待确认，而不是发送一个分组就停止并等待该分组的确认。</p>
-<p>TCP的两端都有发送/接收缓存和发送/接收窗口。TCP的缓存是一个循环队列，其中发送窗口可以用3个指针表示。而发送窗口的大小受TCP数据报中窗口大小的影响，TCP数据报中的窗口大小是接收端通知发送端其还可以接收多少数据，所以发送窗口根据接收的的窗口大小的值动态变化。</p>
-<h3 id="TCP流量控制-1"><a href="#TCP流量控制-1" class="headerlink" title="TCP流量控制"></a>TCP流量控制</h3><p>所谓流量控制就是让发送发送速率不要过快，让接收方来得及接收。利用滑动窗口机制就可以实施流量控制。<br>原理这就是运用TCP报文段中的窗口大小字段来控制，发送方的发送窗口不可以大于接收方发回的窗口大小。</p>
-<p>考虑一种特殊的情况，就是接收方若没有缓存足够使用，就会发送零窗口大小的报文，此时发送方将发送窗口设置为0，停止发送数据。之后接收方有足够的缓存，发送了非零窗口大小的报文，但是这个报文在中途丢失的，那么发送方的发送窗口就一直为零导致死锁。</p>
-<p>解决这个问题，TCP为每一个连接设置一个持续计时器（persistence timer）。只要TCP的一方收到对方的零窗口通知，就启动该计时器，周期性的发送一个零窗口探测报文段。对方就在确认这个报文的时候给出现在的窗口大小（注意：TCP规定，即使设置为零窗口，也必须接收以下几种报文段：零窗口探测报文段、确认报文段和携带紧急数据的报文段）。</p>
-<h3 id="传输效率及Nagle算法"><a href="#传输效率及Nagle算法" class="headerlink" title="传输效率及Nagle算法"></a>传输效率及Nagle算法</h3><p>TCP的数据传输分为交互数据流和成块数据流，交互数据流一般是一些交互式应用程序的命令，所以这些数据很小，而考虑到TCP报头和IP报头的总和就有40字节，如果数据量很小的话，那么网络的利用效率就较低。</p>
-<p>数据传输使用Nagle算法，Nagle算法很简单，就是规定一个TCP连接最多只能有一个未被确认的未完成的小分组。在该分组的确认到达之前不能发送其他的小分组。</p>
-<p>但是也要考虑另一个问题，叫做糊涂窗口综合症。当接收方的缓存已满的时候，交互应用程序一次只从缓存中读取一个字节（这时候缓存中腾出一个字节），然后向发送方发送确认信息，此时发送方再发送一个字节（收到的窗口大小为1），这样网络的效率很低。</p>
-<p>所以要解决这个问题，可以让接收方等待一段时间，使得接收缓存已有最够的空间容纳一个最长报文段，或者等到接收缓存已有一半的空间。只要这两种情况出现一种，就发送确认报文，同时发送方可以把数据积累成大的报文段发送。</p>
-<p>##TCP拥塞控制<br>计算机网络中的带宽、交换结点中的缓存和处理机等，都是网络的资源。在某段时间，若对网络中某一资源的需求超过了该资源所能提供的可用部分，网络的性能就会变坏。这种情况就叫做拥塞。</p>
-<p>拥塞控制就是防止过多的数据注入网络中，这样可以使网络中的路由器或链路不致过载。拥塞控制是一个全局性的过程，和流量控制不同，流量控制指点对点通信量的控制。</p>
-<h3 id="慢开始与拥塞避免"><a href="#慢开始与拥塞避免" class="headerlink" title="慢开始与拥塞避免"></a>慢开始与拥塞避免</h3><p>发送方维持一个叫做拥塞窗口cwnd（congestion window）的状态变量。拥塞窗口的大小取决于网络的拥塞程度，并且动态地在变化。发送方让自己的发送窗口等于拥塞窗口，另外考虑到接受方的接收能力，发送窗口可能小于拥塞窗口。</p>
-<p>慢开始算法的思路就是，不要一开始就发送大量的数据，先探测一下网络的拥塞程度，也就是说由小到大逐渐增加拥塞窗口的大小。</p>
-<p>为了防止cwnd增长过大引起网络拥塞，还需设置一个慢开始门限ssthresh状态变量。ssthresh的用法如下：<br>当cwnd&lt; ssthresh时，使用慢开始算法。<br>当cwnd&gt; ssthresh时，改用拥塞避免算法。<br>当cwnd= ssthresh时，慢开始与拥塞避免算法任意。</p>
-<p>拥塞避免算法让拥塞窗口缓慢增长，即每经过一个往返时间RTT就把发送方的拥塞窗口cwnd加1，而不是加倍。这样拥塞窗口按线性规律缓慢增长。</p>
-<p>无论是在慢开始阶段还是在拥塞避免阶段，只要发送方判断网络出现拥塞（其根据就是没有收到确认，虽然没有收到确认可能是其他原因的分组丢失，但是因为无法判定，所以都当做拥塞来处理），就把慢开始门限设置为出现拥塞时的发送窗口大小的一半。然后把拥塞窗口设置为1，执行慢开始算法。<br><img src="http://ob5qdb9lc.bkt.clouddn.com/ca427b8a-7b23-429a-b351-344c95a75f64.png" alt="Image"></p>
-<h3 id="快重传和快恢复"><a href="#快重传和快恢复" class="headerlink" title="快重传和快恢复"></a>快重传和快恢复</h3><p>快重传要求接收方在收到一个失序的报文段后就立即发出重复确认（为的是使发送方及早知道有报文段没有到达对方）而不要等到自己发送数据时捎带确认。快重传算法规定，发送方只要一连收到三个重复确认就应当立即重传对方尚未收到的报文段，而不必继续等待设置的重传计时器时间到期。如下图：</p>
-<p><img src="http://ob5qdb9lc.bkt.clouddn.com/8ec8322d-14e7-4324-ae9a-786f683ac6ec.png" alt="此处输入图片的描述"></p>
-<p>快重传配合使用的还有快恢复算法，有以下两个要点:</p>
-<ol>
-<li>当发送方连续收到三个重复确认时，就执行“乘法减小”算法，把ssthresh门限减半。但是接下去并不执行慢开始算法。</li>
-<li>考虑到如果网络出现拥塞的话就不会收到好几个重复的确认，所以发送方现在认为网络可能没有出现拥塞。所以此时不执行慢开始算法，而是将cwnd设置为ssthresh的大小，然后执行拥塞避免算法。如下图：</li>
-</ol>
-<p><img src="http://ob5qdb9lc.bkt.clouddn.com/f6b86bd9-e909-43c5-b372-c6c868130d2a.png" alt="Image"></p>
-<h3 id="随机早期检测RED"><a href="#随机早期检测RED" class="headerlink" title="随机早期检测RED"></a>随机早期检测RED</h3><p>以上的拥塞避免算法并没有和网络层联系起来，实际上网络层的策略对拥塞避免算法影响最大的就是路由器的丢弃策略。在简单的情况下路由器通常按照先进先出的策略处理到来的分组。当路由器的缓存装不下分组的时候就丢弃到来的分组，这叫做尾部丢弃策略。</p>
-<p>这样就会导致分组丢失，发送方认为网络产生拥塞。更为严重的是网络中存在很多的TCP连接，这些连接中的报文段通常是复用路由路径。若发生路由器的尾部丢弃，可能影响到很多条TCP连接，结果就是这许多的TCP连接在同一时间进入慢开始状态。这在术语中称为全局同步。全局同步会使得网络的通信量突然下降很多，而在网络恢复正常之后，其通信量又突然增大很多。</p>
-<p>为避免发生网路中的全局同步现象，路由器采用随机早期检测(RED:randomearly detection)。该算法要点如下：<br>使路由器的队列维持两个参数，即队列长队最小门限min和最大门限max，每当一个分组到达的时候，RED就计算平均队列长度。然后分情况对待到来的分组：</p>
-<ol>
-<li>平均队列长度小于最小门限——把新到达的分组放入队列排队。</li>
-<li>平均队列长度在最小门限与最大门限之间——则按照某一概率将分组丢弃。</li>
-<li>平均队列长度大于最大门限——丢弃新到达的分组。</li>
-</ol>
-<p><img src="http://ob5qdb9lc.bkt.clouddn.com/d80e4755-3a72-4714-b932-b7641b67691d.png" alt="Image"></p>
-<p>以概率p随机丢弃分组，让拥塞控制只在个别的TCP连接上执行，因而避免全局性的拥塞控制。<br>RED的关键就是选择三个参数最小门限、最大门限、丢弃概率和计算平均队列长度。平均队列长度采用加权平均的方法计算平均队列长度，这和往返时间（RTT）的计算策略是一样的。</p>
-<p><img src="http://ob5qdb9lc.bkt.clouddn.com/6c9be1bd-7cdc-40c0-8705-d5691d3a8a46.png" alt="Image"></p>
-<p><img src="http://ob5qdb9lc.bkt.clouddn.com/ddf80591-632e-469f-a4f4-73c096273d42.png" alt="Image"></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://ob5qdb9lc.bkt.clouddn.com/maxresdefault%20%281%29.jpg&quot; alt=&quot;Image&quot;&gt;&lt;/p&gt;
     
     </summary>
     

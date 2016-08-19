@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<title>
+  
+    Android笔记-DataBinding
+  
+</title>
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android笔记-DataBinding">
+<meta property="og:url" content="http://yoursite.com/2016/08/19/Android笔记-DataBinding/index.html">
+<meta property="og:site_name" content="Be Level5 Coder">
+<meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/20141104070106_KTTPd.jpeg">
+<meta property="og:updated_time" content="2016-08-19T04:08:50.614Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android笔记-DataBinding">
+<meta name="twitter:image" content="http://ob5qdb9lc.bkt.clouddn.com/20141104070106_KTTPd.jpeg">
+
+
+  <link rel="alternative" href="/atom.xml" title="Be Level5 Coder" type="application/atom+xml">
+
+
+
+  <link rel="icon" href="/favicon.png">
+
+
+<link rel="stylesheet" href="/perfect-scrollbar/css/perfect-scrollbar.min.css">
+<link rel="stylesheet" href="/styles/main.css">
+
+
+
+
+
+
+</head>
+<body
+  
+  >
+  <div class="mobile-header">
+  <button class="sidebar-toggle" type="button">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a class="title" href="/">Be Level5 Coder</a>
+</div>
+
+  <div class="main-container">
+    <div class="sidebar">
+  <div class="header">
+    <h1 class="title"><a href="/">Be Level5 Coder</a></h1>
+    
+    <div class="info">
+      <div class="content">
+        
+        
+          <div class="author">Sion</div>
+        
+      </div>
+      
+        <div class="avatar">
+          
+            <img src="http://ob5qdb9lc.bkt.clouddn.com/my_avatar.jpg">
+          
+        </div>
+      
+    </div>
+  </div>
+  <div class="body">
+    
+      
+        <ul class="nav">
+          
+            
+              <li class="category-list-container">
+                <a href="javascript:;">分类</a>
+                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android笔记/">Android笔记</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java笔记/">Java笔记</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TCP-IP笔记/">TCP/IP笔记</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统笔记/">操作系统笔记</a><span class="category-list-count">1</span></li></ul>
+              </li>
+            
+          
+            
+              <li class="tag-list-container">
+                <a href="javascript:;">标签</a>
+                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">16</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Other/">Other</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP-IP/">TCP/IP</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a><span class="tag-list-count">1</span></li></ul>
+              </li>
+            
+          
+            
+              <li class="archive-list-container">
+                <a href="javascript:;">归档</a>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a><span class="archive-list-count">36</span></li></ul>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="/" title="Homepage">Homepage</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/archives" title="By Year">By Year</a>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="https://github.com/liaosiyang" title="Github" target="_blank" rel="external">Github</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/atom.xml" title="RSS">RSS</a>
+              </li>
+            
+          
+        </ul>
+      
+    
+  </div>
+</div>
+
+    <div class="main-content">
+      
+        <div style="max-width: 1000px">
+      
+          <article id="post-Android笔记-DataBinding" class="article article-type-post">
+  
+    <h1 class="article-header">
+      Android笔记-DataBinding
+    </h1>
+  
+  
+
+  <div class="article-info">
+    <span class="article-date">
+  2016-08-19
+</span>
+
+    
+	<span class="article-category tagcloud">
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Android笔记/">Android笔记</a></li></ul>
+	</span>
+
+
+    
+	<span class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+	</span>
+
+
+  </div>
+  <div class="article-entry">
+    <p><img src="http://ob5qdb9lc.bkt.clouddn.com/20141104070106_KTTPd.jpeg" alt="Image"></p>
+<a id="more"></a>
+<h1 id="DataBinding"><a href="#DataBinding" class="headerlink" title="DataBinding"></a>DataBinding</h1><p>最近在项目中试用了一下DataBinding技术，觉得还蛮好用的。这项技术是Google对于MVVM在Android上的一种实现，已经装载进Android SDK里面了，足可见Google对它的重视。当前还只是测试版本，使用的人不多，但未来这种技术应该会成为Android主流开发技术之一。</p>
+<p>Data Binding，数据绑定，是Google对MVVM在Android上的一种实现，可以直接绑定数据到xml中，并实现自动刷新。</p>
+<h1 id="为什么要使用-Data-Binding"><a href="#为什么要使用-Data-Binding" class="headerlink" title="为什么要使用 Data Binding"></a>为什么要使用 Data Binding</h1><p>在最初学习Android的时候，我们在XML文件上定义的控件往往会给它取一个ID，然后在Activity或Fragment中使用findViewById找到它，如果要使用点击事件，那么还要setOnClickListener。这使我们的代码中有一大段都是这样的排列。</p>
+<p>后来我们使用了ButterKnife，这让我们轻松多了，不必再写大段的findViewById和setOnClickListener，但是基本思想没有变，还是要在Java文件中找到XML文件中对应的控件，引用它然后使用它。</p>
+<p>ButterKnife使用了注解处理器，在编译时生成了辅助代码来达到注入的目的，比如在MainActivity使用ButterKnife就会生成这样的代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span>$$<span class="title">ViewBinder</span>&lt;<span class="title">T</span> <span class="keyword">extends</span> <span class="title">MainActivity</span>&gt; <span class="keyword">implements</span> <span class="title">ViewBinder</span>&lt;<span class="title">T</span>&gt; </span>&#123;</div><div class="line">  <span class="meta">@Override</span></div><div class="line">  <span class="function"><span class="keyword">public</span> Unbinder <span class="title">bind</span><span class="params">(<span class="keyword">final</span> Finder finder, <span class="keyword">final</span> T target, Object source)</span> </span>&#123;</div><div class="line">    InnerUnbinder unbinder = createUnbinder(target);</div><div class="line">    ...</div><div class="line">    <span class="keyword">return</span> unbinder;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">protected</span> InnerUnbinder&lt;T&gt; <span class="title">createUnbinder</span><span class="params">(T target)</span> </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> InnerUnbinder(target);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="keyword">protected</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">InnerUnbinder</span>&lt;<span class="title">T</span> <span class="keyword">extends</span> <span class="title">MainActivity</span>&gt; <span class="keyword">implements</span> <span class="title">Unbinder</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> T target;</div><div class="line">    ...</div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="title">InnerUnbinder</span><span class="params">(T target)</span> </span>&#123;</div><div class="line">      <span class="keyword">this</span>.target = target;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title">unbind</span><span class="params">()</span> </span>&#123;</div><div class="line">      ...</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">unbind</span><span class="params">(T target)</span> </span>&#123;</div><div class="line">      ...</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>target就是MainActivity实例，ButterKnife会帮我们找到使用@BindView(R.id.xxx)标注的控件然后绑定。</p>
+<p>ButterKnife帮我们省了很多的工作，但是我们想走得更远。</p>
+<p>如果有一个布局文件，并有它们的 IDs，可以使用 Holdr，它可以替你可以处理布局文件，然后为他们创建 View 组件。你通过 Holder，转换 View 的 ID 到组件变量。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> Holdr_ActivityMain holder;</div><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">  setContentView(R.layout.activity_main);</div><div class="line">  holder = <span class="keyword">new</span> Holdr_ActivityMain(findViewById(content));</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">updateUI</span><span class="params">(User user)</span> </span>&#123;</div><div class="line">  <span class="keyword">if</span> (user == <span class="keyword">null</span>) &#123;</div><div class="line">    holder.name.setText(<span class="keyword">null</span>);</div><div class="line">    holder.lastName.setText(<span class="keyword">null</span>);</div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">    holder.name.setText(user.getName());</div><div class="line">    holder.lastName.setText(user.getLastName());</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>这里还有一个可能我们没有想到的麻烦、一个我们无论如何无法减少代码量的地方，它也是很简单的代码：我有一个 User 对象，我只是想把数据内容从这个 User 对象转移到 View 当中，但我们往往改了一个地方，忘了另一个地方，最终导致了产品运行崩溃。</p>
+<p>使用 Data Binding，它很像 Holder 模式，而且你只要做一点点事情，其余的内容 Data Binding 会帮你完成。</p>
+<h2 id="使用DataBinding"><a href="#使用DataBinding" class="headerlink" title="使用DataBinding"></a>使用DataBinding</h2><ul>
+<li>首先在xml的最外层套上layout标签；</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">    &lt;layout&gt;</div><div class="line">    &lt;data&gt;</div><div class="line">        &lt;variable name="user"</div><div class="line">                  type="com.android.example.User"/&gt;</div><div class="line"></div><div class="line">        &lt;variable name="presenter"</div><div class="line">                  type="com.android.example.Presenter"/&gt;          </div><div class="line">    &lt;/data&gt;</div><div class="line">    &lt;LinearLayout …&gt;</div><div class="line">        &lt;TextView android:text="@&#123;user.name&#125;"/&gt;</div><div class="line">        &lt;TextView android:text="@&#123;user.lastName&#125;"/&gt;</div><div class="line">        &lt;TextView android:onClick="@&#123;presenter.onBindService&#125;"/&gt;</div><div class="line">    &lt;/LinearLayout&gt;</div><div class="line">&lt;/layout&gt;</div></pre></td></tr></table></figure>    
+<ul>
+<li>声明控件绑定的变量或事件；<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(@Nullable Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">    <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">    binding= DataBindingUtil.setContentView(<span class="keyword">this</span>,R.layout.activity_test);</div><div class="line">    binding.setEmployee(employee);</div><div class="line">    binding.setPresenter(<span class="keyword">new</span> Presenter());</div><div class="line">&#125;</div></pre></td></tr></table></figure>  </li>
+<li>在Java代码声明绑定的变量：<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Employee</span> <span class="keyword">extends</span> <span class="title">BaseObservable</span></span>&#123;</div><div class="line">    <span class="keyword">private</span> String lastName;</div><div class="line">    <span class="keyword">private</span> String firstName;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Employee</span><span class="params">(String lastName, String firstName)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.lastName = lastName;</div><div class="line">        <span class="keyword">this</span>.firstName = firstName;</div><div class="line">    &#125;</div><div class="line">    <span class="meta">@Bindable</span></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getLastName</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> lastName;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setLastName</span><span class="params">(String lastName)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.lastName = lastName;</div><div class="line">        notifyPropertyChanged(BR.lastName);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Bindable</span></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getFirstName</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> firstName;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setFirstName</span><span class="params">(String firstName)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.firstName = firstName;</div><div class="line">        notifyPropertyChanged(BR.firstName);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></li>
+<li><p>Employee类如要想实现数据变化时更新View，那就要继承了BaseObservable或实现Observable接口。</p>
+</li>
+<li><p>DataBinding使用 notifyPropertyChanged来进行数据改变完成通知，但我们怎么通知一个数据即将改变？我们不得不写一个 @Bindable 注解。这将会自动产生一个 BR.firstName，这个 BR 很像我们经常使用的 R 类文件，我们通过这些注解会自动生成它。</p>
+</li>
+<li>在Java代码声明绑定的事件处理者：<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Presenter</span></span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View view)</span></span>&#123;</div><div class="line">        Snackbar.make(view,<span class="string">"点到了"</span>,Snackbar.LENGTH_SHORT).show();</div><div class="line">    &#125;</div><div class="line">｝</div></pre></td></tr></table></figure>  
+这样就完成了数据绑定，当employee对象的name变量发生改变时，绑定employee对象的TextView能够感知到这种变化，从而让自己的text文本发生改变。当绑定Presenter实例TextView接收到点击事件时，Presenter里的方法处理这个点击事件。</li>
+</ul>
+<h1 id="DataBinding工作原理"><a href="#DataBinding工作原理" class="headerlink" title="DataBinding工作原理"></a>DataBinding工作原理</h1><h3 id="1-进入并处理布局文件"><a href="#1-进入并处理布局文件" class="headerlink" title="1.进入并处理布局文件"></a>1.进入并处理布局文件</h3><p>其中的“进入”指的是，在你的程序代码正在被编译的过程中，它会找出布局文件中所有关于它的内容，获取到它所需要的信息，然后删掉它们，删掉它们的原因是如果继续存着视图系统并不认得它们。</p>
+<h3 id="2-通过语法来解析这些表达式"><a href="#2-通过语法来解析这些表达式" class="headerlink" title="2.通过语法来解析这些表达式"></a>2.通过语法来解析这些表达式</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;TextView android:visibility=<span class="string">"@user.isAdmin ? View.VISIBLE : View.GONE&#125;"</span>/&gt;</div></pre></td></tr></table></figure>  
+<p>这个 user 是一个索引，之后的 View 也是个索引，另一个 View 也是个索引。它们都是索引或称标识，像是真正的对象，在这边我们真的不知道它们是什么。同样的对于 VISIBLE 和 GONE 也是如此。这里面有对象数据访问，是一个三目运算表达式，这就是目前为止我们所理解到的。而对于DataBinding库，它的工作就是从这些文件中把东西解析出来，了解里面有什么。</p>
+<h3 id="在代码编译过程中解决相关依赖问题"><a href="#在代码编译过程中解决相关依赖问题" class="headerlink" title="在代码编译过程中解决相关依赖问题"></a>在代码编译过程中解决相关依赖问题</h3><p>在这一步中，例如，我们看一下 user.isAdmin，想：“这是在运行时获取到 User 类对象中的一个布尔值。”</p>
+<h3 id="Data-Binding-会自动生成一些类文件"><a href="#Data-Binding-会自动生成一些类文件" class="headerlink" title="Data Binding 会自动生成一些类文件"></a>Data Binding 会自动生成一些类文件</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ActivityTestBinding</span> <span class="keyword">extends</span> <span class="title">android</span>.<span class="title">databinding</span>.<span class="title">ViewDataBinding</span>  </span>&#123;</div><div class="line">       ...</div><div class="line">       <span class="comment">//很长的一个类在build/generated/source/apt中编译时生成</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>  
+<h2 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h2><ul>
+<li>不用自己在Java文件中引用View对象，减少耦合。也不必给使用的每一个View取一个ID。</li>
+<li>数据更新时，View的内容也会更新，而不必自己操控。</li>
+<li><p>性能提升<br>当你在Android系统上使用代码findById，它实际上是对它对所有子内容说：“孩子，你能通过ID找到这个 view 吗？”那个孩子（子内容）问自己的孩子，然后找不到就去问下一个孩子，直到你找到了这个 view。然后，你的代码findViewById对于其他 View 会再重新做一次，重复的没必要的同样事情再次发生。</p>
+<p>当你初始化数据绑定时，我们实际上知道在编译时我们对应的 View，所以我们有一个方法来找到我们想要的所有 View。我们只需遍历布局层次一次，就可以收集到所有的 View。这个计算只对于一个布局只发生一次。当第二次我们需要另一个其中的子 View 的时候，不需要再次遍历所有子 View，因为我们已经找到了所有的 View。</p>
+</li>
+<li><p>保证执行在主线程<br>这里的一个方便的是，你不必在UI线程进行通知：你可以在任何你想要的线程上进行更新。然而，我们仍然是在将在UI线程进行响应，所以你必须小心。此外，对于列表请不要这样做的！对于列表，你仍然应该在UI线程上通知，因为我们将在UI线程读取到，并且我们将需要在UI线程读取到它的长度，我们不做任何类型的同步。你可能已经知道这样对于 RecyclerView 和ListView会造成很多问题。这是因为列表本身的问题，而不是因为这些类的问题。</p>
+</li>
+</ul>
+<h2 id="劣势"><a href="#劣势" class="headerlink" title="劣势"></a>劣势</h2><ul>
+<li>IDE支持还不那么完善（提示、表达式）</li>
+<li>报错信息不那么直接</li>
+<li>重构支持不好（xml中进行重构，java代码不会自动修改）</li>
+</ul>
+<h2 id="简单总结"><a href="#简单总结" class="headerlink" title="简单总结"></a>简单总结</h2><p>DataBinding没使用到的地方还有很多，我仅仅只使用了比较基础的功能。对于这个库，特别明显的感受就是Android Stuio支持还不完善，老是报莫名奇妙的错误，而错误信息都不是那么直接明了，常常需要ReBuild或Sync项目。<br>Google既然把它放在了Android SDK中，那肯定意味这MVVM是Google所提倡的开发模式。所以DataBinding技术有着广阔的发展前景，值得学习。</p>
+<p>参考资料：<br><a href="https://realm.io/cn/news/data-binding-android-boyar-mount/" target="_blank" rel="external">棉花糖给 Android 带来的 Data Bindings（数据绑定库）</a><br><a href="https://developer.android.com/topic/libraries/data-binding/index.html" target="_blank" rel="external">Data Binding Library</a><br><a href="http://blog.zhaiyifan.cn/2016/06/16/android-new-project-from-0-p7/#more" target="_blank" rel="external">从零开始的Android新项目7 - Data Binding</a></p>
+
+  </div>
+  <footer class="article-footer">
+    
+
+    
+
+  </footer>
+</article>
+
+
+  <link rel="stylesheet" href="http://static.duoshuo.com/styles/embed.default.css?349d9313.css">
+  <!-- 多说评论框 start -->
+  <div class="ds-thread" data-thread-key="2016/08/19/Android笔记-DataBinding/" data-title="Android笔记-DataBinding" data-url="/2016/08/19/Android笔记-DataBinding/"></div>
+  <!-- 多说评论框 end -->
+  <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+  <script type="text/javascript">
+    var duoshuoQuery = {
+      short_name: "SION"
+    };
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';
+      ds.async = true;
+      ds.src = (document.location.protocol == 'https:'
+        ? 'https:'
+        : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+  <!-- 多说公共JS代码 end -->
+
+
+
+
+
+
+          <div class="main-footer">
+  
+    © 2016 Be Level5 Coder - Powered by <a href="http://hexo.io" target="_blank">Hexo</a> - Theme <a href="https://github.com/denjones/hexo-theme-chan" target="_blank">Chan</a>
+  
+</div>
+
+      
+        </div>
+      
+    </div>
+  </div>
+  <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="/PhotoSwipe/photoswipe.css">
+  <link rel="stylesheet" href="/PhotoSwipe/default-skin/default-skin.css">
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+             It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+      <!-- Container that holds slides.
+                PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                Don't modify these 3 pswp__item elements, data is added later on. -->
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+
+      <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+      <div class="pswp__ui pswp__ui--hidden">
+
+        <div class="pswp__top-bar">
+
+          <!--  Controls are self-explanatory. Order can be changed. -->
+
+          <div class="pswp__counter"></div>
+
+          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+          <button class="pswp__button pswp__button--share" title="Share"></button>
+
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+          <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+          <!-- element will get class pswp__preloader--active when preloader is running -->
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div>
+
+        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/PhotoSwipe/photoswipe.js"></script>
+  <script src="/PhotoSwipe/photoswipe-ui-default.js"></script>
+
+
+<script src="/perfect-scrollbar/js/min/perfect-scrollbar.min.js"></script>
+<script src="/scripts/main.js"></script>
+
+</body>
+</html>
