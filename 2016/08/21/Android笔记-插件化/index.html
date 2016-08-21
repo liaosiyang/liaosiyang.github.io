@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<title>
+  
+    Android笔记-插件化
+  
+</title>
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android笔记-插件化">
+<meta property="og:url" content="http://yoursite.com/2016/08/21/Android笔记-插件化/index.html">
+<meta property="og:site_name" content="Be Level5 Coder">
+<meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/21a4462309f790520566e8c50af3d7ca7acbd5d4.jpg">
+<meta property="og:updated_time" content="2016-08-21T04:32:15.562Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android笔记-插件化">
+<meta name="twitter:image" content="http://ob5qdb9lc.bkt.clouddn.com/21a4462309f790520566e8c50af3d7ca7acbd5d4.jpg">
+
+
+  <link rel="alternative" href="/atom.xml" title="Be Level5 Coder" type="application/atom+xml">
+
+
+
+  <link rel="icon" href="/favicon.png">
+
+
+<link rel="stylesheet" href="/perfect-scrollbar/css/perfect-scrollbar.min.css">
+<link rel="stylesheet" href="/styles/main.css">
+
+
+
+
+
+
+</head>
+<body
+  
+  >
+  <div class="mobile-header">
+  <button class="sidebar-toggle" type="button">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a class="title" href="/">Be Level5 Coder</a>
+</div>
+
+  <div class="main-container">
+    <div class="sidebar">
+  <div class="header">
+    <h1 class="title"><a href="/">Be Level5 Coder</a></h1>
+    
+    <div class="info">
+      <div class="content">
+        
+        
+          <div class="author">Sion</div>
+        
+      </div>
+      
+        <div class="avatar">
+          
+            <img src="http://ob5qdb9lc.bkt.clouddn.com/my_avatar.jpg">
+          
+        </div>
+      
+    </div>
+  </div>
+  <div class="body">
+    
+      
+        <ul class="nav">
+          
+            
+              <li class="category-list-container">
+                <a href="javascript:;">分类</a>
+                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android笔记/">Android笔记</a><span class="category-list-count">18</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java笔记/">Java笔记</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TCP-IP笔记/">TCP/IP笔记</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统笔记/">操作系统笔记</a><span class="category-list-count">1</span></li></ul>
+              </li>
+            
+          
+            
+              <li class="tag-list-container">
+                <a href="javascript:;">标签</a>
+                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">17</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Other/">Other</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP-IP/">TCP/IP</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a><span class="tag-list-count">1</span></li></ul>
+              </li>
+            
+          
+            
+              <li class="archive-list-container">
+                <a href="javascript:;">归档</a>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a><span class="archive-list-count">37</span></li></ul>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="/" title="Homepage">Homepage</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/archives" title="By Year">By Year</a>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="https://github.com/liaosiyang" title="Github" target="_blank" rel="external">Github</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/atom.xml" title="RSS">RSS</a>
+              </li>
+            
+          
+        </ul>
+      
+    
+  </div>
+</div>
+
+    <div class="main-content">
+      
+        <div style="max-width: 1000px">
+      
+          <article id="post-Android笔记-插件化" class="article article-type-post">
+  
+    <h1 class="article-header">
+      Android笔记-插件化
+    </h1>
+  
+  
+
+  <div class="article-info">
+    <span class="article-date">
+  2016-08-21
+</span>
+
+    
+	<span class="article-category tagcloud">
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Android笔记/">Android笔记</a></li></ul>
+	</span>
+
+
+    
+	<span class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+	</span>
+
+
+  </div>
+  <div class="article-entry">
+    <p><img src="http://ob5qdb9lc.bkt.clouddn.com/21a4462309f790520566e8c50af3d7ca7acbd5d4.jpg" alt="Image"></p>
+<a id="more"></a>
+<p>最近Android插件化、热补丁等技术很火，网上陆续也发布了很多相关的资料。大致总结下吧，以后实际工作中很有可能会使用到。</p>
+<h1 id="为什么要插件化"><a href="#为什么要插件化" class="headerlink" title="为什么要插件化"></a>为什么要插件化</h1><p>在开发应用时，随着业务规模发展到一定程度，不断地加入新功能、添加新的类库，代码在急剧的膨胀，相应的apk包的大小也急剧增加，那么就会遇到65536问题。</p>
+<p>65536：超过最大方法数限制的问题，是由于DEX文件格式限制，一个DEX文件中method个数采用使用原生类型short来索引文件中的方法，也就是4个字节共计最多表达65536个method，field/class的个数也均有此限制。对于DEX文件，则是将工程所需全部class文件合并且压缩到一个DEX文件期间，也就是Android打包的DEX过程中， 单个DEX文件可被引用的方法总数（自己开发的代码以及所引用的Android框架、类库的代码）被限制为65536；</p>
+<p>解决这个问题，一般有下面几种方案，一种方案是加大Proguard的力度来减小DEX的大小和方法数，但这是治标不治本的方案，随着业务代码的添加，方法数终究会到达这个限制。</p>
+<p>一种比较流行的方案是插件化方案。Google提供了MultiDex方案：</p>
+<ol>
+<li>修改Gradle配置文件，启用MultiDex并包含MultiDex支持；</li>
+<li>让应用支持多DEX文件。在官方文档中描述了三种可选方法：<br>在AndroidManifest.xml的application中声明android.support.MultiDex.MultiDexApplication；<br>如果你已经有自己的Application类，让其继承MultiDexApplication；<br>如果你的Application类已经继承自其它类，你不想/能修改它，那么可以重写attachBaseContext()方法；</li>
+</ol>
+<p>MultiDex的基本原理是把通过DexFile来加载Secondary DEX，并存放在BaseDexClassLoader的DexPathList中。</p>
+<p>MultiDex的安装大概分为几步：</p>
+<ul>
+<li>打开apk这个zip包；</li>
+<li>MultiDex的dex解压出来（除去Classes.dex之外的其他DEX，例如：classes2.dex， classes3.dex等等)，因为android系统在启动app时只加载了第一个Classes.dex，其他的DEX需要我们人工进行安装</li>
+<li>通过反射进行安装；</li>
+</ul>
+<p>这三步其实都比较耗时，容易造成主线程的ANR。</p>
+<p><a href="http://v.youku.com/v_show/id_XNTMzMjYzMzM2.html?firsttime=3112&amp;spm=0.0.uerCenter.5-2_5_5-2_5_DL_DD_A.y0ifrV&amp;from=y1.9-3.1" target="_blank" rel="external">阿里技术沙龙第十六期《android插件化及动态部署——ATLAS》</a>里面说道一个App可能开发过程中，可能会有多个团队要求往这个App中加入新的业务，这样之前的协作模式难以为继，需要新的开发模式和技术解决需求问题。</p>
+<p>前端可以实现在线更新持续发布，而源生的Native架构的Android需要用户重新下载安装包安装更新，插件化动态加载方案就是提供了如同前端一样的热部署能力。把业务拆分出来，组成外部的dex包。不同的团队专注于自己的业务，当需要更新时，不用下载更新整个App，而仅仅是下载对应的dex。</p>
+<h1 id="动态加载"><a href="#动态加载" class="headerlink" title="动态加载"></a>动态加载</h1><p>真正的动态加载应该是：</p>
+<ol>
+<li>应用在运行的时候通过加载一些本地不存在的可执行文件实现一些特定的功能;</li>
+<li>这些可执行文件是可以替换的;</li>
+<li>更换静态资源（比如换启动图、换主题、或者用服务器参数开关控制广告的隐藏现实等）不属于动态加载;</li>
+<li>Android中动态加载的核心思想是动态调用外部的 dex文件，极端的情况下，Android APK自身带有的Dex文件只是一个程序的入口（或者说空壳），所有的功能都通过从服务器下载最新的Dex文件完成;</li>
+</ol>
+<h1 id="Android动态加载的类型"><a href="#Android动态加载的类型" class="headerlink" title="Android动态加载的类型"></a>Android动态加载的类型</h1><p>Android项目中，动态加载技术按照加载的可执行文件的不同大致可以分为两种：</p>
+<ul>
+<li>动态加载so库:<br>动态加载so库应该就是Android最早期的动态加载了，不过so库不仅可以存放在APK文件内部，还可以存放在外部存储。</li>
+<li>动态加载dex/jar/apk文件（基于ClassLoader）。</li>
+</ul>
+<h1 id="动态加载-so库"><a href="#动态加载-so库" class="headerlink" title="动态加载 so库"></a>动态加载 so库</h1><p>Android中NDK中其实就使用了动态加载，动态加载.so库并通过JNI调用其封装好的方法。</p>
+<p>.so是由C/C++编译而成，运行在Native层，效率会比执行在虚拟机层的Java代码高很多，所以Android中经常通过动态加载.so库来完成一些对性能比较有需求的工作（比如T9搜索、或者Bitmap的解码、图片高斯模糊处理等）。</p>
+<p>一般情况下我们是把so库一并打包在APK内部的，但是so库其实也是可以从外部存储文件加载的。</p>
+<h1 id="动态加载dex-jar-apk文件"><a href="#动态加载dex-jar-apk文件" class="headerlink" title="动态加载dex/jar/apk文件"></a>动态加载dex/jar/apk文件</h1><p>动态加载dex/jar/apk文件其实就是动态加载.class文件，利用了Java允许运行时加载类的特性。</p>
+<p>在 Android 中，ClassLoader 是一个抽象类，实际开发过程中，我们一般是使用其具体的子类 DexClassLoader、PathClassLoader 这些类加载器来加载类的，它们的不同之处是：</p>
+<ul>
+<li>DexClassLoader 可以加载 jar/apk/dex，可以从 SD 卡中加载未安装的 apk；</li>
+<li>PathClassLoader 只能加载系统中已经安装过的 apk；</li>
+</ul>
+<p>PathClassLoader也有一个成员pathList，它从本质来说是一个List，运行时会从其间的每一个dex路径中查找需要加载的类。Google官方推出的MultiDex库就是用以上原理实现的。</p>
+<p>所以我们可以使用DexClassLoader来在运行时加载一些外部的类，这个类可以从网络上下载，这样就实现了动态加载。</p>
+<p>但是有Android与Java不同，有两个重要的问题需要解决。</p>
+<ul>
+<li>Android 中许多组件类（如 Activity、Service 等）是需要在 Manifest 文件里面注册后才能工作的（系统会检查该组件有没有注册），所以即使动态加载了一个新的组件类进来，没有注册的话还是无法工作；</li>
+<li>Res 资源是 Android 开发中经常用到的，而 Android 是把这些资源用对应的 R.id 注册好，运行时通过这些 ID 从 Resource 实例中获取对应的资源。如果是运行时动态加载进来的新类，那类里面用到 R.id 的地方将会抛出找不到资源或者用错资源的异常，因为新类的资源 ID 根本和现有的 Resource 实例中保存的资源 ID 对不上；</li>
+</ul>
+<h1 id="代理Activity-常规"><a href="#代理Activity-常规" class="headerlink" title="代理Activity(常规)"></a>代理Activity(常规)</h1><p>主项目APK注册一个代理Activity（命名为ProxyActivity），ProxyActivity是一个普通的Activity，但只是一个空壳，自身并没有什么业务逻辑。</p>
+<p>每次打开插件APK里的某一个Activity的时候，都是在主项目里使用标准的方式启动ProxyActivity，再在ProxyActivity的生命周期里同步调用插件中的Activity实例的生命周期方法，从而执行插件APK的业务逻辑。</p>
+<p>这样就解决了没法在Manifest中注册的问题，那么如何在插件Activity中使用Res资源？</p>
+<p>我们可以采用了反射的方法调用AssetManager的“addAssetPath”方法，这样插件Activity就可以调用主项目中的Res资源，同时插件APK中的资源创建了新的Resources实例，插件Activity可以使用，对主项目又是隐藏的。</p>
+<p>代理Activity模式的限制：</p>
+<ul>
+<li>需要在Manifest注册的功能都无法在插件实现，比如应用权限、LaunchMode、静态广播等；</li>
+<li>宿主一个代理用的Activity难以满足插件一些特殊的Activity的需求，插件Activity的开发受限于代理Activity；</li>
+<li>宿主项目和插件项目的开发都要接入共同的框架，大多时候，插件需要依附宿主才能运行，无法独立运行；</li>
+</ul>
+<p>实例框架：<a href="https://github.com/singwhatiwanna/dynamic-load-apk" target="_blank" rel="external">Apk动态加载框架</a></p>
+<h1 id="动态创建Activity模式-非常规"><a href="#动态创建Activity模式-非常规" class="headerlink" title="动态创建Activity模式(非常规)"></a>动态创建Activity模式(非常规)</h1><p>动态创建Activity模式的核心是“运行时字节码操作”，现在宿主注册一个不存在的Activity，启动插件的某个Activity时都把想要启动的Activity替换成前面注册的Activity，从而使后者能正常启动。</p>
+<ul>
+<li>使用dexmaker动态创建一个类。</li>
+<li>修改需要启动的目标Activity。</li>
+</ul>
+<p>开源项目：<a href="https://github.com/houkx/android-pluginmgr/" target="_blank" rel="external">android-pluginmgr</a></p>
+<p>参考资料<br><a href="http://tech.meituan.com/mt-android-auto-split-dex.html" target="_blank" rel="external">美团Android DEX自动拆包及动态加载简介</a><br><a href="http://mp.weixin.qq.com/s?__biz=MzAwMTcwNTE0NA==&amp;mid=400217391&amp;idx=1&amp;sn=86181541ce0164156dfab135ed99bb5c&amp;scene=0&amp;key=b410d3164f5f798e61a5d4afb759fa38371c8b119384c6163a30c28163b4d4d5f59399f2400800ec842f1d0e0ffb84af&amp;ascene=0&amp;uin=MjExMjQ&amp;pass_ticket=Nt5Jaa28jjFxcQO9o%20vQiXX%200iXG5DlZlHNW97Fk1Ew=" target="_blank" rel="external">携程Android App插件化和动态加载实践</a><br><a href="https://segmentfault.com/a/1190000004062866" target="_blank" rel="external">Android动态加载技术 简单易懂的介绍方式</a><br><a href="https://segmentfault.com/a/1190000004062972" target="_blank" rel="external">Android动态加载进阶 代理Activity模式</a><br><a href="https://segmentfault.com/a/1190000004077469" target="_blank" rel="external">ndroid动态加载黑科技 动态创建Activity模式</a></p>
+
+  </div>
+  <footer class="article-footer">
+    
+
+    
+
+  </footer>
+</article>
+
+
+  <link rel="stylesheet" href="http://static.duoshuo.com/styles/embed.default.css?349d9313.css">
+  <!-- 多说评论框 start -->
+  <div class="ds-thread" data-thread-key="2016/08/21/Android笔记-插件化/" data-title="Android笔记-插件化" data-url="/2016/08/21/Android笔记-插件化/"></div>
+  <!-- 多说评论框 end -->
+  <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+  <script type="text/javascript">
+    var duoshuoQuery = {
+      short_name: "SION"
+    };
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';
+      ds.async = true;
+      ds.src = (document.location.protocol == 'https:'
+        ? 'https:'
+        : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+  <!-- 多说公共JS代码 end -->
+
+
+
+
+
+
+          <div class="main-footer">
+  
+    © 2016 Be Level5 Coder - Powered by <a href="http://hexo.io" target="_blank">Hexo</a> - Theme <a href="https://github.com/denjones/hexo-theme-chan" target="_blank">Chan</a>
+  
+</div>
+
+      
+        </div>
+      
+    </div>
+  </div>
+  <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="/PhotoSwipe/photoswipe.css">
+  <link rel="stylesheet" href="/PhotoSwipe/default-skin/default-skin.css">
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+             It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+      <!-- Container that holds slides.
+                PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                Don't modify these 3 pswp__item elements, data is added later on. -->
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+
+      <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+      <div class="pswp__ui pswp__ui--hidden">
+
+        <div class="pswp__top-bar">
+
+          <!--  Controls are self-explanatory. Order can be changed. -->
+
+          <div class="pswp__counter"></div>
+
+          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+          <button class="pswp__button pswp__button--share" title="Share"></button>
+
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+          <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+          <!-- element will get class pswp__preloader--active when preloader is running -->
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div>
+
+        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/PhotoSwipe/photoswipe.js"></script>
+  <script src="/PhotoSwipe/photoswipe-ui-default.js"></script>
+
+
+<script src="/perfect-scrollbar/js/min/perfect-scrollbar.min.js"></script>
+<script src="/scripts/main.js"></script>
+
+</body>
+</html>
