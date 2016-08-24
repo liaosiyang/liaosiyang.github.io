@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-08-22T04:28:19.017Z</updated>
+  <updated>2016-08-24T04:45:21.347Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,65 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Android笔记-ReactNative</title>
+    <link href="http://yoursite.com/2016/08/24/Android%E7%AC%94%E8%AE%B0-ReactNative/"/>
+    <id>http://yoursite.com/2016/08/24/Android笔记-ReactNative/</id>
+    <published>2016-08-24T03:19:23.000Z</published>
+    <updated>2016-08-24T04:45:21.347Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://ob5qdb9lc.bkt.clouddn.com/20130116223426_xjsvs.jpeg" alt="Image"></p>
+<a id="more"></a>
+<p>React Native 是最近非常火的一个话题,它可以使用前端的开发来开发移动端，但并不是像以前在实习公司所做的仅仅用一个WebView嵌套一样。它实际上也是一种Hybrid App开发方式，兼有Web App跨平台和Native App高性能的优势，并且是由牛逼的FacebooK公司开源的神器。</p>
+<p>作为一名移动开发人员，我也对这项技术非常感兴趣，谁让现在搞Android的竞争太激烈，技术更新也快，说不定哪天就被淘汰了。所以还是早做准备，扩充自己的技能栈。</p>
+<p>话虽这么说，但React Native毕竟是一种全新的开发方式，想要掌握没那么容易，需要很多前端开发的知识。2016年余下的时间就投入给React Native吧，毕竟对于前端开发我可是很有兴趣的。</p>
+<h1 id="React-Native"><a href="#React-Native" class="headerlink" title="React Native"></a>React Native</h1><p>React Native 使你能够基于 JavaScript 和 React 在原生平台上构建应用，提倡的是 “learn once, write anywhere”，复用代码，提高开发效率。</p>
+<p>在移动端开发是，我们经常是根据服务端传来的JSON文件来传递信息，更新视图。JSON只能传递配置信息，无法表达逻辑。从本质上讲，这是因为 JSON 毕竟只是纯文本，它缺乏像编程语言那样的运行能力。</p>
+<p>而 React 在前端取得突破性成功以后，JavaScript 布道者们开始试图一统三端。他们利用了移动平台能够运行 JavaScript 代码的能力，并且发挥了 JavaScript 不仅仅可以传递配置信息，还可以表达逻辑信息的优点。</p>
+<p>于是乎：一个基于 JavaScript，具备动态配置能力，面向前端开发者的移动端开发框架，React Native，诞生了！</p>
+<p>React Native 希望前端开发者学习完 React 后，能够用同样的语法、工具等，分别开发安卓和 iOS 平台的应用并且不用一行原生代码。如果用一个词概括 React Native，那就是：Native 版本的 React。</p>
+<p>React 将应用分为一个个动态可复用的组件 —— View的渲染（JSX）、数据如何绑定到显示、状态的变更（State）、属性（Props）都包含在组件内部。</p>
+<p>React Native 正像它的名字，将 React 带到了原生世界，和 H5 不同的是，我们不再使用 CSS 和 HTML，而只有 js 为伴。</p>
+<p>与 WebView 不同，React Native 运行的界面，最终会被解释映射为原生的 View，可以直接使用布局边界或者 Hierarchy Viewer 看出层级（js 文件会打包为一个bundle，位于assets下面，RN引擎会加载并进行解释映射）。</p>
+<h1 id="ReactNative的优势"><a href="#ReactNative的优势" class="headerlink" title="ReactNative的优势"></a>ReactNative的优势</h1><ul>
+<li>Web的开发方式远比IOS和Android更加方便和高效，Web上层出不穷的各种库和框架也远比Android和IOS的各种库和框架方便许多。</li>
+<li>JavaScript语言真的要一统天下了，GitHub上使用最多的语言也是Js，Node.js正在各大公司大放光彩，前端开发规模越来越大，ES6 ES7为Js带来各种新的便捷的语法特性。(Java是最好的语言，JavaScript很像Java,排第二不过分)</li>
+<li>动态UI，这一点RN有着和Web差不多的表现但是胜在性能。使用RN这种技术，由于Js天然动态性，我们可以随时下发数据和代码，随时定制我们的UI。</li>
+<li>热更新，HotFix，原生的各种热更实现起来都太复杂，有的甚至需要重启app才生效。但是使用Js语言就不一样了，动态语言的一大好处就是可以随时执行，随时替换，使用RN之后，就可以做到随时运行更新我们的Js代码，实现起来会比原生的方案简单很多。</li>
+<li>跨平台的开发，有了VirtualDom的概念之后，其实你一套代码做的UI，是可以被适配到多个平台的，目前已经有iOS，Android，Canvas，Mac，PC。</li>
+</ul>
+<h1 id="ReactNative技术栈和学习资料"><a href="#ReactNative技术栈和学习资料" class="headerlink" title="ReactNative技术栈和学习资料"></a>ReactNative技术栈和学习资料</h1><p>一个很帅的兄弟总结的：</p>
+<ul>
+<li>immutable.js</li>
+<li>react</li>
+<li>redux</li>
+<li>react-redux</li>
+<li>redux-thunk</li>
+<li>redux-logger</li>
+<li>redux-mock-store</li>
+<li>react-native-router-flux</li>
+<li>react-native-simple-store</li>
+<li>regenerator</li>
+<li>undefined</li>
+<li>jest</li>
+</ul>
+<p><a href="https://github.com/reactnativecn/react-native-guide#react-native" target="_blank" rel="external">React-Native学习指南</a></p>
+<p>8小时内拼工作，8小时外拼成长，干巴爹！<br>参考资料：<br><a href="http://blog.zhaiyifan.cn/2016/08/04/android-new-project-from-0-p10/" target="_blank" rel="external">从零开始的Android新项目10 - React Native &amp; Redux</a><br><a href="http://mp.weixin.qq.com/s?__biz=MzA4OTc4MTM0OA==&amp;mid=2650358053&amp;idx=1&amp;sn=42c1f3691b848f571583937db1bcec1b#rd" target="_blank" rel="external">React Native 从入门到源码分析-了解RN百态</a><br><a href="https://zhuanlan.zhihu.com/p/20549882?refer=program-life" target="_blank" rel="external">谈谈我对ReactNative的看法</a><br><a href="http://dev.qq.com/topic/577e16a7640ad7b4682c64a7" target="_blank" rel="external">React Native 项目实战总结</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://ob5qdb9lc.bkt.clouddn.com/20130116223426_xjsvs.jpeg&quot; alt=&quot;Image&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Android笔记" scheme="http://yoursite.com/categories/Android%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+    
+  </entry>
   
   <entry>
     <title>Android笔记-热补丁</title>
@@ -1640,82 +1699,6 @@
     
     
       <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>操作系统笔记-Linux的IPC，内存管理</title>
-    <link href="http://yoursite.com/2016/08/08/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%AC%94%E8%AE%B0-Linux%E7%9A%84IPC%EF%BC%8C%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/"/>
-    <id>http://yoursite.com/2016/08/08/操作系统笔记-Linux的IPC，内存管理/</id>
-    <published>2016-08-08T12:24:14.000Z</published>
-    <updated>2016-08-08T13:26:03.749Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://ob5qdb9lc.bkt.clouddn.com/7.jpg" alt="Image"></p>
-<a id="more"></a>
-<h1 id="linux的IPC"><a href="#linux的IPC" class="headerlink" title="linux的IPC"></a>linux的IPC</h1><h3 id="管道（Pipe）及有名管道（Named-Pipe）"><a href="#管道（Pipe）及有名管道（Named-Pipe）" class="headerlink" title="管道（Pipe）及有名管道（Named Pipe）"></a>管道（Pipe）及有名管道（Named Pipe）</h3><p>管道可用于具有亲缘关系进程间的通信，有名管道克服了管道没有名字的限制，因此，除具有管道所具有的功能外，它还允许无亲缘关系进程间的通信；</p>
-<h3 id="信号量（Signal）"><a href="#信号量（Signal）" class="headerlink" title="信号量（Signal）"></a>信号量（Signal）</h3><p>信号是比较复杂的通信方式，用于通知接受进程有某种事件发生，除了用于进程间通信外，进程还可以发送信号给进程本身；linux除了支持Unix早期信号语义函数sigal外，还支持语义符合Posix.1标准的信号函数sigaction（实际上，该函数是基于BSD的，BSD为了实现可靠信号机制，又能够统一对外接口，用sigaction函数重新实现了signal函数）；</p>
-<h3 id="报文（Message）队列（消息队列）"><a href="#报文（Message）队列（消息队列）" class="headerlink" title="报文（Message）队列（消息队列）"></a>报文（Message）队列（消息队列）</h3><p>消息队列是消息的链接表，包括Posix消息队列system V消息队列。有足够权限的进程可以向队列中添加消息，被赋予读权限的进程则可以读走队列中的消息。消息队列克服了信号承载信息量少，管道只能承载无格式字节流以及缓冲区大小受限等缺点。</p>
-<h3 id="共享内存"><a href="#共享内存" class="headerlink" title="共享内存"></a>共享内存</h3><p>使得多个进程可以访问同一块内存空间，是最快的可用IPC形式。是针对其他通信机制运行效率较低而设计的。往往与其它通信机制，如信号量结合使用，来达到进程间的同步及互斥。</p>
-<h3 id="信号量（semaphore）"><a href="#信号量（semaphore）" class="headerlink" title="信号量（semaphore）"></a>信号量（semaphore）</h3><p>主要作为进程间以及同一进程不同线程之间的同步手段。</p>
-<h3 id="套接口（Socket）"><a href="#套接口（Socket）" class="headerlink" title="套接口（Socket）"></a>套接口（Socket）</h3><p>更为一般的进程间通信机制，可用于不同机器之间的进程间通信。起初是由Unix系统的BSD分支开发出来的，但现在一般可以移植到其它类Unix系统上：Linux和System V的变种都支持套接字。</p>
-<h1 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h1><h3 id="进程的简单介绍"><a href="#进程的简单介绍" class="headerlink" title="进程的简单介绍"></a>进程的简单介绍</h3><p>进程是占有资源的最小单位，这个资源当然包括内存。在现代操作系统中，每个进程所能访问的内存是互相独立的（一些交换区除外）。而进程中的线程所以共享进程所分配的内存空间。<br>在操作系统的角度来看，进程=程序+数据+PCB(进程控制块)。</p>
-<h3 id="没有内存抽象"><a href="#没有内存抽象" class="headerlink" title="没有内存抽象"></a>没有内存抽象</h3><p>在早些的操作系统中，并没有引入内存抽象的概念。程序直接访问和操作的都是物理内存。比如当执行如下指令时<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mov reg1,<span class="number">1000</span></div></pre></td></tr></table></figure><br>这条指令会毫无想象力的将物理地址1000中的内容赋值给寄存器。不难想象，这种内存操作方式使得操作系统中存在多进程变得完全不可能，比如MS-DOS，你必须执行完一条指令后才能接着执行下一条。如果是多进程的话，由于直接操作物理内存地址，当一个进程给内存地址1000赋值后，另一个进程也同样给内存地址赋值，那么第二个进程对内存的赋值会覆盖第一个进程所赋的值，这回造成两条进程同时崩溃。</p>
-<h3 id="内存抽象"><a href="#内存抽象" class="headerlink" title="内存抽象"></a>内存抽象</h3><p>为了解决直接操作内存带来的各种问题，引入的地址空间(Address Space),这允许每个进程拥有自己的地址。这还需要硬件上存在两个寄存器，基址寄存器(base register)和界址寄存器(limit register),第一个寄存器保存进程的开始地址，第二个寄存器保存上界，防止内存溢出。在内存抽象的情况下，当执行<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mov reg1,<span class="number">20</span></div></pre></td></tr></table></figure><br>这时，实际操作的物理地址并不是20，而是根据基址和偏移量算出实际的物理地址进程操作，此时操作的实际地址可能是:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mov reg1,<span class="number">16245</span></div></pre></td></tr></table></figure><br>在这种情况下，任何操作虚拟地址的操作都会被转换为操作物理地址。而每一个进程所拥有的内存地址是完全不同的，因此也使得多进程成为可能。<br>但此时还有一个问题，通常来说，内存大小不可能容纳下所有并发执行的进程。因此，交换(Swapping)技术应运而生。交换的基本思想是，将闲置的进程交换出内存，暂存在硬盘中，待执行时再交换回内存。</p>
-<h3 id="进程内存是动态变化的"><a href="#进程内存是动态变化的" class="headerlink" title="进程内存是动态变化的"></a>进程内存是动态变化的</h3><p>实际情况下，进程往往会动态增长，因此创建进程时分配的内存就是个问题了，如果分配多了，会产生内部碎片，浪费了内存，而分配少了会造成内存溢出。一个解决方法是在进程创建的时候，比进程实际需要的多分配一点内存空间用于进程的增长。一种是直接多分配一点内存空间用于进程在内存中的增长，另一种是将增长区分为数据段和栈（用于存放返回地址和局部变量）。</p>
-<h3 id="空间不足的解决方案"><a href="#空间不足的解决方案" class="headerlink" title="空间不足的解决方案"></a>空间不足的解决方案</h3><p>当预留的空间不够满足增长时，操作系统首先会看相邻的内存是否空闲，如果空闲则自动分配，如果不空闲，就将整个进程移到足够容纳增长的空间内存中，如果不存在这样的内存空间，则会将闲置的进程置换出去。</p>
-<h3 id="内存的管理策略"><a href="#内存的管理策略" class="headerlink" title="内存的管理策略"></a>内存的管理策略</h3><p>当允许进程动态增长时，操作系统必须对内存进行更有效的管理，操作系统使用如下两种方法之一来得知内存的使用情况，分别为1)位图(bitmap) 2)链表<br>使用位图，将内存划为多个大小相等的块，比如一个32K的内存1K一块可以划为32块，则需要32位（4字节）来表示其使用情况，使用位图将已经使用的块标为1，位使用的标为0.而使用链表，则将内存按使用或未使用分为多个段进行链接</p>
-<p>使用位图表示内存简单明了，但一个问题是当分配内存时必须在内存中搜索大量的连续0的空间，这是十分消耗资源的操作。相比之下，使用链表进行此操作将会更胜一筹。还有一些操作系统会使用双向链表，因为当进程销毁时，邻接的往往是空内存或是另外的进程。使用双向链表使得链表之间的融合变得更加容易。<br>还有，当利用链表管理内存的情况下，创建进程时分配什么样的空闲空间也是个问题。通常情况下有如下几种算法来对进程创建时的空间进行分配。</p>
-<ul>
-<li>临近适应算法(Next fit)—从当前位置开始，搜索第一个能满足进程要求的内存空间</li>
-<li>最佳适应算法(Best fit)—搜索整个链表，找到能满足进程要求最小内存的内存空间</li>
-<li>最大适应算法(Wrost fit)—找到当前内存中最大的空闲空间</li>
-<li>首次适应算法(First fit) —从链表的第一个开始，找到第一个能满足进程要求的内存空间</li>
-</ul>
-<h3 id="虚拟内存-Virtual-Memory"><a href="#虚拟内存-Virtual-Memory" class="headerlink" title="虚拟内存(Virtual Memory)"></a>虚拟内存(Virtual Memory)</h3><p>虚拟内存是现代操作系统普遍使用的一种技术。前面所讲的抽象满足了多进程的要求，但很多情况下，现有内存无法满足仅仅一个大进程的内存要求(比如很多游戏，都是10G+的级别)。在早期的操作系统曾使用覆盖(overlays)来解决这个问题，将一个程序分为多个块，基本思想是先将块0加入内存，块0执行完后，将块1加入内存。依次往复，这个解决方案最大的问题是需要程序员去程序进行分块，这是一个费时费力让人痛苦不堪的过程。后来这个解决方案的修正版就是虚拟内存。</p>
-<p>虚拟内存的基本思想是，每个进程有用独立的逻辑地址空间，内存被分为大小相等的多个块,称为页(Page).每个页都是一段连续的地址。对于进程来看,逻辑上貌似有很多内存空间，其中一部分对应物理内存上的一块(称为页框，通常页和页框大小相等)，还有一些没加载在内存中的对应在硬盘上。</p>
-<h3 id="进程内存空间"><a href="#进程内存空间" class="headerlink" title="进程内存空间"></a>进程内存空间</h3><p>Linux采用虚拟内存管理技术，每个进程都有各自独立的进程地址空间(即4G的线性虚拟空间)，无法直接访问物理内存。这样起到保护操作系统，并且让用户程序可使用比实际物理内存更大的地址空间。</p>
-<ul>
-<li>4G进程地址空间被划分两部分，内核空间和用户空间。用户空间从0到3G，内核空间从3G到4G；</li>
-<li>用户进程通常情况只能访问用户空间的虚拟地址，不能访问内核空间虚拟地址。只有用户进程进行系统调用(代表用户进程在内核态执行)等情况可访问到内核空间；</li>
-<li>用户空间对应进程，所以当进程切换，用户空间也会跟着变化；</li>
-<li>内核空间是由内核负责映射，不会跟着进程变化；内核空间地址有自己对应的页表，用户进程各自有不同进程页表。</li>
-</ul>
-<h3 id="Windows内存管理"><a href="#Windows内存管理" class="headerlink" title="Windows内存管理"></a>Windows内存管理</h3><p>Windows 内存管理方式主要分为：页式管理，段式管理，段页式管理。</p>
-<ul>
-<li>页式管理的优点是没有外碎片，每个内碎片不超过页的大小。缺点是,程序全部装入内存，要求有相应的硬件支持。</li>
-<li>段式管理优点是可以分别编写和编译，可以针对不同类型的段采用不同的保护，可以按段为单位来进行共享，包括通过动态链接进行代码共享。缺点是会产生碎片。</li>
-<li>段页式管理是段式管理与页式管理方案结合而成的所以具有他们两者的优点。但反过来说，由于管理软件的增加，复杂性和开销也就随之增加了。</li>
-</ul>
-<p>分页存储管理基本思想：</p>
-<ul>
-<li>用户程序的地址空间被划分成若干固定大小的区域，称为“页”，相应地，内存空间分成若干个物理块，页和块的大小相等。可将用户程序的任一页放在内存的任一块中，实现了离散分配。</li>
-</ul>
-<p>分段存储管理基本思想：</p>
-<ul>
-<li>将用户程序地址空间分成若干个大小不等的段，每段可以定义一组相对完整的逻辑信息。存储分配时，以段为单位，段与段在内存中可以不相邻接，也实现了离散分配。</li>
-</ul>
-<p>段页式存储管理基本思想：</p>
-<ul>
-<li>分页系统能有效地提高内存的利用率，而分段系统能反映程序的逻辑结构，便于段的共享与保护，将分页与分段两种存储方式结合起来，就形成了段页式存储管理方式。</li>
-<li>在段页式存储管理系统中，作业的地址空间首先被分成若干个逻辑分段，每段都有自己的段号，然后再将每段分成若干个大小相等的页。对于主存空间也分成大小相等的页，主存的分配以页为单位。</li>
-<li>段页式系统中，作业的地址结构包含三部分的内容：段号 页号 页内位移量</li>
-<li>程序员按照分段系统的地址结构将地址分为段号与段内位移量，地址变换机构将段内位移量分解为页号和页内位移量。</li>
-<li>为实现段页式存储管理，系统应为每个进程设置一个段表，包括每段的段号，该段的页表始址和页表长度。每个段有自己的页表，记录段中的每一页的页号和存放在主存中的物理块号。</li>
-</ul>
-<hr>
-<h3 id="参考资料："><a href="#参考资料：" class="headerlink" title="参考资料："></a>参考资料：</h3><p><a href="http://blog.jobbole.com/95499/?hmsr=toutiao.io&amp;utm_medium=toutiao.io&amp;utm_source=toutiao.io" target="_blank" rel="external">浅谈操作系统对内存的管理</a><br><a href="http://gityuan.com/2015/10/30/kernel-memory/" target="_blank" rel="external">Linux内存管理</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://ob5qdb9lc.bkt.clouddn.com/7.jpg&quot; alt=&quot;Image&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="操作系统笔记" scheme="http://yoursite.com/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="操作系统" scheme="http://yoursite.com/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
