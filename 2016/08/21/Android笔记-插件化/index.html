@@ -17,7 +17,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/08/21/Android笔记-插件化/index.html">
 <meta property="og:site_name" content="Be Level5 Coder">
 <meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/21a4462309f790520566e8c50af3d7ca7acbd5d4.jpg">
-<meta property="og:updated_time" content="2016-08-21T04:32:15.562Z">
+<meta property="og:updated_time" content="2016-08-26T03:50:05.639Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android笔记-插件化">
 <meta name="twitter:image" content="http://ob5qdb9lc.bkt.clouddn.com/21a4462309f790520566e8c50af3d7ca7acbd5d4.jpg">
@@ -87,7 +87,7 @@
             
               <li class="tag-list-container">
                 <a href="javascript:;">标签</a>
-                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">19</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Other/">Other</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP-IP/">TCP/IP</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a><span class="tag-list-count">1</span></li></ul>
+                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-MVP/">Android MVP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android内存泄漏/">Android内存泄漏</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android开发框架/">Android开发框架</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android插件化/">Android插件化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android热补丁/">Android热补丁</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android系统/">Android系统</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android进程保活/">Android进程保活</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JVM/">JVM</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Other/">Other</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP-IP/">TCP/IP</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a><span class="tag-list-count">1</span></li></ul>
               </li>
             
           
@@ -161,7 +161,7 @@
 
     
 	<span class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android插件化/">Android插件化</a></li></ul>
 	</span>
 
 
@@ -186,7 +186,7 @@
 <li>通过反射进行安装；</li>
 </ul>
 <p>这三步其实都比较耗时，容易造成主线程的ANR。</p>
-<p><a href="http://v.youku.com/v_show/id_XNTMzMjYzMzM2.html?firsttime=3112&amp;spm=0.0.uerCenter.5-2_5_5-2_5_DL_DD_A.y0ifrV&amp;from=y1.9-3.1" target="_blank" rel="external">阿里技术沙龙第十六期《android插件化及动态部署——ATLAS》</a>里面说道一个App可能开发过程中，可能会有多个团队要求往这个App中加入新的业务，这样之前的协作模式难以为继，需要新的开发模式和技术解决需求问题。</p>
+<p><a href="http://v.youku.com/v_show/id_XNTMzMjYzMzM2.html?firsttime=3112&amp;spm=0.0.uerCenter.5-2_5_5-2_5_DL_DD_A.y0ifrV&amp;from=y1.9-3.1" target="_blank" rel="external">《阿里技术沙龙第十六期《android插件化及动态部署——ATLAS》</a>里面说道一个App可能开发过程中，可能会有多个团队要求往这个App中加入新的业务，这样之前的协作模式难以为继，需要新的开发模式和技术解决需求问题。</p>
 <p>前端可以实现在线更新持续发布，而源生的Native架构的Android需要用户重新下载安装包安装更新，插件化动态加载方案就是提供了如同前端一样的热部署能力。把业务拆分出来，组成外部的dex包。不同的团队专注于自己的业务，当需要更新时，不用下载更新整个App，而仅仅是下载对应的dex。</p>
 <h1 id="动态加载"><a href="#动态加载" class="headerlink" title="动态加载"></a>动态加载</h1><p>真正的动态加载应该是：</p>
 <ol>
@@ -210,7 +210,7 @@
 <li>PathClassLoader 只能加载系统中已经安装过的 apk；</li>
 </ul>
 <p>PathClassLoader也有一个成员pathList，它从本质来说是一个List，运行时会从其间的每一个dex路径中查找需要加载的类。Google官方推出的MultiDex库就是用以上原理实现的。</p>
-<p>所以我们可以使用DexClassLoader来在运行时加载一些外部的类，这个类可以从网络上下载，这样就实现了动态加载。</p>
+<p>我们可以使用DexClassLoader来在运行时加载一些外部的类，这个类可以从网络上下载，这样就实现了动态加载。</p>
 <p>但是有Android与Java不同，有两个重要的问题需要解决。</p>
 <ul>
 <li>Android 中许多组件类（如 Activity、Service 等）是需要在 Manifest 文件里面注册后才能工作的（系统会检查该组件有没有注册），所以即使动态加载了一个新的组件类进来，没有注册的话还是无法工作；</li>
@@ -227,13 +227,16 @@
 <li>宿主项目和插件项目的开发都要接入共同的框架，大多时候，插件需要依附宿主才能运行，无法独立运行；</li>
 </ul>
 <p>实例框架：<a href="https://github.com/singwhatiwanna/dynamic-load-apk" target="_blank" rel="external">Apk动态加载框架</a></p>
-<h1 id="动态创建Activity模式-非常规"><a href="#动态创建Activity模式-非常规" class="headerlink" title="动态创建Activity模式(非常规)"></a>动态创建Activity模式(非常规)</h1><p>动态创建Activity模式的核心是“运行时字节码操作”，现在宿主注册一个不存在的Activity，启动插件的某个Activity时都把想要启动的Activity替换成前面注册的Activity，从而使后者能正常启动。</p>
+<h1 id="动态创建Activity模式-非常规"><a href="#动态创建Activity模式-非常规" class="headerlink" title="动态创建Activity模式(非常规)"></a>动态创建Activity模式(非常规)</h1><p>动态创建Activity模式的核心是“运行时字节码操作”，先在宿主注册一个不存在的Activity，启动插件的某个Activity时都把想要启动的Activity替换成前面注册的Activity，从而使后者能正常启动。</p>
 <ul>
 <li>使用dexmaker动态创建一个类。</li>
 <li>修改需要启动的目标Activity。</li>
 </ul>
 <p>开源项目：<a href="https://github.com/houkx/android-pluginmgr/" target="_blank" rel="external">android-pluginmgr</a></p>
-<p>参考资料<br><a href="http://tech.meituan.com/mt-android-auto-split-dex.html" target="_blank" rel="external">美团Android DEX自动拆包及动态加载简介</a><br><a href="http://mp.weixin.qq.com/s?__biz=MzAwMTcwNTE0NA==&amp;mid=400217391&amp;idx=1&amp;sn=86181541ce0164156dfab135ed99bb5c&amp;scene=0&amp;key=b410d3164f5f798e61a5d4afb759fa38371c8b119384c6163a30c28163b4d4d5f59399f2400800ec842f1d0e0ffb84af&amp;ascene=0&amp;uin=MjExMjQ&amp;pass_ticket=Nt5Jaa28jjFxcQO9o%20vQiXX%200iXG5DlZlHNW97Fk1Ew=" target="_blank" rel="external">携程Android App插件化和动态加载实践</a><br><a href="https://segmentfault.com/a/1190000004062866" target="_blank" rel="external">Android动态加载技术 简单易懂的介绍方式</a><br><a href="https://segmentfault.com/a/1190000004062972" target="_blank" rel="external">Android动态加载进阶 代理Activity模式</a><br><a href="https://segmentfault.com/a/1190000004077469" target="_blank" rel="external">ndroid动态加载黑科技 动态创建Activity模式</a></p>
+<h1 id="代理模式与动态创建模式的区别"><a href="#代理模式与动态创建模式的区别" class="headerlink" title="代理模式与动态创建模式的区别"></a>代理模式与动态创建模式的区别</h1><p>简单地说，最大的不同是代理模式使用了一个代理的Activity，而动态创建Activity模式使用了一个通用的Activity。</p>
+<p>代理模式中，使用一个代理Activity去完成本应该由插件Activity完成的工作，这个代理Activity是一个标准的Android Activity组件，具有生命周期和上下文环境（ContextWrapper和ContextCompl），但是它自身只是一个空壳，并没有承担什么业务逻辑；而插件Activity其实只是一个普通的Java对象，它没有上下文环境，但是却能正常执行业务逻辑的代码。代理Activity和不同的插件Activity配合起来，就能完成不同的业务逻辑了。</p>
+<p>动态创建Activity模式，被动态创建出来的Activity类是有在主项目里面注册的，它是一个标准的Activity，它有自己的Context和生命周期，不需要代理的Activity。</p>
+<p>参考资料<br><a href="http://tech.meituan.com/mt-android-auto-split-dex.html" target="_blank" rel="external">美团Android DEX自动拆包及动态加载简介</a><br><a href="http://mp.weixin.qq.com/s?__biz=MzAwMTcwNTE0NA==&amp;mid=400217391&amp;idx=1&amp;sn=86181541ce0164156dfab135ed99bb5c&amp;scene=0&amp;key=b410d3164f5f798e61a5d4afb759fa38371c8b119384c6163a30c28163b4d4d5f59399f2400800ec842f1d0e0ffb84af&amp;ascene=0&amp;uin=MjExMjQ&amp;pass_ticket=Nt5Jaa28jjFxcQO9o%20vQiXX%200iXG5DlZlHNW97Fk1Ew=" target="_blank" rel="external">携程Android App插件化和动态加载实践</a><br><a href="https://segmentfault.com/a/1190000004062866" target="_blank" rel="external">Android动态加载技术 简单易懂的介绍方式</a><br><a href="https://segmentfault.com/a/1190000004062972" target="_blank" rel="external">Android动态加载进阶 代理Activity模式</a><br><a href="https://segmentfault.com/a/1190000004077469" target="_blank" rel="external">Android动态加载黑科技 动态创建Activity模式</a></p>
 
   </div>
   <footer class="article-footer">

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-08-24T04:45:21.347Z</updated>
+  <updated>2016-08-26T04:04:06.998Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,17 +20,18 @@
     <link href="http://yoursite.com/2016/08/24/Android%E7%AC%94%E8%AE%B0-ReactNative/"/>
     <id>http://yoursite.com/2016/08/24/Android笔记-ReactNative/</id>
     <published>2016-08-24T03:19:23.000Z</published>
-    <updated>2016-08-24T04:45:21.347Z</updated>
+    <updated>2016-08-26T04:04:06.998Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://ob5qdb9lc.bkt.clouddn.com/20130116223426_xjsvs.jpeg" alt="Image"></p>
 <a id="more"></a>
-<p>React Native 是最近非常火的一个话题,它可以使用前端的开发来开发移动端，但并不是像以前在实习公司所做的仅仅用一个WebView嵌套一样。它实际上也是一种Hybrid App开发方式，兼有Web App跨平台和Native App高性能的优势，并且是由牛逼的FacebooK公司开源的神器。</p>
+<p>React Native 是最近非常火的一个话题,它可以使用前端的开发方式来开发移动端，但并不是像以前在实习公司所做的仅仅用一个WebView嵌套一样。它实际上也是一种Hybrid App开发方式，兼有Web App跨平台和Native App高性能的优势，并且是由牛逼的FacebooK公司开源的神器。</p>
 <p>作为一名移动开发人员，我也对这项技术非常感兴趣，谁让现在搞Android的竞争太激烈，技术更新也快，说不定哪天就被淘汰了。所以还是早做准备，扩充自己的技能栈。</p>
 <p>话虽这么说，但React Native毕竟是一种全新的开发方式，想要掌握没那么容易，需要很多前端开发的知识。2016年余下的时间就投入给React Native吧，毕竟对于前端开发我可是很有兴趣的。</p>
 <h1 id="React-Native"><a href="#React-Native" class="headerlink" title="React Native"></a>React Native</h1><p>React Native 使你能够基于 JavaScript 和 React 在原生平台上构建应用，提倡的是 “learn once, write anywhere”，复用代码，提高开发效率。</p>
-<p>在移动端开发是，我们经常是根据服务端传来的JSON文件来传递信息，更新视图。JSON只能传递配置信息，无法表达逻辑。从本质上讲，这是因为 JSON 毕竟只是纯文本，它缺乏像编程语言那样的运行能力。</p>
-<p>而 React 在前端取得突破性成功以后，JavaScript 布道者们开始试图一统三端。他们利用了移动平台能够运行 JavaScript 代码的能力，并且发挥了 JavaScript 不仅仅可以传递配置信息，还可以表达逻辑信息的优点。</p>
+<p>在移动端开发端，我们经常是根据服务端传来的JSON文件来传递信息，更新视图。JSON只能传递配置信息，无法表达逻辑。从本质上讲，这是因为 JSON 毕竟只是纯文本，它缺乏像编程语言那样的运行能力。</p>
+<p>而 React 在前端取得突破性成功以后，JavaScript 布道者们开始试图一统三端。他们利用了移动平台能够运行 JavaScript 代码的能力，并且发挥了JavaScript 不仅仅可以传递配置信息，还可以表达逻辑信息的优点。</p>
 <p>于是乎：一个基于 JavaScript，具备动态配置能力，面向前端开发者的移动端开发框架，React Native，诞生了！</p>
+<p>React Native的目的是构建真正native的应用。而不是构建在Webview里运行的混合模式的应用，开发完全由JavaScript和React来完成。简单说它的原理就是，开发用JavaScript开发Web的方式进行开发，最终在移动端会使用一个JavascriptCore解释器引擎来解析JS相关文件成相应的原生控件再进行渲染，性能上得到了很大的提升。</p>
 <p>React Native 希望前端开发者学习完 React 后，能够用同样的语法、工具等，分别开发安卓和 iOS 平台的应用并且不用一行原生代码。如果用一个词概括 React Native，那就是：Native 版本的 React。</p>
 <p>React 将应用分为一个个动态可复用的组件 —— View的渲染（JSX）、数据如何绑定到显示、状态的变更（State）、属性（Props）都包含在组件内部。</p>
 <p>React Native 正像它的名字，将 React 带到了原生世界，和 H5 不同的是，我们不再使用 CSS 和 HTML，而只有 js 为伴。</p>
@@ -57,8 +58,9 @@
 <li>undefined</li>
 <li>jest</li>
 </ul>
-<p><a href="https://github.com/reactnativecn/react-native-guide#react-native" target="_blank" rel="external">React-Native学习指南</a></p>
-<p>8小时内拼工作，8小时外拼成长，干巴爹！<br>参考资料：<br><a href="http://blog.zhaiyifan.cn/2016/08/04/android-new-project-from-0-p10/" target="_blank" rel="external">从零开始的Android新项目10 - React Native &amp; Redux</a><br><a href="http://mp.weixin.qq.com/s?__biz=MzA4OTc4MTM0OA==&amp;mid=2650358053&amp;idx=1&amp;sn=42c1f3691b848f571583937db1bcec1b#rd" target="_blank" rel="external">React Native 从入门到源码分析-了解RN百态</a><br><a href="https://zhuanlan.zhihu.com/p/20549882?refer=program-life" target="_blank" rel="external">谈谈我对ReactNative的看法</a><br><a href="http://dev.qq.com/topic/577e16a7640ad7b4682c64a7" target="_blank" rel="external">React Native 项目实战总结</a></p>
+<p><a href="https://github.com/reactnativecn/react-native-guide#react-native" target="_blank" rel="external">React-Native学习指南</a><br><a href="http://gold.xitu.io/tag/React%20Native" target="_blank" rel="external">掘金ReactNative标签</a><br><a href="https://facebook.github.io/react-native/docs/getting-started.html" target="_blank" rel="external">Facebook React Native Docs</a><br><a href="http://redux.js.org/" target="_blank" rel="external">Redux.js</a></p>
+<p>8小时内拼工作，8小时外拼成长，干巴爹！</p>
+<p>参考资料：<br><a href="http://blog.zhaiyifan.cn/2016/08/04/android-new-project-from-0-p10/" target="_blank" rel="external">从零开始的Android新项目10 - React Native &amp; Redux</a><br><a href="http://mp.weixin.qq.com/s?__biz=MzA4OTc4MTM0OA==&amp;mid=2650358053&amp;idx=1&amp;sn=42c1f3691b848f571583937db1bcec1b#rd" target="_blank" rel="external">React Native 从入门到源码分析-了解RN百态</a><br><a href="https://zhuanlan.zhihu.com/p/20549882?refer=program-life" target="_blank" rel="external">谈谈我对ReactNative的看法</a><br><a href="http://dev.qq.com/topic/577e16a7640ad7b4682c64a7" target="_blank" rel="external">React Native 项目实战总结</a></p>
 ]]></content>
     
     <summary type="html">
@@ -70,7 +72,7 @@
       <category term="Android笔记" scheme="http://yoursite.com/categories/Android%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+      <category term="Android开发框架" scheme="http://yoursite.com/tags/Android%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6/"/>
     
   </entry>
   
@@ -79,7 +81,7 @@
     <link href="http://yoursite.com/2016/08/22/Android%E7%AC%94%E8%AE%B0-%E7%83%AD%E8%A1%A5%E4%B8%81/"/>
     <id>http://yoursite.com/2016/08/22/Android笔记-热补丁/</id>
     <published>2016-08-22T01:51:02.000Z</published>
-    <updated>2016-08-22T04:28:19.017Z</updated>
+    <updated>2016-08-26T03:50:11.939Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://ob5qdb9lc.bkt.clouddn.com/1061319.jpg" alt="Image"></p>
 <a id="more"></a>
@@ -92,12 +94,13 @@
 <li>远端调试；</li>
 <li>数据统计。</li>
 </ul>
-<p>最近涌现出来得热补丁方案，主要包括淘宝的Dexposed、支付宝的AndFix、QQ空间的ClassLoader、微信的Tinker、Nuwa五种。</p>
+<p>最近涌现出来得热补丁方案，主要包括淘宝的Dexposed、支付宝的AndFix、QQ空间的ClassLoader、微信的Tinker。</p>
 <h1 id="Dexposed"><a href="#Dexposed" class="headerlink" title="Dexposed"></a>Dexposed</h1><p>DexPosed是强大而无侵入的AOP（面向切面编程）运行Android应用程序开发框架，基于开源的Xposed框架项目的工作（Xposed是修改系统框架服务的框架）。</p>
+<p>AOP : 面向切面编程，通过预编译方式和运行期动态代理实现程序功能的统一维护的一种技术。AOP是OOP的延续，是软件开发中的一个热点，也是Spring框架中的一个重要内容，是函数式编程的一种衍生范型。利用AOP可以对业务逻辑的各个部分进行隔离，从而使得业务逻辑各部分之间的耦合度降低，提高程序的可重用性，同时提高了开发的效率。简单来说，就是插代码（编译期或者运行期）。</p>
 <p>Xposed通过修改Android Dalvik运行时的Zygote进程，并使用Xposed Bridge来hook方法并注入自己的代码，实现非侵入式的runtime修改。</p>
 <p>应用启动的时候，都会fork zygote进程，装载class和invoke各种初始化方法，Xposed就是在这个过程中，替换了app_process，hook了各种入口级方法（比如handleBindApplication、ServerThread、ActivityThread、ApplicationPackageManager的getResourcesForApplication等），加载XposedBridge.jar提供动态hook基础。</p>
-<p>hook技术：如果我们自己创建代理对象，然后把原始对象替换为我们的代理对象，那么就可以在这个代理对象为所欲为了；修改参数，替换返回值，我们称之为Hook。</p>
-<p>Xposed在对java方法进行hook时，先将虚拟机里面这个方法的Method改为nativeMethod(其实就是一个标识字段)，然后将该方法的nativeFunc指向自己实现的一个native方法，这样方法在调用时，就会调用到这个native方法，接管了控制权。</p>
+<p>hook技术 : 如果我们自己创建代理对象，然后把原始对象替换为我们的代理对象，那么就可以在这个代理对象为所欲为了；修改参数，替换返回值，我们称之为Hook。</p>
+<p>Xposed在对java方法进行hook时，先将虚拟机里面这个方法的Method属性改为nativeMethod，然后将该方法的nativeFunc指向自己实现的一个native方法，这样方法在调用时，就会调用到这个native方法，接管了控制权。</p>
 <p>在这个native方法中，xposed直接调用了一个java方法，这个java方法里面对原方法进行了调用，并在调用前后插入了钩子，于是就hook住了这个方法。</p>
 <p>Xposed的粒度是方法级，可以在方法前、方法后插入代码，或者直接替换方法。只能针对java方法做拦截，不支持C的方法。</p>
 <p>注意：android4.4之后的版本都用Art取代了Dalvik,所以要hook Android4.4以后的版本就必须去适配Art虚拟机的机制。目前官方表示，为了适配Art的dexposed_l只是beta版，所以最好不要在正式的线上产品中使用它。</p>
@@ -105,7 +108,7 @@
 <h1 id="AndFix"><a href="#AndFix" class="headerlink" title="AndFix"></a>AndFix</h1><p>同样是方法的hook，AndFix不像Dexposed从Method入手，而是以Field为切入点。</p>
 <p>AndFix的原理就是方法的替换，把有bug的方法替换成补丁文件中的方法。</p>
 <p><img src="http://ob5qdb9lc.bkt.clouddn.com/principle1.jpg" alt="Image"></p>
-<p>在Native层使用指针替换的方式替换bug方法，已达到修复bug的目的。</p>
+<p>在Native层使用指针替换的方式替换bug方法，以达到修复bug的目的。</p>
 <p>方法替换过程：</p>
 <ul>
 <li>加载补丁文件：使用虚拟机的JavaFile加载补丁文件，读取PATCH.MF得到补丁类的名称；</li>
@@ -119,14 +122,16 @@
 <h1 id="ClassLoader"><a href="#ClassLoader" class="headerlink" title="ClassLoader"></a>ClassLoader</h1><p>Multidex方案的实现，其实就是把多个dex放进app的classloader之中，从而使得所有dex的类都能被找到。而实际上findClass的过程中，如果出现了重复的类，是会使用第一个找到的类的。</p>
 <p>一个ClassLoader可以包含多个dex文件，每个dex文件是一个Element，多个dex文件排列成一个有序的数组dexElements，当找类的时候，会按顺序遍历dex文件，然后从当前遍历的dex文件中找类，如果找类则返回，如果找不到从下一个dex文件继续查找。</p>
 <p>理论上，如果在不同的dex中有相同的类存在，那么会优先选择排在前面的dex文件的类。</p>
-<p>该热补丁方案就是从这一点出发，只要把有问题的类修复后，放到一个单独的dex，通过反射插入到dexElements数组的最前面，不就可以让虚拟机加载到打完补丁的class了吗。</p>
+<p>该热补丁方案就是从这一点出发，只要把有问题的类修复后，放到一个单独的dex，通过反射插入到dexElements数组的最前面，就可以让虚拟机加载到打完补丁的class了。</p>
 <p>这种方案有一个问题，当一个类引用另一个类而这两个类不在同一个dex中时就会报错。但是本来拆分dex就是有很多类不在同一个包里，为什么不报错？</p>
 <p>我们知道当一个apk在安装的时候，apk中的classes.dex会被虚拟机(dexopt)优化成odex文件，然后才会拿去执行。 虚拟机在启动的时候，会有许多的启动参数，其中一项就是verify选项，当verify选项被打开的时候，就会执行dvmVerifyClass进行类的校验，如果dvmVerifyClass校验类成功，那么这个类会被打上CLASS_ISPREVERIFIED的标志。</p>
 <p>如果方法中直接引用到的类（第一层级关系，不会进行递归搜索）和clazz都在同一个dex中的话，那么这个类就会被打上CLASS_ISPREVERIFIED。</p>
 <p>所以为了实现热补丁方案，所以必须从这些方法中入手，防止类被打上CLASS_ISPREVERIFIED标志。</p>
 <p>最终空间的方案是往所有类的构造函数引用了一个类，而这个类会被打包成单独的hack.dex，这样当安装apk的时候，classes.dex内的类都会引用一个在不相同dex中的类，这样就防止了类被打上CLASS_ISPREVERIFIED的标志了，只要没被打上这个标志的类都可以进行打补丁操作。</p>
 <p>Qzone方案好处在于开发透明，简单，但在补丁包大小与性能损耗上有一定的局限性。</p>
-<p>在 art 平台，若补丁中的类出现 Field、Method 或 Interface 变化，可能会导致出现内存地址错乱的问题。</p>
+<p>在 art 平台，若补丁中的类出现 Field、Method 或 Interface 变化，可能会导致出现内存地址错乱的问题。为了解决这个问题需要将修改了变量、方法以及接口的类的父类以及调用这个类的所有类都加入到补丁包中。这可能会带来补丁包大小的急剧增加。</p>
+<p>这里是因为在dex2oat时fast*已经将类能确定的各个地址写死。如果运行时补丁包的地址出现改变，原始类去调用时就会出现地址错乱。</p>
+<p>开源实现：<br><a href="http://blog.zhaiyifan.cn/2015/11/20/HotPatchCompare/" target="_blank" rel="external">Nuwa</a><br><a href="http://www.jianshu.com/p/b29a21a162ad" target="_blank" rel="external">HotFix</a><br><a href="http://blog.csdn.net/qxs965266509/article/details/49816007" target="_blank" rel="external">DroidFix</a></p>
 <h1 id="Tinker"><a href="#Tinker" class="headerlink" title="Tinker"></a>Tinker</h1><p>微信的热补丁方案叫做Tinker，也算缅怀一下Dota中的地精修补匠，希望能做到无限刷新。(@LGD_MMY)</p>
 <p>Tinker 的方案来源 gradle 编译的 instant run 与 buck 编译的 exopackage。它们的思想都是全量替换新的 Dex。即我们完全使用了新的 Dex，那样既不出现 Art 地址错乱的问题，在 Dalvik 也无须插桩。</p>
 <p>简单来说，在编译时通过新旧两个Dex生成差异patch.dex。在运行时，将差异patch.dex重新跟原始安装包的旧Dex还原为新的Dex。</p>
@@ -153,7 +158,7 @@
       <category term="Android笔记" scheme="http://yoursite.com/categories/Android%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+      <category term="Android热补丁" scheme="http://yoursite.com/tags/Android%E7%83%AD%E8%A1%A5%E4%B8%81/"/>
     
   </entry>
   
@@ -162,7 +167,7 @@
     <link href="http://yoursite.com/2016/08/21/Android%E7%AC%94%E8%AE%B0-%E6%8F%92%E4%BB%B6%E5%8C%96/"/>
     <id>http://yoursite.com/2016/08/21/Android笔记-插件化/</id>
     <published>2016-08-21T01:59:42.000Z</published>
-    <updated>2016-08-21T04:32:15.562Z</updated>
+    <updated>2016-08-26T03:50:05.639Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://ob5qdb9lc.bkt.clouddn.com/21a4462309f790520566e8c50af3d7ca7acbd5d4.jpg" alt="Image"></p>
 <a id="more"></a>
@@ -183,7 +188,7 @@
 <li>通过反射进行安装；</li>
 </ul>
 <p>这三步其实都比较耗时，容易造成主线程的ANR。</p>
-<p><a href="http://v.youku.com/v_show/id_XNTMzMjYzMzM2.html?firsttime=3112&amp;spm=0.0.uerCenter.5-2_5_5-2_5_DL_DD_A.y0ifrV&amp;from=y1.9-3.1" target="_blank" rel="external">阿里技术沙龙第十六期《android插件化及动态部署——ATLAS》</a>里面说道一个App可能开发过程中，可能会有多个团队要求往这个App中加入新的业务，这样之前的协作模式难以为继，需要新的开发模式和技术解决需求问题。</p>
+<p><a href="http://v.youku.com/v_show/id_XNTMzMjYzMzM2.html?firsttime=3112&amp;spm=0.0.uerCenter.5-2_5_5-2_5_DL_DD_A.y0ifrV&amp;from=y1.9-3.1" target="_blank" rel="external">《阿里技术沙龙第十六期《android插件化及动态部署——ATLAS》</a>里面说道一个App可能开发过程中，可能会有多个团队要求往这个App中加入新的业务，这样之前的协作模式难以为继，需要新的开发模式和技术解决需求问题。</p>
 <p>前端可以实现在线更新持续发布，而源生的Native架构的Android需要用户重新下载安装包安装更新，插件化动态加载方案就是提供了如同前端一样的热部署能力。把业务拆分出来，组成外部的dex包。不同的团队专注于自己的业务，当需要更新时，不用下载更新整个App，而仅仅是下载对应的dex。</p>
 <h1 id="动态加载"><a href="#动态加载" class="headerlink" title="动态加载"></a>动态加载</h1><p>真正的动态加载应该是：</p>
 <ol>
@@ -207,7 +212,7 @@
 <li>PathClassLoader 只能加载系统中已经安装过的 apk；</li>
 </ul>
 <p>PathClassLoader也有一个成员pathList，它从本质来说是一个List，运行时会从其间的每一个dex路径中查找需要加载的类。Google官方推出的MultiDex库就是用以上原理实现的。</p>
-<p>所以我们可以使用DexClassLoader来在运行时加载一些外部的类，这个类可以从网络上下载，这样就实现了动态加载。</p>
+<p>我们可以使用DexClassLoader来在运行时加载一些外部的类，这个类可以从网络上下载，这样就实现了动态加载。</p>
 <p>但是有Android与Java不同，有两个重要的问题需要解决。</p>
 <ul>
 <li>Android 中许多组件类（如 Activity、Service 等）是需要在 Manifest 文件里面注册后才能工作的（系统会检查该组件有没有注册），所以即使动态加载了一个新的组件类进来，没有注册的话还是无法工作；</li>
@@ -224,13 +229,16 @@
 <li>宿主项目和插件项目的开发都要接入共同的框架，大多时候，插件需要依附宿主才能运行，无法独立运行；</li>
 </ul>
 <p>实例框架：<a href="https://github.com/singwhatiwanna/dynamic-load-apk" target="_blank" rel="external">Apk动态加载框架</a></p>
-<h1 id="动态创建Activity模式-非常规"><a href="#动态创建Activity模式-非常规" class="headerlink" title="动态创建Activity模式(非常规)"></a>动态创建Activity模式(非常规)</h1><p>动态创建Activity模式的核心是“运行时字节码操作”，现在宿主注册一个不存在的Activity，启动插件的某个Activity时都把想要启动的Activity替换成前面注册的Activity，从而使后者能正常启动。</p>
+<h1 id="动态创建Activity模式-非常规"><a href="#动态创建Activity模式-非常规" class="headerlink" title="动态创建Activity模式(非常规)"></a>动态创建Activity模式(非常规)</h1><p>动态创建Activity模式的核心是“运行时字节码操作”，先在宿主注册一个不存在的Activity，启动插件的某个Activity时都把想要启动的Activity替换成前面注册的Activity，从而使后者能正常启动。</p>
 <ul>
 <li>使用dexmaker动态创建一个类。</li>
 <li>修改需要启动的目标Activity。</li>
 </ul>
 <p>开源项目：<a href="https://github.com/houkx/android-pluginmgr/" target="_blank" rel="external">android-pluginmgr</a></p>
-<p>参考资料<br><a href="http://tech.meituan.com/mt-android-auto-split-dex.html" target="_blank" rel="external">美团Android DEX自动拆包及动态加载简介</a><br><a href="http://mp.weixin.qq.com/s?__biz=MzAwMTcwNTE0NA==&amp;mid=400217391&amp;idx=1&amp;sn=86181541ce0164156dfab135ed99bb5c&amp;scene=0&amp;key=b410d3164f5f798e61a5d4afb759fa38371c8b119384c6163a30c28163b4d4d5f59399f2400800ec842f1d0e0ffb84af&amp;ascene=0&amp;uin=MjExMjQ&amp;pass_ticket=Nt5Jaa28jjFxcQO9o%20vQiXX%200iXG5DlZlHNW97Fk1Ew=" target="_blank" rel="external">携程Android App插件化和动态加载实践</a><br><a href="https://segmentfault.com/a/1190000004062866" target="_blank" rel="external">Android动态加载技术 简单易懂的介绍方式</a><br><a href="https://segmentfault.com/a/1190000004062972" target="_blank" rel="external">Android动态加载进阶 代理Activity模式</a><br><a href="https://segmentfault.com/a/1190000004077469" target="_blank" rel="external">ndroid动态加载黑科技 动态创建Activity模式</a></p>
+<h1 id="代理模式与动态创建模式的区别"><a href="#代理模式与动态创建模式的区别" class="headerlink" title="代理模式与动态创建模式的区别"></a>代理模式与动态创建模式的区别</h1><p>简单地说，最大的不同是代理模式使用了一个代理的Activity，而动态创建Activity模式使用了一个通用的Activity。</p>
+<p>代理模式中，使用一个代理Activity去完成本应该由插件Activity完成的工作，这个代理Activity是一个标准的Android Activity组件，具有生命周期和上下文环境（ContextWrapper和ContextCompl），但是它自身只是一个空壳，并没有承担什么业务逻辑；而插件Activity其实只是一个普通的Java对象，它没有上下文环境，但是却能正常执行业务逻辑的代码。代理Activity和不同的插件Activity配合起来，就能完成不同的业务逻辑了。</p>
+<p>动态创建Activity模式，被动态创建出来的Activity类是有在主项目里面注册的，它是一个标准的Activity，它有自己的Context和生命周期，不需要代理的Activity。</p>
+<p>参考资料<br><a href="http://tech.meituan.com/mt-android-auto-split-dex.html" target="_blank" rel="external">美团Android DEX自动拆包及动态加载简介</a><br><a href="http://mp.weixin.qq.com/s?__biz=MzAwMTcwNTE0NA==&amp;mid=400217391&amp;idx=1&amp;sn=86181541ce0164156dfab135ed99bb5c&amp;scene=0&amp;key=b410d3164f5f798e61a5d4afb759fa38371c8b119384c6163a30c28163b4d4d5f59399f2400800ec842f1d0e0ffb84af&amp;ascene=0&amp;uin=MjExMjQ&amp;pass_ticket=Nt5Jaa28jjFxcQO9o%20vQiXX%200iXG5DlZlHNW97Fk1Ew=" target="_blank" rel="external">携程Android App插件化和动态加载实践</a><br><a href="https://segmentfault.com/a/1190000004062866" target="_blank" rel="external">Android动态加载技术 简单易懂的介绍方式</a><br><a href="https://segmentfault.com/a/1190000004062972" target="_blank" rel="external">Android动态加载进阶 代理Activity模式</a><br><a href="https://segmentfault.com/a/1190000004077469" target="_blank" rel="external">Android动态加载黑科技 动态创建Activity模式</a></p>
 ]]></content>
     
     <summary type="html">
@@ -242,7 +250,7 @@
       <category term="Android笔记" scheme="http://yoursite.com/categories/Android%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+      <category term="Android插件化" scheme="http://yoursite.com/tags/Android%E6%8F%92%E4%BB%B6%E5%8C%96/"/>
     
   </entry>
   
@@ -251,7 +259,7 @@
     <link href="http://yoursite.com/2016/08/19/Android%E7%AC%94%E8%AE%B0-DataBinding/"/>
     <id>http://yoursite.com/2016/08/19/Android笔记-DataBinding/</id>
     <published>2016-08-19T01:24:20.000Z</published>
-    <updated>2016-08-19T04:08:50.614Z</updated>
+    <updated>2016-08-26T04:04:07.033Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://ob5qdb9lc.bkt.clouddn.com/20141104070106_KTTPd.jpeg" alt="Image"></p>
 <a id="more"></a>
@@ -266,17 +274,25 @@
 <h2 id="使用DataBinding"><a href="#使用DataBinding" class="headerlink" title="使用DataBinding"></a>使用DataBinding</h2><ul>
 <li>首先在xml的最外层套上layout标签；</li>
 </ul>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">    &lt;layout&gt;</div><div class="line">    &lt;data&gt;</div><div class="line">        &lt;variable name="user"</div><div class="line">                  type="com.android.example.User"/&gt;</div><div class="line"></div><div class="line">        &lt;variable name="presenter"</div><div class="line">                  type="com.android.example.Presenter"/&gt;          </div><div class="line">    &lt;/data&gt;</div><div class="line">    &lt;LinearLayout …&gt;</div><div class="line">        &lt;TextView android:text="@&#123;user.name&#125;"/&gt;</div><div class="line">        &lt;TextView android:text="@&#123;user.lastName&#125;"/&gt;</div><div class="line">        &lt;TextView android:onClick="@&#123;presenter.onBindService&#125;"/&gt;</div><div class="line">    &lt;/LinearLayout&gt;</div><div class="line">&lt;/layout&gt;</div></pre></td></tr></table></figure>    
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">    &lt;layout&gt;</div><div class="line">    &lt;data&gt;</div><div class="line">        &lt;variable name="user"</div><div class="line">                  type="com.android.example.User"/&gt;</div><div class="line"></div><div class="line">        &lt;variable name="presenter"</div><div class="line">                  type="com.android.example.Presenter"/&gt;          </div><div class="line">    &lt;/data&gt;</div><div class="line">    &lt;LinearLayout …&gt;</div><div class="line">        &lt;TextView android:text="@&#123;user.name&#125;"/&gt;</div><div class="line">        &lt;TextView android:text="@&#123;user.lastName&#125;"/&gt;</div><div class="line">        &lt;TextView android:onClick="@&#123;presenter.onBindService&#125;"/&gt;</div><div class="line">    &lt;/LinearLayout&gt;</div><div class="line">&lt;/layout&gt;</div></pre></td></tr></table></figure>
 <ul>
-<li>声明控件绑定的变量或事件；<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(@Nullable Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">    <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">    binding= DataBindingUtil.setContentView(<span class="keyword">this</span>,R.layout.activity_test);</div><div class="line">    binding.setEmployee(employee);</div><div class="line">    binding.setPresenter(<span class="keyword">new</span> Presenter());</div><div class="line">&#125;</div></pre></td></tr></table></figure>  </li>
-<li>在Java代码声明绑定的变量：<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Employee</span> <span class="keyword">extends</span> <span class="title">BaseObservable</span></span>&#123;</div><div class="line">    <span class="keyword">private</span> String lastName;</div><div class="line">    <span class="keyword">private</span> String firstName;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Employee</span><span class="params">(String lastName, String firstName)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.lastName = lastName;</div><div class="line">        <span class="keyword">this</span>.firstName = firstName;</div><div class="line">    &#125;</div><div class="line">    <span class="meta">@Bindable</span></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getLastName</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> lastName;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setLastName</span><span class="params">(String lastName)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.lastName = lastName;</div><div class="line">        notifyPropertyChanged(BR.lastName);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Bindable</span></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getFirstName</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> firstName;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setFirstName</span><span class="params">(String firstName)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.firstName = firstName;</div><div class="line">        notifyPropertyChanged(BR.firstName);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></li>
+<li>声明控件绑定的变量或事件；</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(@Nullable Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">    <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">    binding= DataBindingUtil.setContentView(<span class="keyword">this</span>,R.layout.activity_test);</div><div class="line">    binding.setEmployee(employee);</div><div class="line">    binding.setPresenter(<span class="keyword">new</span> Presenter());</div><div class="line">&#125;</div></pre></td></tr></table></figure>  
+<ul>
+<li>在Java代码声明绑定的变量：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Employee</span> <span class="keyword">extends</span> <span class="title">BaseObservable</span></span>&#123;</div><div class="line">    <span class="keyword">private</span> String lastName;</div><div class="line">    <span class="keyword">private</span> String firstName;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Employee</span><span class="params">(String lastName, String firstName)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.lastName = lastName;</div><div class="line">        <span class="keyword">this</span>.firstName = firstName;</div><div class="line">    &#125;</div><div class="line">    <span class="meta">@Bindable</span></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getLastName</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> lastName;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setLastName</span><span class="params">(String lastName)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.lastName = lastName;</div><div class="line">        notifyPropertyChanged(BR.lastName);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Bindable</span></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getFirstName</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> firstName;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setFirstName</span><span class="params">(String firstName)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.firstName = firstName;</div><div class="line">        notifyPropertyChanged(BR.firstName);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
 <li><p>Employee类如要想实现数据变化时更新View，那就要继承了BaseObservable或实现Observable接口。</p>
 </li>
 <li><p>DataBinding使用 notifyPropertyChanged来进行数据改变完成通知，但我们怎么通知一个数据即将改变？我们不得不写一个 @Bindable 注解。这将会自动产生一个 BR.firstName，这个 BR 很像我们经常使用的 R 类文件，我们通过这些注解会自动生成它。</p>
 </li>
-<li>在Java代码声明绑定的事件处理者：<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Presenter</span></span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View view)</span></span>&#123;</div><div class="line">        Snackbar.make(view,<span class="string">"点到了"</span>,Snackbar.LENGTH_SHORT).show();</div><div class="line">    &#125;</div><div class="line">｝</div></pre></td></tr></table></figure>  
-这样就完成了数据绑定，当employee对象的name变量发生改变时，绑定employee对象的TextView能够感知到这种变化，从而让自己的text文本发生改变。当绑定Presenter实例TextView接收到点击事件时，Presenter里的方法处理这个点击事件。</li>
+<li><p>在Java代码声明绑定的事件处理者：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Presenter</span></span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View view)</span></span>&#123;</div><div class="line">        Snackbar.make(view,<span class="string">"点到了"</span>,Snackbar.LENGTH_SHORT).show();</div><div class="line">    &#125;</div><div class="line">｝</div></pre></td></tr></table></figure>  
+</li>
 </ul>
+<p>这样就完成了数据绑定，当employee对象的name变量发生改变时，绑定employee对象的TextView能够感知到这种变化，从而让自己的text文本发生改变。当绑定Presenter实例TextView接收到点击事件时，Presenter里的方法处理这个点击事件。</p>
 <h1 id="DataBinding工作原理"><a href="#DataBinding工作原理" class="headerlink" title="DataBinding工作原理"></a>DataBinding工作原理</h1><h3 id="1-进入并处理布局文件"><a href="#1-进入并处理布局文件" class="headerlink" title="1.进入并处理布局文件"></a>1.进入并处理布局文件</h3><p>其中的“进入”指的是，在你的程序代码正在被编译的过程中，它会找出布局文件中所有关于它的内容，获取到它所需要的信息，然后删掉它们，删掉它们的原因是如果继续存着视图系统并不认得它们。</p>
 <h3 id="2-通过语法来解析这些表达式"><a href="#2-通过语法来解析这些表达式" class="headerlink" title="2.通过语法来解析这些表达式"></a>2.通过语法来解析这些表达式</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;TextView android:visibility=<span class="string">"@user.isAdmin ? View.VISIBLE : View.GONE&#125;"</span>/&gt;</div></pre></td></tr></table></figure>  
 <p>这个 user 是一个索引，之后的 View 也是个索引，另一个 View 也是个索引。它们都是索引或称标识，像是真正的对象，在这边我们真的不知道它们是什么。同样的对于 VISIBLE 和 GONE 也是如此。这里面有对象数据访问，是一个三目运算表达式，这就是目前为止我们所理解到的。而对于DataBinding库，它的工作就是从这些文件中把东西解析出来，了解里面有什么。</p>
@@ -309,7 +325,7 @@
       <category term="Android笔记" scheme="http://yoursite.com/categories/Android%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+      <category term="Android开发框架" scheme="http://yoursite.com/tags/Android%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6/"/>
     
   </entry>
   
@@ -318,7 +334,7 @@
     <link href="http://yoursite.com/2016/08/18/Android%E7%AC%94%E8%AE%B0-MVP%E6%A8%A1%E5%BC%8F/"/>
     <id>http://yoursite.com/2016/08/18/Android笔记-MVP模式/</id>
     <published>2016-08-18T08:03:31.000Z</published>
-    <updated>2016-08-18T09:50:17.264Z</updated>
+    <updated>2016-08-26T04:03:34.846Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://ob5qdb9lc.bkt.clouddn.com/234f08c0-fc3c-4d40-a0c5-1cc08ed5609d.jpg" alt="Image"></p>
 <a id="more"></a>
@@ -371,7 +387,7 @@
       <category term="Android笔记" scheme="http://yoursite.com/categories/Android%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+      <category term="Android MVP" scheme="http://yoursite.com/tags/Android-MVP/"/>
     
   </entry>
   
@@ -380,7 +396,7 @@
     <link href="http://yoursite.com/2016/08/18/Android%E7%AC%94%E8%AE%B0-Dagger2/"/>
     <id>http://yoursite.com/2016/08/18/Android笔记-Dagger2/</id>
     <published>2016-08-18T01:21:28.000Z</published>
-    <updated>2016-08-18T06:18:22.047Z</updated>
+    <updated>2016-08-26T04:04:07.029Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://ob5qdb9lc.bkt.clouddn.com/99dd27abad87170168a9304eed8d9f129ae3db95.jpg" alt="Image"></p>
 <a id="more"></a>
@@ -432,7 +448,7 @@
       <category term="Android笔记" scheme="http://yoursite.com/categories/Android%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+      <category term="Android开发框架" scheme="http://yoursite.com/tags/Android%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6/"/>
     
   </entry>
   
@@ -441,7 +457,7 @@
     <link href="http://yoursite.com/2016/08/17/Android%E7%AC%94%E8%AE%B0-Realm/"/>
     <id>http://yoursite.com/2016/08/17/Android笔记-Realm/</id>
     <published>2016-08-17T01:42:26.000Z</published>
-    <updated>2016-08-17T03:10:36.917Z</updated>
+    <updated>2016-08-26T04:04:07.003Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://ob5qdb9lc.bkt.clouddn.com/139-160513111920.jpg" alt="Image"></p>
 <a id="more"></a>
@@ -500,7 +516,7 @@
       <category term="Android笔记" scheme="http://yoursite.com/categories/Android%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+      <category term="Android开发框架" scheme="http://yoursite.com/tags/Android%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6/"/>
     
   </entry>
   
@@ -509,7 +525,7 @@
     <link href="http://yoursite.com/2016/08/15/Android%E7%AC%94%E8%AE%B0-Retrofit/"/>
     <id>http://yoursite.com/2016/08/15/Android笔记-Retrofit/</id>
     <published>2016-08-15T13:47:57.000Z</published>
-    <updated>2016-08-15T14:51:46.251Z</updated>
+    <updated>2016-08-26T04:04:07.044Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://ob5qdb9lc.bkt.clouddn.com/faf2b2119313b07eb36f89b10dd7912396dd8cbd.jpg" alt="Image"></p>
 <a id="more"></a>
@@ -526,7 +542,7 @@
 <p>Call 的接口：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Call</span>&lt;<span class="title">T</span>&gt; <span class="keyword">extends</span> <span class="title">Cloneable</span> </span>&#123;  </div><div class="line">    <span class="comment">//同步发起请求</span></div><div class="line">    <span class="function">Response&lt;T&gt; <span class="title">execute</span><span class="params">()</span> <span class="keyword">throws</span> IOException</span>;  </div><div class="line">    <span class="comment">//异步发起请求，结果通过回调返回</span></div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">enqueue</span><span class="params">(Callback&lt;T&gt; callback)</span></span>;  </div><div class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">isExecuted</span><span class="params">()</span></span>;  </div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">cancel</span><span class="params">()</span></span>;  </div><div class="line">     <span class="function"><span class="keyword">boolean</span> <span class="title">isCanceled</span><span class="params">()</span></span>;  </div><div class="line">    <span class="function">Call&lt;T&gt; <span class="title">clone</span><span class="params">()</span></span>;  </div><div class="line">    <span class="comment">//返回原始请求</span></div><div class="line">    <span class="function">Request <span class="title">request</span><span class="params">()</span></span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>前面repos 其实就是一个 OkHttpCall 实例， execute 就是要发起网络请求。</p>
 <p>OkHttpCall.execute：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">  <span class="meta">@Override</span> <span class="function"><span class="keyword">public</span> Response&lt;T&gt; <span class="title">execute</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;</div><div class="line">okhttp3.Call call;</div><div class="line"></div><div class="line"><span class="keyword">synchronized</span> (<span class="keyword">this</span>) &#123;</div><div class="line">  <span class="keyword">if</span> (executed) <span class="keyword">throw</span> <span class="keyword">new</span> IllegalStateException(<span class="string">"Already executed."</span>);</div><div class="line">  executed = <span class="keyword">true</span>;</div><div class="line"></div><div class="line">  <span class="keyword">if</span> (creationFailure != <span class="keyword">null</span>) &#123;</div><div class="line">    <span class="keyword">if</span> (creationFailure <span class="keyword">instanceof</span> IOException) &#123;</div><div class="line">      <span class="keyword">throw</span> (IOException) creationFailure;</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">      <span class="keyword">throw</span> (RuntimeException) creationFailure;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  call = rawCall;</div><div class="line">  <span class="keyword">if</span> (call == <span class="keyword">null</span>) &#123;</div><div class="line">    <span class="keyword">try</span> &#123;</div><div class="line">      call = rawCall = createRawCall();</div><div class="line">    &#125; <span class="keyword">catch</span> (IOException | RuntimeException e) &#123;</div><div class="line">      creationFailure = e;</div><div class="line">      <span class="keyword">throw</span> e;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">if</span> (canceled) &#123;</div><div class="line">  call.cancel();</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">return</span> parseResponse(call.execute());</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>OkHttpCall 其实也是封装了 okhttp3.Call。<br>parseResponse 主要完成了由 okhttp3.Response 向 retrofit.Response 的转换，同时也处理了对原始返回的解析：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">    <span class="function">Response&lt;T&gt; <span class="title">parseResponse</span><span class="params">(okhttp3.Response rawResponse)</span> <span class="keyword">throws</span> IOException </span>&#123;</div><div class="line">    ResponseBody rawBody = rawResponse.body();    </div><div class="line"></div><div class="line">    <span class="comment">//略掉一些代码</span></div><div class="line">    <span class="keyword">try</span> &#123;      </div><div class="line">    <span class="comment">//在这里完成了原始 Response 的解析，T 就是我们想要的结果，比如 GitHubService.listRepos 的 List&lt;Repo&gt;</span></div><div class="line">        T body = serviceMethod.toResponse(catchingBody);      </div><div class="line">        <span class="keyword">return</span> Response.success(body, rawResponse);</div><div class="line">    &#125; <span class="keyword">catch</span> (RuntimeException e) &#123;      </div><div class="line">        <span class="comment">// If the underlying source threw an exception, propagate that rather than indicating it was</span></div><div class="line">        <span class="comment">// a runtime exception.</span></div><div class="line">        catchingBody.throwIfCaught();      </div><div class="line">        <span class="keyword">throw</span> e;</div><div class="line">    &#125;   </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h2 id="适配RxJava"><a href="#适配RxJava" class="headerlink" title="适配RxJava"></a>适配RxJava</h2><p>只需要提供一个 Adapter，将 OkHttpCall 转换为 Observable 即可。 Retrofit 的开发者们早就想到了这个问题，并且为我们提供了相应的 Adapter：RxJavaCallAdapterFactory<br>我们只需要在构造 Retrofit 时，添加它：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">addCallAdapterFactory(RxJavaCallAdapterFactory.create())</div></pre></td></tr></table></figure><br>这样我们的接口就可以以 RxJava 的方式工作了。</p>
-<p>同样，还可以添加Gson,将网络传输回的数据直接转化成Java类的形式。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">addConverterFactory(GsonConverterFactory.create())</div></pre></td></tr></table></figure></p>
+<p>同样，还可以添加Gson,将传回的Json格式数据直接转化成JavaBean的形式。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">addConverterFactory(GsonConverterFactory.create())</div></pre></td></tr></table></figure></p>
 <p>参考资料：<br><a href="http://www.tuicool.com/articles/bIFvIfY" target="_blank" rel="external">深入浅出 Retrofit，这么牛逼的框架你们还不来看看？</a></p>
 ]]></content>
     
@@ -539,7 +555,7 @@
       <category term="Android笔记" scheme="http://yoursite.com/categories/Android%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+      <category term="Android开发框架" scheme="http://yoursite.com/tags/Android%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6/"/>
     
   </entry>
   
@@ -548,7 +564,7 @@
     <link href="http://yoursite.com/2016/08/15/Android%E7%AC%94%E8%AE%B0-RxJava/"/>
     <id>http://yoursite.com/2016/08/15/Android笔记-RxJava/</id>
     <published>2016-08-15T12:20:05.000Z</published>
-    <updated>2016-08-15T13:44:17.063Z</updated>
+    <updated>2016-08-26T04:04:07.048Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://ob5qdb9lc.bkt.clouddn.com/1920x1080_4be7f3a22d45ffe.jpg" alt="Image"></p>
 <a id="more"></a>
@@ -639,7 +655,7 @@
       <category term="Android笔记" scheme="http://yoursite.com/categories/Android%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+      <category term="Android开发框架" scheme="http://yoursite.com/tags/Android%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6/"/>
     
   </entry>
   
@@ -648,7 +664,7 @@
     <link href="http://yoursite.com/2016/08/14/Android%E7%AC%94%E8%AE%B0-Android%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
     <id>http://yoursite.com/2016/08/14/Android笔记-Android性能优化/</id>
     <published>2016-08-14T13:50:08.000Z</published>
-    <updated>2016-08-14T14:39:01.624Z</updated>
+    <updated>2016-08-26T04:04:07.025Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://ob5qdb9lc.bkt.clouddn.com/30721479_1390194907933.jpg" alt="Image"></p>
 <a id="more"></a>
@@ -667,7 +683,7 @@
       <category term="Android笔记" scheme="http://yoursite.com/categories/Android%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+      <category term="Android系统" scheme="http://yoursite.com/tags/Android%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
@@ -676,7 +692,7 @@
     <link href="http://yoursite.com/2016/08/14/Android%E7%AC%94%E8%AE%B0-Android%E5%90%AF%E5%8A%A8%E8%BF%87%E7%A8%8B/"/>
     <id>http://yoursite.com/2016/08/14/Android笔记-Android启动过程/</id>
     <published>2016-08-14T12:18:37.000Z</published>
-    <updated>2016-08-14T14:48:51.293Z</updated>
+    <updated>2016-08-26T04:04:07.020Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://ob5qdb9lc.bkt.clouddn.com/b3b7d0a20cf431adb6bc847b4836acaf2edd9802.jpg" alt="Image"></p>
 <a id="more"></a>
@@ -752,7 +768,7 @@
       <category term="Android笔记" scheme="http://yoursite.com/categories/Android%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+      <category term="Android系统" scheme="http://yoursite.com/tags/Android%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
@@ -761,7 +777,7 @@
     <link href="http://yoursite.com/2016/08/12/Android%E7%AC%94%E8%AE%B0-%E8%BF%9B%E7%A8%8B%E4%BF%9D%E6%B4%BB/"/>
     <id>http://yoursite.com/2016/08/12/Android笔记-进程保活/</id>
     <published>2016-08-12T12:49:12.000Z</published>
-    <updated>2016-08-12T14:21:55.194Z</updated>
+    <updated>2016-08-26T03:58:14.748Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://ob5qdb9lc.bkt.clouddn.com/b03533fa828ba61e2cd4d63f4334970a304e59e3.jpg" alt="Image"></p>
 <a id="more"></a>
@@ -853,7 +869,7 @@
       <category term="Android笔记" scheme="http://yoursite.com/categories/Android%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+      <category term="Android进程保活" scheme="http://yoursite.com/tags/Android%E8%BF%9B%E7%A8%8B%E4%BF%9D%E6%B4%BB/"/>
     
   </entry>
   
@@ -862,7 +878,7 @@
     <link href="http://yoursite.com/2016/08/12/Android%E7%AC%94%E8%AE%B0-%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F/"/>
     <id>http://yoursite.com/2016/08/12/Android笔记-内存泄漏/</id>
     <published>2016-08-12T11:56:40.000Z</published>
-    <updated>2016-08-12T12:46:04.474Z</updated>
+    <updated>2016-08-26T03:58:14.752Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://ob5qdb9lc.bkt.clouddn.com/55729117201103111238192208337427592_012.jpg" alt="Image"></p>
 <a id="more"></a>
@@ -889,7 +905,7 @@
 <h2 id="Handler"><a href="#Handler" class="headerlink" title="Handler"></a>Handler</h2><p>同样道理，定义匿名的Runnable，用匿名类Handler执行。Runnable内部类会持有外部类的隐式引用，被传递到Handler的消息队列MessageQueue中，在Message消息没有被处理之前，Activity实例不会被销毁了，于是导致内存泄漏。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">createHandler</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">new</span> Handler() &#123;</div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">handleMessage</span><span class="params">(Message message)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.handleMessage(message);</div><div class="line">    &#125;</div><div class="line">&#125;.postDelayed(<span class="keyword">new</span> Runnable() &#123;</div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">while</span>(<span class="keyword">true</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;, Long.MAX_VALUE &gt;&gt; <span class="number">1</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line">View hButton = findViewById(R.id.h_button);</div><div class="line">hButton.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">       createHandler();</div><div class="line">       nextActivity();</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>  </p>
 <h2 id="Threads"><a href="#Threads" class="headerlink" title="Threads"></a>Threads</h2><p>我们再次通过Thread和TimerTask来展现内存泄漏。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">spawnThread</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">new</span> Thread() &#123;</div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">while</span>(<span class="keyword">true</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;.start();</div><div class="line">&#125;</div><div class="line"></div><div class="line">View tButton = findViewById(R.id.t_button);</div><div class="line">tButton.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">      spawnThread();</div><div class="line">      nextActivity();</div><div class="line"> &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>   </p>
 <h2 id="TimerTask"><a href="#TimerTask" class="headerlink" title="TimerTask"></a>TimerTask</h2><p>只要是匿名类的实例，不管是不是在工作线程，都会持有Activity的引用，导致内存泄漏。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">scheduleTimer</span><span class="params">()</span> </span>&#123;</div><div class="line"><span class="keyword">new</span> Timer().schedule(<span class="keyword">new</span> TimerTask() &#123;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">while</span>(<span class="keyword">true</span>);</div><div class="line">    &#125;</div><div class="line">&#125;, Long.MAX_VALUE &gt;&gt; <span class="number">1</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line">View ttButton = findViewById(R.id.tt_button);</div><div class="line">ttButton.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">        scheduleTimer();</div><div class="line">        nextActivity();</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<h2 id="Sensor-Manager"><a href="#Sensor-Manager" class="headerlink" title="Sensor Manager"></a>Sensor Manager</h2><p>通过Context.getSystemService(int name)可以获取系统服务。这些服务工作在各自的进程中，帮助应用处理后台任务，处理硬件交互。如果需要使用这些服务，可以注册监听器，这会导致服务持有了Context的引用，如果在Activity销毁的时候没有注销这些监听器，会导致内存泄漏。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">registerListener</span><span class="params">()</span> </span>&#123;</div><div class="line">   SensorManager sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);</div><div class="line">   Sensor sensor = sensorManager.getDefaultSensor(Sensor.TYPE_ALL);</div><div class="line">   sensorManager.registerListener(<span class="keyword">this</span>, sensor, SensorManager.SENSOR_DELAY_FASTEST);</div><div class="line">&#125;</div><div class="line"></div><div class="line">View smButton = findViewById(R.id.sm_button);</div><div class="line">smButton.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">        registerListener();</div><div class="line">        nextActivity();</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure> </p>
+<h2 id="Sensor-Manager"><a href="#Sensor-Manager" class="headerlink" title="Sensor Manager"></a>Sensor Manager</h2><p>通过Context.getSystemService(int name)可以获取系统服务。这些服务工作在各自的进程中，帮助应用处理后台任务，处理硬件交互。如果需要使用这些服务，可以注册监听器，这会导致服务持有了Context的引用，如果在Activity销毁的时候没有注销这些监听器，会导致内存泄漏。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">registerListener</span><span class="params">()</span> </span>&#123;</div><div class="line">   SensorManager sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);</div><div class="line">   Sensor sensor = sensorManager.getDefaultSensor(Sensor.TYPE_ALL);</div><div class="line">   sensorManager.registerListener(<span class="keyword">this</span>, sensor, SensorManager.SENSOR_DELAY_FASTEST);</div><div class="line">&#125;</div><div class="line"></div><div class="line">View smButton = findViewById(R.id.sm_button);</div><div class="line">smButton.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">        registerListener();</div><div class="line">        nextActivity();</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
 <h1 id="内存泄漏检测工具"><a href="#内存泄漏检测工具" class="headerlink" title="内存泄漏检测工具"></a>内存泄漏检测工具</h1><h2 id="LeakCanary"><a href="#LeakCanary" class="headerlink" title="LeakCanary"></a>LeakCanary</h2><p>LeakCanary 是square团队开源的检测内存泄露的开源类库。你可以在 debug 包种轻松检测内存泄露。</p>
 <p>工作机制：</p>
 <ul>
@@ -913,7 +929,7 @@
       <category term="Android笔记" scheme="http://yoursite.com/categories/Android%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+      <category term="Android内存泄漏" scheme="http://yoursite.com/tags/Android%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F/"/>
     
   </entry>
   
@@ -922,7 +938,7 @@
     <link href="http://yoursite.com/2016/08/12/Android%E7%AC%94%E8%AE%B0-Android%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
     <id>http://yoursite.com/2016/08/12/Android笔记-Android多线程/</id>
     <published>2016-08-12T10:40:16.000Z</published>
-    <updated>2016-08-12T11:52:56.365Z</updated>
+    <updated>2016-08-26T04:04:07.014Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://ob5qdb9lc.bkt.clouddn.com/a8b3c133c895d14338e284af73f082025baf07be.jpg" alt="Image"></p>
 <a id="more"></a>
@@ -1010,7 +1026,7 @@
       <category term="Android笔记" scheme="http://yoursite.com/categories/Android%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+      <category term="Android系统" scheme="http://yoursite.com/tags/Android%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
@@ -1019,7 +1035,7 @@
     <link href="http://yoursite.com/2016/08/11/Android%E7%AC%94%E8%AE%B0-View%E7%BB%98%E5%88%B6%E6%B5%81%E7%A8%8B/"/>
     <id>http://yoursite.com/2016/08/11/Android笔记-View绘制流程/</id>
     <published>2016-08-11T13:05:35.000Z</published>
-    <updated>2016-08-11T14:52:14.181Z</updated>
+    <updated>2016-08-26T04:04:07.052Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://ob5qdb9lc.bkt.clouddn.com/f2deb48f8c5494eec7f266af2cf5e0fe98257eb7.jpg" alt="Image"></p>
 <a id="more"></a>
@@ -1141,7 +1157,7 @@
       <category term="Android笔记" scheme="http://yoursite.com/categories/Android%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+      <category term="Android系统" scheme="http://yoursite.com/tags/Android%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
@@ -1277,7 +1293,7 @@
     <link href="http://yoursite.com/2016/08/10/Android%E7%AC%94%E8%AE%B0-%E4%BA%8B%E4%BB%B6%E5%88%86%E5%8F%91%E6%9C%BA%E5%88%B6/"/>
     <id>http://yoursite.com/2016/08/10/Android笔记-事件分发机制/</id>
     <published>2016-08-10T13:00:28.000Z</published>
-    <updated>2016-08-11T13:02:05.636Z</updated>
+    <updated>2016-08-26T04:04:07.007Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://ob5qdb9lc.bkt.clouddn.com/5-16031Q44431.jpg" alt="Image"></p>
 <a id="more"></a>
@@ -1355,7 +1371,7 @@
       <category term="Android笔记" scheme="http://yoursite.com/categories/Android%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+      <category term="Android系统" scheme="http://yoursite.com/tags/Android%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
@@ -1364,7 +1380,7 @@
     <link href="http://yoursite.com/2016/08/10/Android%E7%AC%94%E8%AE%B0-Handler%E6%9C%BA%E5%88%B6/"/>
     <id>http://yoursite.com/2016/08/10/Android笔记-Handler机制/</id>
     <published>2016-08-10T11:37:00.000Z</published>
-    <updated>2016-08-11T13:03:10.889Z</updated>
+    <updated>2016-08-26T04:04:07.036Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://ob5qdb9lc.bkt.clouddn.com/bz1080p.com_2015-03-06_05-37-47.jpg" alt="Image"></p>
 <a id="more"></a>
@@ -1405,7 +1421,7 @@
       <category term="Android笔记" scheme="http://yoursite.com/categories/Android%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+      <category term="Android系统" scheme="http://yoursite.com/tags/Android%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
@@ -1414,7 +1430,7 @@
     <link href="http://yoursite.com/2016/08/09/Android%E7%AC%94%E8%AE%B0-Intent%E5%92%8CBinder/"/>
     <id>http://yoursite.com/2016/08/09/Android笔记-Intent和Binder/</id>
     <published>2016-08-09T13:32:49.000Z</published>
-    <updated>2016-08-12T12:48:28.818Z</updated>
+    <updated>2016-08-26T04:04:07.040Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://ob5qdb9lc.bkt.clouddn.com/1008240.jpg" alt="Image"></p>
 <a id="more"></a>
@@ -1523,7 +1539,7 @@
       <category term="Android笔记" scheme="http://yoursite.com/categories/Android%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+      <category term="Android系统" scheme="http://yoursite.com/tags/Android%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
@@ -1532,7 +1548,7 @@
     <link href="http://yoursite.com/2016/08/09/Android%E7%AC%94%E8%AE%B0-%E5%9B%9B%E5%A4%A7%E7%BB%84%E4%BB%B6/"/>
     <id>http://yoursite.com/2016/08/09/Android笔记-四大组件/</id>
     <published>2016-08-09T11:41:26.000Z</published>
-    <updated>2016-08-09T13:18:18.497Z</updated>
+    <updated>2016-08-26T04:04:07.010Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://ob5qdb9lc.bkt.clouddn.com/c995d143ad4bd1135967435e58afa40f4bfb0537.jpg" alt="Image"></p>
 <a id="more"></a>
@@ -1698,7 +1714,7 @@
       <category term="Android笔记" scheme="http://yoursite.com/categories/Android%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+      <category term="Android系统" scheme="http://yoursite.com/tags/Android%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
