@@ -18,7 +18,7 @@
 <meta property="og:site_name" content="Be Level5 Coder">
 <meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/b3b7d0a20cf431adb6bc847b4836acaf2edd9802.jpg">
 <meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/0_1313305334OkCc.gif">
-<meta property="og:updated_time" content="2016-08-26T04:04:07.020Z">
+<meta property="og:updated_time" content="2016-08-27T03:37:38.255Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android笔记-Android启动过程">
 <meta name="twitter:image" content="http://ob5qdb9lc.bkt.clouddn.com/b3b7d0a20cf431adb6bc847b4836acaf2edd9802.jpg">
@@ -182,11 +182,12 @@
 <p>这些对于运行内核是必要的，为了达到特殊的目标，引导程序可以根据配置参数或者输入数据设置内核。</p>
 <h2 id="内核"><a href="#内核" class="headerlink" title="内核"></a>内核</h2><p>Android内核与桌面linux内核启动的方式差不多。内核启动时，设置缓存、被保护存储器、计划列表，加载驱动。</p>
 <p>当内核完成系统设置，它首先在系统文件中寻找”init”文件，然后启动root进程或者系统的第一个进程。</p>
-<h2 id="init进程"><a href="#init进程" class="headerlink" title="init进程"></a>init进程</h2><p>init是第一个进程，我们可以说它是root进程或者所有进程的父进程。init进程有两个责任，一是挂载目录，比如/sys、/dev、/proc，二是运行init.rc脚本。</p>
+<h2 id="init进程"><a href="#init进程" class="headerlink" title="init进程"></a>init进程</h2><p>init是第一个进程，我们可以说它是root进程或者所有进程的父进程。</p>
 <ul>
-<li>init进程可以在/system/core/init找到。</li>
-<li>init.rc文件可以在/system/core/rootdir/init.rc找到。</li>
+<li>初始化工作，主要包括建立/dev、/proc等目录，初始化属性，执行init.rc等初始化文件中的action等。</li>
+<li>使用for循环建立子进程。</li>
 </ul>
+<p>在Linux系统中，init是一切应用空间进程的父进程。所以平常在Linux终端执行的命令，并建立进程，实际上都是在这个无限的for循环中完成的。</p>
 <p>对于init.rc文件，Android中有特定的格式以及规则。在Android中，我们叫做Android初始化语言。<br>Android初始化语言由四大类型的声明组成，即Actions（动作）、Commands（命令）、Services（服务）、以及Options（选项）。当声明一个Service或者Action时，将隐式声明一个section，它之后跟随的Command或者Option都将属于这个section。另外，Action和Service不能重名，否则忽略为error。</p>
 <ul>
 <li>Action（动作）：就是在某种情况条件下触发一系列的命令，通常有一个trigger(触发器)。</li>
@@ -195,11 +196,19 @@
 <li>Commands(命令)：动作的操作命令。</li>
 </ul>
 <p>在这个阶段你可以在设备的屏幕上看到“Android”logo了。</p>
-<h2 id="Zygote"><a href="#Zygote" class="headerlink" title="Zygote"></a>Zygote</h2><p>在Java中，我们知道不同的虚拟机实例会为不同的应用分配不同的内存。Android应用应该尽可能快地启动，但如果Android系统为每一个应用启动不同的Dalvik虚拟机实例，就会消耗大量的内存以及时间。</p>
+<h2 id="Zygote"><a href="#Zygote" class="headerlink" title="Zygote"></a>Zygote</h2><p>在Android系统中有如下3个十分重要的进程系统</p>
+<ol>
+<li>Zygote进程：被称为“孵化”或“孕育”进程，功能和Linux的fork类似，用于“孕育”产生不同的子进程。</li>
+<li>System进程：系统进程，整个Android Framework所在的进程，用于启动Android系统。其核心进程是system_server，其父进程就是Zygote。</li>
+<li>应用程序进程：每个Android应用程序运行后都会拥有自己的进程。</li>
+</ol>
+<p>在Java中，我们知道不同的虚拟机实例会为不同的应用分配不同的内存。Android应用应该尽可能快地启动，但如果Android系统为每一个应用启动不同的Dalvik虚拟机实例，就会消耗大量的内存以及时间。</p>
 <p>因此，为了克服这个问题，Android系统创造了”Zygote”。Zygote让Dalvik虚拟机共享代码、低内存占用以及最小的启动时间成为可能。</p>
 <p>Zygote是一个虚拟器进程，正如我们在前一个步骤所说的在系统引导的时候启动。Zygote预加载以及初始化核心库类。通常，这些核心类一般是只读的，也是Android SDK或者核心框架的一部分。在Java虚拟机中，每一个实例都有它自己的核心库类文件和堆对象的拷贝。</p>
 <p>在这个阶段，你可以看到启动动画。</p>
-<h2 id="系统服务或服务"><a href="#系统服务或服务" class="headerlink" title="系统服务或服务"></a>系统服务或服务</h2><p>完成了上面几步之后，运行环境请求Zygote运行系统服务。系统服务同时使用native以及java编写，系统服务可以认为是一个进程。同一个系统服务在Android SDK可以以System Services形式获得。系统服务包含了所有的System Services。</p>
+<h2 id="系统服务"><a href="#系统服务" class="headerlink" title="系统服务"></a>系统服务</h2><p>在Android系统中，System进程和系统服务有着重要的关系。几乎所有的Android核心服务都在这个进程中，例如ActivityManagerService、WindowManagerService等。System进程是系统进程，也就是整个Android Framework所在的进程，用于启动Android系统。其核心进程是system_server。</p>
+<p>system_server是Android中Java层的两大支柱进程只有，另一个就是专门负责孵化Java进程的Zygote。如果这两大支柱其中之一崩溃了，都会导致Java层的崩溃。如果Java层崩溃了，则Linux系统中的进程init会重新启动system_server和Zygote，以重新建立Android的Java层。</p>
+<p>完成了上面几步之后，运行环境请求Zygote运行系统服务。系统服务同时使用native以及java编写，系统服务可以认为是一个进程。同一个系统服务在Android SDK可以以System Services形式获得。系统服务包含了所有的System Services。</p>
 <p>Zygote创建新的进程去启动系统服务。<br>核心服务：</p>
 <ol>
 <li>启动电源管理器；</li>
@@ -217,20 +226,38 @@
 <li>启动挂载服务。</li>
 </ol>
 <h2 id="引导完成"><a href="#引导完成" class="headerlink" title="引导完成"></a>引导完成</h2><p>一旦系统服务在内存中跑起来了，Android就完成了引导过程。在这个时候“ACTION_BOOT_COMPLETED”开机启动广播就会发出去。</p>
+<h2 id="应用程序进程"><a href="#应用程序进程" class="headerlink" title="应用程序进程"></a>应用程序进程</h2><p>在Android系统中，启动应用程序过程中不但可以获得虚拟机实例外，还可以获得一个消息循环和一个Binder线程池。这样在应用程序中运行的组件，可以使用系统的消息处理机制和Binder通讯机制实现自己的业务逻辑。</p>
+<p>当ActivityManagerService创建新进程来启动某个应用程序组件时，会调用ActivityManagerService中的函数startProcessLocked向Zygote发送创建应用程序的请求。</p>
+<ul>
+<li>在创建应用程序完毕之前，需要调用RuntimeInit的函数nativeZygoteInit()启动一个新的Binder线程池。</li>
+<li>在创建新应用程序进程完毕之后，会调用函数invokeStaticMain()将类ActivityThread的函数main()设置为新程序的入口函数。当使用函数main()时，会在当前程序的进程中建立一个消息循环。</li>
+</ul>
+<h1 id="ART和Dalvik"><a href="#ART和Dalvik" class="headerlink" title="ART和Dalvik"></a>ART和Dalvik</h1><p>Android5.0开始，Android应用程序默认的运行环境为ART。ART机制与Dalvik不同，在Dalvik下，应用每次运行时，字节码都需要通过即时编译器转换为机器码，这会拖慢应用的运行效率。而在ART环境中，应用在第一次安装时，字节码就会预先编译成机器码，使其成为真正的本地应用。这个过程叫预编译(Ahead-Of-Time,AOT)。这样启动和执行都会变得更加快速。</p>
+<p>ART虚拟机运行时和Dalvik虚拟机一样，实现了一套完全兼容Java虚拟机的接口。</p>
+<p>不同点在于Dalvik虚拟机执行的是dex字节码，ART虚拟机执行的是本地机器码。这意味着Dalvik虚拟机包含一个解释器，用来执行dex字节码。当然也包含有即时编译器，用来在运行时动态地将执行频率很高的dex字节码翻译成本地机器码，然后再执行。但是将dex字节码翻译成本地机器码是发生在应用程序运行过程中的，并且应用程序每一次重新运行时，都要重做这个翻译工程。</p>
+<p>因此，即使采用了即时编译器，Dalvik虚拟机的总体性能还是不能与直接执行本地机器码的ART虚拟机相比。</p>
 <p><br></p>
 <h1 id="Activity启动过程"><a href="#Activity启动过程" class="headerlink" title="Activity启动过程"></a>Activity启动过程</h1><p><img src="http://ob5qdb9lc.bkt.clouddn.com/0_1313305334OkCc.gif" alt="Image"></p>
 <p>在这个图中，ActivityManagerService和ActivityStack位于同一个进程中，而ApplicationThread和ActivityThread位于另一个进程中。</p>
-<p>其中，ActivityManagerService是负责管理Activity的生命周期的，ActivityManagerService还借助ActivityStack是来把所有的Activity按照后进先出的顺序放在一个堆栈中；对于每一个应用程序来说，都有一个ActivityThread来表示应用程序的主进程，而每一个ActivityThread都包含有一个ApplicationThread实例，它是一个Binder对象，负责和其它进程进行通信。</p>
+<p>其中，ActivityManagerService是负责管理Activity的生命周期的，ActivityManagerService还借助ActivityStack是来把所有的Activity按照后进先出的顺序放在一个堆栈中；</p>
+<p>对于每一个应用程序来说，都有一个ActivityThread来表示应用程序的主进程，而每一个ActivityThread都包含有一个ApplicationThread实例，它是一个Binder对象，负责和其它进程进行通信。</p>
 <ol>
-<li>无论是通过Launcher来启动Activity，还是通过Activity内部调用startActivity接口来启动新的Activity，都通过Binder进程间通信进入到ActivityManagerService进程中，并且调用ActivityManagerService.startActivity接口；</li>
-<li>ActivityManagerService调用ActivityStack.startActivityMayWait来做准备要启动的Activity的相关信息；</li>
-<li>ActivityStack通知ApplicationThread要进行Activity启动调度了，这里的ApplicationThread代表的是调用ActivityManagerService.startActivity接口的进程，对于通过点击应用程序图标的情景来说，这个进程就是Launcher了，而对于通过在Activity内部调用startActivity的情景来说，这个进程就是这个Activity所在的进程了；</li>
-<li>ApplicationThread不执行真正的启动操作，它通过调用ActivityManagerService.activityPaused接口进入到ActivityManagerService进程中，看看是否需要创建新的进程来启动Activity；</li>
-<li>对于通过点击应用程序图标来启动Activity的情景来说，ActivityManagerService在这一步中，会调用startProcessLocked来创建一个新的进程，而对于通过在Activity内部调用startActivity来启动新的Activity来说，这一步是不需要执行的，因为新的Activity就在原来的Activity所在的进程中进行启动；</li>
-<li>ActivityManagerServic调用ApplicationThread.scheduleLaunchActivity接口，通知相应的进程执行启动Activity的操作；</li>
-<li>ApplicationThread把这个启动Activity的操作转发给ActivityThread，ActivityThread通过ClassLoader导入相应的Activity类，然后把它启动起来。</li>
+<li><p>无论是通过Launcher来启动Activity，还是通过Activity内部调用startActivity接口来启动新的Activity，都通过Binder进程间通信进入到ActivityManagerService进程中，并且调用ActivityManagerService.startActivity接口；</p>
+</li>
+<li><p>ActivityManagerService调用ActivityStack.startActivityMayWait来做准备要启动的Activity的相关信息；</p>
+</li>
+<li><p>ActivityStack通知ApplicationThread要进行Activity启动调度了，这里的ApplicationThread代表的是调用ActivityManagerService.startActivity接口的进程，对于通过点击应用程序图标的情景来说，这个进程就是Launcher了，而对于通过在Activity内部调用startActivity的情景来说，这个进程就是这个Activity所在的进程了；</p>
+</li>
+<li><p>ApplicationThread不执行真正的启动操作，它通过调用ActivityManagerService.activityPaused接口进入到ActivityManagerService进程中，看看是否需要创建新的进程来启动Activity；</p>
+</li>
+<li><p>对于通过点击应用程序图标来启动Activity的情景来说，ActivityManagerService在这一步中，会调用startProcessLocked来创建一个新的进程，而对于通过在Activity内部调用startActivity来启动新的Activity来说，这一步是不需要执行的，因为新的Activity就在原来的Activity所在的进程中进行启动；</p>
+</li>
+<li><p>ActivityManagerServic调用ApplicationThread.scheduleLaunchActivity接口，通知相应的进程执行启动Activity的操作；</p>
+</li>
+<li><p>ApplicationThread把这个启动Activity的操作转发给ActivityThread，ActivityThread通过ClassLoader导入相应的Activity类，然后把它启动起来。</p>
+</li>
 </ol>
-<p>参考资料：<br> <a href="http://blog.csdn.net/luoshengyang/article/details/6685853" target="_blank" rel="external">Android应用程序的Activity启动过程简要介绍和学习计划</a><br> <a href="http://blog.jobbole.com/67931/" target="_blank" rel="external">Android启动过程深入解析</a></p>
+<p>参考资料：<br> 《深入理解Android系统》<br> <a href="http://blog.csdn.net/luoshengyang/article/details/6685853" target="_blank" rel="external">Android应用程序的Activity启动过程简要介绍和学习计划</a><br> <a href="http://blog.jobbole.com/67931/" target="_blank" rel="external">Android启动过程深入解析</a></p>
 
   </div>
   <footer class="article-footer">

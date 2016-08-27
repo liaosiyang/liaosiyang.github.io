@@ -18,7 +18,7 @@
 <meta property="og:site_name" content="Be Level5 Coder">
 <meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/b03533fa828ba61e2cd4d63f4334970a304e59e3.jpg">
 <meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/2.jpg">
-<meta property="og:updated_time" content="2016-08-26T03:58:14.748Z">
+<meta property="og:updated_time" content="2016-08-27T04:43:48.097Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android笔记-进程保活">
 <meta name="twitter:image" content="http://ob5qdb9lc.bkt.clouddn.com/b03533fa828ba61e2cd4d63f4334970a304e59e3.jpg">
@@ -207,8 +207,8 @@
 <h1 id="提升进程优先级的方案"><a href="#提升进程优先级的方案" class="headerlink" title="提升进程优先级的方案"></a>提升进程优先级的方案</h1><h2 id="利用-Activity-提升权限"><a href="#利用-Activity-提升权限" class="headerlink" title="利用 Activity 提升权限"></a>利用 Activity 提升权限</h2><p>监控手机锁屏解锁事件，在屏幕锁屏时启动1个像素的 Activity，在用户解锁时将 Activity 销毁掉。注意该 Activity 需设计成用户无感知。</p>
 <p>通过该方案，可以使进程的优先级在屏幕锁屏时间由4提升为最高优先级1。</p>
 <h2 id="利用-Service-提升权限"><a href="#利用-Service-提升权限" class="headerlink" title="利用 Service 提升权限"></a>利用 Service 提升权限</h2><p>Android 中 Service 的优先级为4，通过 setForeground 接口可以将后台 Service 设置为前台 Service，使进程的优先级由4提升为2，从而使进程的优先级仅仅低于用户当前正在交互的进程，与可见进程优先级一致，使进程被杀死的概率大大降低。</p>
-<p>从 Android2.3 开始调用 setForeground 将后台 Service 设置为前台 Service 时，必须在系统的通知栏发送一条通知，也就是前台 Service 与一条可见的通知时绑定在一起的。</p>
-<p>通过实现一个内部 Service，在 LiveService 和其内部 Service 中同时发送具有相同 ID 的 Notification，然后将内部 Service 结束掉。随着内部 Service 的结束，Notification 将会消失，但系统优先级依然保持为2。</p>
+<p>API&lt;18, setForeground 将后台 Service 设置为前台 Service 时，必须在系统的通知栏发送一条通知，也就是前台 Service 与一条可见的通知时绑定在一起的。可以直接 new Notification() 传入，这个通知是不可见的。</p>
+<p>API&gt;=18, 通过实现一个内部 Service，在 LiveService 和其内部 Service 中同时发送具有相同 ID 的 Notification，然后将内部 Service 结束掉。随着内部 Service 的结束，Notification 将会消失，但系统优先级依然保持为2。</p>
 <h2 id="进程死后拉活的方案"><a href="#进程死后拉活的方案" class="headerlink" title="进程死后拉活的方案"></a>进程死后拉活的方案</h2><h3 id="利用系统广播拉活"><a href="#利用系统广播拉活" class="headerlink" title="利用系统广播拉活"></a>利用系统广播拉活</h3><p>在发生特定系统事件时，系统会发出响应的广播，通过在 AndroidManifest 中“静态”注册对应的广播监听器，即可在发生响应事件时拉活。</p>
 <p>缺点：</p>
 <ol>
@@ -228,7 +228,7 @@
 <li>Service 第一次被异常杀死后会在5秒内重启，第二次被杀死会在10秒内重启，第三次会在20秒内重启，一旦在短时间内 Service 被杀死达到5次，则系统不再拉起。</li>
 <li>进程被取得 Root 权限的管理工具或系统工具通过 forestop 停止掉，无法重启。</li>
 </ol>
-<h1 id="保活手段"><a href="#保活手段" class="headerlink" title="保活手段"></a>保活手段</h1><p>当前业界的Android进程保活手段主要分为 黑、白、灰 三种，其大致的实现思路如下：</p>
+<h1 id="常见保活手段"><a href="#常见保活手段" class="headerlink" title="常见保活手段"></a>常见保活手段</h1><p>当前业界的Android进程保活手段主要分为 黑、白、灰 三种，其大致的实现思路如下：</p>
 <ul>
 <li>黑色保活：不同的app进程，用广播相互唤醒（包括利用系统提供的广播进行唤醒）</li>
 <li>白色保活：启动前台Service</li>
@@ -236,9 +236,9 @@
 </ul>
 <h1 id="黑色保活"><a href="#黑色保活" class="headerlink" title="黑色保活"></a>黑色保活</h1><p>所谓黑色保活，就是利用不同的app进程使用广播来进行相互唤醒。举个3个比较常见的场景：</p>
 <ul>
-<li>场景1：开机，网络切换、拍照、拍视频时候，利用系统产生的广播唤醒app</li>
-<li>场景2：接入第三方SDK也会唤醒相应的app进程，如微信sdk会唤醒微信，支付宝sdk会唤醒支付宝。由此发散开去，就会直接触发了下面的 场景3</li>
-<li>假如你手机里装了支付宝、淘宝、天猫、UC等阿里系的app，那么你打开任意一个阿里系的app后，有可能就顺便把其他阿里系的app给唤醒了。</li>
+<li>场景1：开机，网络切换、拍照、拍视频时候，利用系统产生的广播唤醒app。</li>
+<li>场景2：接入第三方SDK也会唤醒相应的app进程，如微信sdk会唤醒微信，支付宝sdk会唤醒支付宝。由此发散开去，就会直接触发了下面的 场景三。</li>
+<li>场景3：假如你手机里装了支付宝、淘宝、天猫、UC等阿里系的app，那么你打开任意一个阿里系的app后，有可能就顺便把其他阿里系的app给唤醒了。</li>
 </ul>
 <h1 id="白色保活"><a href="#白色保活" class="headerlink" title="白色保活"></a>白色保活</h1><p>白色保活手段非常简单，就是调用系统api启动一个前台的Service进程，这样会在系统的通知栏生成一个Notification，用来让用户知道有这样一个app在运行着，哪怕当前的app退到了后台。如：酷狗音乐。</p>
 <h1 id="灰色保活"><a href="#灰色保活" class="headerlink" title="灰色保活"></a>灰色保活</h1><p>灰色保活，这种保活手段是应用范围最广泛。它是利用系统的漏洞来启动一个前台的Service进程，与普通的启动方式区别在于，它不会在系统通知栏处出现一个Notification，看起来就如同运行着一个后台Service进程一样。这样做带来的好处就是，用户无法察觉到你运行着一个前台进程（因为看不到Notification）,但你的进程优先级又是高于普通后台进程的。那么如何利用系统的漏洞呢，大致的实现思路和代码如下：</p>
