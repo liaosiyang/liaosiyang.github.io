@@ -12,16 +12,18 @@
   
 </title>
 
+<meta name="description" content="Dagger2是为Android和Java平台提供的一个完全静态的，在编译时进行依赖注入的框架。一开始使用的时候也不太明白依赖注入有什么好用的地方，可能是开发的项目比较小，体会不到Dagger2牛逼之处。后来才发现Dagger2真心牛逼。我们在做项目时，经常需要在一个对象里去创建另一个对象的示例，这种行为是产生耦合的常见形式，对于一个大型项目来说，过多的相互依赖会导致代码难以维护，很容易就会碰到修">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android笔记-Dagger2">
 <meta property="og:url" content="http://yoursite.com/2016/08/18/Android笔记-Dagger2/index.html">
 <meta property="og:site_name" content="Be Level5 Coder">
-<meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/99dd27abad87170168a9304eed8d9f129ae3db95.jpg">
+<meta property="og:description" content="Dagger2是为Android和Java平台提供的一个完全静态的，在编译时进行依赖注入的框架。一开始使用的时候也不太明白依赖注入有什么好用的地方，可能是开发的项目比较小，体会不到Dagger2牛逼之处。后来才发现Dagger2真心牛逼。我们在做项目时，经常需要在一个对象里去创建另一个对象的示例，这种行为是产生耦合的常见形式，对于一个大型项目来说，过多的相互依赖会导致代码难以维护，很容易就会碰到修">
 <meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/1431999102454673.png">
-<meta property="og:updated_time" content="2016-08-26T04:04:07.029Z">
+<meta property="og:updated_time" content="2016-08-28T04:36:00.380Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android笔记-Dagger2">
-<meta name="twitter:image" content="http://ob5qdb9lc.bkt.clouddn.com/99dd27abad87170168a9304eed8d9f129ae3db95.jpg">
+<meta name="twitter:description" content="Dagger2是为Android和Java平台提供的一个完全静态的，在编译时进行依赖注入的框架。一开始使用的时候也不太明白依赖注入有什么好用的地方，可能是开发的项目比较小，体会不到Dagger2牛逼之处。后来才发现Dagger2真心牛逼。我们在做项目时，经常需要在一个对象里去创建另一个对象的示例，这种行为是产生耦合的常见形式，对于一个大型项目来说，过多的相互依赖会导致代码难以维护，很容易就会碰到修">
+<meta name="twitter:image" content="http://ob5qdb9lc.bkt.clouddn.com/1431999102454673.png">
 
 
   <link rel="alternative" href="/atom.xml" title="Be Level5 Coder" type="application/atom+xml">
@@ -88,7 +90,7 @@
             
               <li class="tag-list-container">
                 <a href="javascript:;">标签</a>
-                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-MVP/">Android MVP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android内存泄漏/">Android内存泄漏</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android开发框架/">Android开发框架</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android插件化/">Android插件化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android热补丁/">Android热补丁</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android系统/">Android系统</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android进程保活/">Android进程保活</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JVM/">JVM</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Other/">Other</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP-IP/">TCP/IP</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a><span class="tag-list-count">1</span></li></ul>
+                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android事件分发机制/">Android事件分发机制</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android内存泄漏/">Android内存泄漏</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android开发框架/">Android开发框架</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android性能优化/">Android性能优化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android插件化/">Android插件化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android热补丁/">Android热补丁</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android系统/">Android系统</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android进程保活/">Android进程保活</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dagger2/">Dagger2</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DataBinding/">DataBinding</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Handler机制/">Handler机制</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JVM/">JVM</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVP模式/">MVP模式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Other/">Other</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ReactNative/">ReactNative</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Reaml/">Reaml</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Retrofit/">Retrofit</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RxJava/">RxJava</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP-IP/">TCP/IP</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/View绘制流程/">View绘制流程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a><span class="tag-list-count">1</span></li></ul>
               </li>
             
           
@@ -162,13 +164,13 @@
 
     
 	<span class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android开发框架/">Android开发框架</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android开发框架/">Android开发框架</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Dagger2/">Dagger2</a></li></ul>
 	</span>
 
 
   </div>
   <div class="article-entry">
-    <p><img src="http://ob5qdb9lc.bkt.clouddn.com/99dd27abad87170168a9304eed8d9f129ae3db95.jpg" alt="Image"></p>
+    <p>Dagger2是为Android和Java平台提供的一个完全静态的，在编译时进行依赖注入的框架。一开始使用的时候也不太明白依赖注入有什么好用的地方，可能是开发的项目比较小，体会不到Dagger2牛逼之处。后来才发现Dagger2真心牛逼。<br>我们在做项目时，经常需要在一个对象里去创建另一个对象的示例，这种行为是产生耦合的常见形式，对于一个大型项目来说，过多的相互依赖会导致代码难以维护，很容易就会碰到修改一个小需求需要大面积的修改各种代码。<br>我的理解是Dagger2主要作用有两点，一是依赖的类和提供依赖的类的实现方法分离，二是在Android中帮助我们实现对象生命周期管理。</p>
 <a id="more"></a>
 <h1 id="依赖注入"><a href="#依赖注入" class="headerlink" title="依赖注入"></a>依赖注入</h1><p>就是目标类中所依赖的其他的类的初始化过程，不是通过手动编码的方式创建，而是通过技术手段可以把其他的类的已经初始化好的实例自动注入到目标类中。</p>
 <p>人们在很长的一段时间里都是利用控制反转原则规定：应用程序的流程取决于在程序运行时对象图的建立。通过抽象定义的对象交互可以实现这样的动态流程。而使用依赖注入技术或者服务定位器便可以完成运行时绑定。</p>

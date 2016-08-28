@@ -12,17 +12,19 @@
   
 </title>
 
+<meta name="description" content="现在很多的Android项目中基本都使用了这种开发模式，我自己也在最近写的项目中应用到了这种开发模式，虽然项目中会多出很多的接口和类，特别是和dagger2联用之后，但项目本身架构确实清晰多了，最主要的作用我认为是将视图逻辑和业务逻辑分离。关于MVP模式看了很多资料，网上的代码各有各的实现方式，其基本思想大体是相同的。其实Android开发还有MVC模式、MVVM模式等。这些模式并没有明确的规定，">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android笔记-MVP模式">
 <meta property="og:url" content="http://yoursite.com/2016/08/18/Android笔记-MVP模式/index.html">
 <meta property="og:site_name" content="Be Level5 Coder">
-<meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/234f08c0-fc3c-4d40-a0c5-1cc08ed5609d.jpg">
+<meta property="og:description" content="现在很多的Android项目中基本都使用了这种开发模式，我自己也在最近写的项目中应用到了这种开发模式，虽然项目中会多出很多的接口和类，特别是和dagger2联用之后，但项目本身架构确实清晰多了，最主要的作用我认为是将视图逻辑和业务逻辑分离。关于MVP模式看了很多资料，网上的代码各有各的实现方式，其基本思想大体是相同的。其实Android开发还有MVC模式、MVVM模式等。这些模式并没有明确的规定，">
 <meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/14605656357298621.jpg">
 <meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/14605656371149681.jpg">
-<meta property="og:updated_time" content="2016-08-26T04:03:34.846Z">
+<meta property="og:updated_time" content="2016-08-28T03:55:44.283Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android笔记-MVP模式">
-<meta name="twitter:image" content="http://ob5qdb9lc.bkt.clouddn.com/234f08c0-fc3c-4d40-a0c5-1cc08ed5609d.jpg">
+<meta name="twitter:description" content="现在很多的Android项目中基本都使用了这种开发模式，我自己也在最近写的项目中应用到了这种开发模式，虽然项目中会多出很多的接口和类，特别是和dagger2联用之后，但项目本身架构确实清晰多了，最主要的作用我认为是将视图逻辑和业务逻辑分离。关于MVP模式看了很多资料，网上的代码各有各的实现方式，其基本思想大体是相同的。其实Android开发还有MVC模式、MVVM模式等。这些模式并没有明确的规定，">
+<meta name="twitter:image" content="http://ob5qdb9lc.bkt.clouddn.com/14605656357298621.jpg">
 
 
   <link rel="alternative" href="/atom.xml" title="Be Level5 Coder" type="application/atom+xml">
@@ -89,7 +91,7 @@
             
               <li class="tag-list-container">
                 <a href="javascript:;">标签</a>
-                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-MVP/">Android MVP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android内存泄漏/">Android内存泄漏</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android开发框架/">Android开发框架</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android插件化/">Android插件化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android热补丁/">Android热补丁</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android系统/">Android系统</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android进程保活/">Android进程保活</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JVM/">JVM</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Other/">Other</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP-IP/">TCP/IP</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a><span class="tag-list-count">1</span></li></ul>
+                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android事件分发机制/">Android事件分发机制</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android内存泄漏/">Android内存泄漏</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android开发框架/">Android开发框架</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android性能优化/">Android性能优化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android插件化/">Android插件化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android热补丁/">Android热补丁</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android系统/">Android系统</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android进程保活/">Android进程保活</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dagger2/">Dagger2</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DataBinding/">DataBinding</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Handler机制/">Handler机制</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JVM/">JVM</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVP模式/">MVP模式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Other/">Other</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ReactNative/">ReactNative</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Reaml/">Reaml</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Retrofit/">Retrofit</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RxJava/">RxJava</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP-IP/">TCP/IP</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/View绘制流程/">View绘制流程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a><span class="tag-list-count">1</span></li></ul>
               </li>
             
           
@@ -163,15 +165,14 @@
 
     
 	<span class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android-MVP/">Android MVP</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MVP模式/">MVP模式</a></li></ul>
 	</span>
 
 
   </div>
   <div class="article-entry">
-    <p><img src="http://ob5qdb9lc.bkt.clouddn.com/234f08c0-fc3c-4d40-a0c5-1cc08ed5609d.jpg" alt="Image"></p>
+    <p>现在很多的Android项目中基本都使用了这种开发模式，我自己也在最近写的项目中应用到了这种开发模式，虽然项目中会多出很多的接口和类，特别是和dagger2联用之后，但项目本身架构确实清晰多了，最主要的作用我认为是将视图逻辑和业务逻辑分离。<br>关于MVP模式看了很多资料，网上的代码各有各的实现方式，其基本思想大体是相同的。其实Android开发还有MVC模式、MVVM模式等。这些模式并没有明确的规定，都是设计的理念，方法。</p>
 <a id="more"></a>
-<h1 id="Android-MVP"><a href="#Android-MVP" class="headerlink" title="Android MVP"></a>Android MVP</h1><p>现在的项目中基本都使用了这种开发模式，觉得非常不错。关于MVP模式看了很多资料，网上的代码各有各的实现方式，其基本思想大体是相同的。其实Android开发还有MVC模式、MVVM模式等。这些模式并没有明确的规定，都是设计的理念，方法。</p>
 <p>MVP(Model-View-Presenter)可以算是MVC(Model-View-Controller)进化来的。</p>
 <h1 id="Android-MVC"><a href="#Android-MVC" class="headerlink" title="Android MVC"></a>Android MVC</h1><p>MVC 模式的结构分为三部分，实体层的 Model，视图层的 View，以及控制层的 Controller。</p>
 <p><img src="http://ob5qdb9lc.bkt.clouddn.com/14605656357298621.jpg" alt="Image"></p>
@@ -185,7 +186,7 @@
 <li>问题一就在于xml作为view层，控制能力实在太弱了，你想去动态的改变一个页面的背景，或者动态的隐藏/显示一个按钮，这些都没办法在xml中做，只能把代码写在activity中，造成了activity既是controller层，又是view层的这样一个窘境。</li>
 <li>还有一个重要的缺陷，view层和model层是相互可知的，这意味着两层之间存在耦合，耦合对于一个大型程序来说是非常致命的，因为这表示开发，测试，维护都需要花大量的精力。</li>
 </ul>
-<h1 id="Android-MVP-1"><a href="#Android-MVP-1" class="headerlink" title="Android MVP"></a>Android MVP</h1><p>MVP 模式的结构也分为三部分，实体层Model，视图层的View，业务逻辑层Presenter。</p>
+<h1 id="Android-MVP"><a href="#Android-MVP" class="headerlink" title="Android MVP"></a>Android MVP</h1><p>MVP 模式的结构也分为三部分，实体层Model，视图层的View，业务逻辑层Presenter。</p>
 <p><img src="http://ob5qdb9lc.bkt.clouddn.com/14605656371149681.jpg" alt="Image"></p>
 <ul>
 <li>Model:  同样是JavaBean 实体类，用于保存实例数据。</li>

@@ -12,15 +12,16 @@
   
 </title>
 
+<meta name="description" content="Android系统机制要求我们在开发过程中耗时的操作不能放在主线程里执行，不然就分分钟卡顿给你看。Android系统也提供了工具类来帮助我们实现多线程。多线程意味着并发，意味着异步，就像在Dota里面玩地卜师一样，需要多线操作，难度就自然很大。总结一下Android系统提供给我们多线程操作的法门，以及为什么我们要使用多线程。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android笔记-Android多线程">
 <meta property="og:url" content="http://yoursite.com/2016/08/12/Android笔记-Android多线程/index.html">
 <meta property="og:site_name" content="Be Level5 Coder">
-<meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/a8b3c133c895d14338e284af73f082025baf07be.jpg">
-<meta property="og:updated_time" content="2016-08-26T04:04:07.014Z">
+<meta property="og:description" content="Android系统机制要求我们在开发过程中耗时的操作不能放在主线程里执行，不然就分分钟卡顿给你看。Android系统也提供了工具类来帮助我们实现多线程。多线程意味着并发，意味着异步，就像在Dota里面玩地卜师一样，需要多线操作，难度就自然很大。总结一下Android系统提供给我们多线程操作的法门，以及为什么我们要使用多线程。">
+<meta property="og:updated_time" content="2016-08-28T07:07:45.435Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android笔记-Android多线程">
-<meta name="twitter:image" content="http://ob5qdb9lc.bkt.clouddn.com/a8b3c133c895d14338e284af73f082025baf07be.jpg">
+<meta name="twitter:description" content="Android系统机制要求我们在开发过程中耗时的操作不能放在主线程里执行，不然就分分钟卡顿给你看。Android系统也提供了工具类来帮助我们实现多线程。多线程意味着并发，意味着异步，就像在Dota里面玩地卜师一样，需要多线操作，难度就自然很大。总结一下Android系统提供给我们多线程操作的法门，以及为什么我们要使用多线程。">
 
 
   <link rel="alternative" href="/atom.xml" title="Be Level5 Coder" type="application/atom+xml">
@@ -87,7 +88,7 @@
             
               <li class="tag-list-container">
                 <a href="javascript:;">标签</a>
-                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-MVP/">Android MVP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android内存泄漏/">Android内存泄漏</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android开发框架/">Android开发框架</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android插件化/">Android插件化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android热补丁/">Android热补丁</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android系统/">Android系统</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android进程保活/">Android进程保活</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JVM/">JVM</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Other/">Other</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP-IP/">TCP/IP</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a><span class="tag-list-count">1</span></li></ul>
+                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android事件分发机制/">Android事件分发机制</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android内存泄漏/">Android内存泄漏</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android开发框架/">Android开发框架</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android性能优化/">Android性能优化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android插件化/">Android插件化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android热补丁/">Android热补丁</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android系统/">Android系统</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android进程保活/">Android进程保活</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dagger2/">Dagger2</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DataBinding/">DataBinding</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Handler机制/">Handler机制</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JVM/">JVM</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVP模式/">MVP模式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Other/">Other</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ReactNative/">ReactNative</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Reaml/">Reaml</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Retrofit/">Retrofit</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RxJava/">RxJava</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP-IP/">TCP/IP</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/View绘制流程/">View绘制流程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a><span class="tag-list-count">1</span></li></ul>
               </li>
             
           
@@ -167,7 +168,7 @@
 
   </div>
   <div class="article-entry">
-    <p><img src="http://ob5qdb9lc.bkt.clouddn.com/a8b3c133c895d14338e284af73f082025baf07be.jpg" alt="Image"></p>
+    <p>Android系统机制要求我们在开发过程中耗时的操作不能放在主线程里执行，不然就分分钟卡顿给你看。Android系统也提供了工具类来帮助我们实现多线程。<br>多线程意味着并发，意味着异步，就像在Dota里面玩地卜师一样，需要多线操作，难度就自然很大。<br>总结一下Android系统提供给我们多线程操作的法门，以及为什么我们要使用多线程。</p>
 <a id="more"></a>
 <h1 id="Android多线程"><a href="#Android多线程" class="headerlink" title="Android多线程"></a>Android多线程</h1><p>众所周知，Android 程序的大多数代码操作都必须执行在主线程，例如系统事件(例如设备屏幕发生旋转)，输入事件(例如用户点击滑动等)，程序回调服务，UI绘制以及闹钟事件等等。那么我们在上述事件或者方法中插入的代码也将执行在主线程。</p>
 <p>一旦我们在主线程里面添加了操作复杂的代码，这些代码就很可能阻碍主线程去响应点击/滑动事件，阻碍主线程的 UI 绘制等等。我们知道，为了让屏幕的刷新帧率达到 60fps，我们需要确保 16ms 内完成单次刷新的操作。</p>

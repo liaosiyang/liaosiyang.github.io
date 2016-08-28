@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-08-26T04:04:06.998Z</updated>
+  <updated>2016-08-28T03:44:17.809Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,13 +20,12 @@
     <link href="http://yoursite.com/2016/08/24/Android%E7%AC%94%E8%AE%B0-ReactNative/"/>
     <id>http://yoursite.com/2016/08/24/Android笔记-ReactNative/</id>
     <published>2016-08-24T03:19:23.000Z</published>
-    <updated>2016-08-26T04:04:06.998Z</updated>
+    <updated>2016-08-28T03:44:17.809Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="http://ob5qdb9lc.bkt.clouddn.com/20130116223426_xjsvs.jpeg" alt="Image"></p>
+    <content type="html"><![CDATA[<p>React Native 是最近非常火的一个话题,它可以使用前端的开发方式来开发移动端，但并不是像以前在实习公司所做的仅仅用一个WebView嵌套一样。<br>它实际上是一种Hybrid App开发方式，兼有Web App跨平台和Native App高性能的优势，并且它是由牛逼的FacebooK公司开源的神器。<br>作为一名移动开发人员，我也对这项技术非常感兴趣，谁让现在搞Android的竞争太激烈，技术更新也快，说不定哪天就被淘汰了。所以还是早做准备，扩充自己的技能栈。</p>
 <a id="more"></a>
-<p>React Native 是最近非常火的一个话题,它可以使用前端的开发方式来开发移动端，但并不是像以前在实习公司所做的仅仅用一个WebView嵌套一样。它实际上也是一种Hybrid App开发方式，兼有Web App跨平台和Native App高性能的优势，并且是由牛逼的FacebooK公司开源的神器。</p>
-<p>作为一名移动开发人员，我也对这项技术非常感兴趣，谁让现在搞Android的竞争太激烈，技术更新也快，说不定哪天就被淘汰了。所以还是早做准备，扩充自己的技能栈。</p>
-<p>话虽这么说，但React Native毕竟是一种全新的开发方式，想要掌握没那么容易，需要很多前端开发的知识。2016年余下的时间就投入给React Native吧，毕竟对于前端开发我可是很有兴趣的。</p>
+<p>话虽这么说，但React Native毕竟是一种全新的开发方式，想要掌握没那么容易，需要很多前端开发的知识。</p>
+<p>2016年余下的时间就投入给React Native吧，毕竟对于前端开发我可是很有兴趣的。</p>
 <h1 id="React-Native"><a href="#React-Native" class="headerlink" title="React Native"></a>React Native</h1><p>React Native 使你能够基于 JavaScript 和 React 在原生平台上构建应用，提倡的是 “learn once, write anywhere”，复用代码，提高开发效率。</p>
 <p>在移动端开发端，我们经常是根据服务端传来的JSON文件来传递信息，更新视图。JSON只能传递配置信息，无法表达逻辑。从本质上讲，这是因为 JSON 毕竟只是纯文本，它缺乏像编程语言那样的运行能力。</p>
 <p>而 React 在前端取得突破性成功以后，JavaScript 布道者们开始试图一统三端。他们利用了移动平台能够运行 JavaScript 代码的能力，并且发挥了JavaScript 不仅仅可以传递配置信息，还可以表达逻辑信息的优点。</p>
@@ -65,12 +64,14 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;http://ob5qdb9lc.bkt.clouddn.com/20130116223426_xjsvs.jpeg&quot; alt=&quot;Image&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;React Native 是最近非常火的一个话题,它可以使用前端的开发方式来开发移动端，但并不是像以前在实习公司所做的仅仅用一个WebView嵌套一样。&lt;br&gt;它实际上是一种Hybrid App开发方式，兼有Web App跨平台和Native App高性能的优势，并且它是由牛逼的FacebooK公司开源的神器。&lt;br&gt;作为一名移动开发人员，我也对这项技术非常感兴趣，谁让现在搞Android的竞争太激烈，技术更新也快，说不定哪天就被淘汰了。所以还是早做准备，扩充自己的技能栈。&lt;/p&gt;
     
     </summary>
     
       <category term="Android笔记" scheme="http://yoursite.com/categories/Android%E7%AC%94%E8%AE%B0/"/>
     
+    
+      <category term="ReactNative" scheme="http://yoursite.com/tags/ReactNative/"/>
     
       <category term="Android开发框架" scheme="http://yoursite.com/tags/Android%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6/"/>
     
@@ -81,11 +82,10 @@
     <link href="http://yoursite.com/2016/08/22/Android%E7%AC%94%E8%AE%B0-%E7%83%AD%E8%A1%A5%E4%B8%81/"/>
     <id>http://yoursite.com/2016/08/22/Android笔记-热补丁/</id>
     <published>2016-08-22T01:51:02.000Z</published>
-    <updated>2016-08-26T03:50:11.939Z</updated>
+    <updated>2016-08-28T03:43:06.054Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="http://ob5qdb9lc.bkt.clouddn.com/1061319.jpg" alt="Image"></p>
+    <content type="html"><![CDATA[<p>继插件化后，热补丁技术在2015年开始爆发，目前已经是非常热门的Android开发技术。其中比较著名的有淘宝的Dexposed、支付宝的AndFix以及Qzone的超级热补丁方案，还有最新的微信Tinker方案。<br>我的理解是Android热补丁就是不需要重新安装应用，而是动态地修复应用的Bug的技术，这项技术非常实用，毕竟每天都会看到一两个应用提示要求更新，而更新仅仅是修复一两个Bug,但却要下载几十M的APK文件，花费几分钟的时间安装，麻烦！</p>
 <a id="more"></a>
-<p>继插件化后，热补丁技术在2015年开始爆发，目前已经是非常热门的Android开发技术。其中比较著名的有淘宝的Dexposed、支付宝的AndFix以及Qzone的超级热补丁方案，还有最新的微信Tinker方案。</p>
 <h1 id="为什么要热补丁"><a href="#为什么要热补丁" class="headerlink" title="为什么要热补丁"></a>为什么要热补丁</h1><p>当一个App发布之后，突然发现了一个严重bug需要进行紧急修复，这时候公司各方就会忙得焦头烂额：重新打包App、测试、向各个应用市场和渠道换包、提示用户升级、用户下载、覆盖安装。有时候仅仅是为了修改了一行代码，也要付出巨大的成本进行换包和重新发布。</p>
 <p>热补丁：让应用能够在无需重新安装的情况实现更新，帮助应用快速建立动态修复能力。</p>
 <p>适合使用在哪些场景：</p>
@@ -151,7 +151,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;http://ob5qdb9lc.bkt.clouddn.com/1061319.jpg&quot; alt=&quot;Image&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;继插件化后，热补丁技术在2015年开始爆发，目前已经是非常热门的Android开发技术。其中比较著名的有淘宝的Dexposed、支付宝的AndFix以及Qzone的超级热补丁方案，还有最新的微信Tinker方案。&lt;br&gt;我的理解是Android热补丁就是不需要重新安装应用，而是动态地修复应用的Bug的技术，这项技术非常实用，毕竟每天都会看到一两个应用提示要求更新，而更新仅仅是修复一两个Bug,但却要下载几十M的APK文件，花费几分钟的时间安装，麻烦！&lt;/p&gt;
     
     </summary>
     
@@ -167,11 +167,10 @@
     <link href="http://yoursite.com/2016/08/21/Android%E7%AC%94%E8%AE%B0-%E6%8F%92%E4%BB%B6%E5%8C%96/"/>
     <id>http://yoursite.com/2016/08/21/Android笔记-插件化/</id>
     <published>2016-08-21T01:59:42.000Z</published>
-    <updated>2016-08-26T03:50:05.639Z</updated>
+    <updated>2016-08-28T03:33:43.299Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="http://ob5qdb9lc.bkt.clouddn.com/21a4462309f790520566e8c50af3d7ca7acbd5d4.jpg" alt="Image"></p>
+    <content type="html"><![CDATA[<p>最近Android插件化、热补丁等技术很火，网上陆续也发布了很多相关的资料。<br>我的理解是Android插件化就是当应用想要实现某功能，可以直接从网络上下载安装，这个过程可以发生在运行的过程中的技术。(就像魔兽世界使用到的大脚插件、魔盒插件一样)<br>很多知名的Android应用已经应用到了这些技术，大致总结下吧，以后实际工作中很有可能会使用到。</p>
 <a id="more"></a>
-<p>最近Android插件化、热补丁等技术很火，网上陆续也发布了很多相关的资料。大致总结下吧，以后实际工作中很有可能会使用到。</p>
 <h1 id="为什么要插件化"><a href="#为什么要插件化" class="headerlink" title="为什么要插件化"></a>为什么要插件化</h1><p>在开发应用时，随着业务规模发展到一定程度，不断地加入新功能、添加新的类库，代码在急剧的膨胀，相应的apk包的大小也急剧增加，那么就会遇到65536问题。</p>
 <p>65536：超过最大方法数限制的问题，是由于DEX文件格式限制，一个DEX文件中method个数采用使用原生类型short来索引文件中的方法，也就是4个字节共计最多表达65536个method，field/class的个数也均有此限制。对于DEX文件，则是将工程所需全部class文件合并且压缩到一个DEX文件期间，也就是Android打包的DEX过程中， 单个DEX文件可被引用的方法总数（自己开发的代码以及所引用的Android框架、类库的代码）被限制为65536；</p>
 <p>解决这个问题，一般有下面几种方案，一种方案是加大Proguard的力度来减小DEX的大小和方法数，但这是治标不治本的方案，随着业务代码的添加，方法数终究会到达这个限制。</p>
@@ -243,7 +242,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;http://ob5qdb9lc.bkt.clouddn.com/21a4462309f790520566e8c50af3d7ca7acbd5d4.jpg&quot; alt=&quot;Image&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;最近Android插件化、热补丁等技术很火，网上陆续也发布了很多相关的资料。&lt;br&gt;我的理解是Android插件化就是当应用想要实现某功能，可以直接从网络上下载安装，这个过程可以发生在运行的过程中的技术。(就像魔兽世界使用到的大脚插件、魔盒插件一样)&lt;br&gt;很多知名的Android应用已经应用到了这些技术，大致总结下吧，以后实际工作中很有可能会使用到。&lt;/p&gt;
     
     </summary>
     
@@ -259,12 +258,10 @@
     <link href="http://yoursite.com/2016/08/19/Android%E7%AC%94%E8%AE%B0-DataBinding/"/>
     <id>http://yoursite.com/2016/08/19/Android笔记-DataBinding/</id>
     <published>2016-08-19T01:24:20.000Z</published>
-    <updated>2016-08-26T04:04:07.033Z</updated>
+    <updated>2016-08-28T04:07:32.114Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="http://ob5qdb9lc.bkt.clouddn.com/20141104070106_KTTPd.jpeg" alt="Image"></p>
+    <content type="html"><![CDATA[<p>最近在项目中试用了一下DataBinding技术，觉得还蛮好用的。这项技术是Google对于MVVM在Android上的一种实现，已经装载进Android SDK里面了，足可见Google对它的重视。<br>当前还只是测试版本，使用的人不多，但我觉得这种技术应该会成为Android主流开发技术之一。<br>Data Binding，数据绑定，是Google对MVVM在Android上的一种实现，可以直接绑定数据到xml中，并实现自动刷新。</p>
 <a id="more"></a>
-<h1 id="DataBinding"><a href="#DataBinding" class="headerlink" title="DataBinding"></a>DataBinding</h1><p>最近在项目中试用了一下DataBinding技术，觉得还蛮好用的。这项技术是Google对于MVVM在Android上的一种实现，已经装载进Android SDK里面了，足可见Google对它的重视。当前还只是测试版本，使用的人不多，但未来这种技术应该会成为Android主流开发技术之一。</p>
-<p>Data Binding，数据绑定，是Google对MVVM在Android上的一种实现，可以直接绑定数据到xml中，并实现自动刷新。</p>
 <h1 id="为什么要使用-Data-Binding"><a href="#为什么要使用-Data-Binding" class="headerlink" title="为什么要使用 Data Binding"></a>为什么要使用 Data Binding</h1><p>在最初学习Android的时候，我们在XML文件上定义的控件往往会给它取一个ID，然后在Activity或Fragment中使用findViewById找到它，如果要使用点击事件，那么还要setOnClickListener。这使我们的代码中有一大段都是这样的排列。</p>
 <p>后来我们使用了ButterKnife，这让我们轻松多了，不必再写大段的findViewById和setOnClickListener，但是基本思想没有变，还是要在Java文件中找到XML文件中对应的控件，引用它然后使用它。</p>
 <p>ButterKnife使用了注解处理器，在编译时生成了辅助代码来达到注入的目的，比如在MainActivity使用ButterKnife就会生成这样的代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span>$$<span class="title">ViewBinder</span>&lt;<span class="title">T</span> <span class="keyword">extends</span> <span class="title">MainActivity</span>&gt; <span class="keyword">implements</span> <span class="title">ViewBinder</span>&lt;<span class="title">T</span>&gt; </span>&#123;</div><div class="line">  <span class="meta">@Override</span></div><div class="line">  <span class="function"><span class="keyword">public</span> Unbinder <span class="title">bind</span><span class="params">(<span class="keyword">final</span> Finder finder, <span class="keyword">final</span> T target, Object source)</span> </span>&#123;</div><div class="line">    InnerUnbinder unbinder = createUnbinder(target);</div><div class="line">    ...</div><div class="line">    <span class="keyword">return</span> unbinder;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">protected</span> InnerUnbinder&lt;T&gt; <span class="title">createUnbinder</span><span class="params">(T target)</span> </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> InnerUnbinder(target);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="keyword">protected</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">InnerUnbinder</span>&lt;<span class="title">T</span> <span class="keyword">extends</span> <span class="title">MainActivity</span>&gt; <span class="keyword">implements</span> <span class="title">Unbinder</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> T target;</div><div class="line">    ...</div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="title">InnerUnbinder</span><span class="params">(T target)</span> </span>&#123;</div><div class="line">      <span class="keyword">this</span>.target = target;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title">unbind</span><span class="params">()</span> </span>&#123;</div><div class="line">      ...</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">unbind</span><span class="params">(T target)</span> </span>&#123;</div><div class="line">      ...</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>target就是MainActivity实例，ButterKnife会帮我们找到使用@BindView(R.id.xxx)标注的控件然后绑定。</p>
@@ -318,7 +315,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;http://ob5qdb9lc.bkt.clouddn.com/20141104070106_KTTPd.jpeg&quot; alt=&quot;Image&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;最近在项目中试用了一下DataBinding技术，觉得还蛮好用的。这项技术是Google对于MVVM在Android上的一种实现，已经装载进Android SDK里面了，足可见Google对它的重视。&lt;br&gt;当前还只是测试版本，使用的人不多，但我觉得这种技术应该会成为Android主流开发技术之一。&lt;br&gt;Data Binding，数据绑定，是Google对MVVM在Android上的一种实现，可以直接绑定数据到xml中，并实现自动刷新。&lt;/p&gt;
     
     </summary>
     
@@ -327,6 +324,8 @@
     
       <category term="Android开发框架" scheme="http://yoursite.com/tags/Android%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6/"/>
     
+      <category term="DataBinding" scheme="http://yoursite.com/tags/DataBinding/"/>
+    
   </entry>
   
   <entry>
@@ -334,11 +333,10 @@
     <link href="http://yoursite.com/2016/08/18/Android%E7%AC%94%E8%AE%B0-MVP%E6%A8%A1%E5%BC%8F/"/>
     <id>http://yoursite.com/2016/08/18/Android笔记-MVP模式/</id>
     <published>2016-08-18T08:03:31.000Z</published>
-    <updated>2016-08-26T04:03:34.846Z</updated>
+    <updated>2016-08-28T03:55:44.283Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="http://ob5qdb9lc.bkt.clouddn.com/234f08c0-fc3c-4d40-a0c5-1cc08ed5609d.jpg" alt="Image"></p>
+    <content type="html"><![CDATA[<p>现在很多的Android项目中基本都使用了这种开发模式，我自己也在最近写的项目中应用到了这种开发模式，虽然项目中会多出很多的接口和类，特别是和dagger2联用之后，但项目本身架构确实清晰多了，最主要的作用我认为是将视图逻辑和业务逻辑分离。<br>关于MVP模式看了很多资料，网上的代码各有各的实现方式，其基本思想大体是相同的。其实Android开发还有MVC模式、MVVM模式等。这些模式并没有明确的规定，都是设计的理念，方法。</p>
 <a id="more"></a>
-<h1 id="Android-MVP"><a href="#Android-MVP" class="headerlink" title="Android MVP"></a>Android MVP</h1><p>现在的项目中基本都使用了这种开发模式，觉得非常不错。关于MVP模式看了很多资料，网上的代码各有各的实现方式，其基本思想大体是相同的。其实Android开发还有MVC模式、MVVM模式等。这些模式并没有明确的规定，都是设计的理念，方法。</p>
 <p>MVP(Model-View-Presenter)可以算是MVC(Model-View-Controller)进化来的。</p>
 <h1 id="Android-MVC"><a href="#Android-MVC" class="headerlink" title="Android MVC"></a>Android MVC</h1><p>MVC 模式的结构分为三部分，实体层的 Model，视图层的 View，以及控制层的 Controller。</p>
 <p><img src="http://ob5qdb9lc.bkt.clouddn.com/14605656357298621.jpg" alt="Image"></p>
@@ -352,7 +350,7 @@
 <li>问题一就在于xml作为view层，控制能力实在太弱了，你想去动态的改变一个页面的背景，或者动态的隐藏/显示一个按钮，这些都没办法在xml中做，只能把代码写在activity中，造成了activity既是controller层，又是view层的这样一个窘境。</li>
 <li>还有一个重要的缺陷，view层和model层是相互可知的，这意味着两层之间存在耦合，耦合对于一个大型程序来说是非常致命的，因为这表示开发，测试，维护都需要花大量的精力。</li>
 </ul>
-<h1 id="Android-MVP-1"><a href="#Android-MVP-1" class="headerlink" title="Android MVP"></a>Android MVP</h1><p>MVP 模式的结构也分为三部分，实体层Model，视图层的View，业务逻辑层Presenter。</p>
+<h1 id="Android-MVP"><a href="#Android-MVP" class="headerlink" title="Android MVP"></a>Android MVP</h1><p>MVP 模式的结构也分为三部分，实体层Model，视图层的View，业务逻辑层Presenter。</p>
 <p><img src="http://ob5qdb9lc.bkt.clouddn.com/14605656371149681.jpg" alt="Image"></p>
 <ul>
 <li>Model:  同样是JavaBean 实体类，用于保存实例数据。</li>
@@ -380,14 +378,14 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;http://ob5qdb9lc.bkt.clouddn.com/234f08c0-fc3c-4d40-a0c5-1cc08ed5609d.jpg&quot; alt=&quot;Image&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;现在很多的Android项目中基本都使用了这种开发模式，我自己也在最近写的项目中应用到了这种开发模式，虽然项目中会多出很多的接口和类，特别是和dagger2联用之后，但项目本身架构确实清晰多了，最主要的作用我认为是将视图逻辑和业务逻辑分离。&lt;br&gt;关于MVP模式看了很多资料，网上的代码各有各的实现方式，其基本思想大体是相同的。其实Android开发还有MVC模式、MVVM模式等。这些模式并没有明确的规定，都是设计的理念，方法。&lt;/p&gt;
     
     </summary>
     
       <category term="Android笔记" scheme="http://yoursite.com/categories/Android%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="Android MVP" scheme="http://yoursite.com/tags/Android-MVP/"/>
+      <category term="MVP模式" scheme="http://yoursite.com/tags/MVP%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
@@ -396,9 +394,9 @@
     <link href="http://yoursite.com/2016/08/18/Android%E7%AC%94%E8%AE%B0-Dagger2/"/>
     <id>http://yoursite.com/2016/08/18/Android笔记-Dagger2/</id>
     <published>2016-08-18T01:21:28.000Z</published>
-    <updated>2016-08-26T04:04:07.029Z</updated>
+    <updated>2016-08-28T04:36:00.380Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="http://ob5qdb9lc.bkt.clouddn.com/99dd27abad87170168a9304eed8d9f129ae3db95.jpg" alt="Image"></p>
+    <content type="html"><![CDATA[<p>Dagger2是为Android和Java平台提供的一个完全静态的，在编译时进行依赖注入的框架。一开始使用的时候也不太明白依赖注入有什么好用的地方，可能是开发的项目比较小，体会不到Dagger2牛逼之处。后来才发现Dagger2真心牛逼。<br>我们在做项目时，经常需要在一个对象里去创建另一个对象的示例，这种行为是产生耦合的常见形式，对于一个大型项目来说，过多的相互依赖会导致代码难以维护，很容易就会碰到修改一个小需求需要大面积的修改各种代码。<br>我的理解是Dagger2主要作用有两点，一是依赖的类和提供依赖的类的实现方法分离，二是在Android中帮助我们实现对象生命周期管理。</p>
 <a id="more"></a>
 <h1 id="依赖注入"><a href="#依赖注入" class="headerlink" title="依赖注入"></a>依赖注入</h1><p>就是目标类中所依赖的其他的类的初始化过程，不是通过手动编码的方式创建，而是通过技术手段可以把其他的类的已经初始化好的实例自动注入到目标类中。</p>
 <p>人们在很长的一段时间里都是利用控制反转原则规定：应用程序的流程取决于在程序运行时对象图的建立。通过抽象定义的对象交互可以实现这样的动态流程。而使用依赖注入技术或者服务定位器便可以完成运行时绑定。</p>
@@ -441,7 +439,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;http://ob5qdb9lc.bkt.clouddn.com/99dd27abad87170168a9304eed8d9f129ae3db95.jpg&quot; alt=&quot;Image&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;Dagger2是为Android和Java平台提供的一个完全静态的，在编译时进行依赖注入的框架。一开始使用的时候也不太明白依赖注入有什么好用的地方，可能是开发的项目比较小，体会不到Dagger2牛逼之处。后来才发现Dagger2真心牛逼。&lt;br&gt;我们在做项目时，经常需要在一个对象里去创建另一个对象的示例，这种行为是产生耦合的常见形式，对于一个大型项目来说，过多的相互依赖会导致代码难以维护，很容易就会碰到修改一个小需求需要大面积的修改各种代码。&lt;br&gt;我的理解是Dagger2主要作用有两点，一是依赖的类和提供依赖的类的实现方法分离，二是在Android中帮助我们实现对象生命周期管理。&lt;/p&gt;
     
     </summary>
     
@@ -450,6 +448,8 @@
     
       <category term="Android开发框架" scheme="http://yoursite.com/tags/Android%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6/"/>
     
+      <category term="Dagger2" scheme="http://yoursite.com/tags/Dagger2/"/>
+    
   </entry>
   
   <entry>
@@ -457,12 +457,10 @@
     <link href="http://yoursite.com/2016/08/17/Android%E7%AC%94%E8%AE%B0-Realm/"/>
     <id>http://yoursite.com/2016/08/17/Android笔记-Realm/</id>
     <published>2016-08-17T01:42:26.000Z</published>
-    <updated>2016-08-26T04:04:07.003Z</updated>
+    <updated>2016-08-28T04:17:40.838Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="http://ob5qdb9lc.bkt.clouddn.com/139-160513111920.jpg" alt="Image"></p>
+    <content type="html"><![CDATA[<p>在使用SQLite的时候总是要自己写一层接口出来方便使用，使用了Realm之后发现简单多了，并且据说在普通操作上，Realm的速度最快要达到原始的SQLite的10倍。<br>官方介绍：Realm，为移动设备而生，替代 SQLite 和 Core Data。为你省下数周的时间和数千行的代码，帮你创造出更棒的用户体验。<br>对于我这种数据库渣写SQL语句是很头疼的问题，简单的还好，复杂的真是要命。Realm的这种简单的流式API实在是太好用了。</p>
 <a id="more"></a>
-<h1 id="Realm"><a href="#Realm" class="headerlink" title="Realm"></a>Realm</h1><p>在使用SQLite的时候总是要自己写一层接口出来方便使用，使用了Realm之后发现简单多了，并且据说在普通操作上，Realm的速度最快要达到原始的SQLite的10倍。</p>
-<p>官方介绍：Realm，为移动设备而生，替代 SQLite 和 Core Data。为你省下数周的时间和数千行的代码，帮你创造出更棒的用户体验。</p>
 <p>Realm是一个可以替代SQLite以及ORM Libraries的轻量级数据库。相比SQLite，Realm更快并且具有很多现代数据库的特性，比如支持JSON，流式api，数据变更通知，以及加密支持，这些都为安卓开发者带来了方便。</p>
 <h2 id="Realm类"><a href="#Realm类" class="headerlink" title="Realm类"></a>Realm类</h2><ul>
 <li>Realm类可以对你的持久化对象进行存储和事务管理，可以用来创建RealmObjects实例。领域内的对象可以在任何时间查询和读取。</li>
@@ -509,7 +507,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;http://ob5qdb9lc.bkt.clouddn.com/139-160513111920.jpg&quot; alt=&quot;Image&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;在使用SQLite的时候总是要自己写一层接口出来方便使用，使用了Realm之后发现简单多了，并且据说在普通操作上，Realm的速度最快要达到原始的SQLite的10倍。&lt;br&gt;官方介绍：Realm，为移动设备而生，替代 SQLite 和 Core Data。为你省下数周的时间和数千行的代码，帮你创造出更棒的用户体验。&lt;br&gt;对于我这种数据库渣写SQL语句是很头疼的问题，简单的还好，复杂的真是要命。Realm的这种简单的流式API实在是太好用了。&lt;/p&gt;
     
     </summary>
     
@@ -518,6 +516,8 @@
     
       <category term="Android开发框架" scheme="http://yoursite.com/tags/Android%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6/"/>
     
+      <category term="Reaml" scheme="http://yoursite.com/tags/Reaml/"/>
+    
   </entry>
   
   <entry>
@@ -525,11 +525,10 @@
     <link href="http://yoursite.com/2016/08/15/Android%E7%AC%94%E8%AE%B0-Retrofit/"/>
     <id>http://yoursite.com/2016/08/15/Android笔记-Retrofit/</id>
     <published>2016-08-15T13:47:57.000Z</published>
-    <updated>2016-08-26T04:04:07.044Z</updated>
+    <updated>2016-08-28T04:35:15.058Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="http://ob5qdb9lc.bkt.clouddn.com/faf2b2119313b07eb36f89b10dd7912396dd8cbd.jpg" alt="Image"></p>
+    <content type="html"><![CDATA[<p>Retrofit 是一个 RESTful 的 HTTP 网络请求框架的封装。注意这里并没有说它是网络请求框架，主要原因在于网络请求的工作并不是 Retrofit 来完成的。 Retrofit 2.0 开始内置 OkHttp ，前者专注于接口的封装，后者专注于网络请求的高效，二者分工协作。<br>网络请求框架开源的有很多，据说Retrofit性能最好，处理最快，出自开源狂魔Square公司，那我就直接拿来使用了。<br>我理解的Retrofit好处有两点，一是可以和RxJava联用， 二是通过注解的形式令 Http 请求的参数变得更加直接，而且类型安全。</p>
 <a id="more"></a>
-<h1 id="Retrofit"><a href="#Retrofit" class="headerlink" title="Retrofit"></a>Retrofit</h1><p>Retrofit 是一个 RESTful 的 HTTP 网络请求框架的封装。注意这里并没有说它是网络请求框架，主要原因在于网络请求的工作并不是 Retrofit 来完成的。 Retrofit 2.0 开始内置 OkHttp ，前者专注于接口的封装，后者专注于网络请求的高效，二者分工协作。</p>
 <p>REST 指的是一组架构约束条件和原则。满足这些约束条件和原则的应用程序或设计就是 RESTful。<br><a href="http://blog.igevin.info/posts/restful-architecture-in-general/" target="_blank" rel="external">RESTful 架构风格概述</a></p>
 <p>我们的应用程序通过 Retrofit 请求网络，实际上是使用 Retrofit 接口层封装请求参数、Header、Url 等信息，之后由 OkHttp 完成后续的请求操作，在服务端返回数据之后， OkHttp 将原始的结果交给 Retrofit ，后者根据用户的需求对结果进行解析的过程。</p>
 <h1 id="Retrofit-的基本用法"><a href="#Retrofit-的基本用法" class="headerlink" title="Retrofit 的基本用法"></a>Retrofit 的基本用法</h1><p>访问 GitHub 的 api，就定义一个接口：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">GitHubService</span> </span>&#123;  <span class="meta">@GET</span>(<span class="string">"users/&#123;user&#125;/repos"</span>)</div><div class="line">    Call&lt;List&lt;Repo&gt;&gt; listRepos(<span class="meta">@Path</span>(<span class="string">"user"</span>) String user);</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>其中，在发起请求时， {user} 会被替换为方法的第一个参数 user 。</p>
@@ -548,7 +547,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;http://ob5qdb9lc.bkt.clouddn.com/faf2b2119313b07eb36f89b10dd7912396dd8cbd.jpg&quot; alt=&quot;Image&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;Retrofit 是一个 RESTful 的 HTTP 网络请求框架的封装。注意这里并没有说它是网络请求框架，主要原因在于网络请求的工作并不是 Retrofit 来完成的。 Retrofit 2.0 开始内置 OkHttp ，前者专注于接口的封装，后者专注于网络请求的高效，二者分工协作。&lt;br&gt;网络请求框架开源的有很多，据说Retrofit性能最好，处理最快，出自开源狂魔Square公司，那我就直接拿来使用了。&lt;br&gt;我理解的Retrofit好处有两点，一是可以和RxJava联用， 二是通过注解的形式令 Http 请求的参数变得更加直接，而且类型安全。&lt;/p&gt;
     
     </summary>
     
@@ -557,6 +556,8 @@
     
       <category term="Android开发框架" scheme="http://yoursite.com/tags/Android%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6/"/>
     
+      <category term="Retrofit" scheme="http://yoursite.com/tags/Retrofit/"/>
+    
   </entry>
   
   <entry>
@@ -564,12 +565,11 @@
     <link href="http://yoursite.com/2016/08/15/Android%E7%AC%94%E8%AE%B0-RxJava/"/>
     <id>http://yoursite.com/2016/08/15/Android笔记-RxJava/</id>
     <published>2016-08-15T12:20:05.000Z</published>
-    <updated>2016-08-26T04:04:07.048Z</updated>
+    <updated>2016-08-28T05:54:53.500Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="http://ob5qdb9lc.bkt.clouddn.com/1920x1080_4be7f3a22d45ffe.jpg" alt="Image"></p>
+    <content type="html"><![CDATA[<p>RxJava算得上是我最喜欢的开源库了。以前在项目中使用异步是个很头疼的问题，来回回调，互相嵌套，往往让代码可读性变的很差。RxJava的出现算是解决了这个问题，一开始使用的时候还不觉得什么，用多了就发现这个开源库真心牛逼。它不仅仅是取代了AsyncTask,Handler等，而且还有一些实用的衍生产品。<br>Rx就是一种响应式编程,响应式编程是一种基于异步数据流概念的编程模式。数据流就像一条河：它可以被观测，被过滤，被操作，或者为新的消费者与另外一条流合并为一条新的流。<br>响应式编程最通用的一个场景是UI：我们的移动App必须做出对网络调用、用户触摸输入和系统弹框的响应。在这个世界上，软件之所以是事件驱动并响应的是因为现实生活也是如此。<br>RxJava就是帮助我们在Android开发中实现响应式编程的框架，我的理解是它的好处有两点，一是响应式编程，帮我们将方法组合成链式；二是线程操作，简化异步事件的处理。</p>
 <a id="more"></a>
-<h1 id="RxJAVA"><a href="#RxJAVA" class="headerlink" title="RxJAVA"></a>RxJAVA</h1><p>RxJava算得上是我最喜欢的开源库了。以前在项目中使用异步是个很头疼的问题，来回回调，互相嵌套，往往让代码可读性变的很差。RxJava的出现算是解决了这个问题，一开始使用的时候还不觉得什么，用多了就发现这个开源库真心牛逼。它不仅仅是取代了AsyncTask,Handler等，而且还有一些实用的衍生产品。<br><br></p>
-<h1 id="什么是Rx"><a href="#什么是Rx" class="headerlink" title="什么是Rx"></a>什么是Rx</h1><p>Rx就是一种响应式编程，来创建基于事件的异步程序。<br><br></p>
+<p><br></p>
 <h1 id="RxJava是什么"><a href="#RxJava是什么" class="headerlink" title="RxJava是什么"></a>RxJava是什么</h1><p>RxJava就是一种用Java语言实现的响应式编程，来创建基于事件的异步程序。<br><br></p>
 <h1 id="扩展的观察者模式"><a href="#扩展的观察者模式" class="headerlink" title="扩展的观察者模式"></a>扩展的观察者模式</h1><p>RxJava 的异步实现，是通过一种扩展的观察者模式来实现的。</p>
 <p>观察者（Observer）需要在被观察者(Observable)变化的一瞬间做出反应。<br>而两者通过注册（Register）或者订阅(Subscribe)的方式进行绑定。<br><br></p>
@@ -648,7 +648,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;http://ob5qdb9lc.bkt.clouddn.com/1920x1080_4be7f3a22d45ffe.jpg&quot; alt=&quot;Image&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;RxJava算得上是我最喜欢的开源库了。以前在项目中使用异步是个很头疼的问题，来回回调，互相嵌套，往往让代码可读性变的很差。RxJava的出现算是解决了这个问题，一开始使用的时候还不觉得什么，用多了就发现这个开源库真心牛逼。它不仅仅是取代了AsyncTask,Handler等，而且还有一些实用的衍生产品。&lt;br&gt;Rx就是一种响应式编程,响应式编程是一种基于异步数据流概念的编程模式。数据流就像一条河：它可以被观测，被过滤，被操作，或者为新的消费者与另外一条流合并为一条新的流。&lt;br&gt;响应式编程最通用的一个场景是UI：我们的移动App必须做出对网络调用、用户触摸输入和系统弹框的响应。在这个世界上，软件之所以是事件驱动并响应的是因为现实生活也是如此。&lt;br&gt;RxJava就是帮助我们在Android开发中实现响应式编程的框架，我的理解是它的好处有两点，一是响应式编程，帮我们将方法组合成链式；二是线程操作，简化异步事件的处理。&lt;/p&gt;
     
     </summary>
     
@@ -657,6 +657,8 @@
     
       <category term="Android开发框架" scheme="http://yoursite.com/tags/Android%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6/"/>
     
+      <category term="RxJava" scheme="http://yoursite.com/tags/RxJava/"/>
+    
   </entry>
   
   <entry>
@@ -664,11 +666,10 @@
     <link href="http://yoursite.com/2016/08/14/Android%E7%AC%94%E8%AE%B0-Android%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
     <id>http://yoursite.com/2016/08/14/Android笔记-Android性能优化/</id>
     <published>2016-08-14T13:50:08.000Z</published>
-    <updated>2016-08-26T04:04:07.025Z</updated>
+    <updated>2016-08-28T06:04:47.395Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="http://ob5qdb9lc.bkt.clouddn.com/30721479_1390194907933.jpg" alt="Image"></p>
+    <content type="html"><![CDATA[<p>看了很多有关Android性能优化的资料，基本上说的点都差不多。异步，内存泄漏，视图布局等等。<br>后来发现原来Google发布了<a href="https://www.youtube.com/playlist?list=PLWz5rJ2EKKc9CBxr3BVjPTPoDPLdPIFCE" target="_blank" rel="external">Android性能优化典范的专题</a>。国人也发布了相关的翻译文档，强，无敌！<br>性能优化是Android开发中一个很重要的课题，Android系统常年被诟病不如IOS好用，我觉得这并不是Android系统的问题，而是开发者开发的应用很多都没有优化，只是实现了其功能而已。(还有一点是好多应用强行占据系统资源，阿猫阿狗应用都自行启动，进程保活，简直无语)<br>Google大概是都看不下去，所以发布了这一专题，作为Android开发人员，在性能优化方面确实应该多长点心。</p>
 <a id="more"></a>
-<p>看了很多有关Android性能优化的资料，基本上说的点都差不多。异步，内存泄漏，视图布局等等。后来发现原来Google发布了<a href="https://www.youtube.com/playlist?list=PLWz5rJ2EKKc9CBxr3BVjPTPoDPLdPIFCE" target="_blank" rel="external">Android性能优化典范的专题</a>。国人也发布了相关的翻译文档，强，无敌！</p>
 <p><a href="http://hukai.me/android-performance-patterns/" target="_blank" rel="external">Android性能优化典范 - 第1季</a><br><a href="http://hukai.me/android-performance-patterns-season-2/" target="_blank" rel="external">Android性能优化典范 - 第2季</a><br><a href="http://hukai.me/android-performance-patterns-season-3/" target="_blank" rel="external">Android性能优化典范 - 第3季</a><br><a href="http://hukai.me/android-performance-patterns-season-4/" target="_blank" rel="external">Android性能优化典范 - 第4季</a><br><a href="http://hukai.me/android-performance-patterns-season-5/" target="_blank" rel="external">Android性能优化典范 - 第5季</a></p>
 <p>细化与补充：<br><a href="http://hukai.me/android-performance-render/" target="_blank" rel="external">Android性能优化之渲染篇</a><br><a href="http://hukai.me/android-performance-compute/" target="_blank" rel="external">Android性能优化之运算篇</a><br><a href="http://hukai.me/android-performance-memory/" target="_blank" rel="external">Android性能优化之内存篇</a><br><a href="http://hukai.me/android-performance-battery/" target="_blank" rel="external">Android性能优化之电量篇</a><br><a href="http://hukai.me/android-performance-oom/" target="_blank" rel="external">Android内存优化之OOM篇</a></p>
 <p>PS:今天Wings夺得TI6总冠军，看到他们从最初的小弟，勤学苦练，最终凭实力问鼎西雅图。原来现实生活中也存在着梦想照进现实的例子。所以呢？努力啊!</p>
@@ -676,7 +677,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;http://ob5qdb9lc.bkt.clouddn.com/30721479_1390194907933.jpg&quot; alt=&quot;Image&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;看了很多有关Android性能优化的资料，基本上说的点都差不多。异步，内存泄漏，视图布局等等。&lt;br&gt;后来发现原来Google发布了&lt;a href=&quot;https://www.youtube.com/playlist?list=PLWz5rJ2EKKc9CBxr3BVjPTPoDPLdPIFCE&quot;&gt;Android性能优化典范的专题&lt;/a&gt;。国人也发布了相关的翻译文档，强，无敌！&lt;br&gt;性能优化是Android开发中一个很重要的课题，Android系统常年被诟病不如IOS好用，我觉得这并不是Android系统的问题，而是开发者开发的应用很多都没有优化，只是实现了其功能而已。(还有一点是好多应用强行占据系统资源，阿猫阿狗应用都自行启动，进程保活，简直无语)&lt;br&gt;Google大概是都看不下去，所以发布了这一专题，作为Android开发人员，在性能优化方面确实应该多长点心。&lt;/p&gt;
     
     </summary>
     
@@ -685,6 +686,8 @@
     
       <category term="Android系统" scheme="http://yoursite.com/tags/Android%E7%B3%BB%E7%BB%9F/"/>
     
+      <category term="Android性能优化" scheme="http://yoursite.com/tags/Android%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
+    
   </entry>
   
   <entry>
@@ -692,9 +695,9 @@
     <link href="http://yoursite.com/2016/08/14/Android%E7%AC%94%E8%AE%B0-Android%E5%90%AF%E5%8A%A8%E8%BF%87%E7%A8%8B/"/>
     <id>http://yoursite.com/2016/08/14/Android笔记-Android启动过程/</id>
     <published>2016-08-14T12:18:37.000Z</published>
-    <updated>2016-08-27T03:37:38.255Z</updated>
+    <updated>2016-08-28T06:21:19.367Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="http://ob5qdb9lc.bkt.clouddn.com/b3b7d0a20cf431adb6bc847b4836acaf2edd9802.jpg" alt="Image"></p>
+    <content type="html"><![CDATA[<p>自买了《深入理解Android系统》，这本书就一直呆在角落里吃灰。大概是我对于创建那些花花绿绿的界面，实现有趣实用的功能比较感兴趣，对于这种上来就是一大页的源码，好多都还是c++的不太感兴趣，并且阅读了之后基本上留不下什么印象。<br>对于Android开发来说，要是别人问Android系统和应用是怎么启动的，那应该怎么解释。。。<br>参照书里的知识和网上的资料总结一下Android启动过程和Activity启动过程。</p>
 <a id="more"></a>
 <h1 id="Android启动过程"><a href="#Android启动过程" class="headerlink" title="Android启动过程"></a>Android启动过程</h1><p>当你按下电源开关后Android设备执行了以下步骤。</p>
 <h2 id="启动电源以及系统启动"><a href="#启动电源以及系统启动" class="headerlink" title="启动电源以及系统启动"></a>启动电源以及系统启动</h2><p>当电源按下，引导芯片代码开始从预定义的地方（固化在ROM）开始执行。加载引导程序到RAM，然后执行。</p>
@@ -788,7 +791,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;http://ob5qdb9lc.bkt.clouddn.com/b3b7d0a20cf431adb6bc847b4836acaf2edd9802.jpg&quot; alt=&quot;Image&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;自买了《深入理解Android系统》，这本书就一直呆在角落里吃灰。大概是我对于创建那些花花绿绿的界面，实现有趣实用的功能比较感兴趣，对于这种上来就是一大页的源码，好多都还是c++的不太感兴趣，并且阅读了之后基本上留不下什么印象。&lt;br&gt;对于Android开发来说，要是别人问Android系统和应用是怎么启动的，那应该怎么解释。。。&lt;br&gt;参照书里的知识和网上的资料总结一下Android启动过程和Activity启动过程。&lt;/p&gt;
     
     </summary>
     
@@ -804,9 +807,9 @@
     <link href="http://yoursite.com/2016/08/12/Android%E7%AC%94%E8%AE%B0-%E8%BF%9B%E7%A8%8B%E4%BF%9D%E6%B4%BB/"/>
     <id>http://yoursite.com/2016/08/12/Android笔记-进程保活/</id>
     <published>2016-08-12T12:49:12.000Z</published>
-    <updated>2016-08-27T04:43:48.097Z</updated>
+    <updated>2016-08-28T06:32:59.980Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="http://ob5qdb9lc.bkt.clouddn.com/b03533fa828ba61e2cd4d63f4334970a304e59e3.jpg" alt="Image"></p>
+    <content type="html"><![CDATA[<p>使用Android系统不root是很麻烦的事情，root了更麻烦。<br>我们经常见到Android手机上的应用莫名其妙就自启了，有的还根本就杀不掉，一直在后台偷偷地搞些不可描述的小动作。<br>这就让人不能忍了，要搞定这些毒瘤应用首先要知道为什么它们能在Android系统中这样为所欲为，到底是Android系统的纵容，还是应用本身使用了特别的手段。<br>总结一下Android进程保活机制，看看手机里的应用怎么各凭本事，逃过系统的追杀。</p>
 <a id="more"></a>
 <h1 id="进程的优先级"><a href="#进程的优先级" class="headerlink" title="进程的优先级"></a>进程的优先级</h1><h2 id="前台进程-——-Foreground-process"><a href="#前台进程-——-Foreground-process" class="headerlink" title="前台进程 —— Foreground process"></a>前台进程 —— Foreground process</h2><p>用户当前操作所必需的进程。通常在任意给定时间前台进程都为数不多。只有在内存不足以支持它们同时继续运行这一万不得已的情况下，系统才会终止它们。</p>
 <ul>
@@ -889,7 +892,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;http://ob5qdb9lc.bkt.clouddn.com/b03533fa828ba61e2cd4d63f4334970a304e59e3.jpg&quot; alt=&quot;Image&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;使用Android系统不root是很麻烦的事情，root了更麻烦。&lt;br&gt;我们经常见到Android手机上的应用莫名其妙就自启了，有的还根本就杀不掉，一直在后台偷偷地搞些不可描述的小动作。&lt;br&gt;这就让人不能忍了，要搞定这些毒瘤应用首先要知道为什么它们能在Android系统中这样为所欲为，到底是Android系统的纵容，还是应用本身使用了特别的手段。&lt;br&gt;总结一下Android进程保活机制，看看手机里的应用怎么各凭本事，逃过系统的追杀。&lt;/p&gt;
     
     </summary>
     
@@ -905,9 +908,9 @@
     <link href="http://yoursite.com/2016/08/12/Android%E7%AC%94%E8%AE%B0-%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F/"/>
     <id>http://yoursite.com/2016/08/12/Android笔记-内存泄漏/</id>
     <published>2016-08-12T11:56:40.000Z</published>
-    <updated>2016-08-26T03:58:14.752Z</updated>
+    <updated>2016-08-28T06:49:56.780Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="http://ob5qdb9lc.bkt.clouddn.com/55729117201103111238192208337427592_012.jpg" alt="Image"></p>
+    <content type="html"><![CDATA[<p>Android是基于Java开发的，使用的虚拟机跟Java虚拟机也差不多。Java开发中遇到的问题Android开发中也经常遇到。其中典型就是内存泄漏问题。<br>内存泄漏问题多了就会出现OOM，在开发过程中应该时刻注意所写的代码是否会导致内存泄漏。<br>仅仅依靠开发时的自觉还是不够的，所幸还有一些工具能帮助我们发现内存泄漏。<br>总结一下如何避免内存：一是了解常见内存泄漏的问题，开发过程中避免。二是使用工具找出出现内存泄漏的代码然后修改。</p>
 <a id="more"></a>
 <h1 id="内存泄漏"><a href="#内存泄漏" class="headerlink" title="内存泄漏"></a>内存泄漏</h1><p>Java是垃圾回收语言的一种，其优点是开发者无需特意管理内存分配，降低了应用由于局部故障(segmentation fault)导致崩溃，同时防止未释放的内存把堆栈(heap)挤爆的可能，所以写出来的代码更为安全。</p>
 <p>不幸的是，在Java中仍存在很多容易导致内存泄漏的逻辑可能(logical leak)。如果不小心，你的Android应用很容易浪费掉未释放的内存，最终导致内存用光的错误抛出(out-of-memory，OOM)。</p>
@@ -949,7 +952,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;http://ob5qdb9lc.bkt.clouddn.com/55729117201103111238192208337427592_012.jpg&quot; alt=&quot;Image&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;Android是基于Java开发的，使用的虚拟机跟Java虚拟机也差不多。Java开发中遇到的问题Android开发中也经常遇到。其中典型就是内存泄漏问题。&lt;br&gt;内存泄漏问题多了就会出现OOM，在开发过程中应该时刻注意所写的代码是否会导致内存泄漏。&lt;br&gt;仅仅依靠开发时的自觉还是不够的，所幸还有一些工具能帮助我们发现内存泄漏。&lt;br&gt;总结一下如何避免内存：一是了解常见内存泄漏的问题，开发过程中避免。二是使用工具找出出现内存泄漏的代码然后修改。&lt;/p&gt;
     
     </summary>
     
@@ -965,9 +968,9 @@
     <link href="http://yoursite.com/2016/08/12/Android%E7%AC%94%E8%AE%B0-Android%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
     <id>http://yoursite.com/2016/08/12/Android笔记-Android多线程/</id>
     <published>2016-08-12T10:40:16.000Z</published>
-    <updated>2016-08-26T04:04:07.014Z</updated>
+    <updated>2016-08-28T07:07:45.435Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="http://ob5qdb9lc.bkt.clouddn.com/a8b3c133c895d14338e284af73f082025baf07be.jpg" alt="Image"></p>
+    <content type="html"><![CDATA[<p>Android系统机制要求我们在开发过程中耗时的操作不能放在主线程里执行，不然就分分钟卡顿给你看。Android系统也提供了工具类来帮助我们实现多线程。<br>多线程意味着并发，意味着异步，就像在Dota里面玩地卜师一样，需要多线操作，难度就自然很大。<br>总结一下Android系统提供给我们多线程操作的法门，以及为什么我们要使用多线程。</p>
 <a id="more"></a>
 <h1 id="Android多线程"><a href="#Android多线程" class="headerlink" title="Android多线程"></a>Android多线程</h1><p>众所周知，Android 程序的大多数代码操作都必须执行在主线程，例如系统事件(例如设备屏幕发生旋转)，输入事件(例如用户点击滑动等)，程序回调服务，UI绘制以及闹钟事件等等。那么我们在上述事件或者方法中插入的代码也将执行在主线程。</p>
 <p>一旦我们在主线程里面添加了操作复杂的代码，这些代码就很可能阻碍主线程去响应点击/滑动事件，阻碍主线程的 UI 绘制等等。我们知道，为了让屏幕的刷新帧率达到 60fps，我们需要确保 16ms 内完成单次刷新的操作。</p>
@@ -1046,7 +1049,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;http://ob5qdb9lc.bkt.clouddn.com/a8b3c133c895d14338e284af73f082025baf07be.jpg&quot; alt=&quot;Image&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;Android系统机制要求我们在开发过程中耗时的操作不能放在主线程里执行，不然就分分钟卡顿给你看。Android系统也提供了工具类来帮助我们实现多线程。&lt;br&gt;多线程意味着并发，意味着异步，就像在Dota里面玩地卜师一样，需要多线操作，难度就自然很大。&lt;br&gt;总结一下Android系统提供给我们多线程操作的法门，以及为什么我们要使用多线程。&lt;/p&gt;
     
     </summary>
     
@@ -1062,9 +1065,9 @@
     <link href="http://yoursite.com/2016/08/11/Android%E7%AC%94%E8%AE%B0-View%E7%BB%98%E5%88%B6%E6%B5%81%E7%A8%8B/"/>
     <id>http://yoursite.com/2016/08/11/Android笔记-View绘制流程/</id>
     <published>2016-08-11T13:05:35.000Z</published>
-    <updated>2016-08-27T04:49:52.341Z</updated>
+    <updated>2016-08-28T07:40:02.784Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="http://ob5qdb9lc.bkt.clouddn.com/f2deb48f8c5494eec7f266af2cf5e0fe98257eb7.jpg" alt="Image"></p>
+    <content type="html"><![CDATA[<p>平时应用开发中会使用到Android系统提供给我们的视图组件TextView、ImageView、LinearLayoutd等，它们是如何绘制在屏幕上的，当他们显示的数据或自身的状态改变时，又是如何在屏幕上表现出来的？<br>当自定义UI时，要重写那些哪些函数，怎么去绘制？<br>网上有很多博客都有写过Android系统UI绘制过程，已经非常详尽地解释了。(大神的博文看得真是爽)<br>这里再结合源码总结一下，理清一下思路。</p>
 <a id="more"></a>
 <h1 id="View绘制"><a href="#View绘制" class="headerlink" title="View绘制"></a>View绘制</h1><ul>
 <li>每一个View的绘制过程都必须经历三个最主要的过程，也就是measure、layout和draw。</li>
@@ -1178,7 +1181,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;http://ob5qdb9lc.bkt.clouddn.com/f2deb48f8c5494eec7f266af2cf5e0fe98257eb7.jpg&quot; alt=&quot;Image&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;平时应用开发中会使用到Android系统提供给我们的视图组件TextView、ImageView、LinearLayoutd等，它们是如何绘制在屏幕上的，当他们显示的数据或自身的状态改变时，又是如何在屏幕上表现出来的？&lt;br&gt;当自定义UI时，要重写那些哪些函数，怎么去绘制？&lt;br&gt;网上有很多博客都有写过Android系统UI绘制过程，已经非常详尽地解释了。(大神的博文看得真是爽)&lt;br&gt;这里再结合源码总结一下，理清一下思路。&lt;/p&gt;
     
     </summary>
     
@@ -1187,6 +1190,8 @@
     
       <category term="Android系统" scheme="http://yoursite.com/tags/Android%E7%B3%BB%E7%BB%9F/"/>
     
+      <category term="View绘制流程" scheme="http://yoursite.com/tags/View%E7%BB%98%E5%88%B6%E6%B5%81%E7%A8%8B/"/>
+    
   </entry>
   
   <entry>
@@ -1194,9 +1199,9 @@
     <link href="http://yoursite.com/2016/08/10/Android%E7%AC%94%E8%AE%B0-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     <id>http://yoursite.com/2016/08/10/Android笔记-设计模式/</id>
     <published>2016-08-10T14:20:29.000Z</published>
-    <updated>2016-08-11T13:00:43.426Z</updated>
+    <updated>2016-08-28T07:37:26.918Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="http://ob5qdb9lc.bkt.clouddn.com/472309f7905298223203f251d7ca7bcb0a46d474.jpg" alt="Image"></p>
+    <content type="html"><![CDATA[<p>设计模式（Design pattern）是一套被反复使用、多数人知晓的、经过分类编目的、代码设计经验的总结。<br>在软件开发中使用设计模式能够让我们写出更加可靠，可重用，可扩展的代码。平时常见到的设计模式有单例模式、工厂模式、适配器模式、代理模式等。<br>我的理解是设计模式是套路，dota里面也有很多套路，使用套路可以帮我们更轻松地赢得比赛。同样，在合适的场景使用设计模式提供给我们的套路能使我们的代码变得更强壮。</p>
 <a id="more"></a>
 <h1 id="面向对象的六大原则"><a href="#面向对象的六大原则" class="headerlink" title="面向对象的六大原则"></a>面向对象的六大原则</h1><ul>
 <li>单一职责原则<br>所谓职责是指类变化的原因。如果一个类有多于一个的动机被改变，那么这个类就具有多于一个的职责。而单一职责原则就是指一个类或者模块应该有且只有一个改变的原因。通俗的说，即一个类只负责一项职责，将一组相关性很高的函数、数据封装到一个类中。</li>
@@ -1305,7 +1310,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;http://ob5qdb9lc.bkt.clouddn.com/472309f7905298223203f251d7ca7bcb0a46d474.jpg&quot; alt=&quot;Image&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;设计模式（Design pattern）是一套被反复使用、多数人知晓的、经过分类编目的、代码设计经验的总结。&lt;br&gt;在软件开发中使用设计模式能够让我们写出更加可靠，可重用，可扩展的代码。平时常见到的设计模式有单例模式、工厂模式、适配器模式、代理模式等。&lt;br&gt;我的理解是设计模式是套路，dota里面也有很多套路，使用套路可以帮我们更轻松地赢得比赛。同样，在合适的场景使用设计模式提供给我们的套路能使我们的代码变得更强壮。&lt;/p&gt;
     
     </summary>
     
@@ -1321,9 +1326,9 @@
     <link href="http://yoursite.com/2016/08/10/Android%E7%AC%94%E8%AE%B0-%E4%BA%8B%E4%BB%B6%E5%88%86%E5%8F%91%E6%9C%BA%E5%88%B6/"/>
     <id>http://yoursite.com/2016/08/10/Android笔记-事件分发机制/</id>
     <published>2016-08-10T13:00:28.000Z</published>
-    <updated>2016-08-26T04:04:07.007Z</updated>
+    <updated>2016-08-28T08:13:04.506Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="http://ob5qdb9lc.bkt.clouddn.com/5-16031Q44431.jpg" alt="Image"></p>
+    <content type="html"><![CDATA[<p>我们一般通过点击和滑动屏幕给应用下达指令，应用就会响应并做出相应的处理。这其中经历了一段怎样的过程？<br>Android事件分发机制总的来说就是先分发再处理，是责任链模式的运用，其处理过程中有很多细节，所以相关的代码很长。<br>这里笼统的总结一下Android事件分发的规律，其实用图来解释比较清楚，见参考资料。</p>
 <a id="more"></a>
 <h1 id="事件分发"><a href="#事件分发" class="headerlink" title="事件分发"></a>事件分发</h1><h2 id="涉及到事件响应的常用方法构成"><a href="#涉及到事件响应的常用方法构成" class="headerlink" title="涉及到事件响应的常用方法构成"></a>涉及到事件响应的常用方法构成</h2><ul>
 <li>MotionEvent.ACTION_DOWN　：手指按下屏幕的瞬间（一切事件的开始）</li>
@@ -1332,13 +1337,13 @@
 <li>MotionEvent.ACTION_CANCEL 　：取消手势，一般由程序产生，不会由用户产生</li>
 </ul>
 <p>Android中的事件onClick, onLongClick，onScroll, onFling等等，都是由许多个Touch事件构成的（一个ACTION_DOWN， n个ACTION_MOVE，1个ACTION_UP）。</p>
-<p>android 事件响应机制是先 分发（先由外部的View接收，然后依次传递给其内层的最小View）再处理 （从最小View单元（事件源）开始依次向外层传递。）的形式实现的。</p>
+<p>android 事件响应机制是先分发（先由外部的View接收，然后依次传递给其内层的最小View）再处理（从最小View单元（事件源）开始依次向外层传递。）的形式实现的。</p>
 <h2 id="涉及到的三个重要函数"><a href="#涉及到的三个重要函数" class="headerlink" title="涉及到的三个重要函数"></a>涉及到的三个重要函数</h2><ul>
 <li>事件分发：public boolean dispatchTouchEvent(MotionEvent ev)　　　</li>
 <li>事件拦截：public boolean onInterceptTouchEvent(MotionEvent ev)<br>　　　　　该方法为ViewGroup独有。</li>
 <li>事件响应：public boolean onTouchEvent(MotionEvent ev)<br>　　　　　ViewGroup未实现，而是调用父类view的该方法。</li>
 </ul>
-<h2 id="View分析-源码很长，只写结论"><a href="#View分析-源码很长，只写结论" class="headerlink" title="View分析(源码很长，只写结论)"></a>View分析(源码很长，只写结论)</h2><ul>
+<h2 id="View分析"><a href="#View分析" class="headerlink" title="View分析"></a>View分析</h2><ul>
 <li>触摸控件（View）首先执行dispatchTouchEvent方法。</li>
 <li>在dispatchTouchEvent方法中先执行onTouch方法，后执行onClick方法（onClick方法在onTouchEvent中执行）。</li>
 <li>如果控件（View）的onTouch返回false或者mOnTouchListener为null（控件没有设置setOnTouchListener方法）或者控件不是enable的情况下会调用onTouchEvent，dispatchTouchEvent返回值与onTouchEvent返回一样。</li>
@@ -1392,7 +1397,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;http://ob5qdb9lc.bkt.clouddn.com/5-16031Q44431.jpg&quot; alt=&quot;Image&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;我们一般通过点击和滑动屏幕给应用下达指令，应用就会响应并做出相应的处理。这其中经历了一段怎样的过程？&lt;br&gt;Android事件分发机制总的来说就是先分发再处理，是责任链模式的运用，其处理过程中有很多细节，所以相关的代码很长。&lt;br&gt;这里笼统的总结一下Android事件分发的规律，其实用图来解释比较清楚，见参考资料。&lt;/p&gt;
     
     </summary>
     
@@ -1401,6 +1406,8 @@
     
       <category term="Android系统" scheme="http://yoursite.com/tags/Android%E7%B3%BB%E7%BB%9F/"/>
     
+      <category term="Android事件分发机制" scheme="http://yoursite.com/tags/Android%E4%BA%8B%E4%BB%B6%E5%88%86%E5%8F%91%E6%9C%BA%E5%88%B6/"/>
+    
   </entry>
   
   <entry>
@@ -1408,9 +1415,9 @@
     <link href="http://yoursite.com/2016/08/10/Android%E7%AC%94%E8%AE%B0-Handler%E6%9C%BA%E5%88%B6/"/>
     <id>http://yoursite.com/2016/08/10/Android笔记-Handler机制/</id>
     <published>2016-08-10T11:37:00.000Z</published>
-    <updated>2016-08-26T04:04:07.036Z</updated>
+    <updated>2016-08-28T08:12:02.347Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="http://ob5qdb9lc.bkt.clouddn.com/bz1080p.com_2015-03-06_05-37-47.jpg" alt="Image"></p>
+    <content type="html"><![CDATA[<p>Android开发中多线程是随处都可以见到的，Android系统提供了Handler机制来处理线程间信息的交换。<br>实际上，当一个应用启动时，就会在当前进程的主线程里建立一个消息循环，好确保主线程的存活并源源不断地处理任务。<br>Android 系统为我们提供了 Looper，Handler，MessageQueue 来实现线程任务模型。</p>
 <a id="more"></a>
 <h1 id="Handler机制"><a href="#Handler机制" class="headerlink" title="Handler机制"></a>Handler机制</h1><p>Hnadler机制其实从某种意义上而言，是基于生产者-消费者模式展开的。<br>如UI线程就是消费者，在其他线程（生产者）上通过 Handler 将要执行的Callback ，迁移到UI线程上执行。</p>
 <p>生产者（Work thread）需要将任务提交给缓冲区(MessageQueue)，而这个提交工作是由 post(Runnable runable) 或者 postDelayed(Runnable r, long delayMillis) 等post方法来执行。而消费者（UI thread）通过 looper 不断地从 MessageQueue 中取出任务再执行。</p>
@@ -1442,7 +1449,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;http://ob5qdb9lc.bkt.clouddn.com/bz1080p.com_2015-03-06_05-37-47.jpg&quot; alt=&quot;Image&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;Android开发中多线程是随处都可以见到的，Android系统提供了Handler机制来处理线程间信息的交换。&lt;br&gt;实际上，当一个应用启动时，就会在当前进程的主线程里建立一个消息循环，好确保主线程的存活并源源不断地处理任务。&lt;br&gt;Android 系统为我们提供了 Looper，Handler，MessageQueue 来实现线程任务模型。&lt;/p&gt;
     
     </summary>
     
@@ -1451,6 +1458,8 @@
     
       <category term="Android系统" scheme="http://yoursite.com/tags/Android%E7%B3%BB%E7%BB%9F/"/>
     
+      <category term="Handler机制" scheme="http://yoursite.com/tags/Handler%E6%9C%BA%E5%88%B6/"/>
+    
   </entry>
   
   <entry>
@@ -1458,9 +1467,9 @@
     <link href="http://yoursite.com/2016/08/09/Android%E7%AC%94%E8%AE%B0-Intent%E5%92%8CBinder/"/>
     <id>http://yoursite.com/2016/08/09/Android笔记-Intent和Binder/</id>
     <published>2016-08-09T13:32:49.000Z</published>
-    <updated>2016-08-26T04:04:07.040Z</updated>
+    <updated>2016-08-28T08:34:30.511Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="http://ob5qdb9lc.bkt.clouddn.com/1008240.jpg" alt="Image"></p>
+    <content type="html"><![CDATA[<p>Intent负责对应用中一次操作的动作、动作涉及数据、附加数据进行描述，Android则根据此Intent的描述，负责找到对应的组件，将 Intent传递给调用的组件，并完成组件的调用。Intent相当于组件通讯的媒介。<br>Binder是Android 系统进程间通信(IPC)方式之一。当应用启动时就会启动一个Binder线程池。Linux已经拥有管道,socket等IPC 手段,却还要倚赖Binder来实现进程间通信,说明Binder具有无可比拟的优势。<br>这里总结一下Intent的使用和解析，和Binder基本模型(Binder太复杂，还没理解透)。</p>
 <a id="more"></a>
 <h1 id="Intent"><a href="#Intent" class="headerlink" title="Intent"></a>Intent</h1><p>Intent 是一个消息传递对象，您可以使用它从其他应用组件请求操作。尽管 Intent 可以通过多种方式促进组件之间的通信，但其基本用例主要包括以下三个：</p>
 <ul>
@@ -1560,7 +1569,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;http://ob5qdb9lc.bkt.clouddn.com/1008240.jpg&quot; alt=&quot;Image&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;Intent负责对应用中一次操作的动作、动作涉及数据、附加数据进行描述，Android则根据此Intent的描述，负责找到对应的组件，将 Intent传递给调用的组件，并完成组件的调用。Intent相当于组件通讯的媒介。&lt;br&gt;Binder是Android 系统进程间通信(IPC)方式之一。当应用启动时就会启动一个Binder线程池。Linux已经拥有管道,socket等IPC 手段,却还要倚赖Binder来实现进程间通信,说明Binder具有无可比拟的优势。&lt;br&gt;这里总结一下Intent的使用和解析，和Binder基本模型(Binder太复杂，还没理解透)。&lt;/p&gt;
     
     </summary>
     
@@ -1576,9 +1585,9 @@
     <link href="http://yoursite.com/2016/08/09/Android%E7%AC%94%E8%AE%B0-%E5%9B%9B%E5%A4%A7%E7%BB%84%E4%BB%B6/"/>
     <id>http://yoursite.com/2016/08/09/Android笔记-四大组件/</id>
     <published>2016-08-09T11:41:26.000Z</published>
-    <updated>2016-08-26T04:04:07.010Z</updated>
+    <updated>2016-08-28T08:56:45.354Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="http://ob5qdb9lc.bkt.clouddn.com/c995d143ad4bd1135967435e58afa40f4bfb0537.jpg" alt="Image"></p>
+    <content type="html"><![CDATA[<p>搞Android的不可能不知道四大组件吧。<br>四大组件是Android系统提供给我们应用开发的模型。我们开发应用就是在开发这四大组件。<br>所谓四大组件就是Android系统将一个App的main方法分解成几种系统可以与之交互的形式。所以基本都需要在Manifest中注册。<br>这里总结一下四大组件的相关知识。</p>
 <a id="more"></a>
 <h1 id="四大组件"><a href="#四大组件" class="headerlink" title="四大组件"></a>四大组件</h1><p>所谓的四大组件，只是让你的APP告诉操作系统，自己要怎样运行而已，跟怎样设计自己的APP，压根没有关系。</p>
 <p>传统的应用通过一个main方法，告诉操作系统：“嘿哥们，main方法就是我的入口，请从这个方法开始运行我。”而Android却给了你四个选择，每一个组件都是让操作系统运行你的APP的一种入口。</p>
@@ -1725,6 +1734,11 @@
 <p>因为这个进程可能只有这个Receiver这个组件在运行，当Receiver也执行完后就是一个empty进程，是最容易被系统杀掉的。</p>
 <h1 id="ContentProvider"><a href="#ContentProvider" class="headerlink" title="ContentProvider"></a>ContentProvider</h1><p>最后，ContentProvider是一个专用的办法，用来将你的APP的数据公开到其他地方。人们通常会将它们当作对数据库的抽象，因为有许多的API和支持库就是这样使用ContentProvider的。但是从系统设计的角度，这并不是ContentProvider的初衷。</p>
 <p>对于系统来说，ContentProvider实际上是一个入口，用于获取一个APP内部的公开的被命名的数据项（data items），每个数据项都被一个URI scheme所标识。这样，APP就可以决定怎样将自己的数据项映射到一个URI scheme，怎样将这个URI scheme公开给其他APP或者系统，好让APP或者系统使用这个URI scheme来获取自己内部的数据。</p>
+<p>这将让系统能够用一些很独特的方式来管理你的APP：</p>
+<ol>
+<li>将URI scheme公开出去并不要求你的APP一直保持运行，所以即使你的APP没有运行，这些URI scheme也可以公开给任何APP和系统。只有当某个人告诉系统：“请把这个URI代表的数据拿给我。”时，系统将会让你的APP运行起来向你索要对应于URI的数据项并返回给请求者。</li>
+<li>这些URIs也提供了一个很重要的细粒度的安全模型。比如，你的APP可以将代表一张你的APP内的图片的URI放在剪贴板上，但是让它的ContendProvider 保持在锁定状态，所以没有人能够自由地获取它。当其他APP从剪贴板上获取了这个URI，并向系统请求获取对应的图片时，系统可以给它一个临时的“URI许可”,以便让它仅能获取该URI所对应的图片，你的APP的其他内容都是安全的。</li>
+</ol>
 <h2 id="ContentProvider接口方法运行在哪个线程中呢？"><a href="#ContentProvider接口方法运行在哪个线程中呢？" class="headerlink" title="ContentProvider接口方法运行在哪个线程中呢？"></a>ContentProvider接口方法运行在哪个线程中呢？</h2><ol>
 <li>ContentProvider和调用者在同一个进程，ContentProvider的方法（query/insert/update/delete等）和调用者在同一线程中；</li>
 <li>ContentProvider和调用者在不同的进程，ContentProvider的方法会运行在它自身所在进程的一个Binder线程中。</li>
@@ -1735,7 +1749,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;http://ob5qdb9lc.bkt.clouddn.com/c995d143ad4bd1135967435e58afa40f4bfb0537.jpg&quot; alt=&quot;Image&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;搞Android的不可能不知道四大组件吧。&lt;br&gt;四大组件是Android系统提供给我们应用开发的模型。我们开发应用就是在开发这四大组件。&lt;br&gt;所谓四大组件就是Android系统将一个App的main方法分解成几种系统可以与之交互的形式。所以基本都需要在Manifest中注册。&lt;br&gt;这里总结一下四大组件的相关知识。&lt;/p&gt;
     
     </summary>
     

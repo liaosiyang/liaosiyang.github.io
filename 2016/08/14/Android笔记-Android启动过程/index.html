@@ -12,16 +12,18 @@
   
 </title>
 
+<meta name="description" content="自买了《深入理解Android系统》，这本书就一直呆在角落里吃灰。大概是我对于创建那些花花绿绿的界面，实现有趣实用的功能比较感兴趣，对于这种上来就是一大页的源码，好多都还是c++的不太感兴趣，并且阅读了之后基本上留不下什么印象。对于Android开发来说，要是别人问Android系统和应用是怎么启动的，那应该怎么解释。。。参照书里的知识和网上的资料总结一下Android启动过程和Activity启">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android笔记-Android启动过程">
 <meta property="og:url" content="http://yoursite.com/2016/08/14/Android笔记-Android启动过程/index.html">
 <meta property="og:site_name" content="Be Level5 Coder">
-<meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/b3b7d0a20cf431adb6bc847b4836acaf2edd9802.jpg">
+<meta property="og:description" content="自买了《深入理解Android系统》，这本书就一直呆在角落里吃灰。大概是我对于创建那些花花绿绿的界面，实现有趣实用的功能比较感兴趣，对于这种上来就是一大页的源码，好多都还是c++的不太感兴趣，并且阅读了之后基本上留不下什么印象。对于Android开发来说，要是别人问Android系统和应用是怎么启动的，那应该怎么解释。。。参照书里的知识和网上的资料总结一下Android启动过程和Activity启">
 <meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/0_1313305334OkCc.gif">
-<meta property="og:updated_time" content="2016-08-27T03:37:38.255Z">
+<meta property="og:updated_time" content="2016-08-28T06:21:19.367Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android笔记-Android启动过程">
-<meta name="twitter:image" content="http://ob5qdb9lc.bkt.clouddn.com/b3b7d0a20cf431adb6bc847b4836acaf2edd9802.jpg">
+<meta name="twitter:description" content="自买了《深入理解Android系统》，这本书就一直呆在角落里吃灰。大概是我对于创建那些花花绿绿的界面，实现有趣实用的功能比较感兴趣，对于这种上来就是一大页的源码，好多都还是c++的不太感兴趣，并且阅读了之后基本上留不下什么印象。对于Android开发来说，要是别人问Android系统和应用是怎么启动的，那应该怎么解释。。。参照书里的知识和网上的资料总结一下Android启动过程和Activity启">
+<meta name="twitter:image" content="http://ob5qdb9lc.bkt.clouddn.com/0_1313305334OkCc.gif">
 
 
   <link rel="alternative" href="/atom.xml" title="Be Level5 Coder" type="application/atom+xml">
@@ -88,7 +90,7 @@
             
               <li class="tag-list-container">
                 <a href="javascript:;">标签</a>
-                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-MVP/">Android MVP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android内存泄漏/">Android内存泄漏</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android开发框架/">Android开发框架</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android插件化/">Android插件化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android热补丁/">Android热补丁</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android系统/">Android系统</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android进程保活/">Android进程保活</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JVM/">JVM</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Other/">Other</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP-IP/">TCP/IP</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a><span class="tag-list-count">1</span></li></ul>
+                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android事件分发机制/">Android事件分发机制</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android内存泄漏/">Android内存泄漏</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android开发框架/">Android开发框架</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android性能优化/">Android性能优化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android插件化/">Android插件化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android热补丁/">Android热补丁</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android系统/">Android系统</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android进程保活/">Android进程保活</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dagger2/">Dagger2</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DataBinding/">DataBinding</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Handler机制/">Handler机制</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JVM/">JVM</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVP模式/">MVP模式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Other/">Other</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ReactNative/">ReactNative</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Reaml/">Reaml</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Retrofit/">Retrofit</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RxJava/">RxJava</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP-IP/">TCP/IP</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/View绘制流程/">View绘制流程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a><span class="tag-list-count">1</span></li></ul>
               </li>
             
           
@@ -168,7 +170,7 @@
 
   </div>
   <div class="article-entry">
-    <p><img src="http://ob5qdb9lc.bkt.clouddn.com/b3b7d0a20cf431adb6bc847b4836acaf2edd9802.jpg" alt="Image"></p>
+    <p>自买了《深入理解Android系统》，这本书就一直呆在角落里吃灰。大概是我对于创建那些花花绿绿的界面，实现有趣实用的功能比较感兴趣，对于这种上来就是一大页的源码，好多都还是c++的不太感兴趣，并且阅读了之后基本上留不下什么印象。<br>对于Android开发来说，要是别人问Android系统和应用是怎么启动的，那应该怎么解释。。。<br>参照书里的知识和网上的资料总结一下Android启动过程和Activity启动过程。</p>
 <a id="more"></a>
 <h1 id="Android启动过程"><a href="#Android启动过程" class="headerlink" title="Android启动过程"></a>Android启动过程</h1><p>当你按下电源开关后Android设备执行了以下步骤。</p>
 <h2 id="启动电源以及系统启动"><a href="#启动电源以及系统启动" class="headerlink" title="启动电源以及系统启动"></a>启动电源以及系统启动</h2><p>当电源按下，引导芯片代码开始从预定义的地方（固化在ROM）开始执行。加载引导程序到RAM，然后执行。</p>

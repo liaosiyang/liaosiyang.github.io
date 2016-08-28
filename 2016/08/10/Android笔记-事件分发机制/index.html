@@ -12,16 +12,18 @@
   
 </title>
 
+<meta name="description" content="我们一般通过点击和滑动屏幕给应用下达指令，应用就会响应并做出相应的处理。这其中经历了一段怎样的过程？Android事件分发机制总的来说就是先分发再处理，是责任链模式的运用，其处理过程中有很多细节，所以相关的代码很长。这里笼统的总结一下Android事件分发的规律，其实用图来解释比较清楚，见参考资料。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android笔记-事件分发机制">
 <meta property="og:url" content="http://yoursite.com/2016/08/10/Android笔记-事件分发机制/index.html">
 <meta property="og:site_name" content="Be Level5 Coder">
-<meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/5-16031Q44431.jpg">
+<meta property="og:description" content="我们一般通过点击和滑动屏幕给应用下达指令，应用就会响应并做出相应的处理。这其中经历了一段怎样的过程？Android事件分发机制总的来说就是先分发再处理，是责任链模式的运用，其处理过程中有很多细节，所以相关的代码很长。这里笼统的总结一下Android事件分发的规律，其实用图来解释比较清楚，见参考资料。">
 <meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/966283-d01a5845f742609712.png">
-<meta property="og:updated_time" content="2016-08-26T04:04:07.007Z">
+<meta property="og:updated_time" content="2016-08-28T08:13:04.506Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android笔记-事件分发机制">
-<meta name="twitter:image" content="http://ob5qdb9lc.bkt.clouddn.com/5-16031Q44431.jpg">
+<meta name="twitter:description" content="我们一般通过点击和滑动屏幕给应用下达指令，应用就会响应并做出相应的处理。这其中经历了一段怎样的过程？Android事件分发机制总的来说就是先分发再处理，是责任链模式的运用，其处理过程中有很多细节，所以相关的代码很长。这里笼统的总结一下Android事件分发的规律，其实用图来解释比较清楚，见参考资料。">
+<meta name="twitter:image" content="http://ob5qdb9lc.bkt.clouddn.com/966283-d01a5845f742609712.png">
 
 
   <link rel="alternative" href="/atom.xml" title="Be Level5 Coder" type="application/atom+xml">
@@ -88,7 +90,7 @@
             
               <li class="tag-list-container">
                 <a href="javascript:;">标签</a>
-                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-MVP/">Android MVP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android内存泄漏/">Android内存泄漏</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android开发框架/">Android开发框架</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android插件化/">Android插件化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android热补丁/">Android热补丁</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android系统/">Android系统</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android进程保活/">Android进程保活</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JVM/">JVM</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Other/">Other</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP-IP/">TCP/IP</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a><span class="tag-list-count">1</span></li></ul>
+                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android事件分发机制/">Android事件分发机制</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android内存泄漏/">Android内存泄漏</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android开发框架/">Android开发框架</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android性能优化/">Android性能优化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android插件化/">Android插件化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android热补丁/">Android热补丁</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android系统/">Android系统</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android进程保活/">Android进程保活</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dagger2/">Dagger2</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DataBinding/">DataBinding</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Handler机制/">Handler机制</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JVM/">JVM</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVP模式/">MVP模式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Other/">Other</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ReactNative/">ReactNative</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Reaml/">Reaml</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Retrofit/">Retrofit</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RxJava/">RxJava</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP-IP/">TCP/IP</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/View绘制流程/">View绘制流程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a><span class="tag-list-count">1</span></li></ul>
               </li>
             
           
@@ -162,13 +164,13 @@
 
     
 	<span class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android系统/">Android系统</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android事件分发机制/">Android事件分发机制</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android系统/">Android系统</a></li></ul>
 	</span>
 
 
   </div>
   <div class="article-entry">
-    <p><img src="http://ob5qdb9lc.bkt.clouddn.com/5-16031Q44431.jpg" alt="Image"></p>
+    <p>我们一般通过点击和滑动屏幕给应用下达指令，应用就会响应并做出相应的处理。这其中经历了一段怎样的过程？<br>Android事件分发机制总的来说就是先分发再处理，是责任链模式的运用，其处理过程中有很多细节，所以相关的代码很长。<br>这里笼统的总结一下Android事件分发的规律，其实用图来解释比较清楚，见参考资料。</p>
 <a id="more"></a>
 <h1 id="事件分发"><a href="#事件分发" class="headerlink" title="事件分发"></a>事件分发</h1><h2 id="涉及到事件响应的常用方法构成"><a href="#涉及到事件响应的常用方法构成" class="headerlink" title="涉及到事件响应的常用方法构成"></a>涉及到事件响应的常用方法构成</h2><ul>
 <li>MotionEvent.ACTION_DOWN　：手指按下屏幕的瞬间（一切事件的开始）</li>
@@ -177,13 +179,13 @@
 <li>MotionEvent.ACTION_CANCEL 　：取消手势，一般由程序产生，不会由用户产生</li>
 </ul>
 <p>Android中的事件onClick, onLongClick，onScroll, onFling等等，都是由许多个Touch事件构成的（一个ACTION_DOWN， n个ACTION_MOVE，1个ACTION_UP）。</p>
-<p>android 事件响应机制是先 分发（先由外部的View接收，然后依次传递给其内层的最小View）再处理 （从最小View单元（事件源）开始依次向外层传递。）的形式实现的。</p>
+<p>android 事件响应机制是先分发（先由外部的View接收，然后依次传递给其内层的最小View）再处理（从最小View单元（事件源）开始依次向外层传递。）的形式实现的。</p>
 <h2 id="涉及到的三个重要函数"><a href="#涉及到的三个重要函数" class="headerlink" title="涉及到的三个重要函数"></a>涉及到的三个重要函数</h2><ul>
 <li>事件分发：public boolean dispatchTouchEvent(MotionEvent ev)　　　</li>
 <li>事件拦截：public boolean onInterceptTouchEvent(MotionEvent ev)<br>　　　　　该方法为ViewGroup独有。</li>
 <li>事件响应：public boolean onTouchEvent(MotionEvent ev)<br>　　　　　ViewGroup未实现，而是调用父类view的该方法。</li>
 </ul>
-<h2 id="View分析-源码很长，只写结论"><a href="#View分析-源码很长，只写结论" class="headerlink" title="View分析(源码很长，只写结论)"></a>View分析(源码很长，只写结论)</h2><ul>
+<h2 id="View分析"><a href="#View分析" class="headerlink" title="View分析"></a>View分析</h2><ul>
 <li>触摸控件（View）首先执行dispatchTouchEvent方法。</li>
 <li>在dispatchTouchEvent方法中先执行onTouch方法，后执行onClick方法（onClick方法在onTouchEvent中执行）。</li>
 <li>如果控件（View）的onTouch返回false或者mOnTouchListener为null（控件没有设置setOnTouchListener方法）或者控件不是enable的情况下会调用onTouchEvent，dispatchTouchEvent返回值与onTouchEvent返回一样。</li>

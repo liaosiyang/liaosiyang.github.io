@@ -12,16 +12,18 @@
   
 </title>
 
+<meta name="description" content="平时应用开发中会使用到Android系统提供给我们的视图组件TextView、ImageView、LinearLayoutd等，它们是如何绘制在屏幕上的，当他们显示的数据或自身的状态改变时，又是如何在屏幕上表现出来的？当自定义UI时，要重写那些哪些函数，怎么去绘制？网上有很多博客都有写过Android系统UI绘制过程，已经非常详尽地解释了。(大神的博文看得真是爽)这里再结合源码总结一下，理清一下思">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android笔记-View绘制流程">
 <meta property="og:url" content="http://yoursite.com/2016/08/11/Android笔记-View绘制流程/index.html">
 <meta property="og:site_name" content="Be Level5 Coder">
-<meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/f2deb48f8c5494eec7f266af2cf5e0fe98257eb7.jpg">
+<meta property="og:description" content="平时应用开发中会使用到Android系统提供给我们的视图组件TextView、ImageView、LinearLayoutd等，它们是如何绘制在屏幕上的，当他们显示的数据或自身的状态改变时，又是如何在屏幕上表现出来的？当自定义UI时，要重写那些哪些函数，怎么去绘制？网上有很多博客都有写过Android系统UI绘制过程，已经非常详尽地解释了。(大神的博文看得真是爽)这里再结合源码总结一下，理清一下思">
 <meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/20150529090922419.png">
-<meta property="og:updated_time" content="2016-08-27T04:49:52.341Z">
+<meta property="og:updated_time" content="2016-08-28T07:40:02.784Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android笔记-View绘制流程">
-<meta name="twitter:image" content="http://ob5qdb9lc.bkt.clouddn.com/f2deb48f8c5494eec7f266af2cf5e0fe98257eb7.jpg">
+<meta name="twitter:description" content="平时应用开发中会使用到Android系统提供给我们的视图组件TextView、ImageView、LinearLayoutd等，它们是如何绘制在屏幕上的，当他们显示的数据或自身的状态改变时，又是如何在屏幕上表现出来的？当自定义UI时，要重写那些哪些函数，怎么去绘制？网上有很多博客都有写过Android系统UI绘制过程，已经非常详尽地解释了。(大神的博文看得真是爽)这里再结合源码总结一下，理清一下思">
+<meta name="twitter:image" content="http://ob5qdb9lc.bkt.clouddn.com/20150529090922419.png">
 
 
   <link rel="alternative" href="/atom.xml" title="Be Level5 Coder" type="application/atom+xml">
@@ -88,7 +90,7 @@
             
               <li class="tag-list-container">
                 <a href="javascript:;">标签</a>
-                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-MVP/">Android MVP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android内存泄漏/">Android内存泄漏</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android开发框架/">Android开发框架</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android插件化/">Android插件化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android热补丁/">Android热补丁</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android系统/">Android系统</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android进程保活/">Android进程保活</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JVM/">JVM</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Other/">Other</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP-IP/">TCP/IP</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a><span class="tag-list-count">1</span></li></ul>
+                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android事件分发机制/">Android事件分发机制</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android内存泄漏/">Android内存泄漏</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android开发框架/">Android开发框架</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android性能优化/">Android性能优化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android插件化/">Android插件化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android热补丁/">Android热补丁</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android系统/">Android系统</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android进程保活/">Android进程保活</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dagger2/">Dagger2</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DataBinding/">DataBinding</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Handler机制/">Handler机制</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JVM/">JVM</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVP模式/">MVP模式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Other/">Other</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ReactNative/">ReactNative</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Reaml/">Reaml</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Retrofit/">Retrofit</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RxJava/">RxJava</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP-IP/">TCP/IP</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/View绘制流程/">View绘制流程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a><span class="tag-list-count">1</span></li></ul>
               </li>
             
           
@@ -162,13 +164,13 @@
 
     
 	<span class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android系统/">Android系统</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android系统/">Android系统</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/View绘制流程/">View绘制流程</a></li></ul>
 	</span>
 
 
   </div>
   <div class="article-entry">
-    <p><img src="http://ob5qdb9lc.bkt.clouddn.com/f2deb48f8c5494eec7f266af2cf5e0fe98257eb7.jpg" alt="Image"></p>
+    <p>平时应用开发中会使用到Android系统提供给我们的视图组件TextView、ImageView、LinearLayoutd等，它们是如何绘制在屏幕上的，当他们显示的数据或自身的状态改变时，又是如何在屏幕上表现出来的？<br>当自定义UI时，要重写那些哪些函数，怎么去绘制？<br>网上有很多博客都有写过Android系统UI绘制过程，已经非常详尽地解释了。(大神的博文看得真是爽)<br>这里再结合源码总结一下，理清一下思路。</p>
 <a id="more"></a>
 <h1 id="View绘制"><a href="#View绘制" class="headerlink" title="View绘制"></a>View绘制</h1><ul>
 <li>每一个View的绘制过程都必须经历三个最主要的过程，也就是measure、layout和draw。</li>

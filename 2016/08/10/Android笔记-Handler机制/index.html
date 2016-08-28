@@ -12,16 +12,18 @@
   
 </title>
 
+<meta name="description" content="Android开发中多线程是随处都可以见到的，Android系统提供了Handler机制来处理线程间信息的交换。实际上，当一个应用启动时，就会在当前进程的主线程里建立一个消息循环，好确保主线程的存活并源源不断地处理任务。Android 系统为我们提供了 Looper，Handler，MessageQueue 来实现线程任务模型。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android笔记-Handler机制">
 <meta property="og:url" content="http://yoursite.com/2016/08/10/Android笔记-Handler机制/index.html">
 <meta property="og:site_name" content="Be Level5 Coder">
-<meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/bz1080p.com_2015-03-06_05-37-47.jpg">
+<meta property="og:description" content="Android开发中多线程是随处都可以见到的，Android系统提供了Handler机制来处理线程间信息的交换。实际上，当一个应用启动时，就会在当前进程的主线程里建立一个消息循环，好确保主线程的存活并源源不断地处理任务。Android 系统为我们提供了 Looper，Handler，MessageQueue 来实现线程任务模型。">
 <meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/IC709523.png">
-<meta property="og:updated_time" content="2016-08-26T04:04:07.036Z">
+<meta property="og:updated_time" content="2016-08-28T08:12:02.347Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android笔记-Handler机制">
-<meta name="twitter:image" content="http://ob5qdb9lc.bkt.clouddn.com/bz1080p.com_2015-03-06_05-37-47.jpg">
+<meta name="twitter:description" content="Android开发中多线程是随处都可以见到的，Android系统提供了Handler机制来处理线程间信息的交换。实际上，当一个应用启动时，就会在当前进程的主线程里建立一个消息循环，好确保主线程的存活并源源不断地处理任务。Android 系统为我们提供了 Looper，Handler，MessageQueue 来实现线程任务模型。">
+<meta name="twitter:image" content="http://ob5qdb9lc.bkt.clouddn.com/IC709523.png">
 
 
   <link rel="alternative" href="/atom.xml" title="Be Level5 Coder" type="application/atom+xml">
@@ -88,7 +90,7 @@
             
               <li class="tag-list-container">
                 <a href="javascript:;">标签</a>
-                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-MVP/">Android MVP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android内存泄漏/">Android内存泄漏</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android开发框架/">Android开发框架</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android插件化/">Android插件化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android热补丁/">Android热补丁</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android系统/">Android系统</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android进程保活/">Android进程保活</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JVM/">JVM</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Other/">Other</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP-IP/">TCP/IP</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a><span class="tag-list-count">1</span></li></ul>
+                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android事件分发机制/">Android事件分发机制</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android内存泄漏/">Android内存泄漏</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android开发框架/">Android开发框架</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android性能优化/">Android性能优化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android插件化/">Android插件化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android热补丁/">Android热补丁</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android系统/">Android系统</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android进程保活/">Android进程保活</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dagger2/">Dagger2</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DataBinding/">DataBinding</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Handler机制/">Handler机制</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JVM/">JVM</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVP模式/">MVP模式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Other/">Other</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ReactNative/">ReactNative</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Reaml/">Reaml</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Retrofit/">Retrofit</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RxJava/">RxJava</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP-IP/">TCP/IP</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/View绘制流程/">View绘制流程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a><span class="tag-list-count">1</span></li></ul>
               </li>
             
           
@@ -162,13 +164,13 @@
 
     
 	<span class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android系统/">Android系统</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android系统/">Android系统</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Handler机制/">Handler机制</a></li></ul>
 	</span>
 
 
   </div>
   <div class="article-entry">
-    <p><img src="http://ob5qdb9lc.bkt.clouddn.com/bz1080p.com_2015-03-06_05-37-47.jpg" alt="Image"></p>
+    <p>Android开发中多线程是随处都可以见到的，Android系统提供了Handler机制来处理线程间信息的交换。<br>实际上，当一个应用启动时，就会在当前进程的主线程里建立一个消息循环，好确保主线程的存活并源源不断地处理任务。<br>Android 系统为我们提供了 Looper，Handler，MessageQueue 来实现线程任务模型。</p>
 <a id="more"></a>
 <h1 id="Handler机制"><a href="#Handler机制" class="headerlink" title="Handler机制"></a>Handler机制</h1><p>Hnadler机制其实从某种意义上而言，是基于生产者-消费者模式展开的。<br>如UI线程就是消费者，在其他线程（生产者）上通过 Handler 将要执行的Callback ，迁移到UI线程上执行。</p>
 <p>生产者（Work thread）需要将任务提交给缓冲区(MessageQueue)，而这个提交工作是由 post(Runnable runable) 或者 postDelayed(Runnable r, long delayMillis) 等post方法来执行。而消费者（UI thread）通过 looper 不断地从 MessageQueue 中取出任务再执行。</p>

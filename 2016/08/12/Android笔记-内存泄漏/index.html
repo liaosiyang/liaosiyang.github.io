@@ -12,15 +12,16 @@
   
 </title>
 
+<meta name="description" content="Android是基于Java开发的，使用的虚拟机跟Java虚拟机也差不多。Java开发中遇到的问题Android开发中也经常遇到。其中典型就是内存泄漏问题。内存泄漏问题多了就会出现OOM，在开发过程中应该时刻注意所写的代码是否会导致内存泄漏。仅仅依靠开发时的自觉还是不够的，所幸还有一些工具能帮助我们发现内存泄漏。总结一下如何避免内存：一是了解常见内存泄漏的问题，开发过程中避免。二是使用工具找出出现">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android笔记-内存泄漏">
 <meta property="og:url" content="http://yoursite.com/2016/08/12/Android笔记-内存泄漏/index.html">
 <meta property="og:site_name" content="Be Level5 Coder">
-<meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/55729117201103111238192208337427592_012.jpg">
-<meta property="og:updated_time" content="2016-08-26T03:58:14.752Z">
+<meta property="og:description" content="Android是基于Java开发的，使用的虚拟机跟Java虚拟机也差不多。Java开发中遇到的问题Android开发中也经常遇到。其中典型就是内存泄漏问题。内存泄漏问题多了就会出现OOM，在开发过程中应该时刻注意所写的代码是否会导致内存泄漏。仅仅依靠开发时的自觉还是不够的，所幸还有一些工具能帮助我们发现内存泄漏。总结一下如何避免内存：一是了解常见内存泄漏的问题，开发过程中避免。二是使用工具找出出现">
+<meta property="og:updated_time" content="2016-08-28T06:49:56.780Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android笔记-内存泄漏">
-<meta name="twitter:image" content="http://ob5qdb9lc.bkt.clouddn.com/55729117201103111238192208337427592_012.jpg">
+<meta name="twitter:description" content="Android是基于Java开发的，使用的虚拟机跟Java虚拟机也差不多。Java开发中遇到的问题Android开发中也经常遇到。其中典型就是内存泄漏问题。内存泄漏问题多了就会出现OOM，在开发过程中应该时刻注意所写的代码是否会导致内存泄漏。仅仅依靠开发时的自觉还是不够的，所幸还有一些工具能帮助我们发现内存泄漏。总结一下如何避免内存：一是了解常见内存泄漏的问题，开发过程中避免。二是使用工具找出出现">
 
 
   <link rel="alternative" href="/atom.xml" title="Be Level5 Coder" type="application/atom+xml">
@@ -87,7 +88,7 @@
             
               <li class="tag-list-container">
                 <a href="javascript:;">标签</a>
-                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-MVP/">Android MVP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android内存泄漏/">Android内存泄漏</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android开发框架/">Android开发框架</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android插件化/">Android插件化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android热补丁/">Android热补丁</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android系统/">Android系统</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android进程保活/">Android进程保活</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JVM/">JVM</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Other/">Other</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP-IP/">TCP/IP</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a><span class="tag-list-count">1</span></li></ul>
+                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android事件分发机制/">Android事件分发机制</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android内存泄漏/">Android内存泄漏</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android开发框架/">Android开发框架</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android性能优化/">Android性能优化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android插件化/">Android插件化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android热补丁/">Android热补丁</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android系统/">Android系统</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android进程保活/">Android进程保活</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dagger2/">Dagger2</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DataBinding/">DataBinding</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Handler机制/">Handler机制</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JVM/">JVM</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVP模式/">MVP模式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Other/">Other</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ReactNative/">ReactNative</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Reaml/">Reaml</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Retrofit/">Retrofit</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RxJava/">RxJava</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP-IP/">TCP/IP</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/View绘制流程/">View绘制流程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a><span class="tag-list-count">1</span></li></ul>
               </li>
             
           
@@ -167,7 +168,7 @@
 
   </div>
   <div class="article-entry">
-    <p><img src="http://ob5qdb9lc.bkt.clouddn.com/55729117201103111238192208337427592_012.jpg" alt="Image"></p>
+    <p>Android是基于Java开发的，使用的虚拟机跟Java虚拟机也差不多。Java开发中遇到的问题Android开发中也经常遇到。其中典型就是内存泄漏问题。<br>内存泄漏问题多了就会出现OOM，在开发过程中应该时刻注意所写的代码是否会导致内存泄漏。<br>仅仅依靠开发时的自觉还是不够的，所幸还有一些工具能帮助我们发现内存泄漏。<br>总结一下如何避免内存：一是了解常见内存泄漏的问题，开发过程中避免。二是使用工具找出出现内存泄漏的代码然后修改。</p>
 <a id="more"></a>
 <h1 id="内存泄漏"><a href="#内存泄漏" class="headerlink" title="内存泄漏"></a>内存泄漏</h1><p>Java是垃圾回收语言的一种，其优点是开发者无需特意管理内存分配，降低了应用由于局部故障(segmentation fault)导致崩溃，同时防止未释放的内存把堆栈(heap)挤爆的可能，所以写出来的代码更为安全。</p>
 <p>不幸的是，在Java中仍存在很多容易导致内存泄漏的逻辑可能(logical leak)。如果不小心，你的Android应用很容易浪费掉未释放的内存，最终导致内存用光的错误抛出(out-of-memory，OOM)。</p>
