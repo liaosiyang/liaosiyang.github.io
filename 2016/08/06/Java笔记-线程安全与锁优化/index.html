@@ -12,15 +12,16 @@
   
 </title>
 
+<meta name="description" content="提起线程就会想到线程安全的问题，就比如游乐园的云霄飞车，一次只允许一批人游玩，当人坐满了就锁定了，后面的人必须排队等候。如果像印度火车那样没有同步机制的就很容易出现安全问题。Java语言提供了保障线程安全的方案，比如互斥同步，通过对公共资源加锁和解锁实现，但这种方式会带来性能上的损耗，所以提出了锁优化的方案。总结一下Java线程安全方面的知识。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java笔记-线程安全与锁优化">
 <meta property="og:url" content="http://yoursite.com/2016/08/06/Java笔记-线程安全与锁优化/index.html">
 <meta property="og:site_name" content="Be Level5 Coder">
-<meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/767fe6039245d688c6af694da4c27d1ed31b2428.jpg">
-<meta property="og:updated_time" content="2016-08-26T03:58:14.782Z">
+<meta property="og:description" content="提起线程就会想到线程安全的问题，就比如游乐园的云霄飞车，一次只允许一批人游玩，当人坐满了就锁定了，后面的人必须排队等候。如果像印度火车那样没有同步机制的就很容易出现安全问题。Java语言提供了保障线程安全的方案，比如互斥同步，通过对公共资源加锁和解锁实现，但这种方式会带来性能上的损耗，所以提出了锁优化的方案。总结一下Java线程安全方面的知识。">
+<meta property="og:updated_time" content="2016-08-29T06:29:34.384Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java笔记-线程安全与锁优化">
-<meta name="twitter:image" content="http://ob5qdb9lc.bkt.clouddn.com/767fe6039245d688c6af694da4c27d1ed31b2428.jpg">
+<meta name="twitter:description" content="提起线程就会想到线程安全的问题，就比如游乐园的云霄飞车，一次只允许一批人游玩，当人坐满了就锁定了，后面的人必须排队等候。如果像印度火车那样没有同步机制的就很容易出现安全问题。Java语言提供了保障线程安全的方案，比如互斥同步，通过对公共资源加锁和解锁实现，但这种方式会带来性能上的损耗，所以提出了锁优化的方案。总结一下Java线程安全方面的知识。">
 
 
   <link rel="alternative" href="/atom.xml" title="Be Level5 Coder" type="application/atom+xml">
@@ -167,10 +168,8 @@
 
   </div>
   <div class="article-entry">
-    <p><img src="http://ob5qdb9lc.bkt.clouddn.com/767fe6039245d688c6af694da4c27d1ed31b2428.jpg" alt="Image"></p>
+    <p>提起线程就会想到线程安全的问题，就比如游乐园的云霄飞车，一次只允许一批人游玩，当人坐满了就锁定了，后面的人必须排队等候。如果像印度火车那样没有同步机制的就很容易出现安全问题。<br>Java语言提供了保障线程安全的方案，比如互斥同步，通过对公共资源加锁和解锁实现，但这种方式会带来性能上的损耗，所以提出了锁优化的方案。<br>总结一下Java线程安全方面的知识。</p>
 <a id="more"></a>
-<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>在软件业发展的初期，程序编写都是以算法为核心的，程序员会把数据和过程分别作为独立的部分来考虑，数据代表问题空间的客体，程序代码则用于处理这些数据。这种思维方式站在计算机的角度去抽象问题和解决问题，称为面向过程的编程思想。</p>
-<p>面向对象的编程思想是站在现实世界的角度去抽象和解决问题，它把数据和行为都看做是对象的一部分，这样可以让程序员能以符合现实世界的思维方式来编写和组织程序。</p>
 <h1 id="线程安全"><a href="#线程安全" class="headerlink" title="线程安全"></a>线程安全</h1><p>当多个线程访问一个对象时，如果不用考虑这些线程在运行时环境下的调度和交替执行，也不需要进行额外的同步，或者在调用方进行任何其他的协调操作，调用这个对象的行为都可以获得正确的结果，那这个对象就是线程安全的。</p>
 <p>它要求线程安全的代码都必须具备一个特征：代码本身封装了所有必要的正确性保障手段(如互斥同步等)，令调用者无须关心多线程的问题，更无须自己采取任何措施来保证多线程的正确调用。</p>
 <h2 id="Java语言中的线程安全"><a href="#Java语言中的线程安全" class="headerlink" title="Java语言中的线程安全"></a>Java语言中的线程安全</h2><p>按照线程安全的“安全程度”由强至弱来排序，Java语言中的各种操作共享的数据分为以下5类：不可变、绝对线程安全、相对线程安全、线程兼容和线程对立。</p>

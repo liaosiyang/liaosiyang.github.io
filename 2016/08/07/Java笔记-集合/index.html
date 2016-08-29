@@ -12,16 +12,18 @@
   
 </title>
 
+<meta name="description" content="随着Java SE 1.2的问世，设计人员感到是推出一组功能完善的数据结构的时机了。面对一大堆相互矛盾的设计策略，他们希望让类库小且易于学习，而不像C++的STL那样复杂，但却又希望能够得到STL率先推出的”泛型算法”所具有的优点。Java中的集合类库就是我们学过的数据结构的实现，比如链表-LinkedList,散列表-HashMap,Hashtale,堆-PriorityQueue等，所以当要使">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java笔记-集合">
 <meta property="og:url" content="http://yoursite.com/2016/08/07/Java笔记-集合/index.html">
 <meta property="og:site_name" content="Be Level5 Coder">
-<meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/94cad1c8a786c91700b85e64ca3d70cf3bc75737.jpg">
+<meta property="og:description" content="随着Java SE 1.2的问世，设计人员感到是推出一组功能完善的数据结构的时机了。面对一大堆相互矛盾的设计策略，他们希望让类库小且易于学习，而不像C++的STL那样复杂，但却又希望能够得到STL率先推出的”泛型算法”所具有的优点。Java中的集合类库就是我们学过的数据结构的实现，比如链表-LinkedList,散列表-HashMap,Hashtale,堆-PriorityQueue等，所以当要使">
 <meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/5781777496614730124.jpg">
-<meta property="og:updated_time" content="2016-08-07T12:02:56.902Z">
+<meta property="og:updated_time" content="2016-08-29T04:50:57.985Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java笔记-集合">
-<meta name="twitter:image" content="http://ob5qdb9lc.bkt.clouddn.com/94cad1c8a786c91700b85e64ca3d70cf3bc75737.jpg">
+<meta name="twitter:description" content="随着Java SE 1.2的问世，设计人员感到是推出一组功能完善的数据结构的时机了。面对一大堆相互矛盾的设计策略，他们希望让类库小且易于学习，而不像C++的STL那样复杂，但却又希望能够得到STL率先推出的”泛型算法”所具有的优点。Java中的集合类库就是我们学过的数据结构的实现，比如链表-LinkedList,散列表-HashMap,Hashtale,堆-PriorityQueue等，所以当要使">
+<meta name="twitter:image" content="http://ob5qdb9lc.bkt.clouddn.com/5781777496614730124.jpg">
 
 
   <link rel="alternative" href="/atom.xml" title="Be Level5 Coder" type="application/atom+xml">
@@ -168,9 +170,8 @@
 
   </div>
   <div class="article-entry">
-    <p><img src="http://ob5qdb9lc.bkt.clouddn.com/94cad1c8a786c91700b85e64ca3d70cf3bc75737.jpg" alt="Image"></p>
+    <p>随着Java SE 1.2的问世，设计人员感到是推出一组功能完善的数据结构的时机了。面对一大堆相互矛盾的设计策略，他们希望让类库小且易于学习，而不像C++的STL那样复杂，但却又希望能够得到STL率先推出的”泛型算法”所具有的优点。<br>Java中的集合类库就是我们学过的数据结构的实现，比如链表-LinkedList,散列表-HashMap,Hashtale,堆-PriorityQueue等，所以当要使用这些数据结构的时候就不需要自己写，直接使用集合类就行了。<br>总结一下集合类库的相关知识。</p>
 <a id="more"></a>
-<h1 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h1><p>随着Java SE 1.2的问世，设计人员感到是推出一组功能完善的数据结构的时机了。面对一大堆相互矛盾的设计策略，他们希望让类库小且易于学习，而不像C++的STL那样复杂，但却又希望能够得到STL率先推出的”泛型算法”所具有的优点。</p>
 <h2 id="Java类库中的集合接口和迭代器接口"><a href="#Java类库中的集合接口和迭代器接口" class="headerlink" title="Java类库中的集合接口和迭代器接口"></a>Java类库中的集合接口和迭代器接口</h2><p>在Java类库中，集合类的基本接口是Collection接口。这个接口有2个基本方法：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Collection</span>&lt;<span class="title">E</span>&gt;</span>&#123;</div><div class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">add</span><span class="params">(E element)</span></span>;</div><div class="line">    <span class="function">Iterator&lt;E&gt; <span class="title">iterator</span><span class="params">()</span></span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>add方法用于向集合中添加元素。如果添加元素确实改变了集合就返回true，如果集合没有发生改变就返回false。例如，如果试图向集合中添加一个对象，而这个对象在集中已经存在，这个添加请求就没有实效，因为集中不允许有重复的对象。<br>iterator方法用于返回一个实现了Iterator接口的对象。可以使用这个迭代器对象依次访问集合中的元素。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Inerator</span>&lt;<span class="title">E</span>&gt;</span>&#123;</div><div class="line">    <span class="function">E <span class="title">next</span><span class="params">()</span></span>;</div><div class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">hasNext</span><span class="params">()</span></span>;</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">remove</span><span class="params">()</span></span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>通过反复调用next方法，可以逐个访问集合中的每个元素。Collection接口扩展了Iterable接口。因此对于标准类库中的任何集合都可以使用“for each”循环。</p>
 <p>元素被访问的顺序取决于集合类型。如果对ArrayList进行迭代，迭代器将从索引0开始，每迭代一次，索引值加1。然而，如果访问HashSet中的元素，每个元素将会按照某种随机的次序出现。虽然可以确定在迭代过程中能遍历到集合中的所有元素，但却无法预知元素被访问的次序。</p>
 <p>C++的标准模板库，迭代器是根据数组索引建模的。如果给定一个迭代器，就可以查看指定位置上的元素，但是，Java迭代器并不是这样操作的。查找操作与位置变更是紧密相连的。查找一个元素的唯一方法是调用next，而在执行查找操作的同时，迭代器的位置随之向前移动。</p>

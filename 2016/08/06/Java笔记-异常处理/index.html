@@ -12,16 +12,18 @@
   
 </title>
 
+<meta name="description" content="在Java中，如果某个方法不能采用正常的途径完整它的任务，就可以通过另外一个路径退出方法。在这种情况下，方法并不返回值，而是抛出(throw)一个封装错误信息的对象。需要注意的是，这个方法将会立刻退出，并不返回任何值。此外，调用这个方法的代码也将无法继续执行，而是，异常处理机制开始搜索能够处理这种异常状况的异常处理器。总结一下Java异常机制和使用技巧。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java笔记-异常处理">
 <meta property="og:url" content="http://yoursite.com/2016/08/06/Java笔记-异常处理/index.html">
 <meta property="og:site_name" content="Be Level5 Coder">
-<meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/6c224f4a20a4462323ae9ff99a22720e0df3d7c0.jpg">
+<meta property="og:description" content="在Java中，如果某个方法不能采用正常的途径完整它的任务，就可以通过另外一个路径退出方法。在这种情况下，方法并不返回值，而是抛出(throw)一个封装错误信息的对象。需要注意的是，这个方法将会立刻退出，并不返回任何值。此外，调用这个方法的代码也将无法继续执行，而是，异常处理机制开始搜索能够处理这种异常状况的异常处理器。总结一下Java异常机制和使用技巧。">
 <meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/27213314-953c71b8c61b45439b011932e44a6378.jpg">
-<meta property="og:updated_time" content="2016-08-07T07:06:04.607Z">
+<meta property="og:updated_time" content="2016-08-29T05:02:51.098Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java笔记-异常处理">
-<meta name="twitter:image" content="http://ob5qdb9lc.bkt.clouddn.com/6c224f4a20a4462323ae9ff99a22720e0df3d7c0.jpg">
+<meta name="twitter:description" content="在Java中，如果某个方法不能采用正常的途径完整它的任务，就可以通过另外一个路径退出方法。在这种情况下，方法并不返回值，而是抛出(throw)一个封装错误信息的对象。需要注意的是，这个方法将会立刻退出，并不返回任何值。此外，调用这个方法的代码也将无法继续执行，而是，异常处理机制开始搜索能够处理这种异常状况的异常处理器。总结一下Java异常机制和使用技巧。">
+<meta name="twitter:image" content="http://ob5qdb9lc.bkt.clouddn.com/27213314-953c71b8c61b45439b011932e44a6378.jpg">
 
 
   <link rel="alternative" href="/atom.xml" title="Be Level5 Coder" type="application/atom+xml">
@@ -168,9 +170,8 @@
 
   </div>
   <div class="article-entry">
-    <p><img src="http://ob5qdb9lc.bkt.clouddn.com/6c224f4a20a4462323ae9ff99a22720e0df3d7c0.jpg" alt="Image"></p>
+    <p>在Java中，如果某个方法不能采用正常的途径完整它的任务，就可以通过另外一个路径退出方法。在这种情况下，方法并不返回值，而是抛出(throw)一个封装错误信息的对象。<br>需要注意的是，这个方法将会立刻退出，并不返回任何值。此外，调用这个方法的代码也将无法继续执行，而是，异常处理机制开始搜索能够处理这种异常状况的异常处理器。<br>总结一下Java异常机制和使用技巧。</p>
 <a id="more"></a>
-<h1 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h1><h2 id="处理错误"><a href="#处理错误" class="headerlink" title="处理错误"></a>处理错误</h2><p>在Java中，如果某个方法不能采用正常的途径完整它的任务，就可以通过另外一个路径退出方法。在这种情况下，方法并不返回值，而是抛出(throw)一个封装错误信息的对象。需要注意的是，这个方法将会立刻退出，并不返回任何值。此外，调用这个方法的代码也将无法继续执行，而是，异常处理机制开始搜索能够处理这种异常状况的异常处理器。</p>
 <h3 id="异常分类"><a href="#异常分类" class="headerlink" title="异常分类"></a>异常分类</h3><p>在Java程序设计语言中，异常对象都是派生Throwable类的一个实例。</p>
 <p><img src="http://ob5qdb9lc.bkt.clouddn.com/27213314-953c71b8c61b45439b011932e44a6378.jpg" alt="Image"></p>
 <p>所有异常都是有Throwable继承而来，但下一层立即分解两个分支：Error和Exception。</p>

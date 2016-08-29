@@ -12,11 +12,12 @@
   
 </title>
 
+<meta name="description" content="“虚拟机”是一个相对于“物理机”的概念，这两种机器都有代码执行能力，其区别是物理机的执行引擎是直接建立在处理器、硬件、指令集和操作系统层面上的，而虚拟机的执行引擎则是由自己实现的，因此可以自行制定指令集与执行引擎的结构体系，并且能够执行那些不被硬件直接支持的指令集格式。 在不同的虚拟机实现里面，执行引擎在执行Java代码的时候可能会有解释执行(通过解释器执行)和编译执行(即通过即时编译器产生本地代">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java笔记-虚拟机字节码执行引擎">
 <meta property="og:url" content="http://yoursite.com/2016/08/05/Java笔记-虚拟机字节码执行引擎/index.html">
 <meta property="og:site_name" content="Be Level5 Coder">
-<meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/d009b3de9c82d1584a3173f4830a19d8bd3e42c7.jpg">
+<meta property="og:description" content="“虚拟机”是一个相对于“物理机”的概念，这两种机器都有代码执行能力，其区别是物理机的执行引擎是直接建立在处理器、硬件、指令集和操作系统层面上的，而虚拟机的执行引擎则是由自己实现的，因此可以自行制定指令集与执行引擎的结构体系，并且能够执行那些不被硬件直接支持的指令集格式。 在不同的虚拟机实现里面，执行引擎在执行Java代码的时候可能会有解释执行(通过解释器执行)和编译执行(即通过即时编译器产生本地代">
 <meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/45594096_1.jpg">
 <meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/45594096_2.jpg">
 <meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/9f32f615edb9ef87f2aef113a8f086f6_thumb.jpg">
@@ -27,10 +28,11 @@
 <meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/f471c6d3-a77a-3cfc-a9fa-dedc039d86cb.jpg">
 <meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/bf722497-45a3-3434-ae9d-a95735a42b3f.jpg">
 <meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/bb515b3e-7ea9-3b52-a82d-6eacd1e99ffb.jpg">
-<meta property="og:updated_time" content="2016-08-26T03:58:14.791Z">
+<meta property="og:updated_time" content="2016-08-29T07:25:17.449Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java笔记-虚拟机字节码执行引擎">
-<meta name="twitter:image" content="http://ob5qdb9lc.bkt.clouddn.com/d009b3de9c82d1584a3173f4830a19d8bd3e42c7.jpg">
+<meta name="twitter:description" content="“虚拟机”是一个相对于“物理机”的概念，这两种机器都有代码执行能力，其区别是物理机的执行引擎是直接建立在处理器、硬件、指令集和操作系统层面上的，而虚拟机的执行引擎则是由自己实现的，因此可以自行制定指令集与执行引擎的结构体系，并且能够执行那些不被硬件直接支持的指令集格式。 在不同的虚拟机实现里面，执行引擎在执行Java代码的时候可能会有解释执行(通过解释器执行)和编译执行(即通过即时编译器产生本地代">
+<meta name="twitter:image" content="http://ob5qdb9lc.bkt.clouddn.com/45594096_1.jpg">
 
 
   <link rel="alternative" href="/atom.xml" title="Be Level5 Coder" type="application/atom+xml">
@@ -177,10 +179,8 @@
 
   </div>
   <div class="article-entry">
-    <p><img src="http://ob5qdb9lc.bkt.clouddn.com/d009b3de9c82d1584a3173f4830a19d8bd3e42c7.jpg" alt="image1"></p>
+    <p>“虚拟机”是一个相对于“物理机”的概念，这两种机器都有代码执行能力，其区别是物理机的执行引擎是直接建立在处理器、硬件、指令集和操作系统层面上的，而虚拟机的执行引擎则是由自己实现的，因此可以自行制定指令集与执行引擎的结构体系，并且能够执行那些不被硬件直接支持的指令集格式。<br> 在不同的虚拟机实现里面，执行引擎在执行Java代码的时候可能会有解释执行(通过解释器执行)和编译执行(即通过即时编译器产生本地代码)两种选择，也可能两者兼备，甚至还可能会包含几个不同级别的编译器执行引擎。<br>从外观上来看，所有的Java虚拟机的执行都是一致的：输入的是字节码文件，处理过程是字节码解析的等效过程，输出的是执行结果。<br>总结一下Java虚拟机执行字节码的结构和机制。</p>
 <a id="more"></a>
-<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p> “虚拟机”是一个相对于“物理机”的概念，这两种机器都有代码执行能力，其区别是物理机的执行引擎是直接建立在处理器、硬件、指令集和操作系统层面上的，而虚拟机的执行引擎则是由自己实现的，因此可以自行制定指令集与执行引擎的结构体系，并且能够执行那些不被硬件直接支持的指令集格式。<br></p>
-<p> 在不同的虚拟机实现里面，执行引擎在执行Java代码的时候可能会有解释执行(通过解释器执行)和编译执行(即通过即时编译器产生本地代码)两种选择，也可能两者兼备，甚至还可能会包含几个不同级别的编译器执行引擎。但是从外观上来看，所有的Java虚拟机的执行都是一致的：输入的是字节码文件，处理过程是字节码解析的等效过程，输出的是执行结果。</p>
 <h1 id="运行时栈帧结构"><a href="#运行时栈帧结构" class="headerlink" title="运行时栈帧结构"></a>运行时栈帧结构</h1><p>栈帧是用于支持虚拟机进行方法调用和方法执行的数据结构，它是虚拟机运行时数据区中的虚拟机栈的栈元素。栈帧存储了方法的局部变量表、操作数栈、动态连接和方法返回地址等信息。每一个方法从调用开始至执行完成的过程，都对应着一个栈帧在虚拟机栈里面从入栈到出栈的过程。<br></p>
 <p>每一个栈帧都包括了局部变量表、操作数栈、动态连接、方法返回地址和一些额外的附加信息。在编译程序代码的时候，栈帧中需要多大的局部变量表，多深的操作数栈都已经完全确定了，并且写入到方法表的Code属性之中，因此一个栈帧需要分配多少内存，不会受到程序运行期变量数据的影响，而仅仅取决于具体的虚拟机实现。<br></p>
 <p><img src="http://ob5qdb9lc.bkt.clouddn.com/45594096_1.jpg" alt="image2"></p>

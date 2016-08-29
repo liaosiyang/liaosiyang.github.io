@@ -12,15 +12,16 @@
   
 </title>
 
+<meta name="description" content="因为应用开发过程中对于操作系统体会的不多，所以一直都没有关注到这方面的内容。操作系统大部分的知识都还给老师了，大概是学习操作系统的时候没走心啊，总觉得什么段式存储、虚拟内存什么的是上个世纪的老东西，没什么学习的必要。现在看来真是蠢透了，不管什么语言，也不管什么开发工具，最后都得和操作系统打交道，操作系统该学的还是要学的啊。总结一下操作系统基本知识，后续还会补充相关内容。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="操作系统笔记-Linux的IPC，内存管理">
 <meta property="og:url" content="http://yoursite.com/2016/08/08/操作系统笔记-Linux的IPC，内存管理/index.html">
 <meta property="og:site_name" content="Be Level5 Coder">
-<meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/7.jpg">
-<meta property="og:updated_time" content="2016-08-26T03:53:35.674Z">
+<meta property="og:description" content="因为应用开发过程中对于操作系统体会的不多，所以一直都没有关注到这方面的内容。操作系统大部分的知识都还给老师了，大概是学习操作系统的时候没走心啊，总觉得什么段式存储、虚拟内存什么的是上个世纪的老东西，没什么学习的必要。现在看来真是蠢透了，不管什么语言，也不管什么开发工具，最后都得和操作系统打交道，操作系统该学的还是要学的啊。总结一下操作系统基本知识，后续还会补充相关内容。">
+<meta property="og:updated_time" content="2016-08-28T13:32:28.182Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="操作系统笔记-Linux的IPC，内存管理">
-<meta name="twitter:image" content="http://ob5qdb9lc.bkt.clouddn.com/7.jpg">
+<meta name="twitter:description" content="因为应用开发过程中对于操作系统体会的不多，所以一直都没有关注到这方面的内容。操作系统大部分的知识都还给老师了，大概是学习操作系统的时候没走心啊，总觉得什么段式存储、虚拟内存什么的是上个世纪的老东西，没什么学习的必要。现在看来真是蠢透了，不管什么语言，也不管什么开发工具，最后都得和操作系统打交道，操作系统该学的还是要学的啊。总结一下操作系统基本知识，后续还会补充相关内容。">
 
 
   <link rel="alternative" href="/atom.xml" title="Be Level5 Coder" type="application/atom+xml">
@@ -167,7 +168,7 @@
 
   </div>
   <div class="article-entry">
-    <p><img src="http://ob5qdb9lc.bkt.clouddn.com/7.jpg" alt="Image"></p>
+    <p>因为应用开发过程中对于操作系统体会的不多，所以一直都没有关注到这方面的内容。操作系统大部分的知识都还给老师了，大概是学习操作系统的时候没走心啊，总觉得什么段式存储、虚拟内存什么的是上个世纪的老东西，没什么学习的必要。<br>现在看来真是蠢透了，不管什么语言，也不管什么开发工具，最后都得和操作系统打交道，操作系统该学的还是要学的啊。<br>总结一下操作系统基本知识，后续还会补充相关内容。</p>
 <a id="more"></a>
 <h1 id="linux的IPC"><a href="#linux的IPC" class="headerlink" title="linux的IPC"></a>linux的IPC</h1><h3 id="管道（Pipe）及有名管道（Named-Pipe）"><a href="#管道（Pipe）及有名管道（Named-Pipe）" class="headerlink" title="管道（Pipe）及有名管道（Named Pipe）"></a>管道（Pipe）及有名管道（Named Pipe）</h3><p>管道可用于具有亲缘关系进程间的通信，有名管道克服了管道没有名字的限制，因此，除具有管道所具有的功能外，它还允许无亲缘关系进程间的通信；</p>
 <h3 id="信号量（Signal）"><a href="#信号量（Signal）" class="headerlink" title="信号量（Signal）"></a>信号量（Signal）</h3><p>信号是比较复杂的通信方式，用于通知接受进程有某种事件发生，除了用于进程间通信外，进程还可以发送信号给进程本身；linux除了支持Unix早期信号语义函数sigal外，还支持语义符合Posix.1标准的信号函数sigaction（实际上，该函数是基于BSD的，BSD为了实现可靠信号机制，又能够统一对外接口，用sigaction函数重新实现了signal函数）；</p>

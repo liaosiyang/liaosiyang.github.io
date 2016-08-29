@@ -12,16 +12,18 @@
   
 </title>
 
+<meta name="description" content="每次打开Bilibili时，不用重新输入账号和密码就能自动登录；打开京东就算不登录也能将看上的球鞋加入购物车，关掉浏览器再打开，发现球鞋依然在购物车里。玩守望先锋我们怎么一直与服务器保持连接，不掉线。(因为掉线输了无数把)还有打开浏览器输入www.taobao.com为什么会出现一个让人剁掉双手的网站？总结一下，这些到底是如何实现的。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TCP/IP笔记-Cookie与Session、Socket、访问网页">
 <meta property="og:url" content="http://yoursite.com/2016/08/08/TCP-IP笔记-Cookie与Session、Socket、访问网页/index.html">
 <meta property="og:site_name" content="Be Level5 Coder">
-<meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/d554b4c564c5acac_1322227437_2062812989.jpg">
+<meta property="og:description" content="每次打开Bilibili时，不用重新输入账号和密码就能自动登录；打开京东就算不登录也能将看上的球鞋加入购物车，关掉浏览器再打开，发现球鞋依然在购物车里。玩守望先锋我们怎么一直与服务器保持连接，不掉线。(因为掉线输了无数把)还有打开浏览器输入www.taobao.com为什么会出现一个让人剁掉双手的网站？总结一下，这些到底是如何实现的。">
 <meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/image6.png">
-<meta property="og:updated_time" content="2016-08-08T12:10:59.861Z">
+<meta property="og:updated_time" content="2016-08-28T14:03:52.368Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TCP/IP笔记-Cookie与Session、Socket、访问网页">
-<meta name="twitter:image" content="http://ob5qdb9lc.bkt.clouddn.com/d554b4c564c5acac_1322227437_2062812989.jpg">
+<meta name="twitter:description" content="每次打开Bilibili时，不用重新输入账号和密码就能自动登录；打开京东就算不登录也能将看上的球鞋加入购物车，关掉浏览器再打开，发现球鞋依然在购物车里。玩守望先锋我们怎么一直与服务器保持连接，不掉线。(因为掉线输了无数把)还有打开浏览器输入www.taobao.com为什么会出现一个让人剁掉双手的网站？总结一下，这些到底是如何实现的。">
+<meta name="twitter:image" content="http://ob5qdb9lc.bkt.clouddn.com/image6.png">
 
 
   <link rel="alternative" href="/atom.xml" title="Be Level5 Coder" type="application/atom+xml">
@@ -168,7 +170,7 @@
 
   </div>
   <div class="article-entry">
-    <p><img src="http://ob5qdb9lc.bkt.clouddn.com/d554b4c564c5acac_1322227437_2062812989.jpg" alt="Image"></p>
+    <p>每次打开Bilibili时，不用重新输入账号和密码就能自动登录；打开京东就算不登录也能将看上的球鞋加入购物车，关掉浏览器再打开，发现球鞋依然在购物车里。<br>玩守望先锋我们怎么一直与服务器保持连接，不掉线。(因为掉线输了无数把)<br>还有打开浏览器输入www.taobao.com为什么会出现一个让人剁掉双手的网站？<br>总结一下，这些到底是如何实现的。</p>
 <a id="more"></a>
 <h1 id="Cookie与Session"><a href="#Cookie与Session" class="headerlink" title="Cookie与Session"></a>Cookie与Session</h1><h2 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h2><p>Cookie 是当你浏览某网站时，网站存储在你机器上的一个小文本文件，它可以记录你的用户ID，密码、浏览过的网页、停留的时间等信息，当你再次来到该网站时，网站通过读取Cookie，得知你的相关信息，就可以做出相应的动作，例如在页面显示欢迎你的标语，或者让你不用输入ID、密码就直接登录等。</p>
 <h2 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h2><p>Session 存储在服务器端，一般放在服务器的内存中。Session 对象存储特定用户会话所需的信息。这样，当用户在应用程序的 Web 页之间跳转时，存储在 Session 对象中的变量将不会丢失，而是在整个用户会话中一直存在下去。当用户请求来自应用程序的 Web 页时，如果该用户还没有会话，则 Web 服务器将自动创建一个 Session 对象。当会话过期或被放弃后，服务器将终止该会话。</p>
