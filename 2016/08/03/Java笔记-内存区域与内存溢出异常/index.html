@@ -12,18 +12,20 @@
   
 </title>
 
+<meta name="description" content="JVM是在千差万别的物理机上建立了统一的运行平台，实现了在任意一台虚拟机上编译的程序都能在任何一台虚拟机上正常运行。这让开发人员可以把主要精力集中在具体的业务逻辑上，而不是物理硬件的兼容性上。这么说来，开发人员只要了解Java API、Java语法就行了，就可以满足日常开发需要了。(当然不包括高级的开发)学习JVM首先是满足好奇心，Android开发是基于Java的，所以想要了解Java到底是如何">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java笔记-内存区域与内存溢出异常">
 <meta property="og:url" content="http://yoursite.com/2016/08/03/Java笔记-内存区域与内存溢出异常/index.html">
 <meta property="og:site_name" content="Be Level5 Coder">
-<meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/2e2eb9389b504fc243cf6c73e3dde71190ef6d30.jpg">
+<meta property="og:description" content="JVM是在千差万别的物理机上建立了统一的运行平台，实现了在任意一台虚拟机上编译的程序都能在任何一台虚拟机上正常运行。这让开发人员可以把主要精力集中在具体的业务逻辑上，而不是物理硬件的兼容性上。这么说来，开发人员只要了解Java API、Java语法就行了，就可以满足日常开发需要了。(当然不包括高级的开发)学习JVM首先是满足好奇心，Android开发是基于Java的，所以想要了解Java到底是如何">
 <meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/c92cad27-b907-38f2-9bd3-5e664feee79b.jpg">
 <meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/1348659242_7055.jpg">
 <meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/1348658605_5211.jpg">
-<meta property="og:updated_time" content="2016-08-26T03:58:14.778Z">
+<meta property="og:updated_time" content="2016-08-29T09:33:59.026Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java笔记-内存区域与内存溢出异常">
-<meta name="twitter:image" content="http://ob5qdb9lc.bkt.clouddn.com/2e2eb9389b504fc243cf6c73e3dde71190ef6d30.jpg">
+<meta name="twitter:description" content="JVM是在千差万别的物理机上建立了统一的运行平台，实现了在任意一台虚拟机上编译的程序都能在任何一台虚拟机上正常运行。这让开发人员可以把主要精力集中在具体的业务逻辑上，而不是物理硬件的兼容性上。这么说来，开发人员只要了解Java API、Java语法就行了，就可以满足日常开发需要了。(当然不包括高级的开发)学习JVM首先是满足好奇心，Android开发是基于Java的，所以想要了解Java到底是如何">
+<meta name="twitter:image" content="http://ob5qdb9lc.bkt.clouddn.com/c92cad27-b907-38f2-9bd3-5e664feee79b.jpg">
 
 
   <link rel="alternative" href="/atom.xml" title="Be Level5 Coder" type="application/atom+xml">
@@ -170,7 +172,7 @@
 
   </div>
   <div class="article-entry">
-    <p><img src="http://ob5qdb9lc.bkt.clouddn.com/2e2eb9389b504fc243cf6c73e3dde71190ef6d30.jpg" alt="image1"></p>
+    <p>JVM是在千差万别的物理机上建立了统一的运行平台，实现了在任意一台虚拟机上编译的程序都能在任何一台虚拟机上正常运行。这让开发人员可以把主要精力集中在具体的业务逻辑上，而不是物理硬件的兼容性上。<br>这么说来，开发人员只要了解Java API、Java语法就行了，就可以满足日常开发需要了。(当然不包括高级的开发)<br>学习JVM首先是满足好奇心，Android开发是基于Java的，所以想要了解Java到底是如何运行起来的，有什么运行机制和原理。二是如果开发人员不了解虚拟机一些技术特性的运行原理，就无法写出最适合虚拟机运行和自优化的代码。<br>Java虚拟机首先实现了自动内存管理机制，像一个管家一样，把它管理的内存划分为若干个不同的数据区域。有些区域还会出现爆满的情况，这是就会抛出异常。<br>总结一下Java虚拟机将内存划分的几个区域、对象的创建和内存溢出异常。</p>
 <a id="more"></a>
 <h1 id="运行时数据区域"><a href="#运行时数据区域" class="headerlink" title="运行时数据区域"></a>运行时数据区域</h1><p>Java虚拟机在执行Java程序过程中会把它所管理的内存划分为若干个不同的数据区域。<br><img src="http://ob5qdb9lc.bkt.clouddn.com/c92cad27-b907-38f2-9bd3-5e664feee79b.jpg" alt="image2"></p>
 <h3 id="程序计数器"><a href="#程序计数器" class="headerlink" title="程序计数器"></a>程序计数器</h3><ul>

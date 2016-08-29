@@ -12,19 +12,21 @@
   
 </title>
 
+<meta name="description" content="谁都知道Java文件会被编译为Class文件执行，那编译成的Class文件是一个怎样的迷之结构，我们写的字段、方法在Class文件中会变成什么样子？了解Class文件的结构是为学习类加载机制、字节码执行的学习做铺垫，同时也满足了一窥究竟的好奇心，原来Class文件是酱紫的。还有虚拟机既然可以执行字节码，那肯定有一套自己的指令集。总结一下Java中的Class文件的结构和指令集相关知识。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java笔记-类文件结构与字节码指令">
 <meta property="og:url" content="http://yoursite.com/2016/08/04/Java笔记-类文件结构与字节码指令/index.html">
 <meta property="og:site_name" content="Be Level5 Coder">
-<meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/11070721181f354fcd1f196286.jpg">
+<meta property="og:description" content="谁都知道Java文件会被编译为Class文件执行，那编译成的Class文件是一个怎样的迷之结构，我们写的字段、方法在Class文件中会变成什么样子？了解Class文件的结构是为学习类加载机制、字节码执行的学习做铺垫，同时也满足了一窥究竟的好奇心，原来Class文件是酱紫的。还有虚拟机既然可以执行字节码，那肯定有一套自己的指令集。总结一下Java中的Class文件的结构和指令集相关知识。">
 <meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/20140529181208328.png">
 <meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/20140529182355984.jpg">
 <meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/20140529181804171.jpg">
 <meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/20140428222701984.png">
-<meta property="og:updated_time" content="2016-08-26T03:58:14.774Z">
+<meta property="og:updated_time" content="2016-08-29T08:35:37.305Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java笔记-类文件结构与字节码指令">
-<meta name="twitter:image" content="http://ob5qdb9lc.bkt.clouddn.com/11070721181f354fcd1f196286.jpg">
+<meta name="twitter:description" content="谁都知道Java文件会被编译为Class文件执行，那编译成的Class文件是一个怎样的迷之结构，我们写的字段、方法在Class文件中会变成什么样子？了解Class文件的结构是为学习类加载机制、字节码执行的学习做铺垫，同时也满足了一窥究竟的好奇心，原来Class文件是酱紫的。还有虚拟机既然可以执行字节码，那肯定有一套自己的指令集。总结一下Java中的Class文件的结构和指令集相关知识。">
+<meta name="twitter:image" content="http://ob5qdb9lc.bkt.clouddn.com/20140529181208328.png">
 
 
   <link rel="alternative" href="/atom.xml" title="Be Level5 Coder" type="application/atom+xml">
@@ -171,7 +173,7 @@
 
   </div>
   <div class="article-entry">
-    <p><img src="http://ob5qdb9lc.bkt.clouddn.com/11070721181f354fcd1f196286.jpg" alt="image1"></p>
+    <p>谁都知道Java文件会被编译为Class文件执行，那编译成的Class文件是一个怎样的迷之结构，我们写的字段、方法在Class文件中会变成什么样子？<br>了解Class文件的结构是为学习类加载机制、字节码执行的学习做铺垫，同时也满足了一窥究竟的好奇心，原来Class文件是酱紫的。<br>还有虚拟机既然可以执行字节码，那肯定有一套自己的指令集。<br>总结一下Java中的Class文件的结构和指令集相关知识。</p>
 <a id="more"></a>
 <h1 id="Java平台无关性的基石"><a href="#Java平台无关性的基石" class="headerlink" title="Java平台无关性的基石"></a>Java平台无关性的基石</h1><ul>
 <li>各个不同平台的虚拟机与所有平台都统一使用的程序存储格式——字节码(ByteCode)是构成平台无关性的基石。</li>

@@ -12,16 +12,18 @@
   
 </title>
 
+<meta name="description" content="Java与C++之间最大的区别就是内存动态分配和垃圾收集技术，Java中的对象没人用的话会有垃圾收集器自动回收，让它滚蛋，一直都有用的话还会将它移动到富人区，让它活着更舒适，减少被垃圾收集器打扰的可能。(原来Java里的对象跟人活在现实世界一样残酷啊)对象的出生也是有高低贵贱的，大的对象可以直接入住富人区，而大多数的一开始就只能在贫民区，只能努力向富人区奋斗。总结一下Java世界里对象面临的残酷生">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java笔记-垃圾收集器与内存分配策略">
 <meta property="og:url" content="http://yoursite.com/2016/08/03/Java笔记-垃圾收集器与内存分配策略/index.html">
 <meta property="og:site_name" content="Be Level5 Coder">
-<meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/leimu.jpg">
+<meta property="og:description" content="Java与C++之间最大的区别就是内存动态分配和垃圾收集技术，Java中的对象没人用的话会有垃圾收集器自动回收，让它滚蛋，一直都有用的话还会将它移动到富人区，让它活着更舒适，减少被垃圾收集器打扰的可能。(原来Java里的对象跟人活在现实世界一样残酷啊)对象的出生也是有高低贵贱的，大的对象可以直接入住富人区，而大多数的一开始就只能在贫民区，只能努力向富人区奋斗。总结一下Java世界里对象面临的残酷生">
 <meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/1349278110_8410.jpg">
-<meta property="og:updated_time" content="2016-08-26T03:58:14.770Z">
+<meta property="og:updated_time" content="2016-08-29T08:54:02.844Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java笔记-垃圾收集器与内存分配策略">
-<meta name="twitter:image" content="http://ob5qdb9lc.bkt.clouddn.com/leimu.jpg">
+<meta name="twitter:description" content="Java与C++之间最大的区别就是内存动态分配和垃圾收集技术，Java中的对象没人用的话会有垃圾收集器自动回收，让它滚蛋，一直都有用的话还会将它移动到富人区，让它活着更舒适，减少被垃圾收集器打扰的可能。(原来Java里的对象跟人活在现实世界一样残酷啊)对象的出生也是有高低贵贱的，大的对象可以直接入住富人区，而大多数的一开始就只能在贫民区，只能努力向富人区奋斗。总结一下Java世界里对象面临的残酷生">
+<meta name="twitter:image" content="http://ob5qdb9lc.bkt.clouddn.com/1349278110_8410.jpg">
 
 
   <link rel="alternative" href="/atom.xml" title="Be Level5 Coder" type="application/atom+xml">
@@ -168,7 +170,7 @@
 
   </div>
   <div class="article-entry">
-    <p><img src="http://ob5qdb9lc.bkt.clouddn.com/leimu.jpg" alt="image1"></p>
+    <p>Java与C++之间最大的区别就是内存动态分配和垃圾收集技术，Java中的对象没人用的话会有垃圾收集器自动回收，让它滚蛋，一直都有用的话还会将它移动到富人区，让它活着更舒适，减少被垃圾收集器打扰的可能。(原来Java里的对象跟人活在现实世界一样残酷啊)<br>对象的出生也是有高低贵贱的，大的对象可以直接入住富人区，而大多数的一开始就只能在贫民区，只能努力向富人区奋斗。<br>总结一下Java世界里对象面临的残酷生存法则，和那些如同恶魔般的垃圾收集器。</p>
 <a id="more"></a>
 <h1 id="对象已死吗"><a href="#对象已死吗" class="headerlink" title="对象已死吗"></a>对象已死吗</h1><h3 id="引用计数算法"><a href="#引用计数算法" class="headerlink" title="引用计数算法"></a>引用计数算法</h3><ul>
 <li>给对象添加一个引用计数器，每当有一个地方引用它，计数器加1；当引用失效时，计时器减1。任何时刻计数器为0的对象就是不可能再被引用的。</li>
