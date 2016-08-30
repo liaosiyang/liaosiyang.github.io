@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-08-28T03:44:17.809Z</updated>
+  <updated>2016-08-30T06:25:29.771Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2016/08/24/Android%E7%AC%94%E8%AE%B0-ReactNative/"/>
     <id>http://yoursite.com/2016/08/24/Android笔记-ReactNative/</id>
     <published>2016-08-24T03:19:23.000Z</published>
-    <updated>2016-08-28T03:44:17.809Z</updated>
+    <updated>2016-08-30T06:25:29.771Z</updated>
     
     <content type="html"><![CDATA[<p>React Native 是最近非常火的一个话题,它可以使用前端的开发方式来开发移动端，但并不是像以前在实习公司所做的仅仅用一个WebView嵌套一样。<br>它实际上是一种Hybrid App开发方式，兼有Web App跨平台和Native App高性能的优势，并且它是由牛逼的FacebooK公司开源的神器。<br>作为一名移动开发人员，我也对这项技术非常感兴趣，谁让现在搞Android的竞争太激烈，技术更新也快，说不定哪天就被淘汰了。所以还是早做准备，扩充自己的技能栈。</p>
 <a id="more"></a>
@@ -59,7 +59,7 @@
 </ul>
 <p><a href="https://github.com/reactnativecn/react-native-guide#react-native" target="_blank" rel="external">React-Native学习指南</a><br><a href="http://gold.xitu.io/tag/React%20Native" target="_blank" rel="external">掘金ReactNative标签</a><br><a href="https://facebook.github.io/react-native/docs/getting-started.html" target="_blank" rel="external">Facebook React Native Docs</a><br><a href="http://redux.js.org/" target="_blank" rel="external">Redux.js</a></p>
 <p>8小时内拼工作，8小时外拼成长，干巴爹！</p>
-<p>参考资料：<br><a href="http://blog.zhaiyifan.cn/2016/08/04/android-new-project-from-0-p10/" target="_blank" rel="external">从零开始的Android新项目10 - React Native &amp; Redux</a><br><a href="http://mp.weixin.qq.com/s?__biz=MzA4OTc4MTM0OA==&amp;mid=2650358053&amp;idx=1&amp;sn=42c1f3691b848f571583937db1bcec1b#rd" target="_blank" rel="external">React Native 从入门到源码分析-了解RN百态</a><br><a href="https://zhuanlan.zhihu.com/p/20549882?refer=program-life" target="_blank" rel="external">谈谈我对ReactNative的看法</a><br><a href="http://dev.qq.com/topic/577e16a7640ad7b4682c64a7" target="_blank" rel="external">React Native 项目实战总结</a></p>
+<p>参考资料：<br><a href="http://blog.zhaiyifan.cn/2016/08/04/android-new-project-from-0-p10/" target="_blank" rel="external">从零开始的Android新项目10 - React Native &amp; Redux</a><br><a href="http://mp.weixin.qq.com/s?__biz=MzA4OTc4MTM0OA==&amp;mid=2650358053&amp;idx=1&amp;sn=42c1f3691b848f571583937db1bcec1b#rd" target="_blank" rel="external">React Native 从入门到源码分析-了解RN百态</a><br><a href="https://zhuanlan.zhihu.com/p/20549882?refer=program-life" target="_blank" rel="external">谈谈我对ReactNative的看法</a><br><a href="http://dev.qq.com/topic/577e16a7640ad7b4682c64a7" target="_blank" rel="external">React Native 项目实战总结</a><br><a href="https://github.com/crazycodeboy/react-native-awesome#es6es7" target="_blank" rel="external">React Native Awesome</a></p>
 ]]></content>
     
     <summary type="html">
@@ -167,9 +167,9 @@
     <link href="http://yoursite.com/2016/08/21/Android%E7%AC%94%E8%AE%B0-%E6%8F%92%E4%BB%B6%E5%8C%96/"/>
     <id>http://yoursite.com/2016/08/21/Android笔记-插件化/</id>
     <published>2016-08-21T01:59:42.000Z</published>
-    <updated>2016-08-28T03:33:43.299Z</updated>
+    <updated>2016-08-30T06:25:20.547Z</updated>
     
-    <content type="html"><![CDATA[<p>最近Android插件化、热补丁等技术很火，网上陆续也发布了很多相关的资料。<br>我的理解是Android插件化就是当应用想要实现某功能，可以直接从网络上下载安装，这个过程可以发生在运行的过程中的技术。(就像魔兽世界使用到的大脚插件、魔盒插件一样)<br>很多知名的Android应用已经应用到了这些技术，大致总结下吧，以后实际工作中很有可能会使用到。</p>
+    <content type="html"><![CDATA[<p>最近Android插件化、热补丁等技术很火，网上陆续也发布了很多相关的资料。<br>我的理解是Android插件化就是当应用想要实现某功能，可以直接从网络上下载安装，并且这个过程可以发生在运行中的技术。(就像魔兽世界使用到的大脚插件、魔盒插件一样)<br>很多知名的Android应用已经应用到了这些技术，大致总结下吧，以后实际工作中很有可能会使用到。</p>
 <a id="more"></a>
 <h1 id="为什么要插件化"><a href="#为什么要插件化" class="headerlink" title="为什么要插件化"></a>为什么要插件化</h1><p>在开发应用时，随着业务规模发展到一定程度，不断地加入新功能、添加新的类库，代码在急剧的膨胀，相应的apk包的大小也急剧增加，那么就会遇到65536问题。</p>
 <p>65536：超过最大方法数限制的问题，是由于DEX文件格式限制，一个DEX文件中method个数采用使用原生类型short来索引文件中的方法，也就是4个字节共计最多表达65536个method，field/class的个数也均有此限制。对于DEX文件，则是将工程所需全部class文件合并且压缩到一个DEX文件期间，也就是Android打包的DEX过程中， 单个DEX文件可被引用的方法总数（自己开发的代码以及所引用的Android框架、类库的代码）被限制为65536；</p>
@@ -242,7 +242,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;最近Android插件化、热补丁等技术很火，网上陆续也发布了很多相关的资料。&lt;br&gt;我的理解是Android插件化就是当应用想要实现某功能，可以直接从网络上下载安装，这个过程可以发生在运行的过程中的技术。(就像魔兽世界使用到的大脚插件、魔盒插件一样)&lt;br&gt;很多知名的Android应用已经应用到了这些技术，大致总结下吧，以后实际工作中很有可能会使用到。&lt;/p&gt;
+      &lt;p&gt;最近Android插件化、热补丁等技术很火，网上陆续也发布了很多相关的资料。&lt;br&gt;我的理解是Android插件化就是当应用想要实现某功能，可以直接从网络上下载安装，并且这个过程可以发生在运行中的技术。(就像魔兽世界使用到的大脚插件、魔盒插件一样)&lt;br&gt;很多知名的Android应用已经应用到了这些技术，大致总结下吧，以后实际工作中很有可能会使用到。&lt;/p&gt;
     
     </summary>
     
@@ -1467,7 +1467,7 @@
     <link href="http://yoursite.com/2016/08/09/Android%E7%AC%94%E8%AE%B0-Intent%E5%92%8CBinder/"/>
     <id>http://yoursite.com/2016/08/09/Android笔记-Intent和Binder/</id>
     <published>2016-08-09T13:32:49.000Z</published>
-    <updated>2016-08-28T08:34:30.511Z</updated>
+    <updated>2016-08-29T14:42:57.012Z</updated>
     
     <content type="html"><![CDATA[<p>Intent负责对应用中一次操作的动作、动作涉及数据、附加数据进行描述，Android则根据此Intent的描述，负责找到对应的组件，将 Intent传递给调用的组件，并完成组件的调用。Intent相当于组件通讯的媒介。<br>Binder是Android 系统进程间通信(IPC)方式之一。当应用启动时就会启动一个Binder线程池。Linux已经拥有管道,socket等IPC 手段,却还要倚赖Binder来实现进程间通信,说明Binder具有无可比拟的优势。<br>这里总结一下Intent的使用和解析，和Binder基本模型(Binder太复杂，还没理解透)。</p>
 <a id="more"></a>
@@ -1506,7 +1506,7 @@
 <p>待定 Intent 的主要用例包括：</p>
 <ul>
 <li>声明用户使用您的通知执行操作时所要执行的 Intent（Android 系统的 NotificationManager 执行 Intent）。</li>
-<li>声明用户使用您的 应用小工具执行操作时要执行的 Intent（主屏幕应用执行 Intent）。</li>
+<li>声明用户使用您的应用小工具执行操作时要执行的 Intent（主屏幕应用执行 Intent）。</li>
 <li>声明未来某一特定时间要执行的 Intent（Android 系统的 AlarmManager 执行 Intent）。</li>
 </ul>
 <p>由于每个 Intent 对象均设计为由特定类型的应用组件进行处理（Activity、Service 或 BroadcastReceiver），因此还必须基于相同的考虑因素创建PendingIntent。</p>
@@ -1532,10 +1532,10 @@
 <li>若要 Intent 通过类别测试，则 Intent 中的每个类别均必须与过滤器中的类别匹配。</li>
 <li>反之则未必然，Intent 过滤器声明的类别可以超出 Intent 中指定的数量，且 Intent仍会通过测试。</li>
 <li>因此，不含类别的 Intent 应当始终会通过此测试，无论过滤器中声明何种类别均是如此。</li>
-<li>Android 会自动将 CATEGORY_DEFAULT 类别应用于传递给 startActivity()<br>和 startActivityForResult() 的所有隐式 Intent。因此，如需 Activity 接收隐式 Intent，则必须 “android.intent.category.DEFAULT” 的类别包括在其 Intent 过滤器中。</li>
+<li>Android 会自动将 CATEGORY_DEFAULT 类别传递给 startActivity()<br>和 startActivityForResult() 的所有隐式 Intent。因此，如需 Activity 接收隐式 Intent，则必须 “android.intent.category.DEFAULT” 的类别包括在其 Intent 过滤器中。</li>
 </ul>
 <h3 id="数据测试-Data-Test"><a href="#数据测试-Data-Test" class="headerlink" title="数据测试(Data Test)"></a>数据测试(Data Test)</h3><ul>
-<li>要指定接受的 Intent 数据， Intent 过滤器既可以不声明任何 <data> 元素，也可以声明多个此类元素。</data></li>
+<li>要指定接受的 Intent 数据， Intent 过滤器既可以不声明任何 &lt; data &gt; 元素，也可以声明多个此类元素。</li>
 <li>数据测试会将 Intent 中的 URI 和 MIME 类型与过滤器中指定的 URI 和 MIME 类型进行比较。</li>
 <li>仅当过滤器未指定任何 URI 或 MIME 类型时，不含 URI 和 MIME 类型的 Intent 才会通过测试。</li>
 <li>对于包含 URI、但不含 MIME 类型（既未显式声明，也无法通过 URI 推断得出）的 Intent，仅当其 URI 与过滤器的 URI 格式匹配、且过滤器同样未指定 MIME 类型时，才会通过测试。</li>
@@ -1585,7 +1585,7 @@
     <link href="http://yoursite.com/2016/08/09/Android%E7%AC%94%E8%AE%B0-%E5%9B%9B%E5%A4%A7%E7%BB%84%E4%BB%B6/"/>
     <id>http://yoursite.com/2016/08/09/Android笔记-四大组件/</id>
     <published>2016-08-09T11:41:26.000Z</published>
-    <updated>2016-08-28T08:56:45.354Z</updated>
+    <updated>2016-08-30T07:03:47.616Z</updated>
     
     <content type="html"><![CDATA[<p>搞Android的不可能不知道四大组件吧。<br>四大组件是Android系统提供给我们应用开发的模型。我们开发应用就是在开发这四大组件。<br>所谓四大组件就是Android系统将一个App的main方法分解成几种系统可以与之交互的形式。所以基本都需要在Manifest中注册。<br>这里总结一下四大组件的相关知识。</p>
 <a id="more"></a>
@@ -1625,7 +1625,7 @@
 <li><p>应用场景：呼叫来电界面。这种模式的使用情况比较罕见，在Launcher中可能使用。或者你确定你需要使Activity只有一个实例。建议谨慎使用。</p>
 </li>
 </ul>
-<h3 id="设置Intent的Flag"><a href="#设置Intent的Flag" class="headerlink" title="设置Intent的Flag"></a>设置Intent的Flag</h3><p>系统提供了两种方式来设置一个Activity的启动模式，除了在AndroidManifest文件中设置以外，还可以通过Intent的Flag来设置一个Activity的启动模式，下面我们在简单介绍下一些Flag。</p>
+<h3 id="设置Intent的Flag"><a href="#设置Intent的Flag" class="headerlink" title="设置Intent的Flag"></a>设置Intent的Flag</h3><p>系统提供了两种方式来设置一个Activity的启动模式，除了在AndroidManifest文件中设置以外，还可以通过Intent的Flag来设置一个Activity的启动模式。</p>
 <h4 id="FLAG-ACTIVITY-NEW-TASK"><a href="#FLAG-ACTIVITY-NEW-TASK" class="headerlink" title="FLAG_ACTIVITY_NEW_TASK"></a>FLAG_ACTIVITY_NEW_TASK</h4><ul>
 <li>使用一个新的Task来启动一个Activity，但启动的每个Activity都将在一个新的Task中。该Flag通常使用在从Service中启动Activity的场景，由于Service中并不存在Activity栈，所以使用该Flag来创建一个新的Activity栈，并创建新的Activity实例。</li>
 </ul>
@@ -1655,7 +1655,7 @@
 <ul>
 <li>Activity 的可见生命周期发生在 onStart调用与 onStop调用之间。在这段时间，用户可以在屏幕上看到 Activity 并与其交互。我们可以在 onStart中注册一个 BroadcastReceiver以监控影响 UI 的变化，并在用户无法再看到您显示的内容时在 onStop中将其取消注册。</li>
 </ul>
-<p>如果有一些数据在Activity跳转时（或者离开时）要保存到数据库，那么你认为是在onPause好还是在onStop执行这个操作好呢？</p>
+<p>如果有一些数据在Activity跳转时（或者离开时）要保存到数据库，那么是在onPause好还是在onStop执行这个操作好呢？</p>
 <ul>
 <li>onPause较容易被触发，所以我们在做BroadcastReceiver注销时放在onStop要好些。onPause时Activity界面仍然是可见的，如弹出一个Dialog时。但在保存数据时，放在onPause去做可以保证数据存储的有效性，如果放在onStop去做，在某些情况下Activity走完onPause后有可能还没顺利走到onStop就被系统回收了。</li>
 <li>但要注意在onPause中要非常迅速地执行完所需操作，不然会影响到下一个Activity的生命周期函数的调用。</li>

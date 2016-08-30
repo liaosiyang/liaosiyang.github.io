@@ -18,7 +18,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/08/09/Android笔记-Intent和Binder/index.html">
 <meta property="og:site_name" content="Be Level5 Coder">
 <meta property="og:description" content="Intent负责对应用中一次操作的动作、动作涉及数据、附加数据进行描述，Android则根据此Intent的描述，负责找到对应的组件，将 Intent传递给调用的组件，并完成组件的调用。Intent相当于组件通讯的媒介。Binder是Android 系统进程间通信(IPC)方式之一。当应用启动时就会启动一个Binder线程池。Linux已经拥有管道,socket等IPC 手段,却还要倚赖Binde">
-<meta property="og:updated_time" content="2016-08-28T08:34:30.511Z">
+<meta property="og:updated_time" content="2016-08-29T14:42:57.012Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android笔记-Intent和Binder">
 <meta name="twitter:description" content="Intent负责对应用中一次操作的动作、动作涉及数据、附加数据进行描述，Android则根据此Intent的描述，负责找到对应的组件，将 Intent传递给调用的组件，并完成组件的调用。Intent相当于组件通讯的媒介。Binder是Android 系统进程间通信(IPC)方式之一。当应用启动时就会启动一个Binder线程池。Linux已经拥有管道,socket等IPC 手段,却还要倚赖Binde">
@@ -205,7 +205,7 @@
 <p>待定 Intent 的主要用例包括：</p>
 <ul>
 <li>声明用户使用您的通知执行操作时所要执行的 Intent（Android 系统的 NotificationManager 执行 Intent）。</li>
-<li>声明用户使用您的 应用小工具执行操作时要执行的 Intent（主屏幕应用执行 Intent）。</li>
+<li>声明用户使用您的应用小工具执行操作时要执行的 Intent（主屏幕应用执行 Intent）。</li>
 <li>声明未来某一特定时间要执行的 Intent（Android 系统的 AlarmManager 执行 Intent）。</li>
 </ul>
 <p>由于每个 Intent 对象均设计为由特定类型的应用组件进行处理（Activity、Service 或 BroadcastReceiver），因此还必须基于相同的考虑因素创建PendingIntent。</p>
@@ -231,10 +231,10 @@
 <li>若要 Intent 通过类别测试，则 Intent 中的每个类别均必须与过滤器中的类别匹配。</li>
 <li>反之则未必然，Intent 过滤器声明的类别可以超出 Intent 中指定的数量，且 Intent仍会通过测试。</li>
 <li>因此，不含类别的 Intent 应当始终会通过此测试，无论过滤器中声明何种类别均是如此。</li>
-<li>Android 会自动将 CATEGORY_DEFAULT 类别应用于传递给 startActivity()<br>和 startActivityForResult() 的所有隐式 Intent。因此，如需 Activity 接收隐式 Intent，则必须 “android.intent.category.DEFAULT” 的类别包括在其 Intent 过滤器中。</li>
+<li>Android 会自动将 CATEGORY_DEFAULT 类别传递给 startActivity()<br>和 startActivityForResult() 的所有隐式 Intent。因此，如需 Activity 接收隐式 Intent，则必须 “android.intent.category.DEFAULT” 的类别包括在其 Intent 过滤器中。</li>
 </ul>
 <h3 id="数据测试-Data-Test"><a href="#数据测试-Data-Test" class="headerlink" title="数据测试(Data Test)"></a>数据测试(Data Test)</h3><ul>
-<li>要指定接受的 Intent 数据， Intent 过滤器既可以不声明任何 <data> 元素，也可以声明多个此类元素。</data></li>
+<li>要指定接受的 Intent 数据， Intent 过滤器既可以不声明任何 &lt; data &gt; 元素，也可以声明多个此类元素。</li>
 <li>数据测试会将 Intent 中的 URI 和 MIME 类型与过滤器中指定的 URI 和 MIME 类型进行比较。</li>
 <li>仅当过滤器未指定任何 URI 或 MIME 类型时，不含 URI 和 MIME 类型的 Intent 才会通过测试。</li>
 <li>对于包含 URI、但不含 MIME 类型（既未显式声明，也无法通过 URI 推断得出）的 Intent，仅当其 URI 与过滤器的 URI 格式匹配、且过滤器同样未指定 MIME 类型时，才会通过测试。</li>

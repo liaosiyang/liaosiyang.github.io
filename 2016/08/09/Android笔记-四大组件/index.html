@@ -21,7 +21,7 @@
 <meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/1685558-d3176065dcf72d21.png">
 <meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/1685558-8eaf71b2bbf765b9.png">
 <meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/74d2f7b1-47ae-4637-85a7-4fe0e464daa1.png">
-<meta property="og:updated_time" content="2016-08-28T08:56:45.354Z">
+<meta property="og:updated_time" content="2016-08-30T07:03:47.616Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android笔记-四大组件">
 <meta name="twitter:description" content="搞Android的不可能不知道四大组件吧。四大组件是Android系统提供给我们应用开发的模型。我们开发应用就是在开发这四大组件。所谓四大组件就是Android系统将一个App的main方法分解成几种系统可以与之交互的形式。所以基本都需要在Manifest中注册。这里总结一下四大组件的相关知识。">
@@ -210,7 +210,7 @@
 <li><p>应用场景：呼叫来电界面。这种模式的使用情况比较罕见，在Launcher中可能使用。或者你确定你需要使Activity只有一个实例。建议谨慎使用。</p>
 </li>
 </ul>
-<h3 id="设置Intent的Flag"><a href="#设置Intent的Flag" class="headerlink" title="设置Intent的Flag"></a>设置Intent的Flag</h3><p>系统提供了两种方式来设置一个Activity的启动模式，除了在AndroidManifest文件中设置以外，还可以通过Intent的Flag来设置一个Activity的启动模式，下面我们在简单介绍下一些Flag。</p>
+<h3 id="设置Intent的Flag"><a href="#设置Intent的Flag" class="headerlink" title="设置Intent的Flag"></a>设置Intent的Flag</h3><p>系统提供了两种方式来设置一个Activity的启动模式，除了在AndroidManifest文件中设置以外，还可以通过Intent的Flag来设置一个Activity的启动模式。</p>
 <h4 id="FLAG-ACTIVITY-NEW-TASK"><a href="#FLAG-ACTIVITY-NEW-TASK" class="headerlink" title="FLAG_ACTIVITY_NEW_TASK"></a>FLAG_ACTIVITY_NEW_TASK</h4><ul>
 <li>使用一个新的Task来启动一个Activity，但启动的每个Activity都将在一个新的Task中。该Flag通常使用在从Service中启动Activity的场景，由于Service中并不存在Activity栈，所以使用该Flag来创建一个新的Activity栈，并创建新的Activity实例。</li>
 </ul>
@@ -240,7 +240,7 @@
 <ul>
 <li>Activity 的可见生命周期发生在 onStart调用与 onStop调用之间。在这段时间，用户可以在屏幕上看到 Activity 并与其交互。我们可以在 onStart中注册一个 BroadcastReceiver以监控影响 UI 的变化，并在用户无法再看到您显示的内容时在 onStop中将其取消注册。</li>
 </ul>
-<p>如果有一些数据在Activity跳转时（或者离开时）要保存到数据库，那么你认为是在onPause好还是在onStop执行这个操作好呢？</p>
+<p>如果有一些数据在Activity跳转时（或者离开时）要保存到数据库，那么是在onPause好还是在onStop执行这个操作好呢？</p>
 <ul>
 <li>onPause较容易被触发，所以我们在做BroadcastReceiver注销时放在onStop要好些。onPause时Activity界面仍然是可见的，如弹出一个Dialog时。但在保存数据时，放在onPause去做可以保证数据存储的有效性，如果放在onStop去做，在某些情况下Activity走完onPause后有可能还没顺利走到onStop就被系统回收了。</li>
 <li>但要注意在onPause中要非常迅速地执行完所需操作，不然会影响到下一个Activity的生命周期函数的调用。</li>

@@ -12,16 +12,16 @@
   
 </title>
 
-<meta name="description" content="最近Android插件化、热补丁等技术很火，网上陆续也发布了很多相关的资料。我的理解是Android插件化就是当应用想要实现某功能，可以直接从网络上下载安装，这个过程可以发生在运行的过程中的技术。(就像魔兽世界使用到的大脚插件、魔盒插件一样)很多知名的Android应用已经应用到了这些技术，大致总结下吧，以后实际工作中很有可能会使用到。">
+<meta name="description" content="最近Android插件化、热补丁等技术很火，网上陆续也发布了很多相关的资料。我的理解是Android插件化就是当应用想要实现某功能，可以直接从网络上下载安装，并且这个过程可以发生在运行中的技术。(就像魔兽世界使用到的大脚插件、魔盒插件一样)很多知名的Android应用已经应用到了这些技术，大致总结下吧，以后实际工作中很有可能会使用到。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android笔记-插件化">
 <meta property="og:url" content="http://yoursite.com/2016/08/21/Android笔记-插件化/index.html">
 <meta property="og:site_name" content="Be Level5 Coder">
-<meta property="og:description" content="最近Android插件化、热补丁等技术很火，网上陆续也发布了很多相关的资料。我的理解是Android插件化就是当应用想要实现某功能，可以直接从网络上下载安装，这个过程可以发生在运行的过程中的技术。(就像魔兽世界使用到的大脚插件、魔盒插件一样)很多知名的Android应用已经应用到了这些技术，大致总结下吧，以后实际工作中很有可能会使用到。">
-<meta property="og:updated_time" content="2016-08-28T03:33:43.299Z">
+<meta property="og:description" content="最近Android插件化、热补丁等技术很火，网上陆续也发布了很多相关的资料。我的理解是Android插件化就是当应用想要实现某功能，可以直接从网络上下载安装，并且这个过程可以发生在运行中的技术。(就像魔兽世界使用到的大脚插件、魔盒插件一样)很多知名的Android应用已经应用到了这些技术，大致总结下吧，以后实际工作中很有可能会使用到。">
+<meta property="og:updated_time" content="2016-08-30T06:25:20.547Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android笔记-插件化">
-<meta name="twitter:description" content="最近Android插件化、热补丁等技术很火，网上陆续也发布了很多相关的资料。我的理解是Android插件化就是当应用想要实现某功能，可以直接从网络上下载安装，这个过程可以发生在运行的过程中的技术。(就像魔兽世界使用到的大脚插件、魔盒插件一样)很多知名的Android应用已经应用到了这些技术，大致总结下吧，以后实际工作中很有可能会使用到。">
+<meta name="twitter:description" content="最近Android插件化、热补丁等技术很火，网上陆续也发布了很多相关的资料。我的理解是Android插件化就是当应用想要实现某功能，可以直接从网络上下载安装，并且这个过程可以发生在运行中的技术。(就像魔兽世界使用到的大脚插件、魔盒插件一样)很多知名的Android应用已经应用到了这些技术，大致总结下吧，以后实际工作中很有可能会使用到。">
 
 
   <link rel="alternative" href="/atom.xml" title="Be Level5 Coder" type="application/atom+xml">
@@ -168,7 +168,7 @@
 
   </div>
   <div class="article-entry">
-    <p>最近Android插件化、热补丁等技术很火，网上陆续也发布了很多相关的资料。<br>我的理解是Android插件化就是当应用想要实现某功能，可以直接从网络上下载安装，这个过程可以发生在运行的过程中的技术。(就像魔兽世界使用到的大脚插件、魔盒插件一样)<br>很多知名的Android应用已经应用到了这些技术，大致总结下吧，以后实际工作中很有可能会使用到。</p>
+    <p>最近Android插件化、热补丁等技术很火，网上陆续也发布了很多相关的资料。<br>我的理解是Android插件化就是当应用想要实现某功能，可以直接从网络上下载安装，并且这个过程可以发生在运行中的技术。(就像魔兽世界使用到的大脚插件、魔盒插件一样)<br>很多知名的Android应用已经应用到了这些技术，大致总结下吧，以后实际工作中很有可能会使用到。</p>
 <a id="more"></a>
 <h1 id="为什么要插件化"><a href="#为什么要插件化" class="headerlink" title="为什么要插件化"></a>为什么要插件化</h1><p>在开发应用时，随着业务规模发展到一定程度，不断地加入新功能、添加新的类库，代码在急剧的膨胀，相应的apk包的大小也急剧增加，那么就会遇到65536问题。</p>
 <p>65536：超过最大方法数限制的问题，是由于DEX文件格式限制，一个DEX文件中method个数采用使用原生类型short来索引文件中的方法，也就是4个字节共计最多表达65536个method，field/class的个数也均有此限制。对于DEX文件，则是将工程所需全部class文件合并且压缩到一个DEX文件期间，也就是Android打包的DEX过程中， 单个DEX文件可被引用的方法总数（自己开发的代码以及所引用的Android框架、类库的代码）被限制为65536；</p>
