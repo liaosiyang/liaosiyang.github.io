@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-08-30T12:24:25.410Z</updated>
+  <updated>2016-08-31T06:12:43.690Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,13 +20,13 @@
     <link href="http://yoursite.com/2016/08/30/%E5%86%99%E5%9C%A8%E6%A0%A1%E6%8B%9B%E4%B9%8B%E5%89%8D/"/>
     <id>http://yoursite.com/2016/08/30/写在校招之前/</id>
     <published>2016-08-30T10:53:46.000Z</published>
-    <updated>2016-08-30T12:24:25.410Z</updated>
+    <updated>2016-08-31T06:12:43.690Z</updated>
     
     <content type="html"><![CDATA[<p>今天，也就是8月30的下午接到了第一个面试的电话，突然发现校招就这么来了，不觉有些感慨。<br>NPC: 9月已经到来，欢迎进入校招团队副本。请拿好武器，带好药剂，接收Boss们的制裁吧。校招感觉上就是魔兽世界里的团队副本，并且还是H难度的，对于我来说。<br>利用校招之前的空余时间，写点什么吧，就像佛丁在冰冠冰川前鼓舞将士们的话语：无论是生是死，我们都是为荣誉而战。</p>
 <a id="more"></a>
 <p>今天的面试是魔都某公司打来的，问的东西并不难，时间也不长，但自己的表现还是感觉不太行。<br>首先是比较紧张吧，死宅男的属性暴露无疑。一直都是一个人默默地写代码，打字聊天远远多过现实中和人说的话，所以紧张的情绪还是难以控制。<br>以前也有过面试的经历，也总是提醒过自己别紧张，看开点，但在面试时还是能清楚的听到胸腔里的咚咚声。这个问题好像真的无解了，可能还是与人交流较少有关系吧。明天找个人陪我搞下模拟面试试试，或许会有点用。</p>
 <p>其次就是如何回答一个宽泛的问题，比如今天的问题Handler机制、Retrofit原理，找到回答的切入点很关键。问Handler机制直接说Handler就很难答了，切入点应该是Looper、MessageQueue。Retrofit原理应该就直接回答动态代理，而运行时注解的原理可以先放着，等深入问的时候再答，而不要一上来就什么都想说，最后又什么都说不出来或什么都轻言带过。要是开口切入点就不好，后面的话就很难接了。</p>
-<p>最后比较惊喜的是面试官看了我的GitHub和个人博客，GitHub上有个人的项目，功能简单但花了2个月时间，使用到的技术也比较新，RxJava、Dagger2等都用上了，以前实习的时候做的项目都没敢用。个人博客是学习的总结，再说搭建个人博客和总结知识真不是一件容易的事。这两点可以证明自己有在努力，应该可以加分吧。    </p>
+<p>最后比较惊喜的是面试官看了我的GitHub和个人博客，GitHub上有个人的项目，功能简单但花了2个月时间，使用到的技术也比较新，RxJava、Dagger2等都用上了，以前实习的时候做的项目都没用到。个人博客是学习的总结，再说搭建个人博客和总结知识真不是一件容易的事。这两点可以证明自己有在努力，应该可以加分吧。    </p>
 <p>其实写知识总结一方面也是为了让自己能够在面试场上对答如流，因为很早之前就领会过知识在脑海中但是无法流畅地表述出来的情况。</p>
 <p>一方面是知识不牢固，比如今天回答事件分发机制ViewGroup的三个相关方法居然一时脑抽，没想出来onTouchEvent用英语怎么拼，因为前面两个方法dispatchTouchEvent和onInterceptTouchEvent，感觉第三个方法快到嘴边了又老感觉不对，总感觉应该是onXXXTouchEvent的格式。</p>
 <p>二是我觉得写出来应该就能代表对知识掌握起码80%吧，就能讲出来吧。现实情况还真不是这样，说话确实是门艺术，而像我这种常年生活在二次元的宅男来说，根本就没注意点这方面的天赋点啊！所以每次回答干巴巴的。所以写出来并不代表能讲出来，这给了我一个警示，功夫还不够啊！</p>
@@ -55,25 +55,19 @@
   </entry>
   
   <entry>
-    <title>Android笔记-ReactNative</title>
-    <link href="http://yoursite.com/2016/08/24/Android%E7%AC%94%E8%AE%B0-ReactNative/"/>
-    <id>http://yoursite.com/2016/08/24/Android笔记-ReactNative/</id>
+    <title>ReactNative笔记-ReactNative</title>
+    <link href="http://yoursite.com/2016/08/24/ReactNative%E7%AC%94%E8%AE%B0%E7%AC%94%E8%AE%B0-ReactNative/"/>
+    <id>http://yoursite.com/2016/08/24/ReactNative笔记笔记-ReactNative/</id>
     <published>2016-08-24T03:19:23.000Z</published>
-    <updated>2016-08-30T09:48:47.233Z</updated>
+    <updated>2016-08-31T06:52:44.288Z</updated>
     
-    <content type="html"><![CDATA[<p>React Native 是最近非常火的一个话题,它可以使用前端的开发方式来开发移动端，但并不是像以前在实习公司所做的仅仅用一个WebView嵌套一样。<br>它实际上是一种Hybrid App开发方式，兼有Web App跨平台和Native App高性能的优势，并且它是由牛逼的FacebooK公司开源的神器。<br>作为一名移动开发人员，我也对这项技术非常感兴趣，谁让现在搞Android的竞争太激烈，技术更新也快，说不定哪天就被淘汰了。所以还是早做准备，扩充自己的技能栈。</p>
+    <content type="html"><![CDATA[<p>React Native 是最近非常火的一个话题,它可以使用前端的开发方式来开发移动端，但并不是像以前在实习公司所做的仅仅用一个WebView嵌套一样。<br>它实际上是一种Hybrid App开发方式，兼有Web App跨平台和Native App高性能的优势，并且它是由FacebooK公司开源的神器。<br>作为一名移动开发人员，我也对这项技术非常感兴趣，谁让现在搞Android的竞争太激烈，技术更新也快，说不定哪天就被淘汰了。所以还是早做准备，扩充自己的技能栈。<br>话虽这么说，但React Native毕竟是一种全新的开发方式，想要掌握没那么容易，需要很多前端开发的知识。<br>2016年余下的时间就投入给React Native吧，毕竟对于前端开发我可是很有兴趣的。</p>
 <a id="more"></a>
-<p>话虽这么说，但React Native毕竟是一种全新的开发方式，想要掌握没那么容易，需要很多前端开发的知识。</p>
-<p>2016年余下的时间就投入给React Native吧，毕竟对于前端开发我可是很有兴趣的。</p>
 <h1 id="React-Native"><a href="#React-Native" class="headerlink" title="React Native"></a>React Native</h1><p>React Native 使你能够基于 JavaScript 和 React 在原生平台上构建应用，提倡的是 “learn once, write anywhere”，复用代码，提高开发效率。</p>
 <p>在移动端开发端，我们经常是根据服务端传来的JSON文件来传递信息，更新视图。JSON只能传递配置信息，无法表达逻辑。从本质上讲，这是因为 JSON 毕竟只是纯文本，它缺乏像编程语言那样的运行能力。</p>
 <p>而 React 在前端取得突破性成功以后，JavaScript 布道者们开始试图一统三端。他们利用了移动平台能够运行 JavaScript 代码的能力，并且发挥了JavaScript 不仅仅可以传递配置信息，还可以表达逻辑信息的优点。</p>
 <p>于是乎：一个基于 JavaScript，具备动态配置能力，面向前端开发者的移动端开发框架，React Native，诞生了！</p>
-<p>React Native的目的是构建真正native的应用。而不是构建在Webview里运行的混合模式的应用，开发完全由JavaScript和React来完成。简单说它的原理就是，开发用JavaScript开发Web的方式进行开发，最终在移动端会使用一个JavascriptCore解释器引擎来解析JS相关文件成相应的原生控件再进行渲染，性能上得到了很大的提升。</p>
-<p>React Native 希望前端开发者学习完 React 后，能够用同样的语法、工具等，分别开发安卓和 iOS 平台的应用并且不用一行原生代码。如果用一个词概括 React Native，那就是：Native 版本的 React。</p>
-<p>React 将应用分为一个个动态可复用的组件 —— View的渲染（JSX）、数据如何绑定到显示、状态的变更（State）、属性（Props）都包含在组件内部。</p>
-<p>React Native 正像它的名字，将 React 带到了原生世界，和 H5 不同的是，我们不再使用 CSS 和 HTML，而只有 js 为伴。</p>
-<p>与 WebView 不同，React Native 运行的界面，最终会被解释映射为原生的 View，可以直接使用布局边界或者 Hierarchy Viewer 看出层级（js 文件会打包为一个bundle，位于assets下面，RN引擎会加载并进行解释映射）。</p>
+<p>React Native是一款用来开发真正原生、可渲染IOS和Android移动应用的JavaScript框架。基于JavaScript用户界面开发框架React而产生，但React将浏览器作为渲染平台，而React Native的渲染平台则是移动设备。</p>
 <h1 id="ReactNative的优势"><a href="#ReactNative的优势" class="headerlink" title="ReactNative的优势"></a>ReactNative的优势</h1><ul>
 <li>Web的开发方式远比IOS和Android更加方便和高效，Web上层出不穷的各种库和框架也远比Android和IOS的各种库和框架方便许多。</li>
 <li>JavaScript语言真的要一统天下了，GitHub上使用最多的语言也是Js，Node.js正在各大公司大放光彩，前端开发规模越来越大，ES6 ES7为Js带来各种新的便捷的语法特性。(Java是最好的语言，JavaScript很像Java,排第二不过分)</li>
@@ -96,21 +90,19 @@
 <li>undefined</li>
 <li>jest</li>
 </ul>
-<p><a href="https://github.com/reactnativecn/react-native-guide#react-native" target="_blank" rel="external">React-Native学习指南</a><br><a href="http://gold.xitu.io/tag/React%20Native" target="_blank" rel="external">掘金ReactNative标签</a><br><a href="https://facebook.github.io/react-native/docs/getting-started.html" target="_blank" rel="external">Facebook React Native Docs</a><br><a href="http://redux.js.org/" target="_blank" rel="external">Redux.js</a><br><a href="https://github.com/crazycodeboy/react-native-awesome#es6es7" target="_blank" rel="external">React Native Awesome</a></p>
+<p><a href="https://github.com/reactnativecn/react-native-guide#react-native" target="_blank" rel="external">React-Native学习指南</a>(这本书已到手,书中是以OS X系统为基础的,不过感觉影响不大)<br><a href="http://gold.xitu.io/tag/React%20Native" target="_blank" rel="external">掘金ReactNative标签</a><br><a href="https://facebook.github.io/react-native/docs/getting-started.html" target="_blank" rel="external">Facebook React Native Docs</a><br><a href="http://redux.js.org/" target="_blank" rel="external">Redux.js</a><br><a href="https://github.com/crazycodeboy/react-native-awesome#es6es7" target="_blank" rel="external">React Native Awesome</a><br><a href="https://github.com/reactnativecn/react-native-guide" target="_blank" rel="external">react-native-guide</a></p>
 <p>8小时内拼工作，8小时外拼成长，干巴爹！</p>
 <p>参考资料：<br><a href="http://blog.zhaiyifan.cn/2016/08/04/android-new-project-from-0-p10/" target="_blank" rel="external">从零开始的Android新项目10 - React Native &amp; Redux</a><br><a href="http://mp.weixin.qq.com/s?__biz=MzA4OTc4MTM0OA==&amp;mid=2650358053&amp;idx=1&amp;sn=42c1f3691b848f571583937db1bcec1b#rd" target="_blank" rel="external">React Native 从入门到源码分析-了解RN百态</a><br><a href="https://zhuanlan.zhihu.com/p/20549882?refer=program-life" target="_blank" rel="external">谈谈我对ReactNative的看法</a><br><a href="http://dev.qq.com/topic/577e16a7640ad7b4682c64a7" target="_blank" rel="external">React Native 项目实战总结</a></p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;React Native 是最近非常火的一个话题,它可以使用前端的开发方式来开发移动端，但并不是像以前在实习公司所做的仅仅用一个WebView嵌套一样。&lt;br&gt;它实际上是一种Hybrid App开发方式，兼有Web App跨平台和Native App高性能的优势，并且它是由牛逼的FacebooK公司开源的神器。&lt;br&gt;作为一名移动开发人员，我也对这项技术非常感兴趣，谁让现在搞Android的竞争太激烈，技术更新也快，说不定哪天就被淘汰了。所以还是早做准备，扩充自己的技能栈。&lt;/p&gt;
+      &lt;p&gt;React Native 是最近非常火的一个话题,它可以使用前端的开发方式来开发移动端，但并不是像以前在实习公司所做的仅仅用一个WebView嵌套一样。&lt;br&gt;它实际上是一种Hybrid App开发方式，兼有Web App跨平台和Native App高性能的优势，并且它是由FacebooK公司开源的神器。&lt;br&gt;作为一名移动开发人员，我也对这项技术非常感兴趣，谁让现在搞Android的竞争太激烈，技术更新也快，说不定哪天就被淘汰了。所以还是早做准备，扩充自己的技能栈。&lt;br&gt;话虽这么说，但React Native毕竟是一种全新的开发方式，想要掌握没那么容易，需要很多前端开发的知识。&lt;br&gt;2016年余下的时间就投入给React Native吧，毕竟对于前端开发我可是很有兴趣的。&lt;/p&gt;
     
     </summary>
     
-      <category term="Android笔记" scheme="http://yoursite.com/categories/Android%E7%AC%94%E8%AE%B0/"/>
+      <category term="ReactNative笔记笔记" scheme="http://yoursite.com/categories/ReactNative%E7%AC%94%E8%AE%B0%E7%AC%94%E8%AE%B0/"/>
     
-    
-      <category term="Android开发框架" scheme="http://yoursite.com/tags/Android%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6/"/>
     
       <category term="ReactNative" scheme="http://yoursite.com/tags/ReactNative/"/>
     
@@ -1506,7 +1498,7 @@
     <link href="http://yoursite.com/2016/08/09/Android%E7%AC%94%E8%AE%B0-Intent%E5%92%8CBinder/"/>
     <id>http://yoursite.com/2016/08/09/Android笔记-Intent和Binder/</id>
     <published>2016-08-09T13:32:49.000Z</published>
-    <updated>2016-08-29T14:42:57.012Z</updated>
+    <updated>2016-08-31T06:26:36.145Z</updated>
     
     <content type="html"><![CDATA[<p>Intent负责对应用中一次操作的动作、动作涉及数据、附加数据进行描述，Android则根据此Intent的描述，负责找到对应的组件，将 Intent传递给调用的组件，并完成组件的调用。Intent相当于组件通讯的媒介。<br>Binder是Android 系统进程间通信(IPC)方式之一。当应用启动时就会启动一个Binder线程池。Linux已经拥有管道,socket等IPC 手段,却还要倚赖Binder来实现进程间通信,说明Binder具有无可比拟的优势。<br>这里总结一下Intent的使用和解析，和Binder基本模型(Binder太复杂，还没理解透)。</p>
 <a id="more"></a>
@@ -1564,8 +1556,9 @@
 <h3 id="操作测试-Action-Test"><a href="#操作测试-Action-Test" class="headerlink" title="操作测试(Action Test)"></a>操作测试(Action Test)</h3><ul>
 <li>要指定接受的 Intent 操作， Intent 过滤器既可以不声明任何 &lt; action &gt; 元素，也可以声明多个此类元素。</li>
 <li>要通过此过滤器，Intent 中指定的操作必须与过滤器中列出的某一操作匹配。</li>
-<li>如果该过滤器未列出任何操作，则 Intent 没有任何匹配项，因此所有 Intent 均无法通过测试。但是，如果 Intent 未指定操作，则会通过测试（只要过滤器至少包含一个操作）。</li>
+<li>如果该过滤器未列出任何操作，则 Intent 没有任何匹配项，因此所有 Intent 均无法通过测试。</li>
 </ul>
+<p>总结：Action匹配规则要求Intent中的action存在且必须和过滤规则中其中一个action相同。</p>
 <h3 id="类别测试-Category-Test"><a href="#类别测试-Category-Test" class="headerlink" title="类别测试(Category Test)"></a>类别测试(Category Test)</h3><ul>
 <li>要指定接受的 Intent 类别， Intent 过滤器既可以不声明任何 &lt; category &gt;元素，也可以声明多个此类元素。</li>
 <li>若要 Intent 通过类别测试，则 Intent 中的每个类别均必须与过滤器中的类别匹配。</li>
@@ -1573,6 +1566,7 @@
 <li>因此，不含类别的 Intent 应当始终会通过此测试，无论过滤器中声明何种类别均是如此。</li>
 <li>Android 会自动将 CATEGORY_DEFAULT 类别传递给 startActivity()<br>和 startActivityForResult() 的所有隐式 Intent。因此，如需 Activity 接收隐式 Intent，则必须 “android.intent.category.DEFAULT” 的类别包括在其 Intent 过滤器中。</li>
 </ul>
+<p>总结：Intent中可以没有category,但是如果有category,不管有几个，每个都要能够和过滤规则中任何一个category对应。</p>
 <h3 id="数据测试-Data-Test"><a href="#数据测试-Data-Test" class="headerlink" title="数据测试(Data Test)"></a>数据测试(Data Test)</h3><ul>
 <li>要指定接受的 Intent 数据， Intent 过滤器既可以不声明任何 &lt; data &gt; 元素，也可以声明多个此类元素。</li>
 <li>数据测试会将 Intent 中的 URI 和 MIME 类型与过滤器中指定的 URI 和 MIME 类型进行比较。</li>
@@ -1581,7 +1575,22 @@
 <li>仅当过滤器列出相同的 MIME 类型且未指定 URI 格式时，包含 MIME 类型、但不含 URI 的 Intent 才会通过测试。</li>
 <li>仅当 MIME 类型与过滤器中列出的类型匹配时，包含 URI 和 MIME 类型（通过显式声明，或可以通过 URI 推断得出）的 Intent 才会通过测试的 MIME 类型部分。如果 Intent 的 URI 与过滤器中的 URI 匹配，或者如果 Intent 具有 content: 或 file: URI 且过滤器未指定 URI，则 Intent 会通过测试的 URI 部分。换而言之，如果过滤器仅列出 MIME 类型，则假定组件支持 content: 和 file: 数据。</li>
 </ul>
+<p>总结： data匹配规则和action类似，要求data数据能够完全匹配过滤规则中的某一个data。</p>
+<h2 id="Android多进程"><a href="#Android多进程" class="headerlink" title="Android多进程"></a>Android多进程</h2><p>首先，在Android中使用多进程只有一种方法，那就是给四大组件在AndroidManifest中指定android：process属性。<br>也就是说我们无法给一个线程或者一个实体类指定运行时所在的进程。<br>当进程名以“：”开头的进程属于当前应用的私有进程，其他应用的组件不可以和它跑在同一个进程中，而进程名不以“：”开头的进程属于全局进程，其他应用可以通过ShareUID方式可以和它跑在同一个进程中。</p>
+<p>多线程带来的问题：所有运行在不同进程的四大组件，只要它们之间需要通过内存来共享数据，都会共享失败，这也是多进程所带来的主要影响。一般情况会造成如下几个方面的问题：</p>
+<ol>
+<li>静态成员和单例模式完全失效；</li>
+<li>线程同步机制完全失效；</li>
+<li>SharePreferences的可靠性下降；</li>
+<li>Application会多次创建。</li>
+</ol>
 <h1 id="Binder"><a href="#Binder" class="headerlink" title="Binder"></a>Binder</h1><p>首先Binder是Android系统进程间通信(IPC)方式之一。</p>
+<ul>
+<li>Binder是实现IBinder接口的一个类；</li>
+<li>从Android Framework角度来说，它是ServiceManager连接各种Manager(ActivityManagr、WindowManager)和相应ManagerSerivce的桥梁。</li>
+<li>从应用层来说，Binder是客户端和服务端进行通信的媒介，当bindService时，服务端会返回一个包含了服务端业务调用的Binder对象，通过这个Binder对象，客户端就可以获取服务端提供的服务或数据。</li>
+</ul>
+<p>除了Binder,Android还支持Socket，通过Socket也可以实现任意两个终端之间的通信，当然一个设备上两个进程通过Socket通信自然也是可以的。</p>
 <p>Binder使用Client－Server通信方式。Binder框架定义了四个角色：Server,Client,ServiceManager以及Binder驱动。其中Server,Client,ServiceManager运行于用户空间，驱动运行于内核空间。Binder驱动程序提供设备文件/dev/binder与用户空间交互，Client、Server和Service Manager通过open和ioctl文件操作函数与Binder驱动程序进行通信。</p>
 <p>Server创建了Binder实体，为其取一个字符形式，可读易记的名字，将这个Binder连同名字以数据包的形式通过Binder驱动发送给ServiceManager，通知ServiceManager注册一个名字为XX的Binder，它位于Server中。</p>
 <p>驱动为这个穿过进程边界的Binder创建位于内核中的实体结点以及ServiceManager对实体的引用，将名字以及新建的引用打包给ServiceManager。</p>
@@ -1604,6 +1613,9 @@
 <li>ContentProvider</li>
 <li>Socket</li>
 </ol>
+<h2 id="AIDL"><a href="#AIDL" class="headerlink" title="AIDL"></a>AIDL</h2><p>AIDL实现进程间通信的流程分为客户端和服务端两个方面。</p>
+<h3 id="服务端"><a href="#服务端" class="headerlink" title="服务端"></a>服务端</h3><p>服务端首先要创建一个Service用来监听客户端的连接请求，然后创建一个AIDL文件，将暴露给客户端的接口在这个AIDL文件中声明，最后在Service中实现这个接口即可。</p>
+<h3 id="客户端-1"><a href="#客户端-1" class="headerlink" title="客户端"></a>客户端</h3><p>客户端需要绑定服务端的Service，绑定成功后，将服务端返回Binder对抗性转化成AIDL接口所属的类型，接着就可以调用AIDL中的方法了。</p>
 ]]></content>
     
     <summary type="html">
