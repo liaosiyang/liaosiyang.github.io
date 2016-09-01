@@ -59,7 +59,7 @@
     <link href="http://yoursite.com/2016/08/24/ReactNative%E7%AC%94%E8%AE%B0%E7%AC%94%E8%AE%B0-ReactNative/"/>
     <id>http://yoursite.com/2016/08/24/ReactNative笔记笔记-ReactNative/</id>
     <published>2016-08-24T03:19:23.000Z</published>
-    <updated>2016-08-31T06:52:44.288Z</updated>
+    <updated>2016-08-31T07:32:00.024Z</updated>
     
     <content type="html"><![CDATA[<p>React Native 是最近非常火的一个话题,它可以使用前端的开发方式来开发移动端，但并不是像以前在实习公司所做的仅仅用一个WebView嵌套一样。<br>它实际上是一种Hybrid App开发方式，兼有Web App跨平台和Native App高性能的优势，并且它是由FacebooK公司开源的神器。<br>作为一名移动开发人员，我也对这项技术非常感兴趣，谁让现在搞Android的竞争太激烈，技术更新也快，说不定哪天就被淘汰了。所以还是早做准备，扩充自己的技能栈。<br>话虽这么说，但React Native毕竟是一种全新的开发方式，想要掌握没那么容易，需要很多前端开发的知识。<br>2016年余下的时间就投入给React Native吧，毕竟对于前端开发我可是很有兴趣的。</p>
 <a id="more"></a>
@@ -113,7 +113,7 @@
     <link href="http://yoursite.com/2016/08/22/Android%E7%AC%94%E8%AE%B0-%E7%83%AD%E8%A1%A5%E4%B8%81/"/>
     <id>http://yoursite.com/2016/08/22/Android笔记-热补丁/</id>
     <published>2016-08-22T01:51:02.000Z</published>
-    <updated>2016-08-28T03:43:06.054Z</updated>
+    <updated>2016-09-01T07:12:07.601Z</updated>
     
     <content type="html"><![CDATA[<p>继插件化后，热补丁技术在2015年开始爆发，目前已经是非常热门的Android开发技术。其中比较著名的有淘宝的Dexposed、支付宝的AndFix以及Qzone的超级热补丁方案，还有最新的微信Tinker方案。<br>我的理解是Android热补丁就是不需要重新安装应用，而是动态地修复应用的Bug的技术，这项技术非常实用，毕竟每天都会看到一两个应用提示要求更新，而更新仅仅是修复一两个Bug,但却要下载几十M的APK文件，花费几分钟的时间安装，麻烦！</p>
 <a id="more"></a>
@@ -134,6 +134,7 @@
 <p>Xposed在对java方法进行hook时，先将虚拟机里面这个方法的Method属性改为nativeMethod，然后将该方法的nativeFunc指向自己实现的一个native方法，这样方法在调用时，就会调用到这个native方法，接管了控制权。</p>
 <p>在这个native方法中，xposed直接调用了一个java方法，这个java方法里面对原方法进行了调用，并在调用前后插入了钩子，于是就hook住了这个方法。</p>
 <p>Xposed的粒度是方法级，可以在方法前、方法后插入代码，或者直接替换方法。只能针对java方法做拦截，不支持C的方法。</p>
+<p>Dexposed原理就是通过改变一个方法对象在Dalvik虚拟机中的定义来实现。具体做法就是将该方法的类型改变为Native并且将这个方法的实现链接一个通用的Native Dispatch方法上。这个Dispatch方法通过JNI回调Java端的一个统一的处理方法，最后在这个统一的处理方法中调用before、after函数实现AOP。</p>
 <p>注意：android4.4之后的版本都用Art取代了Dalvik,所以要hook Android4.4以后的版本就必须去适配Art虚拟机的机制。目前官方表示，为了适配Art的dexposed_l只是beta版，所以最好不要在正式的线上产品中使用它。</p>
 <p><a href="https://github.com/alibaba/dexposed" target="_blank" rel="external">alibaba/dexposed</a></p>
 <h1 id="AndFix"><a href="#AndFix" class="headerlink" title="AndFix"></a>AndFix</h1><p>同样是方法的hook，AndFix不像Dexposed从Method入手，而是以Field为切入点。</p>
@@ -147,6 +148,7 @@
 <li>获取bug方法：根据注解中获取的类名和方法名，使用ClassLoader获取到class,然后使用反射得到bug Method方法。</li>
 <li>JNI层替换方法：使用c++的指针替换bug方法对象的属性来修复BUG。</li>
 </ul>
+<p>总的来说就是根据补丁文件找到bug方法，然后修改bug方法的指针，让它指向修复后的方法。</p>
 <p>由于它并没有整体替换class, 而field在class中的相对地址在class加载时已确定，所以AndFix无法支持新增或者删除filed的情况(通过替换init与clinit只可以修改field的数值)。</p>
 <p>Andfix可以支持的补丁场景相对有限，仅仅可以使用它来修复特定问题。另一方面，使用native替换将会面临比较复杂的兼容性问题。</p>
 <p><a href="https://github.com/alibaba/AndFix#security" target="_blank" rel="external">alibaba/AndFix</a></p>
@@ -177,7 +179,7 @@
 <li>安全校验；无论在补丁合成还是加载，都需要有必要的安全校验。</li>
 </ol>
 <p>目前Tinker资料较少，只了解了大概。据说会开源，持续关注中。</p>
-<p>参考资料：<br><a href="http://blog.zhaiyifan.cn/2015/11/20/HotPatchCompare/" target="_blank" rel="external">各大热补丁方案分析和比较</a><br><a href="http://www.jianshu.com/p/b29a21a162ad" target="_blank" rel="external">Dalvik虚拟机原理及Xposed hook原理</a><br><a href="http://blog.csdn.net/qxs965266509/article/details/49816007" target="_blank" rel="external">Alibaba-AndFix Bug热修复框架原理及源码解析</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzI1MTA1MzM2Nw==&amp;mid=400118620&amp;idx=1&amp;sn=b4fdd5055731290eef12ad0d17f39d4a&amp;scene=1&amp;srcid=1106Imu9ZgwybID13e7y2nEi#wechat_redirect" target="_blank" rel="external">安卓App热补丁动态修复技术介绍</a><br><a href="http://mp.weixin.qq.com/s?spm=a1z2e.7794127.0.0.Q7LExa&amp;__biz=MzAwNDY1ODY2OQ==&amp;mid=2649286306&amp;idx=1&amp;sn=d6b2865e033a99de60b2d4314c6e0a25&amp;scene=0&amp;__nc=1#wechat_redirect" target="_blank" rel="external">微信Android热补丁实践演进之路</a><br><a href="http://dev.qq.com/topic/57ad7a70eaed47bb2699e68e" target="_blank" rel="external">微信热补丁Tinker的实践演进之路</a></p>
+<p>参考资料：<br><a href="http://blog.zhaiyifan.cn/2015/11/20/HotPatchCompare/" target="_blank" rel="external">各大热补丁方案分析和比较</a><br><a href="http://www.jianshu.com/p/b29a21a162ad" target="_blank" rel="external">Dalvik虚拟机原理及Xposed hook原理</a><br><a href="http://blog.csdn.net/qxs965266509/article/details/50117137" target="_blank" rel="external">Alibaba-Dexposed Bug框架原理及源码解析</a><br><a href="http://blog.csdn.net/qxs965266509/article/details/49816007" target="_blank" rel="external">Alibaba-AndFix Bug热修复框架原理及源码解析</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzI1MTA1MzM2Nw==&amp;mid=400118620&amp;idx=1&amp;sn=b4fdd5055731290eef12ad0d17f39d4a&amp;scene=1&amp;srcid=1106Imu9ZgwybID13e7y2nEi#wechat_redirect" target="_blank" rel="external">安卓App热补丁动态修复技术介绍</a><br><a href="http://mp.weixin.qq.com/s?spm=a1z2e.7794127.0.0.Q7LExa&amp;__biz=MzAwNDY1ODY2OQ==&amp;mid=2649286306&amp;idx=1&amp;sn=d6b2865e033a99de60b2d4314c6e0a25&amp;scene=0&amp;__nc=1#wechat_redirect" target="_blank" rel="external">微信Android热补丁实践演进之路</a><br><a href="http://dev.qq.com/topic/57ad7a70eaed47bb2699e68e" target="_blank" rel="external">微信热补丁Tinker的实践演进之路</a></p>
 ]]></content>
     
     <summary type="html">
@@ -198,7 +200,7 @@
     <link href="http://yoursite.com/2016/08/21/Android%E7%AC%94%E8%AE%B0-%E6%8F%92%E4%BB%B6%E5%8C%96/"/>
     <id>http://yoursite.com/2016/08/21/Android笔记-插件化/</id>
     <published>2016-08-21T01:59:42.000Z</published>
-    <updated>2016-08-30T06:25:20.547Z</updated>
+    <updated>2016-09-01T06:18:14.367Z</updated>
     
     <content type="html"><![CDATA[<p>最近Android插件化、热补丁等技术很火，网上陆续也发布了很多相关的资料。<br>我的理解是Android插件化就是当应用想要实现某功能，可以直接从网络上下载安装，并且这个过程可以发生在运行中的技术。(就像魔兽世界使用到的大脚插件、魔盒插件一样)<br>很多知名的Android应用已经应用到了这些技术，大致总结下吧，以后实际工作中很有可能会使用到。</p>
 <a id="more"></a>
@@ -251,7 +253,7 @@
 <h1 id="代理Activity-常规"><a href="#代理Activity-常规" class="headerlink" title="代理Activity(常规)"></a>代理Activity(常规)</h1><p>主项目APK注册一个代理Activity（命名为ProxyActivity），ProxyActivity是一个普通的Activity，但只是一个空壳，自身并没有什么业务逻辑。</p>
 <p>每次打开插件APK里的某一个Activity的时候，都是在主项目里使用标准的方式启动ProxyActivity，再在ProxyActivity的生命周期里同步调用插件中的Activity实例的生命周期方法，从而执行插件APK的业务逻辑。</p>
 <p>这样就解决了没法在Manifest中注册的问题，那么如何在插件Activity中使用Res资源？</p>
-<p>我们可以采用了反射的方法调用AssetManager的“addAssetPath”方法，这样插件Activity就可以调用主项目中的Res资源，同时插件APK中的资源创建了新的Resources实例，插件Activity可以使用，对主项目又是隐藏的。</p>
+<p>我们可以采用了反射的方法调用AssetManager的“addAssetPath”方法加载插件APK里的资源，构造出一个新的Resource实例。这样代理Activity其实有两套Res实例，一套是主项目共有的，另一套是插件APK里的。这样就防止了R.id重复了。</p>
 <p>代理Activity模式的限制：</p>
 <ul>
 <li>需要在Manifest注册的功能都无法在插件实现，比如应用权限、LaunchMode、静态广播等；</li>
@@ -1096,10 +1098,11 @@
     <link href="http://yoursite.com/2016/08/11/Android%E7%AC%94%E8%AE%B0-View%E7%BB%98%E5%88%B6%E6%B5%81%E7%A8%8B/"/>
     <id>http://yoursite.com/2016/08/11/Android笔记-View绘制流程/</id>
     <published>2016-08-11T13:05:35.000Z</published>
-    <updated>2016-08-28T07:40:02.784Z</updated>
+    <updated>2016-09-01T02:30:47.866Z</updated>
     
     <content type="html"><![CDATA[<p>平时应用开发中会使用到Android系统提供给我们的视图组件TextView、ImageView、LinearLayoutd等，它们是如何绘制在屏幕上的，当他们显示的数据或自身的状态改变时，又是如何在屏幕上表现出来的？<br>当自定义UI时，要重写那些哪些函数，怎么去绘制？<br>网上有很多博客都有写过Android系统UI绘制过程，已经非常详尽地解释了。(大神的博文看得真是爽)<br>这里再结合源码总结一下，理清一下思路。</p>
 <a id="more"></a>
+<h1 id="ViewRoot和DecorVIew"><a href="#ViewRoot和DecorVIew" class="headerlink" title="ViewRoot和DecorVIew"></a>ViewRoot和DecorVIew</h1><p>ViewRoot对应ViewRootImpl类，它是连接WindowManager和DecorView的纽带。<br>在ActivityThread中，当Activity对象被创建完毕后，会将DecorView添加到Window中，同时会创建ViewRootImpl对象，并将ViewRootImpl对象和DecorView建立关联。</p>
 <h1 id="View绘制"><a href="#View绘制" class="headerlink" title="View绘制"></a>View绘制</h1><ul>
 <li>每一个View的绘制过程都必须经历三个最主要的过程，也就是measure、layout和draw。</li>
 <li>整个View树的绘图流程是在ViewRootImpl类的performTraversals()方法，该函数做的执行过程主要是根据之前设置的状态，判断是否重新计算视图大小(measure)、是否重新放置视图的位置(layout)、以及是否重绘 (draw)，其核心也就是通过判断来选择顺序执行这三个方法中的哪个。<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">performTraversals</span><span class="params">()</span> </span>&#123;</div><div class="line">    ......</div><div class="line">    <span class="comment">//最外层的根视图的widthMeasureSpec和heightMeasureSpec由来</span></div><div class="line">    <span class="comment">//lp.width和lp.height在创建ViewGroup实例时等于MATCH_PARENT</span></div><div class="line">    <span class="keyword">int</span> childWidthMeasureSpec = getRootMeasureSpec(mWidth, lp.width);</div><div class="line">    <span class="keyword">int</span> childHeightMeasureSpec = getRootMeasureSpec(mHeight, lp.height);</div><div class="line">    ......</div><div class="line">    mView.measure(childWidthMeasureSpec, childHeightMeasureSpec);</div><div class="line">    ......</div><div class="line">    mView.layout(<span class="number">0</span>, <span class="number">0</span>, mView.getMeasuredWidth(), mView.getMeasuredHeight());</div><div class="line">    ......</div><div class="line">    mView.draw(canvas);</div><div class="line">    ......</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">getRootMeasureSpec</span><span class="params">(<span class="keyword">int</span> windowSize, <span class="keyword">int</span> rootDimension)</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> measureSpec;</div><div class="line">    <span class="keyword">switch</span> (rootDimension) &#123;</div><div class="line"></div><div class="line">    <span class="keyword">case</span> ViewGroup.LayoutParams.MATCH_PARENT:</div><div class="line">        <span class="comment">// Window can't resize. Force root view to be windowSize.</span></div><div class="line">        measureSpec = MeasureSpec.makeMeasureSpec(windowSize, MeasureSpec.EXACTLY);</div><div class="line">        <span class="keyword">break</span>;</div><div class="line">    ......</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> measureSpec;</div><div class="line">&#125;</div></pre></td></tr></table></figure>        
@@ -1353,11 +1356,11 @@
   </entry>
   
   <entry>
-    <title>Android笔记-事件分发机制</title>
-    <link href="http://yoursite.com/2016/08/10/Android%E7%AC%94%E8%AE%B0-%E4%BA%8B%E4%BB%B6%E5%88%86%E5%8F%91%E6%9C%BA%E5%88%B6/"/>
-    <id>http://yoursite.com/2016/08/10/Android笔记-事件分发机制/</id>
+    <title>Android笔记-View事件分发机制</title>
+    <link href="http://yoursite.com/2016/08/10/Android%E7%AC%94%E8%AE%B0-View%E4%BA%8B%E4%BB%B6%E5%88%86%E5%8F%91%E6%9C%BA%E5%88%B6/"/>
+    <id>http://yoursite.com/2016/08/10/Android笔记-View事件分发机制/</id>
     <published>2016-08-10T13:00:28.000Z</published>
-    <updated>2016-08-28T08:13:04.506Z</updated>
+    <updated>2016-09-01T07:12:21.283Z</updated>
     
     <content type="html"><![CDATA[<p>我们一般通过点击和滑动屏幕给应用下达指令，应用就会响应并做出相应的处理。这其中经历了一段怎样的过程？<br>Android事件分发机制总的来说就是先分发再处理，是责任链模式的运用，其处理过程中有很多细节，所以相关的代码很长。<br>这里笼统的总结一下Android事件分发的规律，其实用图来解释比较清楚，见参考资料。</p>
 <a id="more"></a>
@@ -1369,11 +1372,10 @@
 </ul>
 <p>Android中的事件onClick, onLongClick，onScroll, onFling等等，都是由许多个Touch事件构成的（一个ACTION_DOWN， n个ACTION_MOVE，1个ACTION_UP）。</p>
 <p>android 事件响应机制是先分发（先由外部的View接收，然后依次传递给其内层的最小View）再处理（从最小View单元（事件源）开始依次向外层传递。）的形式实现的。</p>
-<h2 id="涉及到的三个重要函数"><a href="#涉及到的三个重要函数" class="headerlink" title="涉及到的三个重要函数"></a>涉及到的三个重要函数</h2><ul>
-<li>事件分发：public boolean dispatchTouchEvent(MotionEvent ev)　　　</li>
-<li>事件拦截：public boolean onInterceptTouchEvent(MotionEvent ev)<br>　　　　　该方法为ViewGroup独有。</li>
-<li>事件响应：public boolean onTouchEvent(MotionEvent ev)<br>　　　　　ViewGroup未实现，而是调用父类view的该方法。</li>
-</ul>
+<h2 id="涉及到的三个重要函数"><a href="#涉及到的三个重要函数" class="headerlink" title="涉及到的三个重要函数"></a>涉及到的三个重要函数</h2><h3 id="事件分发：public-boolean-dispatchTouchEvent-MotionEvent-ev"><a href="#事件分发：public-boolean-dispatchTouchEvent-MotionEvent-ev" class="headerlink" title="事件分发：public boolean dispatchTouchEvent(MotionEvent ev)"></a>事件分发：public boolean dispatchTouchEvent(MotionEvent ev)</h3><p>如果事件能够传递给当前View,那么此方法一定会被调用，返回结果受当前View的onTouchEvent和下级的View的dispatchTouchEvent方法的影响，表示是否消耗当前的事件。
+　</p>
+<h3 id="事件拦截：public-boolean-onInterceptTouchEvent-MotionEvent-ev"><a href="#事件拦截：public-boolean-onInterceptTouchEvent-MotionEvent-ev" class="headerlink" title="事件拦截：public boolean onInterceptTouchEvent(MotionEvent ev)"></a>事件拦截：public boolean onInterceptTouchEvent(MotionEvent ev)</h3><p>该方法为ViewGroup独有。<br>在ViewGroup的dispatchTouchEvent内部调用，用来判断当前ViewGroup是否拦截事件，如果拦截，那么在同一个事件序列中，此方法不会被再次调用，返回结果表示是否拦截事件，默认不拦截。</p>
+<h3 id="事件响应：public-boolean-onTouchEvent-MotionEvent-ev"><a href="#事件响应：public-boolean-onTouchEvent-MotionEvent-ev" class="headerlink" title="事件响应：public boolean onTouchEvent(MotionEvent ev)"></a>事件响应：public boolean onTouchEvent(MotionEvent ev)</h3><p>ViewGroup未实现，而是调用父类view的该方法。<br>在dispatchTouchEvent中调用，用来处理事件，返回结果表示是否消耗当前事件，如果不消耗，则在同一个事件序列中，当前View无法再次接收事件。</p>
 <h2 id="View分析"><a href="#View分析" class="headerlink" title="View分析"></a>View分析</h2><ul>
 <li>触摸控件（View）首先执行dispatchTouchEvent方法。</li>
 <li>在dispatchTouchEvent方法中先执行onTouch方法，后执行onClick方法（onClick方法在onTouchEvent中执行）。</li>
@@ -1423,6 +1425,8 @@
 <li>ACTION_DOWN事件在哪个控件消费了（return true）， 那么ACTION_MOVE和ACTION_UP就会从上往下（通过dispatchTouchEvent）做事件分发往下传，就只会传到这个控件，不会继续往下传</li>
 <li>如果ACTION_DOWN事件是在dispatchTouchEvent消费，那么事件到此为止停止传递，如果ACTION_DOWN事件是在onTouchEvent消费的，那么会把ACTION_MOVE或ACTION_UP事件传给该控件的onTouchEvent处理并结束传递。</li>
 </ul>
+<h2 id="滑动冲突的解决办法"><a href="#滑动冲突的解决办法" class="headerlink" title="滑动冲突的解决办法"></a>滑动冲突的解决办法</h2><h3 id="外部拦截法"><a href="#外部拦截法" class="headerlink" title="外部拦截法"></a>外部拦截法</h3><p>点击事件都先经过父容器的拦截处理，如果父容器需要此事件就拦截，如果不需要此事件就不拦截。需要重写父容器的onInterceptTouchEvent方法。</p>
+<h3 id="内部拦截法"><a href="#内部拦截法" class="headerlink" title="内部拦截法"></a>内部拦截法</h3><p>父容器不拦截任何事件，所有事件都传递给子元素，如果子元素需要此事件就直接消耗掉，否则就交给父容器处理。需要重写子View的dispatchTouchEvent方法。</p>
 <p>参考资料：<br><a href="http://www.jianshu.com/p/e99b5e8bd67b" target="_blank" rel="external">图解 Android 事件分发机制</a></p>
 ]]></content>
     
@@ -1437,7 +1441,7 @@
     
       <category term="Android系统" scheme="http://yoursite.com/tags/Android%E7%B3%BB%E7%BB%9F/"/>
     
-      <category term="Android事件分发机制" scheme="http://yoursite.com/tags/Android%E4%BA%8B%E4%BB%B6%E5%88%86%E5%8F%91%E6%9C%BA%E5%88%B6/"/>
+      <category term="View事件分发机制" scheme="http://yoursite.com/tags/View%E4%BA%8B%E4%BB%B6%E5%88%86%E5%8F%91%E6%9C%BA%E5%88%B6/"/>
     
   </entry>
   
