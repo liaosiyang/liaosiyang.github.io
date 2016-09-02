@@ -21,7 +21,7 @@
 <meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/1685558-d3176065dcf72d21.png">
 <meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/1685558-8eaf71b2bbf765b9.png">
 <meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/74d2f7b1-47ae-4637-85a7-4fe0e464daa1.png">
-<meta property="og:updated_time" content="2016-08-31T03:38:16.986Z">
+<meta property="og:updated_time" content="2016-09-02T14:53:24.929Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android笔记-四大组件">
 <meta name="twitter:description" content="搞Android的不可能不知道四大组件吧。四大组件是Android系统提供给我们应用开发的模型。我们开发应用就是在开发这四大组件。所谓四大组件就是Android系统将一个App的main方法分解成几种系统可以与之交互的形式。所以基本都需要在Manifest中注册。这里总结一下四大组件的相关知识。">
@@ -181,13 +181,13 @@
 <p>这个系统所需要了解的每个APP的内部运行情况，其实就是Manifest.xml文件中的内容。</p>
 <p>为了达到这一点，我们将一个APP的main方法分解成几种系统可以与之交互的形式。这几种形式就是Activity,BroadcastReceiver,Service和ContentProvider APIs，广大的Android开发者都很熟悉它们。</p>
 <p>这些类好像在告诉你，你的APP内部应当怎样工作，但这是一种误解！事实上，这些类只是定义你的APP需要怎样与系统交互（以及系统怎样协调你的APP与其他APP进行交互）。这种与系统的交互一旦开始，系统就不再关心你的APP内部是怎样运行了。</p>
-<h1 id="Activity"><a href="#Activity" class="headerlink" title="Activity"></a>Activity</h1><p>这是一个APP与用户交互的入口。</p>
+<h1 id="Activity-展示型组件"><a href="#Activity-展示型组件" class="headerlink" title="Activity(展示型组件)"></a>Activity(展示型组件)</h1><p>这是一个APP与用户交互的入口。</p>
 <h2 id="Activity生命周期"><a href="#Activity生命周期" class="headerlink" title="Activity生命周期"></a>Activity生命周期</h2><p><img src="http://ob5qdb9lc.bkt.clouddn.com/1685558-d3176065dcf72d21.png" alt="Image"></p>
 <ol>
 <li>onCreate:表示Activity正在被创建，在这个方法中我们可以做一些初始化动作，比如加载界面布局资源；</li>
 <li>onRestart:表示Activity正在被重新启动，当当前Activity从不可见新变为可见状态时，onRestart就会被调用；</li>
 <li>onStart:表示Activity正在被启动，这时Activity已经可见了，但是还没有出现在前台，不能与用户进行交互；</li>
-<li>onResume:表示Activity已经可见了，并出现在前台开始活动；(onStar的时候Activity还在后台)；</li>
+<li>onResume:表示Activity已经可见了，并出现在前台开始活动；</li>
 <li>onPause:表示Activity正在停止，如果这个时候快速回到当前Activity，那么onResume会被调用，但用户操作很难重现这一场景。这时可以做一些存储数据、停止动画的操作，但是不能太耗时，因为新Activity的onResume执行必须等老Activity的onPause执行完。</li>
 <li>onStop:表示Activity即将停止，可以做一些稍微重量级的回收工作，同样不能太耗时。</li>
 <li>onDestroy:表示Activity即将被销毁，在这时可以做一些资源回收和释放工作。</li>
@@ -296,7 +296,7 @@
 <li>在Application（或者Service）需要给Intent设置Intent.FLAG_ACTIVITY_NEW_TASK才能正常启动Activity。</li>
 <li>这是因为非Activity类型的Context并没有所谓的任务栈，所以必须要创建一个任务栈，这个时候待启动的Activity实际上是以SingleTask模式启动的。</li>
 </ul>
-<h1 id="Service"><a href="#Service" class="headerlink" title="Service"></a>Service</h1><p>当由于各种各样的原因需要APP在后台运行时，Service就是一个这样的入口。</p>
+<h1 id="Service-计算型组件"><a href="#Service-计算型组件" class="headerlink" title="Service(计算型组件)"></a>Service(计算型组件)</h1><p>当由于各种各样的原因需要APP在后台运行时，Service就是一个这样的入口。</p>
 <p>Service是一个专门在后台处理长时间任务的Android组件，它没有UI。它有两种启动方式，startService和bindService。</p>
 <h2 id="启动式服务（Started-Service）"><a href="#启动式服务（Started-Service）" class="headerlink" title="启动式服务（Started Service）"></a>启动式服务（Started Service）</h2><ul>
 <li>应用组件通过 startService()方法来启动服务，一旦启动，服务会在后台运行，即使启动该服务的组件被销毁；</li>
@@ -328,7 +328,7 @@
 <li>要使用 IntentService，必须自定义一个类，继承自 IntentService，实现 onHandleIntent() 方法，并需要有一个无参的构造方法且调用 super(String name)；</li>
 <li>onHandleIntent() 方法运行在子线程当中，如果多次启动服务（即开启多个子线程），则各个子线程会依次排队执行，当所有的子线程执行完毕，IntentService 会自动停止服务，因此 IntentService 适合用来执行单线程操作。</li>
 </ul>
-<h1 id="BroadcastReceiver"><a href="#BroadcastReceiver" class="headerlink" title="BroadcastReceiver"></a>BroadcastReceiver</h1><p>这是一种让系统在正常的用户流（userflow）之外，传递事件给APP的机制。最重要的是，因为这是另一个被精心定义的APP的入口，即使APP当前并不在运行，系统也可以将broadcasts传递给APP。</p>
+<h1 id="BroadcastReceiver-消息型组件"><a href="#BroadcastReceiver-消息型组件" class="headerlink" title="BroadcastReceiver(消息型组件)"></a>BroadcastReceiver(消息型组件)</h1><p>这是一种让系统在正常的用户流（userflow）之外，传递事件给APP的机制。最重要的是，因为这是另一个被精心定义的APP的入口，即使APP当前并不在运行，系统也可以将broadcasts传递给APP。</p>
 <h2 id="普通广播-Normal-Broadcast"><a href="#普通广播-Normal-Broadcast" class="headerlink" title="普通广播 (Normal Broadcast)"></a>普通广播 (Normal Broadcast)</h2><p>普通广播对于接收者来说是异步的，每个接收者都可以接收到广播，接收者不会相互干扰，也因此，接收者无法终止广播。</p>
 <h2 id="有序广播-Ordered-Broadcast"><a href="#有序广播-Ordered-Broadcast" class="headerlink" title="有序广播 (Ordered Broadcast)"></a>有序广播 (Ordered Broadcast)</h2><p>有序广播每次只将广播发送给优先级较高的接收者，优先级高的接收者可以决定是将广播发送给优先级低的接收者，还是终止这个广播。</p>
 <h2 id="粘性广播-Sticky-Broadcast"><a href="#粘性广播-Sticky-Broadcast" class="headerlink" title="粘性广播 (Sticky Broadcast)"></a>粘性广播 (Sticky Broadcast)</h2><p>Sticky简单说就是，在发送广播时Reciever还没有被注册，但它注册后还是可以收到在它之前发送的那条广播。</p>
@@ -341,7 +341,7 @@
 <h2 id="BroadcastReceiver的生命周期"><a href="#BroadcastReceiver的生命周期" class="headerlink" title="BroadcastReceiver的生命周期"></a>BroadcastReceiver的生命周期</h2><p>Receiver也是有生命周期的，而且很短，当它的onReceive方法执行完成后，它的生命周期就结束了。</p>
 <p>这时BroadcastReceiver已经不处于active状态，被系统杀掉的概率极高，也就是说如果你在onReceive去开线程进行异步操作或者打开Dialog都有可能在没达到你要的结果时进程就被系统杀掉。</p>
 <p>因为这个进程可能只有这个Receiver这个组件在运行，当Receiver也执行完后就是一个empty进程，是最容易被系统杀掉的。</p>
-<h1 id="ContentProvider"><a href="#ContentProvider" class="headerlink" title="ContentProvider"></a>ContentProvider</h1><p>最后，ContentProvider是一个专用的办法，用来将你的APP的数据公开到其他地方。人们通常会将它们当作对数据库的抽象，因为有许多的API和支持库就是这样使用ContentProvider的。但是从系统设计的角度，这并不是ContentProvider的初衷。</p>
+<h1 id="ContentProvider-数据共享型组件"><a href="#ContentProvider-数据共享型组件" class="headerlink" title="ContentProvider(数据共享型组件)"></a>ContentProvider(数据共享型组件)</h1><p>最后，ContentProvider是一个专用的办法，用来将你的APP的数据公开到其他地方。人们通常会将它们当作对数据库的抽象，因为有许多的API和支持库就是这样使用ContentProvider的。但是从系统设计的角度，这并不是ContentProvider的初衷。</p>
 <p>对于系统来说，ContentProvider实际上是一个入口，用于获取一个APP内部的公开的被命名的数据项（data items），每个数据项都被一个URI scheme所标识。这样，APP就可以决定怎样将自己的数据项映射到一个URI scheme，怎样将这个URI scheme公开给其他APP或者系统，好让APP或者系统使用这个URI scheme来获取自己内部的数据。</p>
 <p>这将让系统能够用一些很独特的方式来管理你的APP：</p>
 <ol>
