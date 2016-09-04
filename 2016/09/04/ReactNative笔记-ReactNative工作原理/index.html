@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<title>
+  
+    ReactNative笔记-ReactNative工作原理
+  
+</title>
+
+<meta name="description" content="最近买的《React Native开发指南》到手了，看了前面几章，也翻了翻网上相关的文章，大致了解了React Native在后台是如何工作的。试了一下AwesomeProject，也成功地在Android手机上运行起来了。大致总结一下React Native工作原理。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ReactNative笔记-ReactNative工作原理">
+<meta property="og:url" content="http://yoursite.com/2016/09/04/ReactNative笔记-ReactNative工作原理/index.html">
+<meta property="og:site_name" content="Be Level5 Coder">
+<meta property="og:description" content="最近买的《React Native开发指南》到手了，看了前面几章，也翻了翻网上相关的文章，大致了解了React Native在后台是如何工作的。试了一下AwesomeProject，也成功地在Android手机上运行起来了。大致总结一下React Native工作原理。">
+<meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/cfb59019fd8ca0eca353fdbcdfe22bcc_b.jpg">
+<meta property="og:updated_time" content="2016-09-04T04:48:45.358Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ReactNative笔记-ReactNative工作原理">
+<meta name="twitter:description" content="最近买的《React Native开发指南》到手了，看了前面几章，也翻了翻网上相关的文章，大致了解了React Native在后台是如何工作的。试了一下AwesomeProject，也成功地在Android手机上运行起来了。大致总结一下React Native工作原理。">
+<meta name="twitter:image" content="http://ob5qdb9lc.bkt.clouddn.com/cfb59019fd8ca0eca353fdbcdfe22bcc_b.jpg">
+
+
+  <link rel="alternative" href="/atom.xml" title="Be Level5 Coder" type="application/atom+xml">
+
+
+
+  <link rel="icon" href="/favicon.png">
+
+
+<link rel="stylesheet" href="/perfect-scrollbar/css/perfect-scrollbar.min.css">
+<link rel="stylesheet" href="/styles/main.css">
+
+
+
+
+
+
+</head>
+<body
+  
+  >
+  <div class="mobile-header">
+  <button class="sidebar-toggle" type="button">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a class="title" href="/">Be Level5 Coder</a>
+</div>
+
+  <div class="main-container">
+    <div class="sidebar">
+  <div class="header">
+    <h1 class="title"><a href="/">Be Level5 Coder</a></h1>
+    
+    <div class="info">
+      <div class="content">
+        
+        
+          <div class="author">Sion</div>
+        
+      </div>
+      
+        <div class="avatar">
+          
+            <img src="http://ob5qdb9lc.bkt.clouddn.com/my_avatar.jpg">
+          
+        </div>
+      
+    </div>
+  </div>
+  <div class="body">
+    
+      
+        <ul class="nav">
+          
+            
+              <li class="category-list-container">
+                <a href="javascript:;">分类</a>
+                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android笔记/">Android笔记</a><span class="category-list-count">19</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java笔记/">Java笔记</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ReactNative笔记/">ReactNative笔记</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TCP-IP笔记/">TCP/IP笔记</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/其它/">其它</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统笔记/">操作系统笔记</a><span class="category-list-count">1</span></li></ul>
+              </li>
+            
+          
+            
+              <li class="tag-list-container">
+                <a href="javascript:;">标签</a>
+                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android内存泄漏/">Android内存泄漏</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android开发框架/">Android开发框架</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android性能优化/">Android性能优化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android插件化/">Android插件化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android热补丁/">Android热补丁</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android系统/">Android系统</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android进程保活/">Android进程保活</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dagger2/">Dagger2</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DataBinding/">DataBinding</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Handler机制/">Handler机制</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JVM/">JVM</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVP模式/">MVP模式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ReactNative/">ReactNative</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Reaml/">Reaml</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Retrofit/">Retrofit</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RxJava/">RxJava</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP-IP/">TCP/IP</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/View事件分发机制/">View事件分发机制</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/View绘制流程/">View绘制流程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/other/">other</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a><span class="tag-list-count">1</span></li></ul>
+              </li>
+            
+          
+            
+              <li class="archive-list-container">
+                <a href="javascript:;">归档</a>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a><span class="archive-list-count">41</span></li></ul>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="/" title="Homepage">Homepage</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/archives" title="By Year">By Year</a>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="https://github.com/liaosiyang" title="Github" target="_blank" rel="external">Github</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/atom.xml" title="RSS">RSS</a>
+              </li>
+            
+          
+        </ul>
+      
+    
+  </div>
+</div>
+
+    <div class="main-content">
+      
+        <div style="max-width: 1000px">
+      
+          <article id="post-ReactNative笔记-ReactNative工作原理" class="article article-type-post">
+  
+    <h1 class="article-header">
+      ReactNative笔记-ReactNative工作原理
+    </h1>
+  
+  
+
+  <div class="article-info">
+    <span class="article-date">
+  2016-09-04
+</span>
+
+    
+	<span class="article-category tagcloud">
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/ReactNative笔记/">ReactNative笔记</a></li></ul>
+	</span>
+
+
+    
+	<span class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ReactNative/">ReactNative</a></li></ul>
+	</span>
+
+
+  </div>
+  <div class="article-entry">
+    <p>最近买的《React Native开发指南》到手了，看了前面几章，也翻了翻网上相关的文章，大致了解了React Native在后台是如何工作的。<br>试了一下AwesomeProject，也成功地在Android手机上运行起来了。<br>大致总结一下React Native工作原理。</p>
+<a id="more"></a>
+<h1 id="React-Native工作原理"><a href="#React-Native工作原理" class="headerlink" title="React Native工作原理"></a>React Native工作原理</h1><p><img src="http://ob5qdb9lc.bkt.clouddn.com/cfb59019fd8ca0eca353fdbcdfe22bcc_b.jpg" alt="Image"></p>
+<p>在React中，Virtual DOM就想一个中间层，介于开发者描述的视图与实际在页面上渲染的视图之间。</p>
+<p>DOM(Document Object Model，文件对象模型)，DOM是一种与浏览器，平台，语言无关的接口，使得你可以访问页面中其他的标准组件。DOM 可被 JavaScript 用来读取、改变 HTML、XHTML 以及 XML 文档。</p>
+<p>Virtual DOM的出现主要是优化性能，通过高效的算法diff两次Virtual DOM之间的差异，然后在最小的范围内更新DOM。</p>
+<p>Virtual DOM提供了一种强大的抽象能力，Virtual DOM在开发者代码与实际渲染之间加入了一个抽象层，那么就不一定非得渲染到浏览器上。如果能够指定IOS、Android中的组件是如何展示的，那么React是可以渲染到IOS平台或Android平台上的。</p>
+<p>“桥接”(React Bridge)可以使得React可调用宿主平台开发的UI组件。React Native会将控件标签转换成终端UI模块的调用。目前React Native支持IOS和Android两种平台，其实也可以支持其他平台，只需提供相应的“桥接”。</p>
+<p>JavaScript通过“桥接”解析调用了宿主平台的基础接口和UI元素，这个过程不是在UI线程执行的，所以不会影响用户体验。</p>
+<h1 id="React-Native组织形式"><a href="#React-Native组织形式" class="headerlink" title="React Native组织形式"></a>React Native组织形式</h1><h2 id="视图"><a href="#视图" class="headerlink" title="视图"></a>视图</h2><p>在Web中，视图最终需要渲染成HTML元素。而在React Native中，所有的元素都将被平台特定的React组件所替换。<br>比如&lt; View &gt;组件，在IOS平台被渲染成UIView，在Android平台则被渲染成View。<br>有些组件是平台特定的，一般后面会加上平台名字，比如DatePickerIOS。</p>
+<h2 id="JSX"><a href="#JSX" class="headerlink" title="JSX"></a>JSX</h2><p>React Native是通过JSX来设计视图，并将视图标记和控制逻辑组合在一起。<br>其实也可以使用纯JavaScript编写，JSX是实质上是一颗语法糖，使用JSX语法上更加简洁而已。<br>传统的Web开发保持CSS、HTML、JavaScript文件的独立，JSX而将每个组件的样式、标记、行为统一成单个文件，更符合Native开发的思路。</p>
+<h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><p>React组件也是使用CSS为组件添加样式。React和宿主平台的“桥接”包含了一个缩减版CSS子集的实现，这个CSS子集主要通过flexbox进行布局。<br>React Native也坚持使用内联样式，通过JavaScript对象进行样式组织。</p>
+<h1 id="平台接口"><a href="#平台接口" class="headerlink" title="平台接口"></a>平台接口</h1><p>React Native肯定不是只能渲染视图，比如数据存储、打开摄像头等源生平台的功能也应该能够实现。<br>React Native可以调用宿主平台的暴露的接口，当然不是宿主平台不可能暴露所有的接口。如果需要使用一个未支持的特性，可以自己手动添加到React Native之中。</p>
+
+  </div>
+  <footer class="article-footer">
+    
+
+    
+
+  </footer>
+</article>
+
+
+  <link rel="stylesheet" href="http://static.duoshuo.com/styles/embed.default.css?349d9313.css">
+  <!-- 多说评论框 start -->
+  <div class="ds-thread" data-thread-key="2016/09/04/ReactNative笔记-ReactNative工作原理/" data-title="ReactNative笔记-ReactNative工作原理" data-url="/2016/09/04/ReactNative笔记-ReactNative工作原理/"></div>
+  <!-- 多说评论框 end -->
+  <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+  <script type="text/javascript">
+    var duoshuoQuery = {
+      short_name: "SION"
+    };
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';
+      ds.async = true;
+      ds.src = (document.location.protocol == 'https:'
+        ? 'https:'
+        : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+  <!-- 多说公共JS代码 end -->
+
+
+
+
+
+
+          <div class="main-footer">
+  
+    © 2016 Be Level5 Coder - Powered by <a href="http://hexo.io" target="_blank">Hexo</a> - Theme <a href="https://github.com/denjones/hexo-theme-chan" target="_blank">Chan</a>
+  
+</div>
+
+      
+        </div>
+      
+    </div>
+  </div>
+  <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="/PhotoSwipe/photoswipe.css">
+  <link rel="stylesheet" href="/PhotoSwipe/default-skin/default-skin.css">
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+             It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+      <!-- Container that holds slides.
+                PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                Don't modify these 3 pswp__item elements, data is added later on. -->
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+
+      <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+      <div class="pswp__ui pswp__ui--hidden">
+
+        <div class="pswp__top-bar">
+
+          <!--  Controls are self-explanatory. Order can be changed. -->
+
+          <div class="pswp__counter"></div>
+
+          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+          <button class="pswp__button pswp__button--share" title="Share"></button>
+
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+          <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+          <!-- element will get class pswp__preloader--active when preloader is running -->
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div>
+
+        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/PhotoSwipe/photoswipe.js"></script>
+  <script src="/PhotoSwipe/photoswipe-ui-default.js"></script>
+
+
+<script src="/perfect-scrollbar/js/min/perfect-scrollbar.min.js"></script>
+<script src="/scripts/main.js"></script>
+
+</body>
+</html>
