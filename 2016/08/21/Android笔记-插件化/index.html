@@ -18,7 +18,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/08/21/Android笔记-插件化/index.html">
 <meta property="og:site_name" content="Be Level5 Coder">
 <meta property="og:description" content="最近Android插件化、热补丁等技术很火，网上陆续也发布了很多相关的资料。我的理解是Android插件化就是当应用想要实现某功能，可以直接从网络上下载安装，并且这个过程可以发生在运行中的技术。(就像魔兽世界使用到的大脚插件、魔盒插件一样)很多知名的Android应用已经应用到了这些技术，大致总结下吧，以后实际工作中很有可能会使用到。">
-<meta property="og:updated_time" content="2016-09-01T06:18:14.367Z">
+<meta property="og:updated_time" content="2016-09-06T04:02:53.322Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android笔记-插件化">
 <meta name="twitter:description" content="最近Android插件化、热补丁等技术很火，网上陆续也发布了很多相关的资料。我的理解是Android插件化就是当应用想要实现某功能，可以直接从网络上下载安装，并且这个过程可以发生在运行中的技术。(就像魔兽世界使用到的大脚插件、魔盒插件一样)很多知名的Android应用已经应用到了这些技术，大致总结下吧，以后实际工作中很有可能会使用到。">
@@ -216,10 +216,16 @@
 <li>Android 中许多组件类（如 Activity、Service 等）是需要在 Manifest 文件里面注册后才能工作的（系统会检查该组件有没有注册），所以即使动态加载了一个新的组件类进来，没有注册的话还是无法工作；</li>
 <li>Res 资源是 Android 开发中经常用到的，而 Android 是把这些资源用对应的 R.id 注册好，运行时通过这些 ID 从 Resource 实例中获取对应的资源。如果是运行时动态加载进来的新类，那类里面用到 R.id 的地方将会抛出找不到资源或者用错资源的异常，因为新类的资源 ID 根本和现有的 Resource 实例中保存的资源 ID 对不上；</li>
 </ul>
-<h1 id="代理Activity-常规"><a href="#代理Activity-常规" class="headerlink" title="代理Activity(常规)"></a>代理Activity(常规)</h1><p>主项目APK注册一个代理Activity（命名为ProxyActivity），ProxyActivity是一个普通的Activity，但只是一个空壳，自身并没有什么业务逻辑。</p>
-<p>每次打开插件APK里的某一个Activity的时候，都是在主项目里使用标准的方式启动ProxyActivity，再在ProxyActivity的生命周期里同步调用插件中的Activity实例的生命周期方法，从而执行插件APK的业务逻辑。</p>
+<h1 id="代理Activity"><a href="#代理Activity" class="headerlink" title="代理Activity"></a>代理Activity</h1><p>主项目APK注册一个代理Activity（命名为ProxyActivity），ProxyActivity是一个普通的Activity，但只是一个空壳，自身并没有什么业务逻辑。</p>
+<p>每次打开插件APK里的某一个Activity的时候，都是在主项目里使用标准的方式启动ProxyActivity，再在ProxyActivity的生命周期里同步调用插件中的Activity实例的生命周期方法，从而执行插件APK的业务逻辑。具体做法是将Activity生命周期方法提取出来作为一个接口，然后插件Activity实现这个接口，代理Activity声明插件Activity实例，在生命周期方法中通过这个实例调用插件Activity实现的方法就完成了插件Activity的生命周期的管理。</p>
 <p>这样就解决了没法在Manifest中注册的问题，那么如何在插件Activity中使用Res资源？</p>
-<p>我们可以采用了反射的方法调用AssetManager的“addAssetPath”方法加载插件APK里的资源，构造出一个新的Resource实例。这样代理Activity其实有两套Res实例，一套是主项目共有的，另一套是插件APK里的。这样就防止了R.id重复了。</p>
+<p>Activity的继承ContextThemeWrapper，ContextThemeWrapper继承ContextWrapper，ContextWrapper中有个mBase成员变量，类型是<br>ContextImpl。Context与获取资源相关的方法有两个抽象方法，真正实现在ContextImpl中。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/** Return an AssetManager instance for your application's package. */</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> AssetManager <span class="title">getAssets</span><span class="params">()</span></span>;</div><div class="line"></div><div class="line"><span class="comment">/** Return a Resources instance for your application's package. */</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> Resources <span class="title">getResources</span><span class="params">()</span></span>;</div></pre></td></tr></table></figure>  
+<p>ContextImpl中加载资源的方式是通过反射，调用AssetManager中的addAssetPath方法，就可以将一个APK中的资源加载到Resources对象中，addAssetPath是隐藏API无法直接调用，所以只能通过反射。</p>
+<p>addAssetPath传递的路径可以是zip文件也可以是资源目录，APK文件就是一个zip，所以将APK的路径传给它，资源就加载到AssetManager中了。然后再通过AssetManager来创建一个新的Resources对象，通过这个对象就可以访问插件APK中的资源了。</p>
+<p>所以同样的道理，在Activity中实现getAssets和getResources方法，就可以通过R来访问插件中的资源了。</p>
+<p>这样代理Activity中其实有2个Resources实例，一个可以访问主项目中的资源，自己实现的就可以访问插件中的资源。</p>
+<p>插件ClassLoader的管理<br>插件有可能不止一个，同一个插件加载类的时候应该使用同一个DexClassLoader，如果使用多个DexClassLoader加载同一个类就容易引发类型转换错误。通过将不同插件的ClassLoader存储在一个HashMap中，这样就可以保证不同插件中的类彼此互不干扰。</p>
 <p>代理Activity模式的限制：</p>
 <ul>
 <li>需要在Manifest注册的功能都无法在插件实现，比如应用权限、LaunchMode、静态广播等；</li>
@@ -227,7 +233,7 @@
 <li>宿主项目和插件项目的开发都要接入共同的框架，大多时候，插件需要依附宿主才能运行，无法独立运行；</li>
 </ul>
 <p>实例框架：<a href="https://github.com/singwhatiwanna/dynamic-load-apk" target="_blank" rel="external">Apk动态加载框架</a></p>
-<h1 id="动态创建Activity模式-非常规"><a href="#动态创建Activity模式-非常规" class="headerlink" title="动态创建Activity模式(非常规)"></a>动态创建Activity模式(非常规)</h1><p>动态创建Activity模式的核心是“运行时字节码操作”，先在宿主注册一个不存在的Activity，启动插件的某个Activity时都把想要启动的Activity替换成前面注册的Activity，从而使后者能正常启动。</p>
+<h1 id="动态创建Activity模式"><a href="#动态创建Activity模式" class="headerlink" title="动态创建Activity模式"></a>动态创建Activity模式</h1><p>动态创建Activity模式的核心是“运行时字节码操作”，先在宿主注册一个不存在的Activity，启动插件的某个Activity时都把想要启动的Activity替换成前面注册的Activity，从而使后者能正常启动。</p>
 <ul>
 <li>使用dexmaker动态创建一个类。</li>
 <li>修改需要启动的目标Activity。</li>

@@ -55,13 +55,13 @@
     <link href="http://yoursite.com/2016/08/30/%E5%86%99%E5%9C%A8%E6%A0%A1%E6%8B%9B%E4%B9%8B%E5%89%8D/"/>
     <id>http://yoursite.com/2016/08/30/写在校招之前/</id>
     <published>2016-08-30T10:53:46.000Z</published>
-    <updated>2016-09-01T04:14:49.964Z</updated>
+    <updated>2016-09-06T04:00:43.862Z</updated>
     
     <content type="html"><![CDATA[<p>今天，也就是8月30的下午接到了第一个面试的电话，突然发现校招就这么来了，不觉有些感慨。<br>NPC: 9月已经到来，欢迎进入校招团队副本。请拿好武器，带好药剂，接收Boss们的制裁吧。校招感觉上就是魔兽世界里的团队副本，并且还是H难度的，对于我来说。<br>利用校招之前的空余时间，写点什么吧，就像佛丁在冰冠冰川前鼓舞将士们的话语：无论是生是死，我们都是为荣誉而战。</p>
 <a id="more"></a>
 <p>今天的面试是魔都某公司打来的，问的东西并不难，时间也不长，但自己的表现还是感觉不太行。<br>首先是比较紧张吧，死宅男的属性暴露无疑。一直都是一个人默默地写代码，打字聊天远远多过现实中和人说的话，所以紧张的情绪还是难以控制。<br>以前也有过面试的经历，也总是提醒过自己别紧张，看开点，但在面试时还是能清楚的听到胸腔里的咚咚声。这个问题好像真的无解了，可能还是与人交流较少有关系吧。明天找个人陪我搞下模拟面试试试，或许会有点用。</p>
-<p>其次就是如何回答一个宽泛的问题，比如今天的问题Handler机制、Retrofit原理，找到回答的切入点很关键。问Handler机制直接说Handler就很难答了，切入点应该是Looper、MessageQueue。Retrofit原理应该就直接回答动态代理，而运行时注解的原理可以先放着，等深入问的时候再答，而不要一上来就什么都想说，最后又什么都说不出来或什么都轻言带过。要是开口切入点就不好，后面的话就很难接了。</p>
-<p>最后比较惊喜的是面试官看了我的GitHub和个人博客，GitHub上有个人的项目，功能简单但花了2个月时间，使用到的技术也比较新，RxJava、Dagger2等都用上了，以前实习的时候做的项目都没用到。个人博客是学习的总结，再说搭建个人博客和总结知识真不是一件容易的事。这两点可以证明自己有在努力，应该可以加分吧。    </p>
+<p>其次就是如何回答一个宽泛的问题，比如今天的问题Handler机制、Retrofit原理，找到回答的切入点很关键。问Handler机制直接说Handler就很难答了，切入点应该是Looper、MessageQueue。Retrofit原理应该就直接回答动态代理，而运行时注解的原理可以先放着，等深入问的时候再答，而不要一上来就什么都想说，最后又什么都轻言带过。要是开口切入点就不好，后面的话就很难接了。</p>
+<p>最后比较惊喜的是面试官看了我的GitHub和个人博客，GitHub上有个人的项目，功能简单但花了2个月时间，使用到的技术也比较新，RxJava、Dagger2等都用上了。个人博客是学习的总结，再说搭建个人博客和总结知识真不是一件容易的事。这两点可以证明自己有在努力，应该可以加分吧。    </p>
 <p>其实写知识总结一方面也是为了让自己能够在面试场上对答如流，因为很早之前就领会过知识在脑海中但是无法流畅地表述出来的情况。</p>
 <p>一方面是知识不牢固，比如今天回答事件分发机制ViewGroup的三个相关方法居然一时脑抽，没想出来onTouchEvent用英语怎么拼，因为前面两个方法dispatchTouchEvent和onInterceptTouchEvent，感觉第三个方法快到嘴边了又老感觉不对，总感觉应该是onXXXTouchEvent的格式。</p>
 <p>二是我觉得写出来应该就能代表对知识掌握起码80%吧，就能讲出来吧。现实情况还真不是这样，说话确实是门艺术，而像我这种常年生活在二次元的宅男来说，根本就没注意点这方面的天赋点啊！所以每次回答干巴巴的。所以写出来并不代表能讲出来，这给了我一个警示，功夫还不够啊！</p>
@@ -70,10 +70,7 @@
 <li>赶紧找人陪我做模拟面试，很急很关键。</li>
 <li>再把知识过一边，想想回答相关知识的切入点。</li>
 </ul>
-<p>马上校招就来了，这关系到我以后几年去哪个城市发展，能不能找到一个好的技术团队对职业的发展是很关键的。另外还是希望努力就会有收获吧。</p>
-<p>如果校招顺利的话，大概会写一篇经验总结给学弟学妹们作为攻略，不顺利的话就没办法了。</p>
 <p>好吧，勇士们，进攻！</p>
-<p>我发现我不擅长说话，写点东西还是很乐意的嘛。</p>
 ]]></content>
     
     <summary type="html">
@@ -94,9 +91,9 @@
     <link href="http://yoursite.com/2016/08/24/ReactNative%E7%AC%94%E8%AE%B0-ReactNative/"/>
     <id>http://yoursite.com/2016/08/24/ReactNative笔记-ReactNative/</id>
     <published>2016-08-24T03:19:23.000Z</published>
-    <updated>2016-09-04T01:53:57.510Z</updated>
+    <updated>2016-09-06T02:28:57.970Z</updated>
     
-    <content type="html"><![CDATA[<p>React Native 是最近非常火的一个话题,它可以使用前端的开发方式来开发移动端，但并不是像以前在实习公司所做的仅仅用一个WebView嵌套一样。<br>它实际上是一种Hybrid App开发方式，兼有Web App跨平台和Native App高性能的优势，并且它是由FacebooK公司开源的神器。<br>作为一名移动开发人员，我也对这项技术非常感兴趣，谁让现在搞Android的竞争太激烈，技术更新也快，说不定哪天就被淘汰了。所以还是早做准备，扩充自己的技能栈。<br>话虽这么说，但React Native毕竟是一种全新的开发方式，想要掌握没那么容易，需要很多前端开发的知识。<br>2016年余下的时间就投入给React Native吧，毕竟对于前端开发我可是很有兴趣的。</p>
+    <content type="html"><![CDATA[<p>React Native 是最近非常火的一个话题,它可以使用前端的开发方式来开发移动端，但并不是像以前在实习公司所做的仅仅用一个WebView嵌套一样。<br>它实际上是一种App开发方式，兼有Web App跨平台和Native App高性能的优势，并且它是由FacebooK公司开源的神器。<br>作为一名移动开发人员，我也对这项技术非常感兴趣，谁让现在搞Android的竞争太激烈，技术更新也快，说不定哪天就被淘汰了。所以还是早做准备，扩充自己的技能栈。<br>话虽这么说，但React Native毕竟是一种全新的开发方式，想要掌握没那么容易，需要很多前端开发的知识。<br>2016年余下的时间就投入给React Native吧，毕竟对于前端开发我可是很有兴趣的。</p>
 <a id="more"></a>
 <h1 id="React-Native"><a href="#React-Native" class="headerlink" title="React Native"></a>React Native</h1><p>React Native 使你能够基于 JavaScript 和 React 在原生平台上构建应用，提倡的是 “learn once, write anywhere”，复用代码，提高开发效率。</p>
 <p>在移动端开发端，我们经常是根据服务端传来的JSON文件来传递信息，更新视图。JSON只能传递配置信息，无法表达逻辑。从本质上讲，这是因为 JSON 毕竟只是纯文本，它缺乏像编程语言那样的运行能力。</p>
@@ -132,7 +129,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;React Native 是最近非常火的一个话题,它可以使用前端的开发方式来开发移动端，但并不是像以前在实习公司所做的仅仅用一个WebView嵌套一样。&lt;br&gt;它实际上是一种Hybrid App开发方式，兼有Web App跨平台和Native App高性能的优势，并且它是由FacebooK公司开源的神器。&lt;br&gt;作为一名移动开发人员，我也对这项技术非常感兴趣，谁让现在搞Android的竞争太激烈，技术更新也快，说不定哪天就被淘汰了。所以还是早做准备，扩充自己的技能栈。&lt;br&gt;话虽这么说，但React Native毕竟是一种全新的开发方式，想要掌握没那么容易，需要很多前端开发的知识。&lt;br&gt;2016年余下的时间就投入给React Native吧，毕竟对于前端开发我可是很有兴趣的。&lt;/p&gt;
+      &lt;p&gt;React Native 是最近非常火的一个话题,它可以使用前端的开发方式来开发移动端，但并不是像以前在实习公司所做的仅仅用一个WebView嵌套一样。&lt;br&gt;它实际上是一种App开发方式，兼有Web App跨平台和Native App高性能的优势，并且它是由FacebooK公司开源的神器。&lt;br&gt;作为一名移动开发人员，我也对这项技术非常感兴趣，谁让现在搞Android的竞争太激烈，技术更新也快，说不定哪天就被淘汰了。所以还是早做准备，扩充自己的技能栈。&lt;br&gt;话虽这么说，但React Native毕竟是一种全新的开发方式，想要掌握没那么容易，需要很多前端开发的知识。&lt;br&gt;2016年余下的时间就投入给React Native吧，毕竟对于前端开发我可是很有兴趣的。&lt;/p&gt;
     
     </summary>
     
@@ -235,7 +232,7 @@
     <link href="http://yoursite.com/2016/08/21/Android%E7%AC%94%E8%AE%B0-%E6%8F%92%E4%BB%B6%E5%8C%96/"/>
     <id>http://yoursite.com/2016/08/21/Android笔记-插件化/</id>
     <published>2016-08-21T01:59:42.000Z</published>
-    <updated>2016-09-01T06:18:14.367Z</updated>
+    <updated>2016-09-06T04:02:53.322Z</updated>
     
     <content type="html"><![CDATA[<p>最近Android插件化、热补丁等技术很火，网上陆续也发布了很多相关的资料。<br>我的理解是Android插件化就是当应用想要实现某功能，可以直接从网络上下载安装，并且这个过程可以发生在运行中的技术。(就像魔兽世界使用到的大脚插件、魔盒插件一样)<br>很多知名的Android应用已经应用到了这些技术，大致总结下吧，以后实际工作中很有可能会使用到。</p>
 <a id="more"></a>
@@ -285,10 +282,16 @@
 <li>Android 中许多组件类（如 Activity、Service 等）是需要在 Manifest 文件里面注册后才能工作的（系统会检查该组件有没有注册），所以即使动态加载了一个新的组件类进来，没有注册的话还是无法工作；</li>
 <li>Res 资源是 Android 开发中经常用到的，而 Android 是把这些资源用对应的 R.id 注册好，运行时通过这些 ID 从 Resource 实例中获取对应的资源。如果是运行时动态加载进来的新类，那类里面用到 R.id 的地方将会抛出找不到资源或者用错资源的异常，因为新类的资源 ID 根本和现有的 Resource 实例中保存的资源 ID 对不上；</li>
 </ul>
-<h1 id="代理Activity-常规"><a href="#代理Activity-常规" class="headerlink" title="代理Activity(常规)"></a>代理Activity(常规)</h1><p>主项目APK注册一个代理Activity（命名为ProxyActivity），ProxyActivity是一个普通的Activity，但只是一个空壳，自身并没有什么业务逻辑。</p>
-<p>每次打开插件APK里的某一个Activity的时候，都是在主项目里使用标准的方式启动ProxyActivity，再在ProxyActivity的生命周期里同步调用插件中的Activity实例的生命周期方法，从而执行插件APK的业务逻辑。</p>
+<h1 id="代理Activity"><a href="#代理Activity" class="headerlink" title="代理Activity"></a>代理Activity</h1><p>主项目APK注册一个代理Activity（命名为ProxyActivity），ProxyActivity是一个普通的Activity，但只是一个空壳，自身并没有什么业务逻辑。</p>
+<p>每次打开插件APK里的某一个Activity的时候，都是在主项目里使用标准的方式启动ProxyActivity，再在ProxyActivity的生命周期里同步调用插件中的Activity实例的生命周期方法，从而执行插件APK的业务逻辑。具体做法是将Activity生命周期方法提取出来作为一个接口，然后插件Activity实现这个接口，代理Activity声明插件Activity实例，在生命周期方法中通过这个实例调用插件Activity实现的方法就完成了插件Activity的生命周期的管理。</p>
 <p>这样就解决了没法在Manifest中注册的问题，那么如何在插件Activity中使用Res资源？</p>
-<p>我们可以采用了反射的方法调用AssetManager的“addAssetPath”方法加载插件APK里的资源，构造出一个新的Resource实例。这样代理Activity其实有两套Res实例，一套是主项目共有的，另一套是插件APK里的。这样就防止了R.id重复了。</p>
+<p>Activity的继承ContextThemeWrapper，ContextThemeWrapper继承ContextWrapper，ContextWrapper中有个mBase成员变量，类型是<br>ContextImpl。Context与获取资源相关的方法有两个抽象方法，真正实现在ContextImpl中。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/** Return an AssetManager instance for your application's package. */</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> AssetManager <span class="title">getAssets</span><span class="params">()</span></span>;</div><div class="line"></div><div class="line"><span class="comment">/** Return a Resources instance for your application's package. */</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> Resources <span class="title">getResources</span><span class="params">()</span></span>;</div></pre></td></tr></table></figure>  
+<p>ContextImpl中加载资源的方式是通过反射，调用AssetManager中的addAssetPath方法，就可以将一个APK中的资源加载到Resources对象中，addAssetPath是隐藏API无法直接调用，所以只能通过反射。</p>
+<p>addAssetPath传递的路径可以是zip文件也可以是资源目录，APK文件就是一个zip，所以将APK的路径传给它，资源就加载到AssetManager中了。然后再通过AssetManager来创建一个新的Resources对象，通过这个对象就可以访问插件APK中的资源了。</p>
+<p>所以同样的道理，在Activity中实现getAssets和getResources方法，就可以通过R来访问插件中的资源了。</p>
+<p>这样代理Activity中其实有2个Resources实例，一个可以访问主项目中的资源，自己实现的就可以访问插件中的资源。</p>
+<p>插件ClassLoader的管理<br>插件有可能不止一个，同一个插件加载类的时候应该使用同一个DexClassLoader，如果使用多个DexClassLoader加载同一个类就容易引发类型转换错误。通过将不同插件的ClassLoader存储在一个HashMap中，这样就可以保证不同插件中的类彼此互不干扰。</p>
 <p>代理Activity模式的限制：</p>
 <ul>
 <li>需要在Manifest注册的功能都无法在插件实现，比如应用权限、LaunchMode、静态广播等；</li>
@@ -296,7 +299,7 @@
 <li>宿主项目和插件项目的开发都要接入共同的框架，大多时候，插件需要依附宿主才能运行，无法独立运行；</li>
 </ul>
 <p>实例框架：<a href="https://github.com/singwhatiwanna/dynamic-load-apk" target="_blank" rel="external">Apk动态加载框架</a></p>
-<h1 id="动态创建Activity模式-非常规"><a href="#动态创建Activity模式-非常规" class="headerlink" title="动态创建Activity模式(非常规)"></a>动态创建Activity模式(非常规)</h1><p>动态创建Activity模式的核心是“运行时字节码操作”，先在宿主注册一个不存在的Activity，启动插件的某个Activity时都把想要启动的Activity替换成前面注册的Activity，从而使后者能正常启动。</p>
+<h1 id="动态创建Activity模式"><a href="#动态创建Activity模式" class="headerlink" title="动态创建Activity模式"></a>动态创建Activity模式</h1><p>动态创建Activity模式的核心是“运行时字节码操作”，先在宿主注册一个不存在的Activity，启动插件的某个Activity时都把想要启动的Activity替换成前面注册的Activity，从而使后者能正常启动。</p>
 <ul>
 <li>使用dexmaker动态创建一个类。</li>
 <li>修改需要启动的目标Activity。</li>
@@ -734,12 +737,44 @@
     <link href="http://yoursite.com/2016/08/14/Android%E7%AC%94%E8%AE%B0-Android%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
     <id>http://yoursite.com/2016/08/14/Android笔记-Android性能优化/</id>
     <published>2016-08-14T13:50:08.000Z</published>
-    <updated>2016-08-28T06:04:47.395Z</updated>
+    <updated>2016-09-06T03:58:42.279Z</updated>
     
     <content type="html"><![CDATA[<p>看了很多有关Android性能优化的资料，基本上说的点都差不多。异步，内存泄漏，视图布局等等。<br>后来发现原来Google发布了<a href="https://www.youtube.com/playlist?list=PLWz5rJ2EKKc9CBxr3BVjPTPoDPLdPIFCE" target="_blank" rel="external">Android性能优化典范的专题</a>。国人也发布了相关的翻译文档，强，无敌！<br>性能优化是Android开发中一个很重要的课题，Android系统常年被诟病不如IOS好用，我觉得这并不是Android系统的问题，而是开发者开发的应用很多都没有优化，只是实现了其功能而已。(还有一点是好多应用强行占据系统资源，阿猫阿狗应用都自行启动，进程保活，简直无语)<br>Google大概是都看不下去，所以发布了这一专题，作为Android开发人员，在性能优化方面确实应该多长点心。</p>
 <a id="more"></a>
 <p><a href="http://hukai.me/android-performance-patterns/" target="_blank" rel="external">Android性能优化典范 - 第1季</a><br><a href="http://hukai.me/android-performance-patterns-season-2/" target="_blank" rel="external">Android性能优化典范 - 第2季</a><br><a href="http://hukai.me/android-performance-patterns-season-3/" target="_blank" rel="external">Android性能优化典范 - 第3季</a><br><a href="http://hukai.me/android-performance-patterns-season-4/" target="_blank" rel="external">Android性能优化典范 - 第4季</a><br><a href="http://hukai.me/android-performance-patterns-season-5/" target="_blank" rel="external">Android性能优化典范 - 第5季</a></p>
 <p>细化与补充：<br><a href="http://hukai.me/android-performance-render/" target="_blank" rel="external">Android性能优化之渲染篇</a><br><a href="http://hukai.me/android-performance-compute/" target="_blank" rel="external">Android性能优化之运算篇</a><br><a href="http://hukai.me/android-performance-memory/" target="_blank" rel="external">Android性能优化之内存篇</a><br><a href="http://hukai.me/android-performance-battery/" target="_blank" rel="external">Android性能优化之电量篇</a><br><a href="http://hukai.me/android-performance-oom/" target="_blank" rel="external">Android内存优化之OOM篇</a></p>
+<h2 id="Android性能优化方法"><a href="#Android性能优化方法" class="headerlink" title="Android性能优化方法"></a>Android性能优化方法</h2><h3 id="布局优化"><a href="#布局优化" class="headerlink" title="布局优化"></a>布局优化</h3><ol>
+<li>减少布局中无用的控件和层级；</li>
+<li>有选择地使用性能较低的ViewGruop(这个考虑的优先级低于嵌套布局)；</li>
+<li>使用&lt; include &gt;标签重用布局；</li>
+<li>使用&lt; meger &gt;标签减少布局的层级；</li>
+<li>使用&lt; ViewStub &gt;标签实现按需加载；</li>
+</ol>
+<h3 id="绘制优化"><a href="#绘制优化" class="headerlink" title="绘制优化"></a>绘制优化</h3><ol>
+<li>onDraw方法中不要创建新的局部对象，因为onDraw方法可能会被频繁地调用，这样会在一瞬间产生大量临时对象，不仅占用内存而且还会导致系统频繁gc。</li>
+<li>onDraw方法中不要做耗时的任务，也不能执行成千上万次循环操作。View的绘制帧率保持60fps是最佳的，这就要求每帧的绘制时间不超过16ms，所以要尽量降低onDraw方法的复杂度。</li>
+</ol>
+<h3 id="内存泄漏优化"><a href="#内存泄漏优化" class="headerlink" title="内存泄漏优化"></a>内存泄漏优化</h3><ol>
+<li>开发时注意有可能导致内存泄漏的代码，比如静态变量、单例模式、内部类、属性动画等；</li>
+<li>使用内存泄漏分析工具MAT、LeakCanary分析内存泄漏的原因，修改内存泄漏的代码；</li>
+</ol>
+<h3 id="ListView-建议使用RecyclerView-和Bitmap优化"><a href="#ListView-建议使用RecyclerView-和Bitmap优化" class="headerlink" title="ListView(建议使用RecyclerView)和Bitmap优化"></a>ListView(建议使用RecyclerView)和Bitmap优化</h3><ol>
+<li>采用ViewHolder避免在getView中执行耗时操作；</li>
+<li>复用convertView，减少View的创建；</li>
+<li>分页加载，根据列表的滑动状态来控制异步任务的执行频率；</li>
+<li>通过BitmapFactory.Options来根据需要对图片进行采样，根据采样率加载缩小后的图片；</li>
+</ol>
+<h3 id="线程优化"><a href="#线程优化" class="headerlink" title="线程优化"></a>线程优化</h3><ol>
+<li>采用线程池，避免程序中存在大量的线程，避免了线程的创建和销毁所带来的性能开销，同时线程池还能控制线程池的最大并发数，避免大量线程互相抢占系统资源从而导致阻塞现象的发生。</li>
+</ol>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><ol>
+<li>避免创建过多的对象；</li>
+<li>不要使用枚举，常量使用final static修饰；</li>
+<li>使用Android特有的数据结构，比如SparseArray,ArrayMap等，它们的性能更高；</li>
+<li>使用缓存策略，LruCache、DiskLruCache等减少异步任务的执行。</li>
+<li>尽量使用静态内部类，避免由于内部类而导致的内存泄漏。</li>
+<li>适当使用软引用和弱引用；</li>
+</ol>
 <p>PS:今天Wings夺得TI6总冠军，看到他们从最初的小弟，勤学苦练，最终凭实力问鼎西雅图。原来现实生活中也存在着梦想照进现实的例子。所以呢？努力啊!</p>
 ]]></content>
     
@@ -976,7 +1011,7 @@
     <link href="http://yoursite.com/2016/08/12/Android%E7%AC%94%E8%AE%B0-%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F/"/>
     <id>http://yoursite.com/2016/08/12/Android笔记-内存泄漏/</id>
     <published>2016-08-12T11:56:40.000Z</published>
-    <updated>2016-08-28T06:49:56.780Z</updated>
+    <updated>2016-09-06T03:31:41.572Z</updated>
     
     <content type="html"><![CDATA[<p>Android是基于Java开发的，使用的虚拟机跟Java虚拟机也差不多。Java开发中遇到的问题Android开发中也经常遇到。其中典型就是内存泄漏问题。<br>内存泄漏问题多了就会出现OOM，在开发过程中应该时刻注意所写的代码是否会导致内存泄漏。<br>仅仅依靠开发时的自觉还是不够的，所幸还有一些工具能帮助我们发现内存泄漏。<br>总结一下如何避免内存：一是了解常见内存泄漏的问题，开发过程中避免。二是使用工具找出出现内存泄漏的代码然后修改。</p>
 <a id="more"></a>
@@ -1004,6 +1039,8 @@
 <h2 id="Threads"><a href="#Threads" class="headerlink" title="Threads"></a>Threads</h2><p>我们再次通过Thread和TimerTask来展现内存泄漏。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">spawnThread</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">new</span> Thread() &#123;</div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">while</span>(<span class="keyword">true</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;.start();</div><div class="line">&#125;</div><div class="line"></div><div class="line">View tButton = findViewById(R.id.t_button);</div><div class="line">tButton.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">      spawnThread();</div><div class="line">      nextActivity();</div><div class="line"> &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>   </p>
 <h2 id="TimerTask"><a href="#TimerTask" class="headerlink" title="TimerTask"></a>TimerTask</h2><p>只要是匿名类的实例，不管是不是在工作线程，都会持有Activity的引用，导致内存泄漏。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">scheduleTimer</span><span class="params">()</span> </span>&#123;</div><div class="line"><span class="keyword">new</span> Timer().schedule(<span class="keyword">new</span> TimerTask() &#123;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">while</span>(<span class="keyword">true</span>);</div><div class="line">    &#125;</div><div class="line">&#125;, Long.MAX_VALUE &gt;&gt; <span class="number">1</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line">View ttButton = findViewById(R.id.tt_button);</div><div class="line">ttButton.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">        scheduleTimer();</div><div class="line">        nextActivity();</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
 <h2 id="Sensor-Manager"><a href="#Sensor-Manager" class="headerlink" title="Sensor Manager"></a>Sensor Manager</h2><p>通过Context.getSystemService(int name)可以获取系统服务。这些服务工作在各自的进程中，帮助应用处理后台任务，处理硬件交互。如果需要使用这些服务，可以注册监听器，这会导致服务持有了Context的引用，如果在Activity销毁的时候没有注销这些监听器，会导致内存泄漏。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">registerListener</span><span class="params">()</span> </span>&#123;</div><div class="line">   SensorManager sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);</div><div class="line">   Sensor sensor = sensorManager.getDefaultSensor(Sensor.TYPE_ALL);</div><div class="line">   sensorManager.registerListener(<span class="keyword">this</span>, sensor, SensorManager.SENSOR_DELAY_FASTEST);</div><div class="line">&#125;</div><div class="line"></div><div class="line">View smButton = findViewById(R.id.sm_button);</div><div class="line">smButton.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">        registerListener();</div><div class="line">        nextActivity();</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<h2 id="Property-Animation"><a href="#Property-Animation" class="headerlink" title="Property Animation"></a>Property Animation</h2><p>属性动画有一类无限循环的动画，如果在Activity中播放此类动画且没有在onDestroyZ中停止动画，那么动画就会一直播放下去，尽管在界面上看不到动画效果，并且Activity的View会被动画持有，而且View又持有了Activity，最终Activity无法释放。解决方式是在Activity中调用animation.cancel()来停止动画。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">    <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">    setContentView(R.layout.activity_test_result);</div><div class="line">    TextView textView=(TextView) findViewById(R.id.textView1);</div><div class="line">    ObjectAnimator animator=ObjectAnimator.ofFloat(textView,<span class="string">"rotation"</span>,<span class="number">0</span>,<span class="number">360</span>).setDuration(<span class="number">2000</span>);</div><div class="line">    animator.setRepeatCount(ValueAnimator.INFINITE);</div><div class="line">    animator.start();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h1 id="内存泄漏检测工具"><a href="#内存泄漏检测工具" class="headerlink" title="内存泄漏检测工具"></a>内存泄漏检测工具</h1><h2 id="LeakCanary"><a href="#LeakCanary" class="headerlink" title="LeakCanary"></a>LeakCanary</h2><p>LeakCanary 是square团队开源的检测内存泄露的开源类库。你可以在 debug 包种轻松检测内存泄露。</p>
 <p>工作机制：</p>
 <ul>

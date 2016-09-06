@@ -2,16 +2,44 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/2016/09/04/ReactNative%E7%AC%94%E8%AE%B0-ReactNative%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/</loc>
+    <loc>http://yoursite.com/2016/08/21/Android%E7%AC%94%E8%AE%B0-%E6%8F%92%E4%BB%B6%E5%8C%96/</loc>
     
-    <lastmod>2016-09-04T04:48:45.358Z</lastmod>
+    <lastmod>2016-09-06T04:02:53.322Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/08/30/%E5%86%99%E5%9C%A8%E6%A0%A1%E6%8B%9B%E4%B9%8B%E5%89%8D/</loc>
+    
+    <lastmod>2016-09-06T04:00:43.862Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/08/14/Android%E7%AC%94%E8%AE%B0-Android%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/</loc>
+    
+    <lastmod>2016-09-06T03:58:42.279Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/08/12/Android%E7%AC%94%E8%AE%B0-%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F/</loc>
+    
+    <lastmod>2016-09-06T03:31:41.572Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://yoursite.com/2016/08/24/ReactNative%E7%AC%94%E8%AE%B0-ReactNative/</loc>
     
-    <lastmod>2016-09-04T01:53:57.510Z</lastmod>
+    <lastmod>2016-09-06T02:28:57.970Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/09/04/ReactNative%E7%AC%94%E8%AE%B0-ReactNative%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/</loc>
+    
+    <lastmod>2016-09-04T04:48:45.358Z</lastmod>
     
   </url>
   
@@ -40,20 +68,6 @@
     <loc>http://yoursite.com/2016/08/22/Android%E7%AC%94%E8%AE%B0-%E7%83%AD%E8%A1%A5%E4%B8%81/</loc>
     
     <lastmod>2016-09-01T07:12:07.601Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2016/08/21/Android%E7%AC%94%E8%AE%B0-%E6%8F%92%E4%BB%B6%E5%8C%96/</loc>
-    
-    <lastmod>2016-09-01T06:18:14.367Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2016/08/30/%E5%86%99%E5%9C%A8%E6%A0%A1%E6%8B%9B%E4%B9%8B%E5%89%8D/</loc>
-    
-    <lastmod>2016-09-01T04:14:49.964Z</lastmod>
     
   </url>
   
@@ -219,13 +233,6 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2016/08/12/Android%E7%AC%94%E8%AE%B0-%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F/</loc>
-    
-    <lastmod>2016-08-28T06:49:56.780Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/2016/08/12/Android%E7%AC%94%E8%AE%B0-%E8%BF%9B%E7%A8%8B%E4%BF%9D%E6%B4%BB/</loc>
     
     <lastmod>2016-08-28T06:32:59.980Z</lastmod>
@@ -236,13 +243,6 @@
     <loc>http://yoursite.com/2016/08/14/Android%E7%AC%94%E8%AE%B0-Android%E5%90%AF%E5%8A%A8%E8%BF%87%E7%A8%8B/</loc>
     
     <lastmod>2016-08-28T06:21:19.367Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2016/08/14/Android%E7%AC%94%E8%AE%B0-Android%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/</loc>
-    
-    <lastmod>2016-08-28T06:04:47.395Z</lastmod>
     
   </url>
   

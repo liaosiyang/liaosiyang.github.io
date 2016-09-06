@@ -18,7 +18,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/08/14/Android笔记-Android性能优化/index.html">
 <meta property="og:site_name" content="Be Level5 Coder">
 <meta property="og:description" content="看了很多有关Android性能优化的资料，基本上说的点都差不多。异步，内存泄漏，视图布局等等。后来发现原来Google发布了Android性能优化典范的专题。国人也发布了相关的翻译文档，强，无敌！性能优化是Android开发中一个很重要的课题，Android系统常年被诟病不如IOS好用，我觉得这并不是Android系统的问题，而是开发者开发的应用很多都没有优化，只是实现了其功能而已。(还有一点是好">
-<meta property="og:updated_time" content="2016-08-28T06:04:47.395Z">
+<meta property="og:updated_time" content="2016-09-06T03:58:42.279Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android笔记-Android性能优化">
 <meta name="twitter:description" content="看了很多有关Android性能优化的资料，基本上说的点都差不多。异步，内存泄漏，视图布局等等。后来发现原来Google发布了Android性能优化典范的专题。国人也发布了相关的翻译文档，强，无敌！性能优化是Android开发中一个很重要的课题，Android系统常年被诟病不如IOS好用，我觉得这并不是Android系统的问题，而是开发者开发的应用很多都没有优化，只是实现了其功能而已。(还有一点是好">
@@ -172,6 +172,38 @@
 <a id="more"></a>
 <p><a href="http://hukai.me/android-performance-patterns/" target="_blank" rel="external">Android性能优化典范 - 第1季</a><br><a href="http://hukai.me/android-performance-patterns-season-2/" target="_blank" rel="external">Android性能优化典范 - 第2季</a><br><a href="http://hukai.me/android-performance-patterns-season-3/" target="_blank" rel="external">Android性能优化典范 - 第3季</a><br><a href="http://hukai.me/android-performance-patterns-season-4/" target="_blank" rel="external">Android性能优化典范 - 第4季</a><br><a href="http://hukai.me/android-performance-patterns-season-5/" target="_blank" rel="external">Android性能优化典范 - 第5季</a></p>
 <p>细化与补充：<br><a href="http://hukai.me/android-performance-render/" target="_blank" rel="external">Android性能优化之渲染篇</a><br><a href="http://hukai.me/android-performance-compute/" target="_blank" rel="external">Android性能优化之运算篇</a><br><a href="http://hukai.me/android-performance-memory/" target="_blank" rel="external">Android性能优化之内存篇</a><br><a href="http://hukai.me/android-performance-battery/" target="_blank" rel="external">Android性能优化之电量篇</a><br><a href="http://hukai.me/android-performance-oom/" target="_blank" rel="external">Android内存优化之OOM篇</a></p>
+<h2 id="Android性能优化方法"><a href="#Android性能优化方法" class="headerlink" title="Android性能优化方法"></a>Android性能优化方法</h2><h3 id="布局优化"><a href="#布局优化" class="headerlink" title="布局优化"></a>布局优化</h3><ol>
+<li>减少布局中无用的控件和层级；</li>
+<li>有选择地使用性能较低的ViewGruop(这个考虑的优先级低于嵌套布局)；</li>
+<li>使用&lt; include &gt;标签重用布局；</li>
+<li>使用&lt; meger &gt;标签减少布局的层级；</li>
+<li>使用&lt; ViewStub &gt;标签实现按需加载；</li>
+</ol>
+<h3 id="绘制优化"><a href="#绘制优化" class="headerlink" title="绘制优化"></a>绘制优化</h3><ol>
+<li>onDraw方法中不要创建新的局部对象，因为onDraw方法可能会被频繁地调用，这样会在一瞬间产生大量临时对象，不仅占用内存而且还会导致系统频繁gc。</li>
+<li>onDraw方法中不要做耗时的任务，也不能执行成千上万次循环操作。View的绘制帧率保持60fps是最佳的，这就要求每帧的绘制时间不超过16ms，所以要尽量降低onDraw方法的复杂度。</li>
+</ol>
+<h3 id="内存泄漏优化"><a href="#内存泄漏优化" class="headerlink" title="内存泄漏优化"></a>内存泄漏优化</h3><ol>
+<li>开发时注意有可能导致内存泄漏的代码，比如静态变量、单例模式、内部类、属性动画等；</li>
+<li>使用内存泄漏分析工具MAT、LeakCanary分析内存泄漏的原因，修改内存泄漏的代码；</li>
+</ol>
+<h3 id="ListView-建议使用RecyclerView-和Bitmap优化"><a href="#ListView-建议使用RecyclerView-和Bitmap优化" class="headerlink" title="ListView(建议使用RecyclerView)和Bitmap优化"></a>ListView(建议使用RecyclerView)和Bitmap优化</h3><ol>
+<li>采用ViewHolder避免在getView中执行耗时操作；</li>
+<li>复用convertView，减少View的创建；</li>
+<li>分页加载，根据列表的滑动状态来控制异步任务的执行频率；</li>
+<li>通过BitmapFactory.Options来根据需要对图片进行采样，根据采样率加载缩小后的图片；</li>
+</ol>
+<h3 id="线程优化"><a href="#线程优化" class="headerlink" title="线程优化"></a>线程优化</h3><ol>
+<li>采用线程池，避免程序中存在大量的线程，避免了线程的创建和销毁所带来的性能开销，同时线程池还能控制线程池的最大并发数，避免大量线程互相抢占系统资源从而导致阻塞现象的发生。</li>
+</ol>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><ol>
+<li>避免创建过多的对象；</li>
+<li>不要使用枚举，常量使用final static修饰；</li>
+<li>使用Android特有的数据结构，比如SparseArray,ArrayMap等，它们的性能更高；</li>
+<li>使用缓存策略，LruCache、DiskLruCache等减少异步任务的执行。</li>
+<li>尽量使用静态内部类，避免由于内部类而导致的内存泄漏。</li>
+<li>适当使用软引用和弱引用；</li>
+</ol>
 <p>PS:今天Wings夺得TI6总冠军，看到他们从最初的小弟，勤学苦练，最终凭实力问鼎西雅图。原来现实生活中也存在着梦想照进现实的例子。所以呢？努力啊!</p>
 
   </div>
