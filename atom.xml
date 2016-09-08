@@ -51,42 +51,6 @@
   </entry>
   
   <entry>
-    <title>写在校招之前</title>
-    <link href="http://yoursite.com/2016/08/30/%E5%86%99%E5%9C%A8%E6%A0%A1%E6%8B%9B%E4%B9%8B%E5%89%8D/"/>
-    <id>http://yoursite.com/2016/08/30/写在校招之前/</id>
-    <published>2016-08-30T10:53:46.000Z</published>
-    <updated>2016-09-06T04:00:43.862Z</updated>
-    
-    <content type="html"><![CDATA[<p>今天，也就是8月30的下午接到了第一个面试的电话，突然发现校招就这么来了，不觉有些感慨。<br>NPC: 9月已经到来，欢迎进入校招团队副本。请拿好武器，带好药剂，接收Boss们的制裁吧。校招感觉上就是魔兽世界里的团队副本，并且还是H难度的，对于我来说。<br>利用校招之前的空余时间，写点什么吧，就像佛丁在冰冠冰川前鼓舞将士们的话语：无论是生是死，我们都是为荣誉而战。</p>
-<a id="more"></a>
-<p>今天的面试是魔都某公司打来的，问的东西并不难，时间也不长，但自己的表现还是感觉不太行。<br>首先是比较紧张吧，死宅男的属性暴露无疑。一直都是一个人默默地写代码，打字聊天远远多过现实中和人说的话，所以紧张的情绪还是难以控制。<br>以前也有过面试的经历，也总是提醒过自己别紧张，看开点，但在面试时还是能清楚的听到胸腔里的咚咚声。这个问题好像真的无解了，可能还是与人交流较少有关系吧。明天找个人陪我搞下模拟面试试试，或许会有点用。</p>
-<p>其次就是如何回答一个宽泛的问题，比如今天的问题Handler机制、Retrofit原理，找到回答的切入点很关键。问Handler机制直接说Handler就很难答了，切入点应该是Looper、MessageQueue。Retrofit原理应该就直接回答动态代理，而运行时注解的原理可以先放着，等深入问的时候再答，而不要一上来就什么都想说，最后又什么都轻言带过。要是开口切入点就不好，后面的话就很难接了。</p>
-<p>最后比较惊喜的是面试官看了我的GitHub和个人博客，GitHub上有个人的项目，功能简单但花了2个月时间，使用到的技术也比较新，RxJava、Dagger2等都用上了。个人博客是学习的总结，再说搭建个人博客和总结知识真不是一件容易的事。这两点可以证明自己有在努力，应该可以加分吧。    </p>
-<p>其实写知识总结一方面也是为了让自己能够在面试场上对答如流，因为很早之前就领会过知识在脑海中但是无法流畅地表述出来的情况。</p>
-<p>一方面是知识不牢固，比如今天回答事件分发机制ViewGroup的三个相关方法居然一时脑抽，没想出来onTouchEvent用英语怎么拼，因为前面两个方法dispatchTouchEvent和onInterceptTouchEvent，感觉第三个方法快到嘴边了又老感觉不对，总感觉应该是onXXXTouchEvent的格式。</p>
-<p>二是我觉得写出来应该就能代表对知识掌握起码80%吧，就能讲出来吧。现实情况还真不是这样，说话确实是门艺术，而像我这种常年生活在二次元的宅男来说，根本就没注意点这方面的天赋点啊！所以每次回答干巴巴的。所以写出来并不代表能讲出来，这给了我一个警示，功夫还不够啊！</p>
-<p>就写这么多吧，总结一下就2点：</p>
-<ul>
-<li>赶紧找人陪我做模拟面试，很急很关键。</li>
-<li>再把知识过一边，想想回答相关知识的切入点。</li>
-</ul>
-<p>好吧，勇士们，进攻！</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;今天，也就是8月30的下午接到了第一个面试的电话，突然发现校招就这么来了，不觉有些感慨。&lt;br&gt;NPC: 9月已经到来，欢迎进入校招团队副本。请拿好武器，带好药剂，接收Boss们的制裁吧。校招感觉上就是魔兽世界里的团队副本，并且还是H难度的，对于我来说。&lt;br&gt;利用校招之前的空余时间，写点什么吧，就像佛丁在冰冠冰川前鼓舞将士们的话语：无论是生是死，我们都是为荣誉而战。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="其它" scheme="http://yoursite.com/categories/%E5%85%B6%E5%AE%83/"/>
-    
-    
-      <category term="other" scheme="http://yoursite.com/tags/other/"/>
-    
-  </entry>
-  
-  <entry>
     <title>ReactNative笔记-ReactNative</title>
     <link href="http://yoursite.com/2016/08/24/ReactNative%E7%AC%94%E8%AE%B0-ReactNative/"/>
     <id>http://yoursite.com/2016/08/24/ReactNative笔记-ReactNative/</id>
@@ -329,7 +293,7 @@
     <link href="http://yoursite.com/2016/08/19/Android%E7%AC%94%E8%AE%B0-DataBinding/"/>
     <id>http://yoursite.com/2016/08/19/Android笔记-DataBinding/</id>
     <published>2016-08-19T01:24:20.000Z</published>
-    <updated>2016-08-28T04:07:32.114Z</updated>
+    <updated>2016-09-08T02:28:30.909Z</updated>
     
     <content type="html"><![CDATA[<p>最近在项目中试用了一下DataBinding技术，觉得还蛮好用的。这项技术是Google对于MVVM在Android上的一种实现，已经装载进Android SDK里面了，足可见Google对它的重视。<br>当前还只是测试版本，使用的人不多，但我觉得这种技术应该会成为Android主流开发技术之一。<br>Data Binding，数据绑定，是Google对MVVM在Android上的一种实现，可以直接绑定数据到xml中，并实现自动刷新。</p>
 <a id="more"></a>
@@ -364,15 +328,17 @@
 <h1 id="DataBinding工作原理"><a href="#DataBinding工作原理" class="headerlink" title="DataBinding工作原理"></a>DataBinding工作原理</h1><h3 id="1-进入并处理布局文件"><a href="#1-进入并处理布局文件" class="headerlink" title="1.进入并处理布局文件"></a>1.进入并处理布局文件</h3><p>其中的“进入”指的是，在你的程序代码正在被编译的过程中，它会找出布局文件中所有关于它的内容，获取到它所需要的信息，然后删掉它们，删掉它们的原因是如果继续存着视图系统并不认得它们。</p>
 <h3 id="2-通过语法来解析这些表达式"><a href="#2-通过语法来解析这些表达式" class="headerlink" title="2.通过语法来解析这些表达式"></a>2.通过语法来解析这些表达式</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;TextView android:visibility=<span class="string">"@user.isAdmin ? View.VISIBLE : View.GONE&#125;"</span>/&gt;</div></pre></td></tr></table></figure>  
 <p>这个 user 是一个索引，之后的 View 也是个索引，另一个 View 也是个索引。它们都是索引或称标识，像是真正的对象，在这边我们真的不知道它们是什么。同样的对于 VISIBLE 和 GONE 也是如此。这里面有对象数据访问，是一个三目运算表达式，这就是目前为止我们所理解到的。而对于DataBinding库，它的工作就是从这些文件中把东西解析出来，了解里面有什么。</p>
-<h3 id="在代码编译过程中解决相关依赖问题"><a href="#在代码编译过程中解决相关依赖问题" class="headerlink" title="在代码编译过程中解决相关依赖问题"></a>在代码编译过程中解决相关依赖问题</h3><p>在这一步中，例如，我们看一下 user.isAdmin，想：“这是在运行时获取到 User 类对象中的一个布尔值。”</p>
-<h3 id="Data-Binding-会自动生成一些类文件"><a href="#Data-Binding-会自动生成一些类文件" class="headerlink" title="Data Binding 会自动生成一些类文件"></a>Data Binding 会自动生成一些类文件</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ActivityTestBinding</span> <span class="keyword">extends</span> <span class="title">android</span>.<span class="title">databinding</span>.<span class="title">ViewDataBinding</span>  </span>&#123;</div><div class="line">       ...</div><div class="line">       <span class="comment">//很长的一个类在build/generated/source/apt中编译时生成</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>  
+<h3 id="3-在代码编译过程中解决相关依赖问题"><a href="#3-在代码编译过程中解决相关依赖问题" class="headerlink" title="3.在代码编译过程中解决相关依赖问题"></a>3.在代码编译过程中解决相关依赖问题</h3><p>在这一步中，例如，我们看一下 user.isAdmin，想：“这是在运行时获取到 User 类对象中的一个布尔值。”</p>
+<h3 id="4-Data-Binding-会自动生成一些类文件"><a href="#4-Data-Binding-会自动生成一些类文件" class="headerlink" title="4.Data Binding 会自动生成一些类文件"></a>4.Data Binding 会自动生成一些类文件</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ActivityTestBinding</span> <span class="keyword">extends</span> <span class="title">android</span>.<span class="title">databinding</span>.<span class="title">ViewDataBinding</span>  </span>&#123;</div><div class="line">       ...</div><div class="line">       <span class="comment">//很长的一个类在build/generated/source/apt中编译时生成</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>  
 <h2 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h2><ul>
-<li>不用自己在Java文件中引用View对象，减少耦合。也不必给使用的每一个View取一个ID。</li>
-<li>数据更新时，View的内容也会更新，而不必自己操控。</li>
+<li><p>不用自己在Java文件中引用View对象，减少耦合。也不必给使用的每一个View取一个ID。</p>
+</li>
+<li><p>数据更新时，View的内容也会更新，而不必自己操控。</p>
+</li>
 <li><p>性能提升<br>当你在Android系统上使用代码findById，它实际上是对它对所有子内容说：“孩子，你能通过ID找到这个 view 吗？”那个孩子（子内容）问自己的孩子，然后找不到就去问下一个孩子，直到你找到了这个 view。然后，你的代码findViewById对于其他 View 会再重新做一次，重复的没必要的同样事情再次发生。</p>
 <p>当你初始化数据绑定时，我们实际上知道在编译时我们对应的 View，所以我们有一个方法来找到我们想要的所有 View。我们只需遍历布局层次一次，就可以收集到所有的 View。这个计算只对于一个布局只发生一次。当第二次我们需要另一个其中的子 View 的时候，不需要再次遍历所有子 View，因为我们已经找到了所有的 View。</p>
 </li>
-<li><p>保证执行在主线程<br>这里的一个方便的是，你不必在UI线程进行通知：你可以在任何你想要的线程上进行更新。然而，我们仍然是在将在UI线程进行响应，所以你必须小心。此外，对于列表请不要这样做的！对于列表，你仍然应该在UI线程上通知，因为我们将在UI线程读取到，并且我们将需要在UI线程读取到它的长度，我们不做任何类型的同步。你可能已经知道这样对于 RecyclerView 和ListView会造成很多问题。这是因为列表本身的问题，而不是因为这些类的问题。</p>
+<li><p>保证执行在主线程<br>这里的一个方便的是，你不必在UI线程进行通知：你可以在任何你想要的线程上进行更新。</p>
 </li>
 </ul>
 <h2 id="劣势"><a href="#劣势" class="headerlink" title="劣势"></a>劣势</h2><ul>
@@ -528,7 +494,7 @@
     <link href="http://yoursite.com/2016/08/17/Android%E7%AC%94%E8%AE%B0-Realm/"/>
     <id>http://yoursite.com/2016/08/17/Android笔记-Realm/</id>
     <published>2016-08-17T01:42:26.000Z</published>
-    <updated>2016-08-28T04:17:40.838Z</updated>
+    <updated>2016-09-08T04:33:10.217Z</updated>
     
     <content type="html"><![CDATA[<p>在使用SQLite的时候总是要自己写一层接口出来方便使用，使用了Realm之后发现简单多了，并且据说在普通操作上，Realm的速度最快要达到原始的SQLite的10倍。<br>官方介绍：Realm，为移动设备而生，替代 SQLite 和 Core Data。为你省下数周的时间和数千行的代码，帮你创造出更棒的用户体验。<br>对于我这种数据库渣写SQL语句是很头疼的问题，简单的还好，复杂的真是要命。Realm的这种简单的流式API实在是太好用了。</p>
 <a id="more"></a>
@@ -549,7 +515,7 @@
 <li>持久性(Durability)<br>持久性意味着当系统或介质发生故障时，确保已提交事务的更新不能丢失。即一旦一个事务提交，DBMS保证它对数据库中数据的改变应该是永久性的，即对已提交事务的更新能恢复。持久性通过数据库备份和恢复来保证。</li>
 </ol>
 <h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>使用起来也很方便，比如我们想要缓存用户的信息。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserPo</span> <span class="keyword">extends</span> <span class="title">RealmObject</span> </span>&#123;</div><div class="line">    <span class="meta">@PrimaryKey</span></div><div class="line">    <span class="keyword">public</span> String id;</div><div class="line">    <span class="keyword">public</span> String name;</div><div class="line">    <span class="keyword">public</span> String headerUrl;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">long</span> updateTime;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>这样就对应了一个表，其主键为id，另外有3列name, headerUrl, 以及updateTime。</p>
-<p>如果想要查询，只需要：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">UserPo user = getRealm().where(UserPo.class)</div><div class="line">    .equalTo(<span class="string">"id"</span>, userId)</div><div class="line">    .findFirst();</div></pre></td></tr></table></figure><br>如果要写入一条记录：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">User user = <span class="keyword">new</span> UserPo();</div><div class="line">user.setName(userInfoEntity.getNickName());</div><div class="line">user.setId(userInfoEntity.getUserId());</div><div class="line">user.setHeaderUrl(userInfoEntity.getHeaderImageUrl());</div><div class="line">user.setUpdateTime(System.currentTimeMillis());</div><div class="line"></div><div class="line">getRealm().beginTransaction();</div><div class="line">getRealm().copyToRealmOrUpdate(user);</div><div class="line">getRealm().commitTransaction();</div></pre></td></tr></table></figure><br>如果想要直接和Retrofit一起应用：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 结合 Realm, Retrofit 和 RxJava (使用了Retrolambda以简化符号)的例子。</span></div><div class="line"><span class="comment">// 读取所有Person，然后与从GitHub获取的最新状态merge到一起</span></div><div class="line">Realm realm = Realm.getDefaultInstance();</div><div class="line">GitHubService api = retrofit.create(GitHubService.class);</div><div class="line">realm.where(Person.class).isNotNull(<span class="string">"username"</span>).findAllAsync().asObservable()</div><div class="line">    .filter(persons.isLoaded)</div><div class="line">    .flatMap(persons -&gt; Observable.from(persons))</div><div class="line">    .flatMap(person -&gt; api.user(person.getGithubUserName())</div><div class="line">    .observeOn(AndroidSchedulers.mainThread())</div><div class="line">    .subscribe(user -&gt; showUser(user));</div></pre></td></tr></table></figure></p>
+<p>如果想要查询，只需要：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">UserPo user = getRealm().where(UserPo.class)</div><div class="line">    .equalTo(<span class="string">"id"</span>, userId)</div><div class="line">    .findFirst();</div></pre></td></tr></table></figure><br>如果要写入一条记录：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">User user = <span class="keyword">new</span> UserPo();</div><div class="line">user.setName(userInfoEntity.getNickName());</div><div class="line">user.setId(userInfoEntity.getUserId());</div><div class="line">user.setHeaderUrl(userInfoEntity.getHeaderImageUrl());</div><div class="line">user.setUpdateTime(System.currentTimeMillis());</div><div class="line"></div><div class="line">getRealm().beginTransaction();</div><div class="line">getRealm().copyToRealmOrUpdate(user);</div><div class="line">getRealm().commitTransaction();</div></pre></td></tr></table></figure><br>如果想要直接和Retrofit、RxJava一起应用：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 结合 Realm, Retrofit 和 RxJava (使用了Retrolambda以简化符号)的例子。</span></div><div class="line"><span class="comment">// 读取所有Person，然后与从GitHub获取的最新状态merge到一起</span></div><div class="line">Realm realm = Realm.getDefaultInstance();</div><div class="line">GitHubService api = retrofit.create(GitHubService.class);</div><div class="line">realm.where(Person.class).isNotNull(<span class="string">"username"</span>).findAllAsync().asObservable()</div><div class="line">    .filter(persons.isLoaded)</div><div class="line">    .flatMap(persons -&gt; Observable.from(persons))</div><div class="line">    .flatMap(person -&gt; api.user(person.getGithubUserName())</div><div class="line">    .observeOn(AndroidSchedulers.mainThread())</div><div class="line">    .subscribe(user -&gt; showUser(user));</div></pre></td></tr></table></figure></p>
 <h2 id="异步查询"><a href="#异步查询" class="headerlink" title="异步查询"></a>异步查询</h2><p>可以使用后台线程进行查询。</p>
 <p>Realm 的大部分查询都非常快——快到可以使用在UI线程中而感觉不到延迟。但如果需要进行非常复杂的查询或者在大量数据中进行查询，那么使用后台线程进行查询将会是一个不错的主意。</p>
 <h3 id="创建异步查询"><a href="#创建异步查询" class="headerlink" title="创建异步查询"></a>创建异步查询</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">RealmResults&lt;User&gt; result = realm.where(User.class)</div><div class="line">                          .equalTo(<span class="string">"name"</span>, <span class="string">"John"</span>)</div><div class="line">                          .or()</div><div class="line">                          .equalTo(<span class="string">"name"</span>, <span class="string">"Peter"</span>)</div><div class="line">                          .findAllAsync();</div></pre></td></tr></table></figure>
@@ -1567,6 +1533,144 @@
       <category term="Android系统" scheme="http://yoursite.com/tags/Android%E7%B3%BB%E7%BB%9F/"/>
     
       <category term="Handler机制" scheme="http://yoursite.com/tags/Handler%E6%9C%BA%E5%88%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android笔记-Intent和Binder</title>
+    <link href="http://yoursite.com/2016/08/09/Android%E7%AC%94%E8%AE%B0-Intent%E5%92%8CBinder/"/>
+    <id>http://yoursite.com/2016/08/09/Android笔记-Intent和Binder/</id>
+    <published>2016-08-09T13:32:49.000Z</published>
+    <updated>2016-09-01T04:14:06.933Z</updated>
+    
+    <content type="html"><![CDATA[<p>Intent负责对应用中一次操作的动作、动作涉及数据、附加数据进行描述，Android则根据此Intent的描述，负责找到对应的组件，将 Intent传递给调用的组件，并完成组件的调用。Intent相当于组件通讯的媒介。<br>Binder是Android 系统进程间通信(IPC)方式之一。当应用启动时就会启动一个Binder线程池。Linux已经拥有管道,socket等IPC 手段,却还要倚赖Binder来实现进程间通信,说明Binder具有无可比拟的优势。<br>这里总结一下Intent的使用和解析，和Binder基本模型(Binder太复杂，还没理解透)。</p>
+<a id="more"></a>
+<h1 id="Intent"><a href="#Intent" class="headerlink" title="Intent"></a>Intent</h1><p>Intent 是一个消息传递对象，您可以使用它从其他应用组件请求操作。尽管 Intent 可以通过多种方式促进组件之间的通信，但其基本用例主要包括以下三个：</p>
+<ul>
+<li>启动 Activity</li>
+<li>启动服务</li>
+<li>发送广播</li>
+</ul>
+<h2 id="Intent-类型"><a href="#Intent-类型" class="headerlink" title="Intent 类型"></a>Intent 类型</h2><p>Intent 分为两种类型：</p>
+<ol>
+<li>显式 Intent ：按名称（完全限定类名）指定要启动的组件。通常，您会在自己的应用中使用显式 Intent 来启动组件，这是因为您知道要启动的 Activity 或服务的类名。例如，启动新 Activity 以响应用户操作，或者启动服务以在后台下载文件。</li>
+<li>隐式 Intent ：不会指定特定的组件，而是声明要执行的常规操作，从而允许其他应用中的组件来处理它。例如，如需在地图上向用户显示位置，则可以使用隐式 Intent，请求另一具有此功能的应用在地图上显示指定的位置。</li>
+</ol>
+<p>创建显式 Intent 启动 Activity 或服务时，系统将立即启动 Intent 对象中指定的应用组件。</p>
+<p>创建隐式 Intent 时，Android 系统通过将 Intent 的内容与在设备上其他应用的清单文件中声明的 Intent 过滤器进行比较，从而找到要启动的相应组件。Intent如果 Intent 与 Intent 过滤器匹配，则系统将启动该组件，并将其传递给对象。如果多个 Intent 过滤器兼容，则系统会显示一个对话框，支持用户选取要使用的应用。</p>
+<p>为了确保应用的安全性，启动 Service 时，请始终使用显式 Intent，且不要为服务声明 Intent 过滤器。使用隐式 Intent 启动服务存在安全隐患，因为您无法确定哪些服务将响应 Intent，且用户无法看到哪些服务已启动。从 Android 5.0（API 级别 21）开始，如果使用隐式 Intent 调用 bindService()，系统会抛出异常。</p>
+<h2 id="构建-Intent"><a href="#构建-Intent" class="headerlink" title="构建 Intent"></a>构建 Intent</h2><p>Intent 对象携带了 Android 系统用来确定要启动哪个组件的信息（例如，准确的组件名称或应当接收该 Intent 的组件类别），以及收件人组件为了正确执行操作而使用的信息（例如，要采取的操作以及要处理的数据）。</p>
+<p>Intent 中包含的主要信息如下：</p>
+<h3 id="组件名称"><a href="#组件名称" class="headerlink" title="组件名称"></a>组件名称</h3><p>要启动的组件名称。这是可选项，但也是构建显式 Intent 的一项重要信息，这意味着 Intent 应当仅传递给由组件名称定义的应用组件。如果没有组件名称，则 Intent 是隐式的，且系统将根据其他 Intent 信息（例如，以下所述的操作、数据和类别）决定哪个组件应当接收 Intent。因此，如需在应用中启动特定的组件，则应指定该组件的名称。</p>
+<h3 id="操作-action"><a href="#操作-action" class="headerlink" title="操作(action)"></a>操作(action)</h3><p>指定要执行的通用操作（例如，“ACTION_VIEW”或“ACTION_SEND”）的字符串。对于广播 Intent，这是指已发生且正在报告的操作。操作在很大程度上决定了其余 Intent 的构成，特别是数据和 extra 中包含的内容。</p>
+<h3 id="数据-data"><a href="#数据-data" class="headerlink" title="数据(data)"></a>数据(data)</h3><p>引用待操作数据和/或该数据 MIME 类型的 URI（Uri 对象）。提供的数据类型通常由 Intent 的操作决定。例如，如果操作是 ACTION_EDIT，则数据应包含待编辑文档的 URI。</p>
+<p>要仅设置数据 URI，请调用 setData()。要仅设置 MIME 类型，请调用 setType()。如有必要，可以使用 setDataAndType() 同时显式设置二者。</p>
+<h3 id="类别"><a href="#类别" class="headerlink" title="类别"></a>类别</h3><p>一个包含应处理 Intent 组件类型的附加信息的字符串。您可以将任意数量的类别描述放入一个 Intent 中，但大多数 Intent 均不需要类别。比如：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">CATEGORY_BROWSABLE</div></pre></td></tr></table></figure><br>目标 Activity 允许本身通过 Web 浏览器启动，以显示链接引用的数据，如图像或电子邮件。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">CATEGORY_LAUNCHER</div></pre></td></tr></table></figure><br>该 Activity 是任务的初始 Activity，在系统的应用启动器中列出。</p>
+<h3 id="Extra"><a href="#Extra" class="headerlink" title="Extra"></a>Extra</h3><p>携带完成请求操作所需的附加信息的键值对。正如某些操作使用特定类型的数据 URI 一样，有些操作也使用特定的附加数据。</p>
+<p>您可以使用各种 putExtra() 方法添加附加数据，每种方法均接受两个参数：键名和值。您还可以创建一个包含所有附加数据的 Bundle 对象，然后使用 putExtras() 将 Bundle 插入 Intent 中。</p>
+<p>例如，使用 ACTION_SEND创建用于发送电子邮件的 Intent 时，可以使用 EXTRA_EMAIL 键指定“目标”收件人，并使用 EXTRA_SUBJECT 键指定“主题”。</p>
+<h3 id="标志"><a href="#标志" class="headerlink" title="标志"></a>标志</h3><p>在 Intent 类中定义的、充当 Intent 元数据的标志。标志可以指示 Android 系统如何启动 Activity（例如，Activity 应属于哪个 任务 ），以及启动之后如何处理（例如，它是否属于最近的 Activity 列表）。</p>
+<h2 id="接收隐式-Intent"><a href="#接收隐式-Intent" class="headerlink" title="接收隐式 Intent"></a>接收隐式 Intent</h2><p>要公布应用可以接收哪些隐式 Intent，请在清单文件中使用 <intent-filter> 元素为每个应用组件声明一个或多个 Intent 过滤器。每个 Intent 过滤器均根据 Intent 的操作、数据和类别指定自身接受的 Intent 类型。仅当隐式 Intent 可以通过 Intent 过滤器之一传递时，系统才会将该 Intent 传递给应用组件。</intent-filter></p>
+<p>应用组件应当为自身可执行的每个独特作业声明单独的过滤器。例如，图像库应用中的一个 Activity 可能会有两个过滤器，分别用于查看图像和编辑图像。 当 Activity 启动时，它将检查 Intent 并根据 Intent 中的信息决定具体的行为（例如，是否显示编辑器控件）。每个 Intent 过滤器均由应用清单文件中的 &lt; intent-filter &gt; 元素定义，并嵌套在相应的应用组件（例如，&lt; activity &gt; 元素）中。在 &lt; intent-filter &gt; 内部，您可以使用以下三个元素中的一个或多个指定要接受的 Intent 类型：</p>
+<h3 id="lt-action-gt"><a href="#lt-action-gt" class="headerlink" title="&lt; action &gt;"></a>&lt; action &gt;</h3><p>在 name 属性中，声明接受的 Intent 操作。该值必须是操作的文本字符串值，而不是类常量。</p>
+<h3 id="lt-data-gt"><a href="#lt-data-gt" class="headerlink" title="&lt; data &gt;"></a>&lt; data &gt;</h3><p>使用一个或多个指定 数据 URI（scheme、host、port、path 等）各个方面和 MIME 类型的属性，声明接受的数据类型。</p>
+<h3 id="lt-category-gt"><a href="#lt-category-gt" class="headerlink" title="&lt; category &gt;"></a>&lt; category &gt;</h3><p>在 name 属性中，声明接受的 Intent 类别。该值必须是操作的文本字符串值，而不是类常量。</p>
+<p>注意：为了接收隐式 Intent，必须将 CATEGORY_DEFAULT 类别包括在 Intent 过滤器中。方法 startActivity() 和 startActivityForResult() 将按照已申明 [CATEGORY_DEFAULT]) 类别的方式处理所有 Intent。 如果未在 Intent 过滤器中声明此类别，则隐式 Intent 不会解析为你的 Activity。</p>
+<h2 id="PendingIntent"><a href="#PendingIntent" class="headerlink" title="PendingIntent"></a>PendingIntent</h2><p>PendingIntent 对象是 Intent 对象的包装器。PendingIntent 的主要目的是授权外部应用使用包含的 Intent，就像是从应用本身的进程中执行的一样。</p>
+<p>待定 Intent 的主要用例包括：</p>
+<ul>
+<li>声明用户使用您的通知执行操作时所要执行的 Intent（Android 系统的 NotificationManager 执行 Intent）。</li>
+<li>声明用户使用您的应用小工具执行操作时要执行的 Intent（主屏幕应用执行 Intent）。</li>
+<li>声明未来某一特定时间要执行的 Intent（Android 系统的 AlarmManager 执行 Intent）。</li>
+</ul>
+<p>由于每个 Intent 对象均设计为由特定类型的应用组件进行处理（Activity、Service 或 BroadcastReceiver），因此还必须基于相同的考虑因素创建PendingIntent。</p>
+<p>使用待定 Intent 时，应用不会使用调用（如 startActivity()）执行该 Intent。相反，通过调用相应的创建器方法创建 PendingIntent时，必须声明所需的组件类型：</p>
+<ul>
+<li>PendingIntent.getActivity()，适用于启动 Activity 的 Intent。</li>
+<li>PendingIntent.getService()，适用于启动 Service 的 Intent。</li>
+<li>PendingIntent.getBroadcast()，适用于启动 BroadcastReceiver 的 Intent。</li>
+</ul>
+<h2 id="Intent-解析"><a href="#Intent-解析" class="headerlink" title="Intent 解析"></a>Intent 解析</h2><p>当系统收到隐式 Intent 以启动 Activity 时，它根据以下三个方面将该 Intent 与 Intent 过滤器进行比较，搜索该 Intent 的最佳 Activity：</p>
+<ul>
+<li>Intent 操作</li>
+<li>Intent 数据（URI 和数据类型）</li>
+<li>Intent 类别</li>
+</ul>
+<h3 id="操作测试-Action-Test"><a href="#操作测试-Action-Test" class="headerlink" title="操作测试(Action Test)"></a>操作测试(Action Test)</h3><ul>
+<li>要指定接受的 Intent 操作， Intent 过滤器既可以不声明任何 &lt; action &gt; 元素，也可以声明多个此类元素。</li>
+<li>要通过此过滤器，Intent 中指定的操作必须与过滤器中列出的某一操作匹配。</li>
+<li>如果该过滤器未列出任何操作，则 Intent 没有任何匹配项，因此所有 Intent 均无法通过测试。</li>
+</ul>
+<p>总结：Action匹配规则要求Intent中的action存在且必须和过滤规则中其中一个action相同。</p>
+<h3 id="类别测试-Category-Test"><a href="#类别测试-Category-Test" class="headerlink" title="类别测试(Category Test)"></a>类别测试(Category Test)</h3><ul>
+<li>要指定接受的 Intent 类别， Intent 过滤器既可以不声明任何 &lt; category &gt;元素，也可以声明多个此类元素。</li>
+<li>若要 Intent 通过类别测试，则 Intent 中的每个类别均必须与过滤器中的类别匹配。</li>
+<li>反之则未必然，Intent 过滤器声明的类别可以超出 Intent 中指定的数量，且 Intent仍会通过测试。</li>
+<li>因此，不含类别的 Intent 应当始终会通过此测试，无论过滤器中声明何种类别均是如此。</li>
+<li>Android 会自动将 CATEGORY_DEFAULT 类别传递给 startActivity()<br>和 startActivityForResult() 的所有隐式 Intent。因此，如需 Activity 接收隐式 Intent，则必须 “android.intent.category.DEFAULT” 的类别包括在其 Intent 过滤器中。</li>
+</ul>
+<p>总结：Intent中可以没有category,但是如果有category,不管有几个，每个都要能够和过滤规则中任何一个category对应。</p>
+<h3 id="数据测试-Data-Test"><a href="#数据测试-Data-Test" class="headerlink" title="数据测试(Data Test)"></a>数据测试(Data Test)</h3><ul>
+<li>要指定接受的 Intent 数据， Intent 过滤器既可以不声明任何 &lt; data &gt; 元素，也可以声明多个此类元素。</li>
+<li>数据测试会将 Intent 中的 URI 和 MIME 类型与过滤器中指定的 URI 和 MIME 类型进行比较。</li>
+<li>仅当过滤器未指定任何 URI 或 MIME 类型时，不含 URI 和 MIME 类型的 Intent 才会通过测试。</li>
+<li>对于包含 URI、但不含 MIME 类型（既未显式声明，也无法通过 URI 推断得出）的 Intent，仅当其 URI 与过滤器的 URI 格式匹配、且过滤器同样未指定 MIME 类型时，才会通过测试。</li>
+<li>仅当过滤器列出相同的 MIME 类型且未指定 URI 格式时，包含 MIME 类型、但不含 URI 的 Intent 才会通过测试。</li>
+<li>仅当 MIME 类型与过滤器中列出的类型匹配时，包含 URI 和 MIME 类型（通过显式声明，或可以通过 URI 推断得出）的 Intent 才会通过测试的 MIME 类型部分。如果 Intent 的 URI 与过滤器中的 URI 匹配，或者如果 Intent 具有 content: 或 file: URI 且过滤器未指定 URI，则 Intent 会通过测试的 URI 部分。换而言之，如果过滤器仅列出 MIME 类型，则假定组件支持 content: 和 file: 数据。</li>
+</ul>
+<p>总结： data匹配规则和action类似，要求data数据能够完全匹配过滤规则中的某一个data。</p>
+<h2 id="Android多进程"><a href="#Android多进程" class="headerlink" title="Android多进程"></a>Android多进程</h2><p>首先，在Android中使用多进程只有一种方法，那就是给四大组件在AndroidManifest中指定android：process属性。<br>也就是说我们无法给一个线程或者一个实体类指定运行时所在的进程。<br>当进程名以“：”开头的进程属于当前应用的私有进程，其他应用的组件不可以和它跑在同一个进程中，而进程名不以“：”开头的进程属于全局进程，其他应用可以通过ShareUID方式可以和它跑在同一个进程中。</p>
+<p>多线程带来的问题：所有运行在不同进程的四大组件，只要它们之间需要通过内存来共享数据，都会共享失败，这也是多进程所带来的主要影响。一般情况会造成如下几个方面的问题：</p>
+<ol>
+<li>静态成员和单例模式完全失效；</li>
+<li>线程同步机制完全失效；</li>
+<li>SharePreferences的可靠性下降；</li>
+<li>Application会多次创建。</li>
+</ol>
+<h1 id="Binder"><a href="#Binder" class="headerlink" title="Binder"></a>Binder</h1><p>首先Binder是Android系统进程间通信(IPC)方式之一。</p>
+<ul>
+<li>Binder是实现IBinder接口的一个类；</li>
+<li>从Android Framework角度来说，它是ServiceManager连接各种Manager(ActivityManagr、WindowManager)和相应ManagerSerivce的桥梁。</li>
+<li>从应用层来说，Binder是客户端和服务端进行通信的媒介，当bindService时，服务端会返回一个包含了服务端业务调用的Binder对象，通过这个Binder对象，客户端就可以获取服务端提供的服务或数据。</li>
+</ul>
+<p>除了Binder,Android还支持Socket，通过Socket也可以实现任意两个终端之间的通信，当然一个设备上两个进程通过Socket通信自然也是可以的。</p>
+<p>Binder使用Client－Server通信方式。Binder框架定义了四个角色：Server,Client,ServiceManager以及Binder驱动。其中Server,Client,ServiceManager运行于用户空间，驱动运行于内核空间。Binder驱动程序提供设备文件/dev/binder与用户空间交互，Client、Server和Service Manager通过open和ioctl文件操作函数与Binder驱动程序进行通信。</p>
+<p>Server创建了Binder实体，为其取一个字符形式，可读易记的名字，将这个Binder连同名字以数据包的形式通过Binder驱动发送给ServiceManager，通知ServiceManager注册一个名字为XX的Binder，它位于Server中。</p>
+<p>驱动为这个穿过进程边界的Binder创建位于内核中的实体结点以及ServiceManager对实体的引用，将名字以及新建的引用打包给ServiceManager。</p>
+<p>ServiceManager收数据包后，从中取出名字和引用填入一张查找表中。但是一个Server若向ServiceManager注册自己Binder就必须通过0这个引用和ServiceManager的Binder通信。</p>
+<p>Server向ServiceManager注册了Binder实体及其名字后，Client就可以通过名字获得该Binder的引用了。Clent也利用保留的0号引用向ServiceManager请求访问某个Binder：我申请名字叫XX的Binder的引用。</p>
+<p>ServiceManager收到这个连接请求，从请求数据包里获得Binder的名字，在查找表里找到该名字对应的条目，从条目中取出Binder引用，将该引用作为回复发送给发起请求的Client。</p>
+<p>当然，不是所有的Binder都需要注册给ServiceManager广而告之的。Server端可以通过已经建立的Binder连接将创建的Binder实体传给Client，当然这条已经建立的Binder连接必须是通过实名Binder实现。由于这个Binder没有向ServiceManager注册名字，所以是匿名Binder。Client将会收到这个匿名Binder的引用，通过这个引用向位于Server中的实体发送请求。匿名Binder为通信双方建立一条私密通道，只要Server没有把匿名Binder发给别的进程，别的进程就无法通过穷举或猜测等任何方式获得该Binder的引用，向该Binder发送请求。</p>
+<h2 id="服务器端"><a href="#服务器端" class="headerlink" title="服务器端"></a>服务器端</h2><p>一个Binder服务器就是一个Binder类的对象。当创建一个Binder对象后，内部就会开启一个线程，这个线程用户接收binder驱动发送的消息，收到消息后，会执行相关的服务代码。</p>
+<h2 id="Binder驱动"><a href="#Binder驱动" class="headerlink" title="Binder驱动"></a>Binder驱动</h2><p>当服务端成功创建一个Binder对象后，Binder驱动也会相应创建一个mRemote对象，该对象的类型也是Binder类，客户就可以借助这个mRemote对象来访问远程服务。</p>
+<h2 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h2><p>客户端要想访问Binder的远程服务，就必须获取远程服务的Binder对象在binder驱动层对应的binder驱动层对应的mRemote引用。当获取到mRemote对象的引用后，就可以调用相应Binde对象的服务了。</p>
+<p>客户是通过Binder驱动来调用服务端的相关服务。首先，在服务端创建一个Binder对象，接着客户端通过获取Binder驱动中Binder对象的引用来调用服务端的服务。在Binder机制中正是借着Binder驱动将不同进程间的组件bind(粘连)在一起，实现通信。</p>
+<h1 id="Android跨进程通讯"><a href="#Android跨进程通讯" class="headerlink" title="Android跨进程通讯"></a>Android跨进程通讯</h1><p>Linux内核实际上没有从一个用户空间到另一个用户空间直接拷贝的函数，需要先用copy_from_user()拷贝到内核空间，再用copy_to_user()拷贝到另一个用户空间。为了实现用户空间到用户空间的拷贝，mmap()分配的内存除了映射进了接收方进程里，还映射进了内核空间。所以调用copy_from_user()将数据拷贝进内核空间也相当于拷贝进了接收方的用户空间，这就是Binder只需一次拷贝的‘秘密’。</p>
+<p>最底层的是Android的ashmen(Anonymous shared memory)机制，它负责辅助实现内存的分配，以及跨进程所需要的内存共享。AIDL(android interface definition language)对Binder的使用进行了封装，可以让开发者方便的进行方法的远程调用。Intent是最高一层的抽象，方便开发者进行常用的跨进程调用。</p>
+<p>使用共享内存通信的一个显而易见的好处是效率高，因为进程可以直接读写内存，而不需要任何数据的拷贝。对于像管道和消息队列等通信方式，则需要在内核和用户空间进行四次的数据拷贝，而共享内存则只拷贝两次内存数据：一次从输入文件到共享内存区，另一次从共享内存到输出文件。实际上，进程之间在共享内存时，并不总是读写少量数据后就解除映射，有新的通信时，再重新建立共享内存区域，而是保持共享区域，直到通信完成为止，这样，数据内容一直保存在共享内存中，并没有写回文件。共享内存中的内容往往是在解除内存映射时才写回文件的。因此，采用共享内存的通信方式效率是非常高的。</p>
+<p>进程通讯方式:</p>
+<ol>
+<li>AIDL</li>
+<li>Messenger(对AIDL进行了封装)</li>
+<li>Broadcast</li>
+<li>ContentProvider</li>
+<li>Socket</li>
+</ol>
+<h2 id="AIDL"><a href="#AIDL" class="headerlink" title="AIDL"></a>AIDL</h2><p>AIDL实现进程间通信的流程分为客户端和服务端两个方面。</p>
+<h3 id="服务端"><a href="#服务端" class="headerlink" title="服务端"></a>服务端</h3><p>服务端首先要创建一个Service用来监听客户端的连接请求，然后创建一个AIDL文件，将暴露给客户端的接口在这个AIDL文件中声明，最后在Service中实现这个接口即可。</p>
+<h3 id="客户端-1"><a href="#客户端-1" class="headerlink" title="客户端"></a>客户端</h3><p>客户端需要绑定服务端的Service，绑定成功后，将服务端返回Binder对抗性转化成AIDL接口所属的类型，接着就可以调用AIDL中的方法了。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Intent负责对应用中一次操作的动作、动作涉及数据、附加数据进行描述，Android则根据此Intent的描述，负责找到对应的组件，将 Intent传递给调用的组件，并完成组件的调用。Intent相当于组件通讯的媒介。&lt;br&gt;Binder是Android 系统进程间通信(IPC)方式之一。当应用启动时就会启动一个Binder线程池。Linux已经拥有管道,socket等IPC 手段,却还要倚赖Binder来实现进程间通信,说明Binder具有无可比拟的优势。&lt;br&gt;这里总结一下Intent的使用和解析，和Binder基本模型(Binder太复杂，还没理解透)。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Android笔记" scheme="http://yoursite.com/categories/Android%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Android系统" scheme="http://yoursite.com/tags/Android%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
