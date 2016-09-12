@@ -16,17 +16,17 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android笔记-Android启动过程">
 <meta property="og:url" content="http://yoursite.com/2016/08/14/Android笔记-Android启动过程/index.html">
-<meta property="og:site_name" content="Be Level5 Coder">
+<meta property="og:site_name" content="Let's fly far away">
 <meta property="og:description" content="自买了《深入理解Android系统》，这本书就一直呆在角落里吃灰。大概是我对于创建那些花花绿绿的界面，实现有趣实用的功能比较感兴趣，对于这种上来就是一大页的源码，好多都还是c++的不太感兴趣，并且阅读了之后基本上留不下什么印象。对于Android开发来说，要是别人问Android系统和应用是怎么启动的，那应该怎么解释。。。参照书里的知识和网上的资料总结一下Android启动过程和Activity启">
 <meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/0_1313305334OkCc.gif">
-<meta property="og:updated_time" content="2016-08-28T06:21:19.367Z">
+<meta property="og:updated_time" content="2016-09-09T03:57:07.075Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android笔记-Android启动过程">
 <meta name="twitter:description" content="自买了《深入理解Android系统》，这本书就一直呆在角落里吃灰。大概是我对于创建那些花花绿绿的界面，实现有趣实用的功能比较感兴趣，对于这种上来就是一大页的源码，好多都还是c++的不太感兴趣，并且阅读了之后基本上留不下什么印象。对于Android开发来说，要是别人问Android系统和应用是怎么启动的，那应该怎么解释。。。参照书里的知识和网上的资料总结一下Android启动过程和Activity启">
 <meta name="twitter:image" content="http://ob5qdb9lc.bkt.clouddn.com/0_1313305334OkCc.gif">
 
 
-  <link rel="alternative" href="/atom.xml" title="Be Level5 Coder" type="application/atom+xml">
+  <link rel="alternative" href="/atom.xml" title="Let&#39;s fly far away" type="application/atom+xml">
 
 
 
@@ -51,13 +51,13 @@
     <span class="icon-bar"></span>
     <span class="icon-bar"></span>
   </button>
-  <a class="title" href="/">Be Level5 Coder</a>
+  <a class="title" href="/">Let&#39;s fly far away</a>
 </div>
 
   <div class="main-container">
     <div class="sidebar">
   <div class="header">
-    <h1 class="title"><a href="/">Be Level5 Coder</a></h1>
+    <h1 class="title"><a href="/">Let&#39;s fly far away</a></h1>
     
     <div class="info">
       <div class="content">
@@ -209,7 +209,7 @@
 <p>Zygote是一个虚拟器进程，正如我们在前一个步骤所说的在系统引导的时候启动。Zygote预加载以及初始化核心库类。通常，这些核心类一般是只读的，也是Android SDK或者核心框架的一部分。在Java虚拟机中，每一个实例都有它自己的核心库类文件和堆对象的拷贝。</p>
 <p>在这个阶段，你可以看到启动动画。</p>
 <h2 id="系统服务"><a href="#系统服务" class="headerlink" title="系统服务"></a>系统服务</h2><p>在Android系统中，System进程和系统服务有着重要的关系。几乎所有的Android核心服务都在这个进程中，例如ActivityManagerService、WindowManagerService等。System进程是系统进程，也就是整个Android Framework所在的进程，用于启动Android系统。其核心进程是system_server。</p>
-<p>system_server是Android中Java层的两大支柱进程只有，另一个就是专门负责孵化Java进程的Zygote。如果这两大支柱其中之一崩溃了，都会导致Java层的崩溃。如果Java层崩溃了，则Linux系统中的进程init会重新启动system_server和Zygote，以重新建立Android的Java层。</p>
+<p>system_server是Android中Java层的两大支柱进程之一，另一个就是专门负责孵化Java进程的Zygote。如果这两大支柱其中之一崩溃了，都会导致Java层的崩溃。如果Java层崩溃了，则Linux系统中的进程init会重新启动system_server和Zygote，以重新建立Android的Java层。</p>
 <p>完成了上面几步之后，运行环境请求Zygote运行系统服务。系统服务同时使用native以及java编写，系统服务可以认为是一个进程。同一个系统服务在Android SDK可以以System Services形式获得。系统服务包含了所有的System Services。</p>
 <p>Zygote创建新的进程去启动系统服务。<br>核心服务：</p>
 <ol>
@@ -300,7 +300,7 @@
 
           <div class="main-footer">
   
-    © 2016 Be Level5 Coder - Powered by <a href="http://hexo.io" target="_blank">Hexo</a> - Theme <a href="https://github.com/denjones/hexo-theme-chan" target="_blank">Chan</a>
+    © 2016 Let&#39;s fly far away - Powered by <a href="http://hexo.io" target="_blank">Hexo</a> - Theme <a href="https://github.com/denjones/hexo-theme-chan" target="_blank">Chan</a>
   
 </div>
 

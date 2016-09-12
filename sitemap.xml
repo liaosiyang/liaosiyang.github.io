@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2016/08/08/TCP-IP%E7%AC%94%E8%AE%B0-Http%E5%8D%8F%E8%AE%AE/</loc>
+    
+    <lastmod>2016-09-12T14:25:03.291Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/08/14/Android%E7%AC%94%E8%AE%B0-Android%E5%90%AF%E5%8A%A8%E8%BF%87%E7%A8%8B/</loc>
+    
+    <lastmod>2016-09-09T03:57:07.075Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2016/08/17/Android%E7%AC%94%E8%AE%B0-Realm/</loc>
     
     <lastmod>2016-09-08T04:33:10.217Z</lastmod>
@@ -121,13 +135,6 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2016/08/08/TCP-IP%E7%AC%94%E8%AE%B0-Http%E5%8D%8F%E8%AE%AE/</loc>
-    
-    <lastmod>2016-08-30T06:33:58.416Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/2016/08/03/Java%E7%AC%94%E8%AE%B0-%E5%86%85%E5%AD%98%E5%8C%BA%E5%9F%9F%E4%B8%8E%E5%86%85%E5%AD%98%E6%BA%A2%E5%87%BA%E5%BC%82%E5%B8%B8/</loc>
     
     <lastmod>2016-08-29T09:33:59.026Z</lastmod>
@@ -243,13 +250,6 @@
     <loc>http://yoursite.com/2016/08/12/Android%E7%AC%94%E8%AE%B0-%E8%BF%9B%E7%A8%8B%E4%BF%9D%E6%B4%BB/</loc>
     
     <lastmod>2016-08-28T06:32:59.980Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2016/08/14/Android%E7%AC%94%E8%AE%B0-Android%E5%90%AF%E5%8A%A8%E8%BF%87%E7%A8%8B/</loc>
-    
-    <lastmod>2016-08-28T06:21:19.367Z</lastmod>
     
   </url>
   
