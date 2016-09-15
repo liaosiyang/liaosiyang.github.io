@@ -8,16 +8,20 @@
 
 <title>
   
-    标签: Android热补丁
+    Android笔记-动画机制
   
 </title>
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Let's fly far away">
-<meta property="og:url" content="http://yoursite.com/tags/Android热补丁/index.html">
+<meta name="description" content="以前在学习Cocos2d-x对它丰富的动画机制很是欣赏，游戏引擎中动画系统是重头戏。在平时的Android开发中有时也需要用到动画效果，比如之前做的点菜功能会有一个菜品飘到购物车里的一个动画。再比如现在手机上直播给主播点赞的话会有小星星飘出来，这也用到了动画。动画效果让App更富有活力和表现力。总结一下Android动画相关知识。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android笔记-动画机制">
+<meta property="og:url" content="http://yoursite.com/2016/09/13/Android笔记-动画机制/index.html">
 <meta property="og:site_name" content="Let's fly far away">
+<meta property="og:description" content="以前在学习Cocos2d-x对它丰富的动画机制很是欣赏，游戏引擎中动画系统是重头戏。在平时的Android开发中有时也需要用到动画效果，比如之前做的点菜功能会有一个菜品飘到购物车里的一个动画。再比如现在手机上直播给主播点赞的话会有小星星飘出来，这也用到了动画。动画效果让App更富有活力和表现力。总结一下Android动画相关知识。">
+<meta property="og:updated_time" content="2016-09-15T03:19:28.829Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Let's fly far away">
+<meta name="twitter:title" content="Android笔记-动画机制">
+<meta name="twitter:description" content="以前在学习Cocos2d-x对它丰富的动画机制很是欣赏，游戏引擎中动画系统是重头戏。在平时的Android开发中有时也需要用到动画效果，比如之前做的点菜功能会有一个菜品飘到购物车里的一个动画。再比如现在手机上直播给主播点赞的话会有小星星飘出来，这也用到了动画。动画效果让App更富有活力和表现力。总结一下Android动画相关知识。">
 
 
   <link rel="alternative" href="/atom.xml" title="Let&#39;s fly far away" type="application/atom+xml">
@@ -137,56 +141,98 @@
       
         <div style="max-width: 1000px">
       
-          <h1>Android热补丁</h1>
-
-
+          <article id="post-Android笔记-动画机制" class="article article-type-post">
+  
+    <h1 class="article-header">
+      Android笔记-动画机制
+    </h1>
   
   
-    <div class="post-list">
-  
 
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2016/08/22/Android笔记-热补丁/" >
-  Android笔记-热补丁
-</a>
-
-      </h3>
-      
-
-      <div class="article-info">
-        <a href="/2016/08/22/Android笔记-热补丁/"><span class="article-date">
-  2016-08-22
+  <div class="article-info">
+    <span class="article-date">
+  2016-09-13
 </span>
-</a>
-        
+
+    
 	<span class="article-category tagcloud">
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Android笔记/">Android笔记</a></li></ul>
 	</span>
 
 
-        
+    
 	<span class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android热补丁/">Android热补丁</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android系统/">Android系统</a></li></ul>
 	</span>
 
 
-      </div>
-      <div class="article-entry">
-        
-          <p>继插件化后，热补丁技术在2015年开始爆发，目前已经是非常热门的Android开发技术。其中比较著名的有淘宝的Dexposed、支付宝的AndFix以及Qzone的超级热补丁方案，还有最新的微信Tinker方案。<br>我的理解是Android热补丁就是不需要重新安装应用，而是动态地修复应用的Bug的技术，这项技术非常实用，毕竟每天都会看到一两个应用提示要求更新，而更新仅仅是修复一两个Bug,但却要下载几十M的APK文件，花费几分钟的时间安装，麻烦！</p>
-          <p>
-            <a href="/2016/08/22/Android笔记-热补丁/">
-              阅读全文
-            </a>
-          </p>
-        
-      </div>
-    </div>
+  </div>
+  <div class="article-entry">
+    <p>以前在学习Cocos2d-x对它丰富的动画机制很是欣赏，游戏引擎中动画系统是重头戏。在平时的Android开发中有时也需要用到动画效果，比如之前做的点菜功能会有一个菜品飘到购物车里的一个动画。<br>再比如现在手机上直播给主播点赞的话会有小星星飘出来，这也用到了动画。动画效果让App更富有活力和表现力。<br>总结一下Android动画相关知识。</p>
+<a id="more"></a>
+<h1 id="补间动画-Tween-Animation"><a href="#补间动画-Tween-Animation" class="headerlink" title="补间动画(Tween Animation)"></a>补间动画(Tween Animation)</h1><p>补间动画分为四类：</p>
+<ol>
+<li>TranslateAnimation平移动画，效果是移动View;</li>
+<li>ScaleAnimation缩放动画，效果是放大或缩小View;</li>
+<li>RotateAnimation旋转动画，效果是旋转View;</li>
+<li>AlphaAnimation透明度动画，效果是改变View的透明度；</li>
+</ol>
+<p>补间动画一般在res/anim中声明，可以声明单个动画，也可以声明一系列动画。<br>&lt; set &gt;标签表示动画集合，可以包含若干个动画，内部也是可以嵌套其他动画集合。<br>&lt; set &gt;中可以指定插值器来控制动画播放的速度，比如加减速播放插值器，还可以指定集合中的动画是否共享一个插值器。</p>
+<p>除了可以在XML文件中定义动画外，还可以通过Java代码来定义。</p>
+<h1 id="帧动画-Frame-Animation"><a href="#帧动画-Frame-Animation" class="headerlink" title="帧动画(Frame Animation)"></a>帧动画(Frame Animation)</h1><p>帧动画是按照顺序播放一组图片。通常在XML文件中声明一个&lt; animation-list &gt;标签按顺序指定每一帧的图片，然后作为View的背景就行了。<br>可以设定设置播放次数，也可以设定循环播放。<br>帧动画使用比较简单，但容易引起OOM，所以在使用帧动画的时候要避免使用尺寸较大的图片。</p>
+<h1 id="属性动画-Property-Animation"><a href="#属性动画-Property-Animation" class="headerlink" title="属性动画(Property Animation)"></a>属性动画(Property Animation)</h1><p>属性动画是Android3.0加入的，属性动画的效果是将一个对象的属性值在一定时间内转变成另一个属性值，注意是对象而不是View。<br>比如对象的背景色属性，View的backgroundColor，就可以在指定时间内由红色变成蓝色。同样还有rotation、translation、scale、alpha等，就可以实现旋转、平移、缩放、透明度等属性的变化。<br>属性动画要求对象的属性必须拥有get、set方法，实际上属性动画就是根据传递的该属性的初始值和最终值，和设定的动画效果不断地调用set方法。</p>
+<p>可以使用Java代码实现，也可以通过XML文件定义，和补间动画一样，也是放在&lt; set &gt;标签中。实际上补间动画完全可以由属性动画取代，只需注意兼容Android3.0以下版本的问题。</p>
+<h2 id="插值器和估值器"><a href="#插值器和估值器" class="headerlink" title="插值器和估值器"></a>插值器和估值器</h2><p>插值器作用是控制动画的播放速度。<br>系统预置的插值器有：</p>
+<ol>
+<li>LinearInterpolator线性插值器：匀速动画</li>
+<li>AcclerateDecelerateInterpolator加速减速插值器：动画两头慢中间快</li>
+<li>DecelerateInterpolator减速插值器：动画越来越慢</li>
+</ol>
+<p>估值器作用是计算动画播放时的属性值。<br>系统预置的估值器有：</p>
+<ol>
+<li>IntEvaluator 整型估值器</li>
+<li>FloatEvaluator 浮点型估值器</li>
+<li>ArgbEvaluator ARGBcolor值估值器</li>
+</ol>
+<p>插值器和估值器联合使用是实现非匀速动画的手段，比如实现一个小星星从屏幕底部飘到顶部并且飘动的速度越来越快(插值器)，路径是贝塞尔曲线(估值器)。</p>
+<h2 id="监听器"><a href="#监听器" class="headerlink" title="监听器"></a>监听器</h2><p>属性动画还可以使用监听器监听动画的播放过程，主要有2个接口：AnimatorUpdateListener和AnimatorListener。<br>AnimatorUpdateListener可以监听动画的开始、结束、取消以及重置播放。<br>AnimatorListener可以到监听动画每一帧。</p>
+<h1 id="使用动画注意事项"><a href="#使用动画注意事项" class="headerlink" title="使用动画注意事项"></a>使用动画注意事项</h1><ol>
+<li>OOM：帧动画容易出现OOM问题，尽量避免使用较多且较大的图片。</li>
+<li>内存泄漏：属性动画有无限循环的类型，应该在Activity退出时停止，否则将导致Activity无法释放。补间动画不存在此问题。</li>
+<li>硬件加速：为了提高动画的流畅度，建议开启硬件加速。</li>
+</ol>
 
-  
-    </div>
-  
+  </div>
+  <footer class="article-footer">
+    
+
+    
+
+  </footer>
+</article>
+
+
+  <link rel="stylesheet" href="http://static.duoshuo.com/styles/embed.default.css?349d9313.css">
+  <!-- 多说评论框 start -->
+  <div class="ds-thread" data-thread-key="2016/09/13/Android笔记-动画机制/" data-title="Android笔记-动画机制" data-url="/2016/09/13/Android笔记-动画机制/"></div>
+  <!-- 多说评论框 end -->
+  <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+  <script type="text/javascript">
+    var duoshuoQuery = {
+      short_name: "SION"
+    };
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';
+      ds.async = true;
+      ds.src = (document.location.protocol == 'https:'
+        ? 'https:'
+        : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+  <!-- 多说公共JS代码 end -->
 
 
 
