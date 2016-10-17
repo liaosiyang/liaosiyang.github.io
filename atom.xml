@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-09-15T03:19:28.829Z</updated>
+  <updated>2016-10-17T15:45:25.012Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,53 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ijkplayer笔记-ijkplayer编译</title>
+    <link href="http://yoursite.com/2016/10/17/ijkplayer%E7%AC%94%E8%AE%B0-ijkplayer%E7%BC%96%E8%AF%91/"/>
+    <id>http://yoursite.com/2016/10/17/ijkplayer笔记-ijkplayer编译/</id>
+    <published>2016-10-17T14:17:50.000Z</published>
+    <updated>2016-10-17T15:45:25.012Z</updated>
+    
+    <content type="html"><![CDATA[<p>想要使用ijkplayer，第一步就是编译.so库文件，在Windows环境下无法编译，只能在Linux或者OS X操作系统上完成。<br>在编译ijkplayer时遇到了一些坑，在此总结一下ijkplayer的编译过程。<br>当然这里编译的是Android所需的.so文件，IOS的以后有机会再学习。</p>
+<a id="more"></a>
+<h3 id="虚拟机"><a href="#虚拟机" class="headerlink" title="虚拟机"></a>虚拟机</h3><p>虚拟机我采用Ubuntu Kylin 16.04，这里遇到的一个坑就是在公司安装的虚拟机需要安装VMware Tools才能在Windows和Ubuntu之间复制文件，我这里使用的是一个完善的版本。</p>
+<h3 id="安装git和yasm"><a href="#安装git和yasm" class="headerlink" title="安装git和yasm"></a>安装git和yasm</h3><ul>
+<li>安装git:<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install git</div></pre></td></tr></table></figure></li>
+<li>安装yasm:<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install yasm</div></pre></td></tr></table></figure></li>
+<li>安装时可能提示需要更新，那么在命令行输入yes或者：<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get update</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="配置SDK和NDK"><a href="#配置SDK和NDK" class="headerlink" title="配置SDK和NDK"></a>配置SDK和NDK</h3><p>如果不在Ubuntu中开发，只是编译的话不用配置JDK。<br>这里把NDK和SDK在Windows上下载后复制到Ubuntu中/opt/mylib文件夹下</p>
+<ul>
+<li>SDK<br><a href="http://sdk.android-studio.org/" target="_blank" rel="external">下载地址</a><br>直接解压：<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tar zxvf android-sdk_r24.4.1-linux.tgz</div></pre></td></tr></table></figure></li>
+<li>NDK<br><a href="http://dl.google.com/android/ndk/android-ndk-r10e-linux-x86_64.bin" target="_blank" rel="external">下载地址</a><br>直接安装：<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./android-ndk-r10e-linux-x86_64.bin</div></pre></td></tr></table></figure></li>
+<li>环境配置<br>打开profile：<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo gedit /etc/profile</div></pre></td></tr></table></figure>
+在前面或者末尾增加：<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">export ANDROID_NDK=/home/sion/mylib/android-ndk-r10e/</div><div class="line">export ANDROID_SDK=/home/sion/mylib/android-sdk-linux/</div><div class="line">export PATH=$PATH:$ANDROID_NDK</div></pre></td></tr></table></figure>
+保存：<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">source /etc/profile</div></pre></td></tr></table></figure>
+SDK一般没什么问题，NDK安装后用ndk-build命令检查是否安装成功，提示command not found就表示环境配置失败，一般是路径问题。</li>
+</ul>
+<h3 id="编译ijkplayer"><a href="#编译ijkplayer" class="headerlink" title="编译ijkplayer"></a>编译ijkplayer</h3><p>这里最好按GitHub上提示的来，好多教程写的不完全，有的步骤省掉了后面就坑了。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git clone https:<span class="comment">//github.com/Bilibili/ijkplayer.git ijkplayer-android</span></div><div class="line">cd ijkplayer-android</div><div class="line">git checkout -B latest k0.5.1</div></pre></td></tr></table></figure><br>注意最后一行命令切到最新版本，如果没有切的话后面编译会出错。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./init-android.sh</div></pre></td></tr></table></figure>
+<p>这个耗时很长，跟网络无关，下载速度就是很慢，但一般没什么问题。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">cd android/contrib</div><div class="line">./compile-ffmpeg.sh clean</div><div class="line">./compile-ffmpeg.sh all</div></pre></td></tr></table></figure>
+<p>最容易出问题的就是这里，第三行容易出现NDK未找到或者需要NDKr10 or later的问题，主要就是NDK环境没配对或者没切换到最新版本。<br>GitHub上面好多issues都是这个问题。<br>我还遇到提示……export: (64-bit): bad variable name这个问题，<a href="https://github.com/Bilibili/ijkplayer/issues/1165" target="_blank" rel="external">解决方法</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd ..</div><div class="line">./compile-ijk.sh all</div></pre></td></tr></table></figure>
+<p>这一步耗时也很长，完成后就生成了很多不同平台的.so文件，每个平台都有3个：libijkffmpeg.so、libijkplayer.so、libijksdl.so。我遇到的一个坑就是只生成了libijkffmpeg.so，问题出在第一步没切换到最新版本，所以只能重来。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;想要使用ijkplayer，第一步就是编译.so库文件，在Windows环境下无法编译，只能在Linux或者OS X操作系统上完成。&lt;br&gt;在编译ijkplayer时遇到了一些坑，在此总结一下ijkplayer的编译过程。&lt;br&gt;当然这里编译的是Android所需的.so文件，IOS的以后有机会再学习。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="ijkplayer笔记" scheme="http://yoursite.com/categories/ijkplayer%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="ijkplayer" scheme="http://yoursite.com/tags/ijkplayer/"/>
+    
+  </entry>
   
   <entry>
     <title>Android笔记-动画机制</title>
@@ -549,7 +596,7 @@
     <link href="http://yoursite.com/2016/08/17/Android%E7%AC%94%E8%AE%B0-Realm/"/>
     <id>http://yoursite.com/2016/08/17/Android笔记-Realm/</id>
     <published>2016-08-17T01:42:26.000Z</published>
-    <updated>2016-09-08T04:33:10.217Z</updated>
+    <updated>2016-09-21T10:39:40.920Z</updated>
     
     <content type="html"><![CDATA[<p>在使用SQLite的时候总是要自己写一层接口出来方便使用，使用了Realm之后发现简单多了，并且据说在普通操作上，Realm的速度最快要达到原始的SQLite的10倍。<br>官方介绍：Realm，为移动设备而生，替代 SQLite 和 Core Data。为你省下数周的时间和数千行的代码，帮你创造出更棒的用户体验。<br>对于我这种数据库渣写SQL语句是很头疼的问题，简单的还好，复杂的真是要命。Realm的这种简单的流式API实在是太好用了。</p>
 <a id="more"></a>
@@ -608,7 +655,7 @@
     
       <category term="Android开发框架" scheme="http://yoursite.com/tags/Android%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6/"/>
     
-      <category term="Reaml" scheme="http://yoursite.com/tags/Reaml/"/>
+      <category term="Realm" scheme="http://yoursite.com/tags/Realm/"/>
     
   </entry>
   
@@ -1535,59 +1582,6 @@
       <category term="Android系统" scheme="http://yoursite.com/tags/Android%E7%B3%BB%E7%BB%9F/"/>
     
       <category term="View事件分发机制" scheme="http://yoursite.com/tags/View%E4%BA%8B%E4%BB%B6%E5%88%86%E5%8F%91%E6%9C%BA%E5%88%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Android笔记-Handler机制</title>
-    <link href="http://yoursite.com/2016/08/10/Android%E7%AC%94%E8%AE%B0-Handler%E6%9C%BA%E5%88%B6/"/>
-    <id>http://yoursite.com/2016/08/10/Android笔记-Handler机制/</id>
-    <published>2016-08-10T11:37:00.000Z</published>
-    <updated>2016-09-02T13:56:06.495Z</updated>
-    
-    <content type="html"><![CDATA[<p>Android开发中多线程是随处都可以见到的，Android系统提供了Handler机制来处理线程间信息的交换。<br>实际上，当一个应用启动时，就会在当前进程的主线程里建立一个消息循环，好确保主线程的存活并源源不断地处理任务。<br>Android 系统为我们提供了 Looper，Handler，MessageQueue 来实现线程任务模型。<br>总结一下Android系统中的Handler机制。</p>
-<a id="more"></a>
-<h1 id="Handler机制"><a href="#Handler机制" class="headerlink" title="Handler机制"></a>Handler机制</h1><p>Hnadler机制其实从某种意义上而言，是基于生产者-消费者模式展开的。<br>如UI线程就是消费者，在其他线程（生产者）上通过 Handler 将要执行的Callback ，迁移到UI线程上执行。</p>
-<p>生产者（Work thread）需要将任务提交给缓冲区(MessageQueue)，而这个提交工作是由 post(Runnable runable) 或者 postDelayed(Runnable r, long delayMillis) 等post方法来执行。而消费者（UI thread）通过 looper 不断地从 MessageQueue 中取出任务再执行。</p>
-<h2 id="Message"><a href="#Message" class="headerlink" title="Message"></a>Message</h2><p>生成和消费的内容就是Message。<br>Message部分代码:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">Message</span> <span class="keyword">implements</span> <span class="title">Parcelable</span> </span>&#123;</div><div class="line"><span class="comment">/**</span></div><div class="line"> * User-defined message code so that the recipient can identify</div><div class="line"> * what this message is about. Each &#123;<span class="doctag">@link</span> Handler&#125; has its own name-space</div><div class="line"> * for message codes, so you do not need to worry about yours conflicting</div><div class="line"> * with other handlers.</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="keyword">int</span> what;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * arg1 and arg2 are lower-cost alternatives to using</div><div class="line"> * &#123;<span class="doctag">@link</span> #setData(Bundle) setData()&#125; if you only need to store a</div><div class="line"> * few integer values.</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="keyword">int</span> arg1;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * arg1 and arg2 are lower-cost alternatives to using</div><div class="line"> * &#123;<span class="doctag">@link</span> #setData(Bundle) setData()&#125; if you only need to store a</div><div class="line"> * few integer values.</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="keyword">int</span> arg2;</div><div class="line"></div><div class="line">......</div><div class="line"></div><div class="line"><span class="comment">/*package*/</span> Bundle data;</div><div class="line"></div><div class="line"><span class="comment">/*package*/</span> Handler target;</div><div class="line"></div><div class="line"><span class="comment">/*package*/</span> Runnable callback;</div><div class="line"></div><div class="line"><span class="comment">// sometimes we store linked lists of these things</span></div><div class="line"><span class="comment">/*package*/</span> Message next;</div></pre></td></tr></table></figure></p>
-<ul>
-<li>Message是实现了Parcelable序列化接口的。</li>
-<li>what标明 Message 的类型 Id，调用者可以通过这个 what 做出相应的逻辑调整。</li>
-<li>arg1 arg2 以及后面的 object 是用作额外数据传输的。</li>
-<li>target 则定义了是哪一个消费者来处理哪一个 callback。因为一个 LooperThread 是允许存在多个 Handler 的，也就是多个消费者，而这些消息都被放置到一个 MessageQueue 队列中，target 就起到了区别它们的目的。callback 即实际要执行的东西。</li>
-<li>Message 同时提供了 obtain() 方法，不推荐使用 new Message() 的方法，而是重复回收利用 Message，和 ThreadPool 的原理类似。</li>
-</ul>
-<h2 id="MessageQueue"><a href="#MessageQueue" class="headerlink" title="MessageQueue"></a>MessageQueue</h2><p>MessageQueue就是存放Message的缓冲区，Android Framework 对其做了一些 JNI 的调用，来进行一些保护。<br>它是线程安全的，并提供了 Message next() 和 boolean enqueueMessage(Message msg, long when) 接口。<br>内部结构其实是单链表，单链表在插入和删除上比较有优势。</p>
-<p><img src="http://ob5qdb9lc.bkt.clouddn.com/IC709523.png" alt="Image"></p>
-<h2 id="Looper"><a href="#Looper" class="headerlink" title="Looper"></a>Looper</h2><p>Looper 主要负责的工作是从 MessageQueue 中取出要执行的任务，也就是维护一个消息循环。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//This is a typical example of the implementation of a Looper thread</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">LooperThread</span> <span class="keyword">extends</span> <span class="title">Thread</span> </span>&#123;</div><div class="line">    <span class="keyword">public</span> Handler mHandler;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">        Looper.prepare();</div><div class="line"></div><div class="line">       mHandler = <span class="keyword">new</span> Handler() &#123;</div><div class="line">           <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">handleMessage</span><span class="params">(Message msg)</span> </span>&#123;</div><div class="line">                <span class="comment">// process incoming messages here</span></div><div class="line">            &#125;</div><div class="line">        &#125;;</div><div class="line"></div><div class="line">        Looper.loop();</div><div class="line">   &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>Looper源码给出了Looper运作的示例(在Looper源码注释中)。</p>
-<p>通过Looper.prepare()进行相应的初始化工作，而Looper.loop()则正式开启消息循环。简单来说，Looper 使得一个普通的线程具备了消息循环的能力，也就是获取信息并消费的能力。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">prepare</span><span class="params">(<span class="keyword">boolean</span> quitAllowed)</span> </span>&#123;</div><div class="line">    <span class="keyword">if</span> (sThreadLocal.get() != <span class="keyword">null</span>) &#123;</div><div class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(<span class="string">"Only one Looper may be created per thread"</span>);</div><div class="line">    &#125;</div><div class="line">    sThreadLocal.set(<span class="keyword">new</span> Looper(quitAllowed));</div><div class="line">&#125;</div></pre></td></tr></table></figure><br> Looper.prepare()检查Looper是否创建，并保证其全局唯一性。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">loop</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">final</span> Looper me = myLooper();</div><div class="line">    <span class="keyword">if</span> (me == <span class="keyword">null</span>) &#123;</div><div class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(<span class="string">"No Looper; Looper.prepare() wasn't called on this thread."</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">final</span> MessageQueue queue = me.mQueue;</div><div class="line"></div><div class="line">    <span class="comment">// Make sure the identity of this thread is that of the local process,</span></div><div class="line">    <span class="comment">// and keep track of what that identity token actually is.</span></div><div class="line">    Binder.clearCallingIdentity();</div><div class="line">    <span class="keyword">final</span> <span class="keyword">long</span> ident = Binder.clearCallingIdentity();</div><div class="line"></div><div class="line">    <span class="keyword">for</span> (;;) &#123;  </div><div class="line">        <span class="comment">//不断循环校验Message是否为空，不为空就派发消息</span></div><div class="line">        ...</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        msg.recycleUnchecked();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>首先检查Looper创建，如果没有就抛出异常。</p>
-<p>进入消息循环，不断地从MessageQueue中获取要处理的消息，并通过方法进行消息派发。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">msg.target.dispatchMessage(msg)</div></pre></td></tr></table></figure></p>
-<p>loop方法会调用MessageQueue的next方法来获得信息，而next是一个阻塞操作，当没有消息，next方法会一直阻塞在那里，这也导致loop方法一直阻塞在那里。</p>
-<h2 id="Handler"><a href="#Handler" class="headerlink" title="Handler"></a>Handler</h2><p>Handler 在系统中承担的角色较为复杂，可是当做是全局的操作者。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="title">Handler</span><span class="params">(Callback callback, <span class="keyword">boolean</span> async)</span> </span>&#123;</div><div class="line"></div><div class="line">    ...</div><div class="line"></div><div class="line">    mLooper = Looper.myLooper();</div><div class="line">    <span class="keyword">if</span> (mLooper == <span class="keyword">null</span>) &#123;</div><div class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(</div><div class="line">            <span class="string">"Can't create handler inside thread that has not called Looper.prepare()"</span>);</div><div class="line">    &#125;</div><div class="line">    mQueue = mLooper.mQueue;</div><div class="line">    mCallback = callback;</div><div class="line">    mAsynchronous = async;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>Handler 必须依附于相应的Looper线程，如果线程没有Looper 或者 Looper 没有调用 prepare 方法，会抛出new RuntimeException(“Can’t create handler inside thread that has not called Looper.prepare()”)的异常。</p>
-<p>在这个构造函数里，赋值相应的 MessageQueue 和 callback。</p>
-<p>callback即在 Looper Thread 要执行的任务，一般情况可以是在其他线程耗时操作执行完成后，回到Looper Thread 上要执行的UI 更新操作。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Callback interface you can use when instantiating a Handler to avoid</div><div class="line"> * having to implement your own subclass of Handler.</div><div class="line"> *</div><div class="line"> * <span class="doctag">@param</span> msg A &#123;<span class="doctag">@link</span> android.os.Message Message&#125; object</div><div class="line"> * <span class="doctag">@return</span> True if no further handling is desired</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Callback</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">handleMessage</span><span class="params">(Message msg)</span></span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>Handler 通过 post，postDelayed 等等方法，来将相应的 Message 发送到消息队列中去，最后通过 sendMessageAtTime() 来进行发送，进行的工作特别简单，将 Message.target 指定为自己，同时将自己加入到队列中。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">sendMessageAtTime</span><span class="params">(Message msg, <span class="keyword">long</span> uptimeMillis)</span> </span>&#123;</div><div class="line">    MessageQueue queue = mQueue;</div><div class="line">    <span class="keyword">if</span> (queue == <span class="keyword">null</span>) &#123;</div><div class="line">        RuntimeException e = <span class="keyword">new</span> RuntimeException(</div><div class="line">                <span class="keyword">this</span> + <span class="string">" sendMessageAtTime() called with no mQueue"</span>);</div><div class="line">        Log.w(<span class="string">"Looper"</span>, e.getMessage(), e);</div><div class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> enqueueMessage(queue, msg, uptimeMillis);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">enqueueMessage</span><span class="params">(MessageQueue queue, Message msg, <span class="keyword">long</span> uptimeMillis)</span> </span>&#123;</div><div class="line">    msg.target = <span class="keyword">this</span>;</div><div class="line">    <span class="keyword">if</span> (mAsynchronous) &#123;</div><div class="line">        msg.setAsynchronous(<span class="keyword">true</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> queue.enqueueMessage(msg, uptimeMillis);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="机制总结"><a href="#机制总结" class="headerlink" title="机制总结"></a>机制总结</h2><ul>
-<li>Handler 消息处理者<br>它主要有两大作用：① 处理Message。② 发送Message，并将某个Message压入到MessageQueue中。</li>
-<li>Looper 轮询器<br>在 Looper里面的 loop()函数中有个死循环,它不断地从 MessageQueue 中取出一个Message,然后传给Handler进行处理,如此循环往复。假如队列为空,那么它会进入休眠。</li>
-<li>MessageQueue 消息队列<br>消息队列中含有多个Message，每个Message中包含了具体的调用信息。</li>
-<li>在每一个Application启动的时候，会给这个Application分配一个 ActivityThread ，就是我们所说的UI 线程。</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Android开发中多线程是随处都可以见到的，Android系统提供了Handler机制来处理线程间信息的交换。&lt;br&gt;实际上，当一个应用启动时，就会在当前进程的主线程里建立一个消息循环，好确保主线程的存活并源源不断地处理任务。&lt;br&gt;Android 系统为我们提供了 Looper，Handler，MessageQueue 来实现线程任务模型。&lt;br&gt;总结一下Android系统中的Handler机制。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Android笔记" scheme="http://yoursite.com/categories/Android%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="Android系统" scheme="http://yoursite.com/tags/Android%E7%B3%BB%E7%BB%9F/"/>
-    
-      <category term="Handler机制" scheme="http://yoursite.com/tags/Handler%E6%9C%BA%E5%88%B6/"/>
     
   </entry>
   

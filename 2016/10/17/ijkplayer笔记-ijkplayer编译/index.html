@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<title>
+  
+    ijkplayer笔记-ijkplayer编译
+  
+</title>
+
+<meta name="description" content="想要使用ijkplayer，第一步就是编译.so库文件，在Windows环境下无法编译，只能在Linux或者OS X操作系统上完成。在编译ijkplayer时遇到了一些坑，在此总结一下ijkplayer的编译过程。当然这里编译的是Android所需的.so文件，IOS的以后有机会再学习。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ijkplayer笔记-ijkplayer编译">
+<meta property="og:url" content="http://yoursite.com/2016/10/17/ijkplayer笔记-ijkplayer编译/index.html">
+<meta property="og:site_name" content="Let's fly far away">
+<meta property="og:description" content="想要使用ijkplayer，第一步就是编译.so库文件，在Windows环境下无法编译，只能在Linux或者OS X操作系统上完成。在编译ijkplayer时遇到了一些坑，在此总结一下ijkplayer的编译过程。当然这里编译的是Android所需的.so文件，IOS的以后有机会再学习。">
+<meta property="og:updated_time" content="2016-10-17T15:45:25.012Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ijkplayer笔记-ijkplayer编译">
+<meta name="twitter:description" content="想要使用ijkplayer，第一步就是编译.so库文件，在Windows环境下无法编译，只能在Linux或者OS X操作系统上完成。在编译ijkplayer时遇到了一些坑，在此总结一下ijkplayer的编译过程。当然这里编译的是Android所需的.so文件，IOS的以后有机会再学习。">
+
+
+  <link rel="alternative" href="/atom.xml" title="Let&#39;s fly far away" type="application/atom+xml">
+
+
+
+  <link rel="icon" href="/favicon.png">
+
+
+<link rel="stylesheet" href="/perfect-scrollbar/css/perfect-scrollbar.min.css">
+<link rel="stylesheet" href="/styles/main.css">
+
+
+
+
+
+
+</head>
+<body
+  
+  >
+  <div class="mobile-header">
+  <button class="sidebar-toggle" type="button">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a class="title" href="/">Let&#39;s fly far away</a>
+</div>
+
+  <div class="main-container">
+    <div class="sidebar">
+  <div class="header">
+    <h1 class="title"><a href="/">Let&#39;s fly far away</a></h1>
+    
+    <div class="info">
+      <div class="content">
+        
+        
+          <div class="author">Sion</div>
+        
+      </div>
+      
+        <div class="avatar">
+          
+            <img src="http://ob5qdb9lc.bkt.clouddn.com/my_avatar.jpg">
+          
+        </div>
+      
+    </div>
+  </div>
+  <div class="body">
+    
+      
+        <ul class="nav">
+          
+            
+              <li class="category-list-container">
+                <a href="javascript:;">分类</a>
+                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android笔记/">Android笔记</a><span class="category-list-count">20</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java笔记/">Java笔记</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ReactNative笔记/">ReactNative笔记</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TCP-IP笔记/">TCP/IP笔记</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ijkplayer笔记/">ijkplayer笔记</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/其它/">其它</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统笔记/">操作系统笔记</a><span class="category-list-count">1</span></li></ul>
+              </li>
+            
+          
+            
+              <li class="tag-list-container">
+                <a href="javascript:;">标签</a>
+                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android内存泄漏/">Android内存泄漏</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android开发框架/">Android开发框架</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android性能优化/">Android性能优化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android插件化/">Android插件化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android热补丁/">Android热补丁</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android系统/">Android系统</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android进程保活/">Android进程保活</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dagger2/">Dagger2</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DataBinding/">DataBinding</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Handler机制/">Handler机制</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JVM/">JVM</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVP模式/">MVP模式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ReactNative/">ReactNative</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Realm/">Realm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Retrofit/">Retrofit</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RxJava/">RxJava</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP-IP/">TCP/IP</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/View事件分发机制/">View事件分发机制</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/View绘制流程/">View绘制流程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ijkplayer/">ijkplayer</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/other/">other</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a><span class="tag-list-count">1</span></li></ul>
+              </li>
+            
+          
+            
+              <li class="archive-list-container">
+                <a href="javascript:;">归档</a>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a><span class="archive-list-count">42</span></li></ul>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="/" title="Homepage">Homepage</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/archives" title="By Year">By Year</a>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="https://github.com/liaosiyang" title="Github" target="_blank" rel="external">Github</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/atom.xml" title="RSS">RSS</a>
+              </li>
+            
+          
+        </ul>
+      
+    
+  </div>
+</div>
+
+    <div class="main-content">
+      
+        <div style="max-width: 1000px">
+      
+          <article id="post-ijkplayer笔记-ijkplayer编译" class="article article-type-post">
+  
+    <h1 class="article-header">
+      ijkplayer笔记-ijkplayer编译
+    </h1>
+  
+  
+
+  <div class="article-info">
+    <span class="article-date">
+  2016-10-17
+</span>
+
+    
+	<span class="article-category tagcloud">
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/ijkplayer笔记/">ijkplayer笔记</a></li></ul>
+	</span>
+
+
+    
+	<span class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ijkplayer/">ijkplayer</a></li></ul>
+	</span>
+
+
+  </div>
+  <div class="article-entry">
+    <p>想要使用ijkplayer，第一步就是编译.so库文件，在Windows环境下无法编译，只能在Linux或者OS X操作系统上完成。<br>在编译ijkplayer时遇到了一些坑，在此总结一下ijkplayer的编译过程。<br>当然这里编译的是Android所需的.so文件，IOS的以后有机会再学习。</p>
+<a id="more"></a>
+<h3 id="虚拟机"><a href="#虚拟机" class="headerlink" title="虚拟机"></a>虚拟机</h3><p>虚拟机我采用Ubuntu Kylin 16.04，这里遇到的一个坑就是在公司安装的虚拟机需要安装VMware Tools才能在Windows和Ubuntu之间复制文件，我这里使用的是一个完善的版本。</p>
+<h3 id="安装git和yasm"><a href="#安装git和yasm" class="headerlink" title="安装git和yasm"></a>安装git和yasm</h3><ul>
+<li>安装git:<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install git</div></pre></td></tr></table></figure></li>
+<li>安装yasm:<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install yasm</div></pre></td></tr></table></figure></li>
+<li>安装时可能提示需要更新，那么在命令行输入yes或者：<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get update</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="配置SDK和NDK"><a href="#配置SDK和NDK" class="headerlink" title="配置SDK和NDK"></a>配置SDK和NDK</h3><p>如果不在Ubuntu中开发，只是编译的话不用配置JDK。<br>这里把NDK和SDK在Windows上下载后复制到Ubuntu中/opt/mylib文件夹下</p>
+<ul>
+<li>SDK<br><a href="http://sdk.android-studio.org/" target="_blank" rel="external">下载地址</a><br>直接解压：<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tar zxvf android-sdk_r24.4.1-linux.tgz</div></pre></td></tr></table></figure></li>
+<li>NDK<br><a href="http://dl.google.com/android/ndk/android-ndk-r10e-linux-x86_64.bin" target="_blank" rel="external">下载地址</a><br>直接安装：<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./android-ndk-r10e-linux-x86_64.bin</div></pre></td></tr></table></figure></li>
+<li>环境配置<br>打开profile：<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo gedit /etc/profile</div></pre></td></tr></table></figure>
+在前面或者末尾增加：<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">export ANDROID_NDK=/home/sion/mylib/android-ndk-r10e/</div><div class="line">export ANDROID_SDK=/home/sion/mylib/android-sdk-linux/</div><div class="line">export PATH=$PATH:$ANDROID_NDK</div></pre></td></tr></table></figure>
+保存：<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">source /etc/profile</div></pre></td></tr></table></figure>
+SDK一般没什么问题，NDK安装后用ndk-build命令检查是否安装成功，提示command not found就表示环境配置失败，一般是路径问题。</li>
+</ul>
+<h3 id="编译ijkplayer"><a href="#编译ijkplayer" class="headerlink" title="编译ijkplayer"></a>编译ijkplayer</h3><p>这里最好按GitHub上提示的来，好多教程写的不完全，有的步骤省掉了后面就坑了。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git clone https:<span class="comment">//github.com/Bilibili/ijkplayer.git ijkplayer-android</span></div><div class="line">cd ijkplayer-android</div><div class="line">git checkout -B latest k0.5.1</div></pre></td></tr></table></figure><br>注意最后一行命令切到最新版本，如果没有切的话后面编译会出错。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./init-android.sh</div></pre></td></tr></table></figure>
+<p>这个耗时很长，跟网络无关，下载速度就是很慢，但一般没什么问题。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">cd android/contrib</div><div class="line">./compile-ffmpeg.sh clean</div><div class="line">./compile-ffmpeg.sh all</div></pre></td></tr></table></figure>
+<p>最容易出问题的就是这里，第三行容易出现NDK未找到或者需要NDKr10 or later的问题，主要就是NDK环境没配对或者没切换到最新版本。<br>GitHub上面好多issues都是这个问题。<br>我还遇到提示……export: (64-bit): bad variable name这个问题，<a href="https://github.com/Bilibili/ijkplayer/issues/1165" target="_blank" rel="external">解决方法</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd ..</div><div class="line">./compile-ijk.sh all</div></pre></td></tr></table></figure>
+<p>这一步耗时也很长，完成后就生成了很多不同平台的.so文件，每个平台都有3个：libijkffmpeg.so、libijkplayer.so、libijksdl.so。我遇到的一个坑就是只生成了libijkffmpeg.so，问题出在第一步没切换到最新版本，所以只能重来。</p>
+
+  </div>
+  <footer class="article-footer">
+    
+
+    
+
+  </footer>
+</article>
+
+
+  <link rel="stylesheet" href="http://static.duoshuo.com/styles/embed.default.css?349d9313.css">
+  <!-- 多说评论框 start -->
+  <div class="ds-thread" data-thread-key="2016/10/17/ijkplayer笔记-ijkplayer编译/" data-title="ijkplayer笔记-ijkplayer编译" data-url="/2016/10/17/ijkplayer笔记-ijkplayer编译/"></div>
+  <!-- 多说评论框 end -->
+  <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+  <script type="text/javascript">
+    var duoshuoQuery = {
+      short_name: "SION"
+    };
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';
+      ds.async = true;
+      ds.src = (document.location.protocol == 'https:'
+        ? 'https:'
+        : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+  <!-- 多说公共JS代码 end -->
+
+
+
+
+
+
+          <div class="main-footer">
+  
+    © 2016 Let&#39;s fly far away - Powered by <a href="http://hexo.io" target="_blank">Hexo</a> - Theme <a href="https://github.com/denjones/hexo-theme-chan" target="_blank">Chan</a>
+  
+</div>
+
+      
+        </div>
+      
+    </div>
+  </div>
+  <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="/PhotoSwipe/photoswipe.css">
+  <link rel="stylesheet" href="/PhotoSwipe/default-skin/default-skin.css">
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+             It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+      <!-- Container that holds slides.
+                PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                Don't modify these 3 pswp__item elements, data is added later on. -->
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+
+      <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+      <div class="pswp__ui pswp__ui--hidden">
+
+        <div class="pswp__top-bar">
+
+          <!--  Controls are self-explanatory. Order can be changed. -->
+
+          <div class="pswp__counter"></div>
+
+          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+          <button class="pswp__button pswp__button--share" title="Share"></button>
+
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+          <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+          <!-- element will get class pswp__preloader--active when preloader is running -->
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div>
+
+        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/PhotoSwipe/photoswipe.js"></script>
+  <script src="/PhotoSwipe/photoswipe-ui-default.js"></script>
+
+
+<script src="/perfect-scrollbar/js/min/perfect-scrollbar.min.js"></script>
+<script src="/scripts/main.js"></script>
+
+</body>
+</html>
