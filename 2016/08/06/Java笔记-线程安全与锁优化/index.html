@@ -8,19 +8,19 @@
 
 <title>
   
-    Java笔记-线程安全与锁优化
+    Java-线程安全与锁优化
   
 </title>
 
 <meta name="description" content="提起线程就会想到线程安全的问题，就比如游乐园的云霄飞车，一次只允许一批人游玩，当人坐满了就锁定了，后面的人必须排队等候。如果像印度火车那样没有同步机制的就很容易出现安全问题。Java语言提供了保障线程安全的方案，比如互斥同步，通过对公共资源加锁和解锁实现，但这种方式会带来性能上的损耗，所以提出了锁优化的方案。总结一下Java线程安全方面的知识。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java笔记-线程安全与锁优化">
+<meta property="og:title" content="Java-线程安全与锁优化">
 <meta property="og:url" content="http://yoursite.com/2016/08/06/Java笔记-线程安全与锁优化/index.html">
 <meta property="og:site_name" content="Let's fly far away">
 <meta property="og:description" content="提起线程就会想到线程安全的问题，就比如游乐园的云霄飞车，一次只允许一批人游玩，当人坐满了就锁定了，后面的人必须排队等候。如果像印度火车那样没有同步机制的就很容易出现安全问题。Java语言提供了保障线程安全的方案，比如互斥同步，通过对公共资源加锁和解锁实现，但这种方式会带来性能上的损耗，所以提出了锁优化的方案。总结一下Java线程安全方面的知识。">
-<meta property="og:updated_time" content="2016-08-29T06:29:34.384Z">
+<meta property="og:updated_time" content="2016-12-04T08:08:32.486Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java笔记-线程安全与锁优化">
+<meta name="twitter:title" content="Java-线程安全与锁优化">
 <meta name="twitter:description" content="提起线程就会想到线程安全的问题，就比如游乐园的云霄飞车，一次只允许一批人游玩，当人坐满了就锁定了，后面的人必须排队等候。如果像印度火车那样没有同步机制的就很容易出现安全问题。Java语言提供了保障线程安全的方案，比如互斥同步，通过对公共资源加锁和解锁实现，但这种方式会带来性能上的损耗，所以提出了锁优化的方案。总结一下Java线程安全方面的知识。">
 
 
@@ -81,7 +81,7 @@
             
               <li class="category-list-container">
                 <a href="javascript:;">分类</a>
-                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android笔记/">Android笔记</a><span class="category-list-count">20</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java笔记/">Java笔记</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ReactNative笔记/">ReactNative笔记</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TCP-IP笔记/">TCP/IP笔记</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ijkplayer笔记/">ijkplayer笔记</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/其它/">其它</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统笔记/">操作系统笔记</a><span class="category-list-count">1</span></li></ul>
+                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android笔记/">Android笔记</a><span class="category-list-count">20</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java笔记/">Java笔记</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ReactNative笔记/">ReactNative笔记</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TCP-IP笔记/">TCP/IP笔记</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ijkplayer笔记/">ijkplayer笔记</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/其它/">其它</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统笔记/">操作系统笔记</a><span class="category-list-count">1</span></li></ul>
               </li>
             
           
@@ -95,7 +95,7 @@
             
               <li class="archive-list-container">
                 <a href="javascript:;">归档</a>
-                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a><span class="archive-list-count">42</span></li></ul>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a><span class="archive-list-count">43</span></li></ul>
               </li>
             
           
@@ -144,7 +144,7 @@
           <article id="post-Java笔记-线程安全与锁优化" class="article article-type-post">
   
     <h1 class="article-header">
-      Java笔记-线程安全与锁优化
+      Java-线程安全与锁优化
     </h1>
   
   
@@ -156,7 +156,7 @@
 
     
 	<span class="article-category tagcloud">
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Java笔记/">Java笔记</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Java/">Java</a></li></ul>
 	</span>
 
 
@@ -268,7 +268,7 @@
 
   <link rel="stylesheet" href="http://static.duoshuo.com/styles/embed.default.css?349d9313.css">
   <!-- 多说评论框 start -->
-  <div class="ds-thread" data-thread-key="2016/08/06/Java笔记-线程安全与锁优化/" data-title="Java笔记-线程安全与锁优化" data-url="/2016/08/06/Java笔记-线程安全与锁优化/"></div>
+  <div class="ds-thread" data-thread-key="2016/08/06/Java笔记-线程安全与锁优化/" data-title="Java-线程安全与锁优化" data-url="/2016/08/06/Java笔记-线程安全与锁优化/"></div>
   <!-- 多说评论框 end -->
   <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
   <script type="text/javascript">

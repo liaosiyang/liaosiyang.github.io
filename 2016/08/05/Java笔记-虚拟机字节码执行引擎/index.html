@@ -8,30 +8,23 @@
 
 <title>
   
-    Java笔记-虚拟机字节码执行引擎
+    Java-虚拟机字节码执行引擎
   
 </title>
 
-<meta name="description" content="“虚拟机”是一个相对于“物理机”的概念，这两种机器都有代码执行能力，其区别是物理机的执行引擎是直接建立在处理器、硬件、指令集和操作系统层面上的，而虚拟机的执行引擎则是由自己实现的，因此可以自行制定指令集与执行引擎的结构体系，并且能够执行那些不被硬件直接支持的指令集格式。 在不同的虚拟机实现里面，执行引擎在执行Java代码的时候可能会有解释执行(通过解释器执行)和编译执行(即通过即时编译器产生本地代">
+<meta name="description" content="“虚拟机”是一个相对于“物理机”的概念，这两种机器都有代码执行能力，其区别是物理机的执行引擎是直接建立在处理器、硬件、指令集和操作系统层面上的，而虚拟机的执行引擎则是由自己实现的，因此可以自行制定指令集与执行引擎的结构体系，并且能够执行那些不被硬件直接支持的指令集格式。从外观上来看，所有的Java虚拟机的执行都是一致的：输入的是字节码文件，处理过程是字节码解析的等效过程，输出的是执行结果。总结一下">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java笔记-虚拟机字节码执行引擎">
+<meta property="og:title" content="Java-虚拟机字节码执行引擎">
 <meta property="og:url" content="http://yoursite.com/2016/08/05/Java笔记-虚拟机字节码执行引擎/index.html">
 <meta property="og:site_name" content="Let's fly far away">
-<meta property="og:description" content="“虚拟机”是一个相对于“物理机”的概念，这两种机器都有代码执行能力，其区别是物理机的执行引擎是直接建立在处理器、硬件、指令集和操作系统层面上的，而虚拟机的执行引擎则是由自己实现的，因此可以自行制定指令集与执行引擎的结构体系，并且能够执行那些不被硬件直接支持的指令集格式。 在不同的虚拟机实现里面，执行引擎在执行Java代码的时候可能会有解释执行(通过解释器执行)和编译执行(即通过即时编译器产生本地代">
+<meta property="og:description" content="“虚拟机”是一个相对于“物理机”的概念，这两种机器都有代码执行能力，其区别是物理机的执行引擎是直接建立在处理器、硬件、指令集和操作系统层面上的，而虚拟机的执行引擎则是由自己实现的，因此可以自行制定指令集与执行引擎的结构体系，并且能够执行那些不被硬件直接支持的指令集格式。从外观上来看，所有的Java虚拟机的执行都是一致的：输入的是字节码文件，处理过程是字节码解析的等效过程，输出的是执行结果。总结一下">
 <meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/45594096_1.jpg">
 <meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/45594096_2.jpg">
 <meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/9f32f615edb9ef87f2aef113a8f086f6_thumb.jpg">
-<meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/5d70a596-a73b-3791-8eef-ff54436df8cd.jpg">
-<meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/596748c7-39d3-3243-ab04-dbbd47dab009.jpg">
-<meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/62c40cce-a244-38dd-82cd-d4a51857f42e.jpg">
-<meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/6a6d820d-e1b6-3bb9-8882-06a45fc413f2.jpg">
-<meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/f471c6d3-a77a-3cfc-a9fa-dedc039d86cb.jpg">
-<meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/bf722497-45a3-3434-ae9d-a95735a42b3f.jpg">
-<meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/bb515b3e-7ea9-3b52-a82d-6eacd1e99ffb.jpg">
-<meta property="og:updated_time" content="2016-08-29T07:25:17.449Z">
+<meta property="og:updated_time" content="2016-12-04T08:36:13.600Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java笔记-虚拟机字节码执行引擎">
-<meta name="twitter:description" content="“虚拟机”是一个相对于“物理机”的概念，这两种机器都有代码执行能力，其区别是物理机的执行引擎是直接建立在处理器、硬件、指令集和操作系统层面上的，而虚拟机的执行引擎则是由自己实现的，因此可以自行制定指令集与执行引擎的结构体系，并且能够执行那些不被硬件直接支持的指令集格式。 在不同的虚拟机实现里面，执行引擎在执行Java代码的时候可能会有解释执行(通过解释器执行)和编译执行(即通过即时编译器产生本地代">
+<meta name="twitter:title" content="Java-虚拟机字节码执行引擎">
+<meta name="twitter:description" content="“虚拟机”是一个相对于“物理机”的概念，这两种机器都有代码执行能力，其区别是物理机的执行引擎是直接建立在处理器、硬件、指令集和操作系统层面上的，而虚拟机的执行引擎则是由自己实现的，因此可以自行制定指令集与执行引擎的结构体系，并且能够执行那些不被硬件直接支持的指令集格式。从外观上来看，所有的Java虚拟机的执行都是一致的：输入的是字节码文件，处理过程是字节码解析的等效过程，输出的是执行结果。总结一下">
 <meta name="twitter:image" content="http://ob5qdb9lc.bkt.clouddn.com/45594096_1.jpg">
 
 
@@ -92,7 +85,7 @@
             
               <li class="category-list-container">
                 <a href="javascript:;">分类</a>
-                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android笔记/">Android笔记</a><span class="category-list-count">20</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java笔记/">Java笔记</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ReactNative笔记/">ReactNative笔记</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TCP-IP笔记/">TCP/IP笔记</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ijkplayer笔记/">ijkplayer笔记</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/其它/">其它</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统笔记/">操作系统笔记</a><span class="category-list-count">1</span></li></ul>
+                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android笔记/">Android笔记</a><span class="category-list-count">20</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java笔记/">Java笔记</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ReactNative笔记/">ReactNative笔记</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TCP-IP笔记/">TCP/IP笔记</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ijkplayer笔记/">ijkplayer笔记</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/其它/">其它</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统笔记/">操作系统笔记</a><span class="category-list-count">1</span></li></ul>
               </li>
             
           
@@ -106,7 +99,7 @@
             
               <li class="archive-list-container">
                 <a href="javascript:;">归档</a>
-                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a><span class="archive-list-count">42</span></li></ul>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a><span class="archive-list-count">43</span></li></ul>
               </li>
             
           
@@ -155,7 +148,7 @@
           <article id="post-Java笔记-虚拟机字节码执行引擎" class="article article-type-post">
   
     <h1 class="article-header">
-      Java笔记-虚拟机字节码执行引擎
+      Java-虚拟机字节码执行引擎
     </h1>
   
   
@@ -167,7 +160,7 @@
 
     
 	<span class="article-category tagcloud">
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Java笔记/">Java笔记</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Java/">Java</a></li></ul>
 	</span>
 
 
@@ -179,34 +172,25 @@
 
   </div>
   <div class="article-entry">
-    <p>“虚拟机”是一个相对于“物理机”的概念，这两种机器都有代码执行能力，其区别是物理机的执行引擎是直接建立在处理器、硬件、指令集和操作系统层面上的，而虚拟机的执行引擎则是由自己实现的，因此可以自行制定指令集与执行引擎的结构体系，并且能够执行那些不被硬件直接支持的指令集格式。<br> 在不同的虚拟机实现里面，执行引擎在执行Java代码的时候可能会有解释执行(通过解释器执行)和编译执行(即通过即时编译器产生本地代码)两种选择，也可能两者兼备，甚至还可能会包含几个不同级别的编译器执行引擎。<br>从外观上来看，所有的Java虚拟机的执行都是一致的：输入的是字节码文件，处理过程是字节码解析的等效过程，输出的是执行结果。<br>总结一下Java虚拟机执行字节码的结构和机制。</p>
+    <p>“虚拟机”是一个相对于“物理机”的概念，这两种机器都有代码执行能力，其区别是物理机的执行引擎是直接建立在处理器、硬件、指令集和操作系统层面上的，而虚拟机的执行引擎则是由自己实现的，因此可以自行制定指令集与执行引擎的结构体系，并且能够执行那些不被硬件直接支持的指令集格式。<br>从外观上来看，所有的Java虚拟机的执行都是一致的：输入的是字节码文件，处理过程是字节码解析的等效过程，输出的是执行结果。<br>总结一下Java虚拟机执行字节码的结构和机制。</p>
 <a id="more"></a>
-<h1 id="运行时栈帧结构"><a href="#运行时栈帧结构" class="headerlink" title="运行时栈帧结构"></a>运行时栈帧结构</h1><p>栈帧是用于支持虚拟机进行方法调用和方法执行的数据结构，它是虚拟机运行时数据区中的虚拟机栈的栈元素。栈帧存储了方法的局部变量表、操作数栈、动态连接和方法返回地址等信息。每一个方法从调用开始至执行完成的过程，都对应着一个栈帧在虚拟机栈里面从入栈到出栈的过程。<br></p>
-<p>每一个栈帧都包括了局部变量表、操作数栈、动态连接、方法返回地址和一些额外的附加信息。在编译程序代码的时候，栈帧中需要多大的局部变量表，多深的操作数栈都已经完全确定了，并且写入到方法表的Code属性之中，因此一个栈帧需要分配多少内存，不会受到程序运行期变量数据的影响，而仅仅取决于具体的虚拟机实现。<br></p>
+<h1 id="运行时栈帧结构"><a href="#运行时栈帧结构" class="headerlink" title="运行时栈帧结构"></a>运行时栈帧结构</h1><p>栈帧是用于支持虚拟机进行方法调用和方法执行的数据结构，它是虚拟机运行时数据区中的虚拟机栈的栈元素。栈帧存储了方法的局部变量表、操作数栈、动态连接和方法返回地址等信息。每一个方法从调用开始至执行完成的过程，都对应着一个栈帧在虚拟机栈里面从入栈到出栈的过程。</p>
 <p><img src="http://ob5qdb9lc.bkt.clouddn.com/45594096_1.jpg" alt="image2"></p>
-<p>一个线程中的方法调用链可能会很长，很多方法都同时处于执行状态。对于执行引擎来说，在获得线程中，只有位于栈顶的栈帧才是有效的，称为当前栈帧，与这个栈帧相关联的方法称为当前方法。执行引擎运行的所有字节码指令都只针对当前栈帧进行操作。<br></p>
+<p>一个线程中的方法调用链可能会很长，很多方法都同时处于执行状态。对于执行引擎来说，在获得线程中，只有位于栈顶的栈帧才是有效的，称为当前栈帧，与这个栈帧相关联的方法称为当前方法。</p>
 <h3 id="局部变量表"><a href="#局部变量表" class="headerlink" title="局部变量表"></a>局部变量表</h3><ul>
 <li><p>局部变量表是一组变量值的存储空间，用于存放方法参数和方法内部定义的局部变量。在Java程序编译为class文件时，就在方法的Code属性的max_locals数据项中确定了该方法所需要分配的局部变量表的最大容量。</p>
 </li>
-<li><p>局部变量表的容量以变量槽(Slot)为最小单位，虚拟机规范中并没有明确一个Slot所占用的内存空间大小，只是说道每个Slot都应该能存放一个boolean、byte、char、short、int、float、reference或returnAddress类型的数据。这8种数据类型，都可以使用32位或更小的物理内存来存放，但这种描述与明确指出“每个Slot占用32为长度的内存空间”是有差别的，它允许Slot的长度可以随着处理器、操作系统或虚拟机的不同发生变化。(Java虚拟机规范中没有明确规定reference类型的长度，它的长度与实际使用32位还是64位虚拟机有关，如果是64位虚拟机，还与是否开启某些对象指针压缩的优化有关)。</p>
+<li><p>局部变量表的容量以变量槽(Slot)为最小单位，每个Slot都应该能存放一个boolean、byte、char、short、int、float、reference或returnAddress类型的数据。</p>
 </li>
-<li><p>reference类型表示对一个对象实例的引用，虚拟机规范既没有说明它的长度，也没有明确指出这种引用应有怎样的结构。但一般来说，虚拟机实现至少能通过这个引用做到两点，一是从引用中直接或间接地查找到对象在Java堆中的数据存放的起始地址索引，二是此引用中直接或间接查找到对象所属数据类型在方法区中存储的类型信息。returnAddress类型已经很少见了，它指向了一条字节码指令的地址，很古老的虚拟机曾经用来实现异常处理，现在已经由异常表代替。</p>
-</li>
-<li><p>对于64位的数据类型，虚拟机会以高位对齐的方式为其分配两个连续的Slot空间。Java语言中明确(reference类型则肯是32位的也可能是64位的)规定的64位数据类型只有long和double两种。由于局部变量表建立在线程的堆栈上，是线程私有的数据，无论读写两个连续的Slot是否为原子操作，都不会引起数据安全问题。</p>
-</li>
-<li><p>虚拟机通过索引定位的方式使用局部变量表，索引值的范围是从0开始至局部变量表最大的Slot数量。如果访问的是32位数据类型的变量，索引n就代表使用第n个Slot，如果是64位数据类型的变量，则说明会同时使用n和n+1两个Slot。对于两个相邻的共同存放一个64位数据的两个Slot，不允许采用任何方式单独访问其中的某一个。</p>
+<li><p>对于64位的数据类型，虚拟机会以高位对齐的方式为其分配两个连续的Slot空间。Java语言中明确(reference类型则肯是32位的也可能是64位的)规定的64位数据类型只有long和double两种。</p>
 </li>
 <li><p>在方法执行时，虚拟机是使用局部变量表完成参数值到参数变量列表的传递过程的，如果执行的是实例方法(非static的方法)，那局部变量表中第0位索引的Slot默认是用于传递方法所属对象实例的引用，在方法中可以通过关键字“this”来访问到这个隐含的参数。其余参数则按照参数表顺序排列，占用从1开始的局部变量Slot，参数表分配完毕后，再根据方法体内部定义的变量顺序和作用域分配其余的Slot。</p>
 </li>
-<li><p>为了尽可能节省栈帧空间，局部变量表中的Slot是可以重用的，方法体中定义的变量，其作用域并不一定会覆盖整个方法体，如果当前字节码PC计数器(程序计数器)的值已经超过了某个变量的作用域，那这个变量对应的Slot就可以交给其他变量使用。</p>
-</li>
-<li><p>局部变量表不像类变量那样存在“准备阶段”。类变量有2次赋初始值的过程，一次在准备阶段，赋予系统初始值；另一次在初始化阶段，赋予程序员定义的初始值。因此，即使在初始化阶段程序员没有为类变量赋值也没有关系，类变量仍然具有一个确定的初始值。但局部变量就不一样，如果一个局部变量定义了却没有赋初始值是不能使用的，不要认为Java中任何情况下都存在诸如整型变量默认0，布尔变量默认false等这样的初始值。</p>
-</li>
 </ul>
 <h3 id="操作数栈"><a href="#操作数栈" class="headerlink" title="操作数栈"></a>操作数栈</h3><ul>
-<li><p>操作数栈也常称操作栈，它是一个后入先出栈。同局部变量表一样，操作数栈的最大深度也在编译的时候写入到Code属性的max_stacks数据项中。操作数栈的每一个元素可以是任意的Java数据类型，包括double和long。32位数据类型所占的栈容量为1，64位数据类型所占的栈容量为2。在方法执行的时候，操作数栈的深度都不会超过在max_stacks数据项中设定的最大值。</p>
+<li><p>操作数栈也常称操作栈，它是一个后入先出栈。操作数栈的最大深度也在编译的时候写入到Code属性的max_stacks数据项中。</p>
 </li>
-<li><p>当一个方法刚刚开始执行的时候，这个方法的操作数栈是空的，在方法的执行过程中，会有各种字节码指令往操作数栈中写入和提取内容，也就是出栈/入栈操作。例如，在做算术运算的时候是通过操作数栈来进行的，又或者在调用其他方法的时候是通过操作数栈来进行参数传递的。<br><br>eg:<br><br>整数加法的字节码指令iadd在运行的时候操作数栈中最接近栈顶的两个元素已经存入了两个int型的数值，当执行这个指令时，会将这两个int值出栈并相加，然后将相加的结果入栈。</p>
+<li><p>当一个方法刚刚开始执行的时候，这个方法的操作数栈是空的，在方法的执行过程中，会有各种字节码指令往操作数栈中写入和提取内容，也就是出栈/入栈操作。</p>
 </li>
 <li><p>操作数栈中元素的数据类型必须与字节码指令的序列严格匹配，在编译程序代码时，编译器要严格保证这一点，在类校验阶段的数据流分析(类加载中连接阶段中的验证之字节码验证)中还要再次验证这一点。</p>
 </li>
@@ -224,58 +208,47 @@
 </li>
 </ul>
 <h3 id="方法返回地址"><a href="#方法返回地址" class="headerlink" title="方法返回地址"></a>方法返回地址</h3><ul>
-<li><p>当一个方法开始执行后，只有两种方式可以退出这个方法。第一种方式是执行引擎遇到任意一个方法的返回的字节码指令，这时候可能会有返回值传递给上层的方法调用者(调用当前的方法称为调用者)，是否有返回值和返回值类型将根据遇到何种方法返回指令来决定，这种退出方法的方式称为正常完成出口。</p>
+<li><p>当一个方法开始执行后，只有两种方式可以退出这个方法。第一种方式是执行引擎遇到任意一个方法的返回的字节码指令，这时候可能会有返回值传递给上层的方法调用者(调用当前的方法称为调用者)，是否有返回值和返回值类型将根据遇到何种方法返回指令来决定。</p>
 </li>
-<li><p>另一种退出方式是，在方法执行过程中遇到了异常，并且这个异常没有在方法体内得到处理，无论是Java虚拟机内部产生的异常，还是代码中使用athrow字节码指令产生的异常，只要在本方法的异常表中没有搜索到匹配的异常处理器，就会导致方法退出，这种退出方法的方式称为异常完成出口。一个方法使用异常完成出口，是不会给它的上层调用者产生任何返回值的。</p>
+<li><p>另一种退出方式是，在方法执行过程中遇到了异常，并且这个异常没有在方法体内得到处理，无论是Java虚拟机内部产生的异常，还是代码中使用athrow字节码指令产生的异常，只要在本方法的异常表中没有搜索到匹配的异常处理器，就会导致方法退出。一个方法使用异常完成出口，是不会给它的上层调用者产生任何返回值的。</p>
 </li>
-<li><p>无论采用何种退出方式，在方法退出之后，都需要返回到方法被调用的位置，程序才能继续执行，方法返回时可能需要在栈帧中保存一些信息，用来帮助恢复它的上层方法的执行状态。一般来说，方法正常退出是，调用者的PC计数器的值可以作为返回地址，栈帧中很可能会保存这个计数器值。而方法异常退出时，返回地址是要通过异常处理器表来确定的，栈帧中一般不会保存这部分信息。</p>
+<li><p>无论采用何种退出方式，在方法退出之后，都需要返回到方法被调用的位置，程序才能继续执行，方法返回时可能需要在栈帧中保存一些信息，用来帮助恢复它的上层方法的执行状态。</p>
 </li>
-<li><p>方法退出的过程实际上就等同于把当前栈帧出栈，因此退出时可能执行的操作有：1恢复上层方法的局部变量表和操作数栈，2把返回值压入调用者栈帧的操作数栈中，3调整PC计数器的值以指向方法调用指令后面的一条指令。</p>
+<li><p>方法退出的过程实际上就等同于把当前栈帧出栈。</p>
 </li>
 </ul>
 <h3 id="附加信息"><a href="#附加信息" class="headerlink" title="附加信息"></a>附加信息</h3><ul>
 <li>虚拟机规范允许具体的虚拟机实现增加一些规范里没有描述的信息到栈帧之中，例如与调试相关的信息，这部分信息完全取决于具体的虚拟机实现。在实际开发中，一般会吧动态连接、方法返回地址与其他附加信息全部归为一类，称为栈帧信息。</li>
 </ul>
-<h1 id="方法调用"><a href="#方法调用" class="headerlink" title="方法调用"></a>方法调用</h1><p>方法调用并不等于方法执行，方法调用阶段唯一的任务就是确定被调用方法的版本(即调用哪一个方法)，暂时还不涉及方法内部的具体运行过程。<br></p>
-<ul>
-<li>在程序运行时，进行方法的调用是最普遍、最频繁的操作，但前面讲过，class文件的编译过程中不包含传统编译中的连接步骤，一切方法调用在class文件里面存储的都只是符号引用，而不是方法在实际运行时内存布局中的入口地址(直接引用)。这个特性给Java带来了更强大的动态扩展能力，但也使得Java方法调用过程变得相对复杂起来，需要在类加载期间，甚至到运行期才能确定目标方法的直接引用。</li>
+<h1 id="方法调用"><a href="#方法调用" class="headerlink" title="方法调用"></a>方法调用</h1><ul>
+<li>方法调用并不等于方法执行，方法调用阶段唯一的任务就是确定被调用方法的版本(即调用哪一个方法)，暂时还不涉及方法内部的具体运行过程。</li>
+<li>方法调用在class文件里面存储的都只是符号引用，而不是方法在实际运行时内存布局中的入口地址(直接引用)。这个特性给Java带来了更强大的动态扩展能力，但也使得Java方法调用过程变得相对复杂起来，需要在类加载期间，甚至到运行期才能确定目标方法的直接引用。</li>
 </ul>
 <h2 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h2><ul>
-<li><p>所有方法调用中的目标方法在class文件里面都是一个常量池的符号引用，在类加载的解析阶段，会将其中的一部分符号引用转化为直接引用，这种解析能成立的前提是：方法在程序真正运行期间就有一个可确定的版本，并且这个方法的调用版本在运行期是不可改变的。换句话说，调用目标在程序代码写好，编译器进行编译时就必须确定下来。这类方法的调用称为解析。</p>
+<li><p>所有方法调用中的目标方法在class文件里面都是一个常量池的符号引用，在类加载的解析阶段，会将其中的一部分符号引用转化为直接引用，这种解析能成立的前提是：方法在程序真正运行期间就有一个可确定的版本，并且这个方法的调用版本在运行期是不可改变的。</p>
 </li>
 <li><p>在Java语言中符合“编译器可知，运行期不可变”这个要求的方法，主要包括静态方法和私有方法两大类，前者与类型直接关联，后者在外部不可被访问，这两种方法各自的特点决定了它们都不可能通过继承或别的方法重写其他版本，因此它们都适合在类加载阶段进行解析。</p>
 </li>
-<li><p>与之相对应，在Java虚拟机里面提供了5种方法调用的字节码指令：<br><br>1.invokestatic：调用静态方法。<br><br>2.invokespecial：调用实例构造器<init>方法、私有方法和父类方法。<br><br>3.invokevirtual：调用所有的虚方法。<br><br>4.invokeinterface：调用接口方法，会在运行时在确定一个实现此接口的对象。<br><br>5.invokedynamic：先在运行时动态解析出调用点限制符所引用的方法，然后在执行该方法，在此之前的4条调用指令，分派逻辑是固化在Java虚拟机内部的，而invokedynamic指令的分派逻辑是由用户所设定的引导方法决定的。<br></init></p>
-</li>
-<li><p>只要能被invokestatic和invokespecial指令调用的方法，都可以在解析阶段中确定唯一的调用版本，符合这个条件的有静态方法、私有方法、实例构造器、父类方法4类，它们在类加载的时候就把符号引用解析为该方法的直接引用。这些方法可以称为非虚方法，其他方法称为虚方法(除去final方法)。</p>
-</li>
-<li><p>Java中非虚方法除了使用invokestatic、invokespecial调用的方法之外还有一种，就是被final修饰的方法。虽然final方法是使用invokevirtual指令来调用的，但是由于它无法被覆盖，没有其他版本，所以也无须对方接受者进行多态选择，在Java语言规范中明确说明了final方法是一种非虚方法。</p>
-</li>
-<li><p>解析调用一定是一个静态的过程，在编译期间就完全确定，在类装载的解析阶段就会把涉及的符号引用全部转变为可确定的直接引用，不会延迟到运行期再去完成。而分派调用则可能是静态的也可能是动态的，根据分派依据的宗量数可分为单分派和多分派。这两类分派方式的两两组合就构成了静态单分派、静态多分派，动态单分派、动态多分派4种分派组合情况。</p>
+<li><p>解析调用一定是一个静态的过程，在编译期间就完全确定，在类装载的解析阶段就会把涉及的符号引用全部转变为可确定的直接引用，不会延迟到运行期再去完成。</p>
 </li>
 </ul>
-<h2 id="分派"><a href="#分派" class="headerlink" title="分派"></a>分派</h2><h3 id="静态分派，和重载有很密切的关联"><a href="#静态分派，和重载有很密切的关联" class="headerlink" title="静态分派，和重载有很密切的关联"></a>静态分派，和重载有很密切的关联<br></h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StaticDispatch</span> </span>&#123;</div><div class="line">    <span class="keyword">static</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Human</span> </span>&#123;</div><div class="line">      &#125;</div><div class="line">    <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Man</span> <span class="keyword">extends</span> <span class="title">Human</span> </span>&#123;</div><div class="line">      &#125;</div><div class="line">    <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Woman</span> <span class="keyword">extends</span> <span class="title">Human</span> </span>&#123;</div><div class="line">      &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sayHello</span><span class="params">(Human guy)</span> </span>&#123;</div><div class="line">        System.out.println(<span class="string">"hello,guy!"</span>);</div><div class="line">      &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sayHello</span><span class="params">(Man guy)</span> </span>&#123;</div><div class="line">        System.out.println(<span class="string">"hello,gentleman!"</span>);</div><div class="line">      &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sayHello</span><span class="params">(Woman guy)</span> </span>&#123;</div><div class="line">        System.out.println(<span class="string">"hello,lady!"</span>);</div><div class="line">      &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        Human man = <span class="keyword">new</span> Man();</div><div class="line">        Human woman = <span class="keyword">new</span> Woman();</div><div class="line">        StaticDispatch sr = <span class="keyword">new</span> StaticDispatch();</div><div class="line">        sr.sayHello(man);</div><div class="line">        sr.sayHello(woman);</div><div class="line">      &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>  
-<p>运行结果：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hello,guy!</div><div class="line">hello,guy!</div></pre></td></tr></table></figure><br>我们把上面代码中的”Human”称为变量的静态类型，或者叫做外观类型，后面的”Man”则称为变量的实际类型，静态类型和实际类型在程序中都可以发生一些变化，区别是静态类型的变化仅仅在使用时发生，变量本身的静态类型是不会变的，并且最终的静态类型是在编译器可知的；而实际类型变化的结果在运行期才可确定，编译器在编译程序的时候并不知道一个对象的实际类型是什么。<br><br>eg：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//实际类型变化</span></div><div class="line">Human man = <span class="keyword">new</span> Man();</div><div class="line">man = <span class="keyword">new</span> Woman();</div><div class="line"><span class="comment">//静态类型变化</span></div><div class="line">sr.sayHello((Man)man);</div><div class="line">sr.sayHello((Woman)man);</div></pre></td></tr></table></figure><br>main()里面两次sayHello()方法的调用，在方法的接收者已经确定是对象”sr”的前提下，使用那个重载版本，就完全取决于传入参数的数量和数据类型。代码中刻意地定义了两个静态类型相同但实际类型不同的变化量，但虚拟机(准确来说是编译器)在重载时是通过参数的静态类型而不是实际类型作为判定依据的。并且静态类型是编译期可知的，因此，在编译阶段，Javac编译器会根据参数的静态类型决定使用哪个重载版本。所以选择sayHello(Human)作为调用目标，并把这个方法的符号引用写到main()方法里的两条invokevirtual指令的参数中。</p>
-<ul>
+<h2 id="分派"><a href="#分派" class="headerlink" title="分派"></a>分派</h2><h3 id="静态分派"><a href="#静态分派" class="headerlink" title="静态分派"></a>静态分派</h3><ul>
 <li>所有依赖静态类型来定位方法的执行版本的分派动作称为静态分派。静态分派的典型应用是方法重载。</li>
 <li>静态分派发生在编译阶段，因此确定静态分派的动作实际上不是由虚拟机来执行的。</li>
-<li>另外，编译器虽然能确定方法的重载版本，但在很多情况下这个重载版本并不是”唯一的”，往往只能确定一个”更加合适的”版本。产出这种模糊结论的主要原因是字面量不需要定义，所以字面量没有显示的静态类型，它的静态类型只能通过语言上的规则去理解和推断。</li>
+<li>编译器虽然能确定方法的重载版本，但在很多情况下这个重载版本并不是”唯一的”，往往只能确定一个”更加合适的”版本。主要原因是字面量不需要定义，所以字面量没有显式的静态类型，它的静态类型只能通过语言上的规则去理解和推断。</li>
 </ul>
-<h3 id="动态分派，和重写有很密切的关联"><a href="#动态分派，和重写有很密切的关联" class="headerlink" title="动态分派，和重写有很密切的关联"></a>动态分派，和重写有很密切的关联</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DynamicDispatch</span> </span>&#123;</div><div class="line">	<span class="keyword">static</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Human</span> </span>&#123;</div><div class="line">		<span class="function"><span class="keyword">protected</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">sayHello</span><span class="params">()</span></span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Man</span> <span class="keyword">extends</span> <span class="title">Human</span> </span>&#123;</div><div class="line">		<span class="meta">@Override</span></div><div class="line">		<span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">sayHello</span><span class="params">()</span> </span>&#123;</div><div class="line">			System.out.println(<span class="string">"man say hello"</span>);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Woman</span> <span class="keyword">extends</span> <span class="title">Human</span> </span>&#123;</div><div class="line">		<span class="meta">@Override</span></div><div class="line">		<span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">sayHello</span><span class="params">()</span> </span>&#123;</div><div class="line">			System.out.println(<span class="string">"woman say hello"</span>);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		Human man = <span class="keyword">new</span> Man();</div><div class="line">		Human woman = <span class="keyword">new</span> Woman();</div><div class="line">		man.sayHello();</div><div class="line">		woman.sayHello();</div><div class="line">		man = <span class="keyword">new</span> Woman();</div><div class="line">		man.sayHello();</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>  
-<p>运行结果：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">man say hello</div><div class="line">woman say hello</div><div class="line">woman say hello</div></pre></td></tr></table></figure><br>静态类型同样是Human的两个变量man和woman在调用sayHello()方法时执行了不同的行为，并且变量man在两次调用中执行了不同的方法。导致这个现象的原因很明显，是这两个变量的实际类型不同。</p>
-<p>原因需要从invokevirtual指令的多态查找过程开始说起，invokevirtual指令的运行时解析过程大致分为以下几个步骤：</p>
+<h3 id="动态分派"><a href="#动态分派" class="headerlink" title="动态分派"></a>动态分派</h3><p>invokevirtual指令的运行时解析过程大致分为以下几个步骤：</p>
 <ol>
 <li>找到操作数栈顶的第一个元素所指向的对象的实际类型，记作C；</li>
 <li>如果在类型C中找到了与常量中的描述符和简单名称都相符的方法，则进行访问权限校验，如果通过则返回这个方法的直接引用，查找过程结束；如果不通过，则返回java.lang.IllegalAccesssError异常。(重写时，子类方法不能低于父类方法的可见性)  </li>
 <li>否则，按照继承关系从下往上依次对C的各个父类进行第2步的搜索和验证过程。</li>
-<li>如果始终没有找到合适的方法，则抛出java.lang.AbstractMethodError异常。<br></li>
+<li>如果始终没有找到合适的方法，则抛出java.lang.AbstractMethodError异常。</li>
 </ol>
-<p>由于invokevirtual指令执行的第一步就是在运行期确定接受者的实际类型，所以两次调用invokevirtual指令把常量池中的类方法符号引用解析到不同的直接引用上，这个过程是Java语言重写的本质。我们把这种运行期根据实际类型确定方法的执行版本的分派过程称为动态分派。</p>
-<h3 id="单分派与多分派"><a href="#单分派与多分派" class="headerlink" title="单分派与多分派"></a>单分派与多分派</h3><p>方法的接受者与方法的参数统称为方法的宗量。根据分派基于多少种宗量，可以将分派划分为单分派和多分派两种。单分派是根据一个宗量对方法进行选择，多分派则是根据多于一个宗量对目标方法进行选择。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Dispatch</span> </span>&#123;</div><div class="line">	 <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">QQ</span> </span>&#123;&#125;</div><div class="line">	 <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">_360</span> </span>&#123;&#125;</div><div class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Father</span> </span>&#123;</div><div class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">hardChoice</span><span class="params">(QQ arg)</span> </span>&#123;</div><div class="line">			System.out.println(<span class="string">"father choose qq"</span>);</div><div class="line">		&#125;</div><div class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">hardChoice</span><span class="params">(_360 arg)</span> </span>&#123;</div><div class="line">			System.out.println(<span class="string">"father choose 360"</span>);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Son</span> <span class="keyword">extends</span> <span class="title">Father</span> </span>&#123;</div><div class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">hardChoice</span><span class="params">(QQ arg)</span> </span>&#123;</div><div class="line">			System.out.println(<span class="string">"son choose qq"</span>);</div><div class="line">		&#125;</div><div class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">hardChoice</span><span class="params">(_360 arg)</span> </span>&#123;</div><div class="line">			System.out.println(<span class="string">"son choose 360"</span>);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		Father father = <span class="keyword">new</span> Father();</div><div class="line">		Father son = <span class="keyword">new</span> Son();</div><div class="line">		father.hardChoice(<span class="keyword">new</span> _360());</div><div class="line">		son.hardChoice(<span class="keyword">new</span> QQ());</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>运行结果：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">father choose <span class="number">360</span></div><div class="line">son choose qq</div></pre></td></tr></table></figure><br>先看编译阶段编译器的选择过程，也就是静态分派的过程。这是选择目标方法的依据有2点：一是静态类型是Father还是Son，二是方法参数是QQ还是360。这次选择的结果的最终产物是产生了两条invokevirtual指令，两条指令的参数分别为常量池中指向Father.hardChoice(360)及Father.hardChoice(QQ)方法的符号引用。因为是根据两个宗量进行选择，所以Java语言的静态分派属于多分派类型。</p>
-<p>再看运行阶段虚拟机的选择，也就是动态分派的过程。在执行“son.hardChoice(new QQ())”这句代码时，更准确来说，是在执行这句话所对应的invokevirtual指令时，由于编译器已经决定目标方法的签名必须为hardChoice(QQ),虚拟机此时不会关心传递过来的参数“QQ”到底是“腾讯QQ”还是“奇瑞QQ”，因为这时参数的静态类型、实际类型都对方法的选择不会构成任何影响，唯一可以影响虚拟机选择的因素只有此方法的接受者的实际类型是Father还是Son。因为只有一个宗量作为选择依据，所以Java语言的动态分派属于单分派类型。</p>
-<p>今天的Java语言是一门静态多分派、动态单分派的语言。按照目前Java的发展趋势，它并没有直接变为动态语言的迹象，而是通过内置动态语言(如JavaScript)执行引擎的方式来满足动态性的需求。但Java虚拟机层面上则不是如此，在JDK1.7中就已经开始提供对动态语言的支持了，新增的invokedynamic指令也成为了最复杂的一条方法调用的字节码指令。</p>
-<h3 id="虚拟机动态分派的实现"><a href="#虚拟机动态分派的实现" class="headerlink" title="虚拟机动态分派的实现"></a>虚拟机动态分派的实现</h3><p>由于动态分派是非常频繁的动作，而且动态分派的方法版本选择过程需要运行时在类的方法元数据中搜索合适的目标方法，因此在虚拟机的实现中基于性能的考虑，大部分都不会真正进行如此频繁的搜索。</p>
-<p>面对这种情况，最常用的“稳定优化”手段就是为类在方法区中建立一个虚方法表(与此对应的，在invokeinterface执行时也会用的接口方法表)，使用虚方法表索引代替元数据查找以提高性能。</p>
+<ul>
+<li>运行期根据实际类型确定方法的执行版本的分派过程称为动态分派。</li>
+</ul>
+<h3 id="虚拟机动态分派的实现"><a href="#虚拟机动态分派的实现" class="headerlink" title="虚拟机动态分派的实现"></a>虚拟机动态分派的实现</h3><p>由于动态分派是非常频繁的动作，而且动态分派的方法版本选择过程需要运行时在类的方法元数据中搜索合适的目标方法虚拟机的实现中基于性能的考虑，大部分都不会真正进行如此频繁的搜索。</p>
+<p>最常用的“稳定优化”手段就是为类在方法区中建立一个虚方法表(与此对应的，在invokeinterface执行时也会用的接口方法表)，使用虚方法表索引代替元数据查找以提高性能。</p>
 <p><img src="http://ob5qdb9lc.bkt.clouddn.com/9f32f615edb9ef87f2aef113a8f086f6_thumb.jpg" alt="image4"></p>
 <ul>
 <li><p>虚方法表中存放着各个方法的实际入口地址。如果某个方法在子类中没有被重写，那子类的虚方法表里面的入口地址和父类相同方法的地址入口是一致的，都指向父类的实现入口。如果子类中重写了这个方法，子类方法表中的地址将会替换为指向子类实现版本的入口地址。</p>
@@ -288,75 +261,18 @@
 </li>
 </ul>
 <h2 id="动态类型语言支持"><a href="#动态类型语言支持" class="headerlink" title="动态类型语言支持"></a>动态类型语言支持</h2><p>动态语言的关键特征是它的类型检查的主体过程是在运行期而不是编译期。Java是静态类型语言。</p>
-<h3 id="JDK1-7与动态类型"><a href="#JDK1-7与动态类型" class="headerlink" title="JDK1.7与动态类型"></a>JDK1.7与动态类型</h3><ul>
-<li>JDK1.7以前的字节码指令集中，4条方法调用指令(invokevirtual、invokespecial、invokestatic、invokeinterface)的第一个参数都是被调用方法的符号引用，方法的符号引用在编译时产生，而动态类型语言只有在运行期才能确定接受者类型。这样，在Java虚拟机上实现动态类型语言就不得不使用其他方式(如编译时留个占位符类型，运行时动态生成字节码实现具体类型到占位符类型的适配)来实现，这样势必让动态类型语言实现的复杂度增加，也可能带来额外的性能或者内存开销。因此在Java虚拟机层面上提供动态类型的直接支持就称为了Java平台的发展趋势之一，这就是JDK1.7中invokedynamic指令已经java.lang.invoke包出现的技术背景。</li>
-</ul>
-<h3 id="java-lang-invoke包"><a href="#java-lang-invoke包" class="headerlink" title="java.lang.invoke包"></a>java.lang.invoke包</h3><ul>
-<li>这个包的主要目的是在之前单纯依靠符号引用来确定调用的目标方法这种方式以外，提供一种新的动态确定目标方法的机制，称为MethodHandle。</li>
-</ul>
-<p>MethodHandle的使用方法和效果与Reflection有众多相识之处，不过，它们还是有以下这些区别：</p>
-<ol>
-<li>从本质上讲，Reflection和MethodHandle机制都是在模拟方法调用，但Reflection是在模拟Java代码层次的方法调用，而MethodHandle是在模拟字节码层次的方法调用。在MethodHandle.lookup中的3个方法——findStatic()、findVirtual()、findSpecial()正式为了对应于invokestatic、invokevirtual&amp;invokeinterface和invokespecial这几条字节码指令的执行权限校验行为，而这些底层细节在使用Reflection API时是不需要关心的。</li>
-<li>Reflection中的java.lang.reflect.Method对象远比MethodHandle机制中java.lang.invoke.MethodHandle对象所包含的信息多。前者是方法在Java一端的全部映像，包含方法的签名、描述符以及方法属性表中各种属性的Java端表示方式，还包含执行权限等运行期信息。而后者仅仅包含与执行方该方法相关的信息。用通俗的话来讲，Reflection是重量级，而MethodHandle是轻量级。</li>
-</ol>
-<ul>
-<li>由于MethodHandle是对字节码的方法指令调用的模拟，所以理论上虚拟机在这方面做了各种优化，在MethodHandle上也应当可以采用类似思路去支持。而通过反射去调用方法则不行。</li>
-</ul>
-<p>除了上述区别之外，最关键的一点：Reflection的设计目标只是为了Java语言服务的，而MethodHandle则设计成可服务于所有Java虚拟机之上的语言，其中包括Java语言。</p>
-<h3 id="invokedynamic指令"><a href="#invokedynamic指令" class="headerlink" title="invokedynamic指令"></a>invokedynamic指令</h3><ul>
-<li><p>在某种程度上，invokedynamic指令与MethodHandle机制的作用是一样的，都是为了解决原4条”invoke*”指令方法分派规则固化在虚拟机之中的问题，把如何查找目标方法的决定权从虚拟机转嫁到具体的用户代码之中，让用户有更高的自由地。而且，它们两者的思路也是可类比的，可以把它们想象成为了达成同一目的，一个采用上层Java代码和API来实现，另一个用字节码和Class中的其他属性、常量来完成。</p>
-</li>
-<li><p>invokedynamic指令与前面4条”invoke*”指令的最大差别就是它的分派逻辑不是由虚拟机决定的，而是由程序员决定的。</p>
-</li>
-</ul>
 <h1 id="基于栈的字节码解释执行引擎"><a href="#基于栈的字节码解释执行引擎" class="headerlink" title="基于栈的字节码解释执行引擎"></a>基于栈的字节码解释执行引擎</h1><h2 id="解释执行"><a href="#解释执行" class="headerlink" title="解释执行"></a>解释执行</h2><ul>
-<li>Java语言经常被人们定位为“解释执行”的语言，在JDK1.0时代，这个定义还算比较准确。但当主流的虚拟机中都包含了即使编译器后，Class文件中的代码到底是被解释执行还是编译执行，就成了只有虚拟机自己才能准确判断的事情。再后来，Java也发展出了可以直接生成本地代码的编译器，这时候在笼统地说“解释执行”，对于Java语言来说几乎是没有什么意义的概念，只有确定了谈论对象是某种具体的Java实现版本和执行引擎运行模式时，谈解释执行还是编译执行才会比较确切。</li>
 <li>Java语言中，Javac编译器完成了程序代码经过词法分析、语法分析到抽象语法树，再遍历语法树生成线性的字节码指令流的过程中。因为这一部分动作是在Java虚拟机之外进行的，而解释器在虚拟机内部，所以Java程序的编译就是半独立的实现。</li>
 </ul>
-<h2 id="基于栈的指令集与基于寄存器的指令集"><a href="#基于栈的指令集与基于寄存器的指令集" class="headerlink" title="基于栈的指令集与基于寄存器的指令集"></a>基于栈的指令集与基于寄存器的指令集</h2><p>Java编译器输出的指令流，基本上是一种基于栈的指令集架构，指令集流中的指令大部分都是零地址指令，它们依赖操作数栈进行工作。与之相对的另外一套常用的指令集架构是基于寄存器的指令集，最典型的就是x86的二地址指令集，通俗一点就是我们现在主流PC机中直接支持的指令集架构，这些指令集依赖寄存器进行工作。基于栈的指令集与基于寄存器的指令集两者有什么不同？</p>
-<p>eg：分别使用这两种指令集计算“1+1”的结果，基于栈的指令集会是：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">iconst_1</div><div class="line">iconst_1</div><div class="line">iadd</div><div class="line">istore_0</div></pre></td></tr></table></figure><br>两条iconst_1指令把两个常量1压入栈后，iadd指令把栈顶的两个值出栈、相加，然后再把结果放回栈顶，最后istore_0把栈顶的值放到局部变量表的第0个Slot中。</p>
-<p>如果基于寄存器，那程序可能会是这个样子：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mov eax,<span class="number">1</span></div><div class="line">add eax,<span class="number">1</span></div></pre></td></tr></table></figure><br>mov指令把EAX寄存器的值设为1，然后add指令再把这个值加1，结果就保存在EAX寄存器里面。</p>
+<h2 id="基于栈的指令集与基于寄存器的指令集"><a href="#基于栈的指令集与基于寄存器的指令集" class="headerlink" title="基于栈的指令集与基于寄存器的指令集"></a>基于栈的指令集与基于寄存器的指令集</h2><p>Java编译器输出的指令流，基本上是一种基于栈的指令集架构，指令集流中的指令大部分都是零地址指令，它们依赖操作数栈进行工作。相对的另外一套常用的指令集架构是基于寄存器的指令集，最典型的就是x86的二地址指令集，这些指令集依赖寄存器进行工作。</p>
 <ul>
-<li><p>基于栈的指令集主要优点就是可移植，寄存器由硬件直接提供(这里说的是物理机上的寄存器，也有基于寄存器的虚拟机，如Google Anroid平台的Dalvik VM。即是基于寄存器的虚拟机，也希望把虚拟机尽可能映射带物理寄存器上以获得尽可能高的性能)，程序直接依赖这些硬件寄存器则不可避免地要受到硬件的约束。如32位的80x86体系的处理器中提供了8个32位的寄存器，而ARM体系的CPU则提供了16个32位的通用寄存器。如果使用栈架构的指令集，用户程序不会直接使用这些寄存器，就可以由虚拟机实现来自行决定把一些访问最频繁数据(程序计数器、栈顶缓存等)放到寄存器中以获得尽量好的性能，这样实现起来更简单一些。</p>
+<li><p>基于栈的指令集主要优点就是可移植，如果使用栈架构的指令集，用户程序不会直接使用寄存器，就可以由虚拟机实现来自行决定把一些访问最频繁数据(程序计数器、栈顶缓存等)放到寄存器中以获得尽量好的性能，这样实现起来更简单一些。</p>
 </li>
 <li><p>栈架构的指令集还有一些其他优点，如代码相对更加紧凑(字节码中每个字节就对应一条指令，而多地址指令集中还需要存放参数)、编译器实现更加简单(不需要考虑空间分配的问题，所需空间在栈上操作)等。</p>
 </li>
 <li><p>栈架构指令集的主要确定是执行速度相对来说稍慢一些。</p>
 </li>
-<li><p>虽然栈架构指令集的代码非常紧凑，但是完成相同功能所需的指令数量一般会比寄存器架构的多，因为出栈，入栈本身就产生了相当多的指令数量。更重要的是，栈实现在内存之中，频繁的栈访问就意味着频繁的内存访问，相对于处理器来说，内存始终是执行速度的瓶颈。尽管虚拟机可以采取栈顶缓存的手段，把最常用的操作映射到寄存器中避免直接内存访问，但这也只能是优化措施而不是解决本质问题的方法。</p>
-</li>
 </ul>
-<h2 id="基于栈的解释器执行过程"><a href="#基于栈的解释器执行过程" class="headerlink" title="基于栈的解释器执行过程"></a>基于栈的解释器执行过程</h2><p>eg：一段简单的算术代码:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">calculate</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> a = <span class="number">100</span>;</div><div class="line"> 	<span class="keyword">int</span> b = <span class="number">200</span>;</div><div class="line">	<span class="keyword">int</span> c = <span class="number">300</span>;</div><div class="line">	<span class="keyword">return</span> (a + b) * c;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>使用javap命令查看字节码指令：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">calculate</span><span class="params">()</span></span>;</div><div class="line">Code:</div><div class="line">Stack=<span class="number">2</span>, Locals=<span class="number">4</span>, Args_size=<span class="number">1</span></div><div class="line"><span class="number">0</span>:   bipush  <span class="number">100</span></div><div class="line"><span class="number">2</span>:   istore_1</div><div class="line"><span class="number">3</span>:   sipush  <span class="number">200</span></div><div class="line"><span class="number">6</span>:   istore_2</div><div class="line"><span class="number">7</span>:   sipush  <span class="number">300</span></div><div class="line"><span class="number">10</span>:  istore_3</div><div class="line"><span class="number">11</span>:  iload_1</div><div class="line"><span class="number">12</span>:  iload_2</div><div class="line"><span class="number">13</span>:  iadd</div><div class="line"><span class="number">14</span>:  iload_3</div><div class="line"><span class="number">15</span>:  imul</div><div class="line"><span class="number">16</span>:  ireturn</div></pre></td></tr></table></figure>  </p>
-<ul>
-<li>首先执行偏移地址为0的指令，bipush指令的作用是将单字节的整型常量值推入操作数栈顶，跟随有一个参数，指明推送的常量值，这里是100。</li>
-</ul>
-<p><img src="http://ob5qdb9lc.bkt.clouddn.com/5d70a596-a73b-3791-8eef-ff54436df8cd.jpg" alt="image5"></p>
-<ul>
-<li>执行偏移地址为2的指令，istore_1指令的作用是将操作数栈顶的整数值出栈并存放到第一个局部变量Slot中，后续4条指令都是做一样的事情，也就是在对于代码中把变量a、b、c赋值为100、200、300。</li>
-</ul>
-<p><img src="http://ob5qdb9lc.bkt.clouddn.com/596748c7-39d3-3243-ab04-dbbd47dab009.jpg" alt="image6"></p>
-<ul>
-<li>执行偏移地址为11的指令，iload_1指令的作用是将局部变量表第1个slot中的整数值复制到操作数栈顶。</li>
-</ul>
-<p><img src="http://ob5qdb9lc.bkt.clouddn.com/62c40cce-a244-38dd-82cd-d4a51857f42e.jpg" alt="image7"></p>
-<ul>
-<li>执行偏移地址为12的指令，iload_2指令的执行过程与iload_1类似，va第2个Slot的整数值入栈。</li>
-</ul>
-<p><img src="http://ob5qdb9lc.bkt.clouddn.com/6a6d820d-e1b6-3bb9-8882-06a45fc413f2.jpg" alt="image8"></p>
-<ul>
-<li>执行偏移地址为13的指令，iadd指令的作用是将操作数栈中两个栈顶元素出栈，做整数加法，然后把结构重新入栈。100和200出栈，它们的和300入栈。</li>
-</ul>
-<p><img src="http://ob5qdb9lc.bkt.clouddn.com/f471c6d3-a77a-3cfc-a9fa-dedc039d86cb.jpg" alt="image9"></p>
-<ul>
-<li>执行偏移地址为14的指令，iload_3指令把存放在第3个局部变量Slot中的300压入操作数栈中。这是操作数栈为两个整数300。下一条指令imul是将操作数栈中头两个栈顶元素出栈，做整型乘法，然后把结果重新入栈，与iadd完全类似。</li>
-</ul>
-<p><img src="http://ob5qdb9lc.bkt.clouddn.com/bf722497-45a3-3434-ae9d-a95735a42b3f.jpg" alt="image10"></p>
-<ul>
-<li>执行偏移地址为16的指令，ireturn指令是方法返回地址指令之一，它将结束方法执行并将操作数栈顶的整型值返回此方法的调用者。到此为止，这段方法执行结束。</li>
-</ul>
-<p><img src="http://ob5qdb9lc.bkt.clouddn.com/bb515b3e-7ea9-3b52-a82d-6eacd1e99ffb.jpg" alt="image11"></p>
-<p>上面的执行过程仅仅是一种概念模型，虚拟机最终会对执行过程做一些优化来提高性能，实际的运作工程不一定完全符合概念模型的描述。实际情况会和上面描述的概念模型差距非常大，这种差距产生的原因是虚拟机中解析器和即时编译器都会对输入的字节码进行优化。</p>
-<p>不过，我们从这段程序的执行中也可以看出栈结构指令集的一般运行过程，整个运算过程的中间变量都以操作数栈的出栈、入栈为信息交换途径。</p>
 
   </div>
   <footer class="article-footer">
@@ -370,7 +286,7 @@
 
   <link rel="stylesheet" href="http://static.duoshuo.com/styles/embed.default.css?349d9313.css">
   <!-- 多说评论框 start -->
-  <div class="ds-thread" data-thread-key="2016/08/05/Java笔记-虚拟机字节码执行引擎/" data-title="Java笔记-虚拟机字节码执行引擎" data-url="/2016/08/05/Java笔记-虚拟机字节码执行引擎/"></div>
+  <div class="ds-thread" data-thread-key="2016/08/05/Java笔记-虚拟机字节码执行引擎/" data-title="Java-虚拟机字节码执行引擎" data-url="/2016/08/05/Java笔记-虚拟机字节码执行引擎/"></div>
   <!-- 多说评论框 end -->
   <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
   <script type="text/javascript">

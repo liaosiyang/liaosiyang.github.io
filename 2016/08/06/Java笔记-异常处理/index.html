@@ -8,20 +8,20 @@
 
 <title>
   
-    Java笔记-异常处理
+    Java-异常处理
   
 </title>
 
 <meta name="description" content="在Java中，如果某个方法不能采用正常的途径完整它的任务，就可以通过另外一个路径退出方法。在这种情况下，方法并不返回值，而是抛出(throw)一个封装错误信息的对象。需要注意的是，这个方法将会立刻退出，并不返回任何值。此外，调用这个方法的代码也将无法继续执行，而是，异常处理机制开始搜索能够处理这种异常状况的异常处理器。总结一下Java异常机制和使用技巧。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java笔记-异常处理">
+<meta property="og:title" content="Java-异常处理">
 <meta property="og:url" content="http://yoursite.com/2016/08/06/Java笔记-异常处理/index.html">
 <meta property="og:site_name" content="Let's fly far away">
 <meta property="og:description" content="在Java中，如果某个方法不能采用正常的途径完整它的任务，就可以通过另外一个路径退出方法。在这种情况下，方法并不返回值，而是抛出(throw)一个封装错误信息的对象。需要注意的是，这个方法将会立刻退出，并不返回任何值。此外，调用这个方法的代码也将无法继续执行，而是，异常处理机制开始搜索能够处理这种异常状况的异常处理器。总结一下Java异常机制和使用技巧。">
 <meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/27213314-953c71b8c61b45439b011932e44a6378.jpg">
-<meta property="og:updated_time" content="2016-08-29T05:02:51.098Z">
+<meta property="og:updated_time" content="2016-12-04T08:08:54.651Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java笔记-异常处理">
+<meta name="twitter:title" content="Java-异常处理">
 <meta name="twitter:description" content="在Java中，如果某个方法不能采用正常的途径完整它的任务，就可以通过另外一个路径退出方法。在这种情况下，方法并不返回值，而是抛出(throw)一个封装错误信息的对象。需要注意的是，这个方法将会立刻退出，并不返回任何值。此外，调用这个方法的代码也将无法继续执行，而是，异常处理机制开始搜索能够处理这种异常状况的异常处理器。总结一下Java异常机制和使用技巧。">
 <meta name="twitter:image" content="http://ob5qdb9lc.bkt.clouddn.com/27213314-953c71b8c61b45439b011932e44a6378.jpg">
 
@@ -83,7 +83,7 @@
             
               <li class="category-list-container">
                 <a href="javascript:;">分类</a>
-                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android笔记/">Android笔记</a><span class="category-list-count">20</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java笔记/">Java笔记</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ReactNative笔记/">ReactNative笔记</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TCP-IP笔记/">TCP/IP笔记</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ijkplayer笔记/">ijkplayer笔记</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/其它/">其它</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统笔记/">操作系统笔记</a><span class="category-list-count">1</span></li></ul>
+                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android笔记/">Android笔记</a><span class="category-list-count">20</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java笔记/">Java笔记</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ReactNative笔记/">ReactNative笔记</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TCP-IP笔记/">TCP/IP笔记</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ijkplayer笔记/">ijkplayer笔记</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/其它/">其它</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统笔记/">操作系统笔记</a><span class="category-list-count">1</span></li></ul>
               </li>
             
           
@@ -97,7 +97,7 @@
             
               <li class="archive-list-container">
                 <a href="javascript:;">归档</a>
-                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a><span class="archive-list-count">42</span></li></ul>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a><span class="archive-list-count">43</span></li></ul>
               </li>
             
           
@@ -146,7 +146,7 @@
           <article id="post-Java笔记-异常处理" class="article article-type-post">
   
     <h1 class="article-header">
-      Java笔记-异常处理
+      Java-异常处理
     </h1>
   
   
@@ -158,7 +158,7 @@
 
     
 	<span class="article-category tagcloud">
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Java笔记/">Java笔记</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Java/">Java</a></li></ul>
 	</span>
 
 
@@ -252,7 +252,7 @@
 
   <link rel="stylesheet" href="http://static.duoshuo.com/styles/embed.default.css?349d9313.css">
   <!-- 多说评论框 start -->
-  <div class="ds-thread" data-thread-key="2016/08/06/Java笔记-异常处理/" data-title="Java笔记-异常处理" data-url="/2016/08/06/Java笔记-异常处理/"></div>
+  <div class="ds-thread" data-thread-key="2016/08/06/Java笔记-异常处理/" data-title="Java-异常处理" data-url="/2016/08/06/Java笔记-异常处理/"></div>
   <!-- 多说评论框 end -->
   <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
   <script type="text/javascript">

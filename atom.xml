@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-10-17T15:45:25.012Z</updated>
+  <updated>2016-12-31T15:42:02.554Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,44 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2016小结</title>
+    <link href="http://yoursite.com/2016/12/31/2016%E5%B0%8F%E7%BB%93/"/>
+    <id>http://yoursite.com/2016/12/31/2016小结/</id>
+    <published>2016-12-31T13:35:01.000Z</published>
+    <updated>2016-12-31T15:42:02.554Z</updated>
+    
+    <content type="html"><![CDATA[<p>转眼间2016年过去了，这一年中，有快乐的事，有悲伤的事，但确实也成长了不少。人生道路上老是跌跌撞撞的，希望未来能再坚强一点吧。</p>
+<a id="more"></a>
+<p>年初的时候应该是在上一家公司完成了最后一个项目，记得当时确实有些膨胀了，觉得自己在技术方面已经算是很厉害了。毕竟从2015年6月开始工作，已经接手了4个开发项目了，最后一个项目当然就是easy了。</p>
+<p>3月回到学校后其实就应该准备春招了，不过由于当时过于膨胀，觉得去腾讯阿里应该就是小case，所以就没有怎么准备。当时正好冬季赛在上海举办了，就屁颠屁颠跑到上海去看比赛了。</p>
+<p>回到学校之后也丝毫没感到时间的紧迫，依然每天花时间打DOTA，还制定了每日天梯上分计划。要是能回到过去，我一定抽死当时的自己。不务正业的结果就是在春招中被腾讯阿里无情打脸。</p>
+<p>这应该算是2016给我最大的教训了，膨胀总是要付出代价的啊，切记切记!</p>
+<p>当时的我好气啊，现在依然能感受到当时的心情。</p>
+<p>春招崩了，只能寄希望于秋招了。我不是一崩崩到底的人，下把一定要赢！我当时这样毒奶了自己。</p>
+<p>在离秋招的大约4个月，除了守望先锋出来之后沉迷了半个月，基本上就一直在学习了，暑假也没有回家，呆在学校除了看书就是写论文码代码了。那段时间感觉学了好多东西，发现之前的自己就是弱鸡啊，当然现在依然很弱。</p>
+<p>秋招的时候感觉自己依然不够强，心里还是非常的不安，但是兵临城下，该上的还是要上，每天通过笔试、刷题麻痹着自己。</p>
+<p>不久之后面试倒是很顺利，拿到了武汉某知名网红集散中心的Offer，打电话告诉爸妈和外公外婆，他们都很开心。心中的一直悬着的石头也落了地，我找到工作了，我不是最菜的那个。</p>
+<p>找到之后也没闲着，继续找了几家，没想到又拿到猪场的offer，也是做直播。看来我这辈子注定是要投身直播事业了。</p>
+<p>这段时光是2016最大的收获吧，知识，技能，工作，最重要的是感受到不服输的自己，真的好强。以后请务必保持这种心情，RUA!</p>
+<p>这2个offer挺难抉择的，前者钱少离家近，后者钱多离家远，但程序员不可能事少。钱多事少离家近这一准则没有加权公式吗？</p>
+<p>最后我选择了前者，回想这段时间为防沉迷我把守望先锋卸载了，每天睡前看下YYF或QQQ直播DOTA和守望过下瘾，看来老天爷给了我暗示啊。</p>
+<p>国庆之后就去公司实习了，每天都在研究一些音视频技术，和同事之间相处也很愉快，很享受的一段时光。以后会写一些音视频技术相关的文章吧，大概。</p>
+<p>2016大致上就这么多了，期间还发生了好多事情，感觉还是很充实的。</p>
+<p>2017元旦之后就要回学校了，希望毕业顺利，外婆身体能康复。</p>
+<p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
+<p>看着自己写的流水账，想死的心都有了。这文笔还有谁？</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;转眼间2016年过去了，这一年中，有快乐的事，有悲伤的事，但确实也成长了不少。人生道路上老是跌跌撞撞的，希望未来能再坚强一点吧。&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>ijkplayer笔记-ijkplayer编译</title>
@@ -1492,96 +1530,6 @@ SDK一般没什么问题，NDK安装后用ndk-build命令检查是否安装成�
     
     
       <category term="设计模式" scheme="http://yoursite.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Android笔记-View事件分发机制</title>
-    <link href="http://yoursite.com/2016/08/10/Android%E7%AC%94%E8%AE%B0-View%E4%BA%8B%E4%BB%B6%E5%88%86%E5%8F%91%E6%9C%BA%E5%88%B6/"/>
-    <id>http://yoursite.com/2016/08/10/Android笔记-View事件分发机制/</id>
-    <published>2016-08-10T13:00:28.000Z</published>
-    <updated>2016-09-01T07:12:21.283Z</updated>
-    
-    <content type="html"><![CDATA[<p>我们一般通过点击和滑动屏幕给应用下达指令，应用就会响应并做出相应的处理。这其中经历了一段怎样的过程？<br>Android事件分发机制总的来说就是先分发再处理，是责任链模式的运用，其处理过程中有很多细节，所以相关的代码很长。<br>这里笼统的总结一下Android事件分发的规律，其实用图来解释比较清楚，见参考资料。</p>
-<a id="more"></a>
-<h1 id="事件分发"><a href="#事件分发" class="headerlink" title="事件分发"></a>事件分发</h1><h2 id="涉及到事件响应的常用方法构成"><a href="#涉及到事件响应的常用方法构成" class="headerlink" title="涉及到事件响应的常用方法构成"></a>涉及到事件响应的常用方法构成</h2><ul>
-<li>MotionEvent.ACTION_DOWN　：手指按下屏幕的瞬间（一切事件的开始）</li>
-<li>MotionEvent.ACTION_MOVE　：手指在屏幕上移动</li>
-<li>MotionEvent.ACTION_UP　：手指离开屏幕瞬间</li>
-<li>MotionEvent.ACTION_CANCEL 　：取消手势，一般由程序产生，不会由用户产生</li>
-</ul>
-<p>Android中的事件onClick, onLongClick，onScroll, onFling等等，都是由许多个Touch事件构成的（一个ACTION_DOWN， n个ACTION_MOVE，1个ACTION_UP）。</p>
-<p>android 事件响应机制是先分发（先由外部的View接收，然后依次传递给其内层的最小View）再处理（从最小View单元（事件源）开始依次向外层传递。）的形式实现的。</p>
-<h2 id="涉及到的三个重要函数"><a href="#涉及到的三个重要函数" class="headerlink" title="涉及到的三个重要函数"></a>涉及到的三个重要函数</h2><h3 id="事件分发：public-boolean-dispatchTouchEvent-MotionEvent-ev"><a href="#事件分发：public-boolean-dispatchTouchEvent-MotionEvent-ev" class="headerlink" title="事件分发：public boolean dispatchTouchEvent(MotionEvent ev)"></a>事件分发：public boolean dispatchTouchEvent(MotionEvent ev)</h3><p>如果事件能够传递给当前View,那么此方法一定会被调用，返回结果受当前View的onTouchEvent和下级的View的dispatchTouchEvent方法的影响，表示是否消耗当前的事件。
-　</p>
-<h3 id="事件拦截：public-boolean-onInterceptTouchEvent-MotionEvent-ev"><a href="#事件拦截：public-boolean-onInterceptTouchEvent-MotionEvent-ev" class="headerlink" title="事件拦截：public boolean onInterceptTouchEvent(MotionEvent ev)"></a>事件拦截：public boolean onInterceptTouchEvent(MotionEvent ev)</h3><p>该方法为ViewGroup独有。<br>在ViewGroup的dispatchTouchEvent内部调用，用来判断当前ViewGroup是否拦截事件，如果拦截，那么在同一个事件序列中，此方法不会被再次调用，返回结果表示是否拦截事件，默认不拦截。</p>
-<h3 id="事件响应：public-boolean-onTouchEvent-MotionEvent-ev"><a href="#事件响应：public-boolean-onTouchEvent-MotionEvent-ev" class="headerlink" title="事件响应：public boolean onTouchEvent(MotionEvent ev)"></a>事件响应：public boolean onTouchEvent(MotionEvent ev)</h3><p>ViewGroup未实现，而是调用父类view的该方法。<br>在dispatchTouchEvent中调用，用来处理事件，返回结果表示是否消耗当前事件，如果不消耗，则在同一个事件序列中，当前View无法再次接收事件。</p>
-<h2 id="View分析"><a href="#View分析" class="headerlink" title="View分析"></a>View分析</h2><ul>
-<li>触摸控件（View）首先执行dispatchTouchEvent方法。</li>
-<li>在dispatchTouchEvent方法中先执行onTouch方法，后执行onClick方法（onClick方法在onTouchEvent中执行）。</li>
-<li>如果控件（View）的onTouch返回false或者mOnTouchListener为null（控件没有设置setOnTouchListener方法）或者控件不是enable的情况下会调用onTouchEvent，dispatchTouchEvent返回值与onTouchEvent返回一样。</li>
-<li>如果控件不是enable的设置了onTouch方法也不会执行，只能通过重写控件的onTouchEvent方法处理，dispatchTouchEvent返回值与onTouchEvent返回一样。</li>
-<li>如果控件（View）是enable且onTouch返回true情况下，dispatchTouchEvent直接返回true，不会调用onTouchEvent方法。</li>
-<li>当dispatchTouchEvent在进行事件分发的时候，只有前一个action返回true，才会触发下一个action（也就是说dispatchTouchEvent返回true才会进行下一次action派发）。</li>
-<li>onTouchEvent方法中会在ACTION_UP分支中触发onClick的监听。</li>
-</ul>
-<h2 id="ViewGroup分析"><a href="#ViewGroup分析" class="headerlink" title="ViewGroup分析"></a>ViewGroup分析</h2><ul>
-<li>Android事件派发是先传递到最顶级的ViewGroup，再由ViewGroup递归传递到View的。</li>
-<li>在ViewGroup中可以通过onInterceptTouchEvent方法对事件传递进行拦截，onInterceptTouchEvent方法返回true代表不允许事件继续向子View传递，返回false代表不对事件进行拦截，默认返回false。</li>
-<li>子View中如果将传递的事件消费掉，ViewGroup中将无法接收到任何事件。</li>
-<li>ViewGroup没有重写View的onTouchEvent(MotionEvent event) 方法。</li>
-</ul>
-<h2 id="Activity分析"><a href="#Activity分析" class="headerlink" title="Activity分析"></a>Activity分析</h2><ul>
-<li>首先会触发Activity的dispatchTouchEvent方法。</li>
-<li>dispatchTouchEvent方法中如果是ACTION_DOWN的情况下会接着触发onUserInteraction方法。</li>
-<li>接着在dispatchTouchEvent方法中会通过Activity的rootView（id为content的FrameLayout），实质是ViewGroup，通过super.dispatchTouchEvent把touchevent派发给各个activity的子view，也就是我们再Activity.onCreat方法中setContentView时设置的view。</li>
-<li>若Activity下面的子view拦截了touchEvent事件(返回true)则Activity.onTouchEvent方法就不会执行。</li>
-<li>onUserInteraction方法是一个空方法,此方法是activity的方法，当此activity在栈顶时，触屏点击按home，back，menu键等都会触发此方法。下拉statubar、旋转屏幕、锁屏不会触发此方法。所以它会用在屏保应用上，因为当你触屏机器就会立马触发一个事件，而这个事件又不太明确是什么，正好屏保满足此需求；或者对于一个Activity，控制多长时间没有用户点响应的时候，自己消失等。</li>
-</ul>
-<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><ul>
-<li>如果我们没有对控件里面的方法进行重写或更改返回值，而直接用super调用父类的默认实现，那么整个事件流向应该是从Activity—-&gt;ViewGroup—&gt;View从上往下调用dispatchTouchEvent方法，一直到叶子节点（View）的时候，再由View—&gt;ViewGroup—&gt;Activity从下往上调用onTouchEvent方法。<br><img src="http://ob5qdb9lc.bkt.clouddn.com/966283-d01a5845f742609712.png" alt="Image"></li>
-<li>dispatchTouchEvent 和 onTouchEvent 一旦return true,事件就停止传递了，对于return true我们经常说事件被消费了，消费了的意思就是事件走到这里就是终点，不会往下传，没有谁能再收到这个事件了。</li>
-<li>dispatchTouchEvent 和 onTouchEvent return false的时候事件都回传给父控件的onTouchEvent处理。事件停止往子View传递和分发同时开始往父控件回溯（父控件的onTouchEvent开始从下往上回传直到某个onTouchEvent return true），事件分发机制就像递归，return false 的意义就是递归停止然后开始回溯。</li>
-<li>对于onTouchEvent return false 就比较简单了，它就是不消费事件，并让事件继续往父控件的方向从下往上流动。</li>
-<li>dispatchTouchEvent、onTouchEvent、onInterceptTouchEvent<br>ViewGroup 和View的这些方法的默认实现就是会让整个事件安装U型完整走完，所以 return super.xxxxxx() 就会让事件依照U型的方向的完整走完整个事件流动路径），中间不做任何改动，不回溯、不终止，每个环节都走到。</li>
-</ul>
-<h2 id="onInterceptTouchEvent"><a href="#onInterceptTouchEvent" class="headerlink" title="onInterceptTouchEvent"></a>onInterceptTouchEvent</h2><ul>
-<li>Intercept 的意思就是拦截，每个ViewGroup每次在做分发的时候，问一问拦截器要不要拦截（也就是问问自己这个事件要不要自己来处理）如果要自己处理那就在onInterceptTouchEvent方法中 return true就会交给自己的onTouchEvent的处理，如果不拦截就是继续往子控件往下传。</li>
-<li>默认是不会去拦截的，因为子View也需要这个事件，所以onInterceptTouchEvent拦截器return super.onInterceptTouchEvent()和return false是一样的，是不会拦截的，事件会继续往子View的dispatchTouchEvent传递。</li>
-</ul>
-<h2 id="ViewGroup的dispatchTouchEvent"><a href="#ViewGroup的dispatchTouchEvent" class="headerlink" title="ViewGroup的dispatchTouchEvent"></a>ViewGroup的dispatchTouchEvent</h2><ul>
-<li>return true是终结传递。return false 是回溯到父View的onTouchEvent。</li>
-<li>通过Interceptor把事件拦截下来给自己的onTouchEvent</li>
-<li>ViewGroup dispatchTouchEvent方法的super默认实现就是去调用onInterceptTouchEvent。</li>
-</ul>
-<h2 id="View的dispatchTouchEvent"><a href="#View的dispatchTouchEvent" class="headerlink" title="View的dispatchTouchEvent"></a>View的dispatchTouchEvent</h2><ul>
-<li>View类的dispatchTouchEvent（）方法默认实现就是能帮你调用View自己的onTouchEvent方法的。</li>
-</ul>
-<h2 id="ViewGroup和View的onTouchEvent"><a href="#ViewGroup和View的onTouchEvent" class="headerlink" title="ViewGroup和View的onTouchEvent"></a>ViewGroup和View的onTouchEvent</h2><ul>
-<li>自己消费掉，事件终结，不再传给谁—–&gt;return true;</li>
-<li>继续从下往上传，不消费事件，让父View也能收到到这个事件—–&gt;return false;View的默认实现是不消费的。所以super==false。</li>
-</ul>
-<h2 id="ACTION-MOVE-和-ACTION-UP"><a href="#ACTION-MOVE-和-ACTION-UP" class="headerlink" title="ACTION_MOVE 和 ACTION_UP"></a>ACTION_MOVE 和 ACTION_UP</h2><ul>
-<li>ACTION_DOWN事件在哪个控件消费了（return true）， 那么ACTION_MOVE和ACTION_UP就会从上往下（通过dispatchTouchEvent）做事件分发往下传，就只会传到这个控件，不会继续往下传</li>
-<li>如果ACTION_DOWN事件是在dispatchTouchEvent消费，那么事件到此为止停止传递，如果ACTION_DOWN事件是在onTouchEvent消费的，那么会把ACTION_MOVE或ACTION_UP事件传给该控件的onTouchEvent处理并结束传递。</li>
-</ul>
-<h2 id="滑动冲突的解决办法"><a href="#滑动冲突的解决办法" class="headerlink" title="滑动冲突的解决办法"></a>滑动冲突的解决办法</h2><h3 id="外部拦截法"><a href="#外部拦截法" class="headerlink" title="外部拦截法"></a>外部拦截法</h3><p>点击事件都先经过父容器的拦截处理，如果父容器需要此事件就拦截，如果不需要此事件就不拦截。需要重写父容器的onInterceptTouchEvent方法。</p>
-<h3 id="内部拦截法"><a href="#内部拦截法" class="headerlink" title="内部拦截法"></a>内部拦截法</h3><p>父容器不拦截任何事件，所有事件都传递给子元素，如果子元素需要此事件就直接消耗掉，否则就交给父容器处理。需要重写子View的dispatchTouchEvent方法。</p>
-<p>参考资料：<br><a href="http://www.jianshu.com/p/e99b5e8bd67b" target="_blank" rel="external">图解 Android 事件分发机制</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;我们一般通过点击和滑动屏幕给应用下达指令，应用就会响应并做出相应的处理。这其中经历了一段怎样的过程？&lt;br&gt;Android事件分发机制总的来说就是先分发再处理，是责任链模式的运用，其处理过程中有很多细节，所以相关的代码很长。&lt;br&gt;这里笼统的总结一下Android事件分发的规律，其实用图来解释比较清楚，见参考资料。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Android笔记" scheme="http://yoursite.com/categories/Android%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="Android系统" scheme="http://yoursite.com/tags/Android%E7%B3%BB%E7%BB%9F/"/>
-    
-      <category term="View事件分发机制" scheme="http://yoursite.com/tags/View%E4%BA%8B%E4%BB%B6%E5%88%86%E5%8F%91%E6%9C%BA%E5%88%B6/"/>
     
   </entry>
   

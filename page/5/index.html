@@ -77,7 +77,7 @@
             
               <li class="category-list-container">
                 <a href="javascript:;">分类</a>
-                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android笔记/">Android笔记</a><span class="category-list-count">20</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java笔记/">Java笔记</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ReactNative笔记/">ReactNative笔记</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TCP-IP笔记/">TCP/IP笔记</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ijkplayer笔记/">ijkplayer笔记</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/其它/">其它</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统笔记/">操作系统笔记</a><span class="category-list-count">1</span></li></ul>
+                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android笔记/">Android笔记</a><span class="category-list-count">20</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java笔记/">Java笔记</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ReactNative笔记/">ReactNative笔记</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TCP-IP笔记/">TCP/IP笔记</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ijkplayer笔记/">ijkplayer笔记</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/其它/">其它</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统笔记/">操作系统笔记</a><span class="category-list-count">1</span></li></ul>
               </li>
             
           
@@ -91,7 +91,7 @@
             
               <li class="archive-list-container">
                 <a href="javascript:;">归档</a>
-                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a><span class="archive-list-count">42</span></li></ul>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a><span class="archive-list-count">43</span></li></ul>
               </li>
             
           
@@ -146,21 +146,21 @@
 
     <div class="post-list-item article">
       <h3 class="article-header">
-        <a href="/2016/08/03/Java笔记-内存区域与内存溢出异常/" >
-  Java笔记-内存区域与内存溢出异常
+        <a href="/2016/08/03/Java笔记-垃圾收集器与内存分配策略/" >
+  Java-垃圾收集器与内存分配策略
 </a>
 
       </h3>
       
 
       <div class="article-info">
-        <a href="/2016/08/03/Java笔记-内存区域与内存溢出异常/"><span class="article-date">
+        <a href="/2016/08/03/Java笔记-垃圾收集器与内存分配策略/"><span class="article-date">
   2016-08-03
 </span>
 </a>
         
 	<span class="article-category tagcloud">
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Java笔记/">Java笔记</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Java/">Java</a></li></ul>
 	</span>
 
 
@@ -173,7 +173,55 @@
       </div>
       <div class="article-entry">
         
-          <p>JVM是在千差万别的物理机上建立了统一的运行平台，实现了在任意一台虚拟机上编译的程序都能在任何一台虚拟机上正常运行。这让开发人员可以把主要精力集中在具体的业务逻辑上，而不是物理硬件的兼容性上。<br>这么说来，开发人员只要了解Java API、Java语法就行了，就可以满足日常开发需要了。(当然不包括高级的开发)<br>学习JVM首先是满足好奇心，Android开发是基于Java的，所以想要了解Java到底是如何运行起来的，有什么运行机制和原理。二是如果开发人员不了解虚拟机一些技术特性的运行原理，就无法写出最适合虚拟机运行和自优化的代码。<br>Java虚拟机首先实现了自动内存管理机制，像一个管家一样，把它管理的内存划分为若干个不同的数据区域。有些区域还会出现爆满的情况，这是就会抛出异常。<br>总结一下Java虚拟机将内存划分的几个区域、对象的创建和内存溢出异常。</p>
+          <p>Java与C++之间最大的区别就是内存动态分配和垃圾收集技术，Java中的对象没人用的话会有垃圾收集器自动回收，让它滚蛋，一直都有用的话还会将它移动到富人区，让它活着更舒适，减少被垃圾收集器打扰的可能。(原来Java里的对象跟人活在现实世界一样残酷啊)<br>对象的出生也是有高低贵贱的，大的对象可以直接入住富人区，而大多数的一开始就只能在贫民区，只能努力向富人区奋斗。<br>总结一下Java世界里对象面临的残酷生存法则，和那些如同恶魔般的垃圾收集器。</p>
+          <p>
+            <a href="/2016/08/03/Java笔记-垃圾收集器与内存分配策略/">
+              阅读全文
+            </a>
+          </p>
+        
+      </div>
+    </div>
+
+  
+    </div>
+  
+
+  
+  
+    <div class="post-list">
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2016/08/03/Java笔记-内存区域与内存溢出异常/" >
+  Java-内存区域与内存溢出异常
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2016/08/03/Java笔记-内存区域与内存溢出异常/"><span class="article-date">
+  2016-08-03
+</span>
+</a>
+        
+	<span class="article-category tagcloud">
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Java/">Java</a></li></ul>
+	</span>
+
+
+        
+	<span class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JVM/">JVM</a></li></ul>
+	</span>
+
+
+      </div>
+      <div class="article-entry">
+        
+          <p>JVM是在千差万别的物理机上建立了统一的运行平台，实现了在任意一台虚拟机上编译的程序都能在任何一台虚拟机上正常运行。这让开发人员可以把主要精力集中在具体的业务逻辑上，而不是物理硬件的兼容性上。<br>这么说来，开发人员只要了解Java API、Java语法就行了，就可以满足日常开发需要了。(当然不包括高级的开发)<br>学习JVM首先是Android开发是基于Java的，所以想要了解Java到底是如何运行起来的，有什么运行机制和原理。二是如果开发人员不了解虚拟机一些技术特性的运行原理，就无法写出最适合虚拟机运行和自优化的代码。<br>Java虚拟机首先实现了自动内存管理机制，像一个管家一样，把它管理的内存划分为若干个不同的数据区域。有些区域还会出现爆满的情况，这是就会抛出异常。<br>总结一下Java虚拟机将内存划分的几个区域、对象的创建和内存溢出异常。</p>
           <p>
             <a href="/2016/08/03/Java笔记-内存区域与内存溢出异常/">
               阅读全文

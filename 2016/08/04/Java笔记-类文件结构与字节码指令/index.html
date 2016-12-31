@@ -8,25 +8,20 @@
 
 <title>
   
-    Java笔记-类文件结构与字节码指令
+    Java-类文件结构与字节码指令
   
 </title>
 
-<meta name="description" content="谁都知道Java文件会被编译为Class文件执行，那编译成的Class文件是一个怎样的迷之结构，我们写的字段、方法在Class文件中会变成什么样子？了解Class文件的结构是为学习类加载机制、字节码执行的学习做铺垫，同时也满足了一窥究竟的好奇心，原来Class文件是酱紫的。还有虚拟机既然可以执行字节码，那肯定有一套自己的指令集。总结一下Java中的Class文件的结构和指令集相关知识。">
+<meta name="description" content="Java文件会被编译为Class文件执行，那编译成的Class文件是一个怎样的迷之结构，我们写的字段、方法在Class文件中会变成什么样子？还有虚拟机既然可以执行字节码，那肯定有一套自己的指令集。总结一下Java中的Class文件的结构和指令集相关知识。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java笔记-类文件结构与字节码指令">
+<meta property="og:title" content="Java-类文件结构与字节码指令">
 <meta property="og:url" content="http://yoursite.com/2016/08/04/Java笔记-类文件结构与字节码指令/index.html">
 <meta property="og:site_name" content="Let's fly far away">
-<meta property="og:description" content="谁都知道Java文件会被编译为Class文件执行，那编译成的Class文件是一个怎样的迷之结构，我们写的字段、方法在Class文件中会变成什么样子？了解Class文件的结构是为学习类加载机制、字节码执行的学习做铺垫，同时也满足了一窥究竟的好奇心，原来Class文件是酱紫的。还有虚拟机既然可以执行字节码，那肯定有一套自己的指令集。总结一下Java中的Class文件的结构和指令集相关知识。">
-<meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/20140529181208328.png">
-<meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/20140529182355984.jpg">
-<meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/20140529181804171.jpg">
-<meta property="og:image" content="http://ob5qdb9lc.bkt.clouddn.com/20140428222701984.png">
-<meta property="og:updated_time" content="2016-08-29T08:35:37.305Z">
+<meta property="og:description" content="Java文件会被编译为Class文件执行，那编译成的Class文件是一个怎样的迷之结构，我们写的字段、方法在Class文件中会变成什么样子？还有虚拟机既然可以执行字节码，那肯定有一套自己的指令集。总结一下Java中的Class文件的结构和指令集相关知识。">
+<meta property="og:updated_time" content="2016-12-04T08:07:29.550Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java笔记-类文件结构与字节码指令">
-<meta name="twitter:description" content="谁都知道Java文件会被编译为Class文件执行，那编译成的Class文件是一个怎样的迷之结构，我们写的字段、方法在Class文件中会变成什么样子？了解Class文件的结构是为学习类加载机制、字节码执行的学习做铺垫，同时也满足了一窥究竟的好奇心，原来Class文件是酱紫的。还有虚拟机既然可以执行字节码，那肯定有一套自己的指令集。总结一下Java中的Class文件的结构和指令集相关知识。">
-<meta name="twitter:image" content="http://ob5qdb9lc.bkt.clouddn.com/20140529181208328.png">
+<meta name="twitter:title" content="Java-类文件结构与字节码指令">
+<meta name="twitter:description" content="Java文件会被编译为Class文件执行，那编译成的Class文件是一个怎样的迷之结构，我们写的字段、方法在Class文件中会变成什么样子？还有虚拟机既然可以执行字节码，那肯定有一套自己的指令集。总结一下Java中的Class文件的结构和指令集相关知识。">
 
 
   <link rel="alternative" href="/atom.xml" title="Let&#39;s fly far away" type="application/atom+xml">
@@ -86,7 +81,7 @@
             
               <li class="category-list-container">
                 <a href="javascript:;">分类</a>
-                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android笔记/">Android笔记</a><span class="category-list-count">20</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java笔记/">Java笔记</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ReactNative笔记/">ReactNative笔记</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TCP-IP笔记/">TCP/IP笔记</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ijkplayer笔记/">ijkplayer笔记</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/其它/">其它</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统笔记/">操作系统笔记</a><span class="category-list-count">1</span></li></ul>
+                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android笔记/">Android笔记</a><span class="category-list-count">20</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java笔记/">Java笔记</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ReactNative笔记/">ReactNative笔记</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TCP-IP笔记/">TCP/IP笔记</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ijkplayer笔记/">ijkplayer笔记</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/其它/">其它</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统笔记/">操作系统笔记</a><span class="category-list-count">1</span></li></ul>
               </li>
             
           
@@ -100,7 +95,7 @@
             
               <li class="archive-list-container">
                 <a href="javascript:;">归档</a>
-                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a><span class="archive-list-count">42</span></li></ul>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a><span class="archive-list-count">43</span></li></ul>
               </li>
             
           
@@ -149,7 +144,7 @@
           <article id="post-Java笔记-类文件结构与字节码指令" class="article article-type-post">
   
     <h1 class="article-header">
-      Java笔记-类文件结构与字节码指令
+      Java-类文件结构与字节码指令
     </h1>
   
   
@@ -161,7 +156,7 @@
 
     
 	<span class="article-category tagcloud">
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Java笔记/">Java笔记</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Java/">Java</a></li></ul>
 	</span>
 
 
@@ -173,42 +168,39 @@
 
   </div>
   <div class="article-entry">
-    <p>谁都知道Java文件会被编译为Class文件执行，那编译成的Class文件是一个怎样的迷之结构，我们写的字段、方法在Class文件中会变成什么样子？<br>了解Class文件的结构是为学习类加载机制、字节码执行的学习做铺垫，同时也满足了一窥究竟的好奇心，原来Class文件是酱紫的。<br>还有虚拟机既然可以执行字节码，那肯定有一套自己的指令集。<br>总结一下Java中的Class文件的结构和指令集相关知识。</p>
+    <p>Java文件会被编译为Class文件执行，那编译成的Class文件是一个怎样的迷之结构，我们写的字段、方法在Class文件中会变成什么样子？<br>还有虚拟机既然可以执行字节码，那肯定有一套自己的指令集。<br>总结一下Java中的Class文件的结构和指令集相关知识。</p>
 <a id="more"></a>
-<h1 id="Java平台无关性的基石"><a href="#Java平台无关性的基石" class="headerlink" title="Java平台无关性的基石"></a>Java平台无关性的基石</h1><ul>
-<li>各个不同平台的虚拟机与所有平台都统一使用的程序存储格式——字节码(ByteCode)是构成平台无关性的基石。</li>
-<li>虚拟机的另外一种中立特性——语言无关性正越来越被开发者重视。实现语言无关性的基础是虚拟机和字节码存储格式。</li>
+<h2 id="Java平台无关性"><a href="#Java平台无关性" class="headerlink" title="Java平台无关性"></a>Java平台无关性</h2><ul>
 <li>Java虚拟机不和包含Java在内的任何语言绑定，它只与“class”文件这种特定的二进制文件格式所关联，class文件中包含了Java虚拟机指令集和符号表以及若干其他辅助信息。</li>
-<li>任一门功能性语言都可以表示为一个能被Java虚拟机所接受的有效的Class文件。eg:使用Java编译器可以把Java代码编译为存储字节码的class文件，使用JRuby等其他语言的编译器一样可以把程序代码编译成class文件，虚拟机并不关心class的来源是何种语言。<br><img src="http://ob5qdb9lc.bkt.clouddn.com/20140529181208328.png" alt="iamge2"></li>
+<li>任一门功能性语言都可以表示为一个能被Java虚拟机所接受的有效的Class文件。<br>![iamge2][2]</li>
 </ul>
-<h1 id="Class类文件的结构"><a href="#Class类文件的结构" class="headerlink" title="Class类文件的结构"></a>Class类文件的结构</h1><ul>
-<li>Class文件是一组以8位字节为基础单位的二进制流，各个数据项目严格按照顺序紧凑地排列在class文件中，中间没有任何分隔符。当遇到需要占用8位字节以上空间的数据项时，则会按照高位在前(大端)的方式分隔成若干个8位字节进行存储。</li>
-<li>根据Java虚拟机规范规定，class文件格式采用一种类似C语言结构体的伪结构来存储数据，这种伪结构中只有两种数据类型：无符号数和表。</li>
+<h2 id="Class类文件的结构"><a href="#Class类文件的结构" class="headerlink" title="Class类文件的结构"></a>Class类文件的结构</h2><ul>
+<li>Class文件是一组以8位字节为基础单位的二进制流，各个数据项目严格按照顺序紧凑地排列在class文件中，中间没有任何分隔符。当遇到需要占用8位字节以上空间的数据项时，则会按照大端的方式分隔成若干个8位字节进行存储。</li>
+<li>class文件格式采用一种类似C语言结构体的结构来存储数据，两种数据类型：无符号数和表。</li>
 <li>无符号数属于基本的数据类型，以u1、u2、u3、u8来分别代表1个字节、2个字节、4个字节、8个字节的无符号数，无符号数可以用来描述数字、索引引用、数量值或者按UTF-8编码构成的字符串。</li>
-<li>表是由多个无符号数或者其他表作为数据项构成的复合数据类型，所有表都习惯性地以”_ info”结尾。表用于描述有层次关系的复合结构的数据，整个class文件本质上就是一张表。<br><img src="http://ob5qdb9lc.bkt.clouddn.com/20140529182355984.jpg" alt="iamge3"></li>
-<li>无论是无符号数还是表，当需要描述同一类型但数量不定的多个数据时，经常会使用一个前置的容量计数器加若干连续的数据项的形式，这时称这一系列的某一类型的数据为某一类型的集合。</li>
+<li>表是由多个无符号数或者其他表作为数据项构成的复合数据类型，表用于描述有层次关系的复合结构的数据，整个class文件本质上就是一张表。</li>
 </ul>
-<h2 id="魔数与class文件的版本"><a href="#魔数与class文件的版本" class="headerlink" title="魔数与class文件的版本"></a>魔数与class文件的版本</h2><ul>
+<h2 id="class文件的版本"><a href="#class文件的版本" class="headerlink" title="class文件的版本"></a>class文件的版本</h2><ul>
 <li>每个class文件的头4个字节称为魔数，它的唯一作用是确定这个文件是否为一个能被虚拟机接受的class文件。</li>
 <li>选择魔数0xCAFEBABY是因为它象征着著名咖啡品牌Peet’s Coffee中深受欢迎的Baristas咖啡。</li>
 <li>紧接着魔数的4个字节存储的是class文件的版本号：第5个第6个字节是次版本号，第7和第8个字节是主版本号。高版本的JDK能向下兼容以前版本的class文件，但不能运行以后版本的class文件。</li>
 </ul>
 <h2 id="常量池"><a href="#常量池" class="headerlink" title="常量池"></a>常量池</h2><ul>
-<li>紧接着版本号的是常量池入口，常量池可以理解为class文件之中的资源仓库，它是class文件结构中与其他项目关联最多的数据类型，也是class文件空间最大的数据项目之一，同时它还是class文件中第一个出现的表类型数据项目。</li>
+<li>常量池可以理解为class文件之中的资源仓库。</li>
 <li>由于常量池中的常量的数值是不固定的，所以在常量池的入口需要放置一项u2类型的数据，代表常量池容量的计数值。</li>
 <li>常量池中主要存放两大类常量：字面量和符号引用。</li>
 <li>字面量比较接近于Java语言层面的常量概念，如文本字符串、声明为final的常量值等。</li>
-<li>符号引用则属于编译原理方面的概念，包括<br><br>1.类和接口的全限定名<br><br>2.字段的名称和描述符<br><br>3.方法的名称和描述符<br></li>
-<li>Java代码在进行javac编译时，不像c和c++那样有“连接”这一步骤，而是在虚拟机加载class文件的时候进行动态连接。也就是说在class文件中不会保存各个方法、字段的最终内存布局信息，因此这些字段、方法的符号引用不经过运行期转换的话就无法得到真正的内存入口地址，也就无法被虚拟机使用。</li>
+<li>符号引用包括<ol>
+<li>类和接口的全限定名</li>
+<li>字段的名称和描述符</li>
+<li>方法的名称和描述符</li>
+</ol>
+</li>
 <li>当虚拟机运行时，需要从常量池获得对应的符号引用，再在类创建时或运行时解析、翻译到具体的内存地址之中。</li>
-<li>常量池中每一项常量都是一个表，这些表都有一个共同特点，就是表开始的第一位是一个ul类型的标志位，代表当前这个常量属于哪种常量类型。</li>
-</ul>
-<p><img src="http://ob5qdb9lc.bkt.clouddn.com/20140529181804171.jpg" alt="image4"></p>
-<ul>
 <li>由于class文件方法、字段等都需要引用CONSTANT_Utf8_info型常量来描述名称，所以CONSTANT_Utf8_info型常量的最大长度也就是Java中方法方法、字段名的最大长度，而这里最大长度就是length的最大值，u2类型的最大值65535(2个字节，2的16次方)，所以Java程序中如果定义了超过64KB英文字符的变量或方法名，将无法编译。</li>
 </ul>
 <h2 id="访问标志"><a href="#访问标志" class="headerlink" title="访问标志"></a>访问标志</h2><ul>
-<li>在常量池结束之后，紧接着两个字节代表访问标志，这个标志用于识别一些类或者接口层次的访问信息，包括：这个class是接口还是类；是否定位为public类型等。</li>
+<li>两个字节代表访问标志，这个标志用于识别一些类或者接口层次的访问信息，包括：这个class是接口还是类；是否定位为public类型等。</li>
 </ul>
 <h2 id="类索引、父类索引与接口索引集合"><a href="#类索引、父类索引与接口索引集合" class="headerlink" title="类索引、父类索引与接口索引集合"></a>类索引、父类索引与接口索引集合</h2><ul>
 <li>类索引（this_class）和父类索引(super_class)都是u2类型的数据，而接口索引集合(interfaces)是一组u2类型的数据的集合，class文件由这三项数据来确定这个类的继承关系。</li>
@@ -217,71 +209,23 @@
 </ul>
 <h2 id="字段表集合"><a href="#字段表集合" class="headerlink" title="字段表集合"></a>字段表集合</h2><ul>
 <li>字段表集合用于描述接口或类中声明的变量。字段包括类级变量以及实例级变量，但不包括方法内部声明的局部变量。</li>
-<li>字段的作用域(public、private、protected)、是实例还是类变量(static)、可变性(final)、并发可见性(volatile)等，各个修饰符都是boolean值，很适合用标志位表示，而字段叫什么名字、字段被定义为什么数据类型，只能引用常量池中的常量来描述。</li>
-</ul>
-<p><img src="http://ob5qdb9lc.bkt.clouddn.com/20140428222701984.png" alt="image5"></p>
-<ul>
-<li>字段修饰符放在access_flags项目中，与类中access_flags项目非常相似，都是一个u2的数据类型。</li>
-<li>name_index和descriptor_index都是对常量池的的引用，分别代表着字段的简单名称以及字段和方法的描述符。</li>
-<li>全限定名，如”org/fenixsoft/clazz/TestClass”是这个类的全限定名，仅仅是把类全名的”.”替换成了”/“而已，为了使连续的多个全限定名之间不产生混淆，在使用时最后一般会加入一个“；”表示全限定名结束。</li>
-<li>简单名称是指没有类型和参数修饰的方法或字段名称，如类中的inc()方法和m字段的简单名称分别是“inc”和“m”。</li>
-<li>描述符的作用是用来描述字段的数据类型、方法的参数列表(包括数量、类型以及顺序)和返回值。基本数据类型以及无返回值的void类型都用一个大写字符来表示，而对象类型则用字符L加对象的全限定名来表示。</li>
-<li>字段表集合中不会列出从超类或者父接口继承而来的字段，但可能列出原来Java代码中不存在的字段，譬如在内部类中为保持对外部类的访问性，会自动添加指向外部类实例的字段。另外，在Java语言中字段是无法重载的，两个字段的数据类型、修饰符不管是否相同，都必须使用不一样的名称，但是对于字节码来说，如果两个字段的描述符不一致，那字段重名就是合法的。</li>
+<li>字段的作用域(public、private、protected)、是实例还是类变量(static)、可变性(final)、并发可见性(volatile)等，各个修饰符都是boolean值，而字段叫什么名字、字段被定义为什么数据类型，只能引用常量池中的常量来描述。</li>
 </ul>
 <h2 id="方法表集合"><a href="#方法表集合" class="headerlink" title="方法表集合"></a>方法表集合</h2><ul>
 <li>class文件存储格式中对方法的描述与对字段的描述集合采用了完全一致的方式，方法表的结构如同字段表的一样，仅在访问标志和属性表集合的可选项中有所区别。</li>
-<li>因为volatile关键字和treansient关键字不能修饰方法，所以方法表标志中没有了ACC_VOLATILE标志和ACC_TREANSIENT标志，synshronized、native、strictfp、abstract关键字可以修饰方法，所以增加了几个标志。</li>
 <li>方法里的Java代码经过编译器编译成字节码指令后，存放在方法属性表集合中一个名为“code”的属性表里面，属性表作为class文件格式中最具扩展性的一种数据项目。</li>
 <li>如果父类方法在子类中没有被重写，方法表集合中就不会出现来自父类的方法信息。但同样的，有可能会出现编译器自动添加的方法，最典型的便是类构造器“<clinit>”方法和实例构造器”<init>“方法。</init></clinit></li>
-<li>在Java语言中，要重载一个方法，除了要与原方法具有相同的简单名称之外，还要求必须拥有一个与原方法不同的特征签名，特征签名就是一个方法中各个参数在常量池中的字段符号引用的集合，也就是因为返回值不会包含在特征签名中，因此Java语言里面是无法仅靠返回值的不同进行重载的。</li>
 </ul>
 <h2 id="属性表集合"><a href="#属性表集合" class="headerlink" title="属性表集合"></a>属性表集合</h2><ul>
 <li>在class文件、字段表、方法表都可以携带自己的属性表集合。</li>
-<li>与class文件中其他的数据项目要求严格的顺序、长度和内容不同，属性表集合的限制宽松了一些，不再要求各个属性表具有严格的顺序，并且只要不与已有的属性名重复，任何人实现的编译器都可以向属性表中写入自己定义的信息，Java虚拟机运行时会忽略掉它不认识的属性。</li>
-<li>Java虚拟机预定义了虚拟机应当能识别的属性，对于每个属性，它的名称需要从常量池中引用一个CONSTANT_Utf8_info类型的常量来表示，而属性值的结构则是完全自定义的，只需要通过一个u4长度属性去说明属性值所占用的位数即可。</li>
+<li>对于每个属性，它的名称需要从常量池中引用一个CONSTANT_Utf8_info类型的常量来表示，而属性值的结构则是完全自定义的，只需要通过一个u4长度属性去说明属性值所占用的位数即可。</li>
 </ul>
 <h3 id="Code属性"><a href="#Code属性" class="headerlink" title="Code属性"></a>Code属性</h3><ul>
-<li>Java程序方法体中的代码经过Javac编译器处理后，最终变为字节码指令存储在Code属性内。Code属性出现在方法表的属性集合之中，但并非所有的方法表都必须存在这个属性，譬如接口或者抽象类中的方法就不存在Code属性。</li>
+<li>Java程序方法体中的代码经过Javac编译器处理后，最终变为字节码指令存储在Code属性内。</li>
 <li>Code属性是Class文件中最重要的一个属性，如果把一个Java程序中的信息分为代码(Code，方法体中的代码)和元数据(Metadata，包括类、字段、方法定义及其他信息)两部分，那么在整个Class文件中，Code属性用于描述代码，所有其他的数据项目都用来描述元数据。</li>
 </ul>
 <h3 id="Exceptions属性"><a href="#Exceptions属性" class="headerlink" title="Exceptions属性"></a>Exceptions属性</h3><ul>
 <li>Exceptions属性是在方法表中与Code属性平级的一项属性。Exceptions属性的作用是列举出方法中可能抛出的受查异常，也就是方法描述时在throws关键字后面列出的异常。</li>
-</ul>
-<h3 id="LineNumberTable属性"><a href="#LineNumberTable属性" class="headerlink" title="LineNumberTable属性"></a>LineNumberTable属性</h3><ul>
-<li>LineNumberTable属性用于描述Java源码行号与字节码行号之间的对应关系。它并不是运行时必需的属性，但默认会生成到class文件中。如果选择不生成LineNumberTable属性，对程序运行产生的最主要影响就是当抛出异常时，堆栈中将不会显示出错的行号，并且在调试程序的时候，也无法按源码来设置断点。</li>
-</ul>
-<h3 id="LocalVariableTable属性"><a href="#LocalVariableTable属性" class="headerlink" title="LocalVariableTable属性"></a>LocalVariableTable属性</h3><ul>
-<li>LocalVariableTable属性用于描述栈帧中局部变量表中的变量与Java源码中定义的变量之间的关系，它也不是运行时必需的属性，但默认会生成到class文件中。如果没有生成这种属性，最大影响就是当其他人引用这个方法时，所有的参数名称都会消失，IDE将会使用诸如arg0、arg1之类占位符替代原有的参数名。这对程序运行没有影响，但是会对代码编写带来较大的不便，而且在调试期间无法根据参数名称从上下文中获得参数值。</li>
-<li>JDK1.5引入泛型之后，LocalVariableTable属性增加了一个姐妹属性：LocalVariableTypeTable属性，这个新增的属性结构与LocalVariableTable属性非常相似，仅仅把记录字段描述符的descriptor_index替换成了字段的特征签名，对于非泛型类来说，描述符和特征签名能描述的信息是基本一致的，但泛型引入之后，由于描述符中泛型的参数化类型被擦出掉，描述符就不能准确地描述泛型类型了，因此出现了LocalVariableTypeTable属性。</li>
-</ul>
-<h3 id="SourceFile属性"><a href="#SourceFile属性" class="headerlink" title="SourceFile属性"></a>SourceFile属性</h3><ul>
-<li>SourceFile属性用于记录生成这个class文件的源码文件名称。这个属性也是可选的。在Java中，对于大多数类来说，类名和文件名是一致的，但是有一些特殊情况(如内部类)例外。如果不生成这项属性，当抛出异常时，堆栈中将不会显示出错代码所属的文件名。</li>
-</ul>
-<h3 id="ConstantValue属性"><a href="#ConstantValue属性" class="headerlink" title="ConstantValue属性"></a>ConstantValue属性</h3><ul>
-<li>ConstantValue属性的作用是通知虚拟机自动为静态变量赋值。只有被static关键字修饰的变量(类变量)才可以使用这项属性。</li>
-<li>对于非static变量的赋值实在实例构造器<init>方法中进行的；对于类变量，则有两张方式可以选择：在类构造器&lt; clinit &gt;方法或者使用ConstantValue属性。</init></li>
-<li>如果同时使用final和static来修饰一个常量，并且这个常量的数据类型是基本数据类型或者java.lang.String的话，就生成ConstantValue属性来进行初始化，如果没有被final修饰，或者并非基本类型或字符串，则会选择在<clinit>方法中进行初始化。</clinit></li>
-</ul>
-<h3 id="InnerClasses属性"><a href="#InnerClasses属性" class="headerlink" title="InnerClasses属性"></a>InnerClasses属性</h3><ul>
-<li>InnerClasses属性用于记录内部类与宿主类之间的关联。如果一个类中定义了内部类，那编译器将会为它以及所包含的内部类生成InnerClasser属性。</li>
-</ul>
-<h3 id="Depresscated及Synthetic属性"><a href="#Depresscated及Synthetic属性" class="headerlink" title="Depresscated及Synthetic属性"></a>Depresscated及Synthetic属性</h3><ul>
-<li>Depresscated及Synthetic两个属性都属于标志类型的布尔属性。</li>
-<li>Depresscated属性用于表示某个类、字段或者方法，已经被程序作者定位不再推荐使用，它可以通过在代码中使用@Depresscated注解进行设置。</li>
-<li>Synthetic属性代表此字段或者方法并不是由Java源码直接产生的，而是由编译器自行添加的，最典型的例子就是Bridge Method。</li>
-</ul>
-<h3 id="StackMapTable属性"><a href="#StackMapTable属性" class="headerlink" title="StackMapTable属性"></a>StackMapTable属性</h3><ul>
-<li>StackMapTable属性在JDK1.6发布后增加到class文件规范中，它是一个复杂的变长属性，位于Code属性的属性表中。这个属性会在虚拟机加载字节码验证阶段被新类型检验器使用，目前在于替代以前比较消耗性能的基于数据流分析的类型推导验证器。</li>
-</ul>
-<h3 id="Signature属性"><a href="#Signature属性" class="headerlink" title="Signature属性"></a>Signature属性</h3><ul>
-<li>Signature属性在JDK1.5发布后增加到class文件规范中，是一个可选的定长属性，可以出现于类、字段表和方法表结构的属性表中。</li>
-<li>任何类、接口、初始化方法或者成员的泛型签名如果包含了类型变量或参数化类型，则Signature属性会为它记录泛型签名信息。</li>
-<li>之所以要专门使用这样一个属性去记录泛型类型，是因为Java语言的泛型采用的是擦除法实现的伪泛型，在字节码(Code属性)中，泛型信息(类型变量、参数化类型)之后通通被擦出掉。使用擦除法的好处是实现简单(主要修改Javac编译器，虚拟机内部只做了很少的改动)、非常容易实现Backport，运行期也能节省一些类型所占的内存空间，但坏处就是运行期就无法像C#等有真泛型支持的语言那样，将泛型类型与用户定义的普通类型同等对待，例如运行期做反射时无法获得泛型信息。</li>
-<li>Signature属性就是为了弥补这个缺陷而增设的，现在Java的反射API能够获得泛型数据，最终的数据来源也就是这个属性。</li>
-</ul>
-<h3 id="BootstrapMethods属性"><a href="#BootstrapMethods属性" class="headerlink" title="BootstrapMethods属性"></a>BootstrapMethods属性</h3><ul>
-<li>BootstrapMethods属性在JDK1.7发布后增加到class文件规范中，是一个负责的变长属性，位于类文件的属性表中。</li>
-<li>这个属性用于保存invokedynamic指令引用的引导方法限定符。如果某个类文件结构的常量池中曾经出现过CONSTANT_InvokeDynamic_info类型的常量，那么这个类文件的属性表中必须存在一个明确的BootstrapMethods属性，另外，即使CONSTANT_InvokeDynamic_info类型的常量在常量池中出现过多次，类文件的属性表中最多也只能有一个BootstrapMethods属性。</li>
 </ul>
 <h1 id="字节码指令"><a href="#字节码指令" class="headerlink" title="字节码指令"></a>字节码指令</h1><ul>
 <li>Java虚拟机指令由一个字节长度的、代表这某种特定操作含义的数字（称为操作码，Opcode）已经跟随其后的零至多个代表此操作所需的参数(称为操作数，Operands)而构成。</li>
@@ -291,22 +235,19 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">   do&#123;</div><div class="line">    自动计算PC寄存器的值加<span class="number">1</span>;</div><div class="line">    根据PC寄存器的指示位置，从字节码流中取出操作码;</div><div class="line"> <span class="keyword">if</span>(字节码存在操作数) 从字节码流中取出操作数;</div><div class="line">    执行操作码所定义的操作;</div><div class="line">&#125;<span class="keyword">while</span>(字节码流长度&gt;<span class="number">0</span>);</div></pre></td></tr></table></figure>
 <ul>
 <li>在Java虚拟机的指令集中，大多数的指令都包含了其操作数所对应的数据类型信息。</li>
-<li>对于大部分与数据类型相关的字节码指令，它们的操作码助记符中都有特殊的字符来表明专门为哪种类型服务：i代表对int类型的数据操作，s代表short等。</li>
-<li>如果每一种与数据类型相关的指令都支持Java虚拟机所有运行时的数据的话，那指令的数据恐怕就会超出一个字节所能表示的数量范围了。因此，Java虚拟机的指令集对于特定的操作只提供了有限的类型相关指令去支持它。并非每种数据类型和每一种操作都有对应的指令，有一些单独的指令可以在必要的时候用来将一些不支持的类型转换为可被支持的类型。</li>
+<li>并非每种数据类型和每一种操作都有对应的指令，有一些单独的指令可以在必要的时候用来将一些不支持的类型转换为可被支持的类型。</li>
 <li>大多指令都没有支持整数类型byte，char和short，甚至没有任何指令支持boolean类型。编译器会在编译期或运行期将byte和short类型的数据带符号扩展为相应的int类型数据，将boolean和char类型数据零位扩展为相应的int类型。</li>
 </ul>
 <h3 id="运算指令"><a href="#运算指令" class="headerlink" title="运算指令"></a>运算指令</h3><ul>
 <li>运算或算术指令用于对两个操作数栈上的值进行某种特定运算，并把结果重新存入操作栈顶。</li>
 <li>大体上算术指令可以分为两种：对整型数据进行运算的指令与对浮点型数据进行运算的指令。</li>
-<li>Java虚拟机规范没有明确定义过整型数据溢出的具体运算结果，仅规定了在处理整型数据是，只有除法指令以及求余指令中除数为零时会导致虚拟机抛出异常，其余任何整型运算都不应该抛出运行时异常。</li>
 <li>Java虚拟机要求在进行浮点数运算时，所有的运算结果都必须舍入到适当的精度，非精确的结果必须舍入为可被表示的最接近的精确值。</li>
 <li>在把浮点数转换为整数时，Java虚拟机使用向零舍入模式，舍入结果会导致数字被截断，所有小数部分被丢弃。</li>
-<li>ava虚拟机在处理浮点数运算时，不会抛出任何运行时异常，当一个数溢出时，会使用有符号的无穷大来表示，如果某操作数没有明确的数学定义的话，将使用NaN值来表示。所有使用NaN值作为操作数的算术操作，结果都会返回NaN。</li>
 </ul>
 <h3 id="类型转换指令"><a href="#类型转换指令" class="headerlink" title="类型转换指令"></a>类型转换指令</h3><ul>
 <li>类型转换指令可以将两种不同的数值类型进行相互转换，这些转换操作一般用于实现用户代码中显式类型转换操作，或者用来处理字节码指令集中数据类型相关指令无法与数据类型一一对应的问题。</li>
 <li>Java虚拟机直接支持(即转换时无需显示的转换指令)以下数值类型的宽化类型转换(即小范围类型到大范围类型的安全转换)。</li>
-<li>处理窄化类型转换时，必须显示地使用转换指令来完成，窄化类型转换可能会导致转换结果产生不同的正负号，不同的数量级的情况，转换过程很可能会导致数值的精度丢失。当把一个浮点型窄化转换为整数类型T(T限定为int或long类型之一)，遵循以下转换规则<br><br>1.如果浮点型是NaN，转换的结果是int或long类型的0；<br><br>2.如果浮点数不是无穷大，就使用向零舍入模式取整，获得整数v，如果v在int或long的表示范围之类，那转换结果就是v;<br><br>3.否则，将根据v的符号，转换为T所能表示的最大或最小正数。<br></li>
+<li>处理窄化类型转换时，必须显示地使用转换指令来完成，窄化类型转换可能会导致转换结果产生不同的正负号，不同的数量级的情况，转换过程很可能会导致数值的精度丢失。</li>
 </ul>
 <h3 id="对象创建指令"><a href="#对象创建指令" class="headerlink" title="对象创建指令"></a>对象创建指令</h3><ul>
 <li>虽然类实例和数组都是对象，但Java虚拟机对类实例和数组的创建与操作使用了不同的字节码指令。对象创建后，就可以通过对象访问指令获取对象实例或者数组实例中的字段或者数组元素。</li>
@@ -316,7 +257,6 @@
 </ul>
 <h3 id="控制转移指令"><a href="#控制转移指令" class="headerlink" title="控制转移指令"></a>控制转移指令</h3><ul>
 <li>控制转移指令可以让Java虚拟机有条件或无条件地从指定的位置指令而不是控制转移指令的下一条指令继续执行程序，从概念模型上理解，可以认为控制转移指令就是在有条件或无条件地修改PC寄存器的值。</li>
-<li>Java虚拟机中有专门的指令集用来处理int和reference类型的条件分支比较操作，为了可以无须明显标识一个实体值是否null，也有专门的指令用来检测null值。</li>
 </ul>
 <h3 id="方法调用和返回指令"><a href="#方法调用和返回指令" class="headerlink" title="方法调用和返回指令"></a>方法调用和返回指令</h3><ul>
 <li>方法调用与数据类型无关，而方法返回指令是根据返回值的类型区分的。</li>
@@ -327,7 +267,8 @@
 </ul>
 <h3 id="同步指令"><a href="#同步指令" class="headerlink" title="同步指令"></a>同步指令</h3><ul>
 <li>Java虚拟机可以支持方法级同步和方法内部一段指令序列的同步，这两种同步结构都是使用管程来支持的。</li>
-<li>方法级同步是隐式的，即无须通过字节码指令来控制，它实现方法在方法调用和返回操作之中。虚拟机可以从方法常量池的方法表结构中的ACC_SYNCHRONIZED访问标志得知一个方法是否被声明为同步方法。当方法调用时，调用指令将会检查方法的ACC_SYNCHRONIZED访问标志是否被设置，如果被设置了，执行线程就要求先成功持有管程，然后才能执行方法，最后当方法完成（无论是否正常完成）时释放管程。在方法执行期间，执行线程持有了管程，其他任何线程都无法再获取到同一个管程。如果一个同步方法执行期间抛出了异常，并且在方法内部无法处理此异常，那么这个同步方法所持有的管程将在异常抛到同步方法之外时自动释放。</li>
+<li>方法级同步是隐式的，即无须通过字节码指令来控制，它实现方法在方法调用和返回操作之中。</li>
+<li>虚拟机可以从方法常量池的方法表结构中的ACC_SYNCHRONIZED访问标志得知一个方法是否被声明为同步方法。当方法调用时，调用指令将会检查方法的ACC_SYNCHRONIZED访问标志是否被设置，如果被设置了，执行线程就要求先成功持有管程，然后才能执行方法，最后当方法完成（无论是否正常完成）时释放管程。在方法执行期间，执行线程持有了管程，其他任何线程都无法再获取到同一个管程。如果一个同步方法执行期间抛出了异常，并且在方法内部无法处理此异常，那么这个同步方法所持有的管程将在异常抛到同步方法之外时自动释放。</li>
 <li>同步一段指令集序列通常是有Java语言中的synchronized语句块来表示的，Java虚拟机的指令集中有monitorenter和monitorexit两条指令来支持synchronized关键字的语义，正确实现synchronized关键字需要Javac编译器与Java虚拟机两者共同协作支持。</li>
 </ul>
 
@@ -343,7 +284,7 @@
 
   <link rel="stylesheet" href="http://static.duoshuo.com/styles/embed.default.css?349d9313.css">
   <!-- 多说评论框 start -->
-  <div class="ds-thread" data-thread-key="2016/08/04/Java笔记-类文件结构与字节码指令/" data-title="Java笔记-类文件结构与字节码指令" data-url="/2016/08/04/Java笔记-类文件结构与字节码指令/"></div>
+  <div class="ds-thread" data-thread-key="2016/08/04/Java笔记-类文件结构与字节码指令/" data-title="Java-类文件结构与字节码指令" data-url="/2016/08/04/Java笔记-类文件结构与字节码指令/"></div>
   <!-- 多说评论框 end -->
   <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
   <script type="text/javascript">
